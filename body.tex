@@ -6,11 +6,10 @@ The objective is to provide a clear picture on the DM management products, inclu
 
 \subsection{Definitions}
 
-Following definitions are relevant for this document, and for the identification and categorization of each product in DM.
+Following definitions are relevant for this document.
 
 \begin{itemize}
 \item product
-\item WBS
 \item identification
 \item owner
 \item manager
@@ -27,8 +26,8 @@ Following documents are applicable:
 
 In \ref{sect:top} the list of top level products is provided.
 In \ref{sect:low} the list of low level products is provided.
-In \ref{sect:deps} the dependencies between the products is provided.
 In \ref{sect:sups} the list of supporting software is provided.
+
 
 \newpage
 \section{Top Level Product Tree}\label{sect:top}
@@ -46,6 +45,7 @@ All information is derived from github content.
 
 These products are implementing mainly the top level \textit{software} products listed in previous \ref{sect:top} and in following \ref{sect:sups}
 
+\input{swProducts}
 
 \section{Supporting products}\label{sect:sups}
 
@@ -53,8 +53,4 @@ The list of products here is not meant to be used for operational puposes, but f
 
 These products are organized and maintained in MagicDraw by the DM System Engineering group.
 
-
-\section{Dependencies}\label{sect:deps}
-
-In this section, the dependencies between different products is put in evidence.
-The main purpose of this section is to be able to provide impact analisys capabilities.
+\input{DMDevProductTree}

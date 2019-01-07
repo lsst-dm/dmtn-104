@@ -8,6 +8,7 @@ from treelib import Tree
 import argparse
 import csv
 import re
+import os
 
 
 outputfile = "topLevel.tex"
@@ -42,6 +43,7 @@ def fixTex(text):
     ret = text.replace("_", "\\_")
     ret = ret.replace("/", "/ ")
     ret = ret.replace("&", "\\& ")
+
     return ret
 
 
@@ -97,18 +99,22 @@ def slice(ptree, outdepth):
          #print()
     return ntree
 
-def productBody(product):
-     tex = "\\begin{itemize}"
+def productBody(product, t):
+     # t: type of product
+     tex = "\\begin{itemize}\n"
      tex = tex + "\\item Identification (short key): " + product.id + "\n"
-     tex = tex + "\\item Parent in the worduct tree: " + product.parent + "\n"
+     #tex = tex + "\\item Parent in the porduct tree: " + product.parent+ " (\citeds{sect:" + product.parent + "})\n"
      tex = tex + "\\item Description: " + product.desc + "\n"
-     tex = tex + "\\item WBS: " + product.wbs + "\n"
+     if product.wbs:
+         tex = tex + "\\item WBS: " + product.wbs + "\n"
      tex = tex + "\\item Manager: " + product.manager + "\n"
      tex = tex + "\\item Owner: " + product.owner + "\n"
-     tex = tex + "\\item Kind:" + product.kind + "\n"
-     pkgs = fixTex(product.pkgs)
-     tex = tex + "\\item SW packages: " + pkgs + "\n"
-     tex = tex + "\\end{itemize}"
+     if product.kind:
+         tex = tex + "\\item Kind:" + product.kind + "\n"
+     if product.pkgs:
+         pkgs = fixTex(product.pkgs)
+         tex = tex + "\\item SW packages: " + pkgs + "\n"
+     tex = tex + "\\end{itemize}\n\n"
      return(tex)
 
 def subProducts(stree):
@@ -122,8 +128,8 @@ def subProducts(stree):
           count = count + 1
           node = stree[n]
           product = node.data
-          tex = tex + "\\subsubsection{" + product.name + "}\n"
-          tex = tex + productBody(product)
+          tex = tex + "\\subsubsection{" + product.name + "}\\label{sect:" + product.id + "}\n"
+          tex = tex + productBody(product, 't')
 
     return(tex)
 
@@ -135,6 +141,13 @@ parser.add_argument("--file", help="Input csv file ", default='DM Product Proper
 args = parser.parse_args()
 
 inputfile = args.file
+
+if inputfile != 'DM Product Properties.csv':
+    fname1 = os.path.basename(inputfile)
+    fname2 = os.path.splitext(fname1)
+    outputfile = fname2[0] + '.tex'
+print('Output saved in: ', outputfile)
+    
 
 ptree = readinputfile(inputfile)
 
@@ -149,9 +162,8 @@ for n in nodes:
      node = ptree[n]
      product = node.data
      stree = ptree.subtree(product.id)
-     pname = fixTex(product.name)
-     output = output + "\\subsection{" + pname + "}\n"
-     output = output + productBody(product)
+     output = output + "\\subsection{" + product.name + "}\\label{sect:" + product.id + "}\n"
+     output = output + productBody(product, 't')
      #output = output + tmptex
      output = output + "Follows the list of sub-products."
      output = output + subProducts(stree)
