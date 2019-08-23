@@ -1,0 +1,215 @@
+{%- macro curlies(item) -%}
+{{ "{" }}{{ item }}{{ "}" }}
+{%- endmacro -%}
+
+{%- macro href(url, text) -%}
+\href{{ "{" }}{{ url|replace("#", "\\#")|replace("%", "\\%")|replace("_", "\\_") }}{{ "}" }}{{ curlies(text) }}
+{%- endmacro -%}
+
+{%- macro label(text) -%}
+\label{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+
+{%- macro hyperlink(text) -%}
+\hyperlink{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+
+{%- macro hypertarget(text) -%}
+\hypertarget{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+
+{%- macro ndr(text) -%}
+\vcdDocRef{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+
+{%- macro njr(text) -%}
+\vcdJiraRef{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+
+{%- macro atmtc(text) -%}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/{{ text }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+{%- macro atmtp(text) -%}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/{{ text }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+{%- macro atmcycle(text) -%}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/{{ text }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+
+
+
+% auto generated from multiple sources - DO NOT EDIT!
+% using template at {{ metadata.template }}.
+% Collecting data for component: "{{ metadata.component }}"
+% using docsteady version {{ metadata.ptree_version }}
+%
+% This file is meant to be included in LaTeX document in order to provide:
+%   -  MagicDraw Top Level Product Tree (section 2)
+
+{# commented ############
+{% for product in mdps %}
+    \subsection{{ curlies(product.name) }}
+{% endfor %}
+#}
+
+{% for k0 in mdp %}
+
+\begin{longtable}{ccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} \\ \hline
+{{ mdt_dict[k0].manager }} &
+\begin{tabular}{@{}l@{}}
+{% for owner in mdt_dict[k0].owner %}
+{{ owner }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for wbs in mdt_dict[k0].wbs %}
+{{ wbs }} \\
+{% endfor %}
+\end{tabular} \\ \hline
+\end{longtable}
+
+  {{ mdt_dict[k0].desc }}
+
+  {% for child in mdp[k0]['children'] %}
+  {% for k1 in child %}
+\subsection{{ curlies(mdt_dict[k1].name) }}
+
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+{{ mdt_dict[k1].manager }} &
+\begin{tabular}{@{}l@{}}
+{% for owner in mdt_dict[k1].owner %}
+{{ owner }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for wbs in mdt_dict[k1].wbs %}
+{{ wbs }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for team in mdt_dict[k1].teams %}
+{{ team }} \\
+{% endfor %}
+\end{tabular} \\ \hline
+\end{longtable}
+
+  {{ mdt_dict[k1].desc }}
+
+  {% for sc in child[k1]['children'] %}
+    {% if sc is string %}
+
+\paragraph{{ curlies(mdt_dict[sc].name) }}\mbox{}\\
+
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+{{ mdt_dict[sc].manager }} &
+\begin{tabular}{@{}l@{}}
+{% for owner in mdt_dict[sc].owner %}
+{{ owner }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for wbs in mdt_dict[sc].wbs %}
+{{ wbs }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for team in mdt_dict[sc].teams %}
+{{ team }} \\
+{% endfor %}
+\end{tabular} \\ \hline
+\end{longtable}
+
+  {{ mdt_dict[sc].desc }}
+
+
+          {% if mdt_dict[sc].pkgs[0] != "" %}
+\begin{longtable}{c}\hline
+\textbf{GutHub Packages} \\ \hline
+          {% for pkg in mdt_dict[sc].pkgs %}
+{{ pkg|replace("_", "\\_") }} \\ \hline
+          {% endfor %}
+\end{longtable}
+          {% endif %}
+
+          {% if mdt_dict[sc].links[0] != "" %}
+\begin{longtable}{c}\hline
+\textbf{Hiperlink References} \\ \hline
+          {% for lnk in mdt_dict[sc].links %}
+          {% set text = lnk|replace("_", "\\_") %}
+\href{{ curlies(lnk) }}{{ curlies(text) }}  \\ \hline
+          {% endfor %}
+\end{longtable}
+          {% endif %}
+
+
+    {% else %}
+      {% for k2 in sc %}
+\subsubsection{{ curlies(mdt_dict[k2].name) }}
+
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+{{ mdt_dict[k2].manager }} &
+\begin{tabular}{@{}l@{}}
+{% for owner in mdt_dict[k2].owner %}
+{{ owner }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for wbs in mdt_dict[k2].wbs %}
+{{ wbs }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for team in mdt_dict[k2].teams %}
+{{ team }} \\
+{% endfor %}
+\end{tabular} \\ \hline
+\end{longtable}
+
+  {{ mdt_dict[k2].desc }}
+
+        {% for sch1 in sc[k2]['children'] %}
+\paragraph{{ curlies(mdt_dict[sch1].name) }}\mbox{}\\
+
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+{{ mdt_dict[sch1].manager }} &
+\begin{tabular}{@{}l@{}}
+{% for owner in mdt_dict[sch1].owner %}
+{{ owner }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for wbs in mdt_dict[sch1].wbs %}
+{{ wbs }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for team in mdt_dict[sch1].teams %}
+{{ team }} \\
+{% endfor %}
+\end{tabular} \\ \hline
+\end{longtable}
+
+  {{ mdt_dict[sch1].desc }}
+
+          {% if mdt_dict[sch1].pkgs[0] != "" %}
+\begin{longtable}{c}\hline
+\textbf{GutHub Packages} \\ \hline
+          {% for pkg in mdt_dict[sch1].pkgs %}
+{{ pkg|replace("_", "\\_") }} \\ \hline
+          {% endfor %}
+\end{longtable}
+          {% endif %}
+
+          {% if mdt_dict[sch1].links[0] != "" %}
+\begin{longtable}{c}\hline
+\textbf{Hiperlink References} \\ \hline
+          {% for lnk in mdt_dict[sch1].links %}
+          {% set text = lnk|replace("_", "\\_") %}
+\href{{ curlies(lnk) }}{{ curlies(text) }}  \\ \hline
+          {% endfor %}
+\end{longtable}
+          {% endif %}
+
+        {% endfor %}
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  {% endfor %}
+  {% endfor %}
+{% endfor %}

@@ -1,0 +1,9 @@
+magic
+ - serverid: a0acbaa6-6625-4ea9-8aec-51931412a29e
+ - main: 60706435-6f8e-4b15-823b-06597f1cdada
+ - services:
+ - software:
+ - infrastructure:
+ - hwandcots:
+ - refdata:
+ - propertires-matrix: 5e7c0540-11e3-4ac6-bad6-8c8e8183807c
