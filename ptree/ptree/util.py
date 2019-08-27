@@ -26,10 +26,13 @@ import csv
 import re
 import requests
 import datetime
+import pandoc
 from treelib import Tree
 from time import sleep
 from base64 import b64encode
 from .config import Config
+from marshmallow import fields
+from bs4 import BeautifulSoup
 
 # MD Subsystem  Design Workspace @ID
 sdw = '3130d49c-d90d-4df2-a110-5247a5d03296'
@@ -47,22 +50,38 @@ headers = {
 }
 
 
+def cite_docushare_handles(text):
+    """This will find matching docushare handles and replace
+    the text with the ``\citeds{text}``."""
+    return Config.DOCUSHARE_DOC_PATTERN.sub(r"\\citeds{\1\2}", text)
+
+
 class Product(object):
     def __init__(self, p_id, name, parent, desc, wbs, manager, owner,
-                 kind, pkgs, depends, el_id, links, teams):
-        self.id = p_id
-        self.name = name
-        self.parent = parent
-        self.desc = desc
-        self.wbs = wbs
-        self.manager = manager
-        self.owner = owner
-        self.kind = kind
-        self.pkgs = pkgs
-        self.depends = depends
-        self.elId = el_id  # MagicDraw Element Server Id
-        self.links = links
-        self.teams = teams
+                 kind, pkgs, depends, el_id, links, teams, shortname):
+        self.id = p_id              # 1 key (0 is self)
+        self.name = name            # 2
+        self.parent = parent        # 3
+        self.desc = desc            # 4
+        self.wbs = wbs              # 5
+        self.manager = manager      # 6
+        self.owner = owner          # 7
+        self.kind = kind            # 8
+        self.pkgs = pkgs            # 9
+        self.depends = depends      # 10
+        self.elId = el_id           # 11 MagicDraw Element Server Id
+        self.links = links          # 12
+        self.teams = teams          # 13
+        self.shortname = shortname  # 14
+
+
+def html_to_latex(string):
+    # print("comment: ", string)
+    Config.DOC.html = string.encode("utf-8")
+    tex_string = getattr(Config.DOC, Config.TEMPLATE_LANGUAGE).decode("utf-8")
+    # print("description", tex_string)
+
+    return tex_string
 
 
 # given a a session retun a json

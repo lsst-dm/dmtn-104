@@ -23,8 +23,7 @@ Code for generation Product Tree document from MagicDraw
 """
 import requests
 from .config import Config
-from .util import get_pkg_properties, mdTree, headers, rsget, fix_tex, fix_id_tex, Product, explore_md_element, \
-    get_pkg_p2
+from .util import get_pkg_properties, mdTree, headers, rsget, fix_tex, fix_id_tex, Product, html_to_latex
 
 
 def get_dep_key(rcs, mres, mdid):
@@ -47,6 +46,24 @@ def get_dep_key(rcs, mres, mdid):
         # print("Dependency found: ", tmpname, tmp_pkg_id)
 
     return dep_pkgs
+
+
+def get_pkg_key(rcs, mres, mdid):
+    resp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=mdid), True)
+    pkg_properties = dict()
+
+    for el in resp[0]['ldp:contains']:
+        tmp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=el['@id']), True)
+        if tmp[1]['@type'] == 'uml:InstanceSpecification':
+            pkg_properties = get_pkg_properties(rcs, mres, el['@id'])
+            #print(pkg_properties)
+        else:
+            continue
+
+    if "product key" in pkg_properties.keys():
+        return pkg_properties['product key'][0]
+    else:
+        return ""
 
 
 def walk_tree(rcs, mres, mdid, pkey):
@@ -79,7 +96,7 @@ def walk_tree(rcs, mres, mdid, pkey):
             # pid=el['@id']))
         elif tmp[1]['@type'] == 'uml:InstanceSpecification':
             pkg_properties = get_pkg_properties(rcs, mres, el['@id'])
-            print(pkg_properties)
+            # print(pkg_properties)
         elif tmp[1]['@type'] == 'uml:Property':
             continue
             # prop_tmp = get_pkg_p2(rcs, mres, el['@id'])
@@ -90,29 +107,45 @@ def walk_tree(rcs, mres, mdid, pkey):
         elif tmp[1]['@type'] == 'uml:Dependency':
             # print(pkg_name, mdid)
             depkey = get_dep_key(rcs, mres, el['@id'])
-            # print("   ----   dep key found: ", depkey)
+            print("   ----   dep key found: ", depkey)
             pkg_depends.append(depkey)
         elif tmp[1]['@type'] in ('uml:Abstraction', 'uml:Diagram', 'uml:Association'):
             continue
         else:
             print('Unmapped type: ', tmp[1]['@type'], el['@id'])
 
+    if resp[1]['@type'] == 'uml:Class':
+        for el in resp[1]['kerml:esiData']['ownedMember']:
+            tmp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=el['@id']), True)
+            if tmp[1]['kerml:esiData']['type']:
+                # print(el['@id'], tmp[1]['@type'], tmp[1]['kerml:name'], tmp[1]['kerml:esiData']['type'])
+                dep = get_pkg_key(rcs, mres, tmp[1]['kerml:esiData']['type']['@id'])
+                if dep != "":
+                    # print(" - dependency ", dep)
+                    pkg_depends.append(dep)
+
+
     pkg_id = fix_id_tex(pkg_properties['product key'][0])
     # print(pkg_id, mdTree.depth())
     # print(f" {{id}} - {{name}}".format(id=pkg_id, name=pkg_name))
-    prod = Product(pkg_id,
-                   pkg_name,
-                   pkey,
-                   pkg_comments,
-                   pkg_properties["WBS"],
-                   pkg_properties["manager"][0],
-                   pkg_properties["product owner"],
-                   "",
-                   pkg_properties["packages"],
-                   pkg_depends,
-                   mdid,
-                   pkg_properties["hyperlinkText"],
-                   pkg_properties["team"])
+    # print("comment: ",pkg_comments)
+    # Config.DOC.html = pkg_comments.encode("utf-8")
+    # description = getattr(Config.DOC, Config.TEMPLATE_LANGUAGE).decode("utf-8")
+    # print("description", description)
+    prod = Product(pkg_id,                            # 1  (0 is self)
+                   pkg_name,                          # 2
+                   pkey,                              # 3
+                   html_to_latex(pkg_comments),     # 4
+                   pkg_properties["WBS"],             # 5
+                   pkg_properties["manager"][0],      # 6
+                   pkg_properties["product owner"],   # 7
+                   "",                                # 8
+                   pkg_properties["packages"],        # 9
+                   pkg_depends,                       # 10
+                   mdid,                              # 11
+                   pkg_properties["hyperlinkText"],   # 12
+                   pkg_properties["team"],            # 13
+                   pkg_properties["short name"][0])       # 14
     if pkey == "":  # first node in the tree
         mdTree.create_node(prod.id, prod.id, data=prod)
     else:

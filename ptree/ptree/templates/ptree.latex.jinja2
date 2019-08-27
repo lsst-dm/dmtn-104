@@ -54,8 +54,8 @@
 
 {% for k0 in mdp %}
 
-\begin{longtable}{ccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} \\ \hline
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 {{ mdt_dict[k0].manager }} &
 \begin{tabular}{@{}l@{}}
 {% for owner in mdt_dict[k0].owner %}
@@ -65,7 +65,7 @@
 {% for wbs in mdt_dict[k0].wbs %}
 {{ wbs }} \\
 {% endfor %}
-\end{tabular} \\ \hline
+\end{tabular} & DM \\ \hline
 \end{longtable}
 
   {{ mdt_dict[k0].desc }}
@@ -75,7 +75,7 @@
 \subsection{{ curlies(mdt_dict[k1].name) }}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 {{ mdt_dict[k1].manager }} &
 \begin{tabular}{@{}l@{}}
 {% for owner in mdt_dict[k1].owner %}
@@ -90,6 +90,9 @@
 {{ team }} \\
 {% endfor %}
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: {{ mdt_dict[k1].shortname }} - Acronym: {{ mdt_dict[k1].id }} ) }
+}\\ \hline
 \end{longtable}
 
   {{ mdt_dict[k1].desc }}
@@ -100,7 +103,7 @@
 \paragraph{{ curlies(mdt_dict[sc].name) }}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 {{ mdt_dict[sc].manager }} &
 \begin{tabular}{@{}l@{}}
 {% for owner in mdt_dict[sc].owner %}
@@ -115,6 +118,9 @@
 {{ team }} \\
 {% endfor %}
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: {{ mdt_dict[sc].shortname }} - Acronym: {{ mdt_dict[sc].id }} ) }
+}\\ \hline
 \end{longtable}
 
   {{ mdt_dict[sc].desc }}
@@ -145,7 +151,7 @@
 \subsubsection{{ curlies(mdt_dict[k2].name) }}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 {{ mdt_dict[k2].manager }} &
 \begin{tabular}{@{}l@{}}
 {% for owner in mdt_dict[k2].owner %}
@@ -160,6 +166,9 @@
 {{ team }} \\
 {% endfor %}
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: {{ mdt_dict[k2].shortname }} - Acronym: {{ mdt_dict[k2].id }} ) }
+}\\ \hline
 \end{longtable}
 
   {{ mdt_dict[k2].desc }}
@@ -168,7 +177,7 @@
 \paragraph{{ curlies(mdt_dict[sch1].name) }}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 {{ mdt_dict[sch1].manager }} &
 \begin{tabular}{@{}l@{}}
 {% for owner in mdt_dict[sch1].owner %}
@@ -183,6 +192,9 @@
 {{ team }} \\
 {% endfor %}
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: {{ mdt_dict[sch1].shortname }} - Acronym: {{ mdt_dict[sch1].id }} ) }
+}\\ \hline
 \end{longtable}
 
   {{ mdt_dict[sch1].desc }}
@@ -191,7 +203,14 @@
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
           {% for pkg in mdt_dict[sch1].pkgs %}
-{{ pkg|replace("_", "\\_") }} \\ \hline
+            {% set package = pkg|replace("_", "\\_") %}
+            {% set tmplist = pkg.split('/') %}
+            {% if tmplist|length > 1 %}
+              {% set lnk = 'https://github.com/'~pkg %}
+            {% else %}
+              {% set lnk = 'https://github.com/lsst/'~pkg %}
+            {% endif %}
+\href{{ curlies(lnk) }}{{ curlies(package) }}\\ \hline
           {% endfor %}
 \end{longtable}
           {% endif %}
@@ -202,6 +221,15 @@
           {% for lnk in mdt_dict[sch1].links %}
           {% set text = lnk|replace("_", "\\_") %}
 \href{{ curlies(lnk) }}{{ curlies(text) }}  \\ \hline
+          {% endfor %}
+\end{longtable}
+          {% endif %}
+
+          {% if (mdt_dict[sch1].depends is defined) and mdt_dict[sch1].depends %}
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+          {% for product in mdt_dict[sch1].depends %}
+{{ product }} \\ \hline
           {% endfor %}
 \end{longtable}
           {% endif %}

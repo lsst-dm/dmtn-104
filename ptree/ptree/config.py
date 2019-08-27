@@ -20,6 +20,7 @@
 
 import os
 import re
+import pandoc
 
 
 class Config:
@@ -39,7 +40,7 @@ class Config:
     PANDOC_TYPE = None
     CONNECTION_ID = None
     REQID_FIELD = "customfield_12001"
-    DOC = None
+    DOC = pandoc.Document()
     OUTPUT_FORMAT = None
     CACHED_TESTCASES = {}
     CACHED_USERS = {}

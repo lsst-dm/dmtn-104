@@ -8,22 +8,44 @@
 
 
 
-\begin{longtable}{ccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} \\ \hline
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Wil O'Mullane &
 \begin{tabular}{@{}l@{}}
 Leanne Guy \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 1.02C \\
-\end{tabular} \\ \hline
+\end{tabular} & DM \\ \hline
 \end{longtable}
 
-  This section describes the components constructed to satisfy the DM requirements, including services, software, and computational environments.
+  This is the top level Data Management product. It includes underneath
+all products required in order to satisfy the DM requirements at all
+levels (LSE-61, interface, low level flow down
+requirements).\\[2\baselineskip]These products are organized in the
+following groups:
+
+\begin{itemize}
+\tightlist
+\item
+  services
+\item
+  software
+\item
+  hardware and COTS resources
+\item
+  infrastructures
+\item
+  data
+\end{itemize}
+
+The components required for development, but not used for operations,
+are not part of this Products Tree.
+
 
 \subsection{Services}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Leanne Guy \\
@@ -32,18 +54,20 @@ Leanne Guy \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Services - Acronym: DMSRV ) }
+}\\ \hline
 \end{longtable}
 
-  DM operational services. This includes all services required for:
+  DM operational services. This includes all services required for: - data
+distribution (DBB) - data processing (prompt and offline) - data access
+(LSP)
 
-- data distribution (DBB)
-- data processing (prompt and offline)
-- data access (LSP)
 
 \subsubsection{Backbone Services}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -52,14 +76,18 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DBB Services - Acronym: DBBSRV ) }
+}\\ \hline
 \end{longtable}
 
   DM services that implement the backbone infrastructure.
 
+
 \paragraph{DBB Lifetime Management}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -68,16 +96,21 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DBB Lifetime - Acronym: DBBLIFESRV ) }
+}\\ \hline
 \end{longtable}
 
   
+
+
 
 
 
 \paragraph{DBB Ingest/ Metadata Management}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -86,16 +119,21 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DBB Metadata - Acronym: DBBMDSRV ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+
 \paragraph{DBB Storage}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -104,16 +142,21 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DBB Storage - Acronym: DBBSTRSRV ) }
+}\\ \hline
 \end{longtable}
 
   This service provides archive on Tape for log time data preservation.
 
 
 
+
+
 \paragraph{DBB Transport/ Replication/ Backup}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -122,16 +165,21 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DBB Transport - Acronym: DBBTRSRV ) }
+}\\ \hline
 \end{longtable}
 
   Transportation and Replication Service
 
 
 
+
+
 \subsubsection{LSP Services}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
@@ -140,14 +188,19 @@ Gregory Dubois-Felsmann \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: LSP Services - Acronym: LSPSRV ) }
+}\\ \hline
 \end{longtable}
 
-  DM services that permit external users to access the project resources, such as data and processing SW.
+  DM services that permit external users to access the project resources,
+such as data and processing SW.
+
 
 \paragraph{LSP JupyterLab}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Frossie Economou &
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
@@ -156,16 +209,25 @@ Simon Krughoff \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SQuaRE \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: LSP JupyterLab - Acronym: LSPJLSRV ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+LSPJL \\ \hline
+\end{longtable}
+
 \paragraph{LSP Portal}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Xiuqin Wu &
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
@@ -176,17 +238,27 @@ Gregory Dubois-Felsmann \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SUIT \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: LSP Portal - Acronym: LSPPRTLSRV ) }
+}\\ \hline
 \end{longtable}
 
-  It provides a pre-specified yet flexible discovery, query, and viewing tool.
+  It provides a pre-specified yet flexible discovery, query, and viewing
+tool.
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+SUIT \\ \hline
+SUITOH \\ \hline
+\end{longtable}
 
 \paragraph{LSP Web API}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
 \begin{tabular}{@{}l@{}}
 Colin Slater \\
@@ -195,16 +267,25 @@ Colin Slater \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: LSP Web API - Acronym: LSPWEBSRV ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+LSPWEB \\ \hline
+\end{longtable}
+
 \subsubsection{Offline Services}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -213,14 +294,18 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Offline Services - Acronym: OFFLSRV ) }
+}\\ \hline
 \end{longtable}
 
   DM services that do not need to run in a prompt manner.
 
+
 \paragraph{Bulk Distribution}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -229,16 +314,21 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Bulk Distrib - Acronym: BULKDSRV ) }
+}\\ \hline
 \end{longtable}
 
   Bulk Data Distribution Service
 
 
 
+
+
 \paragraph{Offline Quality Control}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Yusra AlSayyad &
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
@@ -247,16 +337,24 @@ Jim Bosch \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Offline QC - Acronym: OFFLQCSRV ) }
+}\\ \hline
 \end{longtable}
 
-  This service collects all KPI metrics calculated by the processing service, aggregate the information and provides reports in order to ensure the monitoring of the quality of the processing and of the data collected by the survey.
+  This service collects all KPI metrics calculated by the processing
+service, aggregate the information and provides reports in order to
+ensure the monitoring of the quality of the processing and of the data
+collected by the survey.
+
+
 
 
 
 \paragraph{Batch Production}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -265,16 +363,21 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Batch Production - Acronym: PRODSRV ) }
+}\\ \hline
 \end{longtable}
 
   Batch Production Service
 
 
 
+
+
 \subsubsection{Prompt Services}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -283,14 +386,18 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Prompt Services - Acronym: PRSRV ) }
+}\\ \hline
 \end{longtable}
 
   DM Services that need to run in a prompt manner.
 
+
 \paragraph{Alert Distribution}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
 \begin{tabular}{@{}l@{}}
 Eric Bellm \\
@@ -299,16 +406,21 @@ Eric Bellm \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 AP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Alert Distrib - Acronym: ALRTDSTSRV ) }
+}\\ \hline
 \end{longtable}
 
   Alert Distribution and Filtering Service
 
 
 
+
+
 \paragraph{Archiving}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
@@ -317,30 +429,52 @@ Felipe Menanteau \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Archiving - Acronym: ARCSRV ) }
+}\\ \hline
 \end{longtable}
 
-  This component describes following services:
+  This component describes following services: - Image archiver for
+LSSTCam - Image archiver for ComCam - Image archiver for Auxiliary
+Telescope Spectrograph - Header Generator service - EFD Transformation
+service The archiver services capture raw images taken by each camera,
+including the wavefront sensors and the guide sensors of the LSSTCam or
+ComCam when so configured, retrieving them from their respective Camera
+Data System instances. The Header Generator service, written by Data
+Management but operated by the Observatory, captures specific sets of
+metadata associated with the images, including telemetry values and
+event timings, from the OCS publish/subscribe middleware and/or from the
+EFD. It formats these into a metadata package that is recorded in the
+EFD Large File Annex. The Archiver and CatchUp Archiver instances
+retrieve this metadata package and attach it to the captured image
+pixels. The image pixels and metadata are passed to the Observatory
+Operations Data Service (OODS), which serves as a buffer from which
+observing-critical data can be retrieved. They are also passed to a
+staging area for ingestion into the permanent archive in the Data
+Backbone. The catch-up versions archive into the OODS and Data Backbone
+any raw images and metadata that were missed by the primary archiving
+services due to network or other outage, retrieving them from the flash
+storage in the Camera Data System instances and the EFD. The EFD
+Transformation service extracts all information (including telemetry,
+events, configurations, and commands) from the EFD and its large file
+annex, transforms it into a form more suitable for querying by image
+timestamp, and loads it into the permanently archived ``Transformed
+EFD'' database in the Data Backbone.
 
-- Image archiver for LSSTCam
-- Image archiver for ComCam
-- Image archiver for Auxiliary Telescope Spectrograph
-- Header Generator service
-- EFD Transformation service
-
-The archiver services capture raw images taken by each camera, including the wavefront sensors and the guide sensors of the LSSTCam or ComCam when so configured, retrieving them from their respective Camera Data System instances.
-
-The Header Generator service, written by Data Management but operated by the Observatory, captures specific sets of metadata associated with the images, including telemetry values and event timings, from the OCS publish/subscribe middleware and/or from the EFD. It formats these into a metadata package that is recorded in the EFD Large File Annex. The Archiver and CatchUp Archiver instances retrieve this metadata package and attach it to the captured image pixels.
-
-The image pixels and metadata are passed to the Observatory Operations Data Service (OODS), which serves as a buffer from which observing-critical data can be retrieved. They are also passed to a staging area for ingestion into the permanent archive in the Data Backbone. The catch-up versions archive into the OODS and Data Backbone any raw images and metadata that were missed by the primary archiving services due to network or other outage, retrieving them from the flash storage in the Camera Data System instances and the EFD.
-
-The  EFD Transformation service extracts all information (including telemetry, events, configurations, and commands) from the EFD and its large file annex, transforms it into a form more suitable for querying by image timestamp, and loads it into the permanently archived “Transformed EFD” database in the Data Backbone.
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+HEADER \\ \hline
+EFDT \\ \hline
+IIP \\ \hline
+\end{longtable}
 
 \paragraph{OCS-Driven Batch}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
@@ -349,16 +483,25 @@ Felipe Menanteau \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: OCS Batch - Acronym: OCSBATSRV ) }
+}\\ \hline
 \end{longtable}
 
   OCS Driven Batch Processing Service
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+OCSBAT \\ \hline
+\end{longtable}
+
 \paragraph{Observatory Operations Data}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
@@ -367,16 +510,21 @@ Felipe Menanteau \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Obs Ops Data - Acronym: OODSSRV ) }
+}\\ \hline
 \end{longtable}
 
   Observatory Operations Data Service
 
 
 
+
+
 \paragraph{Planned Observation Publication}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
@@ -385,16 +533,29 @@ Felipe Menanteau \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Planned Obs Pub - Acronym: POPSRV ) }
+}\\ \hline
 \end{longtable}
 
-  This service receives telemetry from the OCS describing the next visit location and the telescope scheduler’s predictions of its future observations. It publishes these as an unauthenticated, globally-accessible web service comprising both a web page for human inspection and a web API for usage by automated tools.
+  This service receives telemetry from the OCS describing the next visit
+location and the telescope scheduler's predictions of its future
+observations. It publishes these as an unauthenticated,
+globally-accessible web service comprising both a web page for human
+inspection and a web API for usage by automated tools.
 
 
+
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+OBSPUB \\ \hline
+\end{longtable}
 
 \paragraph{Prompt Processing Ingest}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
@@ -403,20 +564,30 @@ Felipe Menanteau \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Prompt Proc Ing - Acronym: PRPINGSRV ) }
+}\\ \hline
 \end{longtable}
 
-  This service is implemented in two instances that capture crosstalk-corrected images from
-the LSSTCam and ComCam Camera Data Systems along with selected metadata from the OCS
-and/or EFD and transfer them to the Prompt Processing service in the Prompt NCSA Enclave.
+  This service is implemented in two instances that capture
+crosstalk-corrected images from the LSSTCam and ComCam Camera Data
+Systems along with selected metadata from the OCS and/or EFD and
+transfer them to the Prompt Processing service in the Prompt NCSA
+Enclave. There is no Prompt Processing Ingest instance for the auxiliary
+telescope spectrograph.
 
-There is no Prompt Processing Ingest instance for the auxiliary telescope spectrograph.
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+IIP \\ \hline
+\end{longtable}
 
 \paragraph{Prompt Processing}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -425,16 +596,21 @@ There is no Prompt Processing Ingest instance for the auxiliary telescope spectr
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Prmpt Processing - Acronym: PRPRSRV ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+
 \paragraph{Prompt Quality Control}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
 \begin{tabular}{@{}l@{}}
 Eric Bellm \\
@@ -443,16 +619,24 @@ Eric Bellm \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 AP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Prompt QC - Acronym: PRQCSRV ) }
+}\\ \hline
 \end{longtable}
 
-  This service collects all KPI metrics calculated by the processing service, aggregate the information and provides reports in order to ensure the monitoring of the quality of the processing and of the data collected by the survey.
+  This service collects all KPI metrics calculated by the processing
+service, aggregate the information and provides reports in order to
+ensure the monitoring of the quality of the processing and of the data
+collected by the survey.
+
+
 
 
 
 \paragraph{Telemetry Gateway}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
@@ -461,18 +645,27 @@ Felipe Menanteau \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Telem Gateway - Acronym: TMGSRV ) }
+}\\ \hline
 \end{longtable}
 
-  Telemetry Gateway Service
+  Telemetry Gateway Service This service is implemented by the DMCS, a
+more general system that manages communication from and to the
+Observatory.
 
-This service is implemented by the DMCS, a more general system that manages communication from and to the Observatory.
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+IIP \\ \hline
+\end{longtable}
 
 \subsection{Software Products}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -481,15 +674,19 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Software Products - Acronym: DMSW ) }
+}\\ \hline
 \end{longtable}
 
-  DM operational SW products. This include all SW products implemented by the DM team in order to implement the operational services.
+  DM operational SW products. This include all SW products implemented by
+the DM team in order to implement the operational services.
 
 
 \subsubsection{Batch Production Products}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -498,14 +695,18 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Batch Prod SW - Acronym: BPP ) }
+}\\ \hline
 \end{longtable}
 
   SW products to orchestrate the long term data processing.
 
+
 \paragraph{Campaign Management}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -514,18 +715,26 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Campaign Mgmt - Acronym: CMPGN ) }
+}\\ \hline
 \end{longtable}
 
-  This software product orchestrate the run of the science pipeline in a docker.
+  This software product orchestrate the run of the science pipeline in a
+docker. SW still to be written.
 
-SW still to be written.
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+PRODSRV \\ \hline
+\end{longtable}
 
 \paragraph{Workload/ Workflow Management}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -534,18 +743,26 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Workload/flow - Acronym: WLWF ) }
+}\\ \hline
 \end{longtable}
 
-  This software product orchestrate the run of the science pipeline in a docker.
+  This software product orchestrate the run of the science pipeline in a
+docker. SW still to be written.
 
-SW still to be written.
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+PRODSRV \\ \hline
+\end{longtable}
 
 \subsubsection{Backbone SW Products}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -554,14 +771,18 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DBB SW - Acronym: DBB ) }
+}\\ \hline
 \end{longtable}
 
   Software products that implement the Data Backbone services
 
+
 \paragraph{DBB Lifetime Management SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -570,18 +791,26 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DBB Lifetime SW - Acronym: DBBLIFE ) }
+}\\ \hline
 \end{longtable}
 
-  This software product will implemented the management of the data in the sciences storage.
+  This software product will implemented the management of the data in the
+sciences storage. SW still to be written.
 
-SW still to be written.
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+DBBLIFESRV \\ \hline
+\end{longtable}
 
 \paragraph{DBB Ingest/ Metadata Management SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -590,23 +819,32 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DBB Meta SW - Acronym: DBBMD ) }
+}\\ \hline
 \end{longtable}
 
-  Listener in the Endpoint Data Backbone Enclave to provide ingestion services from the Facilities enclaves to the backbone.
+  Listener in the Endpoint Data Backbone Enclave to provide ingestion
+services from the Facilities enclaves to the backbone. Software to be
+written.
 
-Software to be written.
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-dbb\_gwclient \\ \hline
-dbb\_gateway \\ \hline
+\href{https://github.com/lsst/dbb_gwclient}{dbb\_gwclient}\\ \hline
+\href{https://github.com/lsst/dbb_gateway}{dbb\_gateway}\\ \hline
 \end{longtable}
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+DBBMDSRV \\ \hline
+\end{longtable}
 
 \paragraph{DBB Transport/ Replication/ Backup SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -615,18 +853,28 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DBB Transport SW - Acronym: DBBTR ) }
+}\\ \hline
 \end{longtable}
 
-  This software products will be used in the services to replicate data from different facilities and to send it to tape for long time preservation.
+  This software products will be used in the services to replicate data
+from different facilities and to send it to tape for long time
+preservation. Software still to be writte.
 
-Software still to be writte.
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+DBBSTRSRV \\ \hline
+DBBTRSRV \\ \hline
+\end{longtable}
 
 \subsubsection{LSP SW Products}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
@@ -635,14 +883,18 @@ Gregory Dubois-Felsmann \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: LSP SW - Acronym: LSP ) }
+}\\ \hline
 \end{longtable}
 
   Software products that implement the LSP services.
 
+
 \paragraph{LSP JupyterLab SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Frossie Economou &
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
@@ -651,20 +903,25 @@ Simon Krughoff \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SQuaRE \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: LSP JL SW - Acronym: LSPJL ) }
+}\\ \hline
 \end{longtable}
 
   LSP Jupiter Notebook Product
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-jupyterlab* \\ \hline
+\href{https://github.com/lsst/jupyterlab*}{jupyterlab*}\\ \hline
 \end{longtable}
+
 
 
 \paragraph{LSP Web API SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
 \begin{tabular}{@{}l@{}}
 Colin Slater \\
@@ -673,13 +930,17 @@ Colin Slater \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: LSP Web SW - Acronym: LSPWEB ) }
+}\\ \hline
 \end{longtable}
 
   LSP Web API Product
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-dax\_webserv \\ \hline
+\href{https://github.com/lsst/dax_webserv}{dax\_webserv}\\ \hline
 \end{longtable}
 
 \begin{longtable}{c}\hline
@@ -687,10 +948,11 @@ dax\_webserv \\ \hline
 \href{https://github.com/lsst/dax_webserv}{https://github.com/lsst/dax\_webserv}  \\ \hline
 \end{longtable}
 
+
 \paragraph{SUIT}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Xiuqin Wu &
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
@@ -701,20 +963,32 @@ Gregory Dubois-Felsmann \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SUIT \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: SUIT - Acronym: SUIT ) }
+}\\ \hline
 \end{longtable}
 
-  Implements LSST Portal Aspect-specific behaviors added to the core Firefly library.  Defines the Portal web application.  Primarily JavaScript but also contains Java extensions (search processors) to the Firefly server side.	
+  Implements LSST Portal Aspect-specific behaviors added to the core
+Firefly library. Defines the Portal web application. Primarily
+JavaScript but also contains Java extensions (search processors) to the
+Firefly server side.
+
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-suit \\ \hline
+\href{https://github.com/lsst/suit}{suit}\\ \hline
 \end{longtable}
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+FIREFLY \\ \hline
+\end{longtable}
 
 \paragraph{Suit Online Help}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Xiuqin Wu &
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
@@ -723,20 +997,31 @@ Gregory Dubois-Felsmann \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SUIT \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: SUIT OnlineHelp - Acronym: SUITOH ) }
+}\\ \hline
 \end{longtable}
 
-  Contains help content, as HTML, and a small amount of GWT GUI code to implement a help application that provides a navigation sidebar for the HTML content.	
+  Contains help content, as HTML, and a small amount of GWT GUI code to
+implement a help application that provides a navigation sidebar for the
+HTML content.
+
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-suit-onlinehelp \\ \hline
+\href{https://github.com/lsst/suit-onlinehelp}{suit-onlinehelp}\\ \hline
 \end{longtable}
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+LSPPRTLSRV \\ \hline
+\end{longtable}
 
 \subsubsection{Prompt SW Products}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -745,14 +1030,18 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Prompt SW - Acronym: PR ) }
+}\\ \hline
 \end{longtable}
 
   SW products that implements the DM Prompt Services.
 
+
 \paragraph{Alert Distribution SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
 \begin{tabular}{@{}l@{}}
 Eric Bellm \\
@@ -761,6 +1050,9 @@ Eric Bellm \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 AP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Alert Distrib SW - Acronym: ALRTDSTR ) }
+}\\ \hline
 \end{longtable}
 
   SW product for alert distribution and filtering.
@@ -768,7 +1060,7 @@ AP \\
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-alert\_stream \\ \hline
+\href{https://github.com/lsst/alert_stream}{alert\_stream}\\ \hline
 \end{longtable}
 
 \begin{longtable}{c}\hline
@@ -776,10 +1068,15 @@ alert\_stream \\ \hline
 \href{https://github.com/lsst-dm/alert_stream}{https://github.com/lsst-dm/alert\_stream}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+ALRTDSTSRV \\ \hline
+\end{longtable}
+
 \paragraph{EFD Transformation}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
@@ -788,20 +1085,26 @@ Simon Krughoff \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: EFD Transform - Acronym: EFDT ) }
+}\\ \hline
 \end{longtable}
 
-  This SW is the one used for Image and EFD Archiving in the Archive services.
-(EFD Extract-Tranform-Load)
+  This SW is the one used for Image and EFD Archiving in the Archive
+services. (EFD Extract-Tranform-Load) Software still to be implemented.
 
 
-Software still to be implemented.
 
 
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+ARCSRV \\ \hline
+\end{longtable}
 
 \paragraph{Header Service SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
@@ -810,15 +1113,18 @@ Felipe Menanteau \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Header Srv SW - Acronym: HEADER ) }
+}\\ \hline
 \end{longtable}
 
-  This software product is developed by DM but is inteded to be used by external users.
+  This software product is developed by DM but is inteded to be used by
+external users. It is developed at University of Illinois (Urbana)
 
-It is developed at University of Illinois (Urbana)
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-HeaderService \\ \hline
+\href{https://github.com/lsst/HeaderService}{HeaderService}\\ \hline
 \end{longtable}
 
 \begin{longtable}{c}\hline
@@ -826,10 +1132,11 @@ HeaderService \\ \hline
 \href{https://github.com/lsst-dm/HeaderService}{https://github.com/lsst-dm/HeaderService}  \\ \hline
 \end{longtable}
 
+
 \paragraph{Image Ingest and Processing}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
@@ -838,13 +1145,17 @@ Felipe Menanteau \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Image Ingest SW - Acronym: IIP ) }
+}\\ \hline
 \end{longtable}
 
   Image ingest and processing SW product
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-ctrl\_iip \\ \hline
+\href{https://github.com/lsst/ctrl_iip}{ctrl\_iip}\\ \hline
 \end{longtable}
 
 \begin{longtable}{c}\hline
@@ -852,10 +1163,17 @@ ctrl\_iip \\ \hline
 \href{https://github.com/lsst/ctrl_iip}{https://github.com/lsst/ctrl\_iip}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+PRPINGSRV \\ \hline
+ARCSRV \\ \hline
+TMGSRV \\ \hline
+\end{longtable}
+
 \paragraph{Planned Observation Publication SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
@@ -864,19 +1182,25 @@ Felipe Menanteau \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Plan Obs Pub SW - Acronym: OBSPUB ) }
+}\\ \hline
 \end{longtable}
 
-  Pointing Prediction Publishing SW products
-
-Software Still to be written
+  Pointing Prediction Publishing SW products Software Still to be written
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+POPSRV \\ \hline
+\end{longtable}
 
 \paragraph{OCS Batch SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
@@ -885,20 +1209,25 @@ Felipe Menanteau \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: OCS Batch SW - Acronym: OCSBAT ) }
+}\\ \hline
 \end{longtable}
 
-  Batch commandable SAL component.
-
-SW to be written.
+  Batch commandable SAL component. SW to be written.
 
 
 
 
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+OCSBATSRV \\ \hline
+\end{longtable}
 
 \paragraph{Observatory Operations Data Service SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -907,18 +1236,25 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Obs Ops Data SW - Acronym: OODS ) }
+}\\ \hline
 \end{longtable}
 
-  SW Product to use in the OODS service.
-
-Still to be written
+  SW Product to use in the OODS service. Still to be written
 
 
+
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+OODSSRV \\ \hline
+\end{longtable}
 
 \subsubsection{Science Pipeline SW Products}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Robert Lupton \\
@@ -927,14 +1263,18 @@ Robert Lupton \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Sci Pipelines SW - Acronym: PRODN ) }
+}\\ \hline
 \end{longtable}
 
   DM Software products that implements the Science Pipelines payloads.
 
+
 \paragraph{Alert Production}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
 \begin{tabular}{@{}l@{}}
 Eric Bellm \\
@@ -943,20 +1283,25 @@ Eric Bellm \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 AP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Alert Prod SW - Acronym: APPRMPT ) }
+}\\ \hline
 \end{longtable}
 
   
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-spl\_ap \\ \hline
+\href{https://github.com/lsst/spl_ap}{spl\_ap}\\ \hline
 \end{longtable}
+
 
 
 \paragraph{Calibration SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
 \begin{tabular}{@{}l@{}}
 Robert Lupton \\
@@ -965,20 +1310,25 @@ Robert Lupton \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Calibration SW - Acronym: DMCAL ) }
+}\\ \hline
 \end{longtable}
 
   
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-spl\_calibration \\ \hline
+\href{https://github.com/lsst/spl_calibration}{spl\_calibration}\\ \hline
 \end{longtable}
+
 
 
 \paragraph{Data Release Production}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Yusra AlSayyad &
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
@@ -987,20 +1337,25 @@ Jim Bosch \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DR Prod SW - Acronym: DRP ) }
+}\\ \hline
 \end{longtable}
 
   
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-spl\_drp \\ \hline
+\href{https://github.com/lsst/spl_drp}{spl\_drp}\\ \hline
 \end{longtable}
+
 
 
 \paragraph{MOPS and Forced Photometry}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
 \begin{tabular}{@{}l@{}}
 Eric Bellm \\
@@ -1009,20 +1364,25 @@ Eric Bellm \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 AP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: MOPS SW - Acronym: MOPS ) }
+}\\ \hline
 \end{longtable}
 
   
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-mops\_daymops \\ \hline
+\href{https://github.com/lsst/mops_daymops}{mops\_daymops}\\ \hline
 \end{longtable}
+
 
 
 \paragraph{Special Programs Productions}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
 \begin{tabular}{@{}l@{}}
 Melissa Graham \\
@@ -1033,16 +1393,21 @@ Melissa Graham \\
 AP \\
 DRP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Spec Prog SW - Acronym: SP ) }
+}\\ \hline
 \end{longtable}
 
   
+
+
 
 
 
 \paragraph{Science Pipelines Distribution}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
 \begin{tabular}{@{}l@{}}
 Robert Lupton \\
@@ -1051,20 +1416,25 @@ Robert Lupton \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Science P. Dist. - Acronym: SPDIST ) }
+}\\ \hline
 \end{longtable}
 
   
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-lsst\_distrib \\ \hline
+\href{https://github.com/lsst/lsst_distrib}{lsst\_distrib}\\ \hline
 \end{longtable}
+
 
 
 \paragraph{Science Plugins}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
 \begin{tabular}{@{}l@{}}
 Robert Lupton \\
@@ -1073,24 +1443,29 @@ Robert Lupton \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Science Plugins - Acronym: SPLUG ) }
+}\\ \hline
 \end{longtable}
 
-  This software product includes all Science Pipelines plugin packages.
+  This software product includes all Science Pipelines plugin packages. A
+top level meta-package need to be defined, and all corresponding plugins
+shall to be a dependency in it. Definition: a plugin is any piece of
+software that meets a well-defined interface standard and can be
+configured in or out of the processing by the user.
 
-A top level meta-package need to be defined, and all corresponding plugins shall to be a dependency in it.
-
-Definition: a plugin is any piece of software that meets a well-defined interface standard and can be configured in or out of the processing by the user.
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-spl\_plugins \\ \hline
+\href{https://github.com/lsst/spl_plugins}{spl\_plugins}\\ \hline
 \end{longtable}
+
 
 
 \paragraph{Template Generation}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Yusra AlSayyad &
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
@@ -1099,16 +1474,21 @@ Jim Bosch \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Tmpl Gen SW - Acronym: TMPLGEN ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+
 \subsubsection{Quality Control Products}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
@@ -1117,14 +1497,18 @@ Simon Krughoff \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: QC Products - Acronym: QC ) }
+}\\ \hline
 \end{longtable}
 
   SW products for quality control
 
+
 \paragraph{Quality Control SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Frossie Economou &
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
@@ -1133,17 +1517,22 @@ Simon Krughoff \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SQuaRE \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Quality Ctrl SW - Acronym: QCSW ) }
+}\\ \hline
 \end{longtable}
 
-  This software product is used to instantiate the quality control services.
+  This software product is used to instantiate the quality control
+services.
+
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-validate\_base \\ \hline
-verify \\ \hline
-squash-* \\ \hline
-verify\_metrics \\ \hline
-validate\_drp \\ \hline
+\href{https://github.com/lsst/validate_base}{validate\_base}\\ \hline
+\href{https://github.com/lsst/verify}{verify}\\ \hline
+\href{https://github.com/lsst/squash-*}{squash-*}\\ \hline
+\href{https://github.com/lsst/verify_metrics}{verify\_metrics}\\ \hline
+\href{https://github.com/lsst/validate_drp}{validate\_drp}\\ \hline
 \end{longtable}
 
 \begin{longtable}{c}\hline
@@ -1152,10 +1541,15 @@ validate\_drp \\ \hline
 \href{https://github.com/lsst/verify}{https://github.com/lsst/verify}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+OFFLQCSRV \\ \hline
+\end{longtable}
+
 \subsubsection{Supporting SW Products}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -1164,14 +1558,19 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Supporting SW - Acronym: SUPPSW ) }
+}\\ \hline
 \end{longtable}
 
-  DM software products used as libraries and shared between different SW products previously described.
+  DM software products used as libraries and shared between different SW
+products previously described.
+
 
 \paragraph{ADQL Translator}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
 \begin{tabular}{@{}l@{}}
 Colin Slater \\
@@ -1180,15 +1579,17 @@ Colin Slater \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: ADQL Translator - Acronym: ADQL ) }
+}\\ \hline
 \end{longtable}
 
   DAX Query Services in Kotlin
 
 
-
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-albuquery \\ \hline
+\href{https://github.com/lsst/albuquery}{albuquery}\\ \hline
 \end{longtable}
 
 \begin{longtable}{c}\hline
@@ -1196,10 +1597,11 @@ albuquery \\ \hline
 \href{https://github.com/lsst/albuquery}{https://github.com/lsst/albuquery}  \\ \hline
 \end{longtable}
 
+
 \paragraph{Data Butler}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
@@ -1208,20 +1610,25 @@ Jim Bosch \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Data Butler - Acronym: BUTLER ) }
+}\\ \hline
 \end{longtable}
 
   Butler/SuperTask middleware software product.
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-daf\_butler \\ \hline
+\href{https://github.com/lsst/daf_butler}{daf\_butler}\\ \hline
 \end{longtable}
+
 
 
 \paragraph{Image/ Cutout Server}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
 \begin{tabular}{@{}l@{}}
 Colin Slater \\
@@ -1230,13 +1637,17 @@ Colin Slater \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Image Server - Acronym: DAXIMG ) }
+}\\ \hline
 \end{longtable}
 
   Web Interface for LSST Image Services software product
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-dax\_imgserv \\ \hline
+\href{https://github.com/lsst/dax_imgserv}{dax\_imgserv}\\ \hline
 \end{longtable}
 
 \begin{longtable}{c}\hline
@@ -1244,10 +1655,11 @@ dax\_imgserv \\ \hline
 \href{https://github.com/lsst/dax_imgserv}{https://github.com/lsst/dax\_imgserv}  \\ \hline
 \end{longtable}
 
+
 \paragraph{Distributed Database}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
 \begin{tabular}{@{}l@{}}
 Colin Slater \\
@@ -1256,18 +1668,21 @@ Colin Slater \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Distrib Database - Acronym: QSERV ) }
+}\\ \hline
 \end{longtable}
 
-  Distributed database software product.
+  Distributed database software product. This is linked to the top level
+package in github.
 
-This is linked to the top level package in github.
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-daf\_ingest \\ \hline
-qserv \\ \hline
-scisql \\ \hline
-partition \\ \hline
+\href{https://github.com/lsst/daf_ingest}{daf\_ingest}\\ \hline
+\href{https://github.com/lsst/qserv}{qserv}\\ \hline
+\href{https://github.com/lsst/scisql}{scisql}\\ \hline
+\href{https://github.com/lsst/partition}{partition}\\ \hline
 \end{longtable}
 
 \begin{longtable}{c}\hline
@@ -1275,10 +1690,11 @@ partition \\ \hline
 \href{https://github.com/lsst-sqre/qserv}{https://github.com/lsst-sqre/qserv}  \\ \hline
 \end{longtable}
 
+
 \paragraph{Science Pipelines Libraries}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
@@ -1289,6 +1705,9 @@ Jim Bosch \\
 DRP \\
 AP \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Sci Pipelines Libs - Acronym: SCIPIPE ) }
+}\\ \hline
 \end{longtable}
 
   Science Pipeline Top Level Software product.
@@ -1296,7 +1715,7 @@ AP \\
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-lsst\_apps \\ \hline
+\href{https://github.com/lsst/lsst_apps}{lsst\_apps}\\ \hline
 \end{longtable}
 
 \begin{longtable}{c}\hline
@@ -1304,10 +1723,11 @@ lsst\_apps \\ \hline
 \href{https://github.com/lsst/lsst_distrib}{https://github.com/lsst/lsst\_distrib}  \\ \hline
 \end{longtable}
 
+
 \paragraph{Task Framework}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
@@ -1316,20 +1736,25 @@ Jim Bosch \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Task Framework - Acronym: TXF ) }
+}\\ \hline
 \end{longtable}
 
   Butler/SuperTask middleware software product.
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-pipe\_supertask \\ \hline
+\href{https://github.com/lsst/pipe_supertask}{pipe\_supertask}\\ \hline
 \end{longtable}
+
 
 
 \subsection{Hardware and COTS SW}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -1338,6 +1763,9 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: HW and COTS SW - Acronym: HWCOTS ) }
+}\\ \hline
 \end{longtable}
 
   DM hardware and COTS products.
@@ -1346,7 +1774,7 @@ Multiple \\
 \subsubsection{COTS}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -1355,16 +1783,18 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: COTS SW - Acronym: COTS ) }
+}\\ \hline
 \end{longtable}
 
   This includes all COTS used to implement the DM services.
 
 
-
 \paragraph{CILogon}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1373,9 +1803,14 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: CILogon - Acronym: CILOGON ) }
+}\\ \hline
 \end{longtable}
 
-  CILogon provides an integrated open source identity and access management platform for research collaborations.
+  CILogon provides an integrated open source identity and access
+management platform for research collaborations.
+
 
 
 \begin{longtable}{c}\hline
@@ -1383,10 +1818,11 @@ Multiple \\
 \href{http://www.cilogon.org/}{http://www.cilogon.org/}  \\ \hline
 \end{longtable}
 
+
 \paragraph{Docker}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1395,9 +1831,14 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Docker - Acronym: DOCKER ) }
+}\\ \hline
 \end{longtable}
 
-  3rd party software product used to perform operating system level virtualizations.
+  3rd party software product used to perform operating system level
+virtualizations.
+
 
 
 \begin{longtable}{c}\hline
@@ -1405,10 +1846,15 @@ Multiple \\
 \href{https://www.docker.com/}{https://www.docker.com/}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+CAM \\ \hline
+\end{longtable}
+
 \paragraph{GPFS}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1417,9 +1863,14 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: GPFS - Acronym: GPFS ) }
+}\\ \hline
 \end{longtable}
 
-  The General Parallel File System (GPFS) is a high-performance clustered file system developed by IBM.
+  The General Parallel File System (GPFS) is a high-performance clustered
+file system developed by IBM.
+
 
 
 \begin{longtable}{c}\hline
@@ -1427,10 +1878,11 @@ Multiple \\
 \href{https://en.wikipedia.org/wiki/IBM_General_Parallel_File_System}{https://en.wikipedia.org/wiki/IBM\_General\_Parallel\_File\_System}  \\ \hline
 \end{longtable}
 
+
 \paragraph{Grafana}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1439,9 +1891,13 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Grafana - Acronym: GRAFANA ) }
+}\\ \hline
 \end{longtable}
 
   3rd party software product for analytics and monitoring
+
 
 
 \begin{longtable}{c}\hline
@@ -1449,10 +1905,11 @@ Multiple \\
 \href{https://grafana.com/}{https://grafana.com/}  \\ \hline
 \end{longtable}
 
+
 \paragraph{HTCondor}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1461,9 +1918,15 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: HTCondor - Acronym: HTCONDOR ) }
+}\\ \hline
 \end{longtable}
 
-  HTCondor is an open-source high-throughput computing software framework for coarse-grained distributed parallelization of computationally intensive tasks.
+  HTCondor is an open-source high-throughput computing software framework
+for coarse-grained distributed parallelization of computationally
+intensive tasks.
+
 
 
 \begin{longtable}{c}\hline
@@ -1472,10 +1935,15 @@ Multiple \\
 \href{https://github.com/htcondor}{https://github.com/htcondor}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+PRODSRV \\ \hline
+\end{longtable}
+
 \paragraph{Kubernetes}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1484,9 +1952,14 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Kubernetes - Acronym: K8S ) }
+}\\ \hline
 \end{longtable}
 
-  Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.
+  Kubernetes is an open-source system for automating deployment, scaling,
+and management of containerized applications.
+
 
 
 \begin{longtable}{c}\hline
@@ -1494,10 +1967,11 @@ Multiple \\
 \href{https://kubernetes.io/}{https://kubernetes.io/}  \\ \hline
 \end{longtable}
 
+
 \paragraph{Oracle}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1506,9 +1980,13 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Oracle - Acronym: ORACLE ) }
+}\\ \hline
 \end{longtable}
 
   Oracle Relational Database 3rd party software product.
+
 
 
 \begin{longtable}{c}\hline
@@ -1516,10 +1994,11 @@ Multiple \\
 \href{https://www.oracle.com/index.html}{https://www.oracle.com/index.html}  \\ \hline
 \end{longtable}
 
+
 \paragraph{Puppet}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1528,9 +2007,13 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Puppet - Acronym: PUPPET ) }
+}\\ \hline
 \end{longtable}
 
   Puppet is an open-source software configuration management tool.
+
 
 
 \begin{longtable}{c}\hline
@@ -1539,10 +2022,11 @@ Multiple \\
 \href{https://puppet.com/}{https://puppet.com/}  \\ \hline
 \end{longtable}
 
+
 \paragraph{IT Security SW}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1551,16 +2035,21 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: IT Security - Acronym: SECURITY ) }
+}\\ \hline
 \end{longtable}
 
   To be identified.
 
 
 
+
+
 \paragraph{vSphere}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1569,9 +2058,13 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: vSphere - Acronym: VSPHERE ) }
+}\\ \hline
 \end{longtable}
 
   Third party software product for virtualization.
+
 
 
 \begin{longtable}{c}\hline
@@ -1579,10 +2072,11 @@ Multiple \\
 \href{https://www.vmware.com/products/vsphere.html}{https://www.vmware.com/products/vsphere.html}  \\ \hline
 \end{longtable}
 
+
 \subsubsection{Compute Nodes}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -1591,16 +2085,21 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Compute Nodes - Acronym: HWCOMP ) }
+}\\ \hline
 \end{longtable}
 
-  Computational elements: workstation and nodes that provide COP and memory to process the data, run services. Secondary hardware parts, like for example racks, re also included in this section.
+  Computational elements: workstation and nodes that provide COP and
+memory to process the data, run services. Secondary hardware parts, like
+for example racks, re also included in this section. Details will be
+added here on a per need base.
 
-Details will be added here on a per need base.
 
 \paragraph{Dell blade 8 cores 16 GB ram}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -1609,16 +2108,22 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Blade (e.g.) - Acronym: DELL8 ) }
+}\\ \hline
 \end{longtable}
 
-  This is just an example of computational element to be included in this package
+  This is just an example of computational element to be included in this
+package
+
+
 
 
 
 \subsubsection{Network Nodes}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -1627,22 +2132,24 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Network Nodes - Acronym: HWNET ) }
+}\\ \hline
 \end{longtable}
 
-  The network components to be purchased in order to implement local and long distance networks.
+  The network components to be purchased in order to implement local and
+long distance networks. The intension is to keep the scope of this
+component very high level without detailing the different bit and pieces
+in which it can be decomposed. However, in case more details are
+required, they should be related to hardware required to implement the
+different networks. Some examples are: - cables (coaxial, optic fiber,
+other) - switches Details will be added here on a per need base.
 
-The intension is to keep the scope of this  component very high level without detailing the different bit and pieces in which it can be decomposed.
-
-However, in case more details are required, they should be related to hardware required to implement the different networks. Some examples are:
-- cables (coaxial, optic fiber, other)
-- switches
-
-Details will be added here on a per need base.
 
 \paragraph{Network Component X}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -1651,16 +2158,22 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Router (e.g.) - Acronym: NETX ) }
+}\\ \hline
 \end{longtable}
 
-  This is just an example of what type of elements can be included in this package
+  This is just an example of what type of elements can be included in this
+package
+
+
 
 
 
 \subsubsection{Storage Nodes}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -1669,16 +2182,20 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Storage Nodes - Acronym: HWSTOR ) }
+}\\ \hline
 \end{longtable}
 
-  Storage components to host data. In general are disks, but tape storage for long term archive shall also be included in this area.
+  Storage components to host data. In general are disks, but tape storage
+for long term archive shall also be included in this area. Details will
+be added here on a per need base.
 
-Details will be added here on a per need base.
 
 \paragraph{SAN disk 2TB storage}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -1687,16 +2204,21 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Disk (e.g.) - Acronym: SAN2 ) }
+}\\ \hline
 \end{longtable}
 
   This is just an example of what has to be included in this package
 
 
 
+
+
 \subsubsection{Low Level SW}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -1705,22 +2227,22 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Low Level SW - Acronym: LLSW ) }
+}\\ \hline
 \end{longtable}
 
-  Low level software required by the hardware components to work.
+  Low level software required by the hardware components to work. In
+general these components are provided by the vendor, but in some cases
+it may be required to customize specifically for the project purposes.
+Some examples are: - Firmwares - Operating Systems Details will be added
+here on a per need base.
 
-In general these components are provided by the vendor, but in some cases it may be required to customize specifically for the project purposes.
-
-Some examples are:
-- Firmwares
-- Operating Systems
-
-Details will be added here on a per need base.
 
 \paragraph{RedHat CentOS 7.4}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1729,16 +2251,21 @@ Details will be added here on a per need base.
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: OS (e.g.) - Acronym: CENTOS ) }
+}\\ \hline
 \end{longtable}
 
   
+
+
 
 
 
 \subsubsection{Third Party Libraries}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1747,14 +2274,19 @@ Details will be added here on a per need base.
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Third Party Libs - Acronym: THPL ) }
+}\\ \hline
 \end{longtable}
 
-  External libraries required by the DM SW products in order to compile and to run.
+  External libraries required by the DM SW products in order to compile
+and to run.
+
 
 \paragraph{Boost}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1763,16 +2295,21 @@ Details will be added here on a per need base.
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Boost - Acronym: BOOST ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+
 \paragraph{Firefly API Access}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Xiuqin Wu &
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
@@ -1781,20 +2318,26 @@ Gregory Dubois-Felsmann \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SUIT \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Firefly API A. - Acronym: FFAA ) }
+}\\ \hline
 \end{longtable}
 
-  Provides hooks to allow Firefly's Javascript code to be loaded starting from npm-style package loading	
+  Provides hooks to allow Firefly's Javascript code to be loaded starting
+from npm-style package loading
+
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-Caltech-IPAC/firefly-api-access \\ \hline
+\href{https://github.com/Caltech-IPAC/firefly-api-access}{Caltech-IPAC/firefly-api-access}\\ \hline
 \end{longtable}
+
 
 
 \paragraph{Firefly}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Xiuqin Wu &
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
@@ -1803,13 +2346,17 @@ Gregory Dubois-Felsmann \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SUIT \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Firefly - Acronym: FIREFLY ) }
+}\\ \hline
 \end{longtable}
 
   IPAC's Advanced Astronomy WEB UI Framework.
 
+
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-Caltech-IPAC/firefly \\ \hline
+\href{https://github.com/Caltech-IPAC/firefly}{Caltech-IPAC/firefly}\\ \hline
 \end{longtable}
 
 \begin{longtable}{c}\hline
@@ -1818,10 +2365,15 @@ Caltech-IPAC/firefly \\ \hline
 \href{https://github.com/Caltech-IPAC/firefly}{https://github.com/Caltech-IPAC/firefly}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+SUIT \\ \hline
+\end{longtable}
+
 \paragraph{Python}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -1830,16 +2382,21 @@ Caltech-IPAC/firefly \\ \hline
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Python - Acronym: PTH ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+
 \subsection{Infrastructure}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -1848,14 +2405,18 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Infrastructure - Acronym: INFRA ) }
+}\\ \hline
 \end{longtable}
 
   DM infrastructural products.
 
+
 \subsubsection{Enclaves}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -1864,14 +2425,18 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Enclaves - Acronym: ENC ) }
+}\\ \hline
 \end{longtable}
 
   Logical group of DM Services.
 
+
 \paragraph{Archive Base Enclave}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -1880,16 +2445,33 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Arch Base Encl - Acronym: ENCARCB ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+DBBLIFESRV \\ \hline
+DBBSTRSRV \\ \hline
+DBBMDSRV \\ \hline
+DBBLIFESRV \\ \hline
+DBBMDSRV \\ \hline
+DBBSTRSRV \\ \hline
+DBBTRSRV \\ \hline
+DBBTRSRV \\ \hline
+DBBLIFESRV \\ \hline
+\end{longtable}
+
 \paragraph{Archive NCSA Enclave}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -1898,16 +2480,36 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Arch NCSA Encl - Acronym: ENCARCN ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+DBBLIFESRV \\ \hline
+DBBTRSRV \\ \hline
+DBBLIFESRV \\ \hline
+DBBSTRSRV \\ \hline
+DBBMDSRV \\ \hline
+DBBLIFESRV \\ \hline
+DBBTRSRV \\ \hline
+DBBMDSRV \\ \hline
+DBBTRSRV \\ \hline
+DBBSTRSRV \\ \hline
+DBBLIFESRV \\ \hline
+DBBMDSRV \\ \hline
+\end{longtable}
+
 \paragraph{Commissioning Cluster Enclave}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
@@ -1916,16 +2518,27 @@ Simon Krughoff \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Comm Clust Encl - Acronym: ENCCOMM ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+LSPWEBSRV \\ \hline
+LSPPRTLSRV \\ \hline
+LSPJLSRV \\ \hline
+\end{longtable}
+
 \paragraph{DAC Chile Enclave}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -1934,16 +2547,28 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DAC Chile Encl - Acronym: ENCDACC ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
+
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+LSPWEBSRV \\ \hline
+LSPPRTLSRV \\ \hline
+ENCARCB \\ \hline
+LSPJLSRV \\ \hline
+\end{longtable}
 
 \paragraph{DAC US Enclave}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -1952,16 +2577,27 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: DAC US Encl - Acronym: ENCDACU ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
+
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+LSPWEBSRV \\ \hline
+LSPJLSRV \\ \hline
+LSPPRTLSRV \\ \hline
+\end{longtable}
 
 \paragraph{Offline Production Enclave}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -1970,16 +2606,27 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Offline Prod Encl - Acronym: ENCOFFL ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+OFFLQCSRV \\ \hline
+BULKDSRV \\ \hline
+PRODSRV \\ \hline
+\end{longtable}
+
 \paragraph{Prompt Base Enclave}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -1988,16 +2635,31 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Prmpt Base Encl - Acronym: ENCPRB ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+FACBASE \\ \hline
+ARCSRV \\ \hline
+OCSBATSRV \\ \hline
+OODSSRV \\ \hline
+PRPINGSRV \\ \hline
+TMGSRV \\ \hline
+POPSRV \\ \hline
+\end{longtable}
+
 \paragraph{Prompt NCSA Enclave}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -2006,16 +2668,29 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Prmpt NCSA Encl - Acronym: ENCPRN ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+PRPINGSRV \\ \hline
+PRPRSRV \\ \hline
+OFFLQCSRV \\ \hline
+ALRTDSTSRV \\ \hline
+PRQCSRV \\ \hline
+\end{longtable}
+
 \subsubsection{Facilities}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -2024,14 +2699,18 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Facilities - Acronym: FAC ) }
+}\\ \hline
 \end{longtable}
 
   Physical facilities where operational DM activities take place.
 
+
 \paragraph{Base Facility}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Jeff Kantor &
 \begin{tabular}{@{}l@{}}
 Jeff Kantor \\
@@ -2041,16 +2720,28 @@ Jeff Kantor \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 Net/Base \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Base Facility - Acronym: FACBASE ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+ENCDACC \\ \hline
+ENCARCB \\ \hline
+ENCPRB \\ \hline
+ENCCOMM \\ \hline
+\end{longtable}
+
 \paragraph{NCSA Facility}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -2059,16 +2750,29 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: NCSA Facility - Acronym: FACNCSA ) }
+}\\ \hline
 \end{longtable}
 
   
 
 
 
+
+\begin{longtable}{c}\hline
+\textbf{Product Dependencies} \\ \hline
+ENCDACU \\ \hline
+ENCARCN \\ \hline
+ENCOFFL \\ \hline
+ENCARCN \\ \hline
+ENCPRN \\ \hline
+\end{longtable}
+
 \subsubsection{Networks}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
 Multiple \\
@@ -2077,14 +2781,18 @@ Multiple \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Networks - Acronym: NET ) }
+}\\ \hline
 \end{longtable}
 
   High level physical DM networks definition.
 
+
 \paragraph{Base to Archive Network}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Jeff Kantor &
 \begin{tabular}{@{}l@{}}
 Jeff Kantor \\
@@ -2093,18 +2801,21 @@ Jeff Kantor \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 Net/Base \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Base/Arch Net - Acronym: NETBA ) }
+}\\ \hline
 \end{longtable}
 
-  Santiago - Boca Raton Spectrum
+  Santiago - Boca Raton Spectrum Is this a network? Or a component used?
 
-Is this a network? Or a component used?
+
 
 
 
 \paragraph{Base LAN Network}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -2113,16 +2824,21 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Base LAN - Acronym: NETBASE ) }
+}\\ \hline
 \end{longtable}
 
   Base Local Area Network
 
 
 
+
+
 \paragraph{Network Management}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Jeff Kantor &
 \begin{tabular}{@{}l@{}}
 Jeff Kantor \\
@@ -2131,18 +2847,22 @@ Jeff Kantor \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 Net/Base \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Net Mgmt - Acronym: NETMGMT ) }
+}\\ \hline
 \end{longtable}
 
-  Network Management
+  Network Management Not really a network. Should be part of the
+Management section
 
-Not really a network. Should be part of the Management section
+
 
 
 
 \paragraph{NCSA LAN Network}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
@@ -2151,18 +2871,21 @@ Michelle Butler \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: NCSA LAN - Acronym: NETNCSA ) }
+}\\ \hline
 \end{longtable}
 
-  Santiago - Boca Raton Spectrum
+  Santiago - Boca Raton Spectrum Is this a network? Or a component used?
 
-Is this a network? Or a component used?
+
 
 
 
 \paragraph{Summit to Base Network}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Jeff Kantor &
 \begin{tabular}{@{}l@{}}
 Jeff Kantor \\
@@ -2171,6 +2894,9 @@ Jeff Kantor \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 Net/Base \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Sum/Base Net - Acronym: NETSB ) }
+}\\ \hline
 \end{longtable}
 
   La Serena - AURA Gatehouse Network
@@ -2178,10 +2904,11 @@ Net/Base \\
 
 
 
+
 \subsection{Reference Data}
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -2190,15 +2917,19 @@ Net/Base \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Ref Data - Acronym: REFD ) }
+}\\ \hline
 \end{longtable}
 
   DM reference datasets to be used during operations.
 
 
+
 \paragraph{Atronomy Net Data}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -2207,9 +2938,13 @@ Net/Base \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Astro Net Data - Acronym: AND ) }
+}\\ \hline
 \end{longtable}
 
   
+
 
 
 \begin{longtable}{c}\hline
@@ -2223,7 +2958,7 @@ astronomy\_net\_data \\ \hline
 \paragraph{Gaia Data}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Teams} \\ \hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
 \begin{tabular}{@{}l@{}}
  \\
@@ -2232,9 +2967,13 @@ astronomy\_net\_data \\ \hline
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Gaia Data - Acronym: GDATA ) }
+}\\ \hline
 \end{longtable}
 
   
+
 
 
 
