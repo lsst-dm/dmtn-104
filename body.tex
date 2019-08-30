@@ -8,12 +8,42 @@ The objective is to provide a clear picture on the DM management products, inclu
 
 Following definitions are relevant for this document.
 
+\subsubsection{Product} \label{sec:product}
+
+A product is a component of the DM product tree, that contribute to sattisfy the DM requirements.
+
+Each product is characterize by:
+
 \begin{itemize}
-\item product
-\item identification
-\item owner
-\item manager
+\item \textbf{Name}: it is the main identification of the product. In some cases a \textit{short name} can be provided for documentation purposes.
+\item \textbf{Unique Key}: it is a unique string mainly for programmatical usage. The product manager/owner can provide one, or it will be assigned by the Architecture team.
+\item \textbf{Owner}: who is responsible for the quality and acceptance of a particular product (\citeds{LDM-294} \S6.6).
+\item \textbf{Manager}: {T/CAM} who has managerial and financial responsibility for the engineering teams within DM (\citeds{LDM-294} \S6.14.1).
+\item \textbf{WBS}: the WBS identification.
+\item \textbf{Team}: the team in wich the product is developed.
+\item \textbf{Description}: it provides a short over view of the product purpose.
 \end{itemize}
+
+Each product is included in the product tree following a type categorization (see nect \ref{sec:ptree}).
+
+It should also be possible to specify for each product, which are the other products that are implementing it, and in which other products it is used for their implementation.
+
+
+\subsubsection{Software Product} \label{sec:swproduct}
+
+Please refer to \citeds{DMTN-106} section \$2 for the Software Product definition.
+
+
+\subsubsection{Product Tree} \label{sec:ptree}
+
+The product tree is the rappresentation of the DM products, categorized per type and grouped per similar application.
+
+
+\subsubsection{Dependencies} \label{sec:dependencies}
+
+The dependencies listed in this document are functional dependencies.
+The aim is to provide, for each product, the list of other products needed for its implementation or execution. 
+
 
 \subsection{Applicable Documents}
 
