@@ -23,7 +23,7 @@ Code for generation Product Tree document from MagicDraw
 """
 import requests
 from .config import Config
-from .util import get_pkg_properties, mdTree, headers, rsget, fix_tex, fix_id_tex, Product, html_to_latex
+from .util import get_pkg_properties, mdTree, rsget, fix_tex, fix_id_tex, Product, html_to_latex
 
 
 def get_dep_key(rcs, mres, mdid):
@@ -50,6 +50,11 @@ def get_dep_key(rcs, mres, mdid):
 
 def get_pkg_key(rcs, mres, mdid):
     resp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=mdid), True)
+
+    dependency = dict()
+
+    dependency['name'] = fix_tex(resp[1]['kerml:name']).lstrip('0123456789.- ')
+
     pkg_properties = dict()
 
     for el in resp[0]['ldp:contains']:
@@ -61,9 +66,15 @@ def get_pkg_key(rcs, mres, mdid):
             continue
 
     if "product key" in pkg_properties.keys():
-        return pkg_properties['product key'][0]
+        dependency["key"] = pkg_properties['product key'][0]
     else:
-        return ""
+        dependency["key"] = ""
+    if "short name" in pkg_properties.keys():
+        dependency["shortname"] = pkg_properties['short name'][0]
+    else:
+        dependency["shortname"] = ""
+
+    return dependency
 
 
 def walk_tree(rcs, mres, mdid, pkey):
@@ -124,14 +135,7 @@ def walk_tree(rcs, mres, mdid, pkey):
                     # print(" - dependency ", dep)
                     pkg_depends.append(dep)
 
-
     pkg_id = fix_id_tex(pkg_properties['product key'][0])
-    # print(pkg_id, mdTree.depth())
-    # print(f" {{id}} - {{name}}".format(id=pkg_id, name=pkg_name))
-    # print("comment: ",pkg_comments)
-    # Config.DOC.html = pkg_comments.encode("utf-8")
-    # description = getattr(Config.DOC, Config.TEMPLATE_LANGUAGE).decode("utf-8")
-    # print("description", description)
     prod = Product(pkg_id,                            # 1  (0 is self)
                    pkg_name,                          # 2
                    pkey,                              # 3
@@ -145,7 +149,8 @@ def walk_tree(rcs, mres, mdid, pkey):
                    mdid,                              # 11
                    pkg_properties["hyperlinkText"],   # 12
                    pkg_properties["team"],            # 13
-                   pkg_properties["short name"][0])       # 14
+                   pkg_properties["short name"][0],   # 14
+                   [])                              # 15
     if pkey == "":  # first node in the tree
         mdTree.create_node(prod.id, prod.id, data=prod)
     else:
@@ -166,9 +171,14 @@ def walk_tree(rcs, mres, mdid, pkey):
 #   Build The Tree from MD
 #     mres: MD reference resource (such as DM subproject)
 #     mdid: MD first component to read
-def build_md_tree(mres, mdid):
+def build_md_tree(mres, mdid, connectionId):
     """ Build the tree reading from MD
     """
+    headers = {
+        'accept': 'application/json',
+        'authorization': 'Basic %s' % connectionId,
+        'Connection': 'close'
+    }
 
     rs = requests.Session()
     rs.headers = headers

@@ -38,7 +38,6 @@ class Config:
     TESTRESULTS_URL = f"{ATM_API}/testrun/{{testrun}}/testresults"
     MD_COMP_URL = f"https://twcloud.lsst.org:8111/osmc/resources/{{res}}/elements/{{comp}}"
     PANDOC_TYPE = None
-    CONNECTION_ID = None
     REQID_FIELD = "customfield_12001"
     DOC = pandoc.Document()
     OUTPUT_FORMAT = None

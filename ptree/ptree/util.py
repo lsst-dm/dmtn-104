@@ -41,13 +41,6 @@ trunk = '698d501b-660d-4d7e-8875-c6170ca0f513'
 dmpl = 'a0acbaa6-6625-4ea9-8aec-51931412a29e'  # DM Problem/Logic element server id
 dmcmp = '60706435-6f8e-4b15-823b-06597f1cdada'  # DM Components element server ID
 mdTree = Tree()
-connectionId = b64encode(b"gcomoretto-read:dm-read").decode("ascii")
-headers = {
-    'accept': 'application/json',
-    # 'authorization': 'Basic %s' % Config.CONNECTION_ID,
-    'authorization': 'Basic %s' % connectionId,
-    'Connection': 'close'
-}
 
 
 def cite_docushare_handles(text):
@@ -57,8 +50,8 @@ def cite_docushare_handles(text):
 
 
 class Product(object):
-    def __init__(self, p_id, name, parent, desc, wbs, manager, owner,
-                 kind, pkgs, depends, el_id, links, teams, shortname):
+    def __init__(self, p_id, name, parent, desc, wbs, manager, owner, kind,
+                 pkgs, depends, el_id, links, teams, shortname, usedin):
         self.id = p_id              # 1 key (0 is self)
         self.name = name            # 2
         self.parent = parent        # 3
@@ -73,6 +66,7 @@ class Product(object):
         self.links = links          # 12
         self.teams = teams          # 13
         self.shortname = shortname  # 14
+        self.usedin = usedin        # 15
 
 
 def html_to_latex(string):

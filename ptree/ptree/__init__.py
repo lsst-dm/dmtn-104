@@ -62,19 +62,10 @@ def generate(format, username, password, element_id, inputf):
     OUTPUT_FORMAT = format
 
     usr_pwd = username + ":" + password
-    Config.CONNECTION_ID = b64encode(usr_pwd.encode()).decode("ascii")
-
-    # rs = requests.Session()
-    # rs.headers = headers
-    # ptree = build_mdtree(rs, dms, dmcmp)
-    # print('Products found:', len(ptree))
-    # for c in ptree:
-    #    print(c['name'])
-
-    # init()
+    connectionId = b64encode(usr_pwd.encode("ascii")).decode("ascii")
 
     print(mdTree.depth())
-    build_md_tree(dms, dmcmp)
+    build_md_tree(dms, dmcmp, connectionId)
     # print(mdTree)
     print(mdTree.depth())
     md_products = []
@@ -87,21 +78,27 @@ def generate(format, username, password, element_id, inputf):
         # print(mdTree[n].data.name)
         mdtree_dict[mdTree[n].data.id] = mdTree[n].data
 
-    mdp = mdTree.to_dict(with_data=False)
+    for product in mdtree_dict.keys():
+        dependency = dict()
+        # print(mdtree_dict[product].name)
+        dependency["name"] = mdtree_dict[product].name
+        dependency["key"] = mdtree_dict[product].id
+        dependency["shortname"] = mdtree_dict[product].shortname
+        # print(dependency)
+        for used in mdtree_dict[product].depends:
+            if "key" in used.keys():
+                if used["key"] != "":
+                    # print("    ", used["key"])
+                    if used["key"] in mdtree_dict.keys():
+                        mdtree_dict[used["key"]].usedin.append(dependency)
+                        # print(mdtree_dict[used["key"]].usedin)
 
-    # for k0 in mdp:
-    #    # print(k0, mdtree_dict[k0].name, mdtree_dict[k0].manager, mdtree_dict[k0].owner)
-    #    for child in mdp[k0]['children']:
-    #        for k1 in child:
-    #            # print(" - ", k1, mdtree_dict[k1].name, mdtree_dict[k1].manager, mdtree_dict[k1].owner)
-    #            for subchild in child[k1]['children']:
-    #                if isinstance(subchild, dict):
-    #                    for k2 in subchild:
-    #                        # print("  -- ", k2, mdtree_dict[k2].name, mdtree_dict[k2].manager, mdtree_dict[k2].owner)
-    #                        for sch1 in subchild[k2]['children']:
-    #                            print("    + ", sch1, mdtree_dict[sch1].owner, mdtree_dict[sch1].pkgs)
-    #                else:
-    #                    print("   + ", subchild, mdtree_dict[subchild].owner)
+    # for product in mdtree_dict.keys():
+    #    print(mdtree_dict[product].name)
+    #    print("   --  ", mdtree_dict[product].depends)
+    #    print("   --  ", mdtree_dict[product].usedin)
+
+    mdp = mdTree.to_dict(with_data=False)
 
     file = open("toplevel1.tex", "w")
 

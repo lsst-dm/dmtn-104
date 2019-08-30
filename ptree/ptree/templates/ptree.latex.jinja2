@@ -130,7 +130,14 @@
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
           {% for pkg in mdt_dict[sc].pkgs %}
-{{ pkg|replace("_", "\\_") }} \\ \hline
+            {% set package = pkg|replace("_", "\\_") %}
+            {% set tmplist = pkg.split('/') %}
+            {% if tmplist|length > 1 %}
+              {% set lnk = 'https://github.com/'~pkg %}
+            {% else %}
+              {% set lnk = 'https://github.com/lsst/'~pkg %}
+            {% endif %}
+\href{{ curlies(lnk) }}{{ curlies(package) }}\\ \hline
           {% endfor %}
 \end{longtable}
           {% endif %}
@@ -144,6 +151,23 @@
           {% endfor %}
 \end{longtable}
           {% endif %}
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+          {% if (mdt_dict[sc].depends is defined) and mdt_dict[sc].depends %}
+          {% for pkey in mdt_dict[sc].depends %}
+{{ pkey.name }} ({{ pkey.key }}) \\ \hline
+          {% endfor %}
+          {% endif %}
+&
+          {% if (mdt_dict[sc].usedin is defined) and mdt_dict[sc].usedin %}
+          {% for pkey in mdt_dict[sc].usedin %}
+{{ pkey.name }} ({{ pkey.key }}) \\ \hline
+          {% endfor %}
+          {% endif %}
+\\ \bottomrule
+\end{longtable}
 
 
     {% else %}
@@ -225,14 +249,26 @@
 \end{longtable}
           {% endif %}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
           {% if (mdt_dict[sch1].depends is defined) and mdt_dict[sch1].depends %}
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-          {% for product in mdt_dict[sch1].depends %}
-{{ product }} \\ \hline
+\begin{tabular}{c}
+          {% for pkey in mdt_dict[sch1].depends %}
+{{ pkey.name }} ({{ pkey.key }}) \\ \hline
           {% endfor %}
-\end{longtable}
+\end{tabular}
           {% endif %}
+&
+{#          {% if (mdt_dict[sch1].usedin is defined) and mdt_dict[sch1].usedin %}
+\begin{tabular}{c}
+          {% for pkey in mdt_dict[sch1].usedin %}
+{{ pkey.name }} ({{ pkey.key }}) \\ \hline
+          {% endfor %}
+\end{tabular}
+          {% endif %} #}
+\\ \bottomrule
+\end{longtable}
 
         {% endfor %}
       {% endfor %}
