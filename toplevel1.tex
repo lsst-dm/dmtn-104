@@ -20,7 +20,7 @@ Leanne Guy \\
 
   This is the top level Data Management product. It includes underneath
 all products required in order to satisfy the DM requirements at all
-levels (LSE-61, interface, low level flow down
+levels (LSE-61, interface and low level flow down
 requirements).\\[2\baselineskip]These products are organized in the
 following groups:
 
@@ -38,8 +38,7 @@ following groups:
   data
 \end{itemize}
 
-The components required for development, but not used for operations,
-are not part of this Products Tree.
+~
 
 
 \subsection{Services}
@@ -59,9 +58,23 @@ Leanne Guy \\
 }\\ \hline
 \end{longtable}
 
-  DM operational services. This includes all services required for: - data
-distribution (DBB) - data processing (prompt and offline) - data access
-(LSP)
+  DM operational services. This includes all services required for:
+
+\begin{itemize}
+\tightlist
+\item
+  data distribution (DBB)
+\item
+  data processing (prompt and offline)
+\item
+  data access (LSP)
+\end{itemize}
+
+All services should be characterize by the implementing products and by
+a configuration file (docker) maintained in GitHub.
+
+The configuration file should follow the same development and releases
+processes defined for the DM software products.
 
 
 \subsubsection{Backbone Services}
@@ -81,7 +94,9 @@ Michelle Butler \\
 }\\ \hline
 \end{longtable}
 
-  DM services that implement the backbone infrastructure.
+  The Backbone services supply data to other services.\\
+They are implemented in the Archive enclaves.\\[2\baselineskip]Detailed
+concepts of operations for each service can be found in LDM-230.
 
 
 \paragraph{DBB Lifetime Management}\mbox{}\\
@@ -101,11 +116,22 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  
+  This service is responsible for managing the lifetimes of data products
+within the DBB based on a set of policies. Products may move from
+high-speed storage to near-line or offline storage or may be deleted
+completely. Some products are kept permanently. Some are kept for
+defined time periods as specified in requirements. Intermediates may be
+kept until all downstream products have been generated.
 
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{DBB Ingest/ Metadata Management}\mbox{}\\
 
@@ -124,11 +150,26 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  
+  This service within the Data Backbone is responsible for maintaining and
+providing access to the metadata describing the location,
+characteristics, and provenance of the data products it manages. Part of
+this service involves creating the appropriate metadata during ingest
+when data from external sources is incorporated into the DBB. The Batch
+Production services will generally create the necessary DBB metadata as
+part of their operation, so only a minimal ingest process is needed for
+internally-generated data products. Metadata is kept in a database that
+is a superset of the registry required by the Data Butler, allowing the
+Butler to directly access data within the DBB.
 
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{DBB Storage}\mbox{}\\
 
@@ -147,11 +188,19 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  This service provides archive on Tape for log time data preservation.
+  This service is responsible for storage of data products in the DBB. The
+storage service provides an interface usable by the Data Butler as a
+datastore.
 
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{DBB Transport/ Replication/ Backup}\mbox{}\\
 
@@ -170,11 +219,19 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  Transportation and Replication Service
+  This service is responsible for moving data products from one Facility
+to another and to backup and disaster recovery storage. It handles
+recovery if a data product is found to be missing or corrupt.
 
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \subsubsection{LSP Services}
 
@@ -193,8 +250,23 @@ Gregory Dubois-Felsmann \\
 }\\ \hline
 \end{longtable}
 
-  DM services that permit external users to access the project resources,
-such as data and processing SW.
+  This group of services provide an exploratory analysis environment for
+the end user. These services are usually referred as ``LSP Aspects'':
+
+\begin{itemize}
+\tightlist
+\item
+  LSP Portal Aspect
+\item
+  LSP JupiterLab Aspect
+\item
+  LSP WebAPIs Aspect
+\end{itemize}
+
+These services permit external users access to project resources, such
+as data and processing SW.\\
+
+More details available in LDM-542 and LSE-319.
 
 
 \paragraph{LSP JupyterLab}\mbox{}\\
@@ -214,14 +286,23 @@ SQuaRE \\
 }\\ \hline
 \end{longtable}
 
-  
+  This service provides access to a Python-oriented computational
+environment, hosted at the LSST Data Access Centers. Through a Web-based
+notebook interface, users are able to run Python code in close proximity
+to the LSST data archive, accessing and analyzing the data and
+generating derived data products.
 
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-LSPJL \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+LSP JupyterLab SW (LSPJL) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{LSP Portal}\mbox{}\\
@@ -243,16 +324,21 @@ SUIT \\
 }\\ \hline
 \end{longtable}
 
-  It provides a pre-specified yet flexible discovery, query, and viewing
-tool.
+  This service provides Web-based query and visualization tools for all
+the LSST data products.
 
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-SUIT \\ \hline
-SUITOH \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+SUIT (SUIT) \\ \hline
+Suit Online Help (SUITOH) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{LSP Web API}\mbox{}\\
@@ -272,14 +358,24 @@ DAX \\
 }\\ \hline
 \end{longtable}
 
-  
+  The API Aspect provides remote access to the LSST data, user data, and
+user computing resources, through a set of Web APIs (many based on VO
+standards). The Web APIs will deliver data in community-standard
+formats, including, e.g., VOTable, CSV, and FITS. The same Web APIs are
+used internally in the Portal Aspect, and are also available in the
+Notebook Aspect.
 
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-LSPWEB \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+LSP Web API SW (LSPWEB) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \subsubsection{Offline Services}
@@ -324,6 +420,12 @@ LDF \\
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Offline Quality Control}\mbox{}\\
 
@@ -350,6 +452,12 @@ collected by the survey.
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Batch Production}\mbox{}\\
 
@@ -373,6 +481,12 @@ LDF \\
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \subsubsection{Prompt Services}
 
@@ -416,6 +530,12 @@ AP \\
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Archiving}\mbox{}\\
 
@@ -464,11 +584,16 @@ EFD'' database in the Data Backbone.
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-HEADER \\ \hline
-EFDT \\ \hline
-IIP \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Header Service SW (HEADER) \\ \hline
+EFD Transformation (EFDT) \\ \hline
+Image Ingest and Processing (IIP) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{OCS-Driven Batch}\mbox{}\\
@@ -493,9 +618,14 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-OCSBAT \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+OCS Batch SW (OCSBAT) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Observatory Operations Data}\mbox{}\\
@@ -520,6 +650,12 @@ LDF \\
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Planned Observation Publication}\mbox{}\\
 
@@ -547,9 +683,14 @@ inspection and a web API for usage by automated tools.
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-OBSPUB \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Planned Observation Publication SW (OBSPUB) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Prompt Processing Ingest}\mbox{}\\
@@ -579,9 +720,14 @@ telescope spectrograph.
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-IIP \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Image Ingest and Processing (IIP) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Prompt Processing}\mbox{}\\
@@ -606,6 +752,12 @@ IIP \\ \hline
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Prompt Quality Control}\mbox{}\\
 
@@ -632,6 +784,12 @@ collected by the survey.
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Telemetry Gateway}\mbox{}\\
 
@@ -657,9 +815,14 @@ Observatory.
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-IIP \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Image Ingest and Processing (IIP) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \subsection{Software Products}
@@ -726,9 +889,14 @@ docker. SW still to be written.
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-PRODSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Batch Production (PRODSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Workload/ Workflow Management}\mbox{}\\
@@ -754,9 +922,14 @@ docker. SW still to be written.
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-PRODSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Batch Production (PRODSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \subsubsection{Backbone SW Products}
@@ -802,9 +975,14 @@ sciences storage. SW still to be written.
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-DBBLIFESRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+DBB Lifetime Management (DBBLIFESRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{DBB Ingest/ Metadata Management SW}\mbox{}\\
@@ -836,9 +1014,14 @@ written.
 \end{longtable}
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-DBBMDSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+DBB Ingest/ Metadata Management (DBBMDSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{DBB Transport/ Replication/ Backup SW}\mbox{}\\
@@ -865,10 +1048,15 @@ preservation. Software still to be writte.
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-DBBSTRSRV \\ \hline
-DBBTRSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+DBB Storage (DBBSTRSRV) \\ \hline
+DBB Transport/ Replication/ Backup (DBBTRSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \subsubsection{LSP SW Products}
@@ -917,6 +1105,12 @@ SQuaRE \\
 \end{longtable}
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{LSP Web API SW}\mbox{}\\
 
@@ -948,6 +1142,12 @@ DAX \\
 \href{https://github.com/lsst/dax_webserv}{https://github.com/lsst/dax\_webserv}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{SUIT}\mbox{}\\
 
@@ -980,9 +1180,14 @@ Firefly server side.
 \end{longtable}
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-FIREFLY \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Firefly (FIREFLY) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Suit Online Help}\mbox{}\\
@@ -1013,9 +1218,14 @@ HTML content.
 \end{longtable}
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-LSPPRTLSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+LSP Portal (LSPPRTLSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \subsubsection{Prompt SW Products}
@@ -1068,9 +1278,14 @@ AP \\
 \href{https://github.com/lsst-dm/alert_stream}{https://github.com/lsst-dm/alert\_stream}  \\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-ALRTDSTSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Alert Distribution (ALRTDSTSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{EFD Transformation}\mbox{}\\
@@ -1096,9 +1311,14 @@ services. (EFD Extract-Tranform-Load) Software still to be implemented.
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-ARCSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Archiving (ARCSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Header Service SW}\mbox{}\\
@@ -1132,6 +1352,12 @@ external users. It is developed at University of Illinois (Urbana)
 \href{https://github.com/lsst-dm/HeaderService}{https://github.com/lsst-dm/HeaderService}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Image Ingest and Processing}\mbox{}\\
 
@@ -1163,11 +1389,16 @@ LDF \\
 \href{https://github.com/lsst/ctrl_iip}{https://github.com/lsst/ctrl\_iip}  \\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-PRPINGSRV \\ \hline
-ARCSRV \\ \hline
-TMGSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Prompt Processing Ingest (PRPINGSRV) \\ \hline
+Archiving (ARCSRV) \\ \hline
+Telemetry Gateway (TMGSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Planned Observation Publication SW}\mbox{}\\
@@ -1192,9 +1423,14 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-POPSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Planned Observation Publication (POPSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{OCS Batch SW}\mbox{}\\
@@ -1219,9 +1455,14 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-OCSBATSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+OCS-Driven Batch (OCSBATSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Observatory Operations Data Service SW}\mbox{}\\
@@ -1246,9 +1487,14 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-OODSSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Observatory Operations Data (OODSSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \subsubsection{Science Pipeline SW Products}
@@ -1297,6 +1543,12 @@ AP \\
 \end{longtable}
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Calibration SW}\mbox{}\\
 
@@ -1324,6 +1576,12 @@ DRP \\
 \end{longtable}
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Data Release Production}\mbox{}\\
 
@@ -1351,6 +1609,12 @@ DRP \\
 \end{longtable}
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{MOPS and Forced Photometry}\mbox{}\\
 
@@ -1378,6 +1642,12 @@ AP \\
 \end{longtable}
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Special Programs Productions}\mbox{}\\
 
@@ -1403,6 +1673,12 @@ DRP \\
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Science Pipelines Distribution}\mbox{}\\
 
@@ -1430,6 +1706,12 @@ DRP \\
 \end{longtable}
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Science Plugins}\mbox{}\\
 
@@ -1461,6 +1743,12 @@ configured in or out of the processing by the user.
 \end{longtable}
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Template Generation}\mbox{}\\
 
@@ -1484,6 +1772,12 @@ DRP \\
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \subsubsection{Quality Control Products}
 
@@ -1541,9 +1835,14 @@ services.
 \href{https://github.com/lsst/verify}{https://github.com/lsst/verify}  \\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-OFFLQCSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Offline Quality Control (OFFLQCSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \subsubsection{Supporting SW Products}
@@ -1597,6 +1896,12 @@ DAX \\
 \href{https://github.com/lsst/albuquery}{https://github.com/lsst/albuquery}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Data Butler}\mbox{}\\
 
@@ -1624,6 +1929,12 @@ DAX \\
 \end{longtable}
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Image/ Cutout Server}\mbox{}\\
 
@@ -1655,6 +1966,12 @@ DAX \\
 \href{https://github.com/lsst/dax_imgserv}{https://github.com/lsst/dax\_imgserv}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Distributed Database}\mbox{}\\
 
@@ -1690,6 +2007,12 @@ package in github.
 \href{https://github.com/lsst-sqre/qserv}{https://github.com/lsst-sqre/qserv}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Science Pipelines Libraries}\mbox{}\\
 
@@ -1723,6 +2046,12 @@ AP \\
 \href{https://github.com/lsst/lsst_distrib}{https://github.com/lsst/lsst\_distrib}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Task Framework}\mbox{}\\
 
@@ -1750,6 +2079,12 @@ DAX \\
 \end{longtable}
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \subsection{Hardware and COTS SW}
 
@@ -1818,6 +2153,15 @@ management platform for research collaborations.
 \href{http://www.cilogon.org/}{http://www.cilogon.org/}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Identity Management () \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Docker}\mbox{}\\
 
@@ -1846,9 +2190,14 @@ virtualizations.
 \href{https://www.docker.com/}{https://www.docker.com/}  \\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-CAM \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Containerized Application Management (CAM) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{GPFS}\mbox{}\\
@@ -1878,6 +2227,15 @@ file system developed by IBM.
 \href{https://en.wikipedia.org/wiki/IBM_General_Parallel_File_System}{https://en.wikipedia.org/wiki/IBM\_General\_Parallel\_File\_System}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+ICT Provisioning and Management () \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Grafana}\mbox{}\\
 
@@ -1905,6 +2263,15 @@ file system developed by IBM.
 \href{https://grafana.com/}{https://grafana.com/}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Monitoring () \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{HTCondor}\mbox{}\\
 
@@ -1935,9 +2302,14 @@ intensive tasks.
 \href{https://github.com/htcondor}{https://github.com/htcondor}  \\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-PRODSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Batch Production (PRODSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Kubernetes}\mbox{}\\
@@ -1967,6 +2339,12 @@ and management of containerized applications.
 \href{https://kubernetes.io/}{https://kubernetes.io/}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Oracle}\mbox{}\\
 
@@ -1994,6 +2372,15 @@ and management of containerized applications.
 \href{https://www.oracle.com/index.html}{https://www.oracle.com/index.html}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Database Management () \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Puppet}\mbox{}\\
 
@@ -2022,6 +2409,15 @@ and management of containerized applications.
 \href{https://puppet.com/}{https://puppet.com/}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+ICT Provisioning and Management () \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{IT Security SW}\mbox{}\\
 
@@ -2045,6 +2441,15 @@ and management of containerized applications.
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+IT Security () \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{vSphere}\mbox{}\\
 
@@ -2072,6 +2477,15 @@ and management of containerized applications.
 \href{https://www.vmware.com/products/vsphere.html}{https://www.vmware.com/products/vsphere.html}  \\ \hline
 \end{longtable}
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+ICT Provisioning and Management () \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
+\end{longtable}
 
 \subsubsection{Compute Nodes}
 
@@ -2119,6 +2533,12 @@ package
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \subsubsection{Network Nodes}
 
@@ -2169,6 +2589,12 @@ package
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \subsubsection{Storage Nodes}
 
@@ -2214,6 +2640,12 @@ LDF \\
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \subsubsection{Low Level SW}
 
@@ -2261,6 +2693,12 @@ here on a per need base.
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \subsubsection{Third Party Libraries}
 
@@ -2305,6 +2743,12 @@ and to run.
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Firefly API Access}\mbox{}\\
 
@@ -2333,6 +2777,12 @@ from npm-style package loading
 \end{longtable}
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Firefly}\mbox{}\\
 
@@ -2365,9 +2815,14 @@ SUIT \\
 \href{https://github.com/Caltech-IPAC/firefly}{https://github.com/Caltech-IPAC/firefly}  \\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-SUIT \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+SUIT (SUIT) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Python}\mbox{}\\
@@ -2392,6 +2847,12 @@ SUIT \\ \hline
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \subsection{Infrastructure}
 
@@ -2455,17 +2916,22 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-DBBLIFESRV \\ \hline
-DBBSTRSRV \\ \hline
-DBBMDSRV \\ \hline
-DBBLIFESRV \\ \hline
-DBBMDSRV \\ \hline
-DBBSTRSRV \\ \hline
-DBBTRSRV \\ \hline
-DBBTRSRV \\ \hline
-DBBLIFESRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+DBB Lifetime Management (DBBLIFESRV) \\ \hline
+DBB Storage (DBBSTRSRV) \\ \hline
+DBB Ingest/ Metadata Management (DBBMDSRV) \\ \hline
+DBB Lifetime Management (DBBLIFESRV) \\ \hline
+DBB Ingest/ Metadata Management (DBBMDSRV) \\ \hline
+DBB Storage (DBBSTRSRV) \\ \hline
+DBB Transport/ Replication/ Backup (DBBTRSRV) \\ \hline
+DBB Transport/ Replication/ Backup (DBBTRSRV) \\ \hline
+DBB Lifetime Management (DBBLIFESRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Archive NCSA Enclave}\mbox{}\\
@@ -2490,20 +2956,25 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-DBBLIFESRV \\ \hline
-DBBTRSRV \\ \hline
-DBBLIFESRV \\ \hline
-DBBSTRSRV \\ \hline
-DBBMDSRV \\ \hline
-DBBLIFESRV \\ \hline
-DBBTRSRV \\ \hline
-DBBMDSRV \\ \hline
-DBBTRSRV \\ \hline
-DBBSTRSRV \\ \hline
-DBBLIFESRV \\ \hline
-DBBMDSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+DBB Lifetime Management (DBBLIFESRV) \\ \hline
+DBB Transport/ Replication/ Backup (DBBTRSRV) \\ \hline
+DBB Lifetime Management (DBBLIFESRV) \\ \hline
+DBB Storage (DBBSTRSRV) \\ \hline
+DBB Ingest/ Metadata Management (DBBMDSRV) \\ \hline
+DBB Lifetime Management (DBBLIFESRV) \\ \hline
+DBB Transport/ Replication/ Backup (DBBTRSRV) \\ \hline
+DBB Ingest/ Metadata Management (DBBMDSRV) \\ \hline
+DBB Transport/ Replication/ Backup (DBBTRSRV) \\ \hline
+DBB Storage (DBBSTRSRV) \\ \hline
+DBB Lifetime Management (DBBLIFESRV) \\ \hline
+DBB Ingest/ Metadata Management (DBBMDSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Commissioning Cluster Enclave}\mbox{}\\
@@ -2528,11 +2999,16 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-LSPWEBSRV \\ \hline
-LSPPRTLSRV \\ \hline
-LSPJLSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+LSP Web API (LSPWEBSRV) \\ \hline
+LSP Portal (LSPPRTLSRV) \\ \hline
+LSP JupyterLab (LSPJLSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{DAC Chile Enclave}\mbox{}\\
@@ -2557,12 +3033,17 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-LSPWEBSRV \\ \hline
-LSPPRTLSRV \\ \hline
-ENCARCB \\ \hline
-LSPJLSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+LSP Web API (LSPWEBSRV) \\ \hline
+LSP Portal (LSPPRTLSRV) \\ \hline
+Archive Base Enclave (ENCARCB) \\ \hline
+LSP JupyterLab (LSPJLSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{DAC US Enclave}\mbox{}\\
@@ -2587,11 +3068,16 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-LSPWEBSRV \\ \hline
-LSPJLSRV \\ \hline
-LSPPRTLSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+LSP Web API (LSPWEBSRV) \\ \hline
+LSP JupyterLab (LSPJLSRV) \\ \hline
+LSP Portal (LSPPRTLSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Offline Production Enclave}\mbox{}\\
@@ -2616,11 +3102,16 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-OFFLQCSRV \\ \hline
-BULKDSRV \\ \hline
-PRODSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Offline Quality Control (OFFLQCSRV) \\ \hline
+Bulk Distribution (BULKDSRV) \\ \hline
+Batch Production (PRODSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Prompt Base Enclave}\mbox{}\\
@@ -2645,15 +3136,20 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-FACBASE \\ \hline
-ARCSRV \\ \hline
-OCSBATSRV \\ \hline
-OODSSRV \\ \hline
-PRPINGSRV \\ \hline
-TMGSRV \\ \hline
-POPSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Base Facility (FACBASE) \\ \hline
+Archiving (ARCSRV) \\ \hline
+OCS-Driven Batch (OCSBATSRV) \\ \hline
+Observatory Operations Data (OODSSRV) \\ \hline
+Prompt Processing Ingest (PRPINGSRV) \\ \hline
+Telemetry Gateway (TMGSRV) \\ \hline
+Planned Observation Publication (POPSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{Prompt NCSA Enclave}\mbox{}\\
@@ -2678,13 +3174,18 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-PRPINGSRV \\ \hline
-PRPRSRV \\ \hline
-OFFLQCSRV \\ \hline
-ALRTDSTSRV \\ \hline
-PRQCSRV \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Prompt Processing Ingest (PRPINGSRV) \\ \hline
+Prompt Processing (PRPRSRV) \\ \hline
+Offline Quality Control (OFFLQCSRV) \\ \hline
+Alert Distribution (ALRTDSTSRV) \\ \hline
+Prompt Quality Control (PRQCSRV) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \subsubsection{Facilities}
@@ -2730,12 +3231,17 @@ Net/Base \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-ENCDACC \\ \hline
-ENCARCB \\ \hline
-ENCPRB \\ \hline
-ENCCOMM \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+DAC Chile Enclave (ENCDACC) \\ \hline
+Archive Base Enclave (ENCARCB) \\ \hline
+Prompt Base Enclave (ENCPRB) \\ \hline
+Commissioning Cluster Enclave (ENCCOMM) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \paragraph{NCSA Facility}\mbox{}\\
@@ -2760,13 +3266,19 @@ LDF \\
 
 
 
-\begin{longtable}{c}\hline
-\textbf{Product Dependencies} \\ \hline
-ENCDACU \\ \hline
-ENCARCN \\ \hline
-ENCOFFL \\ \hline
-ENCARCN \\ \hline
-ENCPRN \\ \hline
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+DAC US Enclave (ENCDACU) \\ \hline
+Archive NCSA Enclave (ENCARCN) \\ \hline
+Development and Integration E. () \\ \hline
+Offline Production Enclave (ENCOFFL) \\ \hline
+Archive NCSA Enclave (ENCARCN) \\ \hline
+Prompt NCSA Enclave (ENCPRN) \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
 \end{longtable}
 
 \subsubsection{Networks}
@@ -2811,6 +3323,12 @@ Net/Base \\
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Base LAN Network}\mbox{}\\
 
@@ -2834,6 +3352,12 @@ LDF \\
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Network Management}\mbox{}\\
 
@@ -2858,6 +3382,12 @@ Management section
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{NCSA LAN Network}\mbox{}\\
 
@@ -2881,6 +3411,12 @@ LDF \\
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \paragraph{Summit to Base Network}\mbox{}\\
 
@@ -2904,6 +3440,12 @@ Net/Base \\
 
 
 
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 \subsection{Reference Data}
 
@@ -2949,9 +3491,16 @@ Net/Base \\
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-astronomy\_net\_data \\ \hline
+\href{https://github.com/lsst/astronomy_net_data}{astronomy\_net\_data}\\ \hline
 \end{longtable}
 
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 
 
@@ -2977,6 +3526,13 @@ astronomy\_net\_data \\ \hline
 
 
 
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
 
 
 
