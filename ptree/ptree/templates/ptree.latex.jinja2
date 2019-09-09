@@ -154,17 +154,21 @@
 
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
-\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\textbf{Depends On} & \textbf{Used in}\\ \toprule
           {% if (mdt_dict[sc].depends is defined) and mdt_dict[sc].depends %}
+\begin{tabular}{c}
           {% for pkey in mdt_dict[sc].depends %}
-{{ pkey.name }} ({{ pkey.key }}) \\ \hline
+{{ pkey.name }} {# ({{ pkey.key }}) #} \\ \hline
           {% endfor %}
+\end{tabular}
           {% endif %}
 &
-          {% if (mdt_dict[sc].usedin is defined) and mdt_dict[sc].usedin %}
+          {% if mdt_dict[sc].usedin is defined %}
+\begin{tabular}{c}
           {% for pkey in mdt_dict[sc].usedin %}
-{{ pkey.name }} ({{ pkey.key }}) \\ \hline
+{{ pkey.name }} {# ({{ pkey.key }}) #} \\ \hline
           {% endfor %}
+\end{tabular}
           {% endif %}
 \\ \bottomrule
 \end{longtable}
@@ -251,22 +255,22 @@
 
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
-\textbf{Implemented by} & \textbf{Used in}\\ \toprule
+\textbf{Depends On} & \textbf{Used in}\\ \toprule
           {% if (mdt_dict[sch1].depends is defined) and mdt_dict[sch1].depends %}
 \begin{tabular}{c}
           {% for pkey in mdt_dict[sch1].depends %}
-{{ pkey.name }} ({{ pkey.key }}) \\ \hline
+{{ pkey.name }} {# ({{ pkey.key }}) #} \\ \hline
           {% endfor %}
 \end{tabular}
           {% endif %}
 &
-{#          {% if (mdt_dict[sch1].usedin is defined) and mdt_dict[sch1].usedin %}
+          {% if (mdt_dict[sch1].usedin is defined) and mdt_dict[sch1].usedin %}
 \begin{tabular}{c}
           {% for pkey in mdt_dict[sch1].usedin %}
-{{ pkey.name }} ({{ pkey.key }}) \\ \hline
+{{ pkey.name }} {# ({{ pkey.key }}) #} \\ \hline
           {% endfor %}
 \end{tabular}
-          {% endif %} #}
+          {% endif %}
 \\ \bottomrule
 \end{longtable}
 

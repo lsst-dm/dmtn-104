@@ -78,26 +78,6 @@ def generate(format, username, password, element_id, inputf):
         # print(mdTree[n].data.name)
         mdtree_dict[mdTree[n].data.id] = mdTree[n].data
 
-    for product in mdtree_dict.keys():
-        dependency = dict()
-        # print(mdtree_dict[product].name)
-        dependency["name"] = mdtree_dict[product].name
-        dependency["key"] = mdtree_dict[product].id
-        dependency["shortname"] = mdtree_dict[product].shortname
-        # print(dependency)
-        for used in mdtree_dict[product].depends:
-            if "key" in used.keys():
-                if used["key"] != "":
-                    # print("    ", used["key"])
-                    if used["key"] in mdtree_dict.keys():
-                        mdtree_dict[used["key"]].usedin.append(dependency)
-                        # print(mdtree_dict[used["key"]].usedin)
-
-    # for product in mdtree_dict.keys():
-    #    print(mdtree_dict[product].name)
-    #    print("   --  ", mdtree_dict[product].depends)
-    #    print("   --  ", mdtree_dict[product].usedin)
-
     mdp = mdTree.to_dict(with_data=False)
 
     file = open("toplevel1.tex", "w")
