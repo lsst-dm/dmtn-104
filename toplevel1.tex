@@ -136,12 +136,12 @@ products may be kept until all downstream products have been generated.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Lifetime SW  \\ \hline
+DBB Lifetime Management SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Arch Base Encl  \\ \hline
-Arch NCSA Encl  \\ \hline
+Archive Base Enclave  \\ \hline
+Archive NCSA Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -181,12 +181,12 @@ Butler to directly access data within the DBB.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Meta SW  \\ \hline
+DBB Ingest/ Metadata Management SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Arch Base Encl  \\ \hline
-Arch NCSA Encl  \\ \hline
+Archive Base Enclave  \\ \hline
+Archive NCSA Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -219,12 +219,12 @@ datastore.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Transport SW  \\ \hline
+DBB Transport/ Replication/ Backup SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Arch Base Encl  \\ \hline
-Arch NCSA Encl  \\ \hline
+Archive Base Enclave  \\ \hline
+Archive NCSA Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -257,12 +257,12 @@ recovery if a data product is found to be missing or corrupt.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Transport SW  \\ \hline
+DBB Transport/ Replication/ Backup SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Arch Base Encl  \\ \hline
-Arch NCSA Encl  \\ \hline
+Archive Base Enclave  \\ \hline
+Archive NCSA Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -333,14 +333,14 @@ generating derived data products.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-LSP JL SW  \\ \hline
-Science P. Dist.  \\ \hline
+LSP JupyterLab SW  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-DAC US Encl  \\ \hline
-DAC Chile Encl  \\ \hline
-Comm Clust Encl  \\ \hline
+DAC US Enclave  \\ \hline
+DAC Chile Enclave  \\ \hline
+Commissioning Cluster Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -375,13 +375,13 @@ the LSST data products.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
 SUIT  \\ \hline
-SUIT OnlineHelp  \\ \hline
+Suit Online Help  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-DAC US Encl  \\ \hline
-DAC Chile Encl  \\ \hline
-Comm Clust Encl  \\ \hline
+DAC US Enclave  \\ \hline
+DAC Chile Enclave  \\ \hline
+Commissioning Cluster Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -417,13 +417,13 @@ Notebook Aspect.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-LSP Web SW  \\ \hline
+LSP Web API SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-DAC US Encl  \\ \hline
-DAC Chile Encl  \\ \hline
-Comm Clust Encl  \\ \hline
+DAC US Enclave  \\ \hline
+DAC Chile Enclave  \\ \hline
+Commissioning Cluster Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -478,7 +478,7 @@ Rucio  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Offline Prod Encl  \\ \hline
+Offline Production Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -512,12 +512,12 @@ the data collected by the survey.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Quality Ctrl SW  \\ \hline
+Quality Control SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt NCSA Encl  \\ \hline
-Offline Prod Encl  \\ \hline
+Prompt NCSA Enclave  \\ \hline
+Offline Production Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -548,16 +548,16 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Workload/flow  \\ \hline
+Workload/ Workflow Management  \\ \hline
 HTCondor  \\ \hline
 Calibration SW  \\ \hline
-DR Prod SW  \\ \hline
-MOPS SW  \\ \hline
-Spec Prog SW  \\ \hline
+Data Release Production  \\ \hline
+MOPS and Forced Photometry  \\ \hline
+Special Programs Productions  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Offline Prod Encl  \\ \hline
+Offline Production Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -608,11 +608,11 @@ AP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Alert Distrib SW  \\ \hline
+Alert Distribution SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt NCSA Encl  \\ \hline
+Prompt NCSA Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -668,13 +668,13 @@ EFD'' database in the Data Backbone.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Image Ingest SW  \\ \hline
-EFD Transform  \\ \hline
-Header Srv SW  \\ \hline
+Image Ingest and Processing  \\ \hline
+EFD Transformation  \\ \hline
+Header Service SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt Base Encl  \\ \hline
+Prompt Base Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -709,7 +709,7 @@ OCS Batch SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt Base Encl  \\ \hline
+Prompt Base Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -740,11 +740,11 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Obs Ops Data SW  \\ \hline
+Observatory Operations Data Service SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt Base Encl  \\ \hline
+Prompt Base Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -779,11 +779,11 @@ inspection and a web API for usage by automated tools.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Plan Obs Pub SW  \\ \hline
+Planned Observation Publication SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt Base Encl  \\ \hline
+Prompt Base Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -819,12 +819,12 @@ telescope spectrograph.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Image Ingest SW  \\ \hline
+Image Ingest and Processing  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt Base Encl  \\ \hline
-Prmpt NCSA Encl  \\ \hline
+Prompt Base Enclave  \\ \hline
+Prompt NCSA Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -855,13 +855,13 @@ Prmpt NCSA Encl  \\ \hline
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Alert Prod SW  \\ \hline
+Alert Production  \\ \hline
 Calibration SW  \\ \hline
-MOPS SW  \\ \hline
+MOPS and Forced Photometry  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt NCSA Encl  \\ \hline
+Prompt NCSA Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -895,11 +895,11 @@ the data collected by the survey.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Quality Ctrl SW  \\ \hline
+Quality Control SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt NCSA Encl  \\ \hline
+Prompt NCSA Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -931,11 +931,11 @@ manages communication from and to the Observatory.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Image Ingest SW  \\ \hline
+Image Ingest and Processing  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt Base Encl  \\ \hline
+Prompt Base Enclave  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1095,7 +1095,7 @@ sciences storage.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-DBB Lifetime  \\ \hline
+DBB Lifetime Management  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1133,7 +1133,7 @@ services from the Facilities enclaves to the backbone.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-DBB Metadata  \\ \hline
+DBB Ingest/ Metadata Management  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1167,7 +1167,7 @@ preservation.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-DBB Transport  \\ \hline
+DBB Transport/ Replication/ Backup  \\ \hline
 DBB Storage  \\ \hline
 \end{tabular}
 \\ \bottomrule
@@ -1398,7 +1398,7 @@ AP \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Alert Distrib  \\ \hline
+Alert Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1504,9 +1504,9 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Prompt Proc Ing  \\ \hline
+Prompt Processing Ingest  \\ \hline
 Archiving  \\ \hline
-Telem Gateway  \\ \hline
+Telemetry Gateway  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1538,7 +1538,7 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Planned Obs Pub  \\ \hline
+Planned Observation Publication  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1570,7 +1570,7 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-OCS Batch  \\ \hline
+OCS-Driven Batch  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1602,7 +1602,7 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Obs Ops Data  \\ \hline
+Observatory Operations Data  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1657,12 +1657,12 @@ AP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Sci Pipelines Libs  \\ \hline
+Science Pipelines Libraries  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt Processing  \\ \hline
-Science P. Dist.  \\ \hline
+Prompt Processing  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1697,13 +1697,13 @@ DRP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Sci Pipelines Libs  \\ \hline
+Science Pipelines Libraries  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt Processing  \\ \hline
+Prompt Processing  \\ \hline
 Batch Production  \\ \hline
-Science P. Dist.  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1738,12 +1738,12 @@ DRP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Sci Pipelines Libs  \\ \hline
+Science Pipelines Libraries  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
 Batch Production  \\ \hline
-Science P. Dist.  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1778,13 +1778,13 @@ AP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Sci Pipelines Libs  \\ \hline
+Science Pipelines Libraries  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prmpt Processing  \\ \hline
+Prompt Processing  \\ \hline
 Batch Production  \\ \hline
-Science P. Dist.  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1817,12 +1817,12 @@ DRP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Sci Pipelines Libs  \\ \hline
+Science Pipelines Libraries  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
 Batch Production  \\ \hline
-Science P. Dist.  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1857,17 +1857,17 @@ DRP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Alert Prod SW  \\ \hline
+Alert Production  \\ \hline
 Calibration SW  \\ \hline
-DR Prod SW  \\ \hline
-MOPS SW  \\ \hline
-Spec Prog SW  \\ \hline
+Data Release Production  \\ \hline
+MOPS and Forced Photometry  \\ \hline
+Special Programs Productions  \\ \hline
 Science Plugins  \\ \hline
-Tmpl Gen SW  \\ \hline
+Template Generation  \\ \hline
 Data Butler  \\ \hline
-Sci Pipelines Libs  \\ \hline
+Science Pipelines Libraries  \\ \hline
 Task Framework  \\ \hline
-Astro Net Data  \\ \hline
+Atronomy Net Data  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
@@ -1911,7 +1911,7 @@ configured in or out of the processing by the user.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Science P. Dist.  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1943,7 +1943,7 @@ DRP \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Science P. Dist.  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2004,8 +2004,8 @@ services.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Offline QC  \\ \hline
-Prompt QC  \\ \hline
+Offline Quality Control  \\ \hline
+Prompt Quality Control  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2095,7 +2095,7 @@ DAX \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Science P. Dist.  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2203,12 +2203,12 @@ AP \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Alert Prod SW  \\ \hline
+Alert Production  \\ \hline
 Calibration SW  \\ \hline
-DR Prod SW  \\ \hline
-MOPS SW  \\ \hline
-Spec Prog SW  \\ \hline
-Science P. Dist.  \\ \hline
+Data Release Production  \\ \hline
+MOPS and Forced Photometry  \\ \hline
+Special Programs Productions  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2244,7 +2244,7 @@ DAX \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Science P. Dist.  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2321,7 +2321,7 @@ management platform for research collaborations.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-  \\ \hline
+Identity Management  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2358,7 +2358,7 @@ virtualizations.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Cont. Application Mng  \\ \hline
+Containerized Application Management  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2395,7 +2395,7 @@ file system developed by IBM.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-  \\ \hline
+ICT Provisioning and Management  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2431,7 +2431,7 @@ file system developed by IBM.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-  \\ \hline
+Monitoring  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2507,7 +2507,7 @@ and management of containerized applications.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Cont. Application Mng  \\ \hline
+Containerized Application Management  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2543,7 +2543,7 @@ Cont. Application Mng  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-  \\ \hline
+Database Management  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2580,7 +2580,7 @@ Cont. Application Mng  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-  \\ \hline
+ICT Provisioning and Management  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2617,7 +2617,7 @@ Michelle Butler \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Bulk Distrib  \\ \hline
+Bulk Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2649,7 +2649,7 @@ Bulk Distrib  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-  \\ \hline
+IT Security  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2685,7 +2685,7 @@ Bulk Distrib  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-  \\ \hline
+ICT Provisioning and Management  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -3130,9 +3130,9 @@ Base facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Metadata  \\ \hline
-DBB Transport  \\ \hline
-DBB Lifetime  \\ \hline
+DBB Ingest/ Metadata Management  \\ \hline
+DBB Transport/ Replication/ Backup  \\ \hline
+DBB Lifetime Management  \\ \hline
 DBB Storage  \\ \hline
 \end{tabular}
 &
@@ -3169,10 +3169,10 @@ NCSA facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Metadata  \\ \hline
-DBB Lifetime  \\ \hline
+DBB Ingest/ Metadata Management  \\ \hline
+DBB Lifetime Management  \\ \hline
 DBB Storage  \\ \hline
-DBB Transport  \\ \hline
+DBB Transport/ Replication/ Backup  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
@@ -3323,8 +3323,8 @@ the NCSA facility.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
 Batch Production  \\ \hline
-Offline QC  \\ \hline
-Bulk Distrib  \\ \hline
+Offline Quality Control  \\ \hline
+Bulk Distribution  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
@@ -3360,11 +3360,11 @@ real time manner, at Base facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Prompt Proc Ing  \\ \hline
-Telem Gateway  \\ \hline
-Planned Obs Pub  \\ \hline
-OCS Batch  \\ \hline
-Obs Ops Data  \\ \hline
+Prompt Processing Ingest  \\ \hline
+Telemetry Gateway  \\ \hline
+Planned Observation Publication  \\ \hline
+OCS-Driven Batch  \\ \hline
+Observatory Operations Data  \\ \hline
 Archiving  \\ \hline
 \end{tabular}
 &
@@ -3401,11 +3401,11 @@ real time manner, at NCSA facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Alert Distrib  \\ \hline
-Prompt Proc Ing  \\ \hline
-Offline QC  \\ \hline
-Prompt QC  \\ \hline
-Prmpt Processing  \\ \hline
+Alert Distribution  \\ \hline
+Prompt Processing Ingest  \\ \hline
+Offline Quality Control  \\ \hline
+Prompt Quality Control  \\ \hline
+Prompt Processing  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
@@ -3461,10 +3461,10 @@ Net/Base \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Arch Base Encl  \\ \hline
-DAC Chile Encl  \\ \hline
-Comm Clust Encl  \\ \hline
-Prmpt Base Encl  \\ \hline
+Archive Base Enclave  \\ \hline
+DAC Chile Enclave  \\ \hline
+Commissioning Cluster Enclave  \\ \hline
+Prompt Base Enclave  \\ \hline
 \end{tabular}
 &
 \\ \bottomrule
@@ -3496,11 +3496,11 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DAC US Encl  \\ \hline
-Offline Prod Encl  \\ \hline
-  \\ \hline
-Prmpt NCSA Encl  \\ \hline
-Arch NCSA Encl  \\ \hline
+DAC US Enclave  \\ \hline
+Offline Production Enclave  \\ \hline
+Development and Integration E.  \\ \hline
+Prompt NCSA Enclave  \\ \hline
+Archive NCSA Enclave  \\ \hline
 \end{tabular}
 &
 \\ \bottomrule
@@ -3726,7 +3726,7 @@ during constructions..
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Science P. Dist.  \\ \hline
+Science Pipelines Distribution  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
