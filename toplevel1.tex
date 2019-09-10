@@ -15,7 +15,7 @@ Wil O'Mullane &
 Leanne Guy \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 1.02C \\
-\end{tabular} & DM \\ \hline
+\end{tabular} & All DM Teams \\ \hline
 \end{longtable}
 
   This is the top level Data Management product. It includes underneath
@@ -58,7 +58,7 @@ Leanne Guy \\
 }\\ \hline
 \end{longtable}
 
-  DM operational services. This includes all services required for:
+  This product includes all services required for:
 
 \begin{itemize}
 \tightlist
@@ -75,6 +75,12 @@ a configuration file (docker) maintained in GitHub.
 
 The configuration file should follow the same development and releases
 processes defined for the DM software products.
+
+~
+
+All services shall also specify which software product, DM or third
+party, is implementing it. This information is displaced in the
+\textbf{Product Dependencies} table, \emph{Depends On} column.
 
 
 \subsubsection{Backbone Services}
@@ -117,11 +123,11 @@ LDF \\
 \end{longtable}
 
   This service is responsible for managing the lifetimes of data products
-within the DBB based on a set of policies. Products may move from
+within the DBB based on a set of policies. Data products may move from
 high-speed storage to near-line or offline storage or may be deleted
 completely. Some products are kept permanently. Some are kept for
-defined time periods as specified in requirements. Intermediates may be
-kept until all downstream products have been generated.
+defined time periods as specified in requirements. Intermediate data
+products may be kept until all downstream products have been generated.
 
 
 
@@ -130,12 +136,12 @@ kept until all downstream products have been generated.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Lifetime Management SW  \\ \hline
+DBB Lifetime SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Archive Base Enclave  \\ \hline
-Archive NCSA Enclave  \\ \hline
+Arch Base Encl  \\ \hline
+Arch NCSA Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -175,12 +181,12 @@ Butler to directly access data within the DBB.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Ingest/ Metadata Management SW  \\ \hline
+DBB Meta SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Archive Base Enclave  \\ \hline
-Archive NCSA Enclave  \\ \hline
+Arch Base Encl  \\ \hline
+Arch NCSA Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -213,12 +219,12 @@ datastore.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Transport/ Replication/ Backup SW  \\ \hline
+DBB Transport SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Archive Base Enclave  \\ \hline
-Archive NCSA Enclave  \\ \hline
+Arch Base Encl  \\ \hline
+Arch NCSA Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -251,12 +257,12 @@ recovery if a data product is found to be missing or corrupt.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Transport/ Replication/ Backup SW  \\ \hline
+DBB Transport SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Archive Base Enclave  \\ \hline
-Archive NCSA Enclave  \\ \hline
+Arch Base Encl  \\ \hline
+Arch NCSA Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -279,7 +285,8 @@ Gregory Dubois-Felsmann \\
 \end{longtable}
 
   This group of services provide an exploratory analysis environment for
-the end user. These services are usually referred as ``LSP Aspects'':
+the end user. These services are usually referred as ``Aspects'',
+identified as follows:
 
 \begin{itemize}
 \tightlist
@@ -292,9 +299,8 @@ the end user. These services are usually referred as ``LSP Aspects'':
 \end{itemize}
 
 These services permit external users access to project resources, such
-as data and processing SW.\\
-
-More details available in LDM-542 and LSE-319.
+as data and processing SW.\\[2\baselineskip]More details available in
+LDM-542 and LSE-319.
 
 
 \paragraph{LSP JupyterLab}\mbox{}\\
@@ -327,13 +333,14 @@ generating derived data products.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-LSP JupyterLab SW  \\ \hline
+LSP JL SW  \\ \hline
+Science P. Dist.  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-DAC US Enclave  \\ \hline
-DAC Chile Enclave  \\ \hline
-Commissioning Cluster Enclave  \\ \hline
+DAC US Encl  \\ \hline
+DAC Chile Encl  \\ \hline
+Comm Clust Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -368,13 +375,13 @@ the LSST data products.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
 SUIT  \\ \hline
-Suit Online Help  \\ \hline
+SUIT OnlineHelp  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-DAC US Enclave  \\ \hline
-DAC Chile Enclave  \\ \hline
-Commissioning Cluster Enclave  \\ \hline
+DAC US Encl  \\ \hline
+DAC Chile Encl  \\ \hline
+Comm Clust Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -410,13 +417,13 @@ Notebook Aspect.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-LSP Web API SW  \\ \hline
+LSP Web SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-DAC US Enclave  \\ \hline
-DAC Chile Enclave  \\ \hline
-Commissioning Cluster Enclave  \\ \hline
+DAC US Encl  \\ \hline
+DAC Chile Encl  \\ \hline
+Comm Clust Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -466,9 +473,12 @@ LDF \\
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Rucio  \\ \hline
+\end{tabular}
 &
 \begin{tabular}{c}
-Offline Production Enclave  \\ \hline
+Offline Prod Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -490,10 +500,10 @@ DRP \\
 }\\ \hline
 \end{longtable}
 
-  This service collects all KPI metrics calculated by the processing
-service, aggregate the information and provides reports in order to
-ensure the monitoring of the quality of the processing and of the data
-collected by the survey.
+  This service collects all KPI metrics calculated by the offline
+processing activities, aggregate the information and provides reports in
+order to ensure the monitoring of the quality of the processing and of
+the data collected by the survey.
 
 
 
@@ -501,10 +511,13 @@ collected by the survey.
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Quality Ctrl SW  \\ \hline
+\end{tabular}
 &
 \begin{tabular}{c}
-Prompt NCSA Enclave  \\ \hline
-Offline Production Enclave  \\ \hline
+Prmpt NCSA Encl  \\ \hline
+Offline Prod Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -535,12 +548,16 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Workload/ Workflow Management  \\ \hline
+Workload/flow  \\ \hline
 HTCondor  \\ \hline
+Calibration SW  \\ \hline
+DR Prod SW  \\ \hline
+MOPS SW  \\ \hline
+Spec Prog SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Offline Production Enclave  \\ \hline
+Offline Prod Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -591,11 +608,11 @@ AP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Alert Distribution SW  \\ \hline
+Alert Distrib SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt NCSA Enclave  \\ \hline
+Prmpt NCSA Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -651,13 +668,13 @@ EFD'' database in the Data Backbone.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Image Ingest and Processing  \\ \hline
-EFD Transformation  \\ \hline
-Header Service SW  \\ \hline
+Image Ingest SW  \\ \hline
+EFD Transform  \\ \hline
+Header Srv SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
+Prmpt Base Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -692,7 +709,7 @@ OCS Batch SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
+Prmpt Base Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -723,11 +740,11 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Observatory Operations Data Service SW  \\ \hline
+Obs Ops Data SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
+Prmpt Base Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -762,11 +779,11 @@ inspection and a web API for usage by automated tools.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Planned Observation Publication SW  \\ \hline
+Plan Obs Pub SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
+Prmpt Base Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -802,12 +819,12 @@ telescope spectrograph.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Image Ingest and Processing  \\ \hline
+Image Ingest SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
-Prompt NCSA Enclave  \\ \hline
+Prmpt Base Encl  \\ \hline
+Prmpt NCSA Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -837,9 +854,14 @@ Prompt NCSA Enclave  \\ \hline
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Alert Prod SW  \\ \hline
+Calibration SW  \\ \hline
+MOPS SW  \\ \hline
+\end{tabular}
 &
 \begin{tabular}{c}
-Prompt NCSA Enclave  \\ \hline
+Prmpt NCSA Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -861,10 +883,10 @@ AP \\
 }\\ \hline
 \end{longtable}
 
-  This service collects all KPI metrics calculated by the processing
-service, aggregate the information and provides reports in order to
-ensure the monitoring of the quality of the processing and of the data
-collected by the survey.
+  This service collects all KPI metrics calculated by the prompt
+processing service, aggregate the information and provides reports in
+order to ensure the monitoring of the quality of the processing and of
+the data collected by the survey.
 
 
 
@@ -872,9 +894,12 @@ collected by the survey.
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Quality Ctrl SW  \\ \hline
+\end{tabular}
 &
 \begin{tabular}{c}
-Prompt NCSA Enclave  \\ \hline
+Prmpt NCSA Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -896,9 +921,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  Telemetry Gateway Service This service is implemented by the DMCS, a
-more general system that manages communication from and to the
-Observatory.
+  This service is implemented by the DMCS, a more general system that
+manages communication from and to the Observatory.
 
 
 
@@ -907,11 +931,11 @@ Observatory.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Image Ingest and Processing  \\ \hline
+Image Ingest SW  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
+Prmpt Base Encl  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -934,7 +958,10 @@ Multiple \\
 \end{longtable}
 
   DM operational SW products. This include all SW products implemented by
-the DM team in order to implement the operational services.
+the DM team in order to implement the operational services.\\
+
+Dependencies should be derived from the corresponding Git packages
+definition.
 
 
 \subsubsection{Batch Production Products}
@@ -954,7 +981,7 @@ Michelle Butler \\
 }\\ \hline
 \end{longtable}
 
-  SW products to orchestrate the long term data processing.
+  Software products to orchestrate the long term data processing.
 
 
 \paragraph{Campaign Management}\mbox{}\\
@@ -1004,7 +1031,7 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  This software product orchestrate the run of the science pipeline in a
+  This software product orchestrates the run of the science pipeline in a
 docker. SW still to be written.
 
 
@@ -1057,8 +1084,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  This software product will implemented the management of the data in the
-sciences storage. SW still to be written.
+  This software product implements the management of the data in the
+sciences storage.
 
 
 
@@ -1068,7 +1095,7 @@ sciences storage. SW still to be written.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-DBB Lifetime Management  \\ \hline
+DBB Lifetime  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1091,8 +1118,7 @@ LDF \\
 \end{longtable}
 
   Listener in the Endpoint Data Backbone Enclave to provide ingestion
-services from the Facilities enclaves to the backbone. Software to be
-written.
+services from the Facilities enclaves to the backbone.
 
 
 \begin{longtable}{c}\hline
@@ -1107,7 +1133,7 @@ written.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-DBB Ingest/ Metadata Management  \\ \hline
+DBB Metadata  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1131,7 +1157,7 @@ LDF \\
 
   This software products will be used in the services to replicate data
 from different facilities and to send it to tape for long time
-preservation. Software still to be writte.
+preservation.
 
 
 
@@ -1141,7 +1167,7 @@ preservation. Software still to be writte.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-DBB Transport/ Replication/ Backup  \\ \hline
+DBB Transport  \\ \hline
 DBB Storage  \\ \hline
 \end{tabular}
 \\ \bottomrule
@@ -1220,7 +1246,7 @@ DAX \\
 }\\ \hline
 \end{longtable}
 
-  LSP Web API Product
+  LSP Web API software product
 
 
 \begin{longtable}{c}\hline
@@ -1228,10 +1254,6 @@ DAX \\
 \href{https://github.com/lsst/dax_webserv}{dax\_webserv}\\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Hiperlink References} \\ \hline
-\href{https://github.com/lsst/dax_webserv}{https://github.com/lsst/dax\_webserv}  \\ \hline
-\end{longtable}
 
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
@@ -1342,7 +1364,7 @@ Multiple \\
 }\\ \hline
 \end{longtable}
 
-  SW products that implements the DM Prompt Services.
+  DM software products required to implement the DM Prompt Services.
 
 
 \paragraph{Alert Distribution SW}\mbox{}\\
@@ -1370,17 +1392,13 @@ AP \\
 \href{https://github.com/lsst/alert_stream}{alert\_stream}\\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Hiperlink References} \\ \hline
-\href{https://github.com/lsst-dm/alert_stream}{https://github.com/lsst-dm/alert\_stream}  \\ \hline
-\end{longtable}
 
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Alert Distribution  \\ \hline
+Alert Distrib  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1441,13 +1459,9 @@ external users. It is developed at University of Illinois (Urbana)
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-\href{https://github.com/lsst/HeaderService}{HeaderService}\\ \hline
+\href{https://github.com/lsst-dm/HeaderService}{lsst-dm/HeaderService}\\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Hiperlink References} \\ \hline
-\href{https://github.com/lsst-dm/HeaderService}{https://github.com/lsst-dm/HeaderService}  \\ \hline
-\end{longtable}
 
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
@@ -1484,19 +1498,15 @@ LDF \\
 \href{https://github.com/lsst/ctrl_iip}{ctrl\_iip}\\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Hiperlink References} \\ \hline
-\href{https://github.com/lsst/ctrl_iip}{https://github.com/lsst/ctrl\_iip}  \\ \hline
-\end{longtable}
 
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Prompt Processing Ingest  \\ \hline
+Prompt Proc Ing  \\ \hline
 Archiving  \\ \hline
-Telemetry Gateway  \\ \hline
+Telem Gateway  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1518,7 +1528,7 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  Pointing Prediction Publishing SW products Software Still to be written
+  Pointing Prediction Publishing software products.
 
 
 
@@ -1528,7 +1538,7 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Planned Observation Publication  \\ \hline
+Planned Obs Pub  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1550,7 +1560,7 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  Batch commandable SAL component. SW to be written.
+  Batch commandable SAL component.
 
 
 
@@ -1560,7 +1570,7 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-OCS-Driven Batch  \\ \hline
+OCS Batch  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1582,7 +1592,7 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  SW Product to use in the OODS service. Still to be written
+  SW Product to use in the OODS service.
 
 
 
@@ -1592,7 +1602,7 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Observatory Operations Data  \\ \hline
+Obs Ops Data  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -1634,7 +1644,7 @@ AP \\
 }\\ \hline
 \end{longtable}
 
-  
+  Software product for Allert Production processing.
 
 
 \begin{longtable}{c}\hline
@@ -1646,7 +1656,14 @@ AP \\
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Sci Pipelines Libs  \\ \hline
+\end{tabular}
 &
+\begin{tabular}{c}
+Prmpt Processing  \\ \hline
+Science P. Dist.  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -1667,7 +1684,7 @@ DRP \\
 }\\ \hline
 \end{longtable}
 
-  
+  Software product for generating calibration data products.
 
 
 \begin{longtable}{c}\hline
@@ -1679,7 +1696,15 @@ DRP \\
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Sci Pipelines Libs  \\ \hline
+\end{tabular}
 &
+\begin{tabular}{c}
+Prmpt Processing  \\ \hline
+Batch Production  \\ \hline
+Science P. Dist.  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -1700,7 +1725,7 @@ DRP \\
 }\\ \hline
 \end{longtable}
 
-  
+  Software product for data release production.
 
 
 \begin{longtable}{c}\hline
@@ -1712,7 +1737,14 @@ DRP \\
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Sci Pipelines Libs  \\ \hline
+\end{tabular}
 &
+\begin{tabular}{c}
+Batch Production  \\ \hline
+Science P. Dist.  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -1733,7 +1765,7 @@ AP \\
 }\\ \hline
 \end{longtable}
 
-  
+  Software product for MOPS and Forced Photometry data processing.
 
 
 \begin{longtable}{c}\hline
@@ -1745,7 +1777,15 @@ AP \\
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Sci Pipelines Libs  \\ \hline
+\end{tabular}
 &
+\begin{tabular}{c}
+Prmpt Processing  \\ \hline
+Batch Production  \\ \hline
+Science P. Dist.  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -1768,7 +1808,7 @@ DRP \\
 }\\ \hline
 \end{longtable}
 
-  
+  Software product for special programs data processing.
 
 
 
@@ -1776,7 +1816,14 @@ DRP \\
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Sci Pipelines Libs  \\ \hline
+\end{tabular}
 &
+\begin{tabular}{c}
+Batch Production  \\ \hline
+Science P. Dist.  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -1797,7 +1844,7 @@ DRP \\
 }\\ \hline
 \end{longtable}
 
-  
+  Top level distribution product for the science pipelines
 
 
 \begin{longtable}{c}\hline
@@ -1809,7 +1856,23 @@ DRP \\
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+Alert Prod SW  \\ \hline
+Calibration SW  \\ \hline
+DR Prod SW  \\ \hline
+MOPS SW  \\ \hline
+Spec Prog SW  \\ \hline
+Science Plugins  \\ \hline
+Tmpl Gen SW  \\ \hline
+Data Butler  \\ \hline
+Sci Pipelines Libs  \\ \hline
+Task Framework  \\ \hline
+Astro Net Data  \\ \hline
+\end{tabular}
 &
+\begin{tabular}{c}
+LSP JupyterLab  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -1847,6 +1910,9 @@ configured in or out of the processing by the user.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
+\begin{tabular}{c}
+Science P. Dist.  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -1876,6 +1942,9 @@ DRP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
+\begin{tabular}{c}
+Science P. Dist.  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -1896,7 +1965,7 @@ Simon Krughoff \\
 }\\ \hline
 \end{longtable}
 
-  SW products for quality control
+  SW products for quality control.
 
 
 \paragraph{Quality Control SW}\mbox{}\\
@@ -1929,16 +1998,15 @@ services.
 \href{https://github.com/lsst/validate_drp}{validate\_drp}\\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Hiperlink References} \\ \hline
-\href{https://github.com/lsst-sqre/squash}{https://github.com/lsst-sqre/squash}  \\ \hline
-\href{https://github.com/lsst/verify}{https://github.com/lsst/verify}  \\ \hline
-\end{longtable}
 
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
+\begin{tabular}{c}
+Offline QC  \\ \hline
+Prompt QC  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -1959,8 +2027,8 @@ Multiple \\
 }\\ \hline
 \end{longtable}
 
-  DM software products used as libraries and shared between different SW
-products previously described.
+  DM software products used as libraries and shared between different
+other DM software products.
 
 
 \paragraph{ADQL Translator}\mbox{}\\
@@ -1980,7 +2048,7 @@ DAX \\
 }\\ \hline
 \end{longtable}
 
-  DAX Query Services in Kotlin
+  DAX Query Services in Kotlin.
 
 
 \begin{longtable}{c}\hline
@@ -1988,10 +2056,6 @@ DAX \\
 \href{https://github.com/lsst/albuquery}{albuquery}\\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Hiperlink References} \\ \hline
-\href{https://github.com/lsst/albuquery}{https://github.com/lsst/albuquery}  \\ \hline
-\end{longtable}
 
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
@@ -2017,7 +2081,7 @@ DAX \\
 }\\ \hline
 \end{longtable}
 
-  Butler/SuperTask middleware software product.
+  Butler middleware software product.
 
 
 \begin{longtable}{c}\hline
@@ -2030,6 +2094,9 @@ DAX \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
+\begin{tabular}{c}
+Science P. Dist.  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -2050,7 +2117,7 @@ DAX \\
 }\\ \hline
 \end{longtable}
 
-  Web Interface for LSST Image Services software product
+  Web Interface for LSST Image Services software product.
 
 
 \begin{longtable}{c}\hline
@@ -2058,10 +2125,6 @@ DAX \\
 \href{https://github.com/lsst/dax_imgserv}{dax\_imgserv}\\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Hiperlink References} \\ \hline
-\href{https://github.com/lsst/dax_imgserv}{https://github.com/lsst/dax\_imgserv}  \\ \hline
-\end{longtable}
 
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
@@ -2094,15 +2157,11 @@ package in github.
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
 \href{https://github.com/lsst/daf_ingest}{daf\_ingest}\\ \hline
-\href{https://github.com/lsst/qserv}{qserv}\\ \hline
 \href{https://github.com/lsst/scisql}{scisql}\\ \hline
+\href{https://github.com/lsst-sqre/qserv}{lsst-sqre/qserv}\\ \hline
 \href{https://github.com/lsst/partition}{partition}\\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Hiperlink References} \\ \hline
-\href{https://github.com/lsst-sqre/qserv}{https://github.com/lsst-sqre/qserv}  \\ \hline
-\end{longtable}
 
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
@@ -2138,15 +2197,19 @@ AP \\
 \href{https://github.com/lsst/lsst_apps}{lsst\_apps}\\ \hline
 \end{longtable}
 
-\begin{longtable}{c}\hline
-\textbf{Hiperlink References} \\ \hline
-\href{https://github.com/lsst/lsst_distrib}{https://github.com/lsst/lsst\_distrib}  \\ \hline
-\end{longtable}
 
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
+\begin{tabular}{c}
+Alert Prod SW  \\ \hline
+Calibration SW  \\ \hline
+DR Prod SW  \\ \hline
+MOPS SW  \\ \hline
+Spec Prog SW  \\ \hline
+Science P. Dist.  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -2167,7 +2230,7 @@ DAX \\
 }\\ \hline
 \end{longtable}
 
-  Butler/SuperTask middleware software product.
+  SuperTask middleware software product.
 
 
 \begin{longtable}{c}\hline
@@ -2180,6 +2243,9 @@ DAX \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
+\begin{tabular}{c}
+Science P. Dist.  \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
@@ -2220,7 +2286,7 @@ Multiple \\
 }\\ \hline
 \end{longtable}
 
-  This includes all COTS used to implement the DM services.
+  This product includes all COTS used to implement the DM services.
 
 
 \paragraph{CILogon}\mbox{}\\
@@ -2255,7 +2321,7 @@ management platform for research collaborations.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Identity Management  \\ \hline
+  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2292,7 +2358,7 @@ virtualizations.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Containerized Application Management  \\ \hline
+Cont. Application Mng  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2329,7 +2395,7 @@ file system developed by IBM.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-ICT Provisioning and Management  \\ \hline
+  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2365,7 +2431,7 @@ ICT Provisioning and Management  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Monitoring  \\ \hline
+  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2441,7 +2507,7 @@ and management of containerized applications.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Containerized Application Management  \\ \hline
+Cont. Application Mng  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2477,7 +2543,7 @@ Containerized Application Management  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Database Management  \\ \hline
+  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2514,7 +2580,44 @@ Database Management  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-ICT Provisioning and Management  \\ \hline
+  \\ \hline
+\end{tabular}
+\\ \bottomrule
+\end{longtable}
+
+\paragraph{Rucio}\mbox{}\\
+
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+ &
+\begin{tabular}{@{}l@{}}
+Michelle Butler \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Rucio - Acronym: RUCIO ) }
+}\\ \hline
+\end{longtable}
+
+  
+
+
+
+\begin{longtable}{c}\hline
+\textbf{Hiperlink References} \\ \hline
+\href{http://rucio.cern.ch/}{http://rucio.cern.ch/}  \\ \hline
+\href{http://rucio.readthedocs.io/}{http://rucio.readthedocs.io/}  \\ \hline
+\end{longtable}
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Depends On} & \textbf{Used in}\\ \toprule
+&
+\begin{tabular}{c}
+Bulk Distrib  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2536,7 +2639,7 @@ ICT Provisioning and Management  \\ \hline
 }\\ \hline
 \end{longtable}
 
-  To be identified.
+  
 
 
 
@@ -2546,7 +2649,7 @@ ICT Provisioning and Management  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-IT Security  \\ \hline
+  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2582,7 +2685,7 @@ IT Security  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-ICT Provisioning and Management  \\ \hline
+  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
@@ -2771,7 +2874,7 @@ Some examples are: - Firmwares - Operating Systems Details will be added
 here on a per need base.
 
 
-\paragraph{RedHat CentOS 7.4}\mbox{}\\
+\paragraph{RedHat CentOS}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2912,7 +3015,6 @@ SUIT \\
 \begin{longtable}{c}\hline
 \textbf{Hiperlink References} \\ \hline
 \href{http://web.ipac.caltech.edu/staff/roby/camera-team-ff-overview.pdf}{http://web.ipac.caltech.edu/staff/roby/camera-team-ff-overview.pdf}  \\ \hline
-\href{https://github.com/Caltech-IPAC/firefly}{https://github.com/Caltech-IPAC/firefly}  \\ \hline
 \end{longtable}
 
 \begin{longtable}{cc}\toprule
@@ -2973,6 +3075,13 @@ Multiple \\
 
   DM infrastructural products.
 
+~
+
+These products are mainly physical facilities or logical groups
+services.
+
+~
+
 
 \subsubsection{Enclaves}
 
@@ -3011,7 +3120,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  
+  This product groups all archive services (Data BackBone) located at the
+Base facility.
 
 
 
@@ -3020,9 +3130,9 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Ingest/ Metadata Management  \\ \hline
-DBB Transport/ Replication/ Backup  \\ \hline
-DBB Lifetime Management  \\ \hline
+DBB Metadata  \\ \hline
+DBB Transport  \\ \hline
+DBB Lifetime  \\ \hline
 DBB Storage  \\ \hline
 \end{tabular}
 &
@@ -3049,7 +3159,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  
+  This product groups all archive services (Data BackBone) located at the
+NCSA facility.
 
 
 
@@ -3058,10 +3169,10 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Ingest/ Metadata Management  \\ \hline
-DBB Lifetime Management  \\ \hline
+DBB Metadata  \\ \hline
+DBB Lifetime  \\ \hline
 DBB Storage  \\ \hline
-DBB Transport/ Replication/ Backup  \\ \hline
+DBB Transport  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
@@ -3087,7 +3198,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  
+  This product groups all DAC services required for Commissioning, at the
+Base facility.
 
 
 
@@ -3124,7 +3236,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  
+  This product groups all DAC services required for nominal operations,
+located at the Base facility.
 
 
 
@@ -3161,7 +3274,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  
+  This product groups all DAC services required for operations, located at
+the NCSA facility.
 
 
 
@@ -3198,7 +3312,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  
+  This product groups all processing services to be executed offline, at
+the NCSA facility.
 
 
 
@@ -3208,8 +3323,8 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
 Batch Production  \\ \hline
-Offline Quality Control  \\ \hline
-Bulk Distribution  \\ \hline
+Offline QC  \\ \hline
+Bulk Distrib  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
@@ -3235,7 +3350,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  
+  This product groups all services required to be executed in a nearly
+real time manner, at Base facility.
 
 
 
@@ -3244,11 +3360,11 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Prompt Processing Ingest  \\ \hline
-Telemetry Gateway  \\ \hline
-Planned Observation Publication  \\ \hline
-OCS-Driven Batch  \\ \hline
-Observatory Operations Data  \\ \hline
+Prompt Proc Ing  \\ \hline
+Telem Gateway  \\ \hline
+Planned Obs Pub  \\ \hline
+OCS Batch  \\ \hline
+Obs Ops Data  \\ \hline
 Archiving  \\ \hline
 \end{tabular}
 &
@@ -3275,7 +3391,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  
+  This product groups all services required to be executed in a nearly
+real time manner, at NCSA facility.
 
 
 
@@ -3284,11 +3401,11 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Alert Distribution  \\ \hline
-Prompt Processing Ingest  \\ \hline
-Offline Quality Control  \\ \hline
-Prompt Quality Control  \\ \hline
-Prompt Processing  \\ \hline
+Alert Distrib  \\ \hline
+Prompt Proc Ing  \\ \hline
+Offline QC  \\ \hline
+Prompt QC  \\ \hline
+Prmpt Processing  \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
@@ -3335,7 +3452,7 @@ Net/Base \\
 }\\ \hline
 \end{longtable}
 
-  
+  Base facility located at La Serena, Chile.
 
 
 
@@ -3344,10 +3461,10 @@ Net/Base \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Archive Base Enclave  \\ \hline
-DAC Chile Enclave  \\ \hline
-Commissioning Cluster Enclave  \\ \hline
-Prompt Base Enclave  \\ \hline
+Arch Base Encl  \\ \hline
+DAC Chile Encl  \\ \hline
+Comm Clust Encl  \\ \hline
+Prmpt Base Encl  \\ \hline
 \end{tabular}
 &
 \\ \bottomrule
@@ -3370,7 +3487,7 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  
+  NCSA processing facility located at Urbana, Illinois(USA).
 
 
 
@@ -3379,11 +3496,11 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DAC US Enclave  \\ \hline
-Offline Production Enclave  \\ \hline
-Development and Integration E.  \\ \hline
-Prompt NCSA Enclave  \\ \hline
-Archive NCSA Enclave  \\ \hline
+DAC US Encl  \\ \hline
+Offline Prod Encl  \\ \hline
+  \\ \hline
+Prmpt NCSA Encl  \\ \hline
+Arch NCSA Encl  \\ \hline
 \end{tabular}
 &
 \\ \bottomrule
@@ -3426,7 +3543,7 @@ Net/Base \\
 }\\ \hline
 \end{longtable}
 
-  Santiago - Boca Raton Spectrum Is this a network? Or a component used?
+  
 
 
 
@@ -3455,7 +3572,7 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  Base Local Area Network
+  Base Local Area Network.
 
 
 
@@ -3514,7 +3631,7 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  Santiago - Boca Raton Spectrum Is this a network? Or a component used?
+  NCSA Local Area Network.
 
 
 
@@ -3572,7 +3689,8 @@ Net/Base \\
 }\\ \hline
 \end{longtable}
 
-  DM reference datasets to be used during operations.
+  DM reference datasets to be used during operations, and in preparation,
+during constructions..
 
 
 
@@ -3608,6 +3726,7 @@ Net/Base \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
+Science P. Dist.  \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
