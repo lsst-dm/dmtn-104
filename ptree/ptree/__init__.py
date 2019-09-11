@@ -52,9 +52,7 @@ def _as_output_format(text):
 @click.option('--username', prompt="MagicDraw Username", envvar="MD_USER", help="MagicDraw username")
 @click.option('--password', prompt="MagicDraw Password", hide_input=True,
               envvar="MD_PASSWORD", help="MagicDraw Password")
-@click.option('--inputf', default="DMProductsProperties.csv")
-@click.argument('element_id', required=False)
-def generate(format, username, password, element_id, inputf):
+def generate(format, username, password):
     """Generate product tree document
     """
 

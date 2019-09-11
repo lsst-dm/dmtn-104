@@ -41,7 +41,7 @@ following groups:
 ~
 
 
-\subsection{Services}
+\subsection{Services}\label{dmsrv}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -83,7 +83,7 @@ party, is implementing it. This information is displaced in the
 \textbf{Product Dependencies} table, \emph{Depends On} column.
 
 
-\subsubsection{Backbone Services}
+\subsubsection{Backbone Services}\label{dbbsrv}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -105,7 +105,7 @@ They are implemented in the Archive enclaves.\\[2\baselineskip]Detailed
 concepts of operations for each service can be found in LDM-230.
 
 
-\paragraph{DBB Lifetime Management}\mbox{}\\
+\paragraph{DBB Lifetime Management}\label{dbblifesrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -136,17 +136,17 @@ products may be kept until all downstream products have been generated.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Lifetime Management SW  \\ \hline
+\hyperref[dbblife]{DBB Lifetime Management SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Archive Base Enclave  \\ \hline
-Archive NCSA Enclave  \\ \hline
+\hyperref[encarcb]{Archive Base Enclave} \\ \hline
+\hyperref[encarcn]{Archive NCSA Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{DBB Ingest/ Metadata Management}\mbox{}\\
+\paragraph{DBB Ingest/ Metadata Management}\label{dbbmdsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -181,17 +181,17 @@ Butler to directly access data within the DBB.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Ingest/ Metadata Management SW  \\ \hline
+\hyperref[dbbmd]{DBB Ingest/ Metadata Management SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Archive Base Enclave  \\ \hline
-Archive NCSA Enclave  \\ \hline
+\hyperref[encarcb]{Archive Base Enclave} \\ \hline
+\hyperref[encarcn]{Archive NCSA Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{DBB Storage}\mbox{}\\
+\paragraph{DBB Storage}\label{dbbstrsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -219,17 +219,17 @@ datastore.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Transport/ Replication/ Backup SW  \\ \hline
+\hyperref[dbbtr]{DBB Transport/ Replication/ Backup SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Archive Base Enclave  \\ \hline
-Archive NCSA Enclave  \\ \hline
+\hyperref[encarcb]{Archive Base Enclave} \\ \hline
+\hyperref[encarcn]{Archive NCSA Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{DBB Transport/ Replication/ Backup}\mbox{}\\
+\paragraph{DBB Transport/ Replication/ Backup}\label{dbbtrsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -257,17 +257,17 @@ recovery if a data product is found to be missing or corrupt.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Transport/ Replication/ Backup SW  \\ \hline
+\hyperref[dbbtr]{DBB Transport/ Replication/ Backup SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Archive Base Enclave  \\ \hline
-Archive NCSA Enclave  \\ \hline
+\hyperref[encarcb]{Archive Base Enclave} \\ \hline
+\hyperref[encarcn]{Archive NCSA Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{LSP Services}
+\subsubsection{LSP Services}\label{lspsrv}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -303,7 +303,7 @@ as data and processing SW.\\[2\baselineskip]More details available in
 LDM-542 and LSE-319.
 
 
-\paragraph{LSP JupyterLab}\mbox{}\\
+\paragraph{LSP JupyterLab}\label{lspjlsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -333,19 +333,19 @@ generating derived data products.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-LSP JupyterLab SW  \\ \hline
-Science Pipelines Distribution  \\ \hline
+\hyperref[lspjl]{LSP JupyterLab SW} \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-DAC US Enclave  \\ \hline
-DAC Chile Enclave  \\ \hline
-Commissioning Cluster Enclave  \\ \hline
+\hyperref[encdacu]{DAC US Enclave} \\ \hline
+\hyperref[encdacc]{DAC Chile Enclave} \\ \hline
+\hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{LSP Portal}\mbox{}\\
+\paragraph{LSP Portal}\label{lspprtlsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -374,19 +374,19 @@ the LSST data products.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-SUIT  \\ \hline
-Suit Online Help  \\ \hline
+\hyperref[suit]{SUIT} \\ \hline
+\hyperref[suitoh]{Suit Online Help} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-DAC US Enclave  \\ \hline
-DAC Chile Enclave  \\ \hline
-Commissioning Cluster Enclave  \\ \hline
+\hyperref[encdacu]{DAC US Enclave} \\ \hline
+\hyperref[encdacc]{DAC Chile Enclave} \\ \hline
+\hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{LSP Web API}\mbox{}\\
+\paragraph{LSP Web API}\label{lspwebsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -417,18 +417,18 @@ Notebook Aspect.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-LSP Web API SW  \\ \hline
+\hyperref[lspweb]{LSP Web API SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-DAC US Enclave  \\ \hline
-DAC Chile Enclave  \\ \hline
-Commissioning Cluster Enclave  \\ \hline
+\hyperref[encdacu]{DAC US Enclave} \\ \hline
+\hyperref[encdacc]{DAC Chile Enclave} \\ \hline
+\hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Offline Services}
+\subsubsection{Offline Services}\label{offlsrv}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -448,7 +448,7 @@ Multiple \\
   DM services that do not need to run in a prompt manner.
 
 
-\paragraph{Bulk Distribution}\mbox{}\\
+\paragraph{Bulk Distribution}\label{bulkdsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -474,16 +474,16 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Rucio  \\ \hline
+\hyperref[rucio]{Rucio} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Offline Production Enclave  \\ \hline
+\hyperref[encoffl]{Offline Production Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Offline Quality Control}\mbox{}\\
+\paragraph{Offline Quality Control}\label{offlqcsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -512,17 +512,17 @@ the data collected by the survey.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Quality Control SW  \\ \hline
+\hyperref[qcsw]{Quality Control SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt NCSA Enclave  \\ \hline
-Offline Production Enclave  \\ \hline
+\hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
+\hyperref[encoffl]{Offline Production Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Batch Production}\mbox{}\\
+\paragraph{Batch Production}\label{prodsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -548,21 +548,21 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Workload/ Workflow Management  \\ \hline
-HTCondor  \\ \hline
-Calibration SW  \\ \hline
-Data Release Production  \\ \hline
-MOPS and Forced Photometry  \\ \hline
-Special Programs Productions  \\ \hline
+\hyperref[wlwf]{Workload/ Workflow Management} \\ \hline
+\hyperref[htcondor]{HTCondor} \\ \hline
+\hyperref[dmcal]{Calibration SW} \\ \hline
+\hyperref[drp]{Data Release Production} \\ \hline
+\hyperref[mops]{MOPS and Forced Photometry} \\ \hline
+\hyperref[sp]{Special Programs Productions} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Offline Production Enclave  \\ \hline
+\hyperref[encoffl]{Offline Production Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Prompt Services}
+\subsubsection{Prompt Services}\label{prsrv}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -582,7 +582,7 @@ Multiple \\
   DM Services that need to run in a prompt manner.
 
 
-\paragraph{Alert Distribution}\mbox{}\\
+\paragraph{Alert Distribution}\label{alrtdstsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -608,16 +608,16 @@ AP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Alert Distribution SW  \\ \hline
+\hyperref[alrtdstr]{Alert Distribution SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt NCSA Enclave  \\ \hline
+\hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Archiving}\mbox{}\\
+\paragraph{Archiving}\label{arcsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -668,18 +668,18 @@ EFD'' database in the Data Backbone.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Image Ingest and Processing  \\ \hline
-EFD Transformation  \\ \hline
-Header Service SW  \\ \hline
+\hyperref[iip]{Image Ingest and Processing} \\ \hline
+\hyperref[efdt]{EFD Transformation} \\ \hline
+\hyperref[header]{Header Service SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
+\hyperref[encprb]{Prompt Base Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{OCS-Driven Batch}\mbox{}\\
+\paragraph{OCS-Driven Batch}\label{ocsbatsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -705,16 +705,16 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-OCS Batch SW  \\ \hline
+\hyperref[ocsbat]{OCS Batch SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
+\hyperref[encprb]{Prompt Base Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Observatory Operations Data}\mbox{}\\
+\paragraph{Observatory Operations Data}\label{oodssrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -740,16 +740,16 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Observatory Operations Data Service SW  \\ \hline
+\hyperref[oods]{Observatory Operations Data Service SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
+\hyperref[encprb]{Prompt Base Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Planned Observation Publication}\mbox{}\\
+\paragraph{Planned Observation Publication}\label{popsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -779,16 +779,16 @@ inspection and a web API for usage by automated tools.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Planned Observation Publication SW  \\ \hline
+\hyperref[obspub]{Planned Observation Publication SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
+\hyperref[encprb]{Prompt Base Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Prompt Processing Ingest}\mbox{}\\
+\paragraph{Prompt Processing Ingest}\label{prpingsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -819,17 +819,17 @@ telescope spectrograph.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Image Ingest and Processing  \\ \hline
+\hyperref[iip]{Image Ingest and Processing} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
-Prompt NCSA Enclave  \\ \hline
+\hyperref[encprb]{Prompt Base Enclave} \\ \hline
+\hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Prompt Processing}\mbox{}\\
+\paragraph{Prompt Processing}\label{prprsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -855,18 +855,18 @@ Prompt NCSA Enclave  \\ \hline
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Alert Production  \\ \hline
-Calibration SW  \\ \hline
-MOPS and Forced Photometry  \\ \hline
+\hyperref[apprmpt]{Alert Production} \\ \hline
+\hyperref[dmcal]{Calibration SW} \\ \hline
+\hyperref[mops]{MOPS and Forced Photometry} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt NCSA Enclave  \\ \hline
+\hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Prompt Quality Control}\mbox{}\\
+\paragraph{Prompt Quality Control}\label{prqcsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -895,16 +895,16 @@ the data collected by the survey.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Quality Control SW  \\ \hline
+\hyperref[qcsw]{Quality Control SW} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt NCSA Enclave  \\ \hline
+\hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Telemetry Gateway}\mbox{}\\
+\paragraph{Telemetry Gateway}\label{tmgsrv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -922,7 +922,8 @@ LDF \\
 \end{longtable}
 
   This service is implemented by the DMCS, a more general system that
-manages communication from and to the Observatory.
+manages communication from and to the Observatory. The DMCS is developed
+as part of the Image Ingest and Processing software product.
 
 
 
@@ -931,16 +932,16 @@ manages communication from and to the Observatory.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Image Ingest and Processing  \\ \hline
+\hyperref[iip]{Image Ingest and Processing} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Base Enclave  \\ \hline
+\hyperref[encprb]{Prompt Base Enclave} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsection{Software Products}
+\subsection{Software Products}\label{dmsw}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -964,7 +965,7 @@ Dependencies should be derived from the corresponding Git packages
 definition.
 
 
-\subsubsection{Batch Production Products}
+\subsubsection{Batch Production Products}\label{bpp}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -984,7 +985,7 @@ Michelle Butler \\
   Software products to orchestrate the long term data processing.
 
 
-\paragraph{Campaign Management}\mbox{}\\
+\paragraph{Campaign Management}\label{cmpgn}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1014,7 +1015,7 @@ docker. SW still to be written.
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Workload/ Workflow Management}\mbox{}\\
+\paragraph{Workload/ Workflow Management}\label{wlwf}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1042,12 +1043,12 @@ docker. SW still to be written.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Batch Production  \\ \hline
+\hyperref[prodsrv]{Batch Production} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Backbone SW Products}
+\subsubsection{Backbone SW Products}\label{dbb}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1067,7 +1068,7 @@ Michelle Butler \\
   Software products that implement the Data Backbone services
 
 
-\paragraph{DBB Lifetime Management SW}\mbox{}\\
+\paragraph{DBB Lifetime Management SW}\label{dbblife}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1095,12 +1096,12 @@ sciences storage.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-DBB Lifetime Management  \\ \hline
+\hyperref[dbblifesrv]{DBB Lifetime Management} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{DBB Ingest/ Metadata Management SW}\mbox{}\\
+\paragraph{DBB Ingest/ Metadata Management SW}\label{dbbmd}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1133,12 +1134,12 @@ services from the Facilities enclaves to the backbone.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-DBB Ingest/ Metadata Management  \\ \hline
+\hyperref[dbbmdsrv]{DBB Ingest/ Metadata Management} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{DBB Transport/ Replication/ Backup SW}\mbox{}\\
+\paragraph{DBB Transport/ Replication/ Backup SW}\label{dbbtr}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1167,13 +1168,13 @@ preservation.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-DBB Transport/ Replication/ Backup  \\ \hline
-DBB Storage  \\ \hline
+\hyperref[dbbtrsrv]{DBB Transport/ Replication/ Backup} \\ \hline
+\hyperref[dbbstrsrv]{DBB Storage} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{LSP SW Products}
+\subsubsection{LSP SW Products}\label{lsp}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1193,7 +1194,7 @@ Gregory Dubois-Felsmann \\
   Software products that implement the LSP services.
 
 
-\paragraph{LSP JupyterLab SW}\mbox{}\\
+\paragraph{LSP JupyterLab SW}\label{lspjl}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1224,12 +1225,12 @@ SQuaRE \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-LSP JupyterLab  \\ \hline
+\hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{LSP Web API SW}\mbox{}\\
+\paragraph{LSP Web API SW}\label{lspweb}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1260,12 +1261,12 @@ DAX \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-LSP Web API  \\ \hline
+\hyperref[lspwebsrv]{LSP Web API} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{SUIT}\mbox{}\\
+\paragraph{SUIT}\label{suit}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1300,16 +1301,16 @@ Firefly server side.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Firefly  \\ \hline
+\hyperref[firefly]{Firefly} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-LSP Portal  \\ \hline
+\hyperref[lspprtlsrv]{LSP Portal} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Suit Online Help}\mbox{}\\
+\paragraph{Suit Online Help}\label{suitoh}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1342,12 +1343,12 @@ HTML content.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-LSP Portal  \\ \hline
+\hyperref[lspprtlsrv]{LSP Portal} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Prompt SW Products}
+\subsubsection{Prompt SW Products}\label{pr}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1367,7 +1368,7 @@ Multiple \\
   DM software products required to implement the DM Prompt Services.
 
 
-\paragraph{Alert Distribution SW}\mbox{}\\
+\paragraph{Alert Distribution SW}\label{alrtdstr}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1398,12 +1399,12 @@ AP \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Alert Distribution  \\ \hline
+\hyperref[alrtdstsrv]{Alert Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{EFD Transformation}\mbox{}\\
+\paragraph{EFD Transformation}\label{efdt}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1431,12 +1432,12 @@ services. (EFD Extract-Tranform-Load) Software still to be implemented.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Archiving  \\ \hline
+\hyperref[arcsrv]{Archiving} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Header Service SW}\mbox{}\\
+\paragraph{Header Service SW}\label{header}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1468,12 +1469,12 @@ external users. It is developed at University of Illinois (Urbana)
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Archiving  \\ \hline
+\hyperref[arcsrv]{Archiving} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Image Ingest and Processing}\mbox{}\\
+\paragraph{Image Ingest and Processing}\label{iip}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1490,7 +1491,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  Image ingest and processing SW product
+  Image ingest and processing SW product.\\[2\baselineskip]This includes
+the DMCS, used to implements the Telemetry Gateway service.
 
 
 \begin{longtable}{c}\hline
@@ -1504,14 +1506,14 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Prompt Processing Ingest  \\ \hline
-Archiving  \\ \hline
-Telemetry Gateway  \\ \hline
+\hyperref[prpingsrv]{Prompt Processing Ingest} \\ \hline
+\hyperref[arcsrv]{Archiving} \\ \hline
+\hyperref[tmgsrv]{Telemetry Gateway} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Planned Observation Publication SW}\mbox{}\\
+\paragraph{Planned Observation Publication SW}\label{obspub}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1538,12 +1540,12 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Planned Observation Publication  \\ \hline
+\hyperref[popsrv]{Planned Observation Publication} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{OCS Batch SW}\mbox{}\\
+\paragraph{OCS Batch SW}\label{ocsbat}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1570,12 +1572,12 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-OCS-Driven Batch  \\ \hline
+\hyperref[ocsbatsrv]{OCS-Driven Batch} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Observatory Operations Data Service SW}\mbox{}\\
+\paragraph{Observatory Operations Data Service SW}\label{oods}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1602,12 +1604,12 @@ LDF \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Observatory Operations Data  \\ \hline
+\hyperref[oodssrv]{Observatory Operations Data} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Science Pipeline SW Products}
+\subsubsection{Science Pipeline SW Products}\label{prodn}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1627,7 +1629,7 @@ Robert Lupton \\
   DM Software products that implements the Science Pipelines payloads.
 
 
-\paragraph{Alert Production}\mbox{}\\
+\paragraph{Alert Production}\label{apprmpt}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1657,17 +1659,17 @@ AP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Science Pipelines Libraries  \\ \hline
+\hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Processing  \\ \hline
-Science Pipelines Distribution  \\ \hline
+\hyperref[prprsrv]{Prompt Processing} \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Calibration SW}\mbox{}\\
+\paragraph{Calibration SW}\label{dmcal}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1697,18 +1699,18 @@ DRP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Science Pipelines Libraries  \\ \hline
+\hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Processing  \\ \hline
-Batch Production  \\ \hline
-Science Pipelines Distribution  \\ \hline
+\hyperref[prprsrv]{Prompt Processing} \\ \hline
+\hyperref[prodsrv]{Batch Production} \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Data Release Production}\mbox{}\\
+\paragraph{Data Release Production}\label{drp}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1738,17 +1740,17 @@ DRP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Science Pipelines Libraries  \\ \hline
+\hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Batch Production  \\ \hline
-Science Pipelines Distribution  \\ \hline
+\hyperref[prodsrv]{Batch Production} \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{MOPS and Forced Photometry}\mbox{}\\
+\paragraph{MOPS and Forced Photometry}\label{mops}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1778,18 +1780,18 @@ AP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Science Pipelines Libraries  \\ \hline
+\hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Prompt Processing  \\ \hline
-Batch Production  \\ \hline
-Science Pipelines Distribution  \\ \hline
+\hyperref[prprsrv]{Prompt Processing} \\ \hline
+\hyperref[prodsrv]{Batch Production} \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Special Programs Productions}\mbox{}\\
+\paragraph{Special Programs Productions}\label{sp}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1817,17 +1819,17 @@ DRP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Science Pipelines Libraries  \\ \hline
+\hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Batch Production  \\ \hline
-Science Pipelines Distribution  \\ \hline
+\hyperref[prodsrv]{Batch Production} \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Science Pipelines Distribution}\mbox{}\\
+\paragraph{Science Pipelines Distribution}\label{spdist}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1857,26 +1859,26 @@ DRP \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Alert Production  \\ \hline
-Calibration SW  \\ \hline
-Data Release Production  \\ \hline
-MOPS and Forced Photometry  \\ \hline
-Special Programs Productions  \\ \hline
-Science Plugins  \\ \hline
-Template Generation  \\ \hline
-Data Butler  \\ \hline
-Science Pipelines Libraries  \\ \hline
-Task Framework  \\ \hline
-Atronomy Net Data  \\ \hline
+\hyperref[apprmpt]{Alert Production} \\ \hline
+\hyperref[dmcal]{Calibration SW} \\ \hline
+\hyperref[drp]{Data Release Production} \\ \hline
+\hyperref[mops]{MOPS and Forced Photometry} \\ \hline
+\hyperref[sp]{Special Programs Productions} \\ \hline
+\hyperref[splug]{Science Plugins} \\ \hline
+\hyperref[tmplgen]{Template Generation} \\ \hline
+\hyperref[butler]{Data Butler} \\ \hline
+\hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
+\hyperref[txf]{Task Framework} \\ \hline
+\hyperref[and]{Atronomy Net Data} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-LSP JupyterLab  \\ \hline
+\hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Science Plugins}\mbox{}\\
+\paragraph{Science Plugins}\label{splug}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1911,12 +1913,12 @@ configured in or out of the processing by the user.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Science Pipelines Distribution  \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Template Generation}\mbox{}\\
+\paragraph{Template Generation}\label{tmplgen}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1943,12 +1945,12 @@ DRP \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Science Pipelines Distribution  \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Quality Control Products}
+\subsubsection{Quality Control Products}\label{qc}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1968,7 +1970,7 @@ Simon Krughoff \\
   SW products for quality control.
 
 
-\paragraph{Quality Control SW}\mbox{}\\
+\paragraph{Quality Control SW}\label{qcsw}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2004,13 +2006,13 @@ services.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Offline Quality Control  \\ \hline
-Prompt Quality Control  \\ \hline
+\hyperref[offlqcsrv]{Offline Quality Control} \\ \hline
+\hyperref[prqcsrv]{Prompt Quality Control} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Supporting SW Products}
+\subsubsection{Supporting SW Products}\label{suppsw}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2031,7 +2033,7 @@ Multiple \\
 other DM software products.
 
 
-\paragraph{ADQL Translator}\mbox{}\\
+\paragraph{ADQL Translator}\label{adql}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2064,7 +2066,7 @@ DAX \\
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Data Butler}\mbox{}\\
+\paragraph{Data Butler}\label{butler}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2095,12 +2097,12 @@ DAX \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Science Pipelines Distribution  \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Image/ Cutout Server}\mbox{}\\
+\paragraph{Image/ Cutout Server}\label{daximg}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2133,7 +2135,7 @@ DAX \\
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Distributed Database}\mbox{}\\
+\paragraph{Distributed Database}\label{qserv}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2170,7 +2172,7 @@ package in github.
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Science Pipelines Libraries}\mbox{}\\
+\paragraph{Science Pipelines Libraries}\label{scipipe}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2203,17 +2205,17 @@ AP \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Alert Production  \\ \hline
-Calibration SW  \\ \hline
-Data Release Production  \\ \hline
-MOPS and Forced Photometry  \\ \hline
-Special Programs Productions  \\ \hline
-Science Pipelines Distribution  \\ \hline
+\hyperref[apprmpt]{Alert Production} \\ \hline
+\hyperref[dmcal]{Calibration SW} \\ \hline
+\hyperref[drp]{Data Release Production} \\ \hline
+\hyperref[mops]{MOPS and Forced Photometry} \\ \hline
+\hyperref[sp]{Special Programs Productions} \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Task Framework}\mbox{}\\
+\paragraph{Task Framework}\label{txf}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2244,12 +2246,12 @@ DAX \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Science Pipelines Distribution  \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsection{Hardware and COTS SW}
+\subsection{Hardware and COTS SW}\label{hwcots}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2269,7 +2271,7 @@ Multiple \\
   DM hardware and COTS products.
 
 
-\subsubsection{COTS}
+\subsubsection{COTS}\label{cots}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2289,7 +2291,7 @@ Multiple \\
   This product includes all COTS used to implement the DM services.
 
 
-\paragraph{CILogon}\mbox{}\\
+\paragraph{CILogon}\label{cilogon}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2321,12 +2323,12 @@ management platform for research collaborations.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Identity Management  \\ \hline
+\hyperref[]{Identity Management} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Docker}\mbox{}\\
+\paragraph{Docker}\label{docker}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2358,12 +2360,12 @@ virtualizations.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Containerized Application Management  \\ \hline
+\hyperref[cam]{Containerized Application Management} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{GPFS}\mbox{}\\
+\paragraph{GPFS}\label{gpfs}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2395,12 +2397,12 @@ file system developed by IBM.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-ICT Provisioning and Management  \\ \hline
+\hyperref[]{ICT Provisioning and Management} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Grafana}\mbox{}\\
+\paragraph{Grafana}\label{grafana}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2431,12 +2433,12 @@ ICT Provisioning and Management  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Monitoring  \\ \hline
+\hyperref[]{Monitoring} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{HTCondor}\mbox{}\\
+\paragraph{HTCondor}\label{htcondor}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2470,12 +2472,12 @@ intensive tasks.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Batch Production  \\ \hline
+\hyperref[prodsrv]{Batch Production} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Kubernetes}\mbox{}\\
+\paragraph{Kubernetes}\label{k8s}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2507,12 +2509,12 @@ and management of containerized applications.
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Containerized Application Management  \\ \hline
+\hyperref[cam]{Containerized Application Management} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Oracle}\mbox{}\\
+\paragraph{Oracle}\label{oracle}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2543,12 +2545,12 @@ Containerized Application Management  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Database Management  \\ \hline
+\hyperref[]{Database Management} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Puppet}\mbox{}\\
+\paragraph{Puppet}\label{puppet}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2580,12 +2582,12 @@ Database Management  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-ICT Provisioning and Management  \\ \hline
+\hyperref[]{ICT Provisioning and Management} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Rucio}\mbox{}\\
+\paragraph{Rucio}\label{rucio}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2617,12 +2619,12 @@ Michelle Butler \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Bulk Distribution  \\ \hline
+\hyperref[bulkdsrv]{Bulk Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{IT Security SW}\mbox{}\\
+\paragraph{IT Security SW}\label{security}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2649,12 +2651,12 @@ Bulk Distribution  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-IT Security  \\ \hline
+\hyperref[]{IT Security} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{vSphere}\mbox{}\\
+\paragraph{vSphere}\label{vsphere}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2685,12 +2687,12 @@ IT Security  \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-ICT Provisioning and Management  \\ \hline
+\hyperref[]{ICT Provisioning and Management} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Compute Nodes}
+\subsubsection{Compute Nodes}\label{hwcomp}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2713,7 +2715,7 @@ for example racks, re also included in this section. Details will be
 added here on a per need base.
 
 
-\paragraph{Dell blade 8 cores 16 GB ram}\mbox{}\\
+\paragraph{Dell blade 8 cores 16 GB ram}\label{dell8}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2743,7 +2745,7 @@ package
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Network Nodes}
+\subsubsection{Network Nodes}\label{hwnet}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2769,7 +2771,7 @@ different networks. Some examples are: - cables (coaxial, optic fiber,
 other) - switches Details will be added here on a per need base.
 
 
-\paragraph{Network Component X}\mbox{}\\
+\paragraph{Network Component X}\label{netx}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2799,7 +2801,7 @@ package
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Storage Nodes}
+\subsubsection{Storage Nodes}\label{hwstor}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2821,7 +2823,7 @@ for long term archive shall also be included in this area. Details will
 be added here on a per need base.
 
 
-\paragraph{SAN disk 2TB storage}\mbox{}\\
+\paragraph{SAN disk 2TB storage}\label{san2}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2850,7 +2852,7 @@ LDF \\
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Low Level SW}
+\subsubsection{Low Level SW}\label{llsw}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2874,7 +2876,7 @@ Some examples are: - Firmwares - Operating Systems Details will be added
 here on a per need base.
 
 
-\paragraph{RedHat CentOS}\mbox{}\\
+\paragraph{RedHat CentOS}\label{centos}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2903,7 +2905,7 @@ here on a per need base.
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Third Party Libraries}
+\subsubsection{Third Party Libraries}\label{thpl}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2924,7 +2926,7 @@ here on a per need base.
 and to run.
 
 
-\paragraph{Boost}\mbox{}\\
+\paragraph{Boost}\label{boost}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2953,7 +2955,7 @@ and to run.
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Firefly API Access}\mbox{}\\
+\paragraph{Firefly API Access}\label{ffaa}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -2987,7 +2989,7 @@ from npm-style package loading
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Firefly}\mbox{}\\
+\paragraph{Firefly}\label{firefly}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3022,12 +3024,12 @@ SUIT \\
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-SUIT  \\ \hline
+\hyperref[suit]{SUIT} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Python}\mbox{}\\
+\paragraph{Python}\label{pth}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3056,7 +3058,7 @@ SUIT  \\ \hline
 \\ \bottomrule
 \end{longtable}
 
-\subsection{Infrastructure}
+\subsection{Infrastructure}\label{infra}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3083,7 +3085,7 @@ services.
 ~
 
 
-\subsubsection{Enclaves}
+\subsubsection{Enclaves}\label{enc}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3103,7 +3105,7 @@ Multiple \\
   Logical group of DM Services.
 
 
-\paragraph{Archive Base Enclave}\mbox{}\\
+\paragraph{Archive Base Enclave}\label{encarcb}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3130,19 +3132,19 @@ Base facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Ingest/ Metadata Management  \\ \hline
-DBB Transport/ Replication/ Backup  \\ \hline
-DBB Lifetime Management  \\ \hline
-DBB Storage  \\ \hline
+\hyperref[dbbmdsrv]{DBB Ingest/ Metadata Management} \\ \hline
+\hyperref[dbbtrsrv]{DBB Transport/ Replication/ Backup} \\ \hline
+\hyperref[dbblifesrv]{DBB Lifetime Management} \\ \hline
+\hyperref[dbbstrsrv]{DBB Storage} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Base Facility  \\ \hline
+\hyperref[facbase]{Base Facility} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Archive NCSA Enclave}\mbox{}\\
+\paragraph{Archive NCSA Enclave}\label{encarcn}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3169,19 +3171,19 @@ NCSA facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DBB Ingest/ Metadata Management  \\ \hline
-DBB Lifetime Management  \\ \hline
-DBB Storage  \\ \hline
-DBB Transport/ Replication/ Backup  \\ \hline
+\hyperref[dbbmdsrv]{DBB Ingest/ Metadata Management} \\ \hline
+\hyperref[dbblifesrv]{DBB Lifetime Management} \\ \hline
+\hyperref[dbbstrsrv]{DBB Storage} \\ \hline
+\hyperref[dbbtrsrv]{DBB Transport/ Replication/ Backup} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-NCSA Facility  \\ \hline
+\hyperref[facncsa]{NCSA Facility} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Commissioning Cluster Enclave}\mbox{}\\
+\paragraph{Commissioning Cluster Enclave}\label{enccomm}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3208,18 +3210,18 @@ Base facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-LSP Portal  \\ \hline
-LSP JupyterLab  \\ \hline
-LSP Web API  \\ \hline
+\hyperref[lspprtlsrv]{LSP Portal} \\ \hline
+\hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
+\hyperref[lspwebsrv]{LSP Web API} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Base Facility  \\ \hline
+\hyperref[facbase]{Base Facility} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{DAC Chile Enclave}\mbox{}\\
+\paragraph{DAC Chile Enclave}\label{encdacc}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3246,18 +3248,18 @@ located at the Base facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-LSP JupyterLab  \\ \hline
-LSP Web API  \\ \hline
-LSP Portal  \\ \hline
+\hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
+\hyperref[lspwebsrv]{LSP Web API} \\ \hline
+\hyperref[lspprtlsrv]{LSP Portal} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Base Facility  \\ \hline
+\hyperref[facbase]{Base Facility} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{DAC US Enclave}\mbox{}\\
+\paragraph{DAC US Enclave}\label{encdacu}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3284,18 +3286,18 @@ the NCSA facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-LSP JupyterLab  \\ \hline
-LSP Web API  \\ \hline
-LSP Portal  \\ \hline
+\hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
+\hyperref[lspwebsrv]{LSP Web API} \\ \hline
+\hyperref[lspprtlsrv]{LSP Portal} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-NCSA Facility  \\ \hline
+\hyperref[facncsa]{NCSA Facility} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Offline Production Enclave}\mbox{}\\
+\paragraph{Offline Production Enclave}\label{encoffl}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3322,18 +3324,18 @@ the NCSA facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Batch Production  \\ \hline
-Offline Quality Control  \\ \hline
-Bulk Distribution  \\ \hline
+\hyperref[prodsrv]{Batch Production} \\ \hline
+\hyperref[offlqcsrv]{Offline Quality Control} \\ \hline
+\hyperref[bulkdsrv]{Bulk Distribution} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-NCSA Facility  \\ \hline
+\hyperref[facncsa]{NCSA Facility} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Prompt Base Enclave}\mbox{}\\
+\paragraph{Prompt Base Enclave}\label{encprb}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3360,21 +3362,21 @@ real time manner, at Base facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Prompt Processing Ingest  \\ \hline
-Telemetry Gateway  \\ \hline
-Planned Observation Publication  \\ \hline
-OCS-Driven Batch  \\ \hline
-Observatory Operations Data  \\ \hline
-Archiving  \\ \hline
+\hyperref[prpingsrv]{Prompt Processing Ingest} \\ \hline
+\hyperref[tmgsrv]{Telemetry Gateway} \\ \hline
+\hyperref[popsrv]{Planned Observation Publication} \\ \hline
+\hyperref[ocsbatsrv]{OCS-Driven Batch} \\ \hline
+\hyperref[oodssrv]{Observatory Operations Data} \\ \hline
+\hyperref[arcsrv]{Archiving} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-Base Facility  \\ \hline
+\hyperref[facbase]{Base Facility} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Prompt NCSA Enclave}\mbox{}\\
+\paragraph{Prompt NCSA Enclave}\label{encprn}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3401,20 +3403,20 @@ real time manner, at NCSA facility.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Alert Distribution  \\ \hline
-Prompt Processing Ingest  \\ \hline
-Offline Quality Control  \\ \hline
-Prompt Quality Control  \\ \hline
-Prompt Processing  \\ \hline
+\hyperref[alrtdstsrv]{Alert Distribution} \\ \hline
+\hyperref[prpingsrv]{Prompt Processing Ingest} \\ \hline
+\hyperref[offlqcsrv]{Offline Quality Control} \\ \hline
+\hyperref[prqcsrv]{Prompt Quality Control} \\ \hline
+\hyperref[prprsrv]{Prompt Processing} \\ \hline
 \end{tabular}
 &
 \begin{tabular}{c}
-NCSA Facility  \\ \hline
+\hyperref[facncsa]{NCSA Facility} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Facilities}
+\subsubsection{Facilities}\label{fac}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3434,7 +3436,7 @@ Multiple \\
   Physical facilities where operational DM activities take place.
 
 
-\paragraph{Base Facility}\mbox{}\\
+\paragraph{Base Facility}\label{facbase}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3461,16 +3463,16 @@ Net/Base \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-Archive Base Enclave  \\ \hline
-DAC Chile Enclave  \\ \hline
-Commissioning Cluster Enclave  \\ \hline
-Prompt Base Enclave  \\ \hline
+\hyperref[encarcb]{Archive Base Enclave} \\ \hline
+\hyperref[encdacc]{DAC Chile Enclave} \\ \hline
+\hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
+\hyperref[encprb]{Prompt Base Enclave} \\ \hline
 \end{tabular}
 &
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{NCSA Facility}\mbox{}\\
+\paragraph{NCSA Facility}\label{facncsa}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3496,17 +3498,17 @@ LDF \\
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 \begin{tabular}{c}
-DAC US Enclave  \\ \hline
-Offline Production Enclave  \\ \hline
-Development and Integration E.  \\ \hline
-Prompt NCSA Enclave  \\ \hline
-Archive NCSA Enclave  \\ \hline
+\hyperref[encdacu]{DAC US Enclave} \\ \hline
+\hyperref[encoffl]{Offline Production Enclave} \\ \hline
+\hyperref[]{Development and Integration E.} \\ \hline
+\hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
+\hyperref[encarcn]{Archive NCSA Enclave} \\ \hline
 \end{tabular}
 &
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Networks}
+\subsubsection{Networks}\label{net}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3526,7 +3528,7 @@ Multiple \\
   High level physical DM networks definition.
 
 
-\paragraph{Base to Archive Network}\mbox{}\\
+\paragraph{Base to Archive Network}\label{netba}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3555,7 +3557,7 @@ Net/Base \\
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Base LAN Network}\mbox{}\\
+\paragraph{Base LAN Network}\label{netbase}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3584,7 +3586,7 @@ LDF \\
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Network Management}\mbox{}\\
+\paragraph{Network Management}\label{netmgmt}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3614,7 +3616,7 @@ Management section
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{NCSA LAN Network}\mbox{}\\
+\paragraph{NCSA LAN Network}\label{netncsa}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3643,7 +3645,7 @@ LDF \\
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Summit to Base Network}\mbox{}\\
+\paragraph{Summit to Base Network}\label{netsb}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3672,7 +3674,7 @@ Net/Base \\
 \\ \bottomrule
 \end{longtable}
 
-\subsection{Reference Data}
+\subsection{Reference Data}\label{refd}
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3694,7 +3696,7 @@ during constructions..
 
 
 
-\paragraph{Atronomy Net Data}\mbox{}\\
+\paragraph{Atronomy Net Data}\label{and}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3726,14 +3728,14 @@ during constructions..
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
 \begin{tabular}{c}
-Science Pipelines Distribution  \\ \hline
+\hyperref[spdist]{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 \\ \bottomrule
 \end{longtable}
 
 
 
-\paragraph{Gaia Data}\mbox{}\\
+\paragraph{Gaia Data}\label{gdata}\mbox{}\\
 
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline

@@ -155,8 +155,6 @@ def walk_tree(rcs, mres, mdid, pkey):
                     if asid == typed_namespace_ofmember1:
                         relation_id = typed_namespace_ofmember0
                         relation = get_pkg_key(rcs, mres, relation_id)
-                        # print("    relation: ", relation['name'], "( n. of diagrams: ", len(relation['diagrams']), ")",
-                        #      relation_id)
                         if len(relation['diagrams']) == 0:
                             if typed_aggregation == "composite":
                                 if relation not in pkg_usedin:
@@ -173,8 +171,6 @@ def walk_tree(rcs, mres, mdid, pkey):
                     elif typed_aggregation == "composite" and typed_namespace_ofmember1 != "":
                         relation_id = typed_namespace_ofmember1
                         relation = get_pkg_key(rcs, mres, relation_id)
-                        # print("    relation: ", relation['name'], "( n. of diagrams: ", len(relation['diagrams']), ")",
-                        #       relation_id)
                         if len(relation['diagrams']) == 0:
                             if relation not in pkg_usedin:
                                 pkg_usedin.append(relation)
