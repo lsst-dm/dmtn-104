@@ -22,8 +22,18 @@
 Code for generation Product Tree document from MagicDraw
 """
 import requests
+import click
+import sys
 from .config import Config
+from jinja2 import Environment, PackageLoader, TemplateNotFound, ChoiceLoader, FileSystemLoader
 from .util import get_pkg_properties, mdTree, rsget, fix_tex, fix_id_tex, Product, html_to_latex
+
+
+def _as_output_format(text, output_format):
+    if Config.TEMPLATE_LANGUAGE != output_format:
+        setattr(Config.DOC, Config.TEMPLATE_LANGUAGE, text.encode("utf-8"))
+        text = getattr(Config.DOC, output_format).decode("utf-8")
+    return text
 
 
 def get_dep_key(rcs, mres, mdid):
@@ -84,14 +94,15 @@ def walk_tree(rcs, mres, mdid, pkey):
     """ Product Class Object
     id, name, parent, desc, wbs, manager, owner, kind, pkgs, elId"""
 
+    global products_count
+    products_count = products_count + 1
+
     resp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=mdid), True)
     if resp[1]['@type'] not in ('uml:Package', 'uml:Class'):
         print('Error: no package given containing the Product Tree')
         exit()
     pkg_name = fix_tex(resp[1]['kerml:name']).lstrip('0123456789.- ')
-    print(f"->> Looking into {{pkg}} ({{pid}}, {{ptype}}), parent: '{{parent}}' ".format(pkg=pkg_name,
-                                                                                         pid=mdid, parent=pkey,
-                                                                                         ptype=resp[1]['@type']))
+    print(f"{{pc}}: {{pn}}".format(pc=products_count,pn=pkg_name), end='')
     pkg_sub_pkgs = []
     pkg_classes = []
     pkg_comments = ""
@@ -107,11 +118,16 @@ def walk_tree(rcs, mres, mdid, pkey):
             pkg_classes.append(el['@id'])
         elif tmp[1]['@type'] == 'uml:InstanceSpecification':
             pkg_properties = get_pkg_properties(rcs, mres, el['@id'])
+            if 'product key' in pkg_properties.keys():
+                print(f" ({{k}}), ".format(k=pkg_properties['product key'][0]), end='')
+                sys.stdout.flush()
+            else:
+                print(" () ", end="")
         elif tmp[1]['@type'] == 'uml:Property':
             continue
         elif tmp[1]['@type'] == 'uml:Comment':
             pkg_comments = pkg_comments + tmp[1]['kerml:esiData']['body']
-        elif tmp[1]['@type'] in ('uml:Abstraction', 'uml:Diagram', 'uml:Association'):
+        elif tmp[1]['@type'] in ('uml:Abstraction', 'uml:Diagram', 'uml:Association', 'uml:Dependency'):
             continue
         else:
             print('Unmapped type: ', tmp[1]['@type'], el['@id'])
@@ -163,7 +179,8 @@ def walk_tree(rcs, mres, mdid, pkey):
                             else:
                                 owned_member_id = asmemberend1
                             # print("        - ownedMember: ", owned_member_id)
-                            owned_member_json = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=owned_member_id), True)
+                            owned_member_json = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=owned_member_id),
+                                                      True)
                             relation_id = owned_member_json[1]['kerml:esiData']['type']['@id']
                             aggregation = owned_member_json[1]['kerml:esiData']['aggregation']
                         else:
@@ -215,15 +232,15 @@ def walk_tree(rcs, mres, mdid, pkey):
         walk_tree(rcs, mres, cls, pkg_id)
 
 
-#   Build The Tree from MD
-#     mres: MD reference resource (such as DM subproject)
-#     mdid: MD first component to read
-def build_md_tree(mres, mdid, connectionId):
+def build_md_tree(mres, mdid, connection_id):
     """ Build the tree reading from MD
     """
+    global products_count
+    products_count = 0
+
     headers = {
         'accept': 'application/json',
-        'authorization': 'Basic %s' % connectionId,
+        'authorization': 'Basic %s' % connection_id,
         'Connection': 'close'
     }
 
@@ -231,3 +248,95 @@ def build_md_tree(mres, mdid, connectionId):
     rs.headers = headers
 
     walk_tree(rs, mres, mdid, "")
+
+
+def dump_file(sysid, levelid, connection_id, output_format, output_file):
+    """
+    Given the MD ids, dump the content in the output file
+    :param sysid: MagicDraw subsystem id
+    :param levelid: MagicDraw level id (package id containing the tree to extract)
+    :param connection_id: MagicDraw encoded connection string
+    :param output_format: OutputFormat
+    :param output_file: File to dump
+    :return: none
+    """
+    global template_path
+    tex_file_name = output_file + ".tex"
+
+    build_md_tree(sysid, levelid, connection_id)
+    print("\n  Product tree depth:", mdTree.depth())
+    md_products = []
+    nodes = mdTree.expand_tree()
+    mdtree_dict = {}
+
+    for n in nodes:
+        md_products.append(mdTree[n].data)
+        mdtree_dict[mdTree[n].data.id] = mdTree[n].data
+    print(f"  Found {{np}} products (including container folders).".format(np=len(mdtree_dict)))
+
+    mdp = mdTree.to_dict(with_data=False)
+
+    env = Environment(loader=ChoiceLoader([FileSystemLoader(Config.TEMPLATE_DIRECTORY),
+                                           PackageLoader('ptree', 'templates')]),
+                      lstrip_blocks=True, trim_blocks=True, autoescape=None)
+
+    try:
+        template_path = f"ptree.{Config.TEMPLATE_LANGUAGE}.jinja2"
+        template = env.get_template(template_path)
+    except TemplateNotFound:
+        click.echo(f"No Template Found: {template_path}", err=True)
+        sys.exit(1)
+
+    metadata = dict()
+    metadata["template"] = template.filename
+    text = template.render(metadata=metadata,
+                           mdt_dict=mdtree_dict,
+                           mdp=mdp,
+                           mdps=md_products)
+
+    file = open(tex_file_name, "w")
+    print(_as_output_format(text, output_format), file=file)
+    file.close()
+
+
+def generate_document(subsystem, connection_id, output_format):
+    """Given system and level, generates the document content"""
+
+    print("-> Generating Top Level Product Tree  ==========================")
+    subsystem_id = Config.SUBSYSTEMS[subsystem]['ID']  # former dms
+    level_id = Config.SUBSYSTEMS[subsystem]['Top']  # former dmcmp
+    dump_file(subsystem_id, level_id, connection_id, output_format, 'toplevel1')
+    # build_md_tree(dms, dmcmp, connection_id)
+    # print("\n  Product tree depth:", mdTree.depth())
+    # md_products = []
+    # nodes = mdTree.expand_tree()
+    # mdtree_dict = {}
+
+    # for n in nodes:
+    #    md_products.append(mdTree[n].data)
+    #    mdtree_dict[mdTree[n].data.id] = mdTree[n].data
+    # print(f"  Found {{np}} products (including container folders).".format(np=len(mdtree_dict)))
+
+    # mdp = mdTree.to_dict(with_data=False)
+
+    # env = Environment(loader=ChoiceLoader([FileSystemLoader(Config.TEMPLATE_DIRECTORY),
+    #                                       PackageLoader('ptree', 'templates')]),
+    #                  lstrip_blocks=True, trim_blocks=True, autoescape=None)
+
+    # try:
+    #    template_path = f"ptree.{Config.TEMPLATE_LANGUAGE}.jinja2"
+    #    template = env.get_template(template_path)
+    # except TemplateNotFound:
+    #    click.echo(f"No Template Found: {template_path}", err=True)
+    #    sys.exit(1)
+
+    # metadata = dict()
+    # metadata["template"] = template.filename
+    # text = template.render(metadata=metadata,
+    #                       mdt_dict=mdtree_dict,
+    #                       mdp=mdp,
+    #                       mdps=md_products)
+
+    # file = open("toplevel1.tex", "w")
+    # print(_as_output_format(text, output_format), file=file)
+    # file.close()

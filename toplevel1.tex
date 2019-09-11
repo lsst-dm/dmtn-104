@@ -102,7 +102,7 @@ Michelle Butler \\
 
   The Backbone services supply data to other services.\\
 They are implemented in the Archive enclaves.\\[2\baselineskip]Detailed
-concepts of operations for each service can be found in LDM-230.
+concepts of operations for each service can be found in \citeds{LDM-230}
 
 
 \paragraph{DBB Lifetime Management}\label{dbblifesrv}\mbox{}\\
@@ -267,6 +267,56 @@ recovery if a data product is found to be missing or corrupt.
 \\ \bottomrule
 \end{longtable}
 
+\subsubsection{IT Services}\label{itsrv}
+
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: IT Service - Acronym: ITSRV ) }
+}\\ \hline
+\end{longtable}
+
+  
+
+
+\paragraph{Network Management}\label{netmgmt}\mbox{}\\
+
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+Jeff Kantor &
+\begin{tabular}{@{}l@{}}
+Jeff Kantor \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+1.02C.08.03 \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+Net/Base \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Net Mgmt - Acronym: NETMGMT ) }
+}\\ \hline
+\end{longtable}
+
+  This product is composed by tools and services that monitor networks,
+control failover, manage bandwidth allocation, etc.\\
+
+
+
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Depends On} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
+
 \subsubsection{LSP Services}\label{lspsrv}
 
 \begin{longtable}{cccc}\hline
@@ -300,7 +350,7 @@ identified as follows:
 
 These services permit external users access to project resources, such
 as data and processing SW.\\[2\baselineskip]More details available in
-LDM-542 and LSE-319.
+\citeds{LDM-542}and \citeds{LSE-319}
 
 
 \paragraph{LSP JupyterLab}\label{lspjlsrv}\mbox{}\\
@@ -634,32 +684,35 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  This component describes following services: - Image archiver for
-LSSTCam - Image archiver for ComCam - Image archiver for Auxiliary
-Telescope Spectrograph - Header Generator service - EFD Transformation
-service The archiver services capture raw images taken by each camera,
-including the wavefront sensors and the guide sensors of the LSSTCam or
-ComCam when so configured, retrieving them from their respective Camera
-Data System instances. The Header Generator service, written by Data
-Management but operated by the Observatory, captures specific sets of
-metadata associated with the images, including telemetry values and
+  This component describes following services:\\[2\baselineskip]- Image
+archiver for LSSTCam\\
+- Image archiver for ComCam\\
+- Image archiver for Auxiliary Telescope Spectrograph\\
+- Header Generator service\\
+- EFD Transformation service\\[2\baselineskip]The archiver services
+capture raw images taken by each camera, including the wavefront sensors
+and the guide sensors of the LSSTCam or ComCam when so configured,
+retrieving them from their respective Camera Data System
+instances.\\[2\baselineskip]The Header Generator service, written by
+Data Management but operated by the Observatory, captures specific sets
+of metadata associated with the images, including telemetry values and
 event timings, from the OCS publish/subscribe middleware and/or from the
 EFD. It formats these into a metadata package that is recorded in the
 EFD Large File Annex. The Archiver and CatchUp Archiver instances
 retrieve this metadata package and attach it to the captured image
-pixels. The image pixels and metadata are passed to the Observatory
-Operations Data Service (OODS), which serves as a buffer from which
-observing-critical data can be retrieved. They are also passed to a
-staging area for ingestion into the permanent archive in the Data
-Backbone. The catch-up versions archive into the OODS and Data Backbone
-any raw images and metadata that were missed by the primary archiving
-services due to network or other outage, retrieving them from the flash
-storage in the Camera Data System instances and the EFD. The EFD
-Transformation service extracts all information (including telemetry,
-events, configurations, and commands) from the EFD and its large file
-annex, transforms it into a form more suitable for querying by image
-timestamp, and loads it into the permanently archived ``Transformed
-EFD'' database in the Data Backbone.
+pixels.\\[2\baselineskip]The image pixels and metadata are passed to the
+Observatory Operations Data Service (OODS), which serves as a buffer
+from which observing-critical data can be retrieved. They are also
+passed to a staging area for ingestion into the permanent archive in the
+Data Backbone. The catch-up versions archive into the OODS and Data
+Backbone any raw images and metadata that were missed by the primary
+archiving services due to network or other outage, retrieving them from
+the flash storage in the Camera Data System instances and the
+EFD.\\[2\baselineskip]The ~EFD Transformation service extracts all
+information (including telemetry, events, configurations, and commands)
+from the EFD and its large file annex, transforms it into a form more
+suitable for querying by image timestamp, and loads it into the
+permanently archived ``Transformed EFD'' database in the Data Backbone.
 
 
 
@@ -2158,10 +2211,7 @@ package in github.
 
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
-\href{https://github.com/lsst/daf_ingest}{daf\_ingest}\\ \hline
-\href{https://github.com/lsst/scisql}{scisql}\\ \hline
-\href{https://github.com/lsst-sqre/qserv}{lsst-sqre/qserv}\\ \hline
-\href{https://github.com/lsst/partition}{partition}\\ \hline
+\href{https://github.com/lsst/qserv}{qserv}\\ \hline
 \end{longtable}
 
 
@@ -3575,36 +3625,6 @@ LDF \\
 \end{longtable}
 
   Base Local Area Network.
-
-
-
-
-\begin{longtable}{cc}\toprule
-\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
-\textbf{Depends On} & \textbf{Used in}\\ \toprule
-&
-\\ \bottomrule
-\end{longtable}
-
-\paragraph{Network Management}\label{netmgmt}\mbox{}\\
-
-\begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
-Jeff Kantor &
-\begin{tabular}{@{}l@{}}
-Jeff Kantor \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
-1.02C.08.03 \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
-Net/Base \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize ( Short Name: Net Mgmt - Acronym: NETMGMT ) }
-}\\ \hline
-\end{longtable}
-
-  Network Management Not really a network. Should be part of the
-Management section
 
 
 

@@ -70,10 +70,14 @@ class Product(object):
 
 
 def html_to_latex(string):
-    # print("comment: ", string)
+    """
+    Convert html encoded source text into LaTeX
+    Also docushare citations are rendered.
+    """
     Config.DOC.html = string.encode("utf-8")
     tex_string = getattr(Config.DOC, Config.TEMPLATE_LANGUAGE).decode("utf-8")
-    # print("description", tex_string)
+    if Config.TEMPLATE_LANGUAGE == 'latex':
+        tex_string = cite_docushare_handles(tex_string)
 
     return tex_string
 
