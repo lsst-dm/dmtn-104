@@ -27,7 +27,6 @@ from .util import get_pkg_properties, mdTree, rsget, fix_tex, fix_id_tex, Produc
 
 
 def get_dep_key(rcs, mres, mdid):
-    # print("Dep ID: ", mdid)
     resp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=mdid), True)
     dep_pkgs = dict()
 
@@ -37,13 +36,10 @@ def get_dep_key(rcs, mres, mdid):
         tmp_pkg_props = dict()
         for el in tmpresp[0]['ldp:contains']:
             tmp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=el['@id']), True)
-            # if tmp[1]['@type'] == 'uml:Property':
-            #    get_pkg_p2(rcs, mres, el['@id'])
             if tmp[1]['@type'] == 'uml:InstanceSpecification':
                 tmp_pkg_props = get_pkg_properties(rcs, mres, el['@id'])
         tmp_pkg_id = fix_id_tex(tmp_pkg_props['product key'][0])
         dep_pkgs[tmp_pkg_id] = tmpname
-        # print("Dependency found: ", tmpname, tmp_pkg_id)
 
     return dep_pkgs
 
@@ -67,7 +63,6 @@ def get_pkg_key(rcs, mres, mdid):
         tmp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=el['@id']), True)
         if tmp[1]['@type'] == 'uml:InstanceSpecification':
             pkg_properties = get_pkg_properties(rcs, mres, el['@id'])
-            #print(pkg_properties)
         else:
             continue
 
@@ -108,22 +103,14 @@ def walk_tree(rcs, mres, mdid, pkey):
         tmp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=el['@id']), True)
         if tmp[1]['@type'] == 'uml:Package':
             pkg_sub_pkgs.append(el['@id'])
-            # print(f"      added sub package: {{name}} ({{pid}})".format(name=tmp[1]['kerml:name'], pid=el['@id']))
         elif tmp[1]['@type'] == 'uml:Class':
             pkg_classes.append(el['@id'])
-            #
-            # print(f"      added contained element: {{name}} ({{pid}})".format(name=tmp[1]['kerml:name'],
-            # pid=el['@id']))
         elif tmp[1]['@type'] == 'uml:InstanceSpecification':
             pkg_properties = get_pkg_properties(rcs, mres, el['@id'])
-            # print(pkg_properties)
         elif tmp[1]['@type'] == 'uml:Property':
             continue
-            # prop_tmp = get_pkg_p2(rcs, mres, el['@id'])
-            # print("tmp-", prop_tmp)
         elif tmp[1]['@type'] == 'uml:Comment':
             pkg_comments = pkg_comments + tmp[1]['kerml:esiData']['body']
-            # print('      added comment:', tmp[1]['kerml:esiData']['body'])
         elif tmp[1]['@type'] in ('uml:Abstraction', 'uml:Diagram', 'uml:Association'):
             continue
         else:
@@ -134,7 +121,6 @@ def walk_tree(rcs, mres, mdid, pkey):
         if resp[1]['kerml:esiData']['_typedElementOfType']:
             for typed in resp[1]['kerml:esiData']['_typedElementOfType']:
                 typed_id = typed['@id']
-                # print("_typedElementOfType: ", typed_id)
                 tmp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=typed_id), True)
                 owned_member_id = ""
                 typed_namespace_ofmember0 = tmp[1]['kerml:esiData']['_namespaceOfMember'][0]['@id']
@@ -142,16 +128,11 @@ def walk_tree(rcs, mres, mdid, pkey):
                     typed_namespace_ofmember1 = tmp[1]['kerml:esiData']['_namespaceOfMember'][1]['@id']
                 else:
                     typed_namespace_ofmember1 = ""
-                # print("    - typed_namespace_ofmember 0:", typed_namespace_ofmember0)
-                # print("    - typed_namespace_ofmember 1:", typed_namespace_ofmember1)
-                namespace_of_member1 = ""
                 aggregation = ""
                 # get association
                 if tmp[1]['kerml:esiData']['association']:
                     asid = tmp[1]['kerml:esiData']['association']['@id']
-                    # print("    - association id: ", asid, " ------------")
                     typed_aggregation = tmp[1]['kerml:esiData']['aggregation']
-                    # print("    - typed_aggregation: ", typed_aggregation, " ------------")
                     if asid == typed_namespace_ofmember1:
                         relation_id = typed_namespace_ofmember0
                         relation = get_pkg_key(rcs, mres, relation_id)
@@ -159,42 +140,21 @@ def walk_tree(rcs, mres, mdid, pkey):
                             if typed_aggregation == "composite":
                                 if relation not in pkg_usedin:
                                     pkg_usedin.append(relation)
-                                    # print(pkg_name, "< USED IN >", relation['name'])
-                                # else:
-                                #    print(pkg_name, "<< ALREADY used in >>", relation['name'])
                             else:
                                 if relation not in pkg_depends:
                                     pkg_depends.append(relation)
-                                    # print(pkg_name, "< DEPENDS ON >", relation['name'])
-                                # else:
-                                #     print(pkg_name, "<< ALREADY depends on >>", relation['name'])
                     elif typed_aggregation == "composite" and typed_namespace_ofmember1 != "":
                         relation_id = typed_namespace_ofmember1
                         relation = get_pkg_key(rcs, mres, relation_id)
                         if len(relation['diagrams']) == 0:
                             if relation not in pkg_usedin:
                                 pkg_usedin.append(relation)
-                                # print(pkg_name, "< USED IN >", relation['name'])
-                            # else:
-                            #    print(pkg_name, "<< ALREADY used in >>", relation['name'])
                     else:
                         association = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=asid), True)
                         asmember0 = association[1]['kerml:esiData']['member'][0]['@id']
                         asmember1 = association[1]['kerml:esiData']['member'][1]['@id']
-                        # if typed_id == asmember0:
-                        #    print("      - association member 0: ", asmember0, "_typedElementOfType")
-                        #    print("      - association member 1: ", asmember1)
-                        # else:
-                        #    print("      - association member 0: ", asmember0)
-                        #    print("      - association member 1: ", asmember1, "_typedElementOfType")
                         asmemberend0 = association[1]['kerml:esiData']['memberEnd'][0]['@id']
                         asmemberend1 = association[1]['kerml:esiData']['memberEnd'][1]['@id']
-                        # if typed_id == asmemberend0:
-                        #    print("      - association member End 0: ", asmemberend0, "_typedElementOfType")
-                        #    print("      - association member End 1: ", asmemberend1)
-                        # else:
-                        #    print("      - association member End 0: ", asmemberend0)
-                        #    print("      - association member End 1: ", asmemberend1, "_typedElementOfType")
                         kerml_owner_id = tmp[1]['kerml:owner']['@id']
                         if asid == kerml_owner_id:
                             # get relation from ownedMember - type
@@ -206,40 +166,21 @@ def walk_tree(rcs, mres, mdid, pkey):
                             owned_member_json = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=owned_member_id), True)
                             relation_id = owned_member_json[1]['kerml:esiData']['type']['@id']
                             aggregation = owned_member_json[1]['kerml:esiData']['aggregation']
-                            # print("        - aggregation: ", aggregation)
-                            namespace_of_member0 = owned_member_json[1]['kerml:esiData']['_namespaceOfMember'][0]['@id']
-                            if len(owned_member_json[1]['kerml:esiData']['_namespaceOfMember']) > 1:
-                                namespace_of_member1 = owned_member_json[1]['kerml:esiData']['_namespaceOfMember'][1]['@id']
-                            # print("        - _namespaceOfMember 0: ", namespace_of_member0)
-                            # print("        - _namespaceOfMember 1: ", namespace_of_member1)
                         else:
                             relation_id = tmp[1]['kerml:owner']['@id']
                         relation = get_pkg_key(rcs, mres, relation_id)
-                        # print("    relation: ", relation['name'], "( n. of diagrams: ", len(relation['diagrams']), ")",
-                        #      relation_id)
                         # I consider the association only if the target id not a diagram (ibd)
                         if len(relation['diagrams']) == 0:
                             if (owned_member_id != "") and (aggregation == "composite"):
                                 if relation not in pkg_depends:
                                     pkg_depends.append(relation)
-                                    # print(pkg_name, "< DEPENDS ON >", relation['name'])
-                                # else:
-                                #    print(pkg_name, "<< ALREADY depends on >>", relation['name'])
                             else:
                                 if (asmemberend1 == typed_id) and ((asmember0 == typed_id) or (asmember1 == typed_id)):
                                     if relation not in pkg_usedin:
                                         pkg_depends.append(relation)
-                                    #    print(pkg_name, "< DEPENDS ON >", relation['name'])
-                                    # else:
-                                    #    print(pkg_name, "<< ALREADY depends on >>", relation['name'])
                                 else:
                                     if relation not in pkg_usedin:
                                         pkg_usedin.append(relation)
-                                    #    print(pkg_name, "< USED IN >", relation['name'])
-                                    # else:
-                                    #    print(pkg_name, "<< ALREADY used in >>", relation['name'])
-                # else:
-                #    print("-- NO ASSOCIATION --")
 
     pkg_id = fix_id_tex(pkg_properties['product key'][0])
     prod = Product(pkg_id,                            # 1  (0 is self)
