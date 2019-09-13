@@ -27,7 +27,7 @@ import sys
 from .config import Config
 from jinja2 import Environment, PackageLoader, TemplateNotFound, ChoiceLoader, FileSystemLoader
 from .util import get_pkg_properties, mdTree, rsget, fix_tex, fix_id_tex, Product, html_to_latex
-from .tree import make_tree_portrait
+from .tree import make_tree_portrait, make_tree_landmix
 
 
 def _as_output_format(text, output_format):
@@ -276,7 +276,7 @@ def do_csv(products, output_file):
     file.close()
 
 
-def do_trees(tree, filename, scope):
+def do_trees_diagrams(tree, filename, scope):
     """
     Print out the different build trees
     :param tree: dictionary that contains the tree information
@@ -288,13 +288,14 @@ def do_trees(tree, filename, scope):
     make_tree_portrait(tree, "trees/" + filename + "_portrait.tex", scope)
 
     # build landscape tree
+    make_tree_landmix(tree, "trees/" + filename + "_mixedLand.tex", scope)
 
     # build subtrees
 
 
-def dump_tex(sysid, levelid, connection_str, output_format, output_file):
+def do_md_section(sysid, levelid, connection_str, output_format, output_file):
     """
-    Given the MD ids, dump the content in the output file
+    Given the MD ids, dump the content in the output file and produce the product tree diagrams
     :param sysid: MagicDraw subsystem id
     :param levelid: MagicDraw level id (package id containing the tree to extract)
     :param connection_str: MagicDraw encoded connection string
@@ -306,6 +307,7 @@ def dump_tex(sysid, levelid, connection_str, output_format, output_file):
     products = []
     tree_dict = {}
 
+    # get the information from MagicDraw
     build_md_tree(sysid, levelid, connection_str)
     print("\n  Product tree depth:", mdTree.depth())
 
@@ -319,13 +321,16 @@ def dump_tex(sysid, levelid, connection_str, output_format, output_file):
                                            PackageLoader('ptree', 'templates')]),
                        lstrip_blocks=True, trim_blocks=True, autoescape=None)
 
+    # dump a csv file
     do_csv(products, output_file)
-    do_trees(mdTree, output_file, products[0].shortname)
 
+    # create the diagrams tex files
+    do_trees_diagrams(mdTree, output_file, products[0].shortname)
+
+    # dump the tex section
     mdp = mdTree.to_dict(with_data=False)
-
     try:
-        template_path = f"ptree.{Config.TEMPLATE_LANGUAGE}.jinja2"
+        template_path = f"section.{Config.TEMPLATE_LANGUAGE}.jinja2"
         template = envs.get_template(template_path)
     except TemplateNotFound:
         click.echo(f"No Template Found: {template_path}", err=True)
@@ -345,7 +350,13 @@ def dump_tex(sysid, levelid, connection_str, output_format, output_file):
 def generate_document(subsystem, connection_str, output_format):
     """Given system and level, generates the document content"""
 
-    print("-> Generating Top Level Product Tree  ==========================")
+    print("-> Generating Main Product Tree  ==========================")
     subsystem_id = Config.SUBSYSTEMS[subsystem]['ID']  # former dms
     level_id = Config.SUBSYSTEMS[subsystem]['Top']  # former dmcmp
-    dump_tex(subsystem_id, level_id, connection_str, output_format, 'toplevel1')
+    do_md_section(subsystem_id, level_id, connection_str, output_format, 'Main')
+
+    print("-> [to do] Generating Development Product Tree  ==========================")
+
+    print("-> [to do] Generating GitHub Product Tree  ==========================")
+
+    print("-> [to do] Generating Auxiliary Product Tree  ==========================")

@@ -21,6 +21,7 @@
 Code for generation Product Tree diagrams
 """
 from .util import Product
+from treelib import Tree
 
 txtheight = 35
 leafHeight = 1.56  # cm space per leaf box .. height of page calc
@@ -34,6 +35,32 @@ PKG = 1  # put packages on diagram
 outdepth = 100  # set with --depth if you want a shallower tree
 
 
+def tree_slice(ptree, outdepth):
+    """
+    Returns a subproduct with depth equal to outdepth
+    :param ptree: input product tree
+    :param outdepth: depth of the subproduct tree
+    :return: sub product tree
+    """
+    if ptree.depth() == outdepth:
+        return ptree
+    # copy the tree but stopping at given depth
+    ntree = Tree()
+    nodes = ptree.expand_tree()
+    count = 0
+    for n in nodes:
+        depth = ptree.depth(n)
+        prod = ptree[n].data
+        if depth <= outdepth:
+            if count == 0:
+                ntree.create_node(prod.id, prod.id, data=prod)
+            else:
+                ntree.create_node(prod.id, prod.id, data=prod,
+                                  parent=prod.parent)
+            count = count + 1
+    return ntree
+
+
 def print_header(target, pwidth, pheight, ofile):
     """
     Print Header of tex file
@@ -45,16 +72,16 @@ def print_header(target, pwidth, pheight, ofile):
     """
     print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n"
           "%\n"
-          "% Document:     " + target + "  product tree\n"
+          f"% Document:     {target}  product tree\n"
           "%\n"
           "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n"
           "\\documentclass{article}\n"
           "\\usepackage{times,layouts}\n"
           "\\usepackage{tikz,hyperref,amsmath}\n"
           "\\usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}\n"
-          "\\usetikzlibrary{backgrounds,calc}", file=ofile)
-    print(f"\\usepackage[paperwidth={{pw}}cm,paperheight={{ph}}cm,".format(pw=pwidth, ph=pheight), file=ofile)
-    print("left=-2mm,top=3mm,bottom=0mm,right=0mm,\n"
+          "\\usetikzlibrary{backgrounds,calc}\n"
+          f"\\usepackage[paperwidth={pwidth}cm,paperheight={pheight}cm,\n"
+          "left=-2mm,top=3mm,bottom=0mm,right=0mm,\n"
           "noheadfoot,marginparwidth=0pt,includemp=false,\n"
           "textwidth=30cm,textheight=50mm]{geometry}\n"
           "\\newcommand\showpage{%\n"
@@ -65,12 +92,11 @@ def print_header(target, pwidth, pheight, ofile):
           "\\tikzstyle{tbox}=[rectangle,text centered, text width=30mm]\n"
           "\\tikzstyle{wbbox}=[rectangle, rounded corners=3pt, draw=black, top color=blue!50!white,\n"
           "                    bottom color=white, very thick, minimum height=12mm, inner sep=2pt,\n"
-          "                    text centered, text width=30mm]", file=ofile)
-    print("\\tikzstyle{pbox}=[rectangle, rounded corners=3pt, draw=black, top\n"
+          "                    text centered, text width=30mm]\n"
+          "\\tikzstyle{pbox}=[rectangle, rounded corners=3pt, draw=black, top\n"
           " color=yellow!50!white, bottom color=white, very thick,\n"
-          " minimum height=" + str(txtheight) + "pt, inner sep=" + str(sep) +
-          "pt, text centered, text width=35mm]", file=ofile)
-    print("\\tikzstyle{pline}=[-, thick]\n"
+          f" minimum height={str(txtheight)}pt, inner sep={str(sep)}pt, text centered, text width=35mm]\n"
+          "\\tikzstyle{pline}=[-, thick]\n"
           "\\begin{document}\n"
           "\\begin{tikzpicture}[node distance=0mm]\n"
           "\n", file=ofile)
@@ -144,34 +170,34 @@ def tex_tree_portrait(fout, ptree, width, sib, full):
 
 def make_tree_portrait(ptree, filename, scope):
     """
-    Fully portrait produt tree diagram
+    Fully portrait product tree diagram
     :param ptree:
     :param filename:
     :param scope:
     :return: none
     """
-    print("Writing tree in ", filename)
     paperwidth = (ptree.depth() + 1) * (leafWidth + bigGap)  # cm
     paperheight = len(ptree.leaves()) * leafHeight + 0.5  # cm
 
-    print("target: ", scope)
+    print("Writing Portrait Product Tree in ", filename)
     ofile = open(filename, "w")
     print_header(scope, paperwidth, paperheight, ofile)
-
     tex_tree_portrait(ofile, ptree, paperwidth, None, True)
-
     print_footer(ofile)
     ofile.close()
 
 
-def make_tree_landmix(ptree, filename):
+def make_tree_landmix(ptree, filename, scope):
     """
-    First level landscape, and then protrait
+    First level landscape, and then portrait
     :param treedict:
     :param filename:
+    :param scope:
     :return: none
     """
-    print("Writing tree in ", filename)
+    print("Writing Mixed Landscape Product Tree in ", filename)
+
+    # calculating diagram size
 
 
 def make_subtrees(ptree):
