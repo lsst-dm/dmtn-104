@@ -26,13 +26,9 @@ import csv
 import re
 import requests
 import datetime
-import pandoc
 from treelib import Tree
 from time import sleep
-from base64 import b64encode
 from .config import Config
-from marshmallow import fields
-from bs4 import BeautifulSoup
 
 # MD Subsystem  Design Workspace @ID
 sdw = '3130d49c-d90d-4df2-a110-5247a5d03296'

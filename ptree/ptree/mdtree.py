@@ -27,6 +27,7 @@ import sys
 from .config import Config
 from jinja2 import Environment, PackageLoader, TemplateNotFound, ChoiceLoader, FileSystemLoader
 from .util import get_pkg_properties, mdTree, rsget, fix_tex, fix_id_tex, Product, html_to_latex
+from .tree import make_tree_portrait
 
 
 def _as_output_format(text, output_format):
@@ -250,93 +251,101 @@ def build_md_tree(mres, mdid, connection_id):
     walk_tree(rs, mres, mdid, "")
 
 
-def dump_file(sysid, levelid, connection_id, output_format, output_file):
+def do_csv(products, output_file):
+    """
+    Create csv file
+    :param products:
+    :param output_file:
+    :return:
+    """
+    csv = "Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name\n"
+    for p in products:
+        pkey = p.id
+        snm = p.shortname
+        pid = p.parent
+        wbs = ' '.join(p.wbs)
+        team = p.teams[0]
+        mng = p.manager
+        owner = p.owner[0]
+        pkgs = ' '.join(p.pkgs)
+        name = p.name
+        csv = csv + f"{pkey}, {snm}, {pid}, {wbs}, {team}, {mng}, {owner}, {pkgs}, {name} \n"
+    csv_filename = "csv/" + output_file + ".csv"
+    file = open(csv_filename, "w")
+    print(csv, file=file)
+    file.close()
+
+
+def do_trees(tree, filename, scope):
+    """
+    Print out the different build trees
+    :param tree: dictionary that contains the tree information
+    :param filename: output file to write
+    :param scope:
+    :return: none
+    """
+    # build the portrait tree
+    make_tree_portrait(tree, "trees/" + filename + "_portrait.tex", scope)
+
+    # build landscape tree
+
+    # build subtrees
+
+
+def dump_tex(sysid, levelid, connection_str, output_format, output_file):
     """
     Given the MD ids, dump the content in the output file
     :param sysid: MagicDraw subsystem id
     :param levelid: MagicDraw level id (package id containing the tree to extract)
-    :param connection_id: MagicDraw encoded connection string
+    :param connection_str: MagicDraw encoded connection string
     :param output_format: OutputFormat
     :param output_file: File to dump
     :return: none
     """
     global template_path
-    tex_file_name = output_file + ".tex"
+    products = []
+    tree_dict = {}
 
-    build_md_tree(sysid, levelid, connection_id)
+    build_md_tree(sysid, levelid, connection_str)
     print("\n  Product tree depth:", mdTree.depth())
-    md_products = []
-    nodes = mdTree.expand_tree()
-    mdtree_dict = {}
 
+    nodes = mdTree.expand_tree()
     for n in nodes:
-        md_products.append(mdTree[n].data)
-        mdtree_dict[mdTree[n].data.id] = mdTree[n].data
-    print(f"  Found {{np}} products (including container folders).".format(np=len(mdtree_dict)))
+        products.append(mdTree[n].data)
+        tree_dict[mdTree[n].data.id] = mdTree[n].data
+    print(f"  Found {{np}} products (including container folders).".format(np=len(tree_dict)))
+
+    envs = Environment(loader=ChoiceLoader([FileSystemLoader(Config.TEMPLATE_DIRECTORY),
+                                           PackageLoader('ptree', 'templates')]),
+                       lstrip_blocks=True, trim_blocks=True, autoescape=None)
+
+    do_csv(products, output_file)
+    do_trees(mdTree, output_file, products[0].shortname)
 
     mdp = mdTree.to_dict(with_data=False)
 
-    env = Environment(loader=ChoiceLoader([FileSystemLoader(Config.TEMPLATE_DIRECTORY),
-                                           PackageLoader('ptree', 'templates')]),
-                      lstrip_blocks=True, trim_blocks=True, autoescape=None)
-
     try:
         template_path = f"ptree.{Config.TEMPLATE_LANGUAGE}.jinja2"
-        template = env.get_template(template_path)
+        template = envs.get_template(template_path)
     except TemplateNotFound:
         click.echo(f"No Template Found: {template_path}", err=True)
         sys.exit(1)
-
     metadata = dict()
     metadata["template"] = template.filename
     text = template.render(metadata=metadata,
-                           mdt_dict=mdtree_dict,
+                           mdt_dict=tree_dict,
                            mdp=mdp,
-                           mdps=md_products)
-
+                           mdps=products)
+    tex_file_name = output_file + ".tex"
     file = open(tex_file_name, "w")
     print(_as_output_format(text, output_format), file=file)
     file.close()
 
 
-def generate_document(subsystem, connection_id, output_format):
+def generate_document(subsystem, connection_str, output_format):
     """Given system and level, generates the document content"""
 
     print("-> Generating Top Level Product Tree  ==========================")
     subsystem_id = Config.SUBSYSTEMS[subsystem]['ID']  # former dms
     level_id = Config.SUBSYSTEMS[subsystem]['Top']  # former dmcmp
-    dump_file(subsystem_id, level_id, connection_id, output_format, 'toplevel1')
-    # build_md_tree(dms, dmcmp, connection_id)
-    # print("\n  Product tree depth:", mdTree.depth())
-    # md_products = []
-    # nodes = mdTree.expand_tree()
-    # mdtree_dict = {}
-
-    # for n in nodes:
-    #    md_products.append(mdTree[n].data)
-    #    mdtree_dict[mdTree[n].data.id] = mdTree[n].data
-    # print(f"  Found {{np}} products (including container folders).".format(np=len(mdtree_dict)))
-
-    # mdp = mdTree.to_dict(with_data=False)
-
-    # env = Environment(loader=ChoiceLoader([FileSystemLoader(Config.TEMPLATE_DIRECTORY),
-    #                                       PackageLoader('ptree', 'templates')]),
-    #                  lstrip_blocks=True, trim_blocks=True, autoescape=None)
-
-    # try:
-    #    template_path = f"ptree.{Config.TEMPLATE_LANGUAGE}.jinja2"
-    #    template = env.get_template(template_path)
-    # except TemplateNotFound:
-    #    click.echo(f"No Template Found: {template_path}", err=True)
-    #    sys.exit(1)
-
-    # metadata = dict()
-    # metadata["template"] = template.filename
-    # text = template.render(metadata=metadata,
-    #                       mdt_dict=mdtree_dict,
-    #                       mdp=mdp,
-    #                       mdps=md_products)
-
-    # file = open("toplevel1.tex", "w")
-    # print(_as_output_format(text, output_format), file=file)
-    # file.close()
+    dump_tex(subsystem_id, level_id, connection_str, output_format, 'toplevel1')

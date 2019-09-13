@@ -49,9 +49,9 @@ def generate(format, username, password, subsystem):
     """
 
     usr_pwd = username + ":" + password
-    connection_id = b64encode(usr_pwd.encode("ascii")).decode("ascii")
+    connection_str = b64encode(usr_pwd.encode("ascii")).decode("ascii")
 
-    generate_document(subsystem, connection_id, format)
+    generate_document(subsystem, connection_str, format)
 
 
 if __name__ == '__main__':
