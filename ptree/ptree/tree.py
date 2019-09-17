@@ -140,12 +140,12 @@ def tex_tree_portrait(fout, ptree, width, sib, full):
         if depth <= outdepth:
             if count == 1:  # root node
                 if full:  # if the first node of a full tree, no parent
-                    print(r"\node ({p.id}) [wbbox]{{\textbf{{{p.name}}}}};".format(p=prod), file=fout)
+                    print(r"\node ({p.id}) [wbbox]{{\textbf{{{p.shortname}}}}};".format(p=prod), file=fout)
                 else:  # some sub tree (portrait) in a landscape tree
                     print(r"\node ({p.id}) [pbox, ".format(p=prod), file=fout)
                     if sib:
                         print("right={d}cm of {p.id}".format(d=width, p=sib), file=fout, end='')
-                    print(r"] {\textbf{" + prod.name + "} };", file=fout)
+                    print(r"] {\textbf{" + prod.shortname + "} };", file=fout)
             else:
                 print(r"\node ({p.id}) [pbox,".format(p=prod), file=fout, end='')
                 if prev.parent != prod.parent:  # first child to the right if portrait left if landscape
@@ -169,7 +169,7 @@ def tex_tree_portrait(fout, ptree, width, sib, full):
                     # benetih the sibling
                     dist = gap
                     print("below={}pt of {}".format(dist, prev.id), file=fout, end='')
-                print(r"] {\textbf{" + prod.name + "} };", file=fout)
+                print(r"] {\textbf{" + prod.shortname + "} };", file=fout)
                 print(r" \draw[pline] ({p.parent}.east) -| ++(0.4,0) |- ({p.id}.west); ".format(p=prod), file=fout)
             prev = prod
     return count
@@ -196,7 +196,7 @@ def tex_tree_landmix1(fout, ptree):
         else:
             row.append(ptree[n])
     root_position = (count - 1) // 2
-    print(f"Count: {count}, Root position: {root_position}")
+    # print(f"Count: {count}, Root position: {root_position}")
     child = row[root_position].data
     sib = None
     count = 1  # will output root after
@@ -208,15 +208,15 @@ def tex_tree_landmix1(fout, ptree):
         if prev:
             d = prev.depth()
         width = d * (leafWidth + bigGap) + bigGap  # cm
-        if sib:
-            print(sib.name, d, p.name)
-        print(r" {p.id} {p.parent} depth={d} width={w} ".format(p=p, d=d, w=width))
+        # if sib:
+        #    print(sib.name, d, p.name)
+        # print(r" {p.id} {p.parent} depth={d} width={w} ".format(p=p, d=d, w=width))
         count = count + tex_tree_portrait(fout, stree, width, sib, False)
         sib = p
         prev = stree
     # place root node
     print(r"\node ({p.id}) "
-          r"[wbbox, above=15mm of {c.id}]{{\textbf{{{p.name}}}}};".format(p=root, c=child),
+          r"[wbbox, above=15mm of {c.id}]{{\textbf{{{p.shortname}}}}};".format(p=root, c=child),
           file=fout)
     drawLines(fout, row)
     print("{} Product lines in TeX ".format(count))
@@ -254,26 +254,22 @@ def make_tree_landmix1(ptree, filename, scope):
 
     # calculating diagram size
     first_level = tree_slice(ptree, 1)
-    print(first_level)
+    # print(first_level)
     nodes = first_level.expand_tree()
     n_blocks_high = 0
     n_blocks_width = 0
     c = 0
     for n in nodes:
-        print(n)
         c += 1
         if c != 1:  # skip the first, that is the tp level node.
             p = ptree[n].data
-            print(p.name)
             sub_tree = ptree.subtree(p.id)
             if len(sub_tree.leaves()) > n_blocks_high:
                 n_blocks_high = len(sub_tree.leaves())
-                print("  - New number of leaves:", n_blocks_high)
             n_blocks_width = n_blocks_width + sub_tree.depth() + 1
-            print("  - Width: ", n_blocks_width)
     paperwidth = (n_blocks_width + 1) * (leafWidth + bigGap)  # cm
     paperheight = (n_blocks_high + 1) * leafHeight + 0.5  # cm
-    print(f"nW: {n_blocks_width}, nH: {n_blocks_high}, WxH: {paperwidth} cm {paperheight} cm")
+    # print(f"nW: {n_blocks_width}, nH: {n_blocks_high}, WxH: {paperwidth} cm {paperheight} cm")
 
     # dump file
     ofile = open(filename, "w")

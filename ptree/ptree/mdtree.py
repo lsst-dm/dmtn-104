@@ -268,7 +268,7 @@ def do_csv(products, output_file):
         mng = p.manager
         owner = p.owner[0]
         pkgs = ' '.join(p.pkgs)
-        name = p.name
+        name = p.shortname
         csv = csv + f"{pkey}, {snm}, {pid}, {wbs}, {team}, {mng}, {owner}, {pkgs}, {name} \n"
     csv_filename = "csv/" + output_file + ".csv"
     file = open(csv_filename, "w")
