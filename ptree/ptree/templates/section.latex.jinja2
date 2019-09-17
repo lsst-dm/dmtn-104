@@ -1,41 +1,151 @@
 {%- macro curlies(item) -%}
 {{ "{" }}{{ item }}{{ "}" }}
 {%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
 
 {%- macro href(url, text) -%}
 \href{{ "{" }}{{ url|replace("#", "\\#")|replace("%", "\\%")|replace("_", "\\_") }}{{ "}" }}{{ curlies(text) }}
 {%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
 
 {%- macro label(text) -%}
 \label{{ "{" }}{{ text }}{{ "}" }}
 {%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
 
 {%- macro hyperlink(text) -%}
 \hyperlink{{ "{" }}{{ text }}{{ "}" }}
 {%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
 
 {%- macro hypertarget(text) -%}
 \hypertarget{{ "{" }}{{ text }}{{ "}" }}
 {%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
 
 {%- macro ndr(text) -%}
 \vcdDocRef{{ "{" }}{{ text }}{{ "}" }}
 {%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
 
 {%- macro njr(text) -%}
 \vcdJiraRef{{ "{" }}{{ text }}{{ "}" }}
 {%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
 
 {%- macro atmtc(text) -%}
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/{{ text }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
 {%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
 {%- macro atmtp(text) -%}
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/{{ text }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
 {%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
 {%- macro atmcycle(text) -%}
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/{{ text }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
 {%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
 
+{%- macro do_product(prd) -%}
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+{{ mdt_dict[prd].manager }} &
+\begin{tabular}{@{}l@{}}
+{% for owner in mdt_dict[prd].owner %}
+{{ owner }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for wbs in mdt_dict[prd].wbs %}
+{{ wbs }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for team in mdt_dict[prd].teams %}
+{{ team }} \\
+{% endfor %}
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: {{ mdt_dict[prd].shortname }} - Acronym: {{ mdt_dict[prd].id }} ) }
+}\\ \hline
+\end{longtable}
+
+  {{ mdt_dict[prd].desc }}
+
+          {% if mdt_dict[prd].pkgs[0] != "" %}
+\begin{longtable}{c}\hline
+\textbf{GutHub Packages} \\ \hline
+          {% for pkg in mdt_dict[prd].pkgs %}
+            {% set package = pkg|replace("_", "\\_") %}
+            {% set tmplist = pkg.split('/') %}
+            {% if tmplist|length > 1 %}
+              {% set lnk = 'https://github.com/'~pkg %}
+            {% else %}
+              {% set lnk = 'https://github.com/lsst/'~pkg %}
+            {% endif %}
+\href{{ curlies(lnk) }}{{ curlies(package) }}\\ \hline
+          {% endfor %}
+\end{longtable}
+          {% endif %}
+
+          {% if mdt_dict[prd].links[0] != "" %}
+\begin{longtable}{c}\hline
+\textbf{Hiperlink References} \\ \hline
+          {% for lnk in mdt_dict[prd].links %}
+          {% set text = lnk|replace("_", "\\_") %}
+\href{{ curlies(lnk) }}{{ curlies(text) }}  \\ \hline
+          {% endfor %}
+\end{longtable}
+          {% endif %}
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Depends On} & \textbf{Used in}\\ \toprule
+          {% if (mdt_dict[prd].depends is defined) and mdt_dict[prd].depends %}
+\begin{tabular}{c}
+          {% for pkey in mdt_dict[prd].depends %}
+\hyperref[{{ pkey.key.lower() }}]{{ curlies(pkey.name) }} \\ \hline
+          {% endfor %}
+\end{tabular}
+          {% endif %}
+&
+          {% if (mdt_dict[prd].usedin is defined) and mdt_dict[prd].usedin %}
+\begin{tabular}{c}
+          {% for pkey in mdt_dict[prd].usedin %}
+\hyperref[{{ pkey.key.lower() }}]{{ curlies(pkey.name) }} \\ \hline
+          {% endfor %}
+\end{tabular}
+          {% endif %}
+\\ \bottomrule
+\end{longtable}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
+{%- macro do_folder(prd) -%}
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+{{ mdt_dict[prd].manager }} &
+\begin{tabular}{@{}l@{}}
+{% for owner in mdt_dict[prd].owner %}
+{{ owner }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for wbs in mdt_dict[prd].wbs %}
+{{ wbs }} \\
+{% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+{% for team in mdt_dict[prd].teams %}
+{{ team }} \\
+{% endfor %}
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: {{ mdt_dict[prd].shortname }} - Acronym: {{ mdt_dict[prd].id }} ) }
+}\\ \hline
+\end{longtable}
+
+  {{ mdt_dict[prd].desc }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
 
 
 % auto generated from multiple sources - DO NOT EDIT!
@@ -46,243 +156,45 @@
 % This file is meant to be included in LaTeX document in order to provide:
 %   -  MagicDraw Top Level Product Tree (section 2)
 
-{# commented ############
-{% for product in mdps %}
-    \subsection{{ curlies(product.name) }}
-{% endfor %}
-#}
-
 {% for k0 in mdp %}
+{{ do_folder(k0) }}
 
-\begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
-{{ mdt_dict[k0].manager }} &
-\begin{tabular}{@{}l@{}}
-{% for owner in mdt_dict[k0].owner %}
-{{ owner }} \\
-{% endfor %}
-\end{tabular} & \begin{tabular}{@{}l@{}}
-{% for wbs in mdt_dict[k0].wbs %}
-{{ wbs }} \\
-{% endfor %}
-\end{tabular} & All DM Teams \\ \hline
-\end{longtable}
-
-  {{ mdt_dict[k0].desc }}
-
-  {% for child in mdp[k0]['children'] %}
+ {% for child in mdp[k0]['children'] %}
   {% for k1 in child %}
 \subsection{{ curlies(mdt_dict[k1].name) }}{{ label(mdt_dict[k1].id.lower()) }}
+{{ do_folder(k1) }}
 
-\begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
-{{ mdt_dict[k1].manager }} &
-\begin{tabular}{@{}l@{}}
-{% for owner in mdt_dict[k1].owner %}
-{{ owner }} \\
-{% endfor %}
-\end{tabular} & \begin{tabular}{@{}l@{}}
-{% for wbs in mdt_dict[k1].wbs %}
-{{ wbs }} \\
-{% endfor %}
-\end{tabular} & \begin{tabular}{@{}l@{}}
-{% for team in mdt_dict[k1].teams %}
-{{ team }} \\
-{% endfor %}
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize ( Short Name: {{ mdt_dict[k1].shortname }} - Acronym: {{ mdt_dict[k1].id }} ) }
-}\\ \hline
-\end{longtable}
-
-  {{ mdt_dict[k1].desc }}
-
-  {% for sc in child[k1]['children'] %}
+   {% for sc in child[k1]['children'] %}
     {% if sc is string %}
-
 \paragraph{{ curlies(mdt_dict[sc].name) }}{{ label(mdt_dict[sc].id.lower()) }}\mbox{}\\
-
-\begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
-{{ mdt_dict[sc].manager }} &
-\begin{tabular}{@{}l@{}}
-{% for owner in mdt_dict[sc].owner %}
-{{ owner }} \\
-{% endfor %}
-\end{tabular} & \begin{tabular}{@{}l@{}}
-{% for wbs in mdt_dict[sc].wbs %}
-{{ wbs }} \\
-{% endfor %}
-\end{tabular} & \begin{tabular}{@{}l@{}}
-{% for team in mdt_dict[sc].teams %}
-{{ team }} \\
-{% endfor %}
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize ( Short Name: {{ mdt_dict[sc].shortname }} - Acronym: {{ mdt_dict[sc].id }} ) }
-}\\ \hline
-\end{longtable}
-
-  {{ mdt_dict[sc].desc }}
-
-
-          {% if mdt_dict[sc].pkgs[0] != "" %}
-\begin{longtable}{c}\hline
-\textbf{GutHub Packages} \\ \hline
-          {% for pkg in mdt_dict[sc].pkgs %}
-            {% set package = pkg|replace("_", "\\_") %}
-            {% set tmplist = pkg.split('/') %}
-            {% if tmplist|length > 1 %}
-              {% set lnk = 'https://github.com/'~pkg %}
-            {% else %}
-              {% set lnk = 'https://github.com/lsst/'~pkg %}
-            {% endif %}
-\href{{ curlies(lnk) }}{{ curlies(package) }}\\ \hline
-          {% endfor %}
-\end{longtable}
-          {% endif %}
-
-          {% if mdt_dict[sc].links[0] != "" %}
-\begin{longtable}{c}\hline
-\textbf{Hiperlink References} \\ \hline
-          {% for lnk in mdt_dict[sc].links %}
-          {% set text = lnk|replace("_", "\\_") %}
-\href{{ curlies(lnk) }}{{ curlies(text) }}  \\ \hline
-          {% endfor %}
-\end{longtable}
-          {% endif %}
-
-\begin{longtable}{cc}\toprule
-\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
-\textbf{Depends On} & \textbf{Used in}\\ \toprule
-          {% if (mdt_dict[sc].depends is defined) and mdt_dict[sc].depends %}
-\begin{tabular}{c}
-          {% for pkey in mdt_dict[sc].depends %}
-{# {{ pkey.name }} ({{ pkey.key }})  \\ \hline #}
-\hyperref[{{ pkey.key.lower() }}]{{ curlies(pkey.name) }} \\ \hline
-          {% endfor %}
-\end{tabular}
-          {% endif %}
-&
-          {% if mdt_dict[sc].usedin is defined %}
-\begin{tabular}{c}
-          {% for pkey in mdt_dict[sc].usedin %}
-{# {{ pkey.name }} ({{ pkey.key }})  \\ \hline #}
-\hyperref[{{ pkey.key.lower() }}]{{ curlies(pkey.name) }} \\ \hline
-          {% endfor %}
-\end{tabular}
-          {% endif %}
-\\ \bottomrule
-\end{longtable}
-
+{{ do_product(sc) }}
 
     {% else %}
-      {% for k2 in sc %}
+     {% for k2 in sc %}
 \subsubsection{{ curlies(mdt_dict[k2].name) }}{{ label(mdt_dict[k2].id.lower()) }}
+{{ do_folder(k2) }}
 
-\begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
-{{ mdt_dict[k2].manager }} &
-\begin{tabular}{@{}l@{}}
-{% for owner in mdt_dict[k2].owner %}
-{{ owner }} \\
-{% endfor %}
-\end{tabular} & \begin{tabular}{@{}l@{}}
-{% for wbs in mdt_dict[k2].wbs %}
-{{ wbs }} \\
-{% endfor %}
-\end{tabular} & \begin{tabular}{@{}l@{}}
-{% for team in mdt_dict[k2].teams %}
-{{ team }} \\
-{% endfor %}
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize ( Short Name: {{ mdt_dict[k2].shortname }} - Acronym: {{ mdt_dict[k2].id }} ) }
-}\\ \hline
-\end{longtable}
-
-  {{ mdt_dict[k2].desc }}
-
-        {% for sch1 in sc[k2]['children'] %}
-{# \paragraph{{ curlies(mdt_dict[sch1].name) }}\mbox{}\\ #}
+      {% for sch1 in sc[k2]['children'] %}
+       {% if sch1 is string %}
 \paragraph{{ curlies(mdt_dict[sch1].name) }}{{ label(mdt_dict[sch1].id.lower()) }}\mbox{}\\
+{{ do_product(sch1) }}
 
-\begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
-{{ mdt_dict[sch1].manager }} &
-\begin{tabular}{@{}l@{}}
-{% for owner in mdt_dict[sch1].owner %}
-{{ owner }} \\
-{% endfor %}
-\end{tabular} & \begin{tabular}{@{}l@{}}
-{% for wbs in mdt_dict[sch1].wbs %}
-{{ wbs }} \\
-{% endfor %}
-\end{tabular} & \begin{tabular}{@{}l@{}}
-{% for team in mdt_dict[sch1].teams %}
-{{ team }} \\
-{% endfor %}
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize ( Short Name: {{ mdt_dict[sch1].shortname }} - Acronym: {{ mdt_dict[sch1].id }} ) }
-}\\ \hline
-\end{longtable}
+       {% else %}
+        {% for k3 in sch1 %}
+\paragraph{{ curlies(mdt_dict[k3].name) }}{{ label(mdt_dict[k3].id.lower()) }}\mbox{}\\
+{{ do_folder(k3) }}
 
-  {{ mdt_dict[sch1].desc }}
+         {% for sch2 in sch1[k3]['children'] %}
+\subparagraph{{ curlies(mdt_dict[sch2].name) }}{{ label(mdt_dict[sch2].id.lower()) }}\mbox{}\\
+{{ do_product(sch2) }}
 
-          {% if mdt_dict[sch1].pkgs[0] != "" %}
-\begin{longtable}{c}\hline
-\textbf{GutHub Packages} \\ \hline
-          {% for pkg in mdt_dict[sch1].pkgs %}
-            {% set package = pkg|replace("_", "\\_") %}
-            {% set tmplist = pkg.split('/') %}
-            {% if tmplist|length > 1 %}
-              {% set lnk = 'https://github.com/'~pkg %}
-            {% else %}
-              {% set lnk = 'https://github.com/lsst/'~pkg %}
-            {% endif %}
-\href{{ curlies(lnk) }}{{ curlies(package) }}\\ \hline
-          {% endfor %}
-\end{longtable}
-          {% endif %}
-
-          {% if mdt_dict[sch1].links[0] != "" %}
-\begin{longtable}{c}\hline
-\textbf{Hiperlink References} \\ \hline
-          {% for lnk in mdt_dict[sch1].links %}
-          {% set text = lnk|replace("_", "\\_") %}
-\href{{ curlies(lnk) }}{{ curlies(text) }}  \\ \hline
-          {% endfor %}
-\end{longtable}
-          {% endif %}
-
-\begin{longtable}{cc}\toprule
-\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
-\textbf{Depends On} & \textbf{Used in}\\ \toprule
-          {% if (mdt_dict[sch1].depends is defined) and mdt_dict[sch1].depends %}
-\begin{tabular}{c}
-          {% for pkey in mdt_dict[sch1].depends %}
-{# {{ pkey.name }} ({{ pkey.key }})  \\ \hline #}
-\hyperref[{{ pkey.key.lower() }}]{{ curlies(pkey.name) }} \\ \hline
-          {% endfor %}
-\end{tabular}
-          {% endif %}
-&
-          {% if (mdt_dict[sch1].usedin is defined) and mdt_dict[sch1].usedin %}
-\begin{tabular}{c}
-          {% for pkey in mdt_dict[sch1].usedin %}
-{# {{ pkey.name }} ({{ pkey.key }})  \\ \hline #}
-\hyperref[{{ pkey.key.lower() }}]{{ curlies(pkey.name) }} \\ \hline
-          {% endfor %}
-\end{tabular}
-          {% endif %}
-\\ \bottomrule
-\end{longtable}
-
+         {% endfor %}
         {% endfor %}
+       {% endif %}
       {% endfor %}
+     {% endfor %}
     {% endif %}
+   {% endfor %}
   {% endfor %}
-  {% endfor %}
-  {% endfor %}
+ {% endfor %}
 {% endfor %}

@@ -7,10 +7,15 @@ DBBMDSRV, DBB Metadata, DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle But
 DBBSTRSRV, DBB Storage, DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle Butler, , DBB Storage 
 DBBTRSRV, DBB Transport, DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle Butler, , DBB Transport/ Replication/ Backup 
 ITSRV, IT Service, DMSRV, , , , , , IT Services 
+LSPDB, LSP Database, ITSRV, , , , , , LSP Database 
 NETMGMT, Net Mgmt, ITSRV, 1.02C.08.03, Net/Base, Jeff Kantor, Jeff Kantor, , Network Management 
 LSPSRV, LSP Services, DMSRV, , , , Gregory Dubois-Felsmann, , LSP Services 
 LSPJLSRV, LSP JupyterLab, LSPSRV, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, , LSP JupyterLab 
 LSPPRTLSRV, LSP Portal, LSPSRV, 1.02C.05.09 1.02C.05.08 1.02C.05.07, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, , LSP Portal 
+LSPWAPI, LSP Web API, LSPSRV, , , , , , LSP Web API 
+SIASRV, SIA, LSPWAPI, , , , , , SIA 
+SODA, SODA, LSPWAPI, , , , , , SODA 
+TAPSEV, TAP, LSPWAPI, , , , , , TAP 
 LSPWEBSRV, LSP Web API, LSPSRV, 1.02C.06.02, DAX, Fritz Mueller, Colin Slater, , LSP Web API 
 OFFLSRV, Offline Services, DMSRV, , , , Multiple, , Offline Services 
 BULKDSRV, Bulk Distrib, OFFLSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Michelle Butler, , Bulk Distribution 
@@ -35,10 +40,12 @@ DBBLIFE, DBB Lifetime SW, DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butl
 DBBMD, DBB Meta SW, DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, dbb_gwclient dbb_gateway, DBB Ingest/ Metadata Management SW 
 DBBTR, DBB Transport SW, DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , DBB Transport/ Replication/ Backup SW 
 LSP, LSP SW, DMSW, , , , Gregory Dubois-Felsmann, , LSP SW Products 
+DAXIMG, Image Server, LSP, 1.02C.06.02.04, DAX, Fritz Mueller, Colin Slater, dax_imgserv, Image/ Cutout Server 
 LSPJL, LSP JL SW, LSP, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, jupyterlab*, LSP JupyterLab SW 
 LSPWEB, LSP Web SW, LSP, 1.02C.06.02, DAX, Fritz Mueller, Colin Slater, dax_webserv, LSP Web API SW 
 SUIT, SUIT, LSP, 1.02C.05.09 1.02C.05.07 1.02C.05.08, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, suit, SUIT 
 SUITOH, SUIT OnlineHelp, LSP, , SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, suit-onlinehelp, Suit Online Help 
+TAPSW, TAP, LSP, , , , , , TAP SW 
 PR, Prompt SW, DMSW, , , , Multiple, , Prompt SW Products 
 ALRTDSTR, Alert Distrib SW, PR, 1.02C.03.03, AP, John Swinbank, Eric Bellm, alert_stream, Alert Distribution SW 
 EFDT, EFD Transform, PR, 1.02C.07.08, LDF, Margaret Johnson, Simon Krughoff, , EFD Transformation 
@@ -46,7 +53,7 @@ HEADER, Header Srv SW, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau,
 IIP, Image Ingest SW, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau, ctrl_iip, Image Ingest and Processing 
 OBSPUB, Plan Obs Pub SW, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau, , Planned Observation Publication SW 
 OCSBAT, OCS Batch SW, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau, , OCS Batch SW 
-OODS, Obs Ops Data SW, PR, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , Observatory Operations Data Service SW 
+OODS, Obs Ops Data SW, PR, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, lsst-dm/ctrl_oods, Observatory Operations Data Service SW 
 PRODN, Sci Pipelines SW, DMSW, , , , Robert Lupton, , Science Pipeline SW Products 
 APPRMPT, Alert Prod SW, PRODN, 1.02C.03, AP, John Swinbank, Eric Bellm, spl_ap, Alert Production 
 DMCAL, Calibration SW, PRODN, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, spl_calibration, Calibration SW 
@@ -61,7 +68,6 @@ QCSW, Quality Ctrl SW, QC, 1.02C.10.02.01, SQuaRE, Frossie Economou, Simon Krugh
 SUPPSW, Supporting SW, DMSW, , , , Multiple, , Supporting SW Products 
 ADQL, ADQL Translator, SUPPSW, 1.02C.06.02.05, DAX, Fritz Mueller, Colin Slater, albuquery, ADQL Translator 
 BUTLER, Data Butler, SUPPSW, 1.02C.06.02.01, DAX, Fritz Mueller, Jim Bosch, daf_butler, Data Butler 
-DAXIMG, Image Server, SUPPSW, 1.02C.06.02.04, DAX, Fritz Mueller, Colin Slater, dax_imgserv, Image/ Cutout Server 
 QSERV, Distrib Database, SUPPSW, 1.02C.06.02.03, DAX, Fritz Mueller, Colin Slater, qserv, Distributed Database 
 SCIPIPE, Sci Pipelines Libs, SUPPSW, 1.02C.04 1.02C.03, DRP, John Swinbank, Jim Bosch, lsst_apps, Science Pipelines Libraries 
 TXF, Task Framework, SUPPSW, 1.02C.06.03, DAX, Fritz Mueller, Jim Bosch, pipe_supertask, Task Framework 

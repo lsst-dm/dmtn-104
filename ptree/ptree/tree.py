@@ -109,14 +109,20 @@ def print_footer(ofile):
           "\\end{document}", file=ofile)
 
 
+def drawLines(fout, row):
+    for p in row:
+        prod = p.data
+        print(r" \draw[pline]   ({p.id}.north) -- ++(0.0,0.5) -| ({p.parent}.south) ; ".format(p=prod), file=fout )
+
+
 def tex_tree_portrait(fout, ptree, width, sib, full):
     """
     Write the product tree in PORTRAIT format
-    :param ptree:
-    :param width:
-    :param sib: true or false
+    :param ptree: product tree to dump
+    :param width: the distance from the sibling, that depends from the depth of the previous subtree
+    :param sib: the sibling that has to refer to (the left)
     :param full: true or false
-    :param fout:
+    :param fout: output file resource
     :return:
     """
     fnodes = []
@@ -166,6 +172,54 @@ def tex_tree_portrait(fout, ptree, width, sib, full):
                 print(r"] {\textbf{" + prod.name + "} };", file=fout)
                 print(r" \draw[pline] ({p.parent}.east) -| ++(0.4,0) |- ({p.id}.west); ".format(p=prod), file=fout)
             prev = prod
+    return count
+
+
+def tex_tree_landmix1(fout, ptree):
+    """
+    Write the product tree diagram:
+        first level in landscape
+        second level subtrees in portrait
+    :param fout: outputfile
+    :param ptree: input product tree
+    :return: none
+    """
+    stub = tree_slice(ptree, 1)
+    nodes = stub.expand_tree(mode=Tree.WIDTH)  # default mode=DEPTH
+    row = []
+    count = 0
+    root = None
+    for n in nodes:
+        count = count + 1
+        if count == 1:  # root node
+            root = ptree[n].data
+        else:
+            row.append(ptree[n])
+    root_position = (count - 1) // 2
+    print(f"Count: {count}, Root position: {root_position}")
+    child = row[root_position].data
+    sib = None
+    count = 1  # will output root after
+    prev = None
+    for n in row:  # for each top level element put it out in portrait
+        p = n.data
+        stree = ptree.subtree(p.id)
+        d = 1
+        if prev:
+            d = prev.depth()
+        width = d * (leafWidth + bigGap) + bigGap  # cm
+        if sib:
+            print(sib.name, d, p.name)
+        print(r" {p.id} {p.parent} depth={d} width={w} ".format(p=p, d=d, w=width))
+        count = count + tex_tree_portrait(fout, stree, width, sib, False)
+        sib = p
+        prev = stree
+    # place root node
+    print(r"\node ({p.id}) "
+          r"[wbbox, above=15mm of {c.id}]{{\textbf{{{p.name}}}}};".format(p=root, c=child),
+          file=fout)
+    drawLines(fout, row)
+    print("{} Product lines in TeX ".format(count))
 
 
 def make_tree_portrait(ptree, filename, scope):
@@ -176,10 +230,11 @@ def make_tree_portrait(ptree, filename, scope):
     :param scope:
     :return: none
     """
+    print("Writing Portrait Product Tree in ", filename)
+
     paperwidth = (ptree.depth() + 1) * (leafWidth + bigGap)  # cm
     paperheight = len(ptree.leaves()) * leafHeight + 0.5  # cm
 
-    print("Writing Portrait Product Tree in ", filename)
     ofile = open(filename, "w")
     print_header(scope, paperwidth, paperheight, ofile)
     tex_tree_portrait(ofile, ptree, paperwidth, None, True)
@@ -187,10 +242,10 @@ def make_tree_portrait(ptree, filename, scope):
     ofile.close()
 
 
-def make_tree_landmix(ptree, filename, scope):
+def make_tree_landmix1(ptree, filename, scope):
     """
     First level landscape, and then portrait
-    :param treedict:
+    :param ptree:
     :param filename:
     :param scope:
     :return: none
@@ -198,11 +253,39 @@ def make_tree_landmix(ptree, filename, scope):
     print("Writing Mixed Landscape Product Tree in ", filename)
 
     # calculating diagram size
+    first_level = tree_slice(ptree, 1)
+    print(first_level)
+    nodes = first_level.expand_tree()
+    n_blocks_high = 0
+    n_blocks_width = 0
+    c = 0
+    for n in nodes:
+        print(n)
+        c += 1
+        if c != 1:  # skip the first, that is the tp level node.
+            p = ptree[n].data
+            print(p.name)
+            sub_tree = ptree.subtree(p.id)
+            if len(sub_tree.leaves()) > n_blocks_high:
+                n_blocks_high = len(sub_tree.leaves())
+                print("  - New number of leaves:", n_blocks_high)
+            n_blocks_width = n_blocks_width + sub_tree.depth() + 1
+            print("  - Width: ", n_blocks_width)
+    paperwidth = (n_blocks_width + 1) * (leafWidth + bigGap)  # cm
+    paperheight = (n_blocks_high + 1) * leafHeight + 0.5  # cm
+    print(f"nW: {n_blocks_width}, nH: {n_blocks_high}, WxH: {paperwidth} cm {paperheight} cm")
+
+    # dump file
+    ofile = open(filename, "w")
+    print_header(scope, paperwidth, paperheight, ofile)
+    tex_tree_landmix1(ofile, ptree)
+    print_footer(ofile)
+    ofile.close()
 
 
 def make_subtrees(ptree):
     """
     subtrees in landscape mixed mode
-    :param treedict:
+    :param ptree:
     :return: none
     """

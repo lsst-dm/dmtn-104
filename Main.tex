@@ -1,3 +1,5 @@
+
+
 % auto generated from multiple sources - DO NOT EDIT!
 % using template at <template>.
 % Collecting data for component: ""
@@ -6,8 +8,6 @@
 % This file is meant to be included in LaTeX document in order to provide:
 %   -  MagicDraw Top Level Product Tree (section 2)
 
-
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Wil O'Mullane &
@@ -15,7 +15,12 @@ Wil O'Mullane &
 Leanne Guy \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 1.02C \\
-\end{tabular} & All DM Teams \\ \hline
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Data Management - Acronym: DM ) }
+}\\ \hline
 \end{longtable}
 
   This is the top level Data Management product. It includes underneath
@@ -42,7 +47,6 @@ following groups:
 
 
 \subsection{Services}\label{dmsrv}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -84,7 +88,6 @@ party, is implementing it. This information is displaced in the
 
 
 \subsubsection{Backbone Services}\label{dbbsrv}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -106,7 +109,6 @@ concepts of operations for each service can be found in \citeds{LDM-230}
 
 
 \paragraph{DBB Lifetime Management}\label{dbblifesrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -147,7 +149,6 @@ products may be kept until all downstream products have been generated.
 \end{longtable}
 
 \paragraph{DBB Ingest/ Metadata Management}\label{dbbmdsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -192,7 +193,6 @@ Butler to directly access data within the DBB.
 \end{longtable}
 
 \paragraph{DBB Storage}\label{dbbstrsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -230,7 +230,6 @@ datastore.
 \end{longtable}
 
 \paragraph{DBB Transport/ Replication/ Backup}\label{dbbtrsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -268,7 +267,6 @@ recovery if a data product is found to be missing or corrupt.
 \end{longtable}
 
 \subsubsection{IT Services}\label{itsrv}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -287,8 +285,39 @@ recovery if a data product is found to be missing or corrupt.
   
 
 
-\paragraph{Network Management}\label{netmgmt}\mbox{}\\
+\paragraph{LSP Database}\label{lspdb}\mbox{}\\
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: LSP Database - Acronym: LSPDB ) }
+}\\ \hline
+\end{longtable}
 
+  Database service used by the LSP components instantiated in a DAC for
+storing user data and reading available catalogs.
+
+
+
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+\hyperref[qserv]{Distributed Database} \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
+\end{longtable}
+
+\paragraph{Network Management}\label{netmgmt}\mbox{}\\
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Jeff Kantor &
@@ -318,7 +347,6 @@ control failover, manage bandwidth allocation, etc.\\
 \end{longtable}
 
 \subsubsection{LSP Services}\label{lspsrv}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -354,7 +382,6 @@ as data and processing SW.\\[2\baselineskip]More details available in
 
 
 \paragraph{LSP JupyterLab}\label{lspjlsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Frossie Economou &
@@ -396,7 +423,6 @@ generating derived data products.
 \end{longtable}
 
 \paragraph{LSP Portal}\label{lspprtlsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Xiuqin Wu &
@@ -436,8 +462,121 @@ the LSST data products.
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{LSP Web API}\label{lspwebsrv}\mbox{}\\
+\paragraph{LSP Web API}\label{lspwapi}\mbox{}\\
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: LSP Web API - Acronym: LSPWAPI ) }
+}\\ \hline
+\end{longtable}
 
+  The API Aspect provides remote access to the LSST data, user data, and
+user computing resources, through a set of Web APIs (many based on VO
+standards). The Web APIs will deliver data in community-standard
+formats, including, e.g., VOTable, CSV, and FITS. The same Web APIs are
+used internally in the Portal Aspect, and are also available in the
+Notebook Aspect.
+
+
+\subparagraph{SIA}\label{siasrv}\mbox{}\\
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: SIA - Acronym: SIASRV ) }
+}\\ \hline
+\end{longtable}
+
+  
+
+
+
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Depends On} & \textbf{Used in}\\ \toprule
+&
+\\ \bottomrule
+\end{longtable}
+
+\subparagraph{SODA}\label{soda}\mbox{}\\
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: SODA - Acronym: SODA ) }
+}\\ \hline
+\end{longtable}
+
+  
+
+
+
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+\hyperref[daximg]{Image/ Cutout Server} \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
+\end{longtable}
+
+\subparagraph{TAP}\label{tapsev}\mbox{}\\
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: TAP - Acronym: TAPSEV ) }
+}\\ \hline
+\end{longtable}
+
+  
+
+
+
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Depends On} & \textbf{Used in}\\ \toprule
+\begin{tabular}{c}
+\hyperref[tapsw]{TAP SW} \\ \hline
+\end{tabular}
+&
+\\ \bottomrule
+\end{longtable}
+
+\paragraph{LSP Web API}\label{lspwebsrv}\mbox{}\\
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
@@ -453,12 +592,8 @@ DAX \\
 }\\ \hline
 \end{longtable}
 
-  The API Aspect provides remote access to the LSST data, user data, and
-user computing resources, through a set of Web APIs (many based on VO
-standards). The Web APIs will deliver data in community-standard
-formats, including, e.g., VOTable, CSV, and FITS. The same Web APIs are
-used internally in the Portal Aspect, and are also available in the
-Notebook Aspect.
+  {[}OBSOLETE{]} replaced by theLSP WebAPI package and corresponding
+serves in it.
 
 
 
@@ -479,7 +614,6 @@ Notebook Aspect.
 \end{longtable}
 
 \subsubsection{Offline Services}\label{offlsrv}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -499,7 +633,6 @@ Multiple \\
 
 
 \paragraph{Bulk Distribution}\label{bulkdsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -534,7 +667,6 @@ LDF \\
 \end{longtable}
 
 \paragraph{Offline Quality Control}\label{offlqcsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Yusra AlSayyad &
@@ -573,7 +705,6 @@ the data collected by the survey.
 \end{longtable}
 
 \paragraph{Batch Production}\label{prodsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -613,7 +744,6 @@ LDF \\
 \end{longtable}
 
 \subsubsection{Prompt Services}\label{prsrv}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -633,7 +763,6 @@ Multiple \\
 
 
 \paragraph{Alert Distribution}\label{alrtdstsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
@@ -668,7 +797,6 @@ AP \\
 \end{longtable}
 
 \paragraph{Archiving}\label{arcsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -733,7 +861,6 @@ permanently archived ``Transformed EFD'' database in the Data Backbone.
 \end{longtable}
 
 \paragraph{OCS-Driven Batch}\label{ocsbatsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -768,7 +895,6 @@ LDF \\
 \end{longtable}
 
 \paragraph{Observatory Operations Data}\label{oodssrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -803,7 +929,6 @@ LDF \\
 \end{longtable}
 
 \paragraph{Planned Observation Publication}\label{popsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -842,7 +967,6 @@ inspection and a web API for usage by automated tools.
 \end{longtable}
 
 \paragraph{Prompt Processing Ingest}\label{prpingsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -883,7 +1007,6 @@ telescope spectrograph.
 \end{longtable}
 
 \paragraph{Prompt Processing}\label{prprsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -920,7 +1043,6 @@ telescope spectrograph.
 \end{longtable}
 
 \paragraph{Prompt Quality Control}\label{prqcsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
@@ -958,7 +1080,6 @@ the data collected by the survey.
 \end{longtable}
 
 \paragraph{Telemetry Gateway}\label{tmgsrv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -995,7 +1116,6 @@ as part of the Image Ingest and Processing software product.
 \end{longtable}
 
 \subsection{Software Products}\label{dmsw}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -1019,7 +1139,6 @@ definition.
 
 
 \subsubsection{Batch Production Products}\label{bpp}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -1039,7 +1158,6 @@ Michelle Butler \\
 
 
 \paragraph{Campaign Management}\label{cmpgn}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -1069,7 +1187,6 @@ docker. SW still to be written.
 \end{longtable}
 
 \paragraph{Workload/ Workflow Management}\label{wlwf}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -1102,7 +1219,6 @@ docker. SW still to be written.
 \end{longtable}
 
 \subsubsection{Backbone SW Products}\label{dbb}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -1122,7 +1238,6 @@ Michelle Butler \\
 
 
 \paragraph{DBB Lifetime Management SW}\label{dbblife}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -1155,7 +1270,6 @@ sciences storage.
 \end{longtable}
 
 \paragraph{DBB Ingest/ Metadata Management SW}\label{dbbmd}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -1193,7 +1307,6 @@ services from the Facilities enclaves to the backbone.
 \end{longtable}
 
 \paragraph{DBB Transport/ Replication/ Backup SW}\label{dbbtr}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -1228,7 +1341,6 @@ preservation.
 \end{longtable}
 
 \subsubsection{LSP SW Products}\label{lsp}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -1247,8 +1359,42 @@ Gregory Dubois-Felsmann \\
   Software products that implement the LSP services.
 
 
-\paragraph{LSP JupyterLab SW}\label{lspjl}\mbox{}\\
+\paragraph{Image/ Cutout Server}\label{daximg}\mbox{}\\
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+Fritz Mueller &
+\begin{tabular}{@{}l@{}}
+Colin Slater \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+1.02C.06.02.04 \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+DAX \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: Image Server - Acronym: DAXIMG ) }
+}\\ \hline
+\end{longtable}
 
+  Web Interface for LSST Image Services software product.
+
+
+\begin{longtable}{c}\hline
+\textbf{GutHub Packages} \\ \hline
+\href{https://github.com/lsst/dax_imgserv}{dax\_imgserv}\\ \hline
+\end{longtable}
+
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Depends On} & \textbf{Used in}\\ \toprule
+&
+\begin{tabular}{c}
+\hyperref[soda]{SODA} \\ \hline
+\end{tabular}
+\\ \bottomrule
+\end{longtable}
+
+\paragraph{LSP JupyterLab SW}\label{lspjl}\mbox{}\\
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Frossie Economou &
@@ -1284,7 +1430,6 @@ SQuaRE \\
 \end{longtable}
 
 \paragraph{LSP Web API SW}\label{lspweb}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
@@ -1300,7 +1445,9 @@ DAX \\
 }\\ \hline
 \end{longtable}
 
-  LSP Web API software product
+  {[}OBSOLETE{]}
+
+LSP Web API software product
 
 
 \begin{longtable}{c}\hline
@@ -1320,7 +1467,6 @@ DAX \\
 \end{longtable}
 
 \paragraph{SUIT}\label{suit}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Xiuqin Wu &
@@ -1364,7 +1510,6 @@ Firefly server side.
 \end{longtable}
 
 \paragraph{Suit Online Help}\label{suitoh}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Xiuqin Wu &
@@ -1401,8 +1546,38 @@ HTML content.
 \\ \bottomrule
 \end{longtable}
 
-\subsubsection{Prompt SW Products}\label{pr}
+\paragraph{TAP SW}\label{tapsw}\mbox{}\\
+\begin{longtable}{cccc}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Short Name: TAP - Acronym: TAPSW ) }
+}\\ \hline
+\end{longtable}
 
+  
+
+
+
+
+\begin{longtable}{cc}\toprule
+\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
+\textbf{Depends On} & \textbf{Used in}\\ \toprule
+&
+\begin{tabular}{c}
+\hyperref[tapsev]{TAP} \\ \hline
+\end{tabular}
+\\ \bottomrule
+\end{longtable}
+
+\subsubsection{Prompt SW Products}\label{pr}
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -1422,7 +1597,6 @@ Multiple \\
 
 
 \paragraph{Alert Distribution SW}\label{alrtdstr}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
@@ -1458,7 +1632,6 @@ AP \\
 \end{longtable}
 
 \paragraph{EFD Transformation}\label{efdt}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -1491,7 +1664,6 @@ services. (EFD Extract-Tranform-Load) Software still to be implemented.
 \end{longtable}
 
 \paragraph{Header Service SW}\label{header}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -1528,7 +1700,6 @@ external users. It is developed at University of Illinois (Urbana)
 \end{longtable}
 
 \paragraph{Image Ingest and Processing}\label{iip}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -1567,7 +1738,6 @@ the DMCS, used to implements the Telemetry Gateway service.
 \end{longtable}
 
 \paragraph{Planned Observation Publication SW}\label{obspub}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -1599,7 +1769,6 @@ LDF \\
 \end{longtable}
 
 \paragraph{OCS Batch SW}\label{ocsbat}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -1631,7 +1800,6 @@ LDF \\
 \end{longtable}
 
 \paragraph{Observatory Operations Data Service SW}\label{oods}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -1650,6 +1818,10 @@ LDF \\
   SW Product to use in the OODS service.
 
 
+\begin{longtable}{c}\hline
+\textbf{GutHub Packages} \\ \hline
+\href{https://github.com/lsst-dm/ctrl_oods}{lsst-dm/ctrl\_oods}\\ \hline
+\end{longtable}
 
 
 \begin{longtable}{cc}\toprule
@@ -1663,7 +1835,6 @@ LDF \\
 \end{longtable}
 
 \subsubsection{Science Pipeline SW Products}\label{prodn}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -1683,7 +1854,6 @@ Robert Lupton \\
 
 
 \paragraph{Alert Production}\label{apprmpt}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
@@ -1723,7 +1893,6 @@ AP \\
 \end{longtable}
 
 \paragraph{Calibration SW}\label{dmcal}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
@@ -1764,7 +1933,6 @@ DRP \\
 \end{longtable}
 
 \paragraph{Data Release Production}\label{drp}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Yusra AlSayyad &
@@ -1804,7 +1972,6 @@ DRP \\
 \end{longtable}
 
 \paragraph{MOPS and Forced Photometry}\label{mops}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
@@ -1845,7 +2012,6 @@ AP \\
 \end{longtable}
 
 \paragraph{Special Programs Productions}\label{sp}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
@@ -1883,7 +2049,6 @@ DRP \\
 \end{longtable}
 
 \paragraph{Science Pipelines Distribution}\label{spdist}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
@@ -1932,7 +2097,6 @@ DRP \\
 \end{longtable}
 
 \paragraph{Science Plugins}\label{splug}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
@@ -1972,7 +2136,6 @@ configured in or out of the processing by the user.
 \end{longtable}
 
 \paragraph{Template Generation}\label{tmplgen}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Yusra AlSayyad &
@@ -2004,7 +2167,6 @@ DRP \\
 \end{longtable}
 
 \subsubsection{Quality Control Products}\label{qc}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2024,7 +2186,6 @@ Simon Krughoff \\
 
 
 \paragraph{Quality Control SW}\label{qcsw}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Frossie Economou &
@@ -2066,7 +2227,6 @@ services.
 \end{longtable}
 
 \subsubsection{Supporting SW Products}\label{suppsw}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2087,7 +2247,6 @@ other DM software products.
 
 
 \paragraph{ADQL Translator}\label{adql}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
@@ -2103,7 +2262,8 @@ DAX \\
 }\\ \hline
 \end{longtable}
 
-  DAX Query Services in Kotlin.
+  {[}OBSOLETE{]}\\
+DAX Query Services in Kotlin.\\[2\baselineskip]
 
 
 \begin{longtable}{c}\hline
@@ -2120,7 +2280,6 @@ DAX \\
 \end{longtable}
 
 \paragraph{Data Butler}\label{butler}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
@@ -2155,41 +2314,7 @@ DAX \\
 \\ \bottomrule
 \end{longtable}
 
-\paragraph{Image/ Cutout Server}\label{daximg}\mbox{}\\
-
-\begin{longtable}{cccc}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
-Fritz Mueller &
-\begin{tabular}{@{}l@{}}
-Colin Slater \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
-1.02C.06.02.04 \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
-DAX \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize ( Short Name: Image Server - Acronym: DAXIMG ) }
-}\\ \hline
-\end{longtable}
-
-  Web Interface for LSST Image Services software product.
-
-
-\begin{longtable}{c}\hline
-\textbf{GutHub Packages} \\ \hline
-\href{https://github.com/lsst/dax_imgserv}{dax\_imgserv}\\ \hline
-\end{longtable}
-
-
-\begin{longtable}{cc}\toprule
-\multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
-\textbf{Depends On} & \textbf{Used in}\\ \toprule
-&
-\\ \bottomrule
-\end{longtable}
-
 \paragraph{Distributed Database}\label{qserv}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
@@ -2219,11 +2344,13 @@ package in github.
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
+\begin{tabular}{c}
+\hyperref[lspdb]{LSP Database} \\ \hline
+\end{tabular}
 \\ \bottomrule
 \end{longtable}
 
 \paragraph{Science Pipelines Libraries}\label{scipipe}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 John Swinbank &
@@ -2266,7 +2393,6 @@ AP \\
 \end{longtable}
 
 \paragraph{Task Framework}\label{txf}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Fritz Mueller &
@@ -2302,7 +2428,6 @@ DAX \\
 \end{longtable}
 
 \subsection{Hardware and COTS SW}\label{hwcots}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2322,7 +2447,6 @@ Multiple \\
 
 
 \subsubsection{COTS}\label{cots}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2342,7 +2466,6 @@ Multiple \\
 
 
 \paragraph{CILogon}\label{cilogon}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2379,7 +2502,6 @@ management platform for research collaborations.
 \end{longtable}
 
 \paragraph{Docker}\label{docker}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2416,7 +2538,6 @@ virtualizations.
 \end{longtable}
 
 \paragraph{GPFS}\label{gpfs}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2453,7 +2574,6 @@ file system developed by IBM.
 \end{longtable}
 
 \paragraph{Grafana}\label{grafana}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2489,7 +2609,6 @@ file system developed by IBM.
 \end{longtable}
 
 \paragraph{HTCondor}\label{htcondor}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2528,7 +2647,6 @@ intensive tasks.
 \end{longtable}
 
 \paragraph{Kubernetes}\label{k8s}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2565,7 +2683,6 @@ and management of containerized applications.
 \end{longtable}
 
 \paragraph{Oracle}\label{oracle}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2601,7 +2718,6 @@ and management of containerized applications.
 \end{longtable}
 
 \paragraph{Puppet}\label{puppet}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2638,7 +2754,6 @@ and management of containerized applications.
 \end{longtable}
 
 \paragraph{Rucio}\label{rucio}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2675,7 +2790,6 @@ Michelle Butler \\
 \end{longtable}
 
 \paragraph{IT Security SW}\label{security}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2707,7 +2821,6 @@ Michelle Butler \\
 \end{longtable}
 
 \paragraph{vSphere}\label{vsphere}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2743,7 +2856,6 @@ Michelle Butler \\
 \end{longtable}
 
 \subsubsection{Compute Nodes}\label{hwcomp}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2766,7 +2878,6 @@ added here on a per need base.
 
 
 \paragraph{Dell blade 8 cores 16 GB ram}\label{dell8}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -2796,7 +2907,6 @@ package
 \end{longtable}
 
 \subsubsection{Network Nodes}\label{hwnet}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2822,7 +2932,6 @@ other) - switches Details will be added here on a per need base.
 
 
 \paragraph{Network Component X}\label{netx}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -2852,7 +2961,6 @@ package
 \end{longtable}
 
 \subsubsection{Storage Nodes}\label{hwstor}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2874,7 +2982,6 @@ be added here on a per need base.
 
 
 \paragraph{SAN disk 2TB storage}\label{san2}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -2903,7 +3010,6 @@ LDF \\
 \end{longtable}
 
 \subsubsection{Low Level SW}\label{llsw}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2927,7 +3033,6 @@ here on a per need base.
 
 
 \paragraph{RedHat CentOS}\label{centos}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2956,7 +3061,6 @@ here on a per need base.
 \end{longtable}
 
 \subsubsection{Third Party Libraries}\label{thpl}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2977,7 +3081,6 @@ and to run.
 
 
 \paragraph{Boost}\label{boost}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -3006,7 +3109,6 @@ and to run.
 \end{longtable}
 
 \paragraph{Firefly API Access}\label{ffaa}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Xiuqin Wu &
@@ -3040,7 +3142,6 @@ from npm-style package loading
 \end{longtable}
 
 \paragraph{Firefly}\label{firefly}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Xiuqin Wu &
@@ -3080,7 +3181,6 @@ SUIT \\
 \end{longtable}
 
 \paragraph{Python}\label{pth}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -3109,7 +3209,6 @@ SUIT \\
 \end{longtable}
 
 \subsection{Infrastructure}\label{infra}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -3136,7 +3235,6 @@ services.
 
 
 \subsubsection{Enclaves}\label{enc}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -3156,7 +3254,6 @@ Multiple \\
 
 
 \paragraph{Archive Base Enclave}\label{encarcb}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -3195,7 +3292,6 @@ Base facility.
 \end{longtable}
 
 \paragraph{Archive NCSA Enclave}\label{encarcn}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -3234,7 +3330,6 @@ NCSA facility.
 \end{longtable}
 
 \paragraph{Commissioning Cluster Enclave}\label{enccomm}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -3272,7 +3367,6 @@ Base facility.
 \end{longtable}
 
 \paragraph{DAC Chile Enclave}\label{encdacc}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -3310,7 +3404,6 @@ located at the Base facility.
 \end{longtable}
 
 \paragraph{DAC US Enclave}\label{encdacu}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -3348,7 +3441,6 @@ the NCSA facility.
 \end{longtable}
 
 \paragraph{Offline Production Enclave}\label{encoffl}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -3386,7 +3478,6 @@ the NCSA facility.
 \end{longtable}
 
 \paragraph{Prompt Base Enclave}\label{encprb}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -3427,7 +3518,6 @@ real time manner, at Base facility.
 \end{longtable}
 
 \paragraph{Prompt NCSA Enclave}\label{encprn}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -3467,7 +3557,6 @@ real time manner, at NCSA facility.
 \end{longtable}
 
 \subsubsection{Facilities}\label{fac}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -3487,7 +3576,6 @@ Multiple \\
 
 
 \paragraph{Base Facility}\label{facbase}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Jeff Kantor &
@@ -3523,7 +3611,6 @@ Net/Base \\
 \end{longtable}
 
 \paragraph{NCSA Facility}\label{facncsa}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -3559,7 +3646,6 @@ LDF \\
 \end{longtable}
 
 \subsubsection{Networks}\label{net}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -3579,7 +3665,6 @@ Multiple \\
 
 
 \paragraph{Base to Archive Network}\label{netba}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Jeff Kantor &
@@ -3608,7 +3693,6 @@ Net/Base \\
 \end{longtable}
 
 \paragraph{Base LAN Network}\label{netbase}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -3637,7 +3721,6 @@ LDF \\
 \end{longtable}
 
 \paragraph{NCSA LAN Network}\label{netncsa}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Margaret Johnson &
@@ -3666,7 +3749,6 @@ LDF \\
 \end{longtable}
 
 \paragraph{Summit to Base Network}\label{netsb}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 Jeff Kantor &
@@ -3695,7 +3777,6 @@ Net/Base \\
 \end{longtable}
 
 \subsection{Reference Data}\label{refd}
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -3715,9 +3796,7 @@ Net/Base \\
 during constructions..
 
 
-
 \paragraph{Atronomy Net Data}\label{and}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -3736,7 +3815,6 @@ during constructions..
   
 
 
-
 \begin{longtable}{c}\hline
 \textbf{GutHub Packages} \\ \hline
 \href{https://github.com/lsst/astronomy_net_data}{astronomy\_net\_data}\\ \hline
@@ -3753,10 +3831,7 @@ during constructions..
 \\ \bottomrule
 \end{longtable}
 
-
-
 \paragraph{Gaia Data}\label{gdata}\mbox{}\\
-
 \begin{longtable}{cccc}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -3777,15 +3852,11 @@ during constructions..
 
 
 
-
 \begin{longtable}{cc}\toprule
 \multicolumn{2}{c}{\textbf{Products Dependencies} } \\ \hline
 \textbf{Depends On} & \textbf{Used in}\\ \toprule
 &
-\begin{tabular}{c}
-\end{tabular}
 \\ \bottomrule
 \end{longtable}
-
 
 

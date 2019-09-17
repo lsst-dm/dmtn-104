@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=20.8cm,paperheight=134.66cm,
+\usepackage[paperwidth=26.0cm,paperheight=142.46cm,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -44,17 +44,27 @@ textwidth=30cm,textheight=50mm]{geometry}
  \draw[pline] (DBBSRV.east) -| ++(0.4,0) |- (DBBTRSRV.west); 
 \node (ITSRV) [pbox,below=127pt of DBBSRV] {\textbf{IT Services} };
  \draw[pline] (DMSRV.east) -| ++(0.4,0) |- (ITSRV.west); 
-\node (NETMGMT) [pbox,right=15mm of ITSRV] {\textbf{Network Management} };
+\node (LSPDB) [pbox,right=15mm of ITSRV] {\textbf{LSP Database} };
+ \draw[pline] (ITSRV.east) -| ++(0.4,0) |- (LSPDB.west); 
+\node (NETMGMT) [pbox,below=4pt of LSPDB] {\textbf{Network Management} };
  \draw[pline] (ITSRV.east) -| ++(0.4,0) |- (NETMGMT.west); 
-\node (LSPSRV) [pbox,below=4pt of ITSRV] {\textbf{LSP Services} };
+\node (LSPSRV) [pbox,below=45pt of ITSRV] {\textbf{LSP Services} };
  \draw[pline] (DMSRV.east) -| ++(0.4,0) |- (LSPSRV.west); 
 \node (LSPJLSRV) [pbox,right=15mm of LSPSRV] {\textbf{LSP JupyterLab} };
  \draw[pline] (LSPSRV.east) -| ++(0.4,0) |- (LSPJLSRV.west); 
 \node (LSPPRTLSRV) [pbox,below=4pt of LSPJLSRV] {\textbf{LSP Portal} };
  \draw[pline] (LSPSRV.east) -| ++(0.4,0) |- (LSPPRTLSRV.west); 
-\node (LSPWEBSRV) [pbox,below=4pt of LSPPRTLSRV] {\textbf{LSP Web API} };
+\node (LSPWAPI) [pbox,below=4pt of LSPPRTLSRV] {\textbf{LSP Web API} };
+ \draw[pline] (LSPSRV.east) -| ++(0.4,0) |- (LSPWAPI.west); 
+\node (SIASRV) [pbox,right=15mm of LSPWAPI] {\textbf{SIA} };
+ \draw[pline] (LSPWAPI.east) -| ++(0.4,0) |- (SIASRV.west); 
+\node (SODA) [pbox,below=4pt of SIASRV] {\textbf{SODA} };
+ \draw[pline] (LSPWAPI.east) -| ++(0.4,0) |- (SODA.west); 
+\node (TAPSEV) [pbox,below=4pt of SODA] {\textbf{TAP} };
+ \draw[pline] (LSPWAPI.east) -| ++(0.4,0) |- (TAPSEV.west); 
+\node (LSPWEBSRV) [pbox,below=86pt of LSPWAPI] {\textbf{LSP Web API} };
  \draw[pline] (LSPSRV.east) -| ++(0.4,0) |- (LSPWEBSRV.west); 
-\node (OFFLSRV) [pbox,below=86pt of LSPSRV] {\textbf{Offline Services} };
+\node (OFFLSRV) [pbox,below=209pt of LSPSRV] {\textbf{Offline Services} };
  \draw[pline] (DMSRV.east) -| ++(0.4,0) |- (OFFLSRV.west); 
 \node (BULKDSRV) [pbox,right=15mm of OFFLSRV] {\textbf{Bulk Distribution} };
  \draw[pline] (OFFLSRV.east) -| ++(0.4,0) |- (BULKDSRV.west); 
@@ -82,7 +92,7 @@ textwidth=30cm,textheight=50mm]{geometry}
  \draw[pline] (PRSRV.east) -| ++(0.4,0) |- (PRQCSRV.west); 
 \node (TMGSRV) [pbox,below=4pt of PRQCSRV] {\textbf{Telemetry Gateway} };
  \draw[pline] (PRSRV.east) -| ++(0.4,0) |- (TMGSRV.west); 
-\node (DMSW) [pbox,below=783pt of DMSRV] {\textbf{Software Products} };
+\node (DMSW) [pbox,below=947pt of DMSRV] {\textbf{Software Products} };
  \draw[pline] (DM.east) -| ++(0.4,0) |- (DMSW.west); 
 \node (BPP) [pbox,right=15mm of DMSW] {\textbf{Batch Production Products} };
  \draw[pline] (DMSW.east) -| ++(0.4,0) |- (BPP.west); 
@@ -100,7 +110,9 @@ textwidth=30cm,textheight=50mm]{geometry}
  \draw[pline] (DBB.east) -| ++(0.4,0) |- (DBBTR.west); 
 \node (LSP) [pbox,below=86pt of DBB] {\textbf{LSP SW Products} };
  \draw[pline] (DMSW.east) -| ++(0.4,0) |- (LSP.west); 
-\node (LSPJL) [pbox,right=15mm of LSP] {\textbf{LSP JupyterLab SW} };
+\node (DAXIMG) [pbox,right=15mm of LSP] {\textbf{Image/ Cutout Server} };
+ \draw[pline] (LSP.east) -| ++(0.4,0) |- (DAXIMG.west); 
+\node (LSPJL) [pbox,below=4pt of DAXIMG] {\textbf{LSP JupyterLab SW} };
  \draw[pline] (LSP.east) -| ++(0.4,0) |- (LSPJL.west); 
 \node (LSPWEB) [pbox,below=4pt of LSPJL] {\textbf{LSP Web API SW} };
  \draw[pline] (LSP.east) -| ++(0.4,0) |- (LSPWEB.west); 
@@ -108,7 +120,9 @@ textwidth=30cm,textheight=50mm]{geometry}
  \draw[pline] (LSP.east) -| ++(0.4,0) |- (SUIT.west); 
 \node (SUITOH) [pbox,below=4pt of SUIT] {\textbf{Suit Online Help} };
  \draw[pline] (LSP.east) -| ++(0.4,0) |- (SUITOH.west); 
-\node (PR) [pbox,below=127pt of LSP] {\textbf{Prompt SW Products} };
+\node (TAPSW) [pbox,below=4pt of SUITOH] {\textbf{TAP SW} };
+ \draw[pline] (LSP.east) -| ++(0.4,0) |- (TAPSW.west); 
+\node (PR) [pbox,below=209pt of LSP] {\textbf{Prompt SW Products} };
  \draw[pline] (DMSW.east) -| ++(0.4,0) |- (PR.west); 
 \node (ALRTDSTR) [pbox,right=15mm of PR] {\textbf{Alert Distribution SW} };
  \draw[pline] (PR.east) -| ++(0.4,0) |- (ALRTDSTR.west); 
@@ -152,15 +166,13 @@ textwidth=30cm,textheight=50mm]{geometry}
  \draw[pline] (SUPPSW.east) -| ++(0.4,0) |- (ADQL.west); 
 \node (BUTLER) [pbox,below=4pt of ADQL] {\textbf{Data Butler} };
  \draw[pline] (SUPPSW.east) -| ++(0.4,0) |- (BUTLER.west); 
-\node (DAXIMG) [pbox,below=4pt of BUTLER] {\textbf{Image/ Cutout Server} };
- \draw[pline] (SUPPSW.east) -| ++(0.4,0) |- (DAXIMG.west); 
-\node (QSERV) [pbox,below=4pt of DAXIMG] {\textbf{Distributed Database} };
+\node (QSERV) [pbox,below=4pt of BUTLER] {\textbf{Distributed Database} };
  \draw[pline] (SUPPSW.east) -| ++(0.4,0) |- (QSERV.west); 
 \node (SCIPIPE) [pbox,below=4pt of QSERV] {\textbf{Science Pipelines Libraries} };
  \draw[pline] (SUPPSW.east) -| ++(0.4,0) |- (SCIPIPE.west); 
 \node (TXF) [pbox,below=4pt of SCIPIPE] {\textbf{Task Framework} };
  \draw[pline] (SUPPSW.east) -| ++(0.4,0) |- (TXF.west); 
-\node (HWCOTS) [pbox,below=1234pt of DMSW] {\textbf{Hardware and COTS SW} };
+\node (HWCOTS) [pbox,below=1275pt of DMSW] {\textbf{Hardware and COTS SW} };
  \draw[pline] (DM.east) -| ++(0.4,0) |- (HWCOTS.west); 
 \node (COTS) [pbox,right=15mm of HWCOTS] {\textbf{COTS} };
  \draw[pline] (HWCOTS.east) -| ++(0.4,0) |- (COTS.west); 

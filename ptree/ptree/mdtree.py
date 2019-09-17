@@ -27,7 +27,7 @@ import sys
 from .config import Config
 from jinja2 import Environment, PackageLoader, TemplateNotFound, ChoiceLoader, FileSystemLoader
 from .util import get_pkg_properties, mdTree, rsget, fix_tex, fix_id_tex, Product, html_to_latex
-from .tree import make_tree_portrait, make_tree_landmix
+from .tree import make_tree_portrait, make_tree_landmix1
 
 
 def _as_output_format(text, output_format):
@@ -288,7 +288,7 @@ def do_trees_diagrams(tree, filename, scope):
     make_tree_portrait(tree, "trees/" + filename + "_portrait.tex", scope)
 
     # build landscape tree
-    make_tree_landmix(tree, "trees/" + filename + "_mixedLand.tex", scope)
+    make_tree_landmix1(tree, "trees/" + filename + "_mixedLand.tex", scope)
 
     # build subtrees
 
