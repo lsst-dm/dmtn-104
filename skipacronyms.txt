@@ -11,7 +11,7 @@ p
 s
 A
 Alert
-{Alerrt}{Production}
+Alert Production
 Archive
 Butler
 Camera
@@ -31,4 +31,15 @@ metadata
 monitoring
 pipeline
 provenance
-{Dat}{Management}
+Data Management
+Base Facility
+Batch Production
+Data Backbone
+Data Management System
+Data Release Production
+General Parallel File System
+NCSA Facility
+Data Release
+Prompt Processing
+Quality Control
+Science Pipelines
