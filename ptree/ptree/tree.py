@@ -128,7 +128,7 @@ def tex_tree_portrait(fout, ptree, width, sib, full):
     fnodes = []
     nodes = ptree.expand_tree()  # default mode=DEPTH
     count = 0
-    prev = Product("n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n")
+    prev = Product("n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n")
     # Text height + the gap added to each one
     blocksize = txtheight + gap + sep
     for n in nodes:
@@ -176,8 +176,7 @@ def tex_tree_portrait(fout, ptree, width, sib, full):
 
 
 def tex_tree_landmix1(fout, ptree):
-    """
-    Write the product tree diagram:
+    """ Write the product tree diagram:
         first level in landscape
         second level subtrees in portrait
     :param fout: outputfile
@@ -216,8 +215,7 @@ def tex_tree_landmix1(fout, ptree):
         prev = stree
     # place root node
     print(r"\node ({p.id}) "
-          r"[wbbox, above=15mm of {c.id}]{{\textbf{{{p.shortname}}}}};".format(p=root, c=child),
-          file=fout)
+          r"[wbbox, above=15mm of {c.id}]{{\textbf{{{p.shortname}}}}};".format(p=root, c=child), file=fout)
     drawLines(fout, row)
     print("{} Product lines in TeX ".format(count))
 

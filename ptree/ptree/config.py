@@ -58,6 +58,7 @@ class Config:
     DOCUSHARE_DOC_PATTERN = re.compile(doc_pattern_text)
     milestone_pattern_text = r"\b(" + "|".join(DOC_NAMES) + r")(-\d+-\d+)([\s\.])"
     MILESTONE_PATTERN = re.compile(milestone_pattern_text)
+    SUBSYSTEM_YML_FILE = "subsystem.yaml"
     SUBSYSTEMS = {'DM': {'ID': '698d501b-660d-4d7e-8875-c6170ca0f513',  # MagicDraw ID of DMS project
                          'Top': '60706435-6f8e-4b15-823b-06597f1cdada',  # MagicDraw ID of top level package
                          'Sup': 'fc38aa3d-683c-44a5-bdc9-c6f6e5978d18',  # MagicDraw ID of supporting package

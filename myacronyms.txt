@@ -4,6 +4,7 @@ AI\&T:Assembly, Integration and Test
 AURA:Association of Universities for Research in Astronomy
 BAC:Budget At Completion
 BOE:Basis Of Estimate
+CI:Continuous Integration
 MC:Monte-Carlo (simulation/process)
 NCOA:National Center for Optical-Infrared Astronomy
 NCSA:National Center for Supercomputing Applications

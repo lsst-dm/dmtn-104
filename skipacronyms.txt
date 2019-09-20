@@ -44,3 +44,5 @@ Prompt Processing
 Quality Control
 Science Pipelines
 data repository
+Release
+arcsec

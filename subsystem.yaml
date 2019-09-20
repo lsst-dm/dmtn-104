@@ -1,0 +1,10 @@
+subsystem:
+  name: 'DM'
+  id: 698d501b-660d-4d7e-8875-c6170ca0f513
+  subtrees:
+    - filename: 'Main'
+      id: 60706435-6f8e-4b15-823b-06597f1cdada
+    - filename: 'Development'
+      id: fc38aa3d-683c-44a5-bdc9-c6f6e5978d18
+    #- filename: 'General'
+    #  id: 35610b17-2bf5-4130-896c-8153d9e53a64

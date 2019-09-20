@@ -27,6 +27,7 @@ import csv
 import re
 import requests
 import datetime
+import os.path
 from treelib import Tree
 from time import sleep
 from .config import Config
@@ -48,7 +49,7 @@ def cite_docushare_handles(text):
 
 class Product(object):
     def __init__(self, p_id, name, parent, desc, wbs, manager, owner, kind,
-                 pkgs, depends, el_id, links, teams, shortname, usedin):
+                 pkgs, depends, el_id, links, teams, shortname, usedin, index):
         self.id = p_id              # 1 key (0 is self)
         self.name = name            # 2
         self.parent = parent        # 3
@@ -64,6 +65,7 @@ class Product(object):
         self.teams = teams          # 13
         self.shortname = shortname  # 14
         self.usedin = usedin        # 15
+        self.index = index          # 16 the position assigned in MD (number before the name)
 
 
 def html_to_latex(string):
@@ -303,7 +305,10 @@ def get_yaml():
     """Get the subsystem.yaml content
     :return:
     """
-    raw_info = open('subsystem.yaml', 'r').read()
-    yaml_info = yaml.safe_load(raw_info)
-    print(yaml_info)
-    return yaml_info
+    if os.path.isfile(Config.SUBSYSTEM_YML_FILE):
+        raw_info = open(Config.SUBSYSTEM_YML_FILE, 'r').read()
+        yaml_info = yaml.safe_load(raw_info)
+        return yaml_info
+    else:
+        print(f"No MD subsystem information found. Please provide one in {Config.SUBSYSTEM_YML_FILE}.")
+        exit()

@@ -103,7 +103,11 @@ def walk_tree(rcs, mres, mdid, pkey):
         print('Error: no package given containing the Product Tree')
         exit()
     pkg_name = fix_tex(resp[1]['kerml:name']).lstrip('0123456789.- ')
-    print(f"{{pc}}: {{pn}}".format(pc=products_count,pn=pkg_name), end='')
+    try:
+        pkg_index = int(resp[1]['kerml:name'].split()[0])
+    except ValueError:
+        pkg_index = 0
+    print(f"{products_count}: {pkg_name}.{pkg_index}", end='')
     pkg_sub_pkgs = []
     pkg_classes = []
     pkg_comments = ""
@@ -215,7 +219,8 @@ def walk_tree(rcs, mres, mdid, pkey):
                    pkg_properties["hyperlinkText"],   # 12
                    pkg_properties["team"],            # 13
                    pkg_properties["short name"][0],   # 14
-                   pkg_usedin)                              # 15
+                   pkg_usedin,                        # 15
+                   pkg_index)                         # 16
     if pkey == "":  # first node in the tree
         mdTree.create_node(prod.id, prod.id, data=prod)
     else:
@@ -350,12 +355,15 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file):
 def generate_document(subsystem, connection_str, output_format):
     """Given system and level, generates the document content"""
 
-    get_yaml()
+    subsystem_info = get_yaml()
+    print("Sys Info")
 
     print("-> Generating Main Product Tree  ==========================")
-    subsystem_id = Config.SUBSYSTEMS[subsystem]['ID']  # former dms
-    level_id = Config.SUBSYSTEMS[subsystem]['Top']  # former dmcmp
-    do_md_section(subsystem_id, level_id, connection_str, output_format, 'Main')
+    # #subsystem_id = Config.SUBSYSTEMS[subsystem]['ID']  # former dms
+    subsystem_id = subsystem_info['subsystem']['id']
+    level_id = subsystem_info['subsystem']['subtrees'][0]['id']  # former dmcmp
+    filename = subsystem_info['subsystem']['subtrees'][0]['filename']
+    do_md_section(subsystem_id, level_id, connection_str, output_format, filename)
 
     print("-> [to do] Generating Development Product Tree  ==========================")
 

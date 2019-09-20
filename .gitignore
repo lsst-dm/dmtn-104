@@ -1,7 +1,8 @@
 ## Products (publised by CI)
 DMTN-104.pdf
-ProductTreeLand.pdf
 acronyms.tex
+meta.tex
+trees/*.pdf
 
 one.*
 ## Core latex/pdflatex auxiliary files:
