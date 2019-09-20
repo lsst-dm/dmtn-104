@@ -73,7 +73,7 @@ BUTLER, Data Butler, SUPPSW, 1.02C.06.02.01, DAX, Fritz Mueller, Jim Bosch, daf_
 QSERV, Distrib Database, SUPPSW, 1.02C.06.02.03, DAX, Fritz Mueller, Colin Slater, qserv, Distrib Database 
 SCIPIPE, Sci Pipelines Libs, SUPPSW, 1.02C.04 1.02C.03, DRP, John Swinbank, Jim Bosch, lsst_apps, Sci Pipelines Libs 
 TXF, Task Framework, SUPPSW, 1.02C.06.03, DAX, Fritz Mueller, Jim Bosch, pipe_supertask, Task Framework 
-HWCOTS, HW and COTS SW, DM, , , , Multiple, , HW and COTS SW 
+HWCOTS, Resources, DM, , , , Multiple, , Resources 
 COTS, COTS SW, HWCOTS, , , , Multiple, , COTS SW 
 CILOGON, CILogon, COTS, , , , , , CILogon 
 DOCKER, Docker, COTS, , , , , , Docker 

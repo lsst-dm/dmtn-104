@@ -13,6 +13,7 @@ requires = [
 
 doc_requires = [
     "sphinx",
+    "yaml",
     "sphinx_click",
     "sphinx_rtd_theme"
 ]

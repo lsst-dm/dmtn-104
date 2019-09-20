@@ -22,6 +22,7 @@
 Utility code for product tree generation
 """
 
+import yaml
 import csv
 import re
 import requests
@@ -297,3 +298,12 @@ def explore_md_element(rcs, cid, eid, level):
                     #               comp=tmp[1]['kerml:esiData']['definingFeature']['@id']), True)
                     # explore_md_element(rcs, cid, tmp[1]['kerml:esiData']['definingFeature']['@id'], level+'_')
                     # print()
+
+def get_yaml():
+    """Get the subsystem.yaml content
+    :return:
+    """
+    raw_info = open('subsystem.yaml', 'r').read()
+    yaml_info = yaml.safe_load(raw_info)
+    print(yaml_info)
+    return yaml_info

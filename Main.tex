@@ -31,21 +31,22 @@ following groups:
 \begin{itemize}
 \tightlist
 \item
-  services
+  service products
 \item
-  software
+  software products (developed by DM)
 \item
-  hardware and COTS resources
+  resource products (hardware, COTS and external provided softwares)
 \item
-  infrastructures
+  infrastructure products (physical or logical)
 \item
-  data
+  data products (reference data for development and operations)
 \end{itemize}
 
 ~
 
 
-\subsection{Services}\label{dmsrv}
+
+\subsection{Services Products}\label{dmsrv}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -71,6 +72,8 @@ Leanne Guy \\
   data processing (prompt and offline)
 \item
   data access (LSP)
+\item
+  supporting activities (IT, monitoring, DBs, etc)
 \end{itemize}
 
 All services should be characterize by the implementing products and by
@@ -84,6 +87,7 @@ processes defined for the DM software products.
 All services shall also specify which software product, DM or third
 party, is implementing it. This information is displaced in the
 \textbf{Product Dependencies} table, \emph{Depends On} column.
+
 
 
 \subsubsection{Backbone Services}\label{dbbsrv}
@@ -107,8 +111,10 @@ They are implemented in the Archive enclaves.\\[2\baselineskip]Detailed
 concepts of operations for each service can be found in \citeds{LDM-230}
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ DBB Lifetime Management } }\label{dbblifesrv}
+\multicolumn{2}{l}{\large \textbf{ DBB Lifetime Management } }\label{dbblifesrv}
+& \multicolumn{2}{l}{(product in: DBB Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -133,8 +139,9 @@ defined time periods as specified in requirements. Intermediate data
 products may be kept until all downstream products have been generated.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbblife]{DBB Lifetime Management SW} \\ \hline
@@ -149,7 +156,8 @@ products may be kept until all downstream products have been generated.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ DBB Ingest/ Metadata Management } }\label{dbbmdsrv}
+\multicolumn{2}{l}{\large \textbf{ DBB Ingest/ Metadata Management } }\label{dbbmdsrv}
+& \multicolumn{2}{l}{(product in: DBB Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -178,8 +186,9 @@ is a superset of the registry required by the Data Butler, allowing the
 Butler to directly access data within the DBB.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbbmd]{DBB Ingest/ Metadata Management SW} \\ \hline
@@ -194,7 +203,8 @@ Butler to directly access data within the DBB.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ DBB Storage } }\label{dbbstrsrv}
+\multicolumn{2}{l}{\large \textbf{ DBB Storage } }\label{dbbstrsrv}
+& \multicolumn{2}{l}{(product in: DBB Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -216,8 +226,9 @@ storage service provides an interface usable by the Data Butler as a
 datastore.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbbtr]{DBB Transport/ Replication/ Backup SW} \\ \hline
@@ -232,7 +243,8 @@ datastore.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ DBB Transport/ Replication/ Backup } }\label{dbbtrsrv}
+\multicolumn{2}{l}{\large \textbf{ DBB Transport/ Replication/ Backup } }\label{dbbtrsrv}
+& \multicolumn{2}{l}{(product in: DBB Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -254,8 +266,9 @@ to another and to backup and disaster recovery storage. It handles
 recovery if a data product is found to be missing or corrupt.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbbtr]{DBB Transport/ Replication/ Backup SW} \\ \hline
@@ -285,11 +298,15 @@ recovery if a data product is found to be missing or corrupt.
 }\\ \hline
 \end{longtable}
 
-  
+  The services listed under this product are meant to be used for
+supporting activities, required bu the other products in order to work
+properly.\\
+
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ EFD Cache } }\label{efdb}
+\multicolumn{2}{l}{\large \textbf{ EFD Cache } }\label{efdb}
+& \multicolumn{2}{l}{(product in: IT Service)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -309,8 +326,9 @@ recovery if a data product is found to be missing or corrupt.
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[efdt]{EFD Transformation} \\ \hline
@@ -324,7 +342,8 @@ recovery if a data product is found to be missing or corrupt.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ LSP Database } }\label{lspdb}
+\multicolumn{2}{l}{\large \textbf{ LSP Database } }\label{lspdb}
+& \multicolumn{2}{l}{(product in: IT Service)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -345,18 +364,26 @@ recovery if a data product is found to be missing or corrupt.
 storing user data and reading available catalogs.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[qserv]{Distributed Database} \\ \hline
 \end{tabular} }
 &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
+\hyperref[encdacc]{DAC Chile Enclave} \\ \hline
+\hyperref[encdacu]{DAC US Enclave} \\ \hline
+\end{tabular} }
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Network Management } }\label{netmgmt}
+\multicolumn{2}{l}{\large \textbf{ Network Management } }\label{netmgmt}
+& \multicolumn{2}{l}{(product in: IT Service)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -377,8 +404,9 @@ Net/Base \\
 control failover, manage bandwidth allocation, etc.\\
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
@@ -418,8 +446,10 @@ as data and processing SW.\\[2\baselineskip]More details available in
 \citeds{LDM-542}and \citeds{LSE-319}
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ LSP JupyterLab } }\label{lspjlsrv}
+\multicolumn{2}{l}{\large \textbf{ LSP JupyterLab } }\label{lspjlsrv}
+& \multicolumn{2}{l}{(product in: LSP Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -443,8 +473,9 @@ to the LSST data archive, accessing and analyzing the data and
 generating derived data products.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspjl]{LSP JupyterLab SW} \\ \hline
@@ -461,7 +492,8 @@ generating derived data products.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ LSP Portal } }\label{lspprtlsrv}
+\multicolumn{2}{l}{\large \textbf{ LSP Portal } }\label{lspprtlsrv}
+& \multicolumn{2}{l}{(product in: LSP Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -484,8 +516,9 @@ SUIT \\
 the LSST data products.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[suit]{SUIT} \\ \hline
@@ -525,8 +558,10 @@ used internally in the Portal Aspect, and are also available in the
 Notebook Aspect.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ SIA } }\label{siasrv}
+\multicolumn{2}{l}{\large \textbf{ SIA } }\label{siasrv}
+& \multicolumn{2}{l}{(product in: LSP Web API)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -546,14 +581,22 @@ Notebook Aspect.
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
+\hyperref[encdacc]{DAC Chile Enclave} \\ \hline
+\hyperref[encdacu]{DAC US Enclave} \\ \hline
+\end{tabular} }
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ SODA } }\label{soda}
+\multicolumn{2}{l}{\large \textbf{ SODA } }\label{soda}
+& \multicolumn{2}{l}{(product in: LSP Web API)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -573,18 +616,26 @@ Notebook Aspect.
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[daximg]{Image/ Cutout Server} \\ \hline
 \end{tabular} }
 &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
+\hyperref[encdacc]{DAC Chile Enclave} \\ \hline
+\hyperref[encdacu]{DAC US Enclave} \\ \hline
+\end{tabular} }
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ TAP } }\label{tapsev}
+\multicolumn{2}{l}{\large \textbf{ TAP } }\label{tapsev}
+& \multicolumn{2}{l}{(product in: LSP Web API)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -604,18 +655,26 @@ Notebook Aspect.
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[tapsw]{TAP SW} \\ \hline
 \end{tabular} }
 &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
+\hyperref[encdacc]{DAC Chile Enclave} \\ \hline
+\hyperref[encdacu]{DAC US Enclave} \\ \hline
+\end{tabular} }
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ WebDAV } }\label{wdav}
+\multicolumn{2}{l}{\large \textbf{ WebDAV } }\label{wdav}
+& \multicolumn{2}{l}{(product in: LSP Web API)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -635,17 +694,25 @@ Notebook Aspect.
   This service permits the use of filesystem over http.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/davt}{davt} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
+\hyperref[encdacc]{DAC Chile Enclave} \\ \hline
+\hyperref[encdacu]{DAC US Enclave} \\ \hline
+\end{tabular} }
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ LSP Web API } }\label{lspwebsrv}
+\multicolumn{2}{l}{\large \textbf{ LSP Web API } }\label{lspwebsrv}
+& \multicolumn{2}{l}{(product in: LSP Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -666,12 +733,9 @@ DAX \\
 serves in it.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
-\multicolumn{2}{c}{
-\begin{tabular}{c}
-\hyperref[lspweb]{LSP Web API SW} \\ \hline
-\end{tabular} }
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -701,8 +765,10 @@ Multiple \\
   DM services that do not need to run in a prompt manner.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Bulk Distribution } }\label{bulkdsrv}
+\multicolumn{2}{l}{\large \textbf{ Bulk Distribution } }\label{bulkdsrv}
+& \multicolumn{2}{l}{(product in: Offline Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -722,8 +788,9 @@ LDF \\
   Bulk Data Distribution Service
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[rucio]{Rucio} \\ \hline
@@ -737,7 +804,8 @@ LDF \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Offline Quality Control } }\label{offlqcsrv}
+\multicolumn{2}{l}{\large \textbf{ Offline Quality Control } }\label{offlqcsrv}
+& \multicolumn{2}{l}{(product in: Offline Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -760,8 +828,9 @@ order to ensure the monitoring of the quality of the processing and of
 the data collected by the survey.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[qcsw]{Quality Control SW} \\ \hline
@@ -776,7 +845,8 @@ the data collected by the survey.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Batch Production } }\label{prodsrv}
+\multicolumn{2}{l}{\large \textbf{ Batch Production } }\label{prodsrv}
+& \multicolumn{2}{l}{(product in: Offline Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -796,8 +866,9 @@ LDF \\
   Batch Production Service
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[wlwf]{Workload/ Workflow Management} \\ \hline
@@ -834,8 +905,10 @@ Multiple \\
   DM Services that need to run in a prompt manner.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Alert Distribution } }\label{alrtdstsrv}
+\multicolumn{2}{l}{\large \textbf{ Alert Distribution } }\label{alrtdstsrv}
+& \multicolumn{2}{l}{(product in: Prompt Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -855,8 +928,9 @@ AP \\
   Alert Distribution and Filtering Service
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[alrtdstr]{Alert Distribution SW} \\ \hline
@@ -870,7 +944,8 @@ AP \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Archiving } }\label{arcsrv}
+\multicolumn{2}{l}{\large \textbf{ Archiving } }\label{arcsrv}
+& \multicolumn{2}{l}{(product in: Prompt Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -918,8 +993,9 @@ suitable for querying by image timestamp, and loads it into the
 permanently archived ``Transformed EFD'' database in the Data Backbone.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[iip]{Image Ingest and Processing} \\ \hline
@@ -935,7 +1011,8 @@ permanently archived ``Transformed EFD'' database in the Data Backbone.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ OCS-Driven Batch } }\label{ocsbatsrv}
+\multicolumn{2}{l}{\large \textbf{ OCS-Driven Batch } }\label{ocsbatsrv}
+& \multicolumn{2}{l}{(product in: Prompt Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -955,8 +1032,9 @@ LDF \\
   OCS Driven Batch Processing Service
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[ocsbat]{OCS Batch SW} \\ \hline
@@ -970,7 +1048,8 @@ LDF \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Observatory Operations Data } }\label{oodssrv}
+\multicolumn{2}{l}{\large \textbf{ Observatory Operations Data } }\label{oodssrv}
+& \multicolumn{2}{l}{(product in: Prompt Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -990,8 +1069,9 @@ LDF \\
   Observatory Operations Data Service
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[oods]{Observatory Operations Data Service SW} \\ \hline
@@ -1005,7 +1085,8 @@ LDF \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Planned Observation Publication } }\label{popsrv}
+\multicolumn{2}{l}{\large \textbf{ Planned Observation Publication } }\label{popsrv}
+& \multicolumn{2}{l}{(product in: Prompt Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1029,8 +1110,9 @@ globally-accessible web service comprising both a web page for human
 inspection and a web API for usage by automated tools.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[obspub]{Planned Observation Publication SW} \\ \hline
@@ -1044,7 +1126,8 @@ inspection and a web API for usage by automated tools.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Prompt Processing Ingest } }\label{prpingsrv}
+\multicolumn{2}{l}{\large \textbf{ Prompt Processing Ingest } }\label{prpingsrv}
+& \multicolumn{2}{l}{(product in: Prompt Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1069,8 +1152,9 @@ Enclave. There is no Prompt Processing Ingest instance for the auxiliary
 telescope spectrograph.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[iip]{Image Ingest and Processing} \\ \hline
@@ -1085,7 +1169,8 @@ telescope spectrograph.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Prompt Processing } }\label{prprsrv}
+\multicolumn{2}{l}{\large \textbf{ Prompt Processing } }\label{prprsrv}
+& \multicolumn{2}{l}{(product in: Prompt Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1105,8 +1190,9 @@ telescope spectrograph.
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[apprmpt]{Alert Production} \\ \hline
@@ -1122,7 +1208,8 @@ telescope spectrograph.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Prompt Quality Control } }\label{prqcsrv}
+\multicolumn{2}{l}{\large \textbf{ Prompt Quality Control } }\label{prqcsrv}
+& \multicolumn{2}{l}{(product in: Prompt Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1145,8 +1232,9 @@ order to ensure the monitoring of the quality of the processing and of
 the data collected by the survey.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[qcsw]{Quality Control SW} \\ \hline
@@ -1160,7 +1248,8 @@ the data collected by the survey.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Telemetry Gateway } }\label{tmgsrv}
+\multicolumn{2}{l}{\large \textbf{ Telemetry Gateway } }\label{tmgsrv}
+& \multicolumn{2}{l}{(product in: Prompt Services)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1182,8 +1271,9 @@ manages communication from and to the Observatory. The DMCS is developed
 as part of the Image Ingest and Processing software product.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[iip]{Image Ingest and Processing} \\ \hline
@@ -1219,6 +1309,7 @@ Dependencies should be derived from the corresponding Git packages
 definition.
 
 
+
 \subsubsection{Batch Production Products}\label{bpp}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -1238,8 +1329,10 @@ Michelle Butler \\
   Software products to orchestrate the long term data processing.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Campaign Management } }\label{cmpgn}
+\multicolumn{2}{l}{\large \textbf{ Campaign Management } }\label{cmpgn}
+& \multicolumn{2}{l}{(product in: Batch Prod SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1260,14 +1353,16 @@ LDF \\
 docker. SW still to be written.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Workload/ Workflow Management } }\label{wlwf}
+\multicolumn{2}{l}{\large \textbf{ Workload/ Workflow Management } }\label{wlwf}
+& \multicolumn{2}{l}{(product in: Batch Prod SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1288,8 +1383,9 @@ LDF \\
 docker. SW still to be written.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1317,8 +1413,10 @@ Michelle Butler \\
   Software products that implement the Data Backbone services
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ DBB Lifetime Management SW } }\label{dbblife}
+\multicolumn{2}{l}{\large \textbf{ DBB Lifetime Management SW } }\label{dbblife}
+& \multicolumn{2}{l}{(product in: DBB SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1339,8 +1437,9 @@ LDF \\
 sciences storage.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1350,7 +1449,8 @@ sciences storage.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ DBB Ingest/ Metadata Management SW } }\label{dbbmd}
+\multicolumn{2}{l}{\large \textbf{ DBB Ingest/ Metadata Management SW } }\label{dbbmd}
+& \multicolumn{2}{l}{(product in: DBB SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1371,13 +1471,14 @@ LDF \\
 services from the Facilities enclaves to the backbone.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/dbb_gwclient}{dbb\_gwclient} }
 \\ \cline{3-4}
 & & \multicolumn{2}{l}{\href{https://github.com/lsst/dbb_gateway}{dbb\_gateway} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1387,7 +1488,8 @@ services from the Facilities enclaves to the backbone.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ DBB Transport/ Replication/ Backup SW } }\label{dbbtr}
+\multicolumn{2}{l}{\large \textbf{ DBB Transport/ Replication/ Backup SW } }\label{dbbtr}
+& \multicolumn{2}{l}{(product in: DBB SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1409,8 +1511,9 @@ from different facilities and to send it to tape for long time
 preservation.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1439,8 +1542,10 @@ Gregory Dubois-Felsmann \\
   Software products that implement the LSP services.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Image/ Cutout Server } }\label{daximg}
+\multicolumn{2}{l}{\large \textbf{ Image/ Cutout Server } }\label{daximg}
+& \multicolumn{2}{l}{(product in: LSP SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1460,11 +1565,12 @@ DAX \\
   Web Interface for LSST Image Services software product.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/dax_imgserv}{dax\_imgserv} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1474,7 +1580,8 @@ DAX \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ LSP JupyterLab SW } }\label{lspjl}
+\multicolumn{2}{l}{\large \textbf{ LSP JupyterLab SW } }\label{lspjl}
+& \multicolumn{2}{l}{(product in: LSP SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1494,11 +1601,12 @@ SQuaRE \\
   LSP Jupiter Notebook Product
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/jupyterlab*}{jupyterlab*} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1508,7 +1616,8 @@ SQuaRE \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ LSP Web API SW } }\label{lspweb}
+\multicolumn{2}{l}{\large \textbf{ LSP Web API SW } }\label{lspweb}
+& \multicolumn{2}{l}{(product in: LSP SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1530,21 +1639,19 @@ DAX \\
 LSP Web API software product
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/dax_webserv}{dax\_webserv} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
-\multicolumn{2}{c}{
-\begin{tabular}{c}
-\hyperref[lspwebsrv]{LSP Web API} \\ \hline
-\end{tabular} }
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ SUIT } }\label{suit}
+\multicolumn{2}{l}{\large \textbf{ SUIT } }\label{suit}
+& \multicolumn{2}{l}{(product in: LSP SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1569,11 +1676,12 @@ JavaScript but also contains Java extensions (search processors) to the
 Firefly server side.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/suit}{suit} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[firefly]{Firefly} \\ \hline
@@ -1587,7 +1695,8 @@ Firefly server side.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ SUIT Online Help } }\label{suitoh}
+\multicolumn{2}{l}{\large \textbf{ SUIT Online Help } }\label{suitoh}
+& \multicolumn{2}{l}{(product in: LSP SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1609,11 +1718,12 @@ implement a help application that provides a navigation sidebar for the
 HTML content.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/suit-onlinehelp}{suit-onlinehelp} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1623,7 +1733,8 @@ HTML content.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ TAP SW } }\label{tapsw}
+\multicolumn{2}{l}{\large \textbf{ TAP SW } }\label{tapsw}
+& \multicolumn{2}{l}{(product in: LSP SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1643,8 +1754,9 @@ HTML content.
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1672,8 +1784,10 @@ Multiple \\
   DM software products required to implement the DM Prompt Services.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Alert Distribution SW } }\label{alrtdstr}
+\multicolumn{2}{l}{\large \textbf{ Alert Distribution SW } }\label{alrtdstr}
+& \multicolumn{2}{l}{(product in: Prompt SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1693,11 +1807,12 @@ AP \\
   SW product for alert distribution and filtering.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/alert_stream}{alert\_stream} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1707,7 +1822,8 @@ AP \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ EFD Transformation } }\label{efdt}
+\multicolumn{2}{l}{\large \textbf{ EFD Transformation } }\label{efdt}
+& \multicolumn{2}{l}{(product in: Prompt SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1728,8 +1844,9 @@ LDF \\
 services. (EFD Extract-Tranform-Load) Software still to be implemented.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1740,7 +1857,8 @@ services. (EFD Extract-Tranform-Load) Software still to be implemented.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Header Service SW } }\label{header}
+\multicolumn{2}{l}{\large \textbf{ Header Service SW } }\label{header}
+& \multicolumn{2}{l}{(product in: Prompt SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1761,11 +1879,12 @@ LDF \\
 external users. It is developed at University of Illinois (Urbana)
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst-dm/HeaderService}{lsst-dm/HeaderService} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1775,7 +1894,8 @@ external users. It is developed at University of Illinois (Urbana)
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Image Ingest and Processing } }\label{iip}
+\multicolumn{2}{l}{\large \textbf{ Image Ingest and Processing } }\label{iip}
+& \multicolumn{2}{l}{(product in: Prompt SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1796,11 +1916,12 @@ LDF \\
 the DMCS, used to implements the Telemetry Gateway service.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/ctrl_iip}{ctrl\_iip} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1812,7 +1933,8 @@ the DMCS, used to implements the Telemetry Gateway service.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Planned Observation Publication SW } }\label{obspub}
+\multicolumn{2}{l}{\large \textbf{ Planned Observation Publication SW } }\label{obspub}
+& \multicolumn{2}{l}{(product in: Prompt SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1832,8 +1954,9 @@ LDF \\
   Pointing Prediction Publishing software products.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1843,7 +1966,8 @@ LDF \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ OCS Batch SW } }\label{ocsbat}
+\multicolumn{2}{l}{\large \textbf{ OCS Batch SW } }\label{ocsbat}
+& \multicolumn{2}{l}{(product in: Prompt SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1863,8 +1987,9 @@ LDF \\
   Batch commandable SAL component.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1874,7 +1999,8 @@ LDF \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Observatory Operations Data Service SW } }\label{oods}
+\multicolumn{2}{l}{\large \textbf{ Observatory Operations Data Service SW } }\label{oods}
+& \multicolumn{2}{l}{(product in: Prompt SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1894,11 +2020,12 @@ LDF \\
   SW Product to use in the OODS service.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst-dm/ctrl_oods}{lsst-dm/ctrl\_oods} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1926,8 +2053,10 @@ Robert Lupton \\
   DM Software products that implements the Science Pipelines payloads.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Alert Production } }\label{apprmpt}
+\multicolumn{2}{l}{\large \textbf{ Alert Production } }\label{apprmpt}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1947,11 +2076,12 @@ AP \\
   Software product for Allert Production processing.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/spl_ap}{spl\_ap} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
@@ -1966,7 +2096,8 @@ AP \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Calibration SW } }\label{dmcal}
+\multicolumn{2}{l}{\large \textbf{ Calibration SW } }\label{dmcal}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -1986,11 +2117,12 @@ DRP \\
   Software product for generating calibration data products.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/spl_calibration}{spl\_calibration} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
@@ -2006,7 +2138,8 @@ DRP \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Data Release Production } }\label{drp}
+\multicolumn{2}{l}{\large \textbf{ Data Release Production } }\label{drp}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2026,11 +2159,12 @@ DRP \\
   Software product for data release production.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/spl_drp}{spl\_drp} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
@@ -2045,7 +2179,8 @@ DRP \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ MOPS and Forced Photometry } }\label{mops}
+\multicolumn{2}{l}{\large \textbf{ MOPS and Forced Photometry } }\label{mops}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2065,11 +2200,12 @@ AP \\
   Software product for MOPS and Forced Photometry data processing.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/mops_daymops}{mops\_daymops} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
@@ -2085,7 +2221,8 @@ AP \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Special Programs Productions } }\label{sp}
+\multicolumn{2}{l}{\large \textbf{ Special Programs Productions } }\label{sp}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2107,8 +2244,9 @@ DRP \\
   Software product for special programs data processing.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
@@ -2123,7 +2261,8 @@ DRP \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Science Pipelines Distribution } }\label{spdist}
+\multicolumn{2}{l}{\large \textbf{ Science Pipelines Distribution } }\label{spdist}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2143,11 +2282,12 @@ DRP \\
   Top level distribution product for the science pipelines
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/lsst_distrib}{lsst\_distrib} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[apprmpt]{Alert Production} \\ \hline
@@ -2171,7 +2311,8 @@ DRP \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Science Plugins } }\label{splug}
+\multicolumn{2}{l}{\large \textbf{ Science Plugins } }\label{splug}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2195,11 +2336,12 @@ software that meets a well-defined interface standard and can be
 configured in or out of the processing by the user.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/spl_plugins}{spl\_plugins} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2209,7 +2351,8 @@ configured in or out of the processing by the user.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Template Generation } }\label{tmplgen}
+\multicolumn{2}{l}{\large \textbf{ Template Generation } }\label{tmplgen}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2229,8 +2372,9 @@ DRP \\
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2258,8 +2402,10 @@ Simon Krughoff \\
   SW products for quality control.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Quality Control SW } }\label{qcsw}
+\multicolumn{2}{l}{\large \textbf{ Quality Control SW } }\label{qcsw}
+& \multicolumn{2}{l}{(product in: QC Products)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2280,6 +2426,7 @@ SQuaRE \\
 services.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/validate_base}{validate\_base} }
@@ -2292,7 +2439,7 @@ services.
 \\ \cline{3-4}
 & & \multicolumn{2}{l}{\href{https://github.com/lsst/validate_drp}{validate\_drp} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2322,8 +2469,10 @@ Multiple \\
 other DM software products.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ ADQL Translator } }\label{adql}
+\multicolumn{2}{l}{\large \textbf{ ADQL Translator } }\label{adql}
+& \multicolumn{2}{l}{(product in: Supporting SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2344,17 +2493,19 @@ DAX \\
 DAX Query Services in Kotlin.\\[2\baselineskip]
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/albuquery}{albuquery} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Data Butler } }\label{butler}
+\multicolumn{2}{l}{\large \textbf{ Data Butler } }\label{butler}
+& \multicolumn{2}{l}{(product in: Supporting SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2374,11 +2525,12 @@ DAX \\
   Butler middleware software product.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/daf_butler}{daf\_butler} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2388,7 +2540,8 @@ DAX \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Distributed Database } }\label{qserv}
+\multicolumn{2}{l}{\large \textbf{ Distributed Database } }\label{qserv}
+& \multicolumn{2}{l}{(product in: Supporting SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2409,11 +2562,12 @@ DAX \\
 package in github.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/qserv}{qserv} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2423,7 +2577,8 @@ package in github.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Science Pipelines Libraries } }\label{scipipe}
+\multicolumn{2}{l}{\large \textbf{ Science Pipelines Libraries } }\label{scipipe}
+& \multicolumn{2}{l}{(product in: Supporting SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2445,11 +2600,12 @@ AP \\
   Science Pipeline Top Level Software product.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/lsst_apps}{lsst\_apps} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2464,7 +2620,8 @@ AP \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Task Framework } }\label{txf}
+\multicolumn{2}{l}{\large \textbf{ Task Framework } }\label{txf}
+& \multicolumn{2}{l}{(product in: Supporting SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2484,11 +2641,12 @@ DAX \\
   SuperTask middleware software product.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/pipe_supertask}{pipe\_supertask} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2497,7 +2655,7 @@ DAX \\
 \\ \bottomrule
 \end{longtable}
 
-\subsection{Hardware and COTS SW}\label{hwcots}
+\subsection{Hardware and COTS Resources}\label{hwcots}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
  &
@@ -2509,11 +2667,22 @@ Multiple \\
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: HW and COTS SW - Acronym: HWCOTS ) }
+{\footnotesize ( Short Name: Resources - Acronym: HWCOTS ) }
 }\\ \hline
 \end{longtable}
 
-  DM hardware and COTS products.
+  External resources needed to implement the DM services:
+
+\begin{itemize}
+\tightlist
+\item
+  Hardware (computing hardware, network hardware, etc)
+\item
+  COTS
+\item
+  External software (not developed in DM)
+\end{itemize}
+
 
 
 \subsubsection{COTS}\label{cots}
@@ -2535,8 +2704,10 @@ Multiple \\
   This product includes all COTS used to implement the DM services.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ CILogon } }\label{cilogon}
+\multicolumn{2}{l}{\large \textbf{ CILogon } }\label{cilogon}
+& \multicolumn{2}{l}{(product in: COTS SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2557,11 +2728,12 @@ Multiple \\
 management platform for research collaborations.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{http://www.cilogon.org/}{http://www.cilogon.org/} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2571,7 +2743,8 @@ management platform for research collaborations.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Docker } }\label{docker}
+\multicolumn{2}{l}{\large \textbf{ Docker } }\label{docker}
+& \multicolumn{2}{l}{(product in: COTS SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2592,11 +2765,12 @@ management platform for research collaborations.
 virtualizations.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://www.docker.com/}{https://www.docker.com/} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2606,7 +2780,8 @@ virtualizations.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ GPFS } }\label{gpfs}
+\multicolumn{2}{l}{\large \textbf{ GPFS } }\label{gpfs}
+& \multicolumn{2}{l}{(product in: COTS SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2627,11 +2802,12 @@ virtualizations.
 file system developed by IBM.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://en.wikipedia.org/wiki/IBM_General_Parallel_File_System}{https://en.wikipedia.org/wiki/IBM\_General\_Parallel\_File\_System} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2641,7 +2817,8 @@ file system developed by IBM.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Grafana } }\label{grafana}
+\multicolumn{2}{l}{\large \textbf{ Grafana } }\label{grafana}
+& \multicolumn{2}{l}{(product in: COTS SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2661,11 +2838,12 @@ file system developed by IBM.
   3rd party software product for analytics and monitoring
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://grafana.com/}{https://grafana.com/} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2675,7 +2853,8 @@ file system developed by IBM.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ HTCondor } }\label{htcondor}
+\multicolumn{2}{l}{\large \textbf{ HTCondor } }\label{htcondor}
+& \multicolumn{2}{l}{(product in: COTS SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2697,13 +2876,14 @@ for coarse-grained distributed parallelization of computationally
 intensive tasks.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://research.cs.wisc.edu/htcondor/}{https://research.cs.wisc.edu/htcondor/} }
 \\ \cline{2-4}
 & \multicolumn{3}{l}{\href{https://github.com/htcondor}{https://github.com/htcondor} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2713,7 +2893,8 @@ intensive tasks.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Kubernetes } }\label{k8s}
+\multicolumn{2}{l}{\large \textbf{ Kubernetes } }\label{k8s}
+& \multicolumn{2}{l}{(product in: COTS SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2734,11 +2915,12 @@ intensive tasks.
 and management of containerized applications.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://kubernetes.io/}{https://kubernetes.io/} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2748,7 +2930,8 @@ and management of containerized applications.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Oracle } }\label{oracle}
+\multicolumn{2}{l}{\large \textbf{ Oracle } }\label{oracle}
+& \multicolumn{2}{l}{(product in: COTS SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2768,11 +2951,12 @@ and management of containerized applications.
   Oracle Relational Database 3rd party software product.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://www.oracle.com/index.html}{https://www.oracle.com/index.html} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2782,7 +2966,8 @@ and management of containerized applications.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Puppet } }\label{puppet}
+\multicolumn{2}{l}{\large \textbf{ Puppet } }\label{puppet}
+& \multicolumn{2}{l}{(product in: COTS SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2802,13 +2987,14 @@ and management of containerized applications.
   Puppet is an open-source software configuration management tool.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://en.wikipedia.org/wiki/Puppet_(software)}{https://en.wikipedia.org/wiki/Puppet\_(software)} }
 \\ \cline{2-4}
 & \multicolumn{3}{l}{\href{https://puppet.com/}{https://puppet.com/} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2818,7 +3004,8 @@ and management of containerized applications.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Rucio } }\label{rucio}
+\multicolumn{2}{l}{\large \textbf{ Rucio } }\label{rucio}
+& \multicolumn{2}{l}{(product in: COTS SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2838,13 +3025,14 @@ Michelle Butler \\
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{http://rucio.cern.ch/}{http://rucio.cern.ch/} }
 \\ \cline{2-4}
 & \multicolumn{3}{l}{\href{http://rucio.readthedocs.io/}{http://rucio.readthedocs.io/} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2854,7 +3042,8 @@ Michelle Butler \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ IT Security SW } }\label{security}
+\multicolumn{2}{l}{\large \textbf{ IT Security SW } }\label{security}
+& \multicolumn{2}{l}{(product in: COTS SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2874,8 +3063,9 @@ Michelle Butler \\
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2885,7 +3075,8 @@ Michelle Butler \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ vSphere } }\label{vsphere}
+\multicolumn{2}{l}{\large \textbf{ vSphere } }\label{vsphere}
+& \multicolumn{2}{l}{(product in: COTS SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2905,11 +3096,12 @@ Michelle Butler \\
   Third party software product for virtualization.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://www.vmware.com/products/vsphere.html}{https://www.vmware.com/products/vsphere.html} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2940,8 +3132,10 @@ for example racks, re also included in this section. Details will be
 added here on a per need base.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Dell blade } }\label{dell8}
+\multicolumn{2}{l}{\large \textbf{ Dell blade } }\label{dell8}
+& \multicolumn{2}{l}{(product in: Compute Nodes)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -2974,8 +3168,9 @@ Main Characteristics:
 \end{itemize}
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
@@ -3005,8 +3200,10 @@ different networks. Some examples are: - cables (coaxial, optic fiber,
 other) - switches Details will be added here on a per need base.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Network Component X } }\label{netx}
+\multicolumn{2}{l}{\large \textbf{ Network Component X } }\label{netx}
+& \multicolumn{2}{l}{(product in: Network Nodes)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3027,8 +3224,9 @@ LDF \\
 package
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
@@ -3054,8 +3252,10 @@ for long term archive shall also be included in this area. Details will
 be added here on a per need base.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ SAN disk 2TB storage } }\label{san2}
+\multicolumn{2}{l}{\large \textbf{ SAN disk 2TB storage } }\label{san2}
+& \multicolumn{2}{l}{(product in: Storage Nodes)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3075,8 +3275,9 @@ LDF \\
   This is just an example of what has to be included in this package
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
@@ -3104,8 +3305,10 @@ Some examples are: - Firmwares - Operating Systems Details will be added
 here on a per need base.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ RedHat CentOS } }\label{centos}
+\multicolumn{2}{l}{\large \textbf{ RedHat CentOS } }\label{centos}
+& \multicolumn{2}{l}{(product in: Low Level SW)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3125,8 +3328,9 @@ here on a per need base.
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
@@ -3151,8 +3355,10 @@ here on a per need base.
 and to run.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Boost } }\label{boost}
+\multicolumn{2}{l}{\large \textbf{ Boost } }\label{boost}
+& \multicolumn{2}{l}{(product in: Third Party Libs)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3172,14 +3378,16 @@ and to run.
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Firefly API Access } }\label{ffaa}
+\multicolumn{2}{l}{\large \textbf{ Firefly API Access } }\label{ffaa}
+& \multicolumn{2}{l}{(product in: Third Party Libs)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3200,17 +3408,19 @@ SUIT \\
 from npm-style package loading
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/Caltech-IPAC/firefly-api-access}{Caltech-IPAC/firefly-api-access} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Firefly } }\label{firefly}
+\multicolumn{2}{l}{\large \textbf{ Firefly } }\label{firefly}
+& \multicolumn{2}{l}{(product in: Third Party Libs)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3230,6 +3440,7 @@ SUIT \\
   IPAC's Advanced Astronomy WEB UI Framework.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/Caltech-IPAC/firefly}{Caltech-IPAC/firefly} }
@@ -3237,7 +3448,7 @@ SUIT \\
 \textbf{References} &
 \multicolumn{3}{l}{\href{http://web.ipac.caltech.edu/staff/roby/camera-team-ff-overview.pdf}{http://web.ipac.caltech.edu/staff/roby/camera-team-ff-overview.pdf} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -3247,7 +3458,8 @@ SUIT \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Python } }\label{pth}
+\multicolumn{2}{l}{\large \textbf{ Python } }\label{pth}
+& \multicolumn{2}{l}{(product in: Third Party Libs)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3267,8 +3479,9 @@ SUIT \\
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
@@ -3299,6 +3512,7 @@ services.
 ~
 
 
+
 \subsubsection{Enclaves}\label{enc}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
@@ -3318,8 +3532,10 @@ Multiple \\
   Logical group of DM Services.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Archive Base Enclave } }\label{encarcb}
+\multicolumn{2}{l}{\large \textbf{ Archive Base Enclave } }\label{encarcb}
+& \multicolumn{2}{l}{(product in: Enclaves)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3340,8 +3556,9 @@ LDF \\
 Base facility.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbbmdsrv]{DBB Ingest/ Metadata Management} \\ \hline
@@ -3358,7 +3575,8 @@ Base facility.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Archive NCSA Enclave } }\label{encarcn}
+\multicolumn{2}{l}{\large \textbf{ Archive NCSA Enclave } }\label{encarcn}
+& \multicolumn{2}{l}{(product in: Enclaves)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3379,8 +3597,9 @@ LDF \\
 NCSA facility.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbbmdsrv]{DBB Ingest/ Metadata Management} \\ \hline
@@ -3397,7 +3616,8 @@ NCSA facility.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Commissioning Cluster Enclave } }\label{enccomm}
+\multicolumn{2}{l}{\large \textbf{ Commissioning Cluster Enclave } }\label{enccomm}
+& \multicolumn{2}{l}{(product in: Enclaves)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3418,13 +3638,19 @@ LDF \\
 Base facility.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspprtlsrv]{LSP Portal} \\ \hline
 \hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
 \hyperref[lspwebsrv]{LSP Web API} \\ \hline
+\hyperref[wdav]{WebDAV} \\ \hline
+\hyperref[siasrv]{SIA} \\ \hline
+\hyperref[soda]{SODA} \\ \hline
+\hyperref[tapsev]{TAP} \\ \hline
+\hyperref[lspdb]{LSP Database} \\ \hline
 \end{tabular} }
 &
 \multicolumn{2}{c}{
@@ -3435,7 +3661,8 @@ Base facility.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ DAC Chile Enclave } }\label{encdacc}
+\multicolumn{2}{l}{\large \textbf{ DAC Chile Enclave } }\label{encdacc}
+& \multicolumn{2}{l}{(product in: Enclaves)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3456,13 +3683,19 @@ LDF \\
 located at the Base facility.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
 \hyperref[lspwebsrv]{LSP Web API} \\ \hline
 \hyperref[lspprtlsrv]{LSP Portal} \\ \hline
+\hyperref[wdav]{WebDAV} \\ \hline
+\hyperref[siasrv]{SIA} \\ \hline
+\hyperref[soda]{SODA} \\ \hline
+\hyperref[tapsev]{TAP} \\ \hline
+\hyperref[lspdb]{LSP Database} \\ \hline
 \end{tabular} }
 &
 \multicolumn{2}{c}{
@@ -3473,7 +3706,8 @@ located at the Base facility.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ DAC US Enclave } }\label{encdacu}
+\multicolumn{2}{l}{\large \textbf{ DAC US Enclave } }\label{encdacu}
+& \multicolumn{2}{l}{(product in: Enclaves)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3494,13 +3728,19 @@ LDF \\
 the NCSA facility.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
 \hyperref[lspwebsrv]{LSP Web API} \\ \hline
 \hyperref[lspprtlsrv]{LSP Portal} \\ \hline
+\hyperref[wdav]{WebDAV} \\ \hline
+\hyperref[siasrv]{SIA} \\ \hline
+\hyperref[soda]{SODA} \\ \hline
+\hyperref[tapsev]{TAP} \\ \hline
+\hyperref[lspdb]{LSP Database} \\ \hline
 \end{tabular} }
 &
 \multicolumn{2}{c}{
@@ -3511,7 +3751,8 @@ the NCSA facility.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Offline Production Enclave } }\label{encoffl}
+\multicolumn{2}{l}{\large \textbf{ Offline Production Enclave } }\label{encoffl}
+& \multicolumn{2}{l}{(product in: Enclaves)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3532,8 +3773,9 @@ LDF \\
 the NCSA facility.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[prodsrv]{Batch Production} \\ \hline
@@ -3549,7 +3791,8 @@ the NCSA facility.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Prompt Base Enclave } }\label{encprb}
+\multicolumn{2}{l}{\large \textbf{ Prompt Base Enclave } }\label{encprb}
+& \multicolumn{2}{l}{(product in: Enclaves)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3570,8 +3813,9 @@ LDF \\
 real time manner, at Base facility.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[prpingsrv]{Prompt Processing Ingest} \\ \hline
@@ -3591,7 +3835,8 @@ real time manner, at Base facility.
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Prompt NCSA Enclave } }\label{encprn}
+\multicolumn{2}{l}{\large \textbf{ Prompt NCSA Enclave } }\label{encprn}
+& \multicolumn{2}{l}{(product in: Enclaves)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3612,8 +3857,9 @@ LDF \\
 real time manner, at NCSA facility.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[alrtdstsrv]{Alert Distribution} \\ \hline
@@ -3649,8 +3895,10 @@ Multiple \\
   Physical facilities where operational DM activities take place.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Base Facility } }\label{facbase}
+\multicolumn{2}{l}{\large \textbf{ Base Facility } }\label{facbase}
+& \multicolumn{2}{l}{(product in: Facilities)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3671,8 +3919,9 @@ Net/Base \\
   Base facility located at La Serena, Chile.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encarcb]{Archive Base Enclave} \\ \hline
@@ -3685,7 +3934,8 @@ Net/Base \\
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ NCSA Facility } }\label{facncsa}
+\multicolumn{2}{l}{\large \textbf{ NCSA Facility } }\label{facncsa}
+& \multicolumn{2}{l}{(product in: Facilities)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3705,8 +3955,9 @@ LDF \\
   NCSA processing facility located at Urbana, Illinois(USA).
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encdacu]{DAC US Enclave} \\ \hline
@@ -3738,8 +3989,10 @@ Multiple \\
   High level physical DM networks definition.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Base to Archive Network } }\label{netba}
+\multicolumn{2}{l}{\large \textbf{ Base to Archive Network } }\label{netba}
+& \multicolumn{2}{l}{(product in: Networks)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3759,14 +4012,16 @@ Net/Base \\
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Base LAN Network } }\label{netbase}
+\multicolumn{2}{l}{\large \textbf{ Base LAN Network } }\label{netbase}
+& \multicolumn{2}{l}{(product in: Networks)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3786,14 +4041,16 @@ LDF \\
   Base Local Area Network.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ NCSA LAN Network } }\label{netncsa}
+\multicolumn{2}{l}{\large \textbf{ NCSA LAN Network } }\label{netncsa}
+& \multicolumn{2}{l}{(product in: Networks)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3813,14 +4070,16 @@ LDF \\
   NCSA Local Area Network.
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Summit to Base Network } }\label{netsb}
+\multicolumn{2}{l}{\large \textbf{ Summit to Base Network } }\label{netsb}
+& \multicolumn{2}{l}{(product in: Networks)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3840,8 +4099,9 @@ Net/Base \\
   La Serena - AURA Gatehouse Network
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}
@@ -3866,8 +4126,10 @@ Net/Base \\
 during constructions..
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Atronomy.net Data } }\label{and}
+\multicolumn{2}{l}{\large \textbf{ Atronomy.net Data } }\label{and}
+& \multicolumn{2}{l}{(product in: Ref Data)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3887,11 +4149,12 @@ during constructions..
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/astronomy_net_data}{astronomy\_net\_data} }
 \\ \hline \\ \hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -3901,7 +4164,8 @@ during constructions..
 \end{longtable}
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{4}{l}{\large \textbf{ Gaia Data } }\label{gdata}
+\multicolumn{2}{l}{\large \textbf{ Gaia Data } }\label{gdata}
+& \multicolumn{2}{l}{(product in: Ref Data)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
@@ -3921,8 +4185,9 @@ during constructions..
   
 
 
+
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Depends on:}  & & \textbf{Used in:} & \\ \hline
+\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 &
 \\ \bottomrule
 \end{longtable}

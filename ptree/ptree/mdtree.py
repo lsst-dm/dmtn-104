@@ -26,7 +26,7 @@ import click
 import sys
 from .config import Config
 from jinja2 import Environment, PackageLoader, TemplateNotFound, ChoiceLoader, FileSystemLoader
-from .util import get_pkg_properties, mdTree, rsget, fix_tex, fix_id_tex, Product, html_to_latex
+from .util import get_pkg_properties, mdTree, rsget, fix_tex, fix_id_tex, Product, html_to_latex, get_yaml
 from .tree import make_tree_portrait, make_tree_landmix1
 
 
@@ -349,6 +349,8 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file):
 
 def generate_document(subsystem, connection_str, output_format):
     """Given system and level, generates the document content"""
+
+    get_yaml()
 
     print("-> Generating Main Product Tree  ==========================")
     subsystem_id = Config.SUBSYSTEMS[subsystem]['ID']  # former dms
