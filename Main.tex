@@ -9,16 +9,23 @@
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
-Wil O'Mullane &
+\begin{minipage}{3.7cm}
+Wil O'Mullane
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Leanne Guy \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Data Management - Acronym: DM ) }
+{\footnotesize ( Short Name: Data Management
+ - Acronym: DM ) }
 }\\ \hline
 \end{longtable}
 
@@ -46,19 +53,27 @@ following groups:
 
 
 
-\subsection{Services Products}\label{dmsrv}
+\newpage
+\subsection{Service Products}\label{dmsrv}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Leanne Guy \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Services - Acronym: DMSRV ) }
+{\footnotesize ( Short Name: Services
+ - Acronym: DMSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -90,19 +105,27 @@ party, is implementing it. This information is displaced in the
 
 
 
+\newpage
 \subsubsection{Backbone Services}\label{dbbsrv}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DBB Services - Acronym: DBBSRV ) }
+{\footnotesize ( Short Name: DBB Services
+ - Acronym: DBBSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -112,22 +135,31 @@ concepts of operations for each service can be found in \citeds{LDM-230}
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ DBB Lifetime Management } }\label{dbblifesrv}
-& \multicolumn{2}{l}{(product in: DBB Services)}
+& \multicolumn{2}{l}{(product in: DBB Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.07 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DBB Lifetime - Acronym: DBBLIFESRV ) }
+{\footnotesize ( Short Name: DBB Lifetime
+ - Acronym: DBBLIFESRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -139,38 +171,46 @@ defined time periods as specified in requirements. Intermediate data
 products may be kept until all downstream products have been generated.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbblife]{DBB Lifetime Management SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encarcb]{Archive Base Enclave} \\ \hline
 \hyperref[encarcn]{Archive NCSA Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ DBB Ingest/ Metadata Management } }\label{dbbmdsrv}
-& \multicolumn{2}{l}{(product in: DBB Services)}
+& \multicolumn{2}{l}{(product in: DBB Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.07 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DBB Metadata - Acronym: DBBMDSRV ) }
+{\footnotesize ( Short Name: DBB Metadata
+ - Acronym: DBBMDSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -186,38 +226,46 @@ is a superset of the registry required by the Data Butler, allowing the
 Butler to directly access data within the DBB.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbbmd]{DBB Ingest/ Metadata Management SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encarcb]{Archive Base Enclave} \\ \hline
 \hyperref[encarcn]{Archive NCSA Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ DBB Storage } }\label{dbbstrsrv}
-& \multicolumn{2}{l}{(product in: DBB Services)}
+& \multicolumn{2}{l}{(product in: DBB Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.07 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DBB Storage - Acronym: DBBSTRSRV ) }
+{\footnotesize ( Short Name: DBB Storage
+ - Acronym: DBBSTRSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -226,38 +274,46 @@ storage service provides an interface usable by the Data Butler as a
 datastore.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbbtr]{DBB Transport/ Replication/ Backup SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encarcb]{Archive Base Enclave} \\ \hline
 \hyperref[encarcn]{Archive NCSA Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ DBB Transport/ Replication/ Backup } }\label{dbbtrsrv}
-& \multicolumn{2}{l}{(product in: DBB Services)}
+& \multicolumn{2}{l}{(product in: DBB Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.07 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DBB Transport - Acronym: DBBTRSRV ) }
+{\footnotesize ( Short Name: DBB Transport
+ - Acronym: DBBTRSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -266,35 +322,42 @@ to another and to backup and disaster recovery storage. It handles
 recovery if a data product is found to be missing or corrupt.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbbtr]{DBB Transport/ Replication/ Backup SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encarcb]{Archive Base Enclave} \\ \hline
 \hyperref[encarcn]{Archive NCSA Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{IT Services}\label{itsrv}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: IT Service - Acronym: ITSRV ) }
+{\footnotesize ( Short Name: IT Service
+ - Acronym: ITSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -304,27 +367,35 @@ properly.\\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ EFD Cache } }\label{efdb}
-& \multicolumn{2}{l}{(product in: IT Service)}
+& \multicolumn{2}{l}{(product in: IT Service
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: EFD Cache - Acronym: EFDB ) }
+{\footnotesize ( Short Name: EFD Cache
+ - Acronym: EFDB ) }
 }\\ \hline
 \end{longtable}
 
   
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -332,31 +403,40 @@ properly.\\
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[efdt]{EFD Transformation} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encprb]{Prompt Base Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ LSP Database } }\label{lspdb}
-& \multicolumn{2}{l}{(product in: IT Service)}
+& \multicolumn{2}{l}{(product in: IT Service
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: LSP Database - Acronym: LSPDB ) }
+{\footnotesize ( Short Name: LSP Database
+ - Acronym: LSPDB ) }
 }\\ \hline
 \end{longtable}
 
@@ -364,39 +444,47 @@ properly.\\
 storing user data and reading available catalogs.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[qserv]{Distributed Database} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
 \hyperref[encdacc]{DAC Chile Enclave} \\ \hline
 \hyperref[encdacu]{DAC US Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Network Management } }\label{netmgmt}
-& \multicolumn{2}{l}{(product in: IT Service)}
+& \multicolumn{2}{l}{(product in: IT Service
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Jeff Kantor &
+\begin{minipage}{3.7cm}
+Jeff Kantor
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Jeff Kantor \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.08.03 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 Net/Base \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Net Mgmt - Acronym: NETMGMT ) }
+{\footnotesize ( Short Name: Net Mgmt
+ - Acronym: NETMGMT ) }
 }\\ \hline
 \end{longtable}
 
@@ -404,26 +492,35 @@ Net/Base \\
 control failover, manage bandwidth allocation, etc.\\
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{LSP Services}\label{lspsrv}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
 \begin{tabular}{@{}l@{}}
+\begin{minipage}{3.7cm}
 Gregory Dubois-Felsmann \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{minipage}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: LSP Services - Acronym: LSPSRV ) }
+{\footnotesize ( Short Name: LSP Services
+ - Acronym: LSPSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -447,22 +544,31 @@ as data and processing SW.\\[2\baselineskip]More details available in
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ LSP JupyterLab } }\label{lspjlsrv}
-& \multicolumn{2}{l}{(product in: LSP Services)}
+& \multicolumn{2}{l}{(product in: LSP Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Frossie Economou &
+\begin{minipage}{3.7cm}
+Frossie Economou
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.10.02.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SQuaRE \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: LSP JupyterLab - Acronym: LSPJLSRV ) }
+{\footnotesize ( Short Name: LSP JupyterLab
+ - Acronym: LSPJLSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -473,34 +579,41 @@ to the LSST data archive, accessing and analyzing the data and
 generating derived data products.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspjl]{LSP JupyterLab SW} \\ \hline
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encdacu]{DAC US Enclave} \\ \hline
 \hyperref[encdacc]{DAC Chile Enclave} \\ \hline
 \hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ LSP Portal } }\label{lspprtlsrv}
-& \multicolumn{2}{l}{(product in: LSP Services)}
+& \multicolumn{2}{l}{(product in: LSP Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Xiuqin Wu &
+\begin{minipage}{3.7cm}
+Xiuqin Wu
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.05.09 \\
 1.02C.05.08 \\
 1.02C.05.07 \\
@@ -508,13 +621,13 @@ Gregory Dubois-Felsmann \\
 SUIT \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: LSP Portal - Acronym: LSPPRTLSRV ) }
+{\footnotesize ( Short Name: LSP Portal
+ - Acronym: LSPPRTLSRV ) }
 }\\ \hline
 \end{longtable}
 
   This service provides Web-based query and visualization tools for all
 the LSST data products.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -523,30 +636,38 @@ the LSST data products.
 \begin{tabular}{c}
 \hyperref[suit]{SUIT} \\ \hline
 \hyperref[suitoh]{SUIT Online Help} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encdacu]{DAC US Enclave} \\ \hline
 \hyperref[encdacc]{DAC Chile Enclave} \\ \hline
 \hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \paragraph{LSP Web API}\label{lspwapi}\mbox{}\\
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: LSP Web API - Acronym: LSPWAPI ) }
+{\footnotesize ( Short Name: LSP Web API
+ - Acronym: LSPWAPI ) }
 }\\ \hline
 \end{longtable}
 
@@ -559,62 +680,79 @@ Notebook Aspect.
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ SIA } }\label{siasrv}
-& \multicolumn{2}{l}{(product in: LSP Web API)}
+& \multicolumn{2}{l}{(product in: LSP Web API
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: SIA - Acronym: SIASRV ) }
+{\footnotesize ( Short Name: SIA
+ - Acronym: SIASRV ) }
 }\\ \hline
 \end{longtable}
 
   
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
 \hyperref[encdacc]{DAC Chile Enclave} \\ \hline
 \hyperref[encdacu]{DAC US Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ SODA } }\label{soda}
-& \multicolumn{2}{l}{(product in: LSP Web API)}
+& \multicolumn{2}{l}{(product in: LSP Web API
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: SODA - Acronym: SODA ) }
+{\footnotesize ( Short Name: SODA
+ - Acronym: SODA ) }
 }\\ \hline
 \end{longtable}
 
   
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -622,38 +760,46 @@ Notebook Aspect.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[daximg]{Image/ Cutout Server} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
 \hyperref[encdacc]{DAC Chile Enclave} \\ \hline
 \hyperref[encdacu]{DAC US Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ TAP } }\label{tapsev}
-& \multicolumn{2}{l}{(product in: LSP Web API)}
+& \multicolumn{2}{l}{(product in: LSP Web API
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: TAP - Acronym: TAPSEV ) }
+{\footnotesize ( Short Name: TAP
+ - Acronym: TAPSEV ) }
 }\\ \hline
 \end{longtable}
 
   
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -661,38 +807,46 @@ Notebook Aspect.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[tapsw]{TAP SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
 \hyperref[encdacc]{DAC Chile Enclave} \\ \hline
 \hyperref[encdacu]{DAC US Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ WebDAV } }\label{wdav}
-& \multicolumn{2}{l}{(product in: LSP Web API)}
+& \multicolumn{2}{l}{(product in: LSP Web API
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: WebDAV - Acronym: WDAV ) }
+{\footnotesize ( Short Name: WebDAV
+ - Acronym: WDAV ) }
 }\\ \hline
 \end{longtable}
 
   This service permits the use of filesystem over http.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -700,32 +854,42 @@ Notebook Aspect.
 \multicolumn{2}{l}{\href{https://github.com/lsst/davt}{davt} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
 \hyperref[encdacc]{DAC Chile Enclave} \\ \hline
 \hyperref[encdacu]{DAC US Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ LSP Web API } }\label{lspwebsrv}
-& \multicolumn{2}{l}{(product in: LSP Services)}
+& \multicolumn{2}{l}{(product in: LSP Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Fritz Mueller &
+\begin{minipage}{3.7cm}
+Fritz Mueller
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Colin Slater \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.06.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: LSP Web API - Acronym: LSPWEBSRV ) }
+{\footnotesize ( Short Name: LSP Web API
+ - Acronym: LSPWEBSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -733,32 +897,40 @@ DAX \\
 serves in it.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encdacu]{DAC US Enclave} \\ \hline
 \hyperref[encdacc]{DAC Chile Enclave} \\ \hline
 \hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Offline Services}\label{offlsrv}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Offline Services - Acronym: OFFLSRV ) }
+{\footnotesize ( Short Name: Offline Services
+ - Acronym: OFFLSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -766,27 +938,35 @@ Multiple \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Bulk Distribution } }\label{bulkdsrv}
-& \multicolumn{2}{l}{(product in: Offline Services)}
+& \multicolumn{2}{l}{(product in: Offline Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.06.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Bulk Distrib - Acronym: BULKDSRV ) }
+{\footnotesize ( Short Name: Bulk Distrib
+ - Acronym: BULKDSRV ) }
 }\\ \hline
 \end{longtable}
 
   Bulk Data Distribution Service
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -794,31 +974,40 @@ LDF \\
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[rucio]{Rucio} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encoffl]{Offline Production Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Offline Quality Control } }\label{offlqcsrv}
-& \multicolumn{2}{l}{(product in: Offline Services)}
+& \multicolumn{2}{l}{(product in: Offline Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Yusra AlSayyad &
+\begin{minipage}{3.7cm}
+Yusra AlSayyad
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.04.07 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Offline QC - Acronym: OFFLQCSRV ) }
+{\footnotesize ( Short Name: Offline QC
+ - Acronym: OFFLQCSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -828,43 +1017,50 @@ order to ensure the monitoring of the quality of the processing and of
 the data collected by the survey.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[qcsw]{Quality Control SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
 \hyperref[encoffl]{Offline Production Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Batch Production } }\label{prodsrv}
-& \multicolumn{2}{l}{(product in: Offline Services)}
+& \multicolumn{2}{l}{(product in: Offline Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.06.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Batch Production - Acronym: PRODSRV ) }
+{\footnotesize ( Short Name: Batch Production
+ - Acronym: PRODSRV ) }
 }\\ \hline
 \end{longtable}
 
   Batch Production Service
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -877,28 +1073,36 @@ LDF \\
 \hyperref[drp]{Data Release Production} \\ \hline
 \hyperref[mops]{MOPS and Forced Photometry} \\ \hline
 \hyperref[sp]{Special Programs Productions} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encoffl]{Offline Production Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Prompt Services}\label{prsrv}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Prompt Services - Acronym: PRSRV ) }
+{\footnotesize ( Short Name: Prompt Services
+ - Acronym: PRSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -906,27 +1110,35 @@ Multiple \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Alert Distribution } }\label{alrtdstsrv}
-& \multicolumn{2}{l}{(product in: Prompt Services)}
+& \multicolumn{2}{l}{(product in: Prompt Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-John Swinbank &
+\begin{minipage}{3.7cm}
+John Swinbank
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Eric Bellm \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.03.03 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 AP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Alert Distrib - Acronym: ALRTDSTSRV ) }
+{\footnotesize ( Short Name: Alert Distrib
+ - Acronym: ALRTDSTSRV ) }
 }\\ \hline
 \end{longtable}
 
   Alert Distribution and Filtering Service
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -934,31 +1146,40 @@ AP \\
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[alrtdstr]{Alert Distribution SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Archiving } }\label{arcsrv}
-& \multicolumn{2}{l}{(product in: Prompt Services)}
+& \multicolumn{2}{l}{(product in: Prompt Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.06.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Archiving - Acronym: ARCSRV ) }
+{\footnotesize ( Short Name: Archiving
+ - Acronym: ARCSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -993,7 +1214,6 @@ suitable for querying by image timestamp, and loads it into the
 permanently archived ``Transformed EFD'' database in the Data Backbone.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
@@ -1001,36 +1221,44 @@ permanently archived ``Transformed EFD'' database in the Data Backbone.
 \hyperref[iip]{Image Ingest and Processing} \\ \hline
 \hyperref[efdt]{EFD Transformation} \\ \hline
 \hyperref[header]{Header Service SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encprb]{Prompt Base Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ OCS-Driven Batch } }\label{ocsbatsrv}
-& \multicolumn{2}{l}{(product in: Prompt Services)}
+& \multicolumn{2}{l}{(product in: Prompt Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.06.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: OCS Batch - Acronym: OCSBATSRV ) }
+{\footnotesize ( Short Name: OCS Batch
+ - Acronym: OCSBATSRV ) }
 }\\ \hline
 \end{longtable}
 
   OCS Driven Batch Processing Service
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1038,36 +1266,44 @@ LDF \\
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[ocsbat]{OCS Batch SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encprb]{Prompt Base Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Observatory Operations Data } }\label{oodssrv}
-& \multicolumn{2}{l}{(product in: Prompt Services)}
+& \multicolumn{2}{l}{(product in: Prompt Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.06.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Obs Ops Data - Acronym: OODSSRV ) }
+{\footnotesize ( Short Name: Obs Ops Data
+ - Acronym: OODSSRV ) }
 }\\ \hline
 \end{longtable}
 
   Observatory Operations Data Service
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1075,31 +1311,40 @@ LDF \\
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[oods]{Observatory Operations Data Service SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encprb]{Prompt Base Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Planned Observation Publication } }\label{popsrv}
-& \multicolumn{2}{l}{(product in: Prompt Services)}
+& \multicolumn{2}{l}{(product in: Prompt Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.06.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Planned Obs Pub - Acronym: POPSRV ) }
+{\footnotesize ( Short Name: Planned Obs Pub
+ - Acronym: POPSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -1110,37 +1355,45 @@ globally-accessible web service comprising both a web page for human
 inspection and a web API for usage by automated tools.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[obspub]{Planned Observation Publication SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encprb]{Prompt Base Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Prompt Processing Ingest } }\label{prpingsrv}
-& \multicolumn{2}{l}{(product in: Prompt Services)}
+& \multicolumn{2}{l}{(product in: Prompt Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.06.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Prompt Proc Ing - Acronym: PRPINGSRV ) }
+{\footnotesize ( Short Name: Prompt Proc Ing
+ - Acronym: PRPINGSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -1152,43 +1405,50 @@ Enclave. There is no Prompt Processing Ingest instance for the auxiliary
 telescope spectrograph.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[iip]{Image Ingest and Processing} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encprb]{Prompt Base Enclave} \\ \hline
 \hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Prompt Processing } }\label{prprsrv}
-& \multicolumn{2}{l}{(product in: Prompt Services)}
+& \multicolumn{2}{l}{(product in: Prompt Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Prmpt Processing - Acronym: PRPRSRV ) }
+{\footnotesize ( Short Name: Prmpt Processing
+ - Acronym: PRPRSRV ) }
 }\\ \hline
 \end{longtable}
 
   
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1198,31 +1458,40 @@ telescope spectrograph.
 \hyperref[apprmpt]{Alert Production} \\ \hline
 \hyperref[dmcal]{Calibration SW} \\ \hline
 \hyperref[mops]{MOPS and Forced Photometry} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Prompt Quality Control } }\label{prqcsrv}
-& \multicolumn{2}{l}{(product in: Prompt Services)}
+& \multicolumn{2}{l}{(product in: Prompt Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-John Swinbank &
+\begin{minipage}{3.7cm}
+John Swinbank
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Eric Bellm \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.03.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 AP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Prompt QC - Acronym: PRQCSRV ) }
+{\footnotesize ( Short Name: Prompt QC
+ - Acronym: PRQCSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -1232,37 +1501,45 @@ order to ensure the monitoring of the quality of the processing and of
 the data collected by the survey.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[qcsw]{Quality Control SW} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Telemetry Gateway } }\label{tmgsrv}
-& \multicolumn{2}{l}{(product in: Prompt Services)}
+& \multicolumn{2}{l}{(product in: Prompt Services
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.06.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Telem Gateway - Acronym: TMGSRV ) }
+{\footnotesize ( Short Name: Telem Gateway
+ - Acronym: TMGSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -1271,34 +1548,41 @@ manages communication from and to the Observatory. The DMCS is developed
 as part of the Image Ingest and Processing software product.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[iip]{Image Ingest and Processing} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[encprb]{Prompt Base Enclave} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsection{Software Products}\label{dmsw}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Software Products - Acronym: DMSW ) }
+{\footnotesize ( Short Name: Software Products
+ - Acronym: DMSW ) }
 }\\ \hline
 \end{longtable}
 
@@ -1310,19 +1594,27 @@ definition.
 
 
 
+\newpage
 \subsubsection{Batch Production Products}\label{bpp}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Batch Prod SW - Acronym: BPP ) }
+{\footnotesize ( Short Name: Batch Prod SW
+ - Acronym: BPP ) }
 }\\ \hline
 \end{longtable}
 
@@ -1330,22 +1622,31 @@ Michelle Butler \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Campaign Management } }\label{cmpgn}
-& \multicolumn{2}{l}{(product in: Batch Prod SW)}
+& \multicolumn{2}{l}{(product in: Batch Prod SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Campaign Mgmt - Acronym: CMPGN ) }
+{\footnotesize ( Short Name: Campaign Mgmt
+ - Acronym: CMPGN ) }
 }\\ \hline
 \end{longtable}
 
@@ -1353,29 +1654,39 @@ LDF \\
 docker. SW still to be written.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Workload/ Workflow Management } }\label{wlwf}
-& \multicolumn{2}{l}{(product in: Batch Prod SW)}
+& \multicolumn{2}{l}{(product in: Batch Prod SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Workload/flow - Acronym: WLWF ) }
+{\footnotesize ( Short Name: Workload/flow
+ - Acronym: WLWF ) }
 }\\ \hline
 \end{longtable}
 
@@ -1383,30 +1694,38 @@ LDF \\
 docker. SW still to be written.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[prodsrv]{Batch Production} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Backbone SW Products}\label{dbb}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DBB SW - Acronym: DBB ) }
+{\footnotesize ( Short Name: DBB SW
+ - Acronym: DBB ) }
 }\\ \hline
 \end{longtable}
 
@@ -1414,22 +1733,31 @@ Michelle Butler \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ DBB Lifetime Management SW } }\label{dbblife}
-& \multicolumn{2}{l}{(product in: DBB SW)}
+& \multicolumn{2}{l}{(product in: DBB SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DBB Lifetime SW - Acronym: DBBLIFE ) }
+{\footnotesize ( Short Name: DBB Lifetime SW
+ - Acronym: DBBLIFE ) }
 }\\ \hline
 \end{longtable}
 
@@ -1437,39 +1765,47 @@ LDF \\
 sciences storage.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbblifesrv]{DBB Lifetime Management} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ DBB Ingest/ Metadata Management SW } }\label{dbbmd}
-& \multicolumn{2}{l}{(product in: DBB SW)}
+& \multicolumn{2}{l}{(product in: DBB SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DBB Meta SW - Acronym: DBBMD ) }
+{\footnotesize ( Short Name: DBB Meta SW
+ - Acronym: DBBMD ) }
 }\\ \hline
 \end{longtable}
 
   Listener in the Endpoint Data Backbone Enclave to provide ingestion
 services from the Facilities enclaves to the backbone.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1479,30 +1815,40 @@ services from the Facilities enclaves to the backbone.
 & & \multicolumn{2}{l}{\href{https://github.com/lsst/dbb_gateway}{dbb\_gateway} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbbmdsrv]{DBB Ingest/ Metadata Management} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ DBB Transport/ Replication/ Backup SW } }\label{dbbtr}
-& \multicolumn{2}{l}{(product in: DBB SW)}
+& \multicolumn{2}{l}{(product in: DBB SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DBB Transport SW - Acronym: DBBTR ) }
+{\footnotesize ( Short Name: DBB Transport SW
+ - Acronym: DBBTR ) }
 }\\ \hline
 \end{longtable}
 
@@ -1511,31 +1857,39 @@ from different facilities and to send it to tape for long time
 preservation.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[dbbtrsrv]{DBB Transport/ Replication/ Backup} \\ \hline
 \hyperref[dbbstrsrv]{DBB Storage} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{LSP SW Products}\label{lsp}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: LSP SW - Acronym: LSP ) }
+{\footnotesize ( Short Name: LSP SW
+ - Acronym: LSP ) }
 }\\ \hline
 \end{longtable}
 
@@ -1543,27 +1897,35 @@ Gregory Dubois-Felsmann \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Image/ Cutout Server } }\label{daximg}
-& \multicolumn{2}{l}{(product in: LSP SW)}
+& \multicolumn{2}{l}{(product in: LSP SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Fritz Mueller &
+\begin{minipage}{3.7cm}
+Fritz Mueller
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Colin Slater \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.06.02.04 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Image Server - Acronym: DAXIMG ) }
+{\footnotesize ( Short Name: Image Server
+ - Acronym: DAXIMG ) }
 }\\ \hline
 \end{longtable}
 
   Web Interface for LSST Image Services software product.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1571,35 +1933,44 @@ DAX \\
 \multicolumn{2}{l}{\href{https://github.com/lsst/dax_imgserv}{dax\_imgserv} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[soda]{SODA} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ LSP JupyterLab SW } }\label{lspjl}
-& \multicolumn{2}{l}{(product in: LSP SW)}
+& \multicolumn{2}{l}{(product in: LSP SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Frossie Economou &
+\begin{minipage}{3.7cm}
+Frossie Economou
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.10.02.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SQuaRE \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: LSP JL SW - Acronym: LSPJL ) }
+{\footnotesize ( Short Name: LSP JL SW
+ - Acronym: LSPJL ) }
 }\\ \hline
 \end{longtable}
 
   LSP Jupiter Notebook Product
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1607,30 +1978,40 @@ SQuaRE \\
 \multicolumn{2}{l}{\href{https://github.com/lsst/jupyterlab*}{jupyterlab*} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ LSP Web API SW } }\label{lspweb}
-& \multicolumn{2}{l}{(product in: LSP SW)}
+& \multicolumn{2}{l}{(product in: LSP SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Fritz Mueller &
+\begin{minipage}{3.7cm}
+Fritz Mueller
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Colin Slater \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.06.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: LSP Web SW - Acronym: LSPWEB ) }
+{\footnotesize ( Short Name: LSP Web SW
+ - Acronym: LSPWEB ) }
 }\\ \hline
 \end{longtable}
 
@@ -1639,26 +2020,35 @@ DAX \\
 LSP Web API software product
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/dax_webserv}{dax\_webserv} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ SUIT } }\label{suit}
-& \multicolumn{2}{l}{(product in: LSP SW)}
+& \multicolumn{2}{l}{(product in: LSP SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Xiuqin Wu &
+\begin{minipage}{3.7cm}
+Xiuqin Wu
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.05.09 \\
 1.02C.05.07 \\
 1.02C.05.08 \\
@@ -1666,7 +2056,8 @@ Gregory Dubois-Felsmann \\
 SUIT \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: SUIT - Acronym: SUIT ) }
+{\footnotesize ( Short Name: SUIT
+ - Acronym: SUIT ) }
 }\\ \hline
 \end{longtable}
 
@@ -1674,7 +2065,6 @@ SUIT \\
 Firefly library. Defines the Portal web application. Primarily
 JavaScript but also contains Java extensions (search processors) to the
 Firefly server side.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1685,31 +2075,40 @@ Firefly server side.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[firefly]{Firefly} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspprtlsrv]{LSP Portal} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ SUIT Online Help } }\label{suitoh}
-& \multicolumn{2}{l}{(product in: LSP SW)}
+& \multicolumn{2}{l}{(product in: LSP SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Xiuqin Wu &
+\begin{minipage}{3.7cm}
+Xiuqin Wu
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SUIT \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: SUIT OnlineHelp - Acronym: SUITOH ) }
+{\footnotesize ( Short Name: SUIT OnlineHelp
+ - Acronym: SUITOH ) }
 }\\ \hline
 \end{longtable}
 
@@ -1718,66 +2117,83 @@ implement a help application that provides a navigation sidebar for the
 HTML content.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/suit-onlinehelp}{suit-onlinehelp} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspprtlsrv]{LSP Portal} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ TAP SW } }\label{tapsw}
-& \multicolumn{2}{l}{(product in: LSP SW)}
+& \multicolumn{2}{l}{(product in: LSP SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: TAP - Acronym: TAPSW ) }
+{\footnotesize ( Short Name: TAP
+ - Acronym: TAPSW ) }
 }\\ \hline
 \end{longtable}
 
   
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[tapsev]{TAP} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Prompt SW Products}\label{pr}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Prompt SW - Acronym: PR ) }
+{\footnotesize ( Short Name: Prompt SW
+ - Acronym: PR ) }
 }\\ \hline
 \end{longtable}
 
@@ -1785,27 +2201,35 @@ Multiple \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Alert Distribution SW } }\label{alrtdstr}
-& \multicolumn{2}{l}{(product in: Prompt SW)}
+& \multicolumn{2}{l}{(product in: Prompt SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-John Swinbank &
+\begin{minipage}{3.7cm}
+John Swinbank
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Eric Bellm \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.03.03 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 AP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Alert Distrib SW - Acronym: ALRTDSTR ) }
+{\footnotesize ( Short Name: Alert Distrib SW
+ - Acronym: ALRTDSTR ) }
 }\\ \hline
 \end{longtable}
 
   SW product for alert distribution and filtering.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1813,30 +2237,40 @@ AP \\
 \multicolumn{2}{l}{\href{https://github.com/lsst/alert_stream}{alert\_stream} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[alrtdstsrv]{Alert Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ EFD Transformation } }\label{efdt}
-& \multicolumn{2}{l}{(product in: Prompt SW)}
+& \multicolumn{2}{l}{(product in: Prompt SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: EFD Transform - Acronym: EFDT ) }
+{\footnotesize ( Short Name: EFD Transform
+ - Acronym: EFDT ) }
 }\\ \hline
 \end{longtable}
 
@@ -1844,34 +2278,43 @@ LDF \\
 services. (EFD Extract-Tranform-Load) Software still to be implemented.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[arcsrv]{Archiving} \\ \hline
 \hyperref[efdb]{EFD Cache} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Header Service SW } }\label{header}
-& \multicolumn{2}{l}{(product in: Prompt SW)}
+& \multicolumn{2}{l}{(product in: Prompt SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Header Srv SW - Acronym: HEADER ) }
+{\footnotesize ( Short Name: Header Srv SW
+ - Acronym: HEADER ) }
 }\\ \hline
 \end{longtable}
 
@@ -1879,36 +2322,45 @@ LDF \\
 external users. It is developed at University of Illinois (Urbana)
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst-dm/HeaderService}{lsst-dm/HeaderService} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[arcsrv]{Archiving} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Image Ingest and Processing } }\label{iip}
-& \multicolumn{2}{l}{(product in: Prompt SW)}
+& \multicolumn{2}{l}{(product in: Prompt SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Image Ingest SW - Acronym: IIP ) }
+{\footnotesize ( Short Name: Image Ingest SW
+ - Acronym: IIP ) }
 }\\ \hline
 \end{longtable}
 
@@ -1916,109 +2368,135 @@ LDF \\
 the DMCS, used to implements the Telemetry Gateway service.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/ctrl_iip}{ctrl\_iip} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[prpingsrv]{Prompt Processing Ingest} \\ \hline
 \hyperref[arcsrv]{Archiving} \\ \hline
 \hyperref[tmgsrv]{Telemetry Gateway} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Planned Observation Publication SW } }\label{obspub}
-& \multicolumn{2}{l}{(product in: Prompt SW)}
+& \multicolumn{2}{l}{(product in: Prompt SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Plan Obs Pub SW - Acronym: OBSPUB ) }
+{\footnotesize ( Short Name: Plan Obs Pub SW
+ - Acronym: OBSPUB ) }
 }\\ \hline
 \end{longtable}
 
   Pointing Prediction Publishing software products.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[popsrv]{Planned Observation Publication} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ OCS Batch SW } }\label{ocsbat}
-& \multicolumn{2}{l}{(product in: Prompt SW)}
+& \multicolumn{2}{l}{(product in: Prompt SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Felipe Menanteau \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: OCS Batch SW - Acronym: OCSBAT ) }
+{\footnotesize ( Short Name: OCS Batch SW
+ - Acronym: OCSBAT ) }
 }\\ \hline
 \end{longtable}
 
   Batch commandable SAL component.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[ocsbatsrv]{OCS-Driven Batch} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Observatory Operations Data Service SW } }\label{oods}
-& \multicolumn{2}{l}{(product in: Prompt SW)}
+& \multicolumn{2}{l}{(product in: Prompt SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Obs Ops Data SW - Acronym: OODS ) }
+{\footnotesize ( Short Name: Obs Ops Data SW
+ - Acronym: OODS ) }
 }\\ \hline
 \end{longtable}
 
   SW Product to use in the OODS service.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2026,27 +2504,36 @@ LDF \\
 \multicolumn{2}{l}{\href{https://github.com/lsst-dm/ctrl_oods}{lsst-dm/ctrl\_oods} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[oodssrv]{Observatory Operations Data} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Science Pipeline SW Products}\label{prodn}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Robert Lupton \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Sci Pipelines SW - Acronym: PRODN ) }
+{\footnotesize ( Short Name: Sci Pipelines SW
+ - Acronym: PRODN ) }
 }\\ \hline
 \end{longtable}
 
@@ -2054,27 +2541,35 @@ Robert Lupton \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Alert Production } }\label{apprmpt}
-& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-John Swinbank &
+\begin{minipage}{3.7cm}
+John Swinbank
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Eric Bellm \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.03 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 AP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Alert Prod SW - Acronym: APPRMPT ) }
+{\footnotesize ( Short Name: Alert Prod SW
+ - Acronym: APPRMPT ) }
 }\\ \hline
 \end{longtable}
 
   Software product for Allert Production processing.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2085,37 +2580,45 @@ AP \\
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[prprsrv]{Prompt Processing} \\ \hline
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Calibration SW } }\label{dmcal}
-& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-John Swinbank &
+\begin{minipage}{3.7cm}
+John Swinbank
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Robert Lupton \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.04.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Calibration SW - Acronym: DMCAL ) }
+{\footnotesize ( Short Name: Calibration SW
+ - Acronym: DMCAL ) }
 }\\ \hline
 \end{longtable}
 
   Software product for generating calibration data products.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2126,38 +2629,46 @@ DRP \\
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[prprsrv]{Prompt Processing} \\ \hline
 \hyperref[prodsrv]{Batch Production} \\ \hline
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Data Release Production } }\label{drp}
-& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Yusra AlSayyad &
+\begin{minipage}{3.7cm}
+Yusra AlSayyad
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.04 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DR Prod SW - Acronym: DRP ) }
+{\footnotesize ( Short Name: DR Prod SW
+ - Acronym: DRP ) }
 }\\ \hline
 \end{longtable}
 
   Software product for data release production.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2168,37 +2679,45 @@ DRP \\
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[prodsrv]{Batch Production} \\ \hline
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ MOPS and Forced Photometry } }\label{mops}
-& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-John Swinbank &
+\begin{minipage}{3.7cm}
+John Swinbank
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Eric Bellm \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.03.06 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 AP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: MOPS SW - Acronym: MOPS ) }
+{\footnotesize ( Short Name: MOPS SW
+ - Acronym: MOPS ) }
 }\\ \hline
 \end{longtable}
 
   Software product for MOPS and Forced Photometry data processing.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2209,27 +2728,35 @@ AP \\
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[prprsrv]{Prompt Processing} \\ \hline
 \hyperref[prodsrv]{Batch Production} \\ \hline
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Special Programs Productions } }\label{sp}
-& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-John Swinbank &
+\begin{minipage}{3.7cm}
+John Swinbank
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Melissa Graham \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.03 \\
 1.02C.04 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
@@ -2237,12 +2764,12 @@ AP \\
 DRP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Spec Prog SW - Acronym: SP ) }
+{\footnotesize ( Short Name: Spec Prog SW
+ - Acronym: SP ) }
 }\\ \hline
 \end{longtable}
 
   Software product for special programs data processing.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2250,37 +2777,45 @@ DRP \\
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[prodsrv]{Batch Production} \\ \hline
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Science Pipelines Distribution } }\label{spdist}
-& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-John Swinbank &
+\begin{minipage}{3.7cm}
+John Swinbank
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Robert Lupton \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.04.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Science P. Dist. - Acronym: SPDIST ) }
+{\footnotesize ( Short Name: Science P. Dist.
+ - Acronym: SPDIST ) }
 }\\ \hline
 \end{longtable}
 
   Top level distribution product for the science pipelines
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2301,31 +2836,40 @@ DRP \\
 \hyperref[scipipe]{Science Pipelines Libraries} \\ \hline
 \hyperref[txf]{Task Framework} \\ \hline
 \hyperref[and]{Atronomy.net Data} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Science Plugins } }\label{splug}
-& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-John Swinbank &
+\begin{minipage}{3.7cm}
+John Swinbank
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Robert Lupton \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.04.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Science Plugins - Acronym: SPLUG ) }
+{\footnotesize ( Short Name: Science Plugins
+ - Acronym: SPLUG ) }
 }\\ \hline
 \end{longtable}
 
@@ -2336,66 +2880,83 @@ software that meets a well-defined interface standard and can be
 configured in or out of the processing by the user.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/spl_plugins}{spl\_plugins} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Template Generation } }\label{tmplgen}
-& \multicolumn{2}{l}{(product in: Sci Pipelines SW)}
+& \multicolumn{2}{l}{(product in: Sci Pipelines SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Yusra AlSayyad &
+\begin{minipage}{3.7cm}
+Yusra AlSayyad
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.04.04 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DRP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Tmpl Gen SW - Acronym: TMPLGEN ) }
+{\footnotesize ( Short Name: Tmpl Gen SW
+ - Acronym: TMPLGEN ) }
 }\\ \hline
 \end{longtable}
 
   
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Quality Control Products}\label{qc}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: QC Products - Acronym: QC ) }
+{\footnotesize ( Short Name: QC Products
+ - Acronym: QC ) }
 }\\ \hline
 \end{longtable}
 
@@ -2403,28 +2964,36 @@ Simon Krughoff \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Quality Control SW } }\label{qcsw}
-& \multicolumn{2}{l}{(product in: QC Products)}
+& \multicolumn{2}{l}{(product in: QC Products
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Frossie Economou &
+\begin{minipage}{3.7cm}
+Frossie Economou
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.10.02.01 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SQuaRE \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Quality Ctrl SW - Acronym: QCSW ) }
+{\footnotesize ( Short Name: Quality Ctrl SW
+ - Acronym: QCSW ) }
 }\\ \hline
 \end{longtable}
 
   This software product is used to instantiate the quality control
 services.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2440,28 +3009,37 @@ services.
 & & \multicolumn{2}{l}{\href{https://github.com/lsst/validate_drp}{validate\_drp} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[offlqcsrv]{Offline Quality Control} \\ \hline
 \hyperref[prqcsrv]{Prompt Quality Control} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Supporting SW Products}\label{suppsw}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Supporting SW - Acronym: SUPPSW ) }
+{\footnotesize ( Short Name: Supporting SW
+ - Acronym: SUPPSW ) }
 }\\ \hline
 \end{longtable}
 
@@ -2470,22 +3048,31 @@ other DM software products.
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ ADQL Translator } }\label{adql}
-& \multicolumn{2}{l}{(product in: Supporting SW)}
+& \multicolumn{2}{l}{(product in: Supporting SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Fritz Mueller &
+\begin{minipage}{3.7cm}
+Fritz Mueller
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Colin Slater \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.06.02.05 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: ADQL Translator - Acronym: ADQL ) }
+{\footnotesize ( Short Name: ADQL Translator
+ - Acronym: ADQL ) }
 }\\ \hline
 \end{longtable}
 
@@ -2493,37 +3080,46 @@ DAX \\
 DAX Query Services in Kotlin.\\[2\baselineskip]
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/albuquery}{albuquery} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Data Butler } }\label{butler}
-& \multicolumn{2}{l}{(product in: Supporting SW)}
+& \multicolumn{2}{l}{(product in: Supporting SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Fritz Mueller &
+\begin{minipage}{3.7cm}
+Fritz Mueller
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.06.02.01 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Data Butler - Acronym: BUTLER ) }
+{\footnotesize ( Short Name: Data Butler
+ - Acronym: BUTLER ) }
 }\\ \hline
 \end{longtable}
 
   Butler middleware software product.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2531,30 +3127,40 @@ DAX \\
 \multicolumn{2}{l}{\href{https://github.com/lsst/daf_butler}{daf\_butler} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Distributed Database } }\label{qserv}
-& \multicolumn{2}{l}{(product in: Supporting SW)}
+& \multicolumn{2}{l}{(product in: Supporting SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Fritz Mueller &
+\begin{minipage}{3.7cm}
+Fritz Mueller
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Colin Slater \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.06.02.03 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Distrib Database - Acronym: QSERV ) }
+{\footnotesize ( Short Name: Distrib Database
+ - Acronym: QSERV ) }
 }\\ \hline
 \end{longtable}
 
@@ -2562,30 +3168,38 @@ DAX \\
 package in github.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/qserv}{qserv} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspdb]{LSP Database} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Science Pipelines Libraries } }\label{scipipe}
-& \multicolumn{2}{l}{(product in: Supporting SW)}
+& \multicolumn{2}{l}{(product in: Supporting SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-John Swinbank &
+\begin{minipage}{3.7cm}
+John Swinbank
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.04 \\
 1.02C.03 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
@@ -2593,12 +3207,12 @@ DRP \\
 AP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Sci Pipelines Libs - Acronym: SCIPIPE ) }
+{\footnotesize ( Short Name: Sci Pipelines Libs
+ - Acronym: SCIPIPE ) }
 }\\ \hline
 \end{longtable}
 
   Science Pipeline Top Level Software product.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2606,7 +3220,8 @@ AP \\
 \multicolumn{2}{l}{\href{https://github.com/lsst/lsst_apps}{lsst\_apps} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[apprmpt]{Alert Production} \\ \hline
@@ -2615,31 +3230,39 @@ AP \\
 \hyperref[mops]{MOPS and Forced Photometry} \\ \hline
 \hyperref[sp]{Special Programs Productions} \\ \hline
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Task Framework } }\label{txf}
-& \multicolumn{2}{l}{(product in: Supporting SW)}
+& \multicolumn{2}{l}{(product in: Supporting SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Fritz Mueller &
+\begin{minipage}{3.7cm}
+Fritz Mueller
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Jim Bosch \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.06.03 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 DAX \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Task Framework - Acronym: TXF ) }
+{\footnotesize ( Short Name: Task Framework
+ - Acronym: TXF ) }
 }\\ \hline
 \end{longtable}
 
   SuperTask middleware software product.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2647,27 +3270,36 @@ DAX \\
 \multicolumn{2}{l}{\href{https://github.com/lsst/pipe_supertask}{pipe\_supertask} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
-\subsection{Hardware and COTS Resources}\label{hwcots}
+\newpage
+\subsection{Hardware and COTS Products}\label{hwcots}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Resources - Acronym: HWCOTS ) }
+{\footnotesize ( Short Name: Resources
+ - Acronym: HWCOTS ) }
 }\\ \hline
 \end{longtable}
 
@@ -2685,19 +3317,27 @@ Multiple \\
 
 
 
+\newpage
 \subsubsection{COTS}\label{cots}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: COTS SW - Acronym: COTS ) }
+{\footnotesize ( Short Name: COTS SW
+ - Acronym: COTS ) }
 }\\ \hline
 \end{longtable}
 
@@ -2705,22 +3345,31 @@ Multiple \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ CILogon } }\label{cilogon}
-& \multicolumn{2}{l}{(product in: COTS SW)}
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: CILogon - Acronym: CILOGON ) }
+{\footnotesize ( Short Name: CILogon
+ - Acronym: CILOGON ) }
 }\\ \hline
 \end{longtable}
 
@@ -2728,36 +3377,45 @@ Multiple \\
 management platform for research collaborations.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{http://www.cilogon.org/}{http://www.cilogon.org/} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[]{Identity Management} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Docker } }\label{docker}
-& \multicolumn{2}{l}{(product in: COTS SW)}
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Docker - Acronym: DOCKER ) }
+{\footnotesize ( Short Name: Docker
+ - Acronym: DOCKER ) }
 }\\ \hline
 \end{longtable}
 
@@ -2765,36 +3423,45 @@ management platform for research collaborations.
 virtualizations.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://www.docker.com/}{https://www.docker.com/} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[cam]{Containerized Application Management} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ GPFS } }\label{gpfs}
-& \multicolumn{2}{l}{(product in: COTS SW)}
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: GPFS - Acronym: GPFS ) }
+{\footnotesize ( Short Name: GPFS
+ - Acronym: GPFS ) }
 }\\ \hline
 \end{longtable}
 
@@ -2802,41 +3469,49 @@ virtualizations.
 file system developed by IBM.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://en.wikipedia.org/wiki/IBM_General_Parallel_File_System}{https://en.wikipedia.org/wiki/IBM\_General\_Parallel\_File\_System} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[]{ICT Provisioning and Management} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Grafana } }\label{grafana}
-& \multicolumn{2}{l}{(product in: COTS SW)}
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Grafana - Acronym: GRAFANA ) }
+{\footnotesize ( Short Name: Grafana
+ - Acronym: GRAFANA ) }
 }\\ \hline
 \end{longtable}
 
   3rd party software product for analytics and monitoring
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2844,37 +3519,46 @@ file system developed by IBM.
 \multicolumn{3}{l}{\href{https://grafana.com/}{https://grafana.com/} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[]{Monitoring} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ HTCondor } }\label{htcondor}
-& \multicolumn{2}{l}{(product in: COTS SW)}
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: HTCondor - Acronym: HTCONDOR ) }
+{\footnotesize ( Short Name: HTCondor
+ - Acronym: HTCONDOR ) }
 }\\ \hline
 \end{longtable}
 
   HTCondor is an open-source high-throughput computing software framework
 for coarse-grained distributed parallelization of computationally
 intensive tasks.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2884,30 +3568,40 @@ intensive tasks.
 & \multicolumn{3}{l}{\href{https://github.com/htcondor}{https://github.com/htcondor} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[prodsrv]{Batch Production} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Kubernetes } }\label{k8s}
-& \multicolumn{2}{l}{(product in: COTS SW)}
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Kubernetes - Acronym: K8S ) }
+{\footnotesize ( Short Name: Kubernetes
+ - Acronym: K8S ) }
 }\\ \hline
 \end{longtable}
 
@@ -2915,41 +3609,49 @@ intensive tasks.
 and management of containerized applications.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://kubernetes.io/}{https://kubernetes.io/} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[cam]{Containerized Application Management} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Oracle } }\label{oracle}
-& \multicolumn{2}{l}{(product in: COTS SW)}
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Oracle - Acronym: ORACLE ) }
+{\footnotesize ( Short Name: Oracle
+ - Acronym: ORACLE ) }
 }\\ \hline
 \end{longtable}
 
   Oracle Relational Database 3rd party software product.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2957,35 +3659,44 @@ and management of containerized applications.
 \multicolumn{3}{l}{\href{https://www.oracle.com/index.html}{https://www.oracle.com/index.html} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[]{Database Management} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Puppet } }\label{puppet}
-& \multicolumn{2}{l}{(product in: COTS SW)}
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Puppet - Acronym: PUPPET ) }
+{\footnotesize ( Short Name: Puppet
+ - Acronym: PUPPET ) }
 }\\ \hline
 \end{longtable}
 
   Puppet is an open-source software configuration management tool.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2995,35 +3706,44 @@ and management of containerized applications.
 & \multicolumn{3}{l}{\href{https://puppet.com/}{https://puppet.com/} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[]{ICT Provisioning and Management} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Rucio } }\label{rucio}
-& \multicolumn{2}{l}{(product in: COTS SW)}
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Rucio - Acronym: RUCIO ) }
+{\footnotesize ( Short Name: Rucio
+ - Acronym: RUCIO ) }
 }\\ \hline
 \end{longtable}
 
   
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3033,68 +3753,86 @@ Michelle Butler \\
 & \multicolumn{3}{l}{\href{http://rucio.readthedocs.io/}{http://rucio.readthedocs.io/} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[bulkdsrv]{Bulk Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ IT Security SW } }\label{security}
-& \multicolumn{2}{l}{(product in: COTS SW)}
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: IT Security - Acronym: SECURITY ) }
+{\footnotesize ( Short Name: IT Security
+ - Acronym: SECURITY ) }
 }\\ \hline
 \end{longtable}
 
   
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[]{IT Security} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ vSphere } }\label{vsphere}
-& \multicolumn{2}{l}{(product in: COTS SW)}
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: vSphere - Acronym: VSPHERE ) }
+{\footnotesize ( Short Name: vSphere
+ - Acronym: VSPHERE ) }
 }\\ \hline
 \end{longtable}
 
   Third party software product for virtualization.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3102,27 +3840,36 @@ Michelle Butler \\
 \multicolumn{3}{l}{\href{https://www.vmware.com/products/vsphere.html}{https://www.vmware.com/products/vsphere.html} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[]{ICT Provisioning and Management} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Compute Nodes}\label{hwcomp}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Compute Nodes - Acronym: HWCOMP ) }
+{\footnotesize ( Short Name: Compute Nodes
+ - Acronym: HWCOMP ) }
 }\\ \hline
 \end{longtable}
 
@@ -3133,22 +3880,31 @@ added here on a per need base.
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Dell blade } }\label{dell8}
-& \multicolumn{2}{l}{(product in: Compute Nodes)}
+& \multicolumn{2}{l}{(product in: Compute Nodes
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.09 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Blade (e.g.) - Acronym: DELL8 ) }
+{\footnotesize ( Short Name: Blade (e.g.)
+ - Acronym: DELL8 ) }
 }\\ \hline
 \end{longtable}
 
@@ -3168,26 +3924,35 @@ Main Characteristics:
 \end{itemize}
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Network Nodes}\label{hwnet}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Network Nodes - Acronym: HWNET ) }
+{\footnotesize ( Short Name: Network Nodes
+ - Acronym: HWNET ) }
 }\\ \hline
 \end{longtable}
 
@@ -3201,22 +3966,31 @@ other) - switches Details will be added here on a per need base.
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Network Component X } }\label{netx}
-& \multicolumn{2}{l}{(product in: Network Nodes)}
+& \multicolumn{2}{l}{(product in: Network Nodes
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.09 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Router (e.g.) - Acronym: NETX ) }
+{\footnotesize ( Short Name: Router (e.g.)
+ - Acronym: NETX ) }
 }\\ \hline
 \end{longtable}
 
@@ -3224,26 +3998,35 @@ LDF \\
 package
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Storage Nodes}\label{hwstor}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Storage Nodes - Acronym: HWSTOR ) }
+{\footnotesize ( Short Name: Storage Nodes
+ - Acronym: HWSTOR ) }
 }\\ \hline
 \end{longtable}
 
@@ -3253,48 +4036,66 @@ be added here on a per need base.
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ SAN disk 2TB storage } }\label{san2}
-& \multicolumn{2}{l}{(product in: Storage Nodes)}
+& \multicolumn{2}{l}{(product in: Storage Nodes
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.09 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Disk (e.g.) - Acronym: SAN2 ) }
+{\footnotesize ( Short Name: Disk (e.g.)
+ - Acronym: SAN2 ) }
 }\\ \hline
 \end{longtable}
 
   This is just an example of what has to be included in this package
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Low Level SW}\label{llsw}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Low Level SW - Acronym: LLSW ) }
+{\footnotesize ( Short Name: Low Level SW
+ - Acronym: LLSW ) }
 }\\ \hline
 \end{longtable}
 
@@ -3306,48 +4107,66 @@ here on a per need base.
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ RedHat CentOS } }\label{centos}
-& \multicolumn{2}{l}{(product in: Low Level SW)}
+& \multicolumn{2}{l}{(product in: Low Level SW
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: OS (e.g.) - Acronym: CENTOS ) }
+{\footnotesize ( Short Name: OS (e.g.)
+ - Acronym: CENTOS ) }
 }\\ \hline
 \end{longtable}
 
   
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Third Party Libraries}\label{thpl}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Third Party Libs - Acronym: THPL ) }
+{\footnotesize ( Short Name: Third Party Libs
+ - Acronym: THPL ) }
 }\\ \hline
 \end{longtable}
 
@@ -3356,51 +4175,70 @@ and to run.
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Boost } }\label{boost}
-& \multicolumn{2}{l}{(product in: Third Party Libs)}
+& \multicolumn{2}{l}{(product in: Third Party Libs
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Boost - Acronym: BOOST ) }
+{\footnotesize ( Short Name: Boost
+ - Acronym: BOOST ) }
 }\\ \hline
 \end{longtable}
 
   
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Firefly API Access } }\label{ffaa}
-& \multicolumn{2}{l}{(product in: Third Party Libs)}
+& \multicolumn{2}{l}{(product in: Third Party Libs
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Xiuqin Wu &
+\begin{minipage}{3.7cm}
+Xiuqin Wu
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SUIT \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Firefly API A. - Acronym: FFAA ) }
+{\footnotesize ( Short Name: Firefly API A.
+ - Acronym: FFAA ) }
 }\\ \hline
 \end{longtable}
 
@@ -3408,37 +4246,46 @@ SUIT \\
 from npm-style package loading
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \multicolumn{2}{r}{\textbf{GutHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/Caltech-IPAC/firefly-api-access}{Caltech-IPAC/firefly-api-access} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Firefly } }\label{firefly}
-& \multicolumn{2}{l}{(product in: Third Party Libs)}
+& \multicolumn{2}{l}{(product in: Third Party Libs
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Xiuqin Wu &
+\begin{minipage}{3.7cm}
+Xiuqin Wu
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Gregory Dubois-Felsmann \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.05.06 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SUIT \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Firefly - Acronym: FIREFLY ) }
+{\footnotesize ( Short Name: Firefly
+ - Acronym: FIREFLY ) }
 }\\ \hline
 \end{longtable}
 
   IPAC's Advanced Astronomy WEB UI Framework.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3449,56 +4296,75 @@ SUIT \\
 \multicolumn{3}{l}{\href{http://web.ipac.caltech.edu/staff/roby/camera-team-ff-overview.pdf}{http://web.ipac.caltech.edu/staff/roby/camera-team-ff-overview.pdf} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[suit]{SUIT} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Python } }\label{pth}
-& \multicolumn{2}{l}{(product in: Third Party Libs)}
+& \multicolumn{2}{l}{(product in: Third Party Libs
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Python - Acronym: PTH ) }
+{\footnotesize ( Short Name: Python
+ - Acronym: PTH ) }
 }\\ \hline
 \end{longtable}
 
   
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
-\subsection{Infrastructure}\label{infra}
+\newpage
+\subsection{Infrastructure Products}\label{infra}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Infrastructure - Acronym: INFRA ) }
+{\footnotesize ( Short Name: Infrastructure
+ - Acronym: INFRA ) }
 }\\ \hline
 \end{longtable}
 
@@ -3513,19 +4379,27 @@ services.
 
 
 
+\newpage
 \subsubsection{Enclaves}\label{enc}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Enclaves - Acronym: ENC ) }
+{\footnotesize ( Short Name: Enclaves
+ - Acronym: ENC ) }
 }\\ \hline
 \end{longtable}
 
@@ -3533,28 +4407,36 @@ Multiple \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Archive Base Enclave } }\label{encarcb}
-& \multicolumn{2}{l}{(product in: Enclaves)}
+& \multicolumn{2}{l}{(product in: Enclaves
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.08.01 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Arch Base Encl - Acronym: ENCARCB ) }
+{\footnotesize ( Short Name: Arch Base Encl
+ - Acronym: ENCARCB ) }
 }\\ \hline
 \end{longtable}
 
   This product groups all archive services (Data BackBone) located at the
 Base facility.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3565,31 +4447,40 @@ Base facility.
 \hyperref[dbbtrsrv]{DBB Transport/ Replication/ Backup} \\ \hline
 \hyperref[dbblifesrv]{DBB Lifetime Management} \\ \hline
 \hyperref[dbbstrsrv]{DBB Storage} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[facbase]{Base Facility} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Archive NCSA Enclave } }\label{encarcn}
-& \multicolumn{2}{l}{(product in: Enclaves)}
+& \multicolumn{2}{l}{(product in: Enclaves
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.09 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Arch NCSA Encl - Acronym: ENCARCN ) }
+{\footnotesize ( Short Name: Arch NCSA Encl
+ - Acronym: ENCARCN ) }
 }\\ \hline
 \end{longtable}
 
@@ -3597,7 +4488,6 @@ LDF \\
 NCSA facility.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
@@ -3606,31 +4496,40 @@ NCSA facility.
 \hyperref[dbblifesrv]{DBB Lifetime Management} \\ \hline
 \hyperref[dbbstrsrv]{DBB Storage} \\ \hline
 \hyperref[dbbtrsrv]{DBB Transport/ Replication/ Backup} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[facncsa]{NCSA Facility} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Commissioning Cluster Enclave } }\label{enccomm}
-& \multicolumn{2}{l}{(product in: Enclaves)}
+& \multicolumn{2}{l}{(product in: Enclaves
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Simon Krughoff \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.08.01 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Comm Clust Encl - Acronym: ENCCOMM ) }
+{\footnotesize ( Short Name: Comm Clust Encl
+ - Acronym: ENCCOMM ) }
 }\\ \hline
 \end{longtable}
 
@@ -3638,7 +4537,6 @@ LDF \\
 Base facility.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
@@ -3651,31 +4549,40 @@ Base facility.
 \hyperref[soda]{SODA} \\ \hline
 \hyperref[tapsev]{TAP} \\ \hline
 \hyperref[lspdb]{LSP Database} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[facbase]{Base Facility} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ DAC Chile Enclave } }\label{encdacc}
-& \multicolumn{2}{l}{(product in: Enclaves)}
+& \multicolumn{2}{l}{(product in: Enclaves
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.08.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DAC Chile Encl - Acronym: ENCDACC ) }
+{\footnotesize ( Short Name: DAC Chile Encl
+ - Acronym: ENCDACC ) }
 }\\ \hline
 \end{longtable}
 
@@ -3683,7 +4590,6 @@ LDF \\
 located at the Base facility.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
@@ -3696,31 +4602,40 @@ located at the Base facility.
 \hyperref[soda]{SODA} \\ \hline
 \hyperref[tapsev]{TAP} \\ \hline
 \hyperref[lspdb]{LSP Database} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[facbase]{Base Facility} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ DAC US Enclave } }\label{encdacu}
-& \multicolumn{2}{l}{(product in: Enclaves)}
+& \multicolumn{2}{l}{(product in: Enclaves
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.09 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: DAC US Encl - Acronym: ENCDACU ) }
+{\footnotesize ( Short Name: DAC US Encl
+ - Acronym: ENCDACU ) }
 }\\ \hline
 \end{longtable}
 
@@ -3728,7 +4643,6 @@ LDF \\
 the NCSA facility.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
@@ -3741,37 +4655,45 @@ the NCSA facility.
 \hyperref[soda]{SODA} \\ \hline
 \hyperref[tapsev]{TAP} \\ \hline
 \hyperref[lspdb]{LSP Database} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[facncsa]{NCSA Facility} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Offline Production Enclave } }\label{encoffl}
-& \multicolumn{2}{l}{(product in: Enclaves)}
+& \multicolumn{2}{l}{(product in: Enclaves
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.09 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Offline Prod Encl - Acronym: ENCOFFL ) }
+{\footnotesize ( Short Name: Offline Prod Encl
+ - Acronym: ENCOFFL ) }
 }\\ \hline
 \end{longtable}
 
   This product groups all processing services to be executed offline, at
 the NCSA facility.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3781,37 +4703,45 @@ the NCSA facility.
 \hyperref[prodsrv]{Batch Production} \\ \hline
 \hyperref[offlqcsrv]{Offline Quality Control} \\ \hline
 \hyperref[bulkdsrv]{Bulk Distribution} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[facncsa]{NCSA Facility} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Prompt Base Enclave } }\label{encprb}
-& \multicolumn{2}{l}{(product in: Enclaves)}
+& \multicolumn{2}{l}{(product in: Enclaves
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.08.01 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Prmpt Base Encl - Acronym: ENCPRB ) }
+{\footnotesize ( Short Name: Prmpt Base Encl
+ - Acronym: ENCPRB ) }
 }\\ \hline
 \end{longtable}
 
   This product groups all services required to be executed in a nearly
 real time manner, at Base facility.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3825,37 +4755,45 @@ real time manner, at Base facility.
 \hyperref[oodssrv]{Observatory Operations Data} \\ \hline
 \hyperref[arcsrv]{Archiving} \\ \hline
 \hyperref[efdb]{EFD Cache} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[facbase]{Base Facility} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Prompt NCSA Enclave } }\label{encprn}
-& \multicolumn{2}{l}{(product in: Enclaves)}
+& \multicolumn{2}{l}{(product in: Enclaves
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.09 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Prmpt NCSA Encl - Acronym: ENCPRN ) }
+{\footnotesize ( Short Name: Prmpt NCSA Encl
+ - Acronym: ENCPRN ) }
 }\\ \hline
 \end{longtable}
 
   This product groups all services required to be executed in a nearly
 real time manner, at NCSA facility.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3867,28 +4805,36 @@ real time manner, at NCSA facility.
 \hyperref[offlqcsrv]{Offline Quality Control} \\ \hline
 \hyperref[prqcsrv]{Prompt Quality Control} \\ \hline
 \hyperref[prprsrv]{Prompt Processing} \\ \hline
-\end{tabular} }
-&
+\end{tabular}
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[facncsa]{NCSA Facility} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Facilities}\label{fac}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Facilities - Acronym: FAC ) }
+{\footnotesize ( Short Name: Facilities
+ - Acronym: FAC ) }
 }\\ \hline
 \end{longtable}
 
@@ -3896,28 +4842,36 @@ Multiple \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Base Facility } }\label{facbase}
-& \multicolumn{2}{l}{(product in: Facilities)}
+& \multicolumn{2}{l}{(product in: Facilities
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Jeff Kantor &
+\begin{minipage}{3.7cm}
+Jeff Kantor
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Jeff Kantor \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.08.01 \\
 1.02C.08.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 Net/Base \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Base Facility - Acronym: FACBASE ) }
+{\footnotesize ( Short Name: Base Facility
+ - Acronym: FACBASE ) }
 }\\ \hline
 \end{longtable}
 
   Base facility located at La Serena, Chile.
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3928,32 +4882,41 @@ Net/Base \\
 \hyperref[encdacc]{DAC Chile Enclave} \\ \hline
 \hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
 \hyperref[encprb]{Prompt Base Enclave} \\ \hline
-\end{tabular} }
-&
-\\ \bottomrule
+\end{tabular}
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ NCSA Facility } }\label{facncsa}
-& \multicolumn{2}{l}{(product in: Facilities)}
+& \multicolumn{2}{l}{(product in: Facilities
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.09 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: NCSA Facility - Acronym: FACNCSA ) }
+{\footnotesize ( Short Name: NCSA Facility
+ - Acronym: FACNCSA ) }
 }\\ \hline
 \end{longtable}
 
   NCSA processing facility located at Urbana, Illinois(USA).
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3965,24 +4928,33 @@ LDF \\
 \hyperref[]{Development and Integration E.} \\ \hline
 \hyperref[encprn]{Prompt NCSA Enclave} \\ \hline
 \hyperref[encarcn]{Archive NCSA Enclave} \\ \hline
-\end{tabular} }
-&
-\\ \bottomrule
+\end{tabular}
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+\newpage
 \subsubsection{Networks}\label{net}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Multiple \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Networks - Acronym: NET ) }
+{\footnotesize ( Short Name: Networks
+ - Acronym: NET ) }
 }\\ \hline
 \end{longtable}
 
@@ -3990,135 +4962,183 @@ Multiple \\
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Base to Archive Network } }\label{netba}
-& \multicolumn{2}{l}{(product in: Networks)}
+& \multicolumn{2}{l}{(product in: Networks
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Jeff Kantor &
+\begin{minipage}{3.7cm}
+Jeff Kantor
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Jeff Kantor \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.08.03 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 Net/Base \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Base/Arch Net - Acronym: NETBA ) }
+{\footnotesize ( Short Name: Base/Arch Net
+ - Acronym: NETBA ) }
 }\\ \hline
 \end{longtable}
 
   
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Base LAN Network } }\label{netbase}
-& \multicolumn{2}{l}{(product in: Networks)}
+& \multicolumn{2}{l}{(product in: Networks
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Base LAN - Acronym: NETBASE ) }
+{\footnotesize ( Short Name: Base LAN
+ - Acronym: NETBASE ) }
 }\\ \hline
 \end{longtable}
 
   Base Local Area Network.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ NCSA LAN Network } }\label{netncsa}
-& \multicolumn{2}{l}{(product in: Networks)}
+& \multicolumn{2}{l}{(product in: Networks
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Margaret Johnson &
+\begin{minipage}{3.7cm}
+Margaret Johnson
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Michelle Butler \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.07.09 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: NCSA LAN - Acronym: NETNCSA ) }
+{\footnotesize ( Short Name: NCSA LAN
+ - Acronym: NETNCSA ) }
 }\\ \hline
 \end{longtable}
 
   NCSA Local Area Network.
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Summit to Base Network } }\label{netsb}
-& \multicolumn{2}{l}{(product in: Networks)}
+& \multicolumn{2}{l}{(product in: Networks
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-Jeff Kantor &
+\begin{minipage}{3.7cm}
+Jeff Kantor
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
 Jeff Kantor \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
 1.02C.08.03 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 Net/Base \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Sum/Base Net - Acronym: NETSB ) }
+{\footnotesize ( Short Name: Sum/Base Net
+ - Acronym: NETSB ) }
 }\\ \hline
 \end{longtable}
 
   La Serena - AURA Gatehouse Network
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
-\subsection{Reference Data}\label{refd}
+\newpage
+\subsection{Reference Data Products}\label{refd}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Ref Data - Acronym: REFD ) }
+{\footnotesize ( Short Name: Ref Data
+ - Acronym: REFD ) }
 }\\ \hline
 \end{longtable}
 
@@ -4127,27 +5147,35 @@ during constructions..
 
 
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Atronomy.net Data } }\label{and}
-& \multicolumn{2}{l}{(product in: Ref Data)}
+& \multicolumn{2}{l}{(product in: Ref Data
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Astronomy.net Data - Acronym: AND ) }
+{\footnotesize ( Short Name: Astronomy.net Data
+ - Acronym: AND ) }
 }\\ \hline
 \end{longtable}
 
   
-
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -4155,41 +5183,52 @@ during constructions..
 \multicolumn{2}{l}{\href{https://github.com/lsst/astronomy_net_data}{astronomy\_net\_data} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
+\multicolumn{2}{c}{
+} &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[spdist]{Science Pipelines Distribution} \\ \hline
-\end{tabular} }
-\\ \bottomrule
+\end{tabular}
+} \\ \bottomrule
 \end{longtable}
 
+
+\newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ Gaia Data } }\label{gdata}
-& \multicolumn{2}{l}{(product in: Ref Data)}
+& \multicolumn{2}{l}{(product in: Ref Data
+)}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
- &
+\begin{minipage}{3.7cm}
+
+\end{minipage} &
+\begin{minipage}{3.7cm}
 \begin{tabular}{@{}l@{}}
  \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
+\end{tabular}
+\end{minipage} &
+\begin{tabular}{@{}l@{}}
  \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: Gaia Data - Acronym: GDATA ) }
+{\footnotesize ( Short Name: Gaia Data
+ - Acronym: GDATA ) }
 }\\ \hline
 \end{longtable}
 
   
 
 
-
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-&
-\\ \bottomrule
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
 \end{longtable}
 
 

@@ -1,0 +1,98 @@
+Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name
+DMDEV, DM Dev \& Mng
+, , , , , , , DM Dev \& Mng
+ 
+DMDC3E, COTS 3rdPLs ENVs
+, DMDEV, , , , , , COTS 3rdPLs ENVs
+ 
+COTSDM, DM DevM COTS
+, DMDC3E, , , , , , DM DevM COTS
+ 
+GCC, GCC
+, COTSDM, , , , , , GCC
+ 
+GITHUB, Github
+, COTSDM, , , , , , Github
+ 
+JNKNS, Jenkins
+, COTSDM, , , , , , Jenkins
+ 
+JRA, Jira
+, COTSDM, , , , , , Jira
+ 
+PTHN, Python
+, COTSDM, , , , , , Python
+ 
+TRVS, Travis
+, COTSDM, , , , , , Travis
+ 
+D3PL, DM DevM 3rd PLs
+, DMDC3E, , , , , , DM DevM 3rd PLs
+ 
+EUPS, EUPS
+, D3PL, , , , , , EUPS
+ 
+DENV, DM DevM Envs
+, DMDC3E, , , , , , DM DevM Envs
+ 
+SPLCE, SPL Conda Env
+, DENV, , , , , scipipe_conda_env, SPL Conda Env
+ 
+DMDSRV, DMDev Services
+, DMDEV, , , , , , DMDev Services
+ 
+BCI, Build and CI
+, DMDSRV, , , , , , Build and CI
+ 
+CAM, Cont. Application Mng
+, DMDSRV, , , , , , Cont. Application Mng
+ 
+DDCPUB, DM Doc Publication
+, DMDSRV, , , , , , DM Doc Publication
+ 
+DDVSRV, DM Dev Services
+, DMDSRV, , , , , , DM Dev Services
+ 
+DEPLOY, SW Deployment
+, DMDSRV, , , , , , SW Deployment
+ 
+DMDCOM, Devlop. Comm
+, DMDSRV, , , , , , Devlop. Comm
+ 
+PKGDST, Packagin Distrib
+, DMDSRV, , , , , , Packagin Distrib
+ 
+SWVER, SW Version Control
+, DMDSRV, , , , , , SW Version Control
+ 
+DMDSW, Dm Dev Software
+, DMDEV, , , , , , Dm Dev Software
+ 
+DMDSS, DMDev Supp SW
+, DMDSW, , , , , , DMDev Supp SW
+ 
+CDKT, Codekit
+, DMDSS, , , , , sqr_codekit, Codekit
+ 
+LBLD, lsst\_build
+, DMDSS, , , , , lsst_build, lsst\_build
+ 
+LSSTSW, lsstsw
+, DMDSS, , , , , lsstsw, lsstsw
+ 
+DSPLSW, Dev Science Pipelines
+, DMDSW, , , , , , Dev Science Pipelines
+ 
+SPLWF, SPL Workflow
+, DSPLSW, , , , , spl_workflow, SPL Workflow
+ 
+DMDTD, DMDev Test Data
+, DMDEV, , , , , , DMDev Test Data
+ 
+HSCRC1, HSC-RC1
+, DMDTD, , , , , , HSC-RC1
+ 
+SPLTD, SPL Test Data
+, DMDTD, , , , , spl_testdata, SPL Test Data
+ 
+

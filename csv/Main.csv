@@ -1,123 +1,365 @@
 Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name
-DM, Data Management, , 1.02C, , Wil O'Mullane, Leanne Guy, , Data Management 
-DMSRV, Services, DM, , , , Leanne Guy, , Services 
-DBBSRV, DBB Services, DMSRV, , , , Michelle Butler, , DBB Services 
-DBBLIFESRV, DBB Lifetime, DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle Butler, , DBB Lifetime 
-DBBMDSRV, DBB Metadata, DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle Butler, , DBB Metadata 
-DBBSTRSRV, DBB Storage, DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle Butler, , DBB Storage 
-DBBTRSRV, DBB Transport, DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle Butler, , DBB Transport 
-ITSRV, IT Service, DMSRV, , , , , , IT Service 
-EFDB, EFD Cache, ITSRV, , , , , , EFD Cache 
-LSPDB, LSP Database, ITSRV, , , , , , LSP Database 
-NETMGMT, Net Mgmt, ITSRV, 1.02C.08.03, Net/Base, Jeff Kantor, Jeff Kantor, , Net Mgmt 
-LSPSRV, LSP Services, DMSRV, , , , Gregory Dubois-Felsmann, , LSP Services 
-LSPJLSRV, LSP JupyterLab, LSPSRV, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, , LSP JupyterLab 
-LSPPRTLSRV, LSP Portal, LSPSRV, 1.02C.05.09 1.02C.05.08 1.02C.05.07, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, , LSP Portal 
-LSPWAPI, LSP Web API, LSPSRV, , , , , , LSP Web API 
-SIASRV, SIA, LSPWAPI, , , , , , SIA 
-SODA, SODA, LSPWAPI, , , , , , SODA 
-TAPSEV, TAP, LSPWAPI, , , , , , TAP 
-WDAV, WebDAV, LSPWAPI, , , , , davt, WebDAV 
-LSPWEBSRV, LSP Web API, LSPSRV, 1.02C.06.02, DAX, Fritz Mueller, Colin Slater, , LSP Web API 
-OFFLSRV, Offline Services, DMSRV, , , , Multiple, , Offline Services 
-BULKDSRV, Bulk Distrib, OFFLSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Michelle Butler, , Bulk Distrib 
-OFFLQCSRV, Offline QC, OFFLSRV, 1.02C.04.07, DRP, Yusra AlSayyad, Jim Bosch, , Offline QC 
-PRODSRV, Batch Production, OFFLSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Michelle Butler, , Batch Production 
-PRSRV, Prompt Services, DMSRV, , , , Multiple, , Prompt Services 
-ALRTDSTSRV, Alert Distrib, PRSRV, 1.02C.03.03, AP, John Swinbank, Eric Bellm, , Alert Distrib 
-ARCSRV, Archiving, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , Archiving 
-OCSBATSRV, OCS Batch, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , OCS Batch 
-OODSSRV, Obs Ops Data, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , Obs Ops Data 
-POPSRV, Planned Obs Pub, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , Planned Obs Pub 
-PRPINGSRV, Prompt Proc Ing, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , Prompt Proc Ing 
-PRPRSRV, Prmpt Processing, PRSRV, , , , , , Prmpt Processing 
-PRQCSRV, Prompt QC, PRSRV, 1.02C.03.08, AP, John Swinbank, Eric Bellm, , Prompt QC 
-TMGSRV, Telem Gateway, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , Telem Gateway 
-DMSW, Software Products, DM, , , , Multiple, , Software Products 
-BPP, Batch Prod SW, DMSW, , , , Michelle Butler, , Batch Prod SW 
-CMPGN, Campaign Mgmt, BPP, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , Campaign Mgmt 
-WLWF, Workload/flow, BPP, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , Workload/flow 
-DBB, DBB SW, DMSW, , , , Michelle Butler, , DBB SW 
-DBBLIFE, DBB Lifetime SW, DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , DBB Lifetime SW 
-DBBMD, DBB Meta SW, DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, dbb_gwclient dbb_gateway, DBB Meta SW 
-DBBTR, DBB Transport SW, DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , DBB Transport SW 
-LSP, LSP SW, DMSW, , , , Gregory Dubois-Felsmann, , LSP SW 
-DAXIMG, Image Server, LSP, 1.02C.06.02.04, DAX, Fritz Mueller, Colin Slater, dax_imgserv, Image Server 
-LSPJL, LSP JL SW, LSP, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, jupyterlab*, LSP JL SW 
-LSPWEB, LSP Web SW, LSP, 1.02C.06.02, DAX, Fritz Mueller, Colin Slater, dax_webserv, LSP Web SW 
-SUIT, SUIT, LSP, 1.02C.05.09 1.02C.05.07 1.02C.05.08, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, suit, SUIT 
-SUITOH, SUIT OnlineHelp, LSP, , SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, suit-onlinehelp, SUIT OnlineHelp 
-TAPSW, TAP, LSP, , , , , , TAP 
-PR, Prompt SW, DMSW, , , , Multiple, , Prompt SW 
-ALRTDSTR, Alert Distrib SW, PR, 1.02C.03.03, AP, John Swinbank, Eric Bellm, alert_stream, Alert Distrib SW 
-EFDT, EFD Transform, PR, 1.02C.07.08, LDF, Margaret Johnson, Simon Krughoff, , EFD Transform 
-HEADER, Header Srv SW, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau, lsst-dm/HeaderService, Header Srv SW 
-IIP, Image Ingest SW, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau, ctrl_iip, Image Ingest SW 
-OBSPUB, Plan Obs Pub SW, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau, , Plan Obs Pub SW 
-OCSBAT, OCS Batch SW, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau, , OCS Batch SW 
-OODS, Obs Ops Data SW, PR, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, lsst-dm/ctrl_oods, Obs Ops Data SW 
-PRODN, Sci Pipelines SW, DMSW, , , , Robert Lupton, , Sci Pipelines SW 
-APPRMPT, Alert Prod SW, PRODN, 1.02C.03, AP, John Swinbank, Eric Bellm, spl_ap, Alert Prod SW 
-DMCAL, Calibration SW, PRODN, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, spl_calibration, Calibration SW 
-DRP, DR Prod SW, PRODN, 1.02C.04, DRP, Yusra AlSayyad, Jim Bosch, spl_drp, DR Prod SW 
-MOPS, MOPS SW, PRODN, 1.02C.03.06, AP, John Swinbank, Eric Bellm, mops_daymops, MOPS SW 
-SP, Spec Prog SW, PRODN, 1.02C.03 1.02C.04, AP, John Swinbank, Melissa Graham, , Spec Prog SW 
-SPDIST, Science P. Dist., PRODN, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, lsst_distrib, Science P. Dist. 
-SPLUG, Science Plugins, PRODN, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, spl_plugins, Science Plugins 
-TMPLGEN, Tmpl Gen SW, PRODN, 1.02C.04.04, DRP, Yusra AlSayyad, Jim Bosch, , Tmpl Gen SW 
-QC, QC Products, DMSW, , , , Simon Krughoff, , QC Products 
-QCSW, Quality Ctrl SW, QC, 1.02C.10.02.01, SQuaRE, Frossie Economou, Simon Krughoff, validate_base verify squash-* verify_metrics validate_drp, Quality Ctrl SW 
-SUPPSW, Supporting SW, DMSW, , , , Multiple, , Supporting SW 
-ADQL, ADQL Translator, SUPPSW, 1.02C.06.02.05, DAX, Fritz Mueller, Colin Slater, albuquery, ADQL Translator 
-BUTLER, Data Butler, SUPPSW, 1.02C.06.02.01, DAX, Fritz Mueller, Jim Bosch, daf_butler, Data Butler 
-QSERV, Distrib Database, SUPPSW, 1.02C.06.02.03, DAX, Fritz Mueller, Colin Slater, qserv, Distrib Database 
-SCIPIPE, Sci Pipelines Libs, SUPPSW, 1.02C.04 1.02C.03, DRP, John Swinbank, Jim Bosch, lsst_apps, Sci Pipelines Libs 
-TXF, Task Framework, SUPPSW, 1.02C.06.03, DAX, Fritz Mueller, Jim Bosch, pipe_supertask, Task Framework 
-HWCOTS, Resources, DM, , , , Multiple, , Resources 
-COTS, COTS SW, HWCOTS, , , , Multiple, , COTS SW 
-CILOGON, CILogon, COTS, , , , , , CILogon 
-DOCKER, Docker, COTS, , , , , , Docker 
-GPFS, GPFS, COTS, , , , , , GPFS 
-GRAFANA, Grafana, COTS, , , , , , Grafana 
-HTCONDOR, HTCondor, COTS, , , , , , HTCondor 
-K8S, Kubernetes, COTS, , , , , , Kubernetes 
-ORACLE, Oracle, COTS, , , , , , Oracle 
-PUPPET, Puppet, COTS, , , , , , Puppet 
-RUCIO, Rucio, COTS, , , , Michelle Butler, , Rucio 
-SECURITY, IT Security, COTS, , , , , , IT Security 
-VSPHERE, vSphere, COTS, , , , , , vSphere 
-HWCOMP, Compute Nodes, HWCOTS, , , , Michelle Butler, , Compute Nodes 
-DELL8, Blade (e.g.), HWCOMP, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Blade (e.g.) 
-HWNET, Network Nodes, HWCOTS, , , , Multiple, , Network Nodes 
-NETX, Router (e.g.), HWNET, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Router (e.g.) 
-HWSTOR, Storage Nodes, HWCOTS, , , , Michelle Butler, , Storage Nodes 
-SAN2, Disk (e.g.), HWSTOR, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Disk (e.g.) 
-LLSW, Low Level SW, HWCOTS, , , , Multiple, , Low Level SW 
-CENTOS, OS (e.g.), LLSW, , , , , , OS (e.g.) 
-THPL, Third Party Libs, HWCOTS, , , , , , Third Party Libs 
-BOOST, Boost, THPL, , , , , , Boost 
-FFAA, Firefly API A., THPL, , SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, Caltech-IPAC/firefly-api-access, Firefly API A. 
-FIREFLY, Firefly, THPL, 1.02C.05.06, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, Caltech-IPAC/firefly, Firefly 
-PTH, Python, THPL, , , , , , Python 
-INFRA, Infrastructure, DM, , , , Multiple, , Infrastructure 
-ENC, Enclaves, INFRA, , , , Multiple, , Enclaves 
-ENCARCB, Arch Base Encl, ENC, 1.02C.08.01, LDF, Margaret Johnson, Michelle Butler, , Arch Base Encl 
-ENCARCN, Arch NCSA Encl, ENC, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Arch NCSA Encl 
-ENCCOMM, Comm Clust Encl, ENC, 1.02C.08.01, LDF, Margaret Johnson, Simon Krughoff, , Comm Clust Encl 
-ENCDACC, DAC Chile Encl, ENC, 1.02C.08.02, LDF, Margaret Johnson, Michelle Butler, , DAC Chile Encl 
-ENCDACU, DAC US Encl, ENC, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , DAC US Encl 
-ENCOFFL, Offline Prod Encl, ENC, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Offline Prod Encl 
-ENCPRB, Prmpt Base Encl, ENC, 1.02C.08.01, LDF, Margaret Johnson, Michelle Butler, , Prmpt Base Encl 
-ENCPRN, Prmpt NCSA Encl, ENC, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Prmpt NCSA Encl 
-FAC, Facilities, INFRA, , , , Multiple, , Facilities 
-FACBASE, Base Facility, FAC, 1.02C.08.01 1.02C.08.02, Net/Base, Jeff Kantor, Jeff Kantor, , Base Facility 
-FACNCSA, NCSA Facility, FAC, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , NCSA Facility 
-NET, Networks, INFRA, , , , Multiple, , Networks 
-NETBA, Base/Arch Net, NET, 1.02C.08.03, Net/Base, Jeff Kantor, Jeff Kantor, , Base/Arch Net 
-NETBASE, Base LAN, NET, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , Base LAN 
-NETNCSA, NCSA LAN, NET, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , NCSA LAN 
-NETSB, Sum/Base Net, NET, 1.02C.08.03, Net/Base, Jeff Kantor, Jeff Kantor, , Sum/Base Net 
-REFD, Ref Data, DM, , , , , , Ref Data 
-AND, Astronomy.net Data, REFD, , , , , astronomy_net_data, Astronomy.net Data 
-GDATA, Gaia Data, REFD, , , , , , Gaia Data 
+DM, Data Management
+, , 1.02C, , Wil O'Mullane, Leanne Guy, , Data Management
+ 
+DMSRV, Services
+, DM, , , , Leanne Guy, , Services
+ 
+DBBSRV, DBB Services
+, DMSRV, , , , Michelle Butler, , DBB Services
+ 
+DBBLIFESRV, DBB Lifetime
+, DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle Butler, , DBB Lifetime
+ 
+DBBMDSRV, DBB Metadata
+, DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle Butler, , DBB Metadata
+ 
+DBBSTRSRV, DBB Storage
+, DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle Butler, , DBB Storage
+ 
+DBBTRSRV, DBB Transport
+, DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle Butler, , DBB Transport
+ 
+ITSRV, IT Service
+, DMSRV, , , , , , IT Service
+ 
+EFDB, EFD Cache
+, ITSRV, , , , , , EFD Cache
+ 
+LSPDB, LSP Database
+, ITSRV, , , , , , LSP Database
+ 
+NETMGMT, Net Mgmt
+, ITSRV, 1.02C.08.03, Net/Base, Jeff Kantor, Jeff Kantor, , Net Mgmt
+ 
+LSPSRV, LSP Services
+, DMSRV, , , , Gregory Dubois-Felsmann, , LSP Services
+ 
+LSPJLSRV, LSP JupyterLab
+, LSPSRV, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, , LSP JupyterLab
+ 
+LSPPRTLSRV, LSP Portal
+, LSPSRV, 1.02C.05.09 1.02C.05.08 1.02C.05.07, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, , LSP Portal
+ 
+LSPWAPI, LSP Web API
+, LSPSRV, , , , , , LSP Web API
+ 
+SIASRV, SIA
+, LSPWAPI, , , , , , SIA
+ 
+SODA, SODA
+, LSPWAPI, , , , , , SODA
+ 
+TAPSEV, TAP
+, LSPWAPI, , , , , , TAP
+ 
+WDAV, WebDAV
+, LSPWAPI, , , , , davt, WebDAV
+ 
+LSPWEBSRV, LSP Web API
+, LSPSRV, 1.02C.06.02, DAX, Fritz Mueller, Colin Slater, , LSP Web API
+ 
+OFFLSRV, Offline Services
+, DMSRV, , , , Multiple, , Offline Services
+ 
+BULKDSRV, Bulk Distrib
+, OFFLSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Michelle Butler, , Bulk Distrib
+ 
+OFFLQCSRV, Offline QC
+, OFFLSRV, 1.02C.04.07, DRP, Yusra AlSayyad, Jim Bosch, , Offline QC
+ 
+PRODSRV, Batch Production
+, OFFLSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Michelle Butler, , Batch Production
+ 
+PRSRV, Prompt Services
+, DMSRV, , , , Multiple, , Prompt Services
+ 
+ALRTDSTSRV, Alert Distrib
+, PRSRV, 1.02C.03.03, AP, John Swinbank, Eric Bellm, , Alert Distrib
+ 
+ARCSRV, Archiving
+, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , Archiving
+ 
+OCSBATSRV, OCS Batch
+, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , OCS Batch
+ 
+OODSSRV, Obs Ops Data
+, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , Obs Ops Data
+ 
+POPSRV, Planned Obs Pub
+, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , Planned Obs Pub
+ 
+PRPINGSRV, Prompt Proc Ing
+, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , Prompt Proc Ing
+ 
+PRPRSRV, Prmpt Processing
+, PRSRV, , , , , , Prmpt Processing
+ 
+PRQCSRV, Prompt QC
+, PRSRV, 1.02C.03.08, AP, John Swinbank, Eric Bellm, , Prompt QC
+ 
+TMGSRV, Telem Gateway
+, PRSRV, 1.02C.07.06.02, LDF, Margaret Johnson, Felipe Menanteau, , Telem Gateway
+ 
+DMSW, Software Products
+, DM, , , , Multiple, , Software Products
+ 
+BPP, Batch Prod SW
+, DMSW, , , , Michelle Butler, , Batch Prod SW
+ 
+CMPGN, Campaign Mgmt
+, BPP, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , Campaign Mgmt
+ 
+WLWF, Workload/flow
+, BPP, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , Workload/flow
+ 
+DBB, DBB SW
+, DMSW, , , , Michelle Butler, , DBB SW
+ 
+DBBLIFE, DBB Lifetime SW
+, DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , DBB Lifetime SW
+ 
+DBBMD, DBB Meta SW
+, DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, dbb_gwclient dbb_gateway, DBB Meta SW
+ 
+DBBTR, DBB Transport SW
+, DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , DBB Transport SW
+ 
+LSP, LSP SW
+, DMSW, , , , Gregory Dubois-Felsmann, , LSP SW
+ 
+DAXIMG, Image Server
+, LSP, 1.02C.06.02.04, DAX, Fritz Mueller, Colin Slater, dax_imgserv, Image Server
+ 
+LSPJL, LSP JL SW
+, LSP, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, jupyterlab*, LSP JL SW
+ 
+LSPWEB, LSP Web SW
+, LSP, 1.02C.06.02, DAX, Fritz Mueller, Colin Slater, dax_webserv, LSP Web SW
+ 
+SUIT, SUIT
+, LSP, 1.02C.05.09 1.02C.05.07 1.02C.05.08, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, suit, SUIT
+ 
+SUITOH, SUIT OnlineHelp
+, LSP, , SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, suit-onlinehelp, SUIT OnlineHelp
+ 
+TAPSW, TAP
+, LSP, , , , , , TAP
+ 
+PR, Prompt SW
+, DMSW, , , , Multiple, , Prompt SW
+ 
+ALRTDSTR, Alert Distrib SW
+, PR, 1.02C.03.03, AP, John Swinbank, Eric Bellm, alert_stream, Alert Distrib SW
+ 
+EFDT, EFD Transform
+, PR, 1.02C.07.08, LDF, Margaret Johnson, Simon Krughoff, , EFD Transform
+ 
+HEADER, Header Srv SW
+, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau, lsst-dm/HeaderService, Header Srv SW
+ 
+IIP, Image Ingest SW
+, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau, ctrl_iip, Image Ingest SW
+ 
+OBSPUB, Plan Obs Pub SW
+, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau, , Plan Obs Pub SW
+ 
+OCSBAT, OCS Batch SW
+, PR, 1.02C.07.08, LDF, Margaret Johnson, Felipe Menanteau, , OCS Batch SW
+ 
+OODS, Obs Ops Data SW
+, PR, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, lsst-dm/ctrl_oods, Obs Ops Data SW
+ 
+PRODN, Sci Pipelines SW
+, DMSW, , , , Robert Lupton, , Sci Pipelines SW
+ 
+APPRMPT, Alert Prod SW
+, PRODN, 1.02C.03, AP, John Swinbank, Eric Bellm, spl_ap, Alert Prod SW
+ 
+DMCAL, Calibration SW
+, PRODN, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, spl_calibration, Calibration SW
+ 
+DRP, DR Prod SW
+, PRODN, 1.02C.04, DRP, Yusra AlSayyad, Jim Bosch, spl_drp, DR Prod SW
+ 
+MOPS, MOPS SW
+, PRODN, 1.02C.03.06, AP, John Swinbank, Eric Bellm, mops_daymops, MOPS SW
+ 
+SP, Spec Prog SW
+, PRODN, 1.02C.03 1.02C.04, AP, John Swinbank, Melissa Graham, , Spec Prog SW
+ 
+SPDIST, Science P. Dist.
+, PRODN, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, lsst_distrib, Science P. Dist.
+ 
+SPLUG, Science Plugins
+, PRODN, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, spl_plugins, Science Plugins
+ 
+TMPLGEN, Tmpl Gen SW
+, PRODN, 1.02C.04.04, DRP, Yusra AlSayyad, Jim Bosch, , Tmpl Gen SW
+ 
+QC, QC Products
+, DMSW, , , , Simon Krughoff, , QC Products
+ 
+QCSW, Quality Ctrl SW
+, QC, 1.02C.10.02.01, SQuaRE, Frossie Economou, Simon Krughoff, validate_base verify squash-* verify_metrics validate_drp, Quality Ctrl SW
+ 
+SUPPSW, Supporting SW
+, DMSW, , , , Multiple, , Supporting SW
+ 
+ADQL, ADQL Translator
+, SUPPSW, 1.02C.06.02.05, DAX, Fritz Mueller, Colin Slater, albuquery, ADQL Translator
+ 
+BUTLER, Data Butler
+, SUPPSW, 1.02C.06.02.01, DAX, Fritz Mueller, Jim Bosch, daf_butler, Data Butler
+ 
+QSERV, Distrib Database
+, SUPPSW, 1.02C.06.02.03, DAX, Fritz Mueller, Colin Slater, qserv, Distrib Database
+ 
+SCIPIPE, Sci Pipelines Libs
+, SUPPSW, 1.02C.04 1.02C.03, DRP, John Swinbank, Jim Bosch, lsst_apps, Sci Pipelines Libs
+ 
+TXF, Task Framework
+, SUPPSW, 1.02C.06.03, DAX, Fritz Mueller, Jim Bosch, pipe_supertask, Task Framework
+ 
+HWCOTS, Resources
+, DM, , , , Multiple, , Resources
+ 
+COTS, COTS SW
+, HWCOTS, , , , Multiple, , COTS SW
+ 
+CILOGON, CILogon
+, COTS, , , , , , CILogon
+ 
+DOCKER, Docker
+, COTS, , , , , , Docker
+ 
+GPFS, GPFS
+, COTS, , , , , , GPFS
+ 
+GRAFANA, Grafana
+, COTS, , , , , , Grafana
+ 
+HTCONDOR, HTCondor
+, COTS, , , , , , HTCondor
+ 
+K8S, Kubernetes
+, COTS, , , , , , Kubernetes
+ 
+ORACLE, Oracle
+, COTS, , , , , , Oracle
+ 
+PUPPET, Puppet
+, COTS, , , , , , Puppet
+ 
+RUCIO, Rucio
+, COTS, , , , Michelle Butler, , Rucio
+ 
+SECURITY, IT Security
+, COTS, , , , , , IT Security
+ 
+VSPHERE, vSphere
+, COTS, , , , , , vSphere
+ 
+HWCOMP, Compute Nodes
+, HWCOTS, , , , Michelle Butler, , Compute Nodes
+ 
+DELL8, Blade (e.g.)
+, HWCOMP, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Blade (e.g.)
+ 
+HWNET, Network Nodes
+, HWCOTS, , , , Multiple, , Network Nodes
+ 
+NETX, Router (e.g.)
+, HWNET, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Router (e.g.)
+ 
+HWSTOR, Storage Nodes
+, HWCOTS, , , , Michelle Butler, , Storage Nodes
+ 
+SAN2, Disk (e.g.)
+, HWSTOR, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Disk (e.g.)
+ 
+LLSW, Low Level SW
+, HWCOTS, , , , Multiple, , Low Level SW
+ 
+CENTOS, OS (e.g.)
+, LLSW, , , , , , OS (e.g.)
+ 
+THPL, Third Party Libs
+, HWCOTS, , , , , , Third Party Libs
+ 
+BOOST, Boost
+, THPL, , , , , , Boost
+ 
+FFAA, Firefly API A.
+, THPL, , SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, Caltech-IPAC/firefly-api-access, Firefly API A.
+ 
+FIREFLY, Firefly
+, THPL, 1.02C.05.06, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, Caltech-IPAC/firefly, Firefly
+ 
+PTH, Python
+, THPL, , , , , , Python
+ 
+INFRA, Infrastructure
+, DM, , , , Multiple, , Infrastructure
+ 
+ENC, Enclaves
+, INFRA, , , , Multiple, , Enclaves
+ 
+ENCARCB, Arch Base Encl
+, ENC, 1.02C.08.01, LDF, Margaret Johnson, Michelle Butler, , Arch Base Encl
+ 
+ENCARCN, Arch NCSA Encl
+, ENC, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Arch NCSA Encl
+ 
+ENCCOMM, Comm Clust Encl
+, ENC, 1.02C.08.01, LDF, Margaret Johnson, Simon Krughoff, , Comm Clust Encl
+ 
+ENCDACC, DAC Chile Encl
+, ENC, 1.02C.08.02, LDF, Margaret Johnson, Michelle Butler, , DAC Chile Encl
+ 
+ENCDACU, DAC US Encl
+, ENC, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , DAC US Encl
+ 
+ENCOFFL, Offline Prod Encl
+, ENC, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Offline Prod Encl
+ 
+ENCPRB, Prmpt Base Encl
+, ENC, 1.02C.08.01, LDF, Margaret Johnson, Michelle Butler, , Prmpt Base Encl
+ 
+ENCPRN, Prmpt NCSA Encl
+, ENC, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , Prmpt NCSA Encl
+ 
+FAC, Facilities
+, INFRA, , , , Multiple, , Facilities
+ 
+FACBASE, Base Facility
+, FAC, 1.02C.08.01 1.02C.08.02, Net/Base, Jeff Kantor, Jeff Kantor, , Base Facility
+ 
+FACNCSA, NCSA Facility
+, FAC, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , NCSA Facility
+ 
+NET, Networks
+, INFRA, , , , Multiple, , Networks
+ 
+NETBA, Base/Arch Net
+, NET, 1.02C.08.03, Net/Base, Jeff Kantor, Jeff Kantor, , Base/Arch Net
+ 
+NETBASE, Base LAN
+, NET, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , Base LAN
+ 
+NETNCSA, NCSA LAN
+, NET, 1.02C.07.09, LDF, Margaret Johnson, Michelle Butler, , NCSA LAN
+ 
+NETSB, Sum/Base Net
+, NET, 1.02C.08.03, Net/Base, Jeff Kantor, Jeff Kantor, , Sum/Base Net
+ 
+REFD, Ref Data
+, DM, , , , , , Ref Data
+ 
+AND, Astronomy.net Data
+, REFD, , , , , astronomy_net_data, Astronomy.net Data
+ 
+GDATA, Gaia Data
+, REFD, , , , , , Gaia Data
+ 
 
