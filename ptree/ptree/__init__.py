@@ -23,7 +23,6 @@ import pandoc
 from base64 import b64encode
 
 from .config import Config
-from .util import mdTree, dms, dmcmp
 from .mdtree import generate_document
 
 

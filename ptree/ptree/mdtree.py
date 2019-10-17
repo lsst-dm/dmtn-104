@@ -26,8 +26,9 @@ import click
 import sys
 from .config import Config
 from jinja2 import Environment, PackageLoader, TemplateNotFound, ChoiceLoader, FileSystemLoader
-from .util import get_pkg_properties, mdTree, rsget, fix_tex, fix_id_tex, Product, html_to_latex, get_yaml
+from .util import get_pkg_properties, rsget, fix_tex, fix_id_tex, Product, html_to_latex, get_yaml
 from .tree import make_tree_portrait, make_tree_landmix1
+from treelib import Tree
 
 
 def _as_output_format(text, output_format):
@@ -96,6 +97,7 @@ def walk_tree(rcs, mres, mdid, pkey):
     id, name, parent, desc, wbs, manager, owner, kind, pkgs, elId"""
 
     global products_count
+    global productTree
     products_count = products_count + 1
 
     resp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=mdid), True)
@@ -208,7 +210,7 @@ def walk_tree(rcs, mres, mdid, pkey):
     prod = Product(pkg_id,                            # 1  (0 is self)
                    pkg_name,                          # 2
                    pkey,                              # 3
-                   html_to_latex(pkg_comments),     # 4
+                   html_to_latex(pkg_comments),       # 4
                    pkg_properties["WBS"],             # 5
                    pkg_properties["manager"][0],      # 6
                    pkg_properties["product owner"],   # 7
@@ -218,15 +220,14 @@ def walk_tree(rcs, mres, mdid, pkey):
                    mdid,                              # 11
                    pkg_properties["hyperlinkText"],   # 12
                    pkg_properties["team"],            # 13
-                   pkg_properties["short name"][0],   # 14
+                   html_to_latex(pkg_properties["short name"][0]),   # 14
                    pkg_usedin,                        # 15
                    pkg_index)                         # 16
     if pkey == "":  # first node in the tree
-        mdTree.create_node(prod.id, prod.id, data=prod)
+        productTree.create_node(prod.id, prod.id, data=prod)
     else:
-        # print(mdTree)
         if pkey != '':
-            mdTree.create_node(prod.id, prod.id, data=prod, parent=prod.parent)
+            productTree.create_node(prod.id, prod.id, data=prod, parent=prod.parent)
         else:
             print('No parent for product:', pkg_name)
             exit()
@@ -309,17 +310,19 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file):
     :return: none
     """
     global template_path
+    global productTree
+    productTree = Tree()
     products = []
     tree_dict = {}
 
     # get the information from MagicDraw
     build_md_tree(sysid, levelid, connection_str)
-    print("\n  Product tree depth:", mdTree.depth())
+    print("\n  Product tree depth:", productTree.depth())
 
-    nodes = mdTree.expand_tree()
+    nodes = productTree.expand_tree()
     for n in nodes:
-        products.append(mdTree[n].data)
-        tree_dict[mdTree[n].data.id] = mdTree[n].data
+        products.append(productTree[n].data)
+        tree_dict[productTree[n].data.id] = productTree[n].data
     print(f"  Found {{np}} products (including container folders).".format(np=len(tree_dict)))
 
     envs = Environment(loader=ChoiceLoader([FileSystemLoader(Config.TEMPLATE_DIRECTORY),
@@ -330,10 +333,10 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file):
     do_csv(products, output_file)
 
     # create the diagrams tex files
-    do_trees_diagrams(mdTree, output_file, products[0].shortname)
+    do_trees_diagrams(productTree, output_file, products[0].shortname)
 
     # dump the tex section
-    mdp = mdTree.to_dict(with_data=False)
+    mdp = productTree.to_dict(with_data=False)
     try:
         template_path = f"section.{Config.TEMPLATE_LANGUAGE}.jinja2"
         template = envs.get_template(template_path)
@@ -356,16 +359,17 @@ def generate_document(subsystem, connection_str, output_format):
     """Given system and level, generates the document content"""
 
     subsystem_info = get_yaml()
-    print("Sys Info")
 
-    print("-> Generating Main Product Tree  ==========================")
-    # #subsystem_id = Config.SUBSYSTEMS[subsystem]['ID']  # former dms
     subsystem_id = subsystem_info['subsystem']['id']
-    level_id = subsystem_info['subsystem']['subtrees'][0]['id']  # former dmcmp
+    print("-> Generating Main Product Tree  ==========================")
+    level_id = subsystem_info['subsystem']['subtrees'][0]['id']
     filename = subsystem_info['subsystem']['subtrees'][0]['filename']
     do_md_section(subsystem_id, level_id, connection_str, output_format, filename)
 
     print("-> [to do] Generating Development Product Tree  ==========================")
+    level_id = subsystem_info['subsystem']['subtrees'][1]['id']
+    filename = subsystem_info['subsystem']['subtrees'][1]['filename']
+    do_md_section(subsystem_id, level_id, connection_str, output_format, filename)
 
     print("-> [to do] Generating GitHub Product Tree  ==========================")
 

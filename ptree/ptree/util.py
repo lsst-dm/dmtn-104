@@ -32,14 +32,6 @@ from treelib import Tree
 from time import sleep
 from .config import Config
 
-# MD Subsystem  Design Workspace @ID
-sdw = '3130d49c-d90d-4df2-a110-5247a5d03296'
-dms = '698d501b-660d-4d7e-8875-c6170ca0f513'
-trunk = '698d501b-660d-4d7e-8875-c6170ca0f513'
-dmpl = 'a0acbaa6-6625-4ea9-8aec-51931412a29e'  # DM Problem/Logic element server id
-dmcmp = '60706435-6f8e-4b15-823b-06597f1cdada'  # DM Components element server ID
-mdTree = Tree()
-
 
 def cite_docushare_handles(text):
     """This will find matching docushare handles and replace
