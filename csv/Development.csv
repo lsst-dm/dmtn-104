@@ -1,12 +1,15 @@
 Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name
-DMDEV, DM Dev \& Mng
-, , , , , , , DM Dev \& Mng
+DMDEV, DM Support Prd.
+, , , , , , , DM Support Prd.
  
 DMDC3E, COTS 3rdPLs ENVs
 , DMDEV, , , , , , COTS 3rdPLs ENVs
  
 COTSDM, DM DevM COTS
 , DMDC3E, , , , , , DM DevM COTS
+ 
+EUPS, EUPS
+, COTSDM, , , , , , EUPS
  
 GCC, GCC
 , COTSDM, , , , , , GCC
@@ -26,20 +29,14 @@ PTHN, Python
 TRVS, Travis
 , COTSDM, , , , , , Travis
  
-D3PL, DM DevM 3rd PLs
-, DMDC3E, , , , , , DM DevM 3rd PLs
- 
-EUPS, EUPS
-, D3PL, , , , , , EUPS
- 
 DENV, DM DevM Envs
 , DMDC3E, , , , , , DM DevM Envs
  
 SPLCE, SPL Conda Env
 , DENV, , , , , scipipe_conda_env, SPL Conda Env
  
-DMDSRV, DMDev Services
-, DMDEV, , , , , , DMDev Services
+DMDSRV, Support Services
+, DMDEV, , , , , , Support Services
  
 BCI, Build and CI
 , DMDSRV, , , , , , Build and CI

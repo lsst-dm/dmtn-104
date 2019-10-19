@@ -46,3 +46,6 @@ Science Pipelines
 data repository
 Release
 arcsec
+Builder
+eups
+gcc

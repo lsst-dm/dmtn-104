@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Document:     DM Dev \& Mng
+% Document:     DM Support Prd.
   product tree
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,7 +30,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 \begin{tikzpicture}[node distance=0mm]
 
 
-\node (DMDEV) [wbbox]{\textbf{DM Dev \& Mng
+\node (DMDEV) [wbbox]{\textbf{DM Support Prd.
 }};
 \node (DMDC3E) [pbox,right=15mm of DMDEV] {\textbf{COTS 3rdPLs ENVs
 } };
@@ -38,7 +38,10 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (COTSDM) [pbox,right=15mm of DMDC3E] {\textbf{DM DevM COTS
 } };
  \draw[pline] (DMDC3E.east) -| ++(0.4,0) |- (COTSDM.west); 
-\node (GCC) [pbox,right=15mm of COTSDM] {\textbf{GCC
+\node (EUPS) [pbox,right=15mm of COTSDM] {\textbf{EUPS
+} };
+ \draw[pline] (COTSDM.east) -| ++(0.4,0) |- (EUPS.west); 
+\node (GCC) [pbox,below=4pt of EUPS] {\textbf{GCC
 } };
  \draw[pline] (COTSDM.east) -| ++(0.4,0) |- (GCC.west); 
 \node (GITHUB) [pbox,below=4pt of GCC] {\textbf{Github
@@ -56,19 +59,13 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (TRVS) [pbox,below=4pt of PTHN] {\textbf{Travis
 } };
  \draw[pline] (COTSDM.east) -| ++(0.4,0) |- (TRVS.west); 
-\node (D3PL) [pbox,below=209pt of COTSDM] {\textbf{DM DevM 3rd PLs
-} };
- \draw[pline] (DMDC3E.east) -| ++(0.4,0) |- (D3PL.west); 
-\node (EUPS) [pbox,right=15mm of D3PL] {\textbf{EUPS
-} };
- \draw[pline] (D3PL.east) -| ++(0.4,0) |- (EUPS.west); 
-\node (DENV) [pbox,below=4pt of D3PL] {\textbf{DM DevM Envs
+\node (DENV) [pbox,below=250pt of COTSDM] {\textbf{DM DevM Envs
 } };
  \draw[pline] (DMDC3E.east) -| ++(0.4,0) |- (DENV.west); 
 \node (SPLCE) [pbox,right=15mm of DENV] {\textbf{SPL Conda Env
 } };
  \draw[pline] (DENV.east) -| ++(0.4,0) |- (SPLCE.west); 
-\node (DMDSRV) [pbox,below=291pt of DMDC3E] {\textbf{DMDev Services
+\node (DMDSRV) [pbox,below=291pt of DMDC3E] {\textbf{Support Services
 } };
  \draw[pline] (DMDEV.east) -| ++(0.4,0) |- (DMDSRV.west); 
 \node (BCI) [pbox,right=15mm of DMDSRV] {\textbf{Build and CI

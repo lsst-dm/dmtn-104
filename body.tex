@@ -1,12 +1,15 @@
 \section{Introduction}
 
+
 \subsection{Obective}
 
 The objective is to provide a clear picture on the DM management products, including description, characterizationa and dependencies.
 
+
 \subsection{Definitions}
 
 Following definitions are relevant for this document.
+
 
 \subsubsection{Product} \label{sec:product}
 
@@ -53,6 +56,7 @@ Following documents are applicable:
 \citeds{LDM-148} Data Management System Design\\
 \citeds{LSE-61} Data Management System (DMS) Requirements
 
+
 \subsection{Document Overview}
 
 Information in sections \ref{sec:top} and \ref{sec:sups} is extracted from MagicDraw and provides:
@@ -69,6 +73,36 @@ Finally, section \ref{sec:nondm}, list all non DM products that are required in 
 This information is extracted from MagicDraw.
 No GitHub package details are provided for these products. 
 
+
+\subsection{Consistency and Complation}\label{sec:cons-comp}
+
+The information collected in the product tree shall be consistent and complete.
+
+In order to be consistent, following rules need to be fulfilled:
+
+\begin{itemize}
+\item Facilities: shall host Enclaves
+\item Enclaves: shall host services
+\item Services: shall be implemented using DM Software Products or COTS
+\item DM Software Products: shall have only one GitHub package
+\item Low level dependencies to be made explicit in section 4
+\item Dependencies to 3rd party libraries should (not yet, but will be) derived from GitHub
+\item COTS and 3rd party libraries: shall have a link to a documentation page available in the global internet
+\end{itemize}
+
+In order to be complete, following rules need to be fulfilled:
+
+\begin{itemize}
+\item All products shall have an owner
+\item All packages (subsection, paragraphs) shall have a manager
+\item Each manager and each owner shall ensure that:
+\begin{itemize}
+\item She/he is the right person of taking care of that package/product
+\item The information provided for each package/product is sufficient to fully characterize it, and consistent following the rules listed above.
+\end{itemize}
+\end{itemize}
+
+
 \newpage
 \section{Top Level Product Tree}\label{sec:top}
 
@@ -77,6 +111,7 @@ The products listed in this section are maintained in MagicDraw by the DM System
 These products are meant to be operational, i.e. will process LSST source data and produce L1 or L2 data products, or will be distributed to permit the external collaborators and the science community to provide their contribution to the project.
 
 These products are organized and maintained in MagicDraw by the DM System Engineering group.
+
 \newpage
 \subsection{Data Management Top Level Product}\label{sec:dmtop}
 
