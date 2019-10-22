@@ -338,91 +338,11 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file):
 
     # sort tree dictionary based
     mdp = productTree.to_dict(with_data=False)
-    mdpt = {}
 
+    # get ordered dictionary
+    new_mdpt = dict()
     for k0 in mdp:
-        print(k0)
-        level1 = dict()
-        c1 = 0
-        for child in mdp[k0]['children']:
-            # level 1 are all packages
-            for k1 in child:
-                c1 = c1 + 1
-                print(f" - {k1} - {tree_dict[k1].index}.{tree_dict[k1].name}")
-                if tree_dict[k1].index != "":
-                    i1 = int(tree_dict[k1].index)
-                else:
-                    i1 = c1
-                level2 = {}
-                c2 = 0
-                for sc in child[k1]['children']:
-                    if isinstance(sc, dict):
-                        for k2 in sc:
-                            c2 = c2 + 1
-                            print(f" - - {k2} - {tree_dict[k2].index}.{tree_dict[k2].name}")
-                            if tree_dict[k2].index != "":
-                                i2 = int(tree_dict[k2].index)
-                            else:
-                                i2 = c2
-                            level3 = {}
-                            c3 = 0
-                            for sch1 in sc[k2]['children']:
-                                if isinstance(sch1, dict):
-                                    for k3 in sch1:
-                                        c3 = c3 + 1
-                                        print(f" - - - {k3} - {tree_dict[k3].index}.{tree_dict[k3].name}")
-                                        if tree_dict[k3].index != '':
-                                            i3 = int(tree_dict[k3].index)
-                                        else:
-                                            i3 = c3
-                                        level4 = {}
-                                        c4 = 0
-                                        for sch2 in sch1[k3]['children']:
-                                            if isinstance(sch2, dict):
-                                                for k4 in sch2:
-                                                    c4 = c4 + 1
-                                                    print(f" - - - {k4} - {tree_dict[k4].index}.{tree_dict[k4].name}")
-                                                    if tree_dict[k4].index != '':
-                                                        i4 = int(tree_dict[k4].index)
-                                                    else:
-                                                        i4 = c4
-                                                    level4.update({i4: {'name': k4}})
-                                            else:
-                                                c4 = c4 + 1
-                                                print(
-                                                    f" sch2--- {sch2} - {tree_dict[sch2].index}.{tree_dict[sch2].name}")
-                                                if tree_dict[sch2].index != "":
-                                                    isch2 = int(tree_dict[sch2].index)
-                                                else:
-                                                    isch2 = c4
-                                                level4[isch2] = sch2
-                                        olevel4 = dict(sorted(level4.items()))
-                                        level3.update({i3: {'name': k3, "childs": olevel4}})
-                                else:
-                                    c3 = c3 + 1
-                                    print(f" sch1--- {sch1} - {tree_dict[sch1].index}.{tree_dict[sch1].name}")
-                                    if tree_dict[sch1].index != "":
-                                        isch1 = int(tree_dict[sch1].index)
-                                    else:
-                                        isch1 = c3
-                                    level3[isch1] = sch1
-                            print("L3", level3)
-                            olevel3 = dict(sorted(level3.items()))
-                            level2.update({i2: {'name': k2, 'childs': olevel3}})
-                    else:
-                        c2 = c2 + 1
-                        print(f" sc -- {sc}- {tree_dict[sc].index}.{tree_dict[sc].name}")
-                        if tree_dict[sc].index != "":
-                            isc = int(tree_dict[sc].index)
-                        else:
-                            isc = c2
-                        level2[isc] = sc
-                print("L2", level2)
-                olevel2 = dict(sorted(level2.items()))
-                level1.update({i1: {'name': k1, 'childs': olevel2}})
-        print("L1", level1)
-        mdpt[k0] = dict(sorted(level1.items()))
-    print(mdpt)
+        new_mdpt[k0] = order_tree_level(mdp[k0])
 
     # dump the tex section
     try:
@@ -435,7 +355,7 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file):
     metadata["template"] = template.filename
     text = template.render(metadata=metadata,
                            mdt_dict=tree_dict,
-                           mdp=mdp,
+                           mdp=new_mdpt,
                            mdps=products)
     tex_file_name = output_file + ".tex"
     file = open(tex_file_name, "w")
@@ -443,7 +363,7 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file):
     file.close()
 
 
-def order_tree_level(udict, rl):
+def order_tree_level(udict):
     """
     Given an unordered tree returns a dictionary with ordered tree
     the tree data sall provide a unique index for each level
@@ -451,29 +371,27 @@ def order_tree_level(udict, rl):
     :return: sorted level dictionary
     """
     global tree_dict
-    ws = ' '
     level = {}
     c = 0
     for child in udict['children']:
         if isinstance(child, dict):  # the child owns subchilds
             for k in child:
                 c = c + 1
-                print(rl*ws, f" - {k} - {tree_dict[k].index}.{tree_dict[k].name}")
                 if tree_dict[k].index != "":
                     i = int(tree_dict[k].index)
                 else:
                     i = c
-                nextl = ordere_tree_level(child[k], rl + 1)
+                nextl = order_tree_level(child[k])
                 level.update({i: {'name': k, 'children': nextl}})
         else:
             c = c + 1
-            print(rl*ws, f" child -- {child}- {tree_dict[child].index}.{tree_dict[child].name}")
             if tree_dict[child].index != "":
                 i = int(tree_dict[child].index)
             else:
                 i = c
             level[i] = child
-    return level
+    olevel = dict(sorted(level.items()))
+    return olevel
 
 
 def generate_document(subsystem, connection_str, output_format):

@@ -74,7 +74,7 @@
 {% endfor %}
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Short Name: {{ mdt_dict[prd].shortname }} - Acronym: {{ mdt_dict[prd].id }} ) }
+{\footnotesize ( {{ mdt_dict[prd].shortname }} - {{ mdt_dict[prd].id }} ) }
 }\\ \hline
 \end{longtable}
 
@@ -155,7 +155,7 @@
 \\ \hline \\ \hline
           {% endif %}
 {# \multicolumn{4}{c}{\textbf{Products Dependencies} } \\ \hline #}
-\textbf{\footnotesize Depends on:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
           {% if (mdt_dict[prd].depends is defined) and mdt_dict[prd].depends %}
 \begin{tabular}{c}
@@ -189,42 +189,72 @@
 {% for k0 in mdp %}
 {{ do_folder(k0) }}
 
- {% for child in mdp[k0]['children'] %}
-  {% for k1 in child %}
+ {% for id in mdp[k0] %}
+  {% set k1 = mdp[k0][id].name %}
+  {% set k1childs = mdp[k0][id].children %}
 \newpage
 \subsection{{ curlies(mdt_dict[k1].name) }}{{ label(mdt_dict[k1].id.lower()) }}
 {{ do_folder(k1) }}
 
-   {% for sc in child[k1]['children'] %}
-    {% if sc is string %}
-{{ do_product_table(sc, mdt_dict[k1].shortname) }}
-
-    {% else %}
-     {% for k2 in sc %}
+  {% for ch1 in k1childs %}
+   {% if k1childs[ch1].name is defined %}
+     {% set k2 = k1childs[ch1].name %}
+     {% set k2childs = k1childs[ch1].children %}
 \newpage
 \subsubsection{{ curlies(mdt_dict[k2].name) }}{{ label(mdt_dict[k2].id.lower()) }}
 {{ do_folder(k2) }}
 
-      {% for sch1 in sc[k2]['children'] %}
-       {% if sch1 is string %}
-{{ do_product_table(sch1, mdt_dict[k2].shortname) }}
-
-       {% else %}
-        {% for k3 in sch1 %}
+     {% for ch2 in k2childs %}
+       {% if k2childs[ch2].name is defined %}
+         {% set k3 = k2childs[ch2].name %}
+         {% set k3childs = k2childs[ch2].children %}
 \newpage
 \paragraph{{ curlies(mdt_dict[k3].name) }}{{ label(mdt_dict[k3].id.lower()) }}\mbox{}\\
 {{ do_folder(k3) }}
 
-         {% for sch2 in sch1[k3]['children'] %}
-{{ do_product_table(sch2, mdt_dict[k3].shortname) }}
+         {% for ch3 in k3childs %}
+           {% if k3childs[ch3].name is defined %}
+             {% set k4 = k3childs[ch3].name %}
+             {% set k4childs = k3childs[ch3].children %}
+\newpage
+\subparagraph{{ curlies(mdt_dict[k4].name) }}{{ label(mdt_dict[k4].id.lower()) }}\mbox{}\\
+{{ do_folder(k4) }}
 
-         {% endfor %}
-        {% endfor %}
-       {% endif %}
-      {% endfor %}
-     {% endfor %}
-    {% endif %}
-   {% endfor %}
-  {% endfor %}
- {% endfor %}
-{% endfor %}
+             {% for ch4 in k4childs %}
+               {% if k4childs[ch4].name is defined %}
+                 {% set k5 = k4childs[ch4].name %}
+                 {% set k5childs = k4childs[ch4].children %}
+{\scriptsize
+Input data mistmatch {{ k5 }}: too deep.
+{{ k5childs }}
+}
+
+               {% else %}   {# k4childs #}
+                 {% set pname = k4childs[ch4] %}
+{{ do_product_table(pname, mdt_dict[pname].shortname) }}
+
+               {% endif %}  {# k4childs #}
+             {% endfor %}  {# ch4 #}
+
+           {% else %}  {# k3childs #}
+             {% set pname = k3childs[ch3] %}
+{{ do_product_table(pname, mdt_dict[pname].shortname) }}
+
+           {% endif %}  {# k3childs #}
+         {% endfor %}  {# ch3 #}
+
+       {% else %}   {# k2childs #}
+         {% set pname = k2childs[ch2] %}
+{{ do_product_table(pname, mdt_dict[pname].shortname) }}
+
+       {% endif %}  {# k2childs #}
+     {% endfor %}  {# ch2 #}
+
+   {% else %}    {# k1childs #}
+     {% set pname = k1childs[ch1] %}
+{{ do_product_table(pname, mdt_dict[pname].shortname) }}
+
+   {% endif %}   {# k1childs #}
+  {% endfor %}  {# ch1 #}
+ {% endfor %}  {# id #}
+{% endfor %}  {# k0 #}
