@@ -31,11 +31,10 @@ Leanne Guy
 }\\ \hline
 \end{longtable}
 
-  This is the top level Data Management product. It includes underneath
-all products required in order to satisfy the DM requirements at all
-levels (LSE-61, interface and low level flow down
-requirements).\\[2\baselineskip]These products are organized in the
-following groups:
+  The products listed in the following subsections are required in order
+to satisfy the DM requirements at all levels (LSE-61, interfaces and low
+level flow down requirements).\\[2\baselineskip]These products are
+organized in the following groups:
 
 \begin{itemize}
 \tightlist
@@ -96,16 +95,17 @@ Leanne Guy
 \end{itemize}
 
 All services should be characterize by the implementing products and by
-a configuration file (docker) maintained in GitHub.
+a configuration file (docker or similar) maintained in GitHub
+repository.
 
 The configuration file should follow the same development and releases
 processes defined for the DM software products.
 
 ~
 
-All services shall also specify which software product, DM or third
-party, is implementing it. This information is displaced in the
-\textbf{Product Dependencies} table, \emph{Depends On} column.
+All services shall also specify which software products, DM, third party
+or COTS, are implementing it. This information is displaced in the
+\textbf{Product Dependencies} table, \emph{Uses} column.
 
 
 \newpage
@@ -345,7 +345,32 @@ telescope spectrograph.
 }\\ \hline
 \end{longtable}
 
+(from LDM-148)
 
+This service receives crosstalk-corrected images and metadata from the
+Prompt Processing Ingest service at the Base and executes the Alert
+Production science payload on them, generating ``online'' data products
+that are stored in the Data Backbone. The Alert Production payload then
+sends alerts to the Alert Distribution service.
+
+~
+
+The Prompt Processing service has calibration (including Collimated Beam
+Projector images), science, and deep drilling modes. In calibration
+mode, it executes a Raw Calibration Validation payload that provides
+rapid feedback of raw calibration image quality. In normal science mode,
+two consecutive exposures are grouped and processed as a single visit.
+Definitions of exposure groupings to be processed as visits in deep
+drilling and other modes are TBD. The service is required to deliver
+Alerts within 60 seconds of the final camera readout of a standard
+science visit with 98\% availability.
+
+~
+
+There is no Prompt Processing service instance for the Auxiliary
+Telescope Spectrograph.
+
+~
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1232,10 +1257,14 @@ available in the Notebook Aspect.
 }\\ \hline
 \end{longtable}
 
-
+TAP Compliant Interface web-service.\\[2\baselineskip]See \citeds{DMTN-090}for
+details (dmtn-090.lsst.io).
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{l}{\href{https://github.com/lsst-sqre/lsst-tap-service}{lsst-sqre/lsst-tap-service} }
+\\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -1280,7 +1309,12 @@ available in the Notebook Aspect.
 }\\ \hline
 \end{longtable}
 
+Service that allows server-side image processing, as per IVOA's SODA
+standard.
 
+~
+
+See \citeds{DMTN-090}for details (dmtn-090.lsst.io).
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1328,7 +1362,11 @@ available in the Notebook Aspect.
 }\\ \hline
 \end{longtable}
 
+Service implementing SIA access to LSST images.
 
+~
+
+See \citeds{DMTN-090}for details (dmtn-090.lsst.io).
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1395,7 +1433,7 @@ This service permits the use of filesystem over http.
     
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ LSP Web API } }\label{lspwebsrv}
+\multicolumn{2}{l}{\large \textbf{ LSP Web API (obsolete product) } }\label{lspwebsrv}
 & \multicolumn{2}{l}{(product in: LSP Services
 )}
 \\ \hline
@@ -1423,7 +1461,8 @@ DAX \\
 \end{longtable}
 
 {[}OBSOLETE{]} replaced by theLSP WebAPI package and corresponding
-serves in it.
+services in it. Before removing this obsolete product, requirements
+traced to it need to be relocated to the corresponding WebAPI service.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1431,11 +1470,6 @@ serves in it.
 \multicolumn{2}{c}{
 } &
 \multicolumn{2}{c}{
-\begin{tabular}{c}
-\hyperref[encdacu]{DAC US Enclave} \\ \hline
-\hyperref[encdacc]{DAC Chile Enclave} \\ \hline
-\hyperref[enccomm]{Commissioning Cluster Enclave} \\ \hline
-\end{tabular}
 } \\ \bottomrule
 \end{longtable}
 
@@ -1445,7 +1479,7 @@ serves in it.
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 \parbox{3.5cm}{
-
+Wil O'Mullane
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
@@ -3919,7 +3953,6 @@ Base facility.
 \begin{tabular}{c}
 \hyperref[lspprtlsrv]{LSP Portal} \\ \hline
 \hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
-\hyperref[lspwebsrv]{LSP Web API} \\ \hline
 \hyperref[wdav]{WebDAV} \\ \hline
 \hyperref[siasrv]{SIA} \\ \hline
 \hyperref[soda]{SODA} \\ \hline
@@ -3972,7 +4005,6 @@ located at the Base facility.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
-\hyperref[lspwebsrv]{LSP Web API} \\ \hline
 \hyperref[lspprtlsrv]{LSP Portal} \\ \hline
 \hyperref[wdav]{WebDAV} \\ \hline
 \hyperref[siasrv]{SIA} \\ \hline
@@ -4026,7 +4058,6 @@ the NCSA facility.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperref[lspjlsrv]{LSP JupyterLab} \\ \hline
-\hyperref[lspwebsrv]{LSP Web API} \\ \hline
 \hyperref[lspprtlsrv]{LSP Portal} \\ \hline
 \hyperref[wdav]{WebDAV} \\ \hline
 \hyperref[siasrv]{SIA} \\ \hline

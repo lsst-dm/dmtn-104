@@ -3,6 +3,9 @@ tex=$(filter-out $(wildcard *acronyms.tex) , $(wildcard *.tex))
 
 DOC= DMTN-104
 SRC= $(DOC).tex
+MKPDF=latexmk -pdf
+TREES_DIR=trees
+TEX_FILES = $(shell cd $(TREES_DIR); ls *.tex)
 
 #export TEXMFHOME = lsst-texmf/texmf
 
@@ -17,7 +20,7 @@ endif
 OBJ=$(SRC:.tex=.pdf)
 
 #Default when you type make
-all: $(OBJ)
+all: trees $(OBJ)
 
 $(OBJ): $(tex) meta.tex acronyms.tex
 	latexmk -bibtex -xelatex -f $(SRC)
@@ -41,4 +44,8 @@ meta.tex: Makefile .FORCE
 	/bin/echo '\newcommand{\lsstDocNum}{$(DOCNUMBER)}' >>$@
 	/bin/echo '\newcommand{\vcsrevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
 	/bin/echo '\newcommand{\vcsdate}{$(GITDATE)}' >>$@
+
+
+trees: *.tex
+	for f in $(TEX_FILES); do cd $(TREES_DIR); $(MKPDF) "$$f" ; done
 

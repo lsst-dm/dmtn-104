@@ -21,7 +21,7 @@ DBBTRSRV, DBB Transport
 , DBBSRV, 1.02C.07.07, LDF, Margaret Johnson, Michelle Butler, , DBB Transport
  
 ITSRV, IT Service
-, DMSRV, , , , , , IT Service
+, DMSRV, , , Wil O'Mullane, , , IT Service
  
 EFDB, EFD Cache
 , ITSRV, , , , , , EFD Cache
@@ -51,7 +51,7 @@ SODA, SODA
 , LSPWAPI, , , , , , SODA
  
 TAPSEV, TAP
-, LSPWAPI, , , , , , TAP
+, LSPWAPI, , , , , lsst-sqre/lsst-tap-service, TAP
  
 WDAV, WebDAV
 , LSPWAPI, , , , , davt, WebDAV
