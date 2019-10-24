@@ -29,6 +29,7 @@ from jinja2 import Environment, PackageLoader, TemplateNotFound, ChoiceLoader, F
 from .util import get_pkg_properties, rsget, fix_tex, fix_id_tex, Product, html_to_latex, get_yaml
 from .tree import make_tree_portrait, make_tree_landmix1
 from treelib import Tree
+from .gittree import do_github_section
 
 
 def _as_output_format(text, output_format):
@@ -361,6 +362,7 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file):
     file = open(tex_file_name, "w")
     print(_as_output_format(text, output_format), file=file)
     file.close()
+    return tree_dict
 
 
 def order_tree_level(udict):
@@ -396,6 +398,7 @@ def order_tree_level(udict):
 
 def generate_document(subsystem, connection_str, output_format):
     """Given system and level, generates the document content"""
+    md_trees = []
 
     subsystem_info = get_yaml()
 
@@ -403,13 +406,14 @@ def generate_document(subsystem, connection_str, output_format):
     print("-> Generating Main Product Tree  ==========================")
     level_id = subsystem_info['subsystem']['subtrees'][0]['id']
     filename = subsystem_info['subsystem']['subtrees'][0]['filename']
-    do_md_section(subsystem_id, level_id, connection_str, output_format, filename)
+    md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename))
 
     print("-> Generating Development Product Tree  ==========================")
     level_id = subsystem_info['subsystem']['subtrees'][1]['id']
     filename = subsystem_info['subsystem']['subtrees'][1]['filename']
-    do_md_section(subsystem_id, level_id, connection_str, output_format, filename)
+    md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename))
 
     print("-> [to do] Generating GitHub Product Tree  ==========================")
+    do_github_section(md_trees)
 
     print("-> [to do] Generating Auxiliary Product Tree  ==========================")
