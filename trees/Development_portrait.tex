@@ -53,19 +53,16 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (JRA) [pbox,below=4pt of JNKNS] {\textbf{Jira
 } };
  \draw[pline] (COTSDM.east) -| ++(0.4,0) |- (JRA.west); 
-\node (PTHN) [pbox,below=4pt of JRA] {\textbf{Python
-} };
- \draw[pline] (COTSDM.east) -| ++(0.4,0) |- (PTHN.west); 
-\node (TRVS) [pbox,below=4pt of PTHN] {\textbf{Travis
+\node (TRVS) [pbox,below=4pt of JRA] {\textbf{Travis
 } };
  \draw[pline] (COTSDM.east) -| ++(0.4,0) |- (TRVS.west); 
-\node (DENV) [pbox,below=250pt of COTSDM] {\textbf{DM DevM Envs
+\node (DENV) [pbox,below=209pt of COTSDM] {\textbf{DM DevM Envs
 } };
  \draw[pline] (DMDC3E.east) -| ++(0.4,0) |- (DENV.west); 
 \node (SPLCE) [pbox,right=15mm of DENV] {\textbf{SPL Conda Env
 } };
  \draw[pline] (DENV.east) -| ++(0.4,0) |- (SPLCE.west); 
-\node (DMDSRV) [pbox,below=291pt of DMDC3E] {\textbf{Support Services
+\node (DMDSRV) [pbox,below=250pt of DMDC3E] {\textbf{Support Services
 } };
  \draw[pline] (DMDEV.east) -| ++(0.4,0) |- (DMDSRV.west); 
 \node (BCI) [pbox,right=15mm of DMDSRV] {\textbf{Build and CI
@@ -101,27 +98,30 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (CDKT) [pbox,right=15mm of DMDSS] {\textbf{Codekit
 } };
  \draw[pline] (DMDSS.east) -| ++(0.4,0) |- (CDKT.west); 
-\node (LBLD) [pbox,below=4pt of CDKT] {\textbf{lsst\_build
+\node (JSCR) [pbox,below=4pt of CDKT] {\textbf{JenkinsScripting
+} };
+ \draw[pline] (DMDSS.east) -| ++(0.4,0) |- (JSCR.west); 
+\node (LBLD) [pbox,below=4pt of JSCR] {\textbf{lsst\_build
 } };
  \draw[pline] (DMDSS.east) -| ++(0.4,0) |- (LBLD.west); 
 \node (LSSTSW) [pbox,below=4pt of LBLD] {\textbf{lsstsw
 } };
  \draw[pline] (DMDSS.east) -| ++(0.4,0) |- (LSSTSW.west); 
-\node (DSPLSW) [pbox,below=86pt of DMDSS] {\textbf{Dev Science Pipelines
+\node (DSPLSW) [pbox,below=127pt of DMDSS] {\textbf{Dev Science Pipelines
 } };
  \draw[pline] (DMDSW.east) -| ++(0.4,0) |- (DSPLSW.west); 
 \node (SPLWF) [pbox,right=15mm of DSPLSW] {\textbf{SPL Workflow
 } };
  \draw[pline] (DSPLSW.east) -| ++(0.4,0) |- (SPLWF.west); 
-\node (DMDTD) [pbox,below=127pt of DMDSW] {\textbf{DMDev Test Data
+\node (DMDTDP) [pbox,below=168pt of DMDSW] {\textbf{Test Data
 } };
- \draw[pline] (DMDEV.east) -| ++(0.4,0) |- (DMDTD.west); 
-\node (HSCRC1) [pbox,right=15mm of DMDTD] {\textbf{HSC-RC1
+ \draw[pline] (DMDEV.east) -| ++(0.4,0) |- (DMDTDP.west); 
+\node (HSCRC1) [pbox,right=15mm of DMDTDP] {\textbf{HSC-RC1
 } };
- \draw[pline] (DMDTD.east) -| ++(0.4,0) |- (HSCRC1.west); 
+ \draw[pline] (DMDTDP.east) -| ++(0.4,0) |- (HSCRC1.west); 
 \node (SPLTD) [pbox,below=4pt of HSCRC1] {\textbf{SPL Test Data
 } };
- \draw[pline] (DMDTD.east) -| ++(0.4,0) |- (SPLTD.west); 
+ \draw[pline] (DMDTDP.east) -| ++(0.4,0) |- (SPLTD.west); 
 
 \end{tikzpicture}
 \end{document}

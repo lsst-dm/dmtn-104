@@ -27,10 +27,6 @@ Each product is characterize by:
 \item \textbf{Description}: it provides a short over view of the product purpose.
 \end{itemize}
 
-Each product is included in the product tree following a type categorization (see nect \ref{sec:ptree}).
-
-It should also be possible to specify for each product, which are the other products that are implementing it, and in which other products it is used for their implementation.
-
 
 \subsubsection{Software Product} \label{sec:swproduct}
 
@@ -39,7 +35,7 @@ Please refer to \citeds{DMTN-106} section \$2 for the Software Product definitio
 
 \subsubsection{Product Tree} \label{sec:ptree}
 
-The product tree is the rappresentation of the DM products, categorized per type and grouped per similar application.
+The product tree is the graphical rappresentation of the DM products.
 
 
 \subsubsection{Dependencies} \label{sec:dependencies}
@@ -95,11 +91,12 @@ In order to be complete, following rules need to be fulfilled:
 \begin{itemize}
 \item All products shall have an owner
 \item All packages (subsection, paragraphs) shall have a manager
-\item Each manager and each owner shall ensure that:
+\item Each manager and each owner needs ensure that:
 \begin{itemize}
 \item She/he is the right person of taking care of that package/product
-\item The information provided for each package/product is sufficient to fully characterize it, and consistent following the rules listed above.
+\item The information provided for each package/product is sufficient to characterize it.
 \end{itemize}
+\item Architecture Team shall ensure the consistency of the document following the rules listed above.
 \end{itemize}
 
 

@@ -248,6 +248,9 @@ K8S, Kubernetes
 ORACLE, Oracle
 , COTS, , , , , , Oracle
  
+PTH, Python
+, COTS, , , , , , Python
+ 
 PUPPET, Puppet
 , COTS, , , , , , Puppet
  
@@ -291,13 +294,10 @@ BOOST, Boost
 , THPL, , , , , , Boost
  
 FFAA, Firefly API A.
-, THPL, , SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, Caltech-IPAC/firefly-api-access, Firefly API A.
+, THPL, , SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, , Firefly API A.
  
 FIREFLY, Firefly
-, THPL, 1.02C.05.06, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, Caltech-IPAC/firefly, Firefly
- 
-PTH, Python
-, THPL, , , , , , Python
+, THPL, 1.02C.05.06, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, , Firefly
  
 INFRA, Infrastructure
 , DM, , , , Multiple, , Infrastructure

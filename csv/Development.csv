@@ -23,9 +23,6 @@ JNKNS, Jenkins
 JRA, Jira
 , COTSDM, , , , , , Jira
  
-PTHN, Python
-, COTSDM, , , , , , Python
- 
 TRVS, Travis
 , COTSDM, , , , , , Travis
  
@@ -71,6 +68,9 @@ DMDSS, DMDev Supp SW
 CDKT, Codekit
 , DMDSS, , , , , sqr_codekit, Codekit
  
+JSCR, JenkinsScripting
+, DMDSS, , , , , lsst-dm/jenkins-dm-jobs, JenkinsScripting
+ 
 LBLD, lsst\_build
 , DMDSS, , , , , lsst_build, lsst\_build
  
@@ -83,13 +83,13 @@ DSPLSW, Dev Science Pipelines
 SPLWF, SPL Workflow
 , DSPLSW, , , , , spl_workflow, SPL Workflow
  
-DMDTD, DMDev Test Data
-, DMDEV, , , , , , DMDev Test Data
+DMDTDP, Test Data
+, DMDEV, , , , , , Test Data
  
 HSCRC1, HSC-RC1
-, DMDTD, , , , , , HSC-RC1
+, DMDTDP, , , , , , HSC-RC1
  
 SPLTD, SPL Test Data
-, DMDTD, , , , , spl_testdata, SPL Test Data
+, DMDTDP, , , , , spl_testdata, SPL Test Data
  
 
