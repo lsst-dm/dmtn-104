@@ -120,7 +120,7 @@ DBBLIFE, DBB Lifetime SW
 , DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , DBB Lifetime SW
  
 DBBMD, DBB Meta SW
-, DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, dbb_gwclient dbb_gateway, DBB Meta SW
+, DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, lsst-dm/dbb_gwclient lsst-dm/dbb_gateway, DBB Meta SW
  
 DBBTR, DBB Transport SW
 , DBB, 1.02C.07.08, LDF, Margaret Johnson, Michelle Butler, , DBB Transport SW
@@ -150,7 +150,7 @@ PR, Prompt SW
 , DMSW, , , , Multiple, , Prompt SW
  
 ALRTDSTR, Alert Distrib SW
-, PR, 1.02C.03.03, AP, John Swinbank, Eric Bellm, alert_stream, Alert Distrib SW
+, PR, 1.02C.03.03, AP, John Swinbank, Eric Bellm, lsst-dm/alert_stream, Alert Distrib SW
  
 EFDT, EFD Transform
 , PR, 1.02C.07.08, LDF, Margaret Johnson, Simon Krughoff, , EFD Transform
@@ -357,7 +357,7 @@ REFD, Ref Data
 , DM, , , , , , Ref Data
  
 AND, Astronomy.net Data
-, REFD, , , , , astronomy_net_data, Astronomy.net Data
+, REFD, , , , , astrometry_net_data, Astronomy.net Data
  
 GDATA, Gaia Data
 , REFD, , , , , , Gaia Data

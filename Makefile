@@ -5,7 +5,9 @@ DOC= DMTN-104
 SRC= $(DOC).tex
 MKPDF=latexmk -pdf
 TREES_DIR=trees
-TEX_FILES = $(shell cd $(TREES_DIR); ls *.tex)
+SUBTREES_DIR=subtrees
+TREE_FILES = $(shell cd $(TREES_DIR); ls *.tex)
+SUBTREE_FILES = $(shell cd $(SUBTREES_DIR); ls *.tex)
 
 #export TEXMFHOME = lsst-texmf/texmf
 
@@ -20,7 +22,7 @@ endif
 OBJ=$(SRC:.tex=.pdf)
 
 #Default when you type make
-all: trees $(OBJ)
+all: subtrees trees $(OBJ)
 
 $(OBJ): $(tex) meta.tex acronyms.tex
 	latexmk -bibtex -xelatex -f $(SRC)
@@ -35,7 +37,6 @@ clean :
 	latexmk -c
 	rm *.pdf *.nav *.bbl *.xdv *.snm
 
-
 meta.tex: Makefile .FORCE
 	rm -f $@
 	touch $@
@@ -45,7 +46,9 @@ meta.tex: Makefile .FORCE
 	/bin/echo '\newcommand{\vcsrevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
 	/bin/echo '\newcommand{\vcsdate}{$(GITDATE)}' >>$@
 
-
 trees: *.tex
-	for f in $(TEX_FILES); do cd $(TREES_DIR); $(MKPDF) "$$f" ; done
+	for f in $(TREE_FILES); do cd $(TREES_DIR); $(MKPDF) "$$f" ; done
+
+subtrees: *.tex
+	for f in $(SUBTREE_FILES); do cd $(SUBTREES_DIR); $(MKPDF) "$$f" ; done
 
