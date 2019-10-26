@@ -22,23 +22,31 @@
 Code for generation Product Tree document from GitHub
 """
 
-from treelib import Tree
+import requests
+import pandoc
+import github
+import os
 
-def do_github_section(md_trees):
+
+def do_github_section(md_trees, token_path):
     """
 
     :param md_trees: list of MagicDraw tree dictionaries
     :return:
     """
+    full_token_path = os.path.expanduser(token_path)
+    with open(full_token_path, 'r') as fdo:
+        token = fdo.readline().strip()
+    g = github.Github(token)
     for tree in md_trees:
         for product in tree:
             # print(tree[product].name, tree[product].pkgs, len(tree[product].pkgs))
             if tree[product].pkgs:
                 for pkg in tree[product].pkgs:
-                    get_gitpkg_content(pkg)
+                    get_gitpkg_content(pkg, g)
 
 
-def get_gitpkg_content(pkg):
+def get_gitpkg_content(pkg, g):
     """
 
     :return:
@@ -48,7 +56,32 @@ def get_gitpkg_content(pkg):
     spkg = pkg.split("/")
     # print(" - ", spkg)
     if len(spkg) == 2:
+        org = spkg[0]
+        repo = spkg[1]
         blnk = f"https://github.com/{pkg}"
     else:
+        org = 'lsst'
+        repo = pkg
         blnk = f"https://github.com/lsst/{pkg}"
-    print(blnk)
+    print("  --  ", blnk)
+    try:
+        gg = g.get_organization(org)
+        try:
+            re = gg.get_repo(repo)
+            rc = re.get_contents("")
+            for f in rc:
+                print(f)
+        except:
+            print(f"Error accessing repository {repo} in organization {org}.")
+    except:
+        print(f"Error accessing organization {org}")
+    # return
+    #
+    # response = requests.get(blnk, headers='')
+    # r_code = response.status_code
+    # print(r_code)
+    # if r_code == 200:
+    #    doc = pandoc.Document()
+    #    doc.html = response.text.encode('utf-8')
+    #    doctxt = doc.plain.decode('utf-8')
+    #    print(doctxt)

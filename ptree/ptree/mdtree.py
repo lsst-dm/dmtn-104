@@ -27,7 +27,7 @@ import sys
 from .config import Config
 from jinja2 import Environment, PackageLoader, TemplateNotFound, ChoiceLoader, FileSystemLoader
 from .util import get_pkg_properties, rsget, fix_tex, fix_id_tex, Product, html_to_latex, get_yaml
-from .tree import make_tree_portrait, make_tree_landmix1
+from .tree import make_tree_portrait, make_tree_landmix1, make_subtrees
 from treelib import Tree
 from .gittree import do_github_section
 
@@ -298,6 +298,7 @@ def do_trees_diagrams(tree, filename, scope):
     make_tree_landmix1(tree, "trees/" + filename + "_mixedLand.tex", scope)
 
     # build subtrees
+    make_subtrees(tree, filename, scope)
 
 
 def do_md_section(sysid, levelid, connection_str, output_format, output_file):
@@ -396,7 +397,7 @@ def order_tree_level(udict):
     return olevel
 
 
-def generate_document(subsystem, connection_str, output_format):
+def generate_document(subsystem, connection_str, output_format, token_path):
     """Given system and level, generates the document content"""
     md_trees = []
 
@@ -414,6 +415,6 @@ def generate_document(subsystem, connection_str, output_format):
     md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename))
 
     print("-> [to do] Generating GitHub Product Tree  ==========================")
-    do_github_section(md_trees)
+    do_github_section(md_trees, token_path)
 
-    print("-> [to do] Generating Auxiliary Product Tree  ==========================")
+    # print("-> [to do] Generating Auxiliary Product Tree  ==========================")

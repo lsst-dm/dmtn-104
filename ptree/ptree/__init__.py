@@ -43,14 +43,15 @@ def cli(namespace):
 @click.option('--password', prompt="MagicDraw Password", hide_input=True,
               envvar="MD_PASSWORD", help="MagicDraw Password")
 @click.option('--subsystem', default='DM', help="LSST SubSystem (default DM)")
-def generate(format, username, password, subsystem):
+@click.option('--tokenpath', default='~/.sq_github_token', help="Path to the Github generated token")
+def generate(format, username, password, subsystem, tokenpath):
     """Generate product tree document
     """
 
     usr_pwd = username + ":" + password
     connection_str = b64encode(usr_pwd.encode("ascii")).decode("ascii")
 
-    generate_document(subsystem, connection_str, format)
+    generate_document(subsystem, connection_str, format, tokenpath)
 
 
 if __name__ == '__main__':

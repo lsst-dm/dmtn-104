@@ -8,6 +8,7 @@ requires = [
     'click',
     'BeautifulSoup4',
     'marshmallow<3',
+    'pygithub',
     'setuptools_scm'
 ]
 

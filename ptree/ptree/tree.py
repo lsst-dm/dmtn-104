@@ -20,6 +20,7 @@
 """
 Code for generation Product Tree diagrams
 """
+import os
 from .util import Product
 from treelib import Tree
 
@@ -70,6 +71,7 @@ def print_header(target, pwidth, pheight, ofile):
     :param ofile: output file resource to write
     :return: none
     """
+    target = target.strip('\n')
     print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n"
           "%\n"
           f"% Document:     {target}  product tree\n"
@@ -277,9 +279,22 @@ def make_tree_landmix1(ptree, filename, scope):
     ofile.close()
 
 
-def make_subtrees(ptree):
+def make_subtrees(ptree, filename, scope):
     """
     subtrees in landscape mixed mode
     :param ptree:
     :return: none
     """
+    subfolder = "subtrees/"
+    if not os.path.exists(subfolder):
+        os.makedirs(subfolder)
+    first_level = tree_slice(ptree, 1)
+    nodes = first_level.expand_tree()
+    c = 0
+    for n in nodes:
+        c = c + 1
+        if c != 1:
+            p = ptree[n].data
+            sub_tree = ptree.subtree(p.id)
+            sub_file_name = subfolder + filename + "_" + p.id + ".tex"
+            make_tree_landmix1(sub_tree, sub_file_name, scope)
