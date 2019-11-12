@@ -33,7 +33,7 @@ NETMGMT, Net Mgmt
 , ITSRV, 1.02C.08.03, Net/Base, Jeff Kantor, Jeff Kantor, , Net Mgmt
  
 LSPSRV, LSP Services
-, DMSRV, , , , Gregory Dubois-Felsmann, , LSP Services
+, DMSRV, , , Frossie Economou, Gregory Dubois-Felsmann, , LSP Services
  
 LSPJLSRV, LSP JupyterLab
 , LSPSRV, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, , LSP JupyterLab
