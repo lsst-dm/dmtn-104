@@ -293,21 +293,12 @@ right=11.9cm of DMSW] {\textbf{Resources
 \node (HWCOMP) [pbox,below=455pt of COTS] {\textbf{Compute Nodes
 } };
  \draw[pline] (HWCOTS.east) -| ++(0.4,0) |- (HWCOMP.west); 
-\node (DELL8) [pbox,right=15mm of HWCOMP] {\textbf{Blade (e.g.)
-} };
- \draw[pline] (HWCOMP.east) -| ++(0.4,0) |- (DELL8.west); 
 \node (HWNET) [pbox,below=4pt of HWCOMP] {\textbf{Network Nodes
 } };
  \draw[pline] (HWCOTS.east) -| ++(0.4,0) |- (HWNET.west); 
-\node (NETX) [pbox,right=15mm of HWNET] {\textbf{Router (e.g.)
-} };
- \draw[pline] (HWNET.east) -| ++(0.4,0) |- (NETX.west); 
 \node (HWSTOR) [pbox,below=4pt of HWNET] {\textbf{Storage Nodes
 } };
  \draw[pline] (HWCOTS.east) -| ++(0.4,0) |- (HWSTOR.west); 
-\node (SAN2) [pbox,right=15mm of HWSTOR] {\textbf{Disk (e.g.)
-} };
- \draw[pline] (HWSTOR.east) -| ++(0.4,0) |- (SAN2.west); 
 \node (LLSW) [pbox,below=4pt of HWSTOR] {\textbf{Low Level SW
 } };
  \draw[pline] (HWCOTS.east) -| ++(0.4,0) |- (LLSW.west); 

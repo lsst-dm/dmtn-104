@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=67.60000000000001cm,paperheight=20.78cm,
+\usepackage[paperwidth=52.0cm,paperheight=20.78cm,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -71,23 +71,14 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (HWCOMP) [pbox, 
 right=6.7cm of COTS] {\textbf{Compute Nodes
 } };
-\node (DELL8) [pbox,right=15mm of HWCOMP] {\textbf{Blade (e.g.)
-} };
- \draw[pline] (HWCOMP.east) -| ++(0.4,0) |- (DELL8.west); 
 \node (HWNET) [pbox, 
-right=6.7cm of HWCOMP] {\textbf{Network Nodes
+right=1.5cm of HWCOMP] {\textbf{Network Nodes
 } };
-\node (NETX) [pbox,right=15mm of HWNET] {\textbf{Router (e.g.)
-} };
- \draw[pline] (HWNET.east) -| ++(0.4,0) |- (NETX.west); 
 \node (HWSTOR) [pbox, 
-right=6.7cm of HWNET] {\textbf{Storage Nodes
+right=1.5cm of HWNET] {\textbf{Storage Nodes
 } };
-\node (SAN2) [pbox,right=15mm of HWSTOR] {\textbf{Disk (e.g.)
-} };
- \draw[pline] (HWSTOR.east) -| ++(0.4,0) |- (SAN2.west); 
 \node (LLSW) [pbox, 
-right=6.7cm of HWSTOR] {\textbf{Low Level SW
+right=1.5cm of HWSTOR] {\textbf{Low Level SW
 } };
 \node (CENTOS) [pbox,right=15mm of LLSW] {\textbf{OS (e.g.)
 } };
