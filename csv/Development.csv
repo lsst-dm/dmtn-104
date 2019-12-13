@@ -1,95 +1,33 @@
 Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name
-DMDEV, DM Support Prd.
-, , , , , , , DM Support Prd.
- 
-DMDC3E, COTS 3rdPLs ENVs
-, DMDEV, , , , , , COTS 3rdPLs ENVs
- 
-COTSDM, DM DevM COTS
-, DMDC3E, , , , , , DM DevM COTS
- 
-EUPS, EUPS
-, COTSDM, , , , , , EUPS
- 
-GCC, GCC
-, COTSDM, , , , , , GCC
- 
-GITHUB, Github
-, COTSDM, , , , , , Github
- 
-JNKNS, Jenkins
-, COTSDM, , , , , , Jenkins
- 
-JRA, Jira
-, COTSDM, , , , , , Jira
- 
-TRVS, Travis
-, COTSDM, , , , , , Travis
- 
-DENV, DM DevM Envs
-, DMDC3E, , , , , , DM DevM Envs
- 
-SPLCE, SPL Conda Env
-, DENV, , , , , scipipe_conda_env, SPL Conda Env
- 
-DMDSRV, Support Services
-, DMDEV, , , , , , Support Services
- 
-BCI, Build and CI
-, DMDSRV, , , , , , Build and CI
- 
-CAM, Cont. Application Mng
-, DMDSRV, , , , , , Cont. Application Mng
- 
-DDCPUB, DM Doc Publication
-, DMDSRV, , , , , , DM Doc Publication
- 
-DDVSRV, DM Dev Services
-, DMDSRV, , , , , , DM Dev Services
- 
-DEPLOY, SW Deployment
-, DMDSRV, , , , , , SW Deployment
- 
-DMDCOM, Devlop. Comm
-, DMDSRV, , , , , , Devlop. Comm
- 
-PKGDST, Packagin Distrib
-, DMDSRV, , , , , , Packagin Distrib
- 
-SWVER, SW Version Control
-, DMDSRV, , , , , , SW Version Control
- 
-DMDSW, Dm Dev Software
-, DMDEV, , , , , , Dm Dev Software
- 
-DMDSS, DMDev Supp SW
-, DMDSW, , , , , , DMDev Supp SW
- 
-CDKT, Codekit
-, DMDSS, , , , , lsst-sqre/sqre-codekit, Codekit
- 
-JSCR, JenkinsScripting
-, DMDSS, , , , , lsst-dm/jenkins-dm-jobs, JenkinsScripting
- 
-LBLD, lsst\_build
-, DMDSS, , , , , lsst_build, lsst\_build
- 
-LSSTSW, lsstsw
-, DMDSS, , , , , lsstsw, lsstsw
- 
-DSPLSW, Dev Science Pipelines
-, DMDSW, , , , , , Dev Science Pipelines
- 
-SPLWF, SPL Workflow
-, DSPLSW, , , , , spl_workflow, SPL Workflow
- 
-DMDTDP, Test Data
-, DMDEV, , , , , , Test Data
- 
-HSCRC1, HSC-RC1
-, DMDTDP, , , , , , HSC-RC1
- 
-SPLTD, SPL Test Data
-, DMDTDP, , , , , spl_testdata, SPL Test Data
- 
+DMDEV, DM Support Prd., , , , , , , DM Support Prd. 
+DMDC3E, COTS 3rdPLs ENVs, DMDEV, , , , , , COTS 3rdPLs ENVs 
+COTSDM, DM DevM COTS, DMDC3E, , , , , , DM DevM COTS 
+EUPS, EUPS, COTSDM, , , , , , EUPS 
+GCC, GCC, COTSDM, , , , , , GCC 
+GITHUB, Github, COTSDM, , , , , , Github 
+JNKNS, Jenkins, COTSDM, , , , , , Jenkins 
+JRA, Jira, COTSDM, , , , , , Jira 
+TRVS, Travis, COTSDM, , , , , , Travis 
+DENV, DM DevM Envs, DMDC3E, , , , , , DM DevM Envs 
+SPLCE, SPL Conda Env, DENV, , , , , scipipe_conda_env, SPL Conda Env 
+DMDSRV, Support Services, DMDEV, , , , , , Support Services 
+BCI, Build and CI, DMDSRV, , , , , , Build and CI 
+CAM, Cont. Application Mng, DMDSRV, , , , , , Cont. Application Mng 
+DDCPUB, DM Doc Publication, DMDSRV, , , , , , DM Doc Publication 
+DDVSRV, DM Dev Services, DMDSRV, , , , , , DM Dev Services 
+DEPLOY, SW Deployment, DMDSRV, , , , , , SW Deployment 
+DMDCOM, Devlop. Comm, DMDSRV, , , , , , Devlop. Comm 
+PKGDST, Packagin Distrib, DMDSRV, , , , , , Packagin Distrib 
+SWVER, SW Version Control, DMDSRV, , , , , , SW Version Control 
+DMDSW, Dm Dev Software, DMDEV, , , , , , Dm Dev Software 
+DMDSS, DMDev Supp SW, DMDSW, , , , , , DMDev Supp SW 
+CDKT, Codekit, DMDSS, , , , , lsst-sqre/sqre-codekit, Codekit 
+JSCR, JenkinsScripting, DMDSS, , , , , lsst-dm/jenkins-dm-jobs, JenkinsScripting 
+LBLD, lsst\_build, DMDSS, , , , , lsst_build, lsst\_build 
+LSSTSW, lsstsw, DMDSS, , , , , lsstsw, lsstsw 
+DSPLSW, Dev Science Pipelines, DMDSW, , , , , , Dev Science Pipelines 
+SPLWF, SPL Workflow, DSPLSW, , , , , spl_workflow, SPL Workflow 
+DMDTDP, Test Data, DMDEV, , , , , , Test Data 
+HSCRC1, HSC-RC1, DMDTDP, , , , , , HSC-RC1 
+SPLTD, SPL Test Data, DMDTDP, , , , , spl_testdata, SPL Test Data 
 

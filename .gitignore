@@ -3,6 +3,7 @@ DMTN-104.pdf
 acronyms.tex
 meta.tex
 trees/*.pdf
+subtrees/*.pdf
 
 one.*
 ## Core latex/pdflatex auxiliary files:

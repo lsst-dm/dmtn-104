@@ -257,30 +257,6 @@ def get_pkg_properties(rcs, cid, eid):
     return properties
 
 
-# def explore_md_element(rcs, cid, eid, level):
-#    resp = rsget(rcs, Config.MD_COMP_URL.format(res=cid, comp=eid), True)
-#
-#    for el in resp[0]['ldp:contains']:
-#        tmp = rsget(rcs, Config.MD_COMP_URL.format(res=cid, comp=el['@id']), True)
-#        if tmp[1]['@type'] not in ('uml:Package', 'uml:Class', 'uml:Association', 'uml:Abstraction', 'uml:Comment'):
-#            if 'name' in tmp[1]['kerml:esiData'].keys():
-#                name = tmp[1]['kerml:esiData']['name']
-#            else:
-#                name = ' -No Name- '
-#            if 'value' in tmp[1]['kerml:esiData'].keys():
-#                value = tmp[1]['kerml:esiData']['value']
-#            else:
-#                value = ' -No Value-'
-#            print(level, tmp[1]['@type'], name, value, el['@id'])
-#            explore_md_element(rcs, cid, el['@id'], level + ".")
-#            if tmp[1]['@type'] == 'uml:Slot':
-#                if 'definingFeature' in tmp[1]['kerml:esiData'].keys():
-#                    print(level, 'definingFeature', tmp[1]['kerml:esiData']['definingFeature'])
-#                    # resp1 = rsget(rcs, Config.MD_COMP_URL.format(res=cid,
-#                    #               comp=tmp[1]['kerml:esiData']['definingFeature']['@id']), True)
-#                    # explore_md_element(rcs, cid, tmp[1]['kerml:esiData']['definingFeature']['@id'], level+'_')
-#                    # print()
-
 def get_yaml():
     """Get the subsystem.yaml content
     :return:

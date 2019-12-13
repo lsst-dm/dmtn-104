@@ -268,14 +268,14 @@ def do_csv(products, output_file):
     csv = "Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name\n"
     for p in products:
         pkey = p.id
-        snm = p.shortname
+        snm = p.shortname.rstrip()
         pid = p.parent
         wbs = ' '.join(p.wbs)
         team = p.teams[0]
         mng = p.manager
         owner = p.owner[0]
         pkgs = ' '.join(p.pkgs)
-        name = p.shortname
+        name = p.shortname.rstrip()
         csv = csv + f"{pkey}, {snm}, {pid}, {wbs}, {team}, {mng}, {owner}, {pkgs}, {name} \n"
     csv_filename = "csv/" + output_file + ".csv"
     file = open(csv_filename, "w")

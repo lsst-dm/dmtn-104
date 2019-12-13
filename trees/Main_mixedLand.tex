@@ -50,7 +50,10 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (ITSRV) [pbox,below=127pt of DBBSRV] {\textbf{IT Service
 } };
  \draw[pline] (DMSRV.east) -| ++(0.4,0) |- (ITSRV.west); 
-\node (EFDB) [pbox,right=15mm of ITSRV] {\textbf{EFD Cache
+\node (APDB) [pbox,right=15mm of ITSRV] {\textbf{APDB
+} };
+ \draw[pline] (ITSRV.east) -| ++(0.4,0) |- (APDB.west); 
+\node (EFDB) [pbox,below=4pt of APDB] {\textbf{EFD Cache
 } };
  \draw[pline] (ITSRV.east) -| ++(0.4,0) |- (EFDB.west); 
 \node (LSPDB) [pbox,below=4pt of EFDB] {\textbf{LSP Database
@@ -59,7 +62,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (NETMGMT) [pbox,below=4pt of LSPDB] {\textbf{Net Mgmt
 } };
  \draw[pline] (ITSRV.east) -| ++(0.4,0) |- (NETMGMT.west); 
-\node (LSPSRV) [pbox,below=86pt of ITSRV] {\textbf{LSP Services
+\node (LSPSRV) [pbox,below=127pt of ITSRV] {\textbf{LSP Services
 } };
  \draw[pline] (DMSRV.east) -| ++(0.4,0) |- (LSPSRV.west); 
 \node (LSPJLSRV) [pbox,right=15mm of LSPSRV] {\textbf{LSP JupyterLab
