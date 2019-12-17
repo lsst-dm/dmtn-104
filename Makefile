@@ -3,7 +3,6 @@ tex=$(filter-out $(wildcard *acronyms.tex) , $(wildcard *.tex))
 
 DOC= DMTN-104
 SRC= $(DOC).tex
-MKPDF=latexmk -pdf
 TREES_DIR=trees
 SUBTREES_DIR=subtrees
 TREE_FILES = $(shell cd $(TREES_DIR); ls *.tex)
@@ -25,7 +24,11 @@ OBJ=$(SRC:.tex=.pdf)
 all: subtrees trees $(OBJ)
 
 $(OBJ): $(tex) meta.tex acronyms.tex
-	latexmk -bibtex -xelatex -f $(SRC)
+	xelatex -jobname=$(OBJ) $(tex)
+	bibtex $(OBJ)
+	xelatex -jobname=$(OBJ) $(tex)
+	xelatex -jobname=$(OBJ) $(tex)
+	xelatex -jobname=$(OBJ) $(tex)
 
 .FORCE:
 
@@ -47,8 +50,8 @@ meta.tex: Makefile .FORCE
 	/bin/echo '\newcommand{\vcsdate}{$(GITDATE)}' >>$@
 
 trees: *.tex
-	for f in $(TREE_FILES); do cd $(TREES_DIR); $(MKPDF) "$$f" ; done
+	for f in $(TREE_FILES); do cd $(TREES_DIR); xelatex "$$f" ; done
 
 subtrees: *.tex
-	for f in $(SUBTREE_FILES); do cd $(SUBTREES_DIR); $(MKPDF) "$$f" ; done
+	for f in $(SUBTREE_FILES); do cd $(SUBTREES_DIR); xelatex "$$f" ; done
 
