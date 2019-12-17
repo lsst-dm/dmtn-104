@@ -19,10 +19,11 @@ ifneq "$(GITSTATUS)" ""
 endif
 
 OBJ=$(SRC:.tex=.pdf)
-
+TREE_PDF=$(TREE_FILES:.tex=.pdf)
+TREES=$(TREE_FILES:.tex=)
 
 #Default when you type make
-all: subtrees trees $(OBJ)
+all: subtrees $(TREE_PDF) $(OBJ) 
 
 JOBNAME=$(DOC)
 
@@ -52,8 +53,11 @@ meta.tex: Makefile .FORCE
 	/bin/echo '\newcommand{\vcsrevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
 	/bin/echo '\newcommand{\vcsdate}{$(GITDATE)}' >>$@
 
-trees: $(TREES_DIR)/*.tex
-	for f in $(TREE_FILES); do cd $(TREES_DIR); xelatex "$$f" ; done
+$(TREE_PDF): 
+	for f in $(TREES); do \
+	  cd $(TREES_DIR) ; \
+	  xelatex -jobname="$$f".pdf "$$f".tex ; \
+	done
 
 subtrees: $(SUBTREES_DIR)/*.tex
 	for f in $(SUBTREE_FILES); do cd $(SUBTREES_DIR); xelatex "$$f" ; done
