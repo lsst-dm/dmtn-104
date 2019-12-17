@@ -24,11 +24,11 @@ OBJ=$(SRC:.tex=.pdf)
 all: subtrees trees $(OBJ)
 
 $(OBJ): $(tex) meta.tex acronyms.tex
-	xelatex -jobname=$(OBJ) $(tex)
+	xelatex -jobname=$(OBJ) $(SRC)
 	bibtex $(OBJ)
-	xelatex -jobname=$(OBJ) $(tex)
-	xelatex -jobname=$(OBJ) $(tex)
-	xelatex -jobname=$(OBJ) $(tex)
+	xelatex -jobname=$(OBJ) $(SRC)
+	xelatex -jobname=$(OBJ) $(SRC)
+	xelatex -jobname=$(OBJ) $(SRC)
 
 .FORCE:
 
