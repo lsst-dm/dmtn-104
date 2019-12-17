@@ -56,7 +56,7 @@ meta.tex: Makefile .FORCE
 $(TREE_PDF): 
 	for f in $(TREES); do \
 	  cd $(TREES_DIR) ; \
-	  xelatex -jobname="$$f".pdf "$$f".tex ; \
+	  xelatex -jobname="$$f" "$$f".tex ; \
 	done
 
 subtrees: $(SUBTREES_DIR)/*.tex
