@@ -23,6 +23,7 @@ OBJ=$(SRC:.tex=.pdf)
 
 #Default when you type make
 all: subtrees trees $(OBJ)
+
 JOBNAME=$(DOC)
 
 $(JOBNAME).pdf: $(tex) meta.tex acronyms.tex
@@ -51,9 +52,9 @@ meta.tex: Makefile .FORCE
 	/bin/echo '\newcommand{\vcsrevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
 	/bin/echo '\newcommand{\vcsdate}{$(GITDATE)}' >>$@
 
-trees: *.tex
+trees: $(TREES_DIR)/*.tex
 	for f in $(TREE_FILES); do cd $(TREES_DIR); xelatex "$$f" ; done
 
-subtrees: *.tex
+subtrees: $(SUBTREES_DIR)/*.tex
 	for f in $(SUBTREE_FILES); do cd $(SUBTREES_DIR); xelatex "$$f" ; done
 
