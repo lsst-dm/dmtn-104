@@ -20,15 +20,17 @@ endif
 
 OBJ=$(SRC:.tex=.pdf)
 
+
 #Default when you type make
 all: subtrees trees $(OBJ)
+JOBNAME=$(DOC)
 
-$(OBJ): $(tex) meta.tex acronyms.tex
-	xelatex -jobname=$(OBJ) $(SRC)
-	bibtex $(OBJ)
-	xelatex -jobname=$(OBJ) $(SRC)
-	xelatex -jobname=$(OBJ) $(SRC)
-	xelatex -jobname=$(OBJ) $(SRC)
+$(JOBNAME).pdf: $(tex) meta.tex acronyms.tex
+	xelatex -jobname=$(JOBNAME) $(DOC)
+	bibtex $(JOBNAME)
+	xelatex -jobname=$(JOBNAME) $(DOC)
+	xelatex -jobname=$(JOBNAME) $(DOC)
+	xelatex -jobname=$(JOBNAME) $(DOC)
 
 .FORCE:
 
