@@ -28,11 +28,11 @@ SUBTREES=$(SUBTREE_FILES:.tex=)
 all: generate_imgs crop_pdf_imgs $(OBJ)
 
 # in travis I need to generate the images before generating the doc
-generate_imgs: $(TREES_PDF) $(SUBTREES_PDF)
+generate_imgs: do_trees do_subtrees
 
 JOBNAME=$(DOC)
 
-$(JOBNAME).pdf: $(TREES_PDF) $(tex) meta.tex acronyms.tex
+$(JOBNAME).pdf: $(tex) meta.tex acronyms.tex
 	xelatex -jobname=$(JOBNAME) $(DOC)
 	bibtex $(JOBNAME)
 	xelatex -jobname=$(JOBNAME) $(DOC)
@@ -59,14 +59,14 @@ meta.tex: Makefile .FORCE
 	/bin/echo '\newcommand{\vcsrevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
 	/bin/echo '\newcommand{\vcsdate}{$(GITDATE)}' >>$@
 
-$(TREES_PDF):
+do_trees:
 	for f in $(TREES); do \
 	  cd $(TREES_DIR) ; \
 	  xelatex -jobname="$$f" "$$f".tex ; \
 	  cd .. ; \
 	done
 
-$(SUBTREES_PDF):
+do_subtrees:
 	for f in $(SUBTREES); do \
 	  cd $(SUBTREES_DIR) ; \
 	  xelatex -jobname="$$f" "$$f".tex ; \
