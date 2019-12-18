@@ -56,14 +56,15 @@ meta.tex: Makefile .FORCE
 
 $(TREES_PDF):
 	for f in $(TREES); do \
-	  cd $(TREES_DIR) ; \
-	  xelatex -jobname="$$f" "$$f".tex ; \
-	  ../bin/cropPdf.py -f "$$f".pdf > /dev/null ; \
+	  xelatex -jobname="$$f" $(TREES_DIR)/"$$f".tex ; \
+	  echo "Cropping" "$$f".pdf ; \
+	  python ./bin/cropPdf.py -f "$$f".pdf > /dev/null ; \
 	done
 
 $(SUBTREES_PDF):
 	for f in $(SUBTREES); do \
-	  cd $(SUBTREES_DIR) ; \
-	  xelatex -jobname="$$f" "$$f".tex ; \
+	  xelatex -jobname="$$f" $(SUBTREES_DIR)/"$$f".tex ; \
+	  echo "Cropping" "$$f".pdf ; \
+	  python ./bin/cropPdf.py -f "$$f".pdf > /dev/null ; \
 	done
 
