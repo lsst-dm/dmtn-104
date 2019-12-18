@@ -1,1 +1,2 @@
 pdfCropMargins==0.2.6
+ghostscript==0.6
