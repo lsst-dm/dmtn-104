@@ -8,7 +8,7 @@ python:
 before_install:
   - "pip install 'lander>=0.1.0,<0.2'"
 install:
-   - "pip install -r requirements.txt"
+  - "pip install -r requirements.txt"
 script:
   # Compile PDF using containerized lsst-texmf
   - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make'"
