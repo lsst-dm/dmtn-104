@@ -21,7 +21,7 @@ def crop_file(filename):
     bk_file = os.path.splitext(filename)[0] + "_bk.pdf"
     shutil.copyfile(filename, bk_file)
 
-    cmd = f"pdf-crop-margins -v -s -u {filename}"
+    cmd = "pdf-crop-margins -v -s -u " + filename
 
     proc = subprocess.Popen(cmd.split())
     proc.wait()
