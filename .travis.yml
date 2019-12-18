@@ -11,7 +11,9 @@ install:
   - "pip install -r requirements.txt"
 script:
   # Generate imges to include in the document build:
-  - "make generate_imgs"
+  - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make generate_imgs'"
+  # Crop generated images
+  - "make cropt_pdf_imgs"
   # Compile PDF using containerized lsst-texmf
   - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make DMTN-104.pdf'"
   # Deploy website. See https://github.com/lsst-sqre/lander for CLI options
