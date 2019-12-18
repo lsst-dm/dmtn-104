@@ -26,6 +26,9 @@ SUBTREES=$(SUBTREE_FILES:.tex=)
 
 #Default when you type make
 
+# in travis I need to generate the images before generating the doc
+generate_imgs: $(TREES_PDF) $(SUBTREES_PDF)
+
 JOBNAME=$(DOC)
 
 $(JOBNAME).pdf: $(TREES_PDF) $(tex) meta.tex acronyms.tex

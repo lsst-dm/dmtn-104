@@ -10,8 +10,10 @@ before_install:
 install:
   - "pip install -r requirements.txt"
 script:
+  # Generate imges to include in the document build:
+  - "make generate_imgs"
   # Compile PDF using containerized lsst-texmf
-  - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make'"
+  - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make DMTN-104.pdf'"
   # Deploy website. See https://github.com/lsst-sqre/lander for CLI options
   - "lander --pdf DMTN-104.pdf --upload --lsstdoc DMTN-104.tex --env=travis --ltd-product dmtn-104 --extra-downloads trees/Main_mixedLand.pdf trees/Main_mixedLand.pdf trees/Development_portrait.pdf trees/Development_mixedLand.pdf"
 env:
