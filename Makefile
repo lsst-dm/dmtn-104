@@ -19,15 +19,16 @@ ifneq "$(GITSTATUS)" ""
 endif
 
 OBJ=$(SRC:.tex=.pdf)
-TREE_PDF=$(TREE_FILES:.tex=.pdf)
+TREES_PDF=$(TREE_FILES:.tex=.pdf)
 TREES=$(TREE_FILES:.tex=)
+SUBTREES_PDF=$(SUBTREE_FILES:.tex=.pdf)
+SUBTREES=$(SUBTREE_FILES:.tex=)
 
 #Default when you type make
-all: subtrees $(TREE_PDF) $(OBJ) 
 
 JOBNAME=$(DOC)
 
-$(JOBNAME).pdf: $(tex) meta.tex acronyms.tex
+$(JOBNAME).pdf: $(TREES_PDF) $(tex) meta.tex acronyms.tex
 	xelatex -jobname=$(JOBNAME) $(DOC)
 	bibtex $(JOBNAME)
 	xelatex -jobname=$(JOBNAME) $(DOC)
@@ -53,12 +54,16 @@ meta.tex: Makefile .FORCE
 	/bin/echo '\newcommand{\vcsrevision}{$(GITVERSION)$(GITDIRTY)}' >>$@
 	/bin/echo '\newcommand{\vcsdate}{$(GITDATE)}' >>$@
 
-$(TREE_PDF): 
+$(TREES_PDF):
 	for f in $(TREES); do \
 	  cd $(TREES_DIR) ; \
 	  xelatex -jobname="$$f" "$$f".tex ; \
+	  ../bin/cropPdf.py -f "$$f".pdf > /dev/null ; \
 	done
 
-subtrees: $(SUBTREES_DIR)/*.tex
-	for f in $(SUBTREE_FILES); do cd $(SUBTREES_DIR); xelatex "$$f" ; done
+$(SUBTREES_PDF):
+	for f in $(SUBTREES); do \
+	  cd $(SUBTREES_DIR) ; \
+	  xelatex -jobname="$$f" "$$f".tex ; \
+	done
 
