@@ -24,13 +24,13 @@ import os
 from .util import Product
 from treelib import Tree
 
-txtheight = 35
-leafHeight = 1.56  # cm space per leaf box .. height of page calc
-leafWidth = 3.7  # cm space per leaf box .. width of page calc
-smallGap = 0.2  # cm between leaf boxes in the same group
-bigGap = 1.5  # cm between different levels, or leaf boxes
-sep = 2  # inner sep
-gap = 4
+txtheight = 35   # ???
+leafHeight = 15.6  # mm space per leaf box .. height of page calc
+leafWidth = 37  # mm space per leaf box .. width of page calc
+smallGap = 2  # mm between leaf boxes in the same group
+bigGap = 15  # mm between different levels, or leaf boxes
+sep = 2  # mm inner sep
+gap = 4  # mm 
 WBS = 1  # Put WBS on diagram
 PKG = 1  # put packages on diagram
 outdepth = 100  # set with --depth if you want a shallower tree
@@ -114,7 +114,21 @@ def print_footer(ofile):
 def drawLines(fout, row):
     for p in row:
         prod = p.data
-        print(r" \draw[pline]   ({p.id}.north) -- ++(0.0,0.5) -| ({p.parent}.south) ; ".format(p=prod), file=fout )
+        print(r" \draw[pline]   ({p.id}.north) -- ++(0.0,0.5) -| ({p.parent}.south) ; ".format(p=prod), file=fout)
+
+
+def outputWBSPKG(fout, prod):
+    print("] {", file=fout, end='')
+    print(r"\textbf{" + prod.shortname + "} ", file=fout, end='')
+    print("};", file=fout)
+    if WBS == 1 and prod.wbs != "":
+        print(r"\node [below right] at ({p.id}.north west) {{\footnotesize \color{{blue}}{w}}} ;".
+              format(p=prod, w=' '.join(prod.wbs)), file=fout)
+    if PKG == 1 and prod.pkgs:
+        print(r"\node ({p.id}pkg) [tbox,below=3mm of {p.id}.north] {{".format(p=prod), file=fout, end='')
+        print(r"{\footnotesize \color{black} \begin{verbatim} " + ' '.join(prod.pkgs) + r" \end{verbatim} }  };",
+              file=fout)
+    return
 
 
 def tex_tree_portrait(fout, ptree, width, sib, full):
@@ -142,12 +156,13 @@ def tex_tree_portrait(fout, ptree, width, sib, full):
         if depth <= outdepth:
             if count == 1:  # root node
                 if full:  # if the first node of a full tree, no parent
-                    print(r"\node ({p.id}) [wbbox]{{\textbf{{{p.shortname}}}}};".format(p=prod), file=fout)
+                    print(r"\node ({p.id}) [wbbox]{{\textbf{{{p.name}}}}};".format(p=prod), file=fout)
                 else:  # some sub tree (portrait) in a landscape tree
                     print(r"\node ({p.id}) [pbox, ".format(p=prod), file=fout)
                     if sib:
                         print("right={d}cm of {p.id}".format(d=width, p=sib), file=fout, end='')
-                    print(r"] {\textbf{" + prod.shortname + "} };", file=fout)
+                    # print(r"] {\textbf{" + prod.shortname + "} };", file=fout)
+                    outputWBSPKG(fout, prod)
             else:
                 print(r"\node ({p.id}) [pbox,".format(p=prod), file=fout, end='')
                 if prev.parent != prod.parent:  # first child to the right if portrait left if landscape
@@ -171,18 +186,81 @@ def tex_tree_portrait(fout, ptree, width, sib, full):
                     # benetih the sibling
                     dist = gap
                     print("below={}pt of {}".format(dist, prev.id), file=fout, end='')
-                print(r"] {\textbf{" + prod.shortname + "} };", file=fout)
+                # print(r"] {\textbf{" + prod.shortname + "} };", file=fout)
+                outputWBSPKG(fout, prod)
                 print(r" \draw[pline] ({p.parent}.east) -| ++(0.4,0) |- ({p.id}.west); ".format(p=prod), file=fout)
             prev = prod
     return count
 
 
-def tex_tree_landmix1(fout, ptree):
+def tex_tree_portrait0(fout, ptree, width, sib, full):
+    """
+    Write the product tree in PORTRAIT COMPACT format
+    :param ptree: product tree to dump
+    :param width: the distance from the sibling, that depends from the depth of the previous subtree
+    :param sib: the sibling that has to refer to (the left)
+    :param full: true or false
+    :param fout: output file resource
+    :return:
+    """
+    fnodes = []
+    nodes = ptree.expand_tree()  # default mode=DEPTH
+    count = 0
+    prev = Product("n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n")
+    # Text height + the gap added to each one
+    blocksize = txtheight + gap + sep
+    for n in nodes:
+        prod = ptree[n].data
+        fnodes.append(prod)
+        depth = ptree.depth(n)
+        count = count + 1
+        # print("{} Product: {p.id} name: {p.name} parent: {p.parent}".format(depth, p=prod))
+        if depth <= outdepth:
+            if count == 1:  # root node
+                if full:  # if the first node of a full tree, no parent
+                    print(r"\node ({p.id}) [wbbox]{{\textbf{{{p.name}}}}};".format(p=prod), file=fout)
+                else:  # some sub tree (portrait) in a landscape tree
+                    print(r"\node ({p.id}) [pbox, ".format(p=prod), file=fout)
+                    if sib:
+                        print("right={d}cm of {p.id}".format(d=width, p=sib), file=fout, end='')
+                    # print(r"] {\textbf{" + prod.shortname + "} };", file=fout)
+                    outputWBSPKG(fout, prod)
+            else:
+                print(r"\node ({p.id}) [pbox,".format(p=prod), file=fout, end='')
+                if prev.parent != prod.parent:  # first child to the right if portrait left if landscape
+                    found = 0
+                    scount = count - 1
+                    while found == 0 and scount > 0:
+                        scount = scount - 1
+                        found = fnodes[scount].parent == prod.parent
+                    if scount <= 0:  # first sib can go righ of parent
+                        print("below right={g}pt and -5mm of {p.parent}".format(p=prod, g=gap),
+                              file=fout, end='')
+                    else:  # Figure how low to go  - find my prior sibling
+                        psib = fnodes[scount]
+                        leaves = ptree.leaves(psib.id)
+                        depth = len(leaves) - 1
+                        # the number of leaves below my sibling
+                        dist = depth * blocksize + gap
+                        print("below={}pt of {}".format(dist, psib.id),
+                              file=fout, end='')
+                else:
+                    # benetih the sibling
+                    dist = gap
+                    print("below={}pt of {}".format(dist, prev.id), file=fout, end='')
+                outputWBSPKG(fout, prod)
+                print(r" \draw[pline] ({p.parent}.south) -| ++(0,0) |- ({p.id}.west); ".format(p=prod), file=fout)
+            prev = prod
+    return count
+
+
+def tex_tree_landmix1(fout, ptree, compact):
     """ Write the product tree diagram:
         first level in landscape
         second level subtrees in portrait
     :param fout: outputfile
     :param ptree: input product tree
+    :param compact: if the landscape is compact or not
     :return: none
     """
     stub = tree_slice(ptree, 1)
@@ -208,16 +286,20 @@ def tex_tree_landmix1(fout, ptree):
         d = 1
         if prev:
             d = prev.depth()
-        width = d * (leafWidth + bigGap) + bigGap  # cm
-        # if sib:
-        #    print(sib.name, d, p.name)
-        # print(r" {p.id} {p.parent} depth={d} width={w} ".format(p=p, d=d, w=width))
-        count = count + tex_tree_portrait(fout, stree, width, sib, False)
+        print(compact)
+        if bool(compact):
+            print('compact')
+            width = d * (leafWidth - gap)
+            count = count + tex_tree_portrait0(fout, stree, width, sib, False)
+        else:
+            width = d * (leafWidth + bigGap) + bigGap  # cm
+            print('not compact')
+            count = count + tex_tree_portrait(fout, stree, width, sib, False)
         sib = p
         prev = stree
     # place root node
     print(r"\node ({p.id}) "
-          r"[wbbox, above=15mm of {c.id}]{{\textbf{{{p.shortname}}}}};".format(p=root, c=child), file=fout)
+          r"[wbbox, above=15mm of {c.id}]{{\textbf{{{p.name}}}}};".format(p=root, c=child), file=fout)
     drawLines(fout, row)
     print("{} Product lines in TeX ".format(count))
 
@@ -242,7 +324,7 @@ def make_tree_portrait(ptree, filename, scope):
     ofile.close()
 
 
-def make_tree_landmix1(ptree, filename, scope):
+def make_tree_landmix1(ptree, filename, scope, compact):
     """
     First level landscape, and then portrait
     :param ptree:
@@ -269,12 +351,12 @@ def make_tree_landmix1(ptree, filename, scope):
             n_blocks_width = n_blocks_width + sub_tree.depth() + 1
     paperwidth = (n_blocks_width + 1) * (leafWidth + bigGap)  # cm
     paperheight = (n_blocks_high + 1) * leafHeight + 0.5  # cm
-    # print(f"nW: {n_blocks_width}, nH: {n_blocks_high}, WxH: {paperwidth} cm {paperheight} cm")
 
     # dump file
     ofile = open(filename, "w")
     print_header(scope, paperwidth, paperheight, ofile)
-    tex_tree_landmix1(ofile, ptree)
+    print(filename, compact)
+    tex_tree_landmix1(ofile, ptree, compact)
     print_footer(ofile)
     ofile.close()
 
@@ -297,4 +379,4 @@ def make_subtrees(ptree, filename, scope):
             p = ptree[n].data
             sub_tree = ptree.subtree(p.id)
             sub_file_name = subfolder + filename + "_" + p.id + ".tex"
-            make_tree_landmix1(sub_tree, sub_file_name, scope)
+            make_tree_landmix1(sub_tree, sub_file_name, scope, False)

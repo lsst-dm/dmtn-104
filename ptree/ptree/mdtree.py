@@ -283,7 +283,7 @@ def do_csv(products, output_file):
     file.close()
 
 
-def do_trees_diagrams(tree, filename, scope):
+def do_trees_diagrams(tree, filename, scope, compact):
     """
     Print out the different build trees
     :param tree: dictionary that contains the tree information
@@ -294,14 +294,15 @@ def do_trees_diagrams(tree, filename, scope):
     # build the portrait tree
     make_tree_portrait(tree, "trees/" + filename + "_portrait.tex", scope)
 
+    print(compact)
     # build landscape tree
-    make_tree_landmix1(tree, "trees/" + filename + "_mixedLand.tex", scope)
+    make_tree_landmix1(tree, "trees/" + filename + "_mixedLand.tex", scope, compact)
 
     # build subtrees
     make_subtrees(tree, filename, scope)
 
 
-def do_md_section(sysid, levelid, connection_str, output_format, output_file):
+def do_md_section(sysid, levelid, connection_str, output_format, output_file, compact):
     """
     Given the MD ids, dump the content in the output file and produce the product tree diagrams
     :param sysid: MagicDraw subsystem id
@@ -318,6 +319,7 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file):
     products = []
     tree_dict = {}
 
+    print(compact)
     # get the information from MagicDraw
     build_md_tree(sysid, levelid, connection_str)
     print("\n  Product tree depth:", productTree.depth())
@@ -336,7 +338,7 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file):
     do_csv(products, output_file)
 
     # create the diagrams tex files
-    do_trees_diagrams(productTree, output_file, products[0].shortname)
+    do_trees_diagrams(productTree, output_file, products[0].shortname, compact)
 
     # sort tree dictionary based
     mdp = productTree.to_dict(with_data=False)
@@ -397,22 +399,23 @@ def order_tree_level(udict):
     return olevel
 
 
-def generate_document(subsystem, connection_str, output_format, token_path):
+def generate_document(subsystem, connection_str, output_format, token_path, compact):
     """Given system and level, generates the document content"""
     md_trees = []
 
     subsystem_info = get_yaml()
 
+    print(compact)
     subsystem_id = subsystem_info['subsystem']['id']
-    print("-> Generating Main Product Tree  ==========================")
-    level_id = subsystem_info['subsystem']['subtrees'][0]['id']
-    filename = subsystem_info['subsystem']['subtrees'][0]['filename']
-    md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename))
+    #print("-> Generating Main Product Tree  ==========================")
+    #level_id = subsystem_info['subsystem']['subtrees'][0]['id']
+    #filename = subsystem_info['subsystem']['subtrees'][0]['filename']
+    #md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename))
 
     print("-> Generating Development Product Tree  ==========================")
     level_id = subsystem_info['subsystem']['subtrees'][1]['id']
     filename = subsystem_info['subsystem']['subtrees'][1]['filename']
-    md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename))
+    md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename, compact))
 
     print("-> [to do] Generating GitHub Product Tree  ==========================")
     do_github_section(md_trees, token_path)
