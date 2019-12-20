@@ -32,71 +32,93 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (COTS) [pbox, 
 ] {\textbf{COTS SW
 } };
+\node [below right] at (COTS.north west) {\footnotesize \color{blue}} ;
 \node (CILOGON) [pbox,right=15mm of COTS] {\textbf{CILogon
 } };
+\node [below right] at (CILOGON.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (CILOGON.west); 
 \node (DOCKER) [pbox,below=4pt of CILOGON] {\textbf{Docker
 } };
+\node [below right] at (DOCKER.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (DOCKER.west); 
 \node (GPFS) [pbox,below=4pt of DOCKER] {\textbf{GPFS
 } };
+\node [below right] at (GPFS.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (GPFS.west); 
 \node (GRAFANA) [pbox,below=4pt of GPFS] {\textbf{Grafana
 } };
+\node [below right] at (GRAFANA.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (GRAFANA.west); 
 \node (HTCONDOR) [pbox,below=4pt of GRAFANA] {\textbf{HTCondor
 } };
+\node [below right] at (HTCONDOR.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (HTCONDOR.west); 
 \node (K8S) [pbox,below=4pt of HTCONDOR] {\textbf{Kubernetes
 } };
+\node [below right] at (K8S.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (K8S.west); 
 \node (ORACLE) [pbox,below=4pt of K8S] {\textbf{Oracle
 } };
+\node [below right] at (ORACLE.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (ORACLE.west); 
 \node (PTH) [pbox,below=4pt of ORACLE] {\textbf{Python
 } };
+\node [below right] at (PTH.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (PTH.west); 
 \node (PUPPET) [pbox,below=4pt of PTH] {\textbf{Puppet
 } };
+\node [below right] at (PUPPET.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (PUPPET.west); 
 \node (RUCIO) [pbox,below=4pt of PUPPET] {\textbf{Rucio
 } };
+\node [below right] at (RUCIO.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (RUCIO.west); 
 \node (SECURITY) [pbox,below=4pt of RUCIO] {\textbf{IT Security
 } };
+\node [below right] at (SECURITY.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (SECURITY.west); 
 \node (VSPHERE) [pbox,below=4pt of SECURITY] {\textbf{vSphere
 } };
+\node [below right] at (VSPHERE.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (COTS.east) -| ++(0.4,0) |- (VSPHERE.west); 
 \node (HWCOMP) [pbox, 
 right=6.7cm of COTS] {\textbf{Compute Nodes
 } };
+\node [below right] at (HWCOMP.north west) {\footnotesize \color{blue}} ;
 \node (HWNET) [pbox, 
 right=1.5cm of HWCOMP] {\textbf{Network Nodes
 } };
+\node [below right] at (HWNET.north west) {\footnotesize \color{blue}} ;
 \node (HWSTOR) [pbox, 
 right=1.5cm of HWNET] {\textbf{Storage Nodes
 } };
+\node [below right] at (HWSTOR.north west) {\footnotesize \color{blue}} ;
 \node (LLSW) [pbox, 
 right=1.5cm of HWSTOR] {\textbf{Low Level SW
 } };
+\node [below right] at (LLSW.north west) {\footnotesize \color{blue}} ;
 \node (CENTOS) [pbox,right=15mm of LLSW] {\textbf{OS (e.g.)
 } };
+\node [below right] at (CENTOS.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (LLSW.east) -| ++(0.4,0) |- (CENTOS.west); 
 \node (THPL) [pbox, 
 right=6.7cm of LLSW] {\textbf{Third Party Libs
 } };
+\node [below right] at (THPL.north west) {\footnotesize \color{blue}} ;
 \node (BOOST) [pbox,right=15mm of THPL] {\textbf{Boost
 } };
+\node [below right] at (BOOST.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (THPL.east) -| ++(0.4,0) |- (BOOST.west); 
 \node (FFAA) [pbox,below=4pt of BOOST] {\textbf{Firefly API A.
 } };
+\node [below right] at (FFAA.north west) {\footnotesize \color{blue}} ;
  \draw[pline] (THPL.east) -| ++(0.4,0) |- (FFAA.west); 
 \node (FIREFLY) [pbox,below=4pt of FFAA] {\textbf{Firefly
 } };
+\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
+\node (FIREFLYpkg) [tbox,below=3mm of FIREFLY.north] {{\footnotesize \color{black} \begin{verbatim}  \end{verbatim} }  };
  \draw[pline] (THPL.east) -| ++(0.4,0) |- (FIREFLY.west); 
-\node (HWCOTS) [wbbox, above=15mm of HWSTOR]{\textbf{Resources
-}};
+\node (HWCOTS) [wbbox, above=15mm of HWSTOR]{\textbf{Hardware and COTS Products}};
  \draw[pline]   (COTS.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
  \draw[pline]   (HWCOMP.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
  \draw[pline]   (HWNET.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 

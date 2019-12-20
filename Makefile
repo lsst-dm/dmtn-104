@@ -46,7 +46,7 @@ acronyms.tex :$(tex) myacronyms.txt
 	${TEXMFHOME}/../bin/generateAcronyms.py -t "DM"  $(tex)
 
 clean :
-	rm -f *.pdf *.nav *.bbl *.xdv *.snm
+	rm -f *.pdf *.nav *.bbl *.xdv *.snm *.out *.toc *.blg *.fls
 	rm -f trees/*.pdf trees/*.nav trees/*.bbl trees/*.xdv trees/*.snm
 	rm -f subtrees/*.pdf subtrees/*.nav subtrees/*.bbl subtrees/*.xdv subtrees/*.snm
 

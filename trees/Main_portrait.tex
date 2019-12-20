@@ -31,12 +31,11 @@ textwidth=30cm,textheight=50mm]{geometry}
 
 \node (DM) [wbbox]{\textbf{Data Management
 }};
-\node (DMSRV) [pbox,right=15mm of DM] {\textbf{Services
-} };
+\node (DMSRV) [pbox,below right=5mm and -5mm of DM] {\textbf{Services}};
 \node [below right] at (DMSRV.north west) {\small \color{blue}} ;
- \draw[pline] (DM.east) -| ++(0.4,0) |- (DMSRV.west); 
-\node (DBBSRV) [pbox,right=15mm of DMSRV] {\textbf{DBB Services
-} };
+ \draw[pline] (DM.south) -| ++(0,0) |- (DMSRV.west); 
+
+\node (DBBSRV) [pbox,right=15mm of DMSRV] {\textbf{DBB Services}};
 \node [below right] at (DBBSRV.north west) {\small \color{blue}} ;
  \draw[pline] (DMSRV.east) -| ++(0.4,0) |- (DBBSRV.west); 
 \node (DBBLIFESRV) [pbox,right=15mm of DBBSRV] {\textbf{DBB Lifetime

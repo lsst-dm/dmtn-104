@@ -32,11 +32,13 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (AND) [pbox, 
 ] {\textbf{Astronomy.net Data
 } };
+\node [below right] at (AND.north west) {\footnotesize \color{blue}} ;
+\node (ANDpkg) [tbox,below=3mm of AND.north] {{\footnotesize \color{black} \begin{verbatim} astrometry_net_data \end{verbatim} }  };
 \node (GDATA) [pbox, 
 right=1.5cm of AND] {\textbf{Gaia Data
 } };
-\node (REFD) [wbbox, above=15mm of GDATA]{\textbf{Ref Data
-}};
+\node [below right] at (GDATA.north west) {\footnotesize \color{blue}} ;
+\node (REFD) [wbbox, above=15mm of GDATA]{\textbf{Reference Data Products}};
  \draw[pline]   (AND.north) -- ++(0.0,0.5) -| (REFD.south) ; 
  \draw[pline]   (GDATA.north) -- ++(0.0,0.5) -| (REFD.south) ; 
 
