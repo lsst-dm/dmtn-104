@@ -294,7 +294,6 @@ def do_trees_diagrams(tree, filename, scope, compact):
     # build the portrait tree
     make_tree_portrait(tree, "trees/" + filename + "_portrait.tex", scope)
 
-    print(compact)
     # build landscape tree
     make_tree_landmix1(tree, "trees/" + filename + "_mixedLand.tex", scope, compact)
 
@@ -319,7 +318,6 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file, co
     products = []
     tree_dict = {}
 
-    print(compact)
     # get the information from MagicDraw
     build_md_tree(sysid, levelid, connection_str)
     print("\n  Product tree depth:", productTree.depth())
@@ -405,7 +403,6 @@ def generate_document(subsystem, connection_str, output_format, token_path, comp
 
     subsystem_info = get_yaml()
 
-    print(compact)
     subsystem_id = subsystem_info['subsystem']['id']
     #print("-> Generating Main Product Tree  ==========================")
     #level_id = subsystem_info['subsystem']['subtrees'][0]['id']
