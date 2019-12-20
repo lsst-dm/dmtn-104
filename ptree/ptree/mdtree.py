@@ -298,10 +298,10 @@ def do_trees_diagrams(tree, filename, scope, compact):
     make_tree_landmix1(tree, "trees/" + filename + "_mixedLand.tex", scope, compact)
 
     # build subtrees
-    make_subtrees(tree, filename, scope)
+    make_subtrees(tree, filename, scope, compact)
 
 
-def do_md_section(sysid, levelid, connection_str, output_format, output_file, compact):
+def do_md_section(sysid, levelid, connection_str, output_format, output_file, compact, doc_handler):
     """
     Given the MD ids, dump the content in the output file and produce the product tree diagrams
     :param sysid: MagicDraw subsystem id
@@ -309,6 +309,9 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file, co
     :param connection_str: MagicDraw encoded connection string
     :param output_format: OutputFormat
     :param output_file: File to dump
+    :param compact: True if the portrait diagrams have to be in compact form
+    :param doc_handler: the document id
+    :param sub_name: name of the subsystem
     :return: none
     """
     global template_path
@@ -356,6 +359,8 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file, co
     metadata = dict()
     metadata["template"] = template.filename
     text = template.render(metadata=metadata,
+                           filename=output_file,
+                           doc_handler=doc_handler,
                            mdt_dict=tree_dict,
                            mdp=new_mdpt,
                            mdps=products)
@@ -397,22 +402,67 @@ def order_tree_level(udict):
     return olevel
 
 
-def generate_document(subsystem, connection_str, output_format, token_path, compact):
+def do_full_tree(md_trees, subsystem_id, compact):
+    """
+    Merge each tree in md_trees and generate the full landscape product tree
+    """
+
+    full_tree = Tree()
+    node0 = Product('full_' + subsystem_id,                            # 1  (0 is self)
+                   'Full ' + subsystem_id + ' Tree',                          # 2
+                   'full_' + subsystem_id,                              # 3
+                   [],       # 4
+                   [],             # 5
+                   [],      # 6
+                   [],   # 7
+                   "",                                # 8
+                   [],        # 9
+                   [],                       # 10
+                   "",                              # 11
+                   [],   # 12
+                   [],            # 13
+                   'Full ' + subsystem_id + ' Tree',   # 14
+                   [],                        # 15
+                   "")                         # 16
+    full_tree.create_node(node0.id, node0.id, data=node0)
+    for subtree in md_trees:
+        for node in subtree.values():
+            if not node.parent:
+                # this is the subtree parent
+                sub_parent = node.id
+            else:
+                if node.parent == sub_parent:
+                    node.parent = node0.id
+                full_tree.create_node(node.id, node.id, data=node, parent=node.parent)
+    print(full_tree)
+
+    # build full landscape tree
+    make_tree_landmix1(full_tree, "trees/" + subsystem_id + "_full.tex", node0.id, compact)
+
+
+def generate_document(connection_str, output_format, token_path, compact):
     """Given system and level, generates the document content"""
     md_trees = []
 
     subsystem_info = get_yaml()
 
     subsystem_id = subsystem_info['subsystem']['id']
-    #print("-> Generating Main Product Tree  ==========================")
-    #level_id = subsystem_info['subsystem']['subtrees'][0]['id']
-    #filename = subsystem_info['subsystem']['subtrees'][0]['filename']
-    #md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename))
+    doc_handler = subsystem_info['subsystem']['doc']
+    subsystem_name = subsystem_info['subsystem']['name']
+    print("-> Generating Main Product Tree  ==========================")
+    level_id = subsystem_info['subsystem']['subtrees'][0]['id']
+    filename = subsystem_info['subsystem']['subtrees'][0]['filename']
+    md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename, compact,
+                                  doc_handler))
 
     print("-> Generating Development Product Tree  ==========================")
     level_id = subsystem_info['subsystem']['subtrees'][1]['id']
     filename = subsystem_info['subsystem']['subtrees'][1]['filename']
-    md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename, compact))
+    md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename, compact,
+                                  doc_handler))
+
+    print("-> Generating FULL Product Tree  ==========================")
+    do_full_tree(md_trees, subsystem_name, compact)
 
     print("-> [to do] Generating GitHub Product Tree  ==========================")
     do_github_section(md_trees, token_path)

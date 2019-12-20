@@ -185,6 +185,9 @@
 
 {% for k0 in mdp %}
 {{ do_folder(k0) }}
+{% set url = "https://" ~ doc_handler ~ ".lsst.io/" ~ filename ~ "_mixedLand.pdf" %}
+The product tree graph for {{ k0 }} is available
+\href{{ "{" }}{{ url }}{{ "}" }}{ here }.
 
  {% for id in mdp[k0] %}
   {% set k1 = mdp[k0][id].name %}
@@ -192,6 +195,9 @@
 \newpage
 \subsection{{ curlies(mdt_dict[k1].name) }}{{ label(mdt_dict[k1].id.lower()) }}
 {{ do_folder(k1) }}
+
+{% set graph_path = 'subtrees/' ~ filename ~ '_' ~ k1 ~ '.pdf' %}
+\includegraphics[max width=\linewidth]{{ "{" }}{{ graph_path }}{{ "}" }}
 
   {% for ch1 in k1childs %}
    {% if k1childs[ch1].name is defined %}
