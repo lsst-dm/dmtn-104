@@ -18,13 +18,23 @@ A product is a component of the DM product tree, that contribute to satisfy the 
 Each product is characterize by:
 
 \begin{itemize}
-\item \textbf{Name}: it is the main identification of the product. In some cases a \textit{short name} can be provided for documentation purposes.
-\item \textbf{Unique Key}: it is a unique string mainly for programmatic usage. The product manager/owner can provide one, or it will be assigned by the Architecture team.
-\item \textbf{Owner}: who is responsible for the quality and acceptance of a particular product (\citeds{LDM-294} \S6.6).
-\item \textbf{Manager}: {T/CAM} who has managerial and financial responsibility for the engineering teams within DM (\citeds{LDM-294} \S6.14.1).
-\item \textbf{WBS}: the WBS identification.
-\item \textbf{Team}: the team in which the product is developed.
-\item \textbf{Description}: it provides a short over view of the product purpose.
+  \item \textbf{Name}: it is the main identification of the product. In some cases a \textit{short name} can be provided for documentation purposes.
+  \item \textbf{Unique Key}: it is a unique string mainly for programmatic usage. The product manager/owner can provide one, or it will be assigned by the Architecture team.
+  \item \textbf{Owner}: who is responsible for the quality and acceptance of a particular product (\citeds{LDM-294} \S6.6).
+  \item \textbf{Manager}: {T/CAM} who has managerial and financial responsibility for the engineering teams within DM (\citeds{LDM-294} \S6.14.1).
+  \item \textbf{WBS}: the WBS identification.
+  \item \textbf{Team}: the team in which the product is developed.
+  \item \textbf{Description}: it provides a short over view of the product purpose.
+  \item \textbf{Git Package}: the Git package that implementes the product.
+  \begin{itemize}
+    \item \textbf{software products}: it shall be the top levelpackage as per \citeds{DMTN-106} definition. 
+    \item \textbf{services}: it should be the Git package where the Dockerfile defining the service is defined. The same repository could be used to keep under configuratino control other configuration files related to kubernettes definition (except secrets).
+  \end{itemize}
+  \item \textbf{Dependencies}: the list of products required to implement this product.
+  \item \textbf{Upstream Products}: the list is products that use this product.
+  \item \textbf{Links}: internet links that provide inportant information in order to clearly define the product.
+  \item \textbf{Documentation}: list of LSST documents that characterize the product.
+  \item \textbf{Requirements}: list of requirements that are related in the model to the product.
 \end{itemize}
 
 
@@ -49,8 +59,7 @@ The aim is to provide, for each product, the list of other products needed for i
 Following documents are applicable:
 
 \citeds{LDM-294} Data Management Organization and Management\\
-\citeds{LDM-148} Data Management System Design\\
-\citeds{LSE-61} Data Management System (DMS) Requirements
+% \citeds{LDM-148} Data Management System Design\\
 
 
 \subsection{Document Overview}
