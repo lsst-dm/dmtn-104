@@ -31,6 +31,7 @@ from .tree import make_tree_portrait, make_tree_landmix1, make_subtrees
 from treelib import Tree
 from .gittree import do_github_section
 
+requirements = {}
 
 def _as_output_format(text, output_format):
     if Config.TEMPLATE_LANGUAGE != output_format:
@@ -93,6 +94,37 @@ def get_pkg_key(rcs, mres, mdid):
     return dependency
 
 
+def get_requirements(rcs, mres, mdid):
+    """
+    returns the the requirement id and requirement name for a specific MD id
+    """
+    req = {}
+    # get Association
+    association = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=mdid), True)
+    supplier_id = association[1]["kerml:esiData"]["supplier"][0]['@id']
+    if supplier_id in requirements.keys():
+        req = requirements[supplier_id]
+        # print("  already found:", req['id'])
+    else:
+        # get Supplier
+        supplier = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=supplier_id), True)
+        req['name'] = fix_tex(supplier[1]["kerml:name"]).lstrip('0123456789.- ')
+        ispec_id = supplier[1]["kerml:esiData"]["appliedStereotypeInstance"]['@id']
+        ispec = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=ispec_id), True)
+        for el in ispec[0]["ldp:contains"]:
+            tmp_resp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=el['@id']), True)
+            # print(tmp_resp[1]["kerml:esiData"]["definingFeature"])
+            if tmp_resp[1]["kerml:esiData"]["definingFeature"]['@id'] == "ff8cae42-782e-4158-aed0-56d589bfa42b":
+                lpd = tmp_resp[0]["ldp:contains"]
+                slot_resp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=lpd[0]['@id']), True)
+                # print(slot_resp[0]["@type"])
+                req['id'] = slot_resp[1]["kerml:esiData"]["value"]
+                if req['id'] != "" and req['name'] != "":
+                    requirements[supplier_id] = req
+        # print(req)
+    return req
+
+
 def walk_tree(rcs, mres, mdid, pkey):
     """ Product Class Object
     id, name, parent, desc, wbs, manager, owner, kind, pkgs, elId"""
@@ -111,12 +143,14 @@ def walk_tree(rcs, mres, mdid, pkey):
     except ValueError:
         pkg_index = ""
     print(f"{products_count}: {pkg_name}.{pkg_index}", end='')
+    # print(Config.MD_COMP_URL.format(res=mres, comp=mdid))
     pkg_sub_pkgs = []
     pkg_classes = []
     pkg_comments = ""
     pkg_properties = dict()
     pkg_depends = []
     pkg_usedin = []
+    reqs = []
 
     for el in resp[0]['ldp:contains']:
         tmp = rsget(rcs, Config.MD_COMP_URL.format(res=mres, comp=el['@id']), True)
@@ -140,8 +174,16 @@ def walk_tree(rcs, mres, mdid, pkey):
         else:
             print('Unmapped type: ', tmp[1]['@type'], el['@id'])
 
-    # get dependencies
     if resp[1]['@type'] == 'uml:Class':
+        # get requirements
+        if resp[1]['kerml:esiData']['_directedRelationshipOfSource']:
+            for rid in resp[1]['kerml:esiData']['_directedRelationshipOfSource']:
+                reqs.append(get_requirements(rcs, mres, rid['@id']))
+        nreqs = len(reqs)
+        if nreqs > 1:
+            reqs = sorted(reqs, key= lambda req: req['id'])
+        print(f"[{nreqs}] -- ", end='')
+        # get dependencies
         if resp[1]['kerml:esiData']['_typedElementOfType']:
             for typed in resp[1]['kerml:esiData']['_typedElementOfType']:
                 typed_id = typed['@id']
@@ -223,7 +265,9 @@ def walk_tree(rcs, mres, mdid, pkey):
                    pkg_properties["team"],            # 13
                    html_to_latex(pkg_properties["short name"][0]),   # 14
                    pkg_usedin,                        # 15
-                   pkg_index)                         # 16
+                   reqs,                              # 16
+                   pkg_properties["docs"],            # 17
+                   pkg_index)                         # 18
     if pkey == "":  # first node in the tree
         productTree.create_node(prod.id, prod.id, data=prod)
     else:
@@ -408,22 +452,24 @@ def do_full_tree(md_trees, subsystem_id, compact):
     """
 
     full_tree = Tree()
-    node0 = Product('full_' + subsystem_id,                            # 1  (0 is self)
-                   'Full ' + subsystem_id + ' Tree',                          # 2
-                   'full_' + subsystem_id,                              # 3
-                   [],       # 4
-                   [],             # 5
-                   [],      # 6
-                   [],   # 7
-                   "",                                # 8
-                   [],        # 9
-                   [],                       # 10
-                   "",                              # 11
-                   [],   # 12
-                   [],            # 13
-                   'Full ' + subsystem_id + ' Tree',   # 14
-                   [],                        # 15
-                   "")                         # 16
+    node0 = Product('full_' + subsystem_id,             # 1  (0 is self)
+                    'Full ' + subsystem_id + ' Tree',   # 2
+                    'full_' + subsystem_id,             # 3
+                    [],                                 # 4
+                    [],                                 # 5
+                    [],                                 # 6
+                    [],                                 # 7
+                    "",                                 # 8
+                    [],                                 # 9
+                    [],                                 # 10
+                    "",                                 # 11
+                    [],                                 # 12
+                    [],                                 # 13
+                    'Full ' + subsystem_id + ' Tree',   # 14
+                    [],                                 # 15
+                    [],                                 # 16
+                    [],                                 # 17
+                    "")                                 # 18
     full_tree.create_node(node0.id, node0.id, data=node0)
     for subtree in md_trees:
         for node in subtree.values():

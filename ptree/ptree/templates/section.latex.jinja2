@@ -75,6 +75,13 @@
 \multicolumn{4}{c}{
 {\footnotesize ( {{ mdt_dict[prd].shortname }} - {{ mdt_dict[prd].id }} ) }
 }\\ \hline
+    {% for doc in mdt_dict[prd].docs %}
+        {% if doc[1]|length %}
+\citeds{{ "{" }}{{ doc[1] }}{{ "}" }} &
+\multicolumn{3}{l}{ {{ doc[2] }} }
+\\ \cdashline{1-4}
+        {% endif %}
+    {% endfor %}
 \end{longtable}
 
   {{ mdt_dict[prd].desc }}
@@ -114,6 +121,13 @@
 \multicolumn{4}{c}{
 {\footnotesize ( {{ mdt_dict[prd].shortname }} - {{ mdt_dict[prd].id }} ) }
 }\\ \hline
+    {% for doc in mdt_dict[prd].docs %}
+        {% if doc[1]|length %}
+\citeds{{ "{" }}{{ doc[1] }}{{ "}" }} &
+\multicolumn{3}{l}{ {{ doc[2] }} }
+\\ \cdashline{1-4}
+        {% endif %}
+    {% endfor %}
 \end{longtable}
 
 {{ mdt_dict[prd].desc }}
@@ -171,6 +185,11 @@
 \end{tabular}
     {% endif %}
 } \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+    {% for req in mdt_dict[prd].reqs %}
+{\footnotesize {{ req.id }} } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize {{ req.name }} } \\ \cdashline{1-4}
+    {% endfor %}
 \end{longtable}
 
 {%- endmacro -%}

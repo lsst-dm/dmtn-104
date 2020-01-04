@@ -146,7 +146,7 @@ def tex_tree_portrait(fout, ptree, width, sib, full):
     fnodes = []
     nodes = ptree.expand_tree()  # default mode=DEPTH
     count = 0
-    prev = Product("n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n")
+    prev = Product("n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n")
     # Text height + the gap added to each one
     for n in nodes:
         prod = ptree[n].data
@@ -206,7 +206,7 @@ def tex_tree_portrait0(fout, ptree, width, sib, full):
     fnodes = []
     nodes = ptree.expand_tree()  # default mode=DEPTH
     count = 0
-    prev = Product("n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n")
+    prev = Product("n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n")
     # Text height + the gap added to each one
     for n in nodes:
         prod = ptree[n].data

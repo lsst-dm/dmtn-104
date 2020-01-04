@@ -41,7 +41,7 @@ def cite_docushare_handles(text):
 
 class Product(object):
     def __init__(self, p_id, name, parent, desc, wbs, manager, owner, kind,
-                 pkgs, depends, el_id, links, teams, shortname, usedin, index):
+                 pkgs, depends, el_id, links, teams, shortname, usedin, reqs, docs, index):
         self.id = p_id              # 1 key (0 is self)
         self.name = name            # 2
         self.parent = parent        # 3
@@ -57,7 +57,9 @@ class Product(object):
         self.teams = teams          # 13
         self.shortname = shortname  # 14
         self.usedin = usedin        # 15
-        self.index = index          # 16 the position assigned in MD (number before the name)
+        self.reqs = reqs            # 16
+        self.docs = docs            # 17
+        self.index = index          # 18 the position assigned in MD (number before the name)
 
 
 def html_to_latex(string):
@@ -213,6 +215,8 @@ def get_pkg_properties(rcs, cid, eid):
     properties['packages'] = []
     properties['hyperlinkText'] = []
     properties['team'] = []
+    properties['documents'] = []
+    properties['docs'] = []
 
     for el in resp[0]['ldp:contains']:
         # print('  uml:Slot', el['@id'])
@@ -253,6 +257,13 @@ def get_pkg_properties(rcs, cid, eid):
         properties['hyperlinkText'].append("")
     if not properties['team']:
         properties['team'].append("")
+    if not properties['documents']:
+        emptydoc = []
+        properties['docs'].append(emptydoc)
+    else:
+        for doc in properties['documents']:
+            sdocs = doc.split(":")
+            properties['docs'].append(sdocs)
 
     return properties
 
