@@ -140,7 +140,6 @@ right=96pt of DMDSRV] {\textbf{Dm Dev Software
  \draw[pline] (DMDSW.south) -| ++(0,0) |- (DSPLSW.west); 
 \node (SPLWF) [pbox,below right=6pt and -14pt of DSPLSW] {\textbf{SPL Workflow
 } };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
-\node (SPLWFpkg) [tbox,below=3mm of SPLWF.north] {{\footnotesize \color{black} \begin{verbatim} spl_workflow \end{verbatim} }  };
 
  \draw[pline] (DSPLSW.south) -| ++(0,0) |- (SPLWF.west); 
 \node (DMDTDP) [pbox, 
@@ -156,7 +155,8 @@ right=192pt of DMDSW] {\textbf{Test Data
 \node (SPLTDpkg) [tbox,below=3mm of SPLTD.north] {{\footnotesize \color{black} \begin{verbatim} spl_testdata \end{verbatim} }  };
 
  \draw[pline] (DMDTDP.south) -| ++(0,0) |- (SPLTD.west); 
-\node (DMDEV) [wbbox, above=43pt of DMDSRV]{\textbf{DM Development Components}};
+\node (DMDEV) [wbbox, above=43pt of DMDSRV]{\textbf{DM Support Prd.
+}};
  \draw[pline]   (DMDC3E.north) -- ++(0.0,0.5) -| (DMDEV.south) ; 
  \draw[pline]   (DMDSRV.north) -- ++(0.0,0.5) -| (DMDEV.south) ; 
  \draw[pline]   (DMDSW.north) -- ++(0.0,0.5) -| (DMDEV.south) ; 

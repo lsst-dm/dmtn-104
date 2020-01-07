@@ -67,7 +67,7 @@ SPDIST, Science P. Dist., PRODN, 1.02C.04.02, DRP, John Swinbank, Leanne Guy, ls
 SPLUG, Science Plugins, PRODN, 1.02C.04.02, DRP, John Swinbank, Leanne Guy, , Science Plugins 
 TMPLGEN, Tmpl Gen SW, PRODN, 1.02C.04.04, DRP, Yusra AlSayyad, Jim Bosch, , Tmpl Gen SW 
 QC, QC Products, DMSW, , , Frossie Economou, , , QC Products 
-QCSW, Quality Ctrl SW, QC, 1.02C.10.02.01, SQuaRE, Frossie Economou, Simon Krughoff, validate_base verify squash-* verify_metrics validate_drp, Quality Ctrl SW 
+QCSW, Quality Ctrl SW, QC, 1.02C.10.02.01, SQuaRE, Frossie Economou, Simon Krughoff, , Quality Ctrl SW 
 SUPPSW, Supporting SW, DMSW, , , John Swinbank, , , Supporting SW 
 ADQL, ADQL Translator, SUPPSW, 1.02C.06.02.05, DAX, Frossie Economou, Simon Krughoff, albuquery, ADQL Translator 
 BUTLER, Data Butler, SUPPSW, 1.02C.06.02.01, DAX, Michelle Butler, Tim Jenness, daf_butler, Data Butler 

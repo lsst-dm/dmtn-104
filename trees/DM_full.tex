@@ -140,7 +140,6 @@ right=96pt of DMDSRV] {\textbf{Dm Dev Software
  \draw[pline] (DMDSW.south) -| ++(0,0) |- (DSPLSW.west); 
 \node (SPLWF) [pbox,below right=6pt and -14pt of DSPLSW] {\textbf{SPL Workflow
 } };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
-\node (SPLWFpkg) [tbox,below=3mm of SPLWF.north] {{\footnotesize \color{black} \begin{verbatim} spl_workflow \end{verbatim} }  };
 
  \draw[pline] (DSPLSW.south) -| ++(0,0) |- (SPLWF.west); 
 \node (DMDTDP) [pbox, 
@@ -442,7 +441,6 @@ right=288pt of DMSRV] {\textbf{Software Products
  \draw[pline] (DMSW.south) -| ++(0,0) |- (QC.west); 
 \node (QCSW) [pbox,below right=6pt and -14pt of QC] {\textbf{Quality Ctrl SW
 } };\node [below right] at (QCSW.north west) {\footnotesize \color{blue}1.02C.10.02.01} ;
-\node (QCSWpkg) [tbox,below=3mm of QCSW.north] {{\footnotesize \color{black} \begin{verbatim} validate_base verify squash-* verify_metrics validate_drp \end{verbatim} }  };
 
  \draw[pline] (QC.south) -| ++(0,0) |- (QCSW.west); 
 \node (SUPPSW) [pbox,below=49pt of QC] {\textbf{Supporting SW

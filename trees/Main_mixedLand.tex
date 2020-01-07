@@ -315,7 +315,6 @@ right=288pt of DMSRV] {\textbf{Software Products
  \draw[pline] (DMSW.south) -| ++(0,0) |- (QC.west); 
 \node (QCSW) [pbox,below right=6pt and -14pt of QC] {\textbf{Quality Ctrl SW
 } };\node [below right] at (QCSW.north west) {\footnotesize \color{blue}1.02C.10.02.01} ;
-\node (QCSWpkg) [tbox,below=3mm of QCSW.north] {{\footnotesize \color{black} \begin{verbatim} validate_base verify squash-* verify_metrics validate_drp \end{verbatim} }  };
 
  \draw[pline] (QC.south) -| ++(0,0) |- (QCSW.west); 
 \node (SUPPSW) [pbox,below=49pt of QC] {\textbf{Supporting SW
@@ -524,7 +523,8 @@ right=192pt of INFRA] {\textbf{Ref Data
 } };\node [below right] at (GDATA.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (REFD.south) -| ++(0,0) |- (GDATA.west); 
-\node (DM) [wbbox, above=43pt of HWCOTS]{\textbf{Components}};
+\node (DM) [wbbox, above=43pt of HWCOTS]{\textbf{Data Management
+}};
  \draw[pline]   (DMSRV.north) -- ++(0.0,0.5) -| (DM.south) ; 
  \draw[pline]   (DMSW.north) -- ++(0.0,0.5) -| (DM.south) ; 
  \draw[pline]   (HWCOTS.north) -- ++(0.0,0.5) -| (DM.south) ; 

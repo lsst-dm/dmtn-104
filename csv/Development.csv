@@ -26,7 +26,7 @@ JSCR, JenkinsScripting, DMDSS, , , , , lsst-dm/jenkins-dm-jobs, JenkinsScripting
 LBLD, lsst\_build, DMDSS, , , , , lsst_build, lsst\_build 
 LSSTSW, lsstsw, DMDSS, , , , , lsstsw, lsstsw 
 DSPLSW, Dev Science Pipelines, DMDSW, , , , , , Dev Science Pipelines 
-SPLWF, SPL Workflow, DSPLSW, , , , , spl_workflow, SPL Workflow 
+SPLWF, SPL Workflow, DSPLSW, , , , , , SPL Workflow 
 DMDTDP, Test Data, DMDEV, , , , , , Test Data 
 HSCRC1, HSC-RC1, DMDTDP, , , , , , HSC-RC1 
 SPLTD, SPL Test Data, DMDTDP, , , , , spl_testdata, SPL Test Data 

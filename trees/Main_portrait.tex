@@ -29,7 +29,8 @@ textwidth=30cm,textheight=50mm]{geometry}
 \begin{tikzpicture}[node distance=0mm]
 
 
-\node (DM) [wbbox]{\textbf{Components}};
+\node (DM) [wbbox]{\textbf{Data Management
+}};
 \node (DMSRV) [pbox,right=43pt of DM] {\textbf{Services
 } };\node [below right] at (DMSRV.north west) {\footnotesize \color{blue}} ;
 
@@ -316,7 +317,6 @@ textwidth=30cm,textheight=50mm]{geometry}
  \draw[pline] (DMSW.east) -| ++(0.4,0) |- (QC.west); 
 \node (QCSW) [pbox,right=43pt of QC] {\textbf{Quality Ctrl SW
 } };\node [below right] at (QCSW.north west) {\footnotesize \color{blue}1.02C.10.02.01} ;
-\node (QCSWpkg) [tbox,below=3mm of QCSW.north] {{\footnotesize \color{black} \begin{verbatim} validate_base verify squash-* verify_metrics validate_drp \end{verbatim} }  };
 
  \draw[pline] (QC.east) -| ++(0.4,0) |- (QCSW.west); 
 \node (SUPPSW) [pbox,below=6pt of QC] {\textbf{Supporting SW

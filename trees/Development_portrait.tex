@@ -29,7 +29,8 @@ textwidth=30cm,textheight=50mm]{geometry}
 \begin{tikzpicture}[node distance=0mm]
 
 
-\node (DMDEV) [wbbox]{\textbf{DM Development Components}};
+\node (DMDEV) [wbbox]{\textbf{DM Support Prd.
+}};
 \node (DMDC3E) [pbox,right=43pt of DMDEV] {\textbf{COTS 3rdPLs ENVs
 } };\node [below right] at (DMDC3E.north west) {\footnotesize \color{blue}} ;
 
@@ -141,7 +142,6 @@ textwidth=30cm,textheight=50mm]{geometry}
  \draw[pline] (DMDSW.east) -| ++(0.4,0) |- (DSPLSW.west); 
 \node (SPLWF) [pbox,right=43pt of DSPLSW] {\textbf{SPL Workflow
 } };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
-\node (SPLWFpkg) [tbox,below=3mm of SPLWF.north] {{\footnotesize \color{black} \begin{verbatim} spl_workflow \end{verbatim} }  };
 
  \draw[pline] (DSPLSW.east) -| ++(0.4,0) |- (SPLWF.west); 
 \node (DMDTDP) [pbox,below=178pt of DMDSW] {\textbf{Test Data
