@@ -284,6 +284,20 @@ def walk_tree(rcs, mres, mdid, pkey):
         walk_tree(rcs, mres, cls, pkg_id)
 
 
+def get_md_revision(rs, mres, mdid):
+    """
+    Returns the last trunk MagicDraw revision that is extracted
+
+    """
+    resp = rsget(rs, Config.MD_COMP_URL.format(res=mres, comp=mdid), True)
+    if resp[1]['kerml:revision']:
+        rev_path = resp[1]['kerml:revision']
+        rev_split = rev_path.split("/")
+        return rev_split[-1]
+    else:
+        return "---"
+
+
 def build_md_tree(mres, mdid, connection_id):
     """ Build the tree reading from MD
     """
@@ -299,7 +313,12 @@ def build_md_tree(mres, mdid, connection_id):
     rs = requests.Session()
     rs.headers = headers
 
+    md_revision = get_md_revision(rs, mres, mdid)
+    print("Magic Draw trunk revision:", md_revision)
+
     walk_tree(rs, mres, mdid, "")
+
+    return md_revision
 
 
 def do_csv(products, output_file):
@@ -366,7 +385,7 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file, co
     tree_dict = {}
 
     # get the information from MagicDraw
-    build_md_tree(sysid, levelid, connection_str)
+    mdr = build_md_tree(sysid, levelid, connection_str)
     print("\n  Product tree depth:", productTree.depth())
 
     nodes = productTree.expand_tree()
@@ -403,6 +422,7 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file, co
     metadata = dict()
     metadata["template"] = template.filename
     text = template.render(metadata=metadata,
+                           mdrev=mdr,
                            filename=output_file,
                            doc_handler=doc_handler,
                            mdt_dict=tree_dict,
@@ -480,7 +500,7 @@ def do_full_tree(md_trees, subsystem_id, compact):
                 if node.parent == sub_parent:
                     node.parent = node0.id
                 full_tree.create_node(node.id, node.id, data=node, parent=node.parent)
-    print(full_tree)
+    # print(full_tree)
 
     # build full landscape tree
     make_tree_landmix1(full_tree, "trees/" + subsystem_id + "_full.tex", node0.id, compact)

@@ -13,13 +13,13 @@
 {%- endmacro -%}
 {# ------------------------------------------------------------------------- #}
 
-{%- macro hyperlink(text) -%}
-\hyperlink{{ "{" }}{{ text }}{{ "}" }}
+{%- macro hyperlink(label, text) -%}
+\hyperlink{{ "{" }}{{ label }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
 {%- endmacro -%}
 {# ------------------------------------------------------------------------- #}
 
-{%- macro hypertarget(text) -%}
-\hypertarget{{ "{" }}{{ text }}{{ "}" }}
+{%- macro hypertarget(label, text) -%}
+\hypertarget{{ "{" }}{{ label }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
 {%- endmacro -%}
 {# ------------------------------------------------------------------------- #}
 
@@ -92,7 +92,7 @@
 \newpage
 {# each product is rendered in two tables and the description between them #}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ {{ mdt_dict[prd].name }} } }{{ label(mdt_dict[prd].id.lower()) }}
+\multicolumn{2}{l}{\large \textbf{ {{ hypertarget(mdt_dict[prd].id.lower(), mdt_dict[prd].name) }} } }
 & \multicolumn{2}{l}{(product in: {{ parent }})}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
@@ -171,7 +171,7 @@
     {% if (mdt_dict[prd].depends is defined) and mdt_dict[prd].depends %}
 \begin{tabular}{c}
         {% for pkey in mdt_dict[prd].depends %}
-\hyperref[{{ pkey.key.lower() }}]{{ curlies(pkey.name) }} \\ \hline
+{{ hyperlink(pkey.key.lower(), pkey.name) }} \\ \hline
         {% endfor %}
 \end{tabular}
     {% endif %}
@@ -180,7 +180,7 @@
     {% if (mdt_dict[prd].usedin is defined) and mdt_dict[prd].usedin %}
 \begin{tabular}{c}
         {% for pkey in mdt_dict[prd].usedin %}
-\hyperref[{{ pkey.key.lower() }}]{{ curlies(pkey.name) }} \\ \hline
+{{ hyperlink(pkey.key.lower(), pkey.name) }} \\ \hline
         {% endfor %}
 \end{tabular}
     {% endif %}
@@ -194,7 +194,7 @@
 
 {%- endmacro -%}
 {# ------------------------------------------------------------------------- #}
-% auto generated from multiple sources - DO NOT EDIT!
+% auto generated from MagicDraw (revision {{ mdrev }} - DO NOT EDIT!
 % using template at {{ metadata.template }}.
 % Collecting data for component: "{{ metadata.component }}"
 % using docsteady version {{ metadata.ptree_version }}

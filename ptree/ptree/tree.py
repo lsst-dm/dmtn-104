@@ -31,6 +31,7 @@ smallGap = 6  # pt between leaf boxes in the same group
 bigGap = 43  # pt between different levels, or leaf boxes
 sep = 3  # pt inner sep
 backgap = 14  # pt
+backrate = (leafWidth - backgap) / leafWidth
 
 WBS = 1  # Put WBS on diagram
 PKG = 1  # put packages on diagram
@@ -274,7 +275,7 @@ def tex_tree_landmix1(fout, ptree, compact):
     root_position = int(count / 2) -1
     if root_position < 0:
         root_position = 0
-    print(f"Count: {count}, Root position: {root_position}")
+    # print(f"Count: {count}, Root position: {root_position}")
     child = row[root_position].data
     sib = None
     count = 1  # will output root after
@@ -338,6 +339,7 @@ def make_tree_landmix1(ptree, filename, scope, compact):
     nodes = first_level.expand_tree()
     n_blocks_high = 0
     n_blocks_width = 0
+    paperwidth = 0
     c = 0
     for n in nodes:
         c += 1
@@ -348,15 +350,25 @@ def make_tree_landmix1(ptree, filename, scope, compact):
                 nnodes = sub_tree.size()
                 if nnodes > n_blocks_high:
                     n_blocks_high = nnodes
+                sub_depth = sub_tree.depth()
+                if sub_depth == 0:
+                    n_blocks_width = n_blocks_width + 1
+                    paperwidth = paperwidth + leafWidth + bigGap
+                else:
+                    # the compression factor has been calculated based on the backgap = 14 pt
+                    n_blocks_width = n_blocks_width + 1 + sub_depth * 0.86
+                    paperwidth = paperwidth + leafWidth * (1 + sub_depth * backrate)
+                    print(sub_depth, paperwidth)
             else:
                 if len(sub_tree.leaves()) > n_blocks_high:
                     n_blocks_high = len(sub_tree.leaves())
-            n_blocks_width = n_blocks_width + sub_tree.depth() + 1
-    paperwidth = (n_blocks_width + 1) * (leafWidth + bigGap)
+                n_blocks_width = n_blocks_width + sub_tree.depth() + 1
+                paperwidth = (n_blocks_width + 1) * (leafWidth + bigGap)
     paperheight = (n_blocks_high + 1) * (leafHeight + smallGap) + bigGap * 2
 
     # dump file
     ofile = open(filename, "w")
+    print(n_blocks_width, paperwidth, "backrate:", backrate)
     print_header(scope, paperwidth, paperheight, ofile)
     tex_tree_landmix1(ofile, ptree, compact)
     print_footer(ofile)

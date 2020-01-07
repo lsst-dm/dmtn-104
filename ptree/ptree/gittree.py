@@ -22,8 +22,6 @@
 Code for generation Product Tree document from GitHub
 """
 
-import requests
-import pandoc
 import github
 import os
 
@@ -70,7 +68,11 @@ def get_gitpkg_content(pkg, g):
             re = gg.get_repo(repo)
             rc = re.get_contents("")
             for f in rc:
-                print(f)
+                # print(f.path)
+                if "README" in f.path:
+                    readme_file = f.path
+                    print(readme_file)
+                    readme = rc.dump("")
         except:
             print(f"Error accessing repository {repo} in organization {org}.")
     except:
