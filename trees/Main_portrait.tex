@@ -278,17 +278,14 @@ textwidth=30cm,textheight=50mm]{geometry}
  \draw[pline] (DMSW.east) -| ++(0.4,0) |- (PRODN.west); 
 \node (APPRMPT) [pbox,right=43pt of PRODN] {\textbf{Alert Prod SW
 } };\node [below right] at (APPRMPT.north west) {\footnotesize \color{blue}1.02C.03} ;
-\node (APPRMPTpkg) [tbox,below=3mm of APPRMPT.north] {{\footnotesize \color{black} \begin{verbatim} spl_ap \end{verbatim} }  };
 
  \draw[pline] (PRODN.east) -| ++(0.4,0) |- (APPRMPT.west); 
 \node (DMCAL) [pbox,below=6pt of APPRMPT] {\textbf{Calibration SW
 } };\node [below right] at (DMCAL.north west) {\footnotesize \color{blue}1.02C.04.02} ;
-\node (DMCALpkg) [tbox,below=3mm of DMCAL.north] {{\footnotesize \color{black} \begin{verbatim} spl_calibration \end{verbatim} }  };
 
  \draw[pline] (PRODN.east) -| ++(0.4,0) |- (DMCAL.west); 
 \node (DRP) [pbox,below=6pt of DMCAL] {\textbf{DR Prod SW
 } };\node [below right] at (DRP.north west) {\footnotesize \color{blue}1.02C.04} ;
-\node (DRPpkg) [tbox,below=3mm of DRP.north] {{\footnotesize \color{black} \begin{verbatim} spl_drp \end{verbatim} }  };
 
  \draw[pline] (PRODN.east) -| ++(0.4,0) |- (DRP.west); 
 \node (MOPS) [pbox,below=6pt of DRP] {\textbf{MOPS SW
@@ -307,7 +304,6 @@ textwidth=30cm,textheight=50mm]{geometry}
  \draw[pline] (PRODN.east) -| ++(0.4,0) |- (SPDIST.west); 
 \node (SPLUG) [pbox,below=6pt of SPDIST] {\textbf{Science Plugins
 } };\node [below right] at (SPLUG.north west) {\footnotesize \color{blue}1.02C.04.02} ;
-\node (SPLUGpkg) [tbox,below=3mm of SPLUG.north] {{\footnotesize \color{black} \begin{verbatim} spl_plugins \end{verbatim} }  };
 
  \draw[pline] (PRODN.east) -| ++(0.4,0) |- (SPLUG.west); 
 \node (TMPLGEN) [pbox,below=6pt of SPLUG] {\textbf{Tmpl Gen SW
@@ -442,7 +438,6 @@ textwidth=30cm,textheight=50mm]{geometry}
  \draw[pline] (THPL.east) -| ++(0.4,0) |- (FFAA.west); 
 \node (FIREFLY) [pbox,below=6pt of FFAA] {\textbf{Firefly
 } };\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
-\node (FIREFLYpkg) [tbox,below=3mm of FIREFLY.north] {{\footnotesize \color{black} \begin{verbatim}  \end{verbatim} }  };
 
  \draw[pline] (THPL.east) -| ++(0.4,0) |- (FIREFLY.west); 
 \node (INFRA) [pbox,below=780pt of HWCOTS] {\textbf{Infrastructure

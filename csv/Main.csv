@@ -58,13 +58,13 @@ OBSPUB, Plan Obs Pub SW, PR, 1.02C.07.08, LDF, Michelle Butler, Tim Jenness, , P
 OCSBAT, OCS Batch SW, PR, 1.02C.07.08, LDF, Michelle Butler, Felipe Menanteau, , OCS Batch SW 
 OODS, Obs Ops Data SW, PR, 1.02C.07.08, LDF, Michelle Butler, Steve Pietrowicz, lsst-dm/ctrl_oods, Obs Ops Data SW 
 PRODN, Sci Pipelines SW, DMSW, , , John Swinbank, Leanne Guy, , Sci Pipelines SW 
-APPRMPT, Alert Prod SW, PRODN, 1.02C.03, AP, John Swinbank, Eric Bellm, spl_ap, Alert Prod SW 
-DMCAL, Calibration SW, PRODN, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, spl_calibration, Calibration SW 
-DRP, DR Prod SW, PRODN, 1.02C.04, DRP, Yusra AlSayyad, Jim Bosch, spl_drp, DR Prod SW 
+APPRMPT, Alert Prod SW, PRODN, 1.02C.03, AP, John Swinbank, Eric Bellm, , Alert Prod SW 
+DMCAL, Calibration SW, PRODN, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, , Calibration SW 
+DRP, DR Prod SW, PRODN, 1.02C.04, DRP, Yusra AlSayyad, Jim Bosch, , DR Prod SW 
 MOPS, MOPS SW, PRODN, 1.02C.03.06, AP, John Swinbank, Eric Bellm, mops_daymops, MOPS SW 
 SP, Spec Prog SW, PRODN, 1.02C.03 1.02C.04, AP, John Swinbank, Melissa Graham, , Spec Prog SW 
 SPDIST, Science P. Dist., PRODN, 1.02C.04.02, DRP, John Swinbank, Leanne Guy, lsst_distrib, Science P. Dist. 
-SPLUG, Science Plugins, PRODN, 1.02C.04.02, DRP, John Swinbank, Leanne Guy, spl_plugins, Science Plugins 
+SPLUG, Science Plugins, PRODN, 1.02C.04.02, DRP, John Swinbank, Leanne Guy, , Science Plugins 
 TMPLGEN, Tmpl Gen SW, PRODN, 1.02C.04.04, DRP, Yusra AlSayyad, Jim Bosch, , Tmpl Gen SW 
 QC, QC Products, DMSW, , , Frossie Economou, , , QC Products 
 QCSW, Quality Ctrl SW, QC, 1.02C.10.02.01, SQuaRE, Frossie Economou, Simon Krughoff, validate_base verify squash-* verify_metrics validate_drp, Quality Ctrl SW 

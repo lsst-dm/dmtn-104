@@ -74,9 +74,10 @@ do_subtrees:
 	done
 
 crop_pdf_imgs: 
+	> cropPdf.log
 	for f in $(TREES); do \
 	  echo "Cropping" "$$f".pdf ; \
-	  python ./bin/cropPdf.py -f $(TREES_DIR)/"$$f".pdf > /dev/null ; \
+	  python ./bin/cropPdf.py -f $(TREES_DIR)/"$$f".pdf >> cropPdf.log; \
 	done
 	for f in $(SUBTREES); do \
 	  echo "Cropping" "$$f".pdf ; \

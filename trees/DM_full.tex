@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=3978pt,paperheight=1849pt,
+\usepackage[paperwidth=2525.9999999999995pt,paperheight=1849pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -404,17 +404,14 @@ right=288pt of DMSRV] {\textbf{Software Products
  \draw[pline] (DMSW.south) -| ++(0,0) |- (PRODN.west); 
 \node (APPRMPT) [pbox,below right=6pt and -14pt of PRODN] {\textbf{Alert Prod SW
 } };\node [below right] at (APPRMPT.north west) {\footnotesize \color{blue}1.02C.03} ;
-\node (APPRMPTpkg) [tbox,below=3mm of APPRMPT.north] {{\footnotesize \color{black} \begin{verbatim} spl_ap \end{verbatim} }  };
 
  \draw[pline] (PRODN.south) -| ++(0,0) |- (APPRMPT.west); 
 \node (DMCAL) [pbox,below=6pt of APPRMPT] {\textbf{Calibration SW
 } };\node [below right] at (DMCAL.north west) {\footnotesize \color{blue}1.02C.04.02} ;
-\node (DMCALpkg) [tbox,below=3mm of DMCAL.north] {{\footnotesize \color{black} \begin{verbatim} spl_calibration \end{verbatim} }  };
 
  \draw[pline] (PRODN.south) -| ++(0,0) |- (DMCAL.west); 
 \node (DRP) [pbox,below=6pt of DMCAL] {\textbf{DR Prod SW
 } };\node [below right] at (DRP.north west) {\footnotesize \color{blue}1.02C.04} ;
-\node (DRPpkg) [tbox,below=3mm of DRP.north] {{\footnotesize \color{black} \begin{verbatim} spl_drp \end{verbatim} }  };
 
  \draw[pline] (PRODN.south) -| ++(0,0) |- (DRP.west); 
 \node (MOPS) [pbox,below=6pt of DRP] {\textbf{MOPS SW
@@ -433,7 +430,6 @@ right=288pt of DMSRV] {\textbf{Software Products
  \draw[pline] (PRODN.south) -| ++(0,0) |- (SPDIST.west); 
 \node (SPLUG) [pbox,below=6pt of SPDIST] {\textbf{Science Plugins
 } };\node [below right] at (SPLUG.north west) {\footnotesize \color{blue}1.02C.04.02} ;
-\node (SPLUGpkg) [tbox,below=3mm of SPLUG.north] {{\footnotesize \color{black} \begin{verbatim} spl_plugins \end{verbatim} }  };
 
  \draw[pline] (PRODN.south) -| ++(0,0) |- (SPLUG.west); 
 \node (TMPLGEN) [pbox,below=6pt of SPLUG] {\textbf{Tmpl Gen SW
@@ -568,7 +564,6 @@ right=192pt of DMSW] {\textbf{Resources
  \draw[pline] (THPL.south) -| ++(0,0) |- (FFAA.west); 
 \node (FIREFLY) [pbox,below=6pt of FFAA] {\textbf{Firefly
 } };\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
-\node (FIREFLYpkg) [tbox,below=3mm of FIREFLY.north] {{\footnotesize \color{black} \begin{verbatim}  \end{verbatim} }  };
 
  \draw[pline] (THPL.south) -| ++(0,0) |- (FIREFLY.west); 
 \node (INFRA) [pbox, 
