@@ -263,12 +263,13 @@ def walk_tree(rcs, mres, mdid, pkey):
                    mdid,                              # 11
                    pkg_properties["hyperlinkText"],   # 12
                    pkg_properties["team"],            # 13
-                   html_to_latex(pkg_properties["short name"][0]),   # 14
+                   html_to_latex(pkg_properties["short name"][0]),   # 14 - shortname
                    pkg_usedin,                        # 15
                    reqs,                              # 16
                    pkg_properties["docs"],            # 17
                    pkg_index)                         # 18
     if pkey == "":  # first node in the tree
+        prod.name = prod.shortname  # this is required, since the first node in MD usually is not meaningful.
         productTree.create_node(prod.id, prod.id, data=prod)
     else:
         if pkey != '':

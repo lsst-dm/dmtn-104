@@ -358,7 +358,7 @@ def make_tree_landmix1(ptree, filename, scope, compact):
                     # the compression factor has been calculated based on the backgap = 14 pt
                     n_blocks_width = n_blocks_width + 1 + sub_depth * 0.86
                     paperwidth = paperwidth + leafWidth * (1 + sub_depth * backrate)
-                    print(sub_depth, paperwidth)
+                    # print(sub_depth, paperwidth)
             else:
                 if len(sub_tree.leaves()) > n_blocks_high:
                     n_blocks_high = len(sub_tree.leaves())
@@ -368,7 +368,7 @@ def make_tree_landmix1(ptree, filename, scope, compact):
 
     # dump file
     ofile = open(filename, "w")
-    print(n_blocks_width, paperwidth, "backrate:", backrate)
+    # print(n_blocks_width, paperwidth, "backrate:", backrate)
     print_header(scope, paperwidth, paperheight, ofile)
     tex_tree_landmix1(ofile, ptree, compact)
     print_footer(ofile)
