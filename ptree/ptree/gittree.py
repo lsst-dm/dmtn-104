@@ -49,6 +49,7 @@ def get_gitpkg_content(pkg, g):
 
     :return:
     """
+    content = dict()
     if pkg == '':
         return
     spkg = pkg.split("/")
@@ -67,23 +68,25 @@ def get_gitpkg_content(pkg, g):
         try:
             re = gg.get_repo(repo)
             rc = re.get_contents("")
+            # finding the readme(s?)
+            content['readme'] = dict()
             for f in rc:
                 # print(f.path)
                 if "README" in f.path:
                     readme_file = f.path
-                    print(readme_file)
-                    readme = rc.dump("")
+                    print(readme_file, "    ------------------------------------------------------------------------")
+                    readme_full = re.get_file_contents(readme_file).decoded_content
+                    print("full length:", len(readme_full))
+                    readme_split = readme_full.decode('UTF-8').splitlines()
+                    print("    lines:", len(readme_split))
+                    readme_20 = '\n'.join(readme_split[:20])
+                    print(readme_20)
+                    print(" ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||")
+                    content['readme'][readme_file] = readme_20
+            # finding the ups dependencies
+            ups_path = 'ups/' + re.name + '.table'
+            print(ups_path)
         except:
             print(f"Error accessing repository {repo} in organization {org}.")
     except:
         print(f"Error accessing organization {org}")
-    # return
-    #
-    # response = requests.get(blnk, headers='')
-    # r_code = response.status_code
-    # print(r_code)
-    # if r_code == 200:
-    #    doc = pandoc.Document()
-    #    doc.html = response.text.encode('utf-8')
-    #    doctxt = doc.plain.decode('utf-8')
-    #    print(doctxt)

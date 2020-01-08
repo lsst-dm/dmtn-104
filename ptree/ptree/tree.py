@@ -304,6 +304,81 @@ def tex_tree_landmix1(fout, ptree, compact):
     print("{} Product lines in TeX ".format(count))
 
 
+def tex_full_tree(fout, ptree, compact):
+    """ Write the product tree diagram:
+        first level in landscape
+        second level subtrees in portrait
+    :param fout: outputfile
+    :param ptree: input product tree
+    :param compact: if the landscape is compact or not
+    :return: none
+    """
+    fl_stub = tree_slice(ptree, 1)
+    fl_nodes = fl_stub.expand_tree(mode=Tree.WIDTH)  # default mode=DEPTH
+    fl_row = []
+    fl_count = 0
+    root = None
+    sl_d = 0
+    sib = None
+    p_count = 0
+    for fl in fl_nodes:
+        fl_count = fl_count + 1
+        if fl_count == 1:  # root node
+            root = ptree[fl].data
+        else:
+            fl_row.append(ptree[fl])  # superfluous, to remove
+            s = ptree[fl].data
+            sl_subtree = ptree.subtree(s.id)
+            sl_stub = tree_slice(sl_subtree, 1)
+            sl_nodes = sl_stub.expand_tree()
+            sl_row = []
+            sl_count = 0
+            sl_root = None
+            sl_size = 0
+            for sl in sl_nodes:
+                sl_count = sl_count + 1
+                if sl_count == 1:
+                    sl_root = ptree[sl].data
+                else:
+                    p = ptree[sl].data
+                    sl_row.append(ptree[sl])
+                    stree = ptree.subtree(p.id)
+                    if compact:
+                        if sl_d != 0 and sib is not None:
+                            width = sl_d * (leafWidth - backgap)
+                        else:
+                            width = bigGap
+                        sl_size = sl_size + width
+                        p_count = p_count + tex_tree_portrait0(fout, stree, width, sib, False)
+                    else:
+                        width = sl_d * (leafWidth + bigGap) + bigGap
+                        p_count = p_count + tex_tree_portrait(fout, stree, width, sib, False)
+                    sib = p
+                    sl_d = stree.depth()
+            # position the subtree root
+            sl_root_p = int(sl_count / 2) -1
+            if sl_root_p < 0:
+                sl_root_p = 0
+            print(sl_count, sl_root_p)
+            sl_child = sl_row[sl_root_p].data
+            print(r"\node ({p.id}) "
+                  r"[wbbox, above={bg}pt of {c.id}]{{\textbf{{{p.name}}}}};".format(bg=bigGap,
+                                                                                    p=sl_root, c=sl_child), file=fout)
+            # print(" second level ", sl_row)
+            drawLines(fout, sl_row)
+    # place root node
+    root_position = int(fl_count / 2) -1
+    if root_position < 0:
+        root_position = 0
+    # print(f"Count: {count}, Root position: {root_position}")
+    child = fl_row[root_position].data
+    print(r"\node ({p.id}) "
+          r"[wbbox, above={bg}pt of {c.id}]{{\textbf{{{p.name}}}}};".format(bg=bigGap, p=root, c=child), file=fout)
+    # print("  first level ", fl_row)
+    drawLines(fout, fl_row)
+    print("{} Product lines in TeX ".format(p_count + fl_count))
+
+
 def make_tree_portrait(ptree, filename, scope):
     """
     Fully portrait product tree diagram
@@ -332,7 +407,7 @@ def make_tree_landmix1(ptree, filename, scope, compact):
     :param scope:
     :return: none
     """
-    print("Writing Mixed Landscape Product Tree in ", filename)
+    print("Writing Mixed (1 level) Landscape Product Tree in ", filename)
 
     # calculating diagram size
     first_level = tree_slice(ptree, 1)
@@ -371,6 +446,62 @@ def make_tree_landmix1(ptree, filename, scope, compact):
     # print(n_blocks_width, paperwidth, "backrate:", backrate)
     print_header(scope, paperwidth, paperheight, ofile)
     tex_tree_landmix1(ofile, ptree, compact)
+    print_footer(ofile)
+    ofile.close()
+
+
+def make_full_tree(ptree, filename, scope, compact):
+    """
+    First level landscape, and then portrait
+    :param ptree:
+    :param filename:
+    :param scope:
+    :return: none
+    """
+    print("Writing Mixed (2 levels) Landscape Full Product Tree in ", filename)
+
+    # calculating diagram size
+    first_level = tree_slice(ptree, 1)
+    fl_nodes = first_level.expand_tree()
+    n_blocks_high = 0
+    n_blocks_width = 0
+    paperwidth = 0
+    fl_c = 0
+    for fl in fl_nodes:
+        fl_c = fl_c + 1
+        s = ptree[fl].data
+        if fl_c != 1:
+            sub_level = ptree.subtree(s.id)
+            second_level = tree_slice(sub_level,1)
+            sl_nodes = second_level.expand_tree()
+            c = 0
+            for n in sl_nodes:
+                c = c + 1
+                if c != 1:  # skip the first, that is the tp level node.
+                    p = ptree[n].data
+                    sub_tree = ptree.subtree(p.id)
+                    nnodes = sub_tree.size()
+                    if nnodes > n_blocks_high:
+                        n_blocks_high = nnodes
+                    sub_depth = sub_tree.depth()
+                    if compact:
+                        if sub_depth == 0:
+                            n_blocks_width = n_blocks_width + 1
+                            paperwidth = paperwidth + leafWidth + bigGap
+                        else:
+                            # the compression factor has been calculated based on the backgap = 14 pt
+                            paperwidth = paperwidth + leafWidth * (sub_depth + 1) * backrate + smallGap
+                        print(p.id, sub_depth, paperwidth, nnodes)
+                    else:
+                        paperwidth = paperwidth + (sub_depth + 1) * (leafWidth + bigGap)
+    paperheight = n_blocks_high * (leafHeight + smallGap) + (leafHeight + bigGap) * 2 + leafHeight
+    paperwidth = paperwidth + leafWidth
+
+    # dump file
+    ofile = open(filename, "w")
+    # print(n_blocks_width, paperwidth, "backrate:", backrate)
+    print_header(scope, paperwidth, paperheight, ofile)
+    tex_full_tree(ofile, ptree, compact)
     print_footer(ofile)
     ofile.close()
 

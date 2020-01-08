@@ -24,14 +24,17 @@ Code for generation Product Tree document from MagicDraw
 import requests
 import click
 import sys
+import os
+import csv
 from .config import Config
 from jinja2 import Environment, PackageLoader, TemplateNotFound, ChoiceLoader, FileSystemLoader
 from .util import get_pkg_properties, rsget, fix_tex, fix_id_tex, Product, html_to_latex, get_yaml
-from .tree import make_tree_portrait, make_tree_landmix1, make_subtrees
+from .tree import make_tree_portrait, make_tree_landmix1, make_subtrees, make_full_tree
 from treelib import Tree
 from .gittree import do_github_section
 
 requirements = {}
+
 
 def _as_output_format(text, output_format):
     if Config.TEMPLATE_LANGUAGE != output_format:
@@ -495,19 +498,64 @@ def do_full_tree(md_trees, subsystem_id, compact):
     for subtree in md_trees:
         for node in subtree.values():
             if not node.parent:
-                # this is the subtree parent
-                sub_parent = node.id
+                # this is the subtree parent node
+                node.parent = node0.id
+                full_tree.create_node(node.id, node.id, data=node, parent=node0.id)
             else:
-                if node.parent == sub_parent:
-                    node.parent = node0.id
+                # if node.parent == sub_parent:
+                #    node.parent = node0.id
                 full_tree.create_node(node.id, node.id, data=node, parent=node.parent)
-    # print(full_tree)
+    print(full_tree)
 
     # build full landscape tree
-    make_tree_landmix1(full_tree, "trees/" + subsystem_id + "_full.tex", node0.id, compact)
+    make_full_tree(full_tree, "trees/" + subsystem_id + "_full.tex", node0.id, compact)
 
 
-def generate_document(connection_str, output_format, token_path, compact):
+def get_csvfiles():
+    """
+    Get csv files previously generated in csv/ folder
+    """
+    trees = []
+    csv_folder = 'csv'
+
+    for csvfile in os.listdir(csv_folder):
+        if csvfile.endswith('.csv'):
+            print(csvfile)
+            with open(csvfile, 'r') as csvf:
+                reader = csv.reader(csvf, dialect='excel')
+                products = dict()
+                count = 0
+                for line in reader:
+                    if count == 0:
+                        # first line
+                        continue
+                    else:
+                        # Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name
+                        # 0            1           2       3    4     5        6              7         8
+                        p = Product(line[0],             # 1   key (0 is self)
+                                    line[8],             # 2   name
+                                    line[2],             # 3   parent
+                                    "",                  # 4   description
+                                    line[3],             # 5   WBS
+                                    line[5],             # 6   manager
+                                    line[6],             # 7   owner
+                                    "",                  # 8   kind
+                                    line[7],             # 9   pkgs
+                                    [],                  # 10  depends
+                                    "",                  # 11  MagicDraw Element Server Id
+                                    [],                  # 12  links
+                                    line[4],             # 13  teams
+                                    line[1],             # 14  shortname
+                                    [],                  # 15  usedin
+                                    [],                  # 16  requirements
+                                    [],                  # 17  docs
+                                    "")                  # 18  the position assigned in MD (number before the name)
+                        products[p.id] = p
+            trees.append(products)
+    return trees
+
+
+def generate_document(connection_str, output_format, token_path, compact, csvonly):
     """Given system and level, generates the document content"""
     md_trees = []
 
@@ -516,22 +564,26 @@ def generate_document(connection_str, output_format, token_path, compact):
     subsystem_id = subsystem_info['subsystem']['id']
     doc_handler = subsystem_info['subsystem']['doc']
     subsystem_name = subsystem_info['subsystem']['name']
-    print("-> Generating Main Product Tree  ==========================")
-    level_id = subsystem_info['subsystem']['subtrees'][0]['id']
-    filename = subsystem_info['subsystem']['subtrees'][0]['filename']
-    md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename, compact,
-                                  doc_handler))
+    if not csvonly:
+        print("-> Generating Main Product Tree  ==========================")
+        level_id = subsystem_info['subsystem']['subtrees'][0]['id']
+        filename = subsystem_info['subsystem']['subtrees'][0]['filename']
+        md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename, compact,
+                                      doc_handler))
 
-    print("-> Generating Development Product Tree  ==========================")
-    level_id = subsystem_info['subsystem']['subtrees'][1]['id']
-    filename = subsystem_info['subsystem']['subtrees'][1]['filename']
-    md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename, compact,
-                                  doc_handler))
+        print("-> Generating Development Product Tree  ==========================")
+        level_id = subsystem_info['subsystem']['subtrees'][1]['id']
+        filename = subsystem_info['subsystem']['subtrees'][1]['filename']
+        md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename, compact,
+                                      doc_handler))
 
-    print("-> Generating FULL Product Tree  ==========================")
-    do_full_tree(md_trees, subsystem_name, compact)
+        print("-> Generating FULL Product Tree  ==========================")
+        do_full_tree(md_trees, subsystem_name, True)
+    else:
+        print("-> Getting csv files  ==========================")
+        md_trees = get_csvfiles()
 
-    print("-> [to do] Generating GitHub Product Tree  ==========================")
+    print("-> Generating GitHub Product Tree  ==========================")
     do_github_section(md_trees, token_path)
 
     # print("-> [to do] Generating Auxiliary Product Tree  ==========================")

@@ -39,24 +39,20 @@ def cli(namespace):
 
 @cli.command("generate")
 @click.option('--format', default='latex', help='Pandoc output format (see pandoc for options)')
-@click.option('--compact/--no-compact', default=True, help='Ladscape Product Tree compact (default True)')
+@click.option('--compact', default=True, help='Ladscape Product Tree compact (default True)')
 @click.option('--username', prompt="MagicDraw Username", envvar="MD_USER", help="MagicDraw username")
 @click.option('--password', prompt="MagicDraw Password", hide_input=True,
               envvar="MD_PASSWORD", help="MagicDraw Password")
 @click.option('--tokenpath', default='~/.sq_github_token', help="Path to the Github generated token")
-def generate(format, username, password, tokenpath, compact):
+@click.option('--csvonly', default=False, help='Skip MagicDraw and generate only Git section from csv files')
+def generate(format, username, password, tokenpath, compact, csvonly):
     """Generate product tree document
     """
-
-    if compact:
-        cmp = True
-    else:
-        cmp = False
 
     usr_pwd = username + ":" + password
     connection_str = b64encode(usr_pwd.encode("ascii")).decode("ascii")
 
-    generate_document(connection_str, format, tokenpath, cmp)
+    generate_document(connection_str, format, tokenpath, compact, csvonly)
 
 
 if __name__ == '__main__':
