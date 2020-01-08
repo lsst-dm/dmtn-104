@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Document:     DM Support Prd.  product tree
+% Document:     DM Support Products  product tree
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass{article}
@@ -15,8 +15,8 @@ textwidth=30cm,textheight=50mm]{geometry}
 \newcommand\showpage{%
 \setlayoutscale{0.5}\setlabelfont{\tiny}\printheadingsfalse\printparametersfalse
 \currentpage\pagedesign}
-\hypersetup{pdftitle={DM Support Prd. products }, pdfsubject={Diagram illustrating the
-                products in LSST DM Support Prd. }, pdfauthor={Extracted from MagicDraw}}
+\hypersetup{pdftitle={DM Support Products products }, pdfsubject={Diagram illustrating the
+                products in LSST DM Support Products }, pdfauthor={Extracted from MagicDraw}}
 \tikzstyle{tbox}=[rectangle,text centered, text width=30mm]
 \tikzstyle{wbbox}=[rectangle, rounded corners=3pt, draw=black, top color=blue!50!white,
                     bottom color=white, very thick, minimum height=40pt, inner sep=2pt,
@@ -152,10 +152,9 @@ right=192pt of DMDSW] {\textbf{Test Data
  \draw[pline] (DMDTDP.south) -| ++(0,0) |- (HSCRC1.west); 
 \node (SPLTD) [pbox,below=6pt of HSCRC1] {\textbf{SPL Test Data
 } };\node [below right] at (SPLTD.north west) {\footnotesize \color{blue}} ;
-\node (SPLTDpkg) [tbox,below=3mm of SPLTD.north] {{\footnotesize \color{black} \begin{verbatim} spl_testdata \end{verbatim} }  };
 
  \draw[pline] (DMDTDP.south) -| ++(0,0) |- (SPLTD.west); 
-\node (DMDEV) [wbbox, above=43pt of DMDSRV]{\textbf{DM Support Prd.
+\node (DMDEV) [wbbox, above=43pt of DMDSRV]{\textbf{DM Support Products
 }};
  \draw[pline]   (DMDC3E.north) -- ++(0.0,0.5) -| (DMDEV.south) ; 
  \draw[pline]   (DMDSRV.north) -- ++(0.0,0.5) -| (DMDEV.south) ; 

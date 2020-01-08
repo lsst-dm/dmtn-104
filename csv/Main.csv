@@ -62,7 +62,7 @@ APPRMPT, Alert Prod SW, PRODN, 1.02C.03, AP, John Swinbank, Eric Bellm, , Alert 
 DMCAL, Calibration SW, PRODN, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, , Calibration SW 
 DRP, DR Prod SW, PRODN, 1.02C.04, DRP, Yusra AlSayyad, Jim Bosch, , DR Prod SW 
 MOPS, MOPS SW, PRODN, 1.02C.03.06, AP, John Swinbank, Eric Bellm, mops_daymops, MOPS SW 
-SP, Spec Prog SW, PRODN, 1.02C.03 1.02C.04, AP, John Swinbank, Melissa Graham, , Spec Prog SW 
+SP, Spec Prog SW, PRODN, 1.02C.03 1.02C.04, AP, John Swinbank, Leanne Guy, , Spec Prog SW 
 SPDIST, Science P. Dist., PRODN, 1.02C.04.02, DRP, John Swinbank, Leanne Guy, lsst_distrib, Science P. Dist. 
 SPLUG, Science Plugins, PRODN, 1.02C.04.02, DRP, John Swinbank, Leanne Guy, , Science Plugins 
 TMPLGEN, Tmpl Gen SW, PRODN, 1.02C.04.04, DRP, Yusra AlSayyad, Jim Bosch, , Tmpl Gen SW 
