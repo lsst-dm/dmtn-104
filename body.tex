@@ -74,10 +74,12 @@ Information in sections \ref{sec:top} and \ref{sec:sups} is extracted from Magic
 The information regarding the Git packages implementing the above products (in sections \ref{sec:top} and \ref{sec:sups}) is provided in section \ref{sec:low}. 
 This information is extracted from GitHub.
 
-Finally, section \ref{sec:nondm}, list all non DM products that are required in order to fulfill the DMS requirements.
+The section \ref{sec:nondm} lists all non DM products that are required in order to fulfill the DMS requirements.
 This information is extracted from MagicDraw.
 No GitHub package details are provided for these products. 
 
+The last section \ref{sec:jiracomponents} will document all components in the DM Jira project.
+ 
 
 \subsection{Consistency and Completeness}\label{sec:cons-comp}
 
@@ -136,16 +138,25 @@ These products are organized and maintained in MagicDraw by the DM System Engine
 
 
 \newpage
-\section{Low Level Product Tree}\label{sec:low}
+\section{GitHub Packages}\label{sec:low}
 
-This section will list the GitHub packages related to the DM products listed in previous sections \ref{sec:top} and \ref{sec:sups}.
+This section lists the GitHub packages related to the DM products listed in previous sections \ref{sec:top} and \ref{sec:sups}.
+The detailed information is extracted from GitHub.
 
-The detailed information for each of them shall be provided in GitHub.
-
-%\input{swProducts}
+\input{git_pkgs_section.tex}
 
 
 \newpage
 \section{Non DM Products}\label{sec:nondm}
 
 This section will list non DM products that are relevant in order to fulfill DMS requirements.
+
+
+\newpage
+\section{DM Jira Components}\label{sec:jiracomponents}
+
+This section will list the components used in the DM Jira project.
+Some of them are crealy related to a product included in the product tree or a low level git package.
+Other Jira components are not mapped in the above sections, and will be described here.
+
+The information should be extracted from Jira automatically and checks are executed in order to mach it with the information existing in MagicDraw and GitHub.

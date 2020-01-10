@@ -6,46 +6,19 @@ YYYY
 Z
 AS
 I
-http
-p
-s
-A
-Alert
-Alert Production
-Archive
-Butler
-Camera
-camera
-Commissioning
-Document
-Enclave
-Firefly
-git
-Operations
-Summit
-Task
-Template
-calibration
-configuration
-metadata
-monitoring
-pipeline
-provenance
-Data Management
-Base Facility
-Batch Production
-Data Backbone
-Data Management System
-Data Release Production
-General Parallel File System
-NCSA Facility
-Data Release
-Prompt Processing
-Quality Control
-Science Pipelines
-data repository
-Release
-arcsec
-Builder
-eups
-gcc
+AND
+DATABASE
+BUILDING
+OBSOLETE
+README
+WHERE
+SELECT
+HEADER
+INSTALLING
+FROM
+USE
+SECURITY
+FIND
+PASSWORD
+CREATE
+USER

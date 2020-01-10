@@ -7,12 +7,12 @@ DBBMDSRV, DBB Metadata, DBBSRV, 1.02C.07.07, LDF, Michelle Butler, Michelle Gowe
 DBBSTRSRV, DBB Storage, DBBSRV, 1.02C.07.07, LDF, Michelle Butler, Michelle Gower, , DBB Storage 
 DBBTRSRV, DBB Transport, DBBSRV, 1.02C.07.07, LDF, Michelle Butler, Michelle Gower, , DBB Transport 
 ITSRV, IT Service, DMSRV, , , Wil O'Mullane, Wil O'Mullane, , IT Service 
-APDB, APDB, ITSRV, , , Fritz Mueller, Colin Slater, , APDB 
+APDB, APDB, ITSRV, 1.02C.06.01.01, DAX, Fritz Mueller, Colin Slater, , APDB 
 EFDB, EFD Cache, ITSRV, , , Frossie Economou, Simon Krughoff, , EFD Cache 
 LSPDB, LSP Database, ITSRV, , , Michelle Butler, Michelle Butler, , LSP Database 
 NETMGMT, Net Mgmt, ITSRV, 1.02C.08.03, Net/Base, Jeff Kantor, Wil O'Mullane, , Net Mgmt 
 LSPSRV, LSP Services, DMSRV, , , Frossie Economou, Gregory Dubois-Felsmann, , LSP Services 
-LSPJLSRV, LSP JupyterLab, LSPSRV, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/lsp-deploy, LSP JupyterLab 
+LSPNBL, LSP JupyterLab, LSPSRV, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/nublado, LSP JupyterLab 
 LSPPRTLSRV, LSP Portal, LSPSRV, 1.02C.05.09 1.02C.05.08 1.02C.05.07, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, lsst-sqre/lsp-deploy, LSP Portal 
 LSPWAPI, LSP Web API, LSPSRV, , , Frossie Economou, Simon Krughoff, , LSP Web API 
 SIASRV, SIA, LSPWAPI, , , Frossie Economou, Simon Krughoff, , SIA 
@@ -44,7 +44,7 @@ DBBMD, DBB Meta SW, DBB, 1.02C.07.08, LDF, Michelle Butler, Michelle Gower, lsst
 DBBTR, DBB Transport SW, DBB, 1.02C.07.08, LDF, Michelle Butler, Michelle Gower, , DBB Transport SW 
 LSP, LSP SW, DMSW, , , Frossie Economou, Gregory Dubois-Felsmann, , LSP SW 
 DAXIMG, Image Server, LSP, 1.02C.06.02.04, DAX, Frossie Economou, Colin Slater, dax_imgserv, Image Server 
-LSPJL, LSP JL SW, LSP, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, jupyterlab*, LSP JL SW 
+LSPJL, LSP JL SW, LSP, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils, LSP JL SW 
 LSPWEB, LSP Web SW, LSP, 1.02C.06.02, DAX, , , dax_webserv, LSP Web SW 
 SUIT, SUIT, LSP, 1.02C.05.09 1.02C.05.07 1.02C.05.08, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, suit, SUIT 
 SUITOH, SUIT OnlineHelp, LSP, , SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, suit-onlinehelp, SUIT OnlineHelp 
@@ -67,7 +67,7 @@ SPDIST, Science P. Dist., PRODN, 1.02C.04.02, DRP, John Swinbank, Leanne Guy, ls
 SPLUG, Science Plugins, PRODN, 1.02C.04.02, DRP, John Swinbank, Leanne Guy, , Science Plugins 
 TMPLGEN, Tmpl Gen SW, PRODN, 1.02C.04.04, DRP, Yusra AlSayyad, Jim Bosch, , Tmpl Gen SW 
 QC, QC Products, DMSW, , , Frossie Economou, , , QC Products 
-QCSW, Quality Ctrl SW, QC, 1.02C.10.02.01, SQuaRE, Frossie Economou, Simon Krughoff, , Quality Ctrl SW 
+QCSW, Quality Ctrl SW, QC, 1.02C.10.02.01, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/squash, Quality Ctrl SW 
 SUPPSW, Supporting SW, DMSW, , , John Swinbank, , , Supporting SW 
 ADQL, ADQL Translator, SUPPSW, 1.02C.06.02.05, DAX, Frossie Economou, Simon Krughoff, albuquery, ADQL Translator 
 BUTLER, Data Butler, SUPPSW, 1.02C.06.02.01, DAX, Michelle Butler, Tim Jenness, daf_butler, Data Butler 
@@ -97,6 +97,8 @@ THPL, Third Party Libs, HWCOTS, , , , , , Third Party Libs
 BOOST, Boost, THPL, , , , , , Boost 
 FFAA, Firefly API A., THPL, , SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, , Firefly API A. 
 FIREFLY, Firefly, THPL, 1.02C.05.06, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, , Firefly 
+JH3, Jupyterhub, THPL, , , , , , Jupyterhub 
+JL3, Jupyterlab, THPL, , , , , , Jupyterlab 
 INFRA, Infrastructure, DM, , , Wil O'Mullane, , , Infrastructure 
 ENC, Enclaves, INFRA, , , , Multiple, , Enclaves 
 ENCARCB, Arch Base Encl, ENC, 1.02C.08.01, LDF, Michelle Butler, Michelle Butler, , Arch Base Encl 

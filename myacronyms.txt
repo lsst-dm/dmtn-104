@@ -1,24 +1,27 @@
 #Put acronyms in this file which are not found or which have multiple definitions (putt he one you want here)
 AI:Action Item
 AI\&T:Assembly, Integration and Test
+AOS:Active Optics System
 AURA:Association of Universities for Research in Astronomy
 BAC:Budget At Completion
+BBC: German shipping company
 BOE:Basis Of Estimate
 CI:Continuous Integration
+EIE:European Industrial Engineering  - Italian engineering company (Dome)
+EPO:Education and Public Outreach
+ESNET:Energy Sciences Network
+KPI:Key Performance Indicator
+LDM:LSST Data Management (document handle)
 MC:Monte-Carlo (simulation/process)
+MIA:Missing In Action
+MREN:Montenegrin Research and Education Network
 NCOA:National Center for Optical-Infrared Astronomy
 NCSA:National Center for Supercomputing Applications
 NET:NETworking
 NSF:National Science Foundation
-EPO:Education and Public Outreach
-BBC: German shipping company
-TSESO:Thales SESO (Optics coating)
-ESNET:Energy Sciences Network
-AOS:Active Optics System
-MIA:Missing In Action
-QSERV:Query Services (LSST Custom database)
-MREN:Montenegrin Research and Education Network
-EIE:European Industrial Engineering  - Italian engineering company (Dome)
-LDM:LSST Data Management (document handle)
 PSTN:Project Science Technical Note
-SIA: Simple Image Access
+QSERV:Query Services (LSST Custom database)
+REQ:Requirement
+SIA:Simple Image Access
+TSESO:Thales SESO (Optics coating)
+WEB:World wide web, internet

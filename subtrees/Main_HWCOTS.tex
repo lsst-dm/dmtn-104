@@ -117,6 +117,14 @@ right=96pt of LLSW] {\textbf{Third Party Libs
 } };\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
 
  \draw[pline] (THPL.south) -| ++(0,0) |- (FIREFLY.west); 
+\node (JH3) [pbox,below=6pt of FIREFLY] {\textbf{Jupyterhub
+} };\node [below right] at (JH3.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (THPL.south) -| ++(0,0) |- (JH3.west); 
+\node (JL3) [pbox,below=6pt of JH3] {\textbf{Jupyterlab
+} };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (THPL.south) -| ++(0,0) |- (JL3.west); 
 \node (HWCOTS) [wbbox, above=43pt of HWNET]{\textbf{Hardware and COTS Products}};
  \draw[pline]   (COTS.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
  \draw[pline]   (HWCOMP.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 

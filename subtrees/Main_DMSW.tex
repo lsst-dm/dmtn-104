@@ -69,7 +69,7 @@ right=96pt of DBB] {\textbf{LSP SW
  \draw[pline] (LSP.south) -| ++(0,0) |- (DAXIMG.west); 
 \node (LSPJL) [pbox,below=6pt of DAXIMG] {\textbf{LSP JL SW
 } };\node [below right] at (LSPJL.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
-\node (LSPJLpkg) [tbox,below=3mm of LSPJL.north] {{\footnotesize \color{black} \begin{verbatim} jupyterlab* \end{verbatim} }  };
+\node (LSPJLpkg) [tbox,below=3mm of LSPJL.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils \end{verbatim} }  };
 
  \draw[pline] (LSP.south) -| ++(0,0) |- (LSPJL.west); 
 \node (LSPWEB) [pbox,below=6pt of LSPJL] {\textbf{LSP Web SW
@@ -171,6 +171,7 @@ right=96pt of PRODN] {\textbf{QC Products
 
 \node (QCSW) [pbox,below right=6pt and -14pt of QC] {\textbf{Quality Ctrl SW
 } };\node [below right] at (QCSW.north west) {\footnotesize \color{blue}1.02C.10.02.01} ;
+\node (QCSWpkg) [tbox,below=3mm of QCSW.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/squash \end{verbatim} }  };
 
  \draw[pline] (QC.south) -| ++(0,0) |- (QCSW.west); 
 \node (SUPPSW) [pbox, 

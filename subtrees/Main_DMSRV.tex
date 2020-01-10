@@ -54,7 +54,7 @@ right=96pt of DBBSRV] {\textbf{IT Service
 } };\node [below right] at (ITSRV.north west) {\footnotesize \color{blue}} ;
 
 \node (APDB) [pbox,below right=6pt and -14pt of ITSRV] {\textbf{APDB
-} };\node [below right] at (APDB.north west) {\footnotesize \color{blue}} ;
+} };\node [below right] at (APDB.north west) {\footnotesize \color{blue}1.02C.06.01.01} ;
 
  \draw[pline] (ITSRV.south) -| ++(0,0) |- (APDB.west); 
 \node (EFDB) [pbox,below=6pt of APDB] {\textbf{EFD Cache
@@ -73,12 +73,12 @@ right=96pt of DBBSRV] {\textbf{IT Service
 right=96pt of ITSRV] {\textbf{LSP Services
 } };\node [below right] at (LSPSRV.north west) {\footnotesize \color{blue}} ;
 
-\node (LSPJLSRV) [pbox,below right=6pt and -14pt of LSPSRV] {\textbf{LSP JupyterLab
-} };\node [below right] at (LSPJLSRV.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
-\node (LSPJLSRVpkg) [tbox,below=3mm of LSPJLSRV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/lsp-deploy \end{verbatim} }  };
+\node (LSPNBL) [pbox,below right=6pt and -14pt of LSPSRV] {\textbf{LSP JupyterLab
+} };\node [below right] at (LSPNBL.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
+\node (LSPNBLpkg) [tbox,below=3mm of LSPNBL.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/nublado \end{verbatim} }  };
 
- \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPJLSRV.west); 
-\node (LSPPRTLSRV) [pbox,below=6pt of LSPJLSRV] {\textbf{LSP Portal
+ \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPNBL.west); 
+\node (LSPPRTLSRV) [pbox,below=6pt of LSPNBL] {\textbf{LSP Portal
 } };\node [below right] at (LSPPRTLSRV.north west) {\footnotesize \color{blue}1.02C.05.09 1.02C.05.08 1.02C.05.07} ;
 \node (LSPPRTLSRVpkg) [tbox,below=3mm of LSPPRTLSRV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/lsp-deploy \end{verbatim} }  };
 

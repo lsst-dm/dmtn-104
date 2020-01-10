@@ -58,7 +58,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 
  \draw[pline] (DMSRV.south) -| ++(0,0) |- (ITSRV.west); 
 \node (APDB) [pbox,below right=6pt and -14pt of ITSRV] {\textbf{APDB
-} };\node [below right] at (APDB.north west) {\footnotesize \color{blue}} ;
+} };\node [below right] at (APDB.north west) {\footnotesize \color{blue}1.02C.06.01.01} ;
 
  \draw[pline] (ITSRV.south) -| ++(0,0) |- (APDB.west); 
 \node (EFDB) [pbox,below=6pt of APDB] {\textbf{EFD Cache
@@ -77,12 +77,12 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (LSPSRV.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSRV.south) -| ++(0,0) |- (LSPSRV.west); 
-\node (LSPJLSRV) [pbox,below right=6pt and -14pt of LSPSRV] {\textbf{LSP JupyterLab
-} };\node [below right] at (LSPJLSRV.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
-\node (LSPJLSRVpkg) [tbox,below=3mm of LSPJLSRV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/lsp-deploy \end{verbatim} }  };
+\node (LSPNBL) [pbox,below right=6pt and -14pt of LSPSRV] {\textbf{LSP JupyterLab
+} };\node [below right] at (LSPNBL.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
+\node (LSPNBLpkg) [tbox,below=3mm of LSPNBL.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/nublado \end{verbatim} }  };
 
- \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPJLSRV.west); 
-\node (LSPPRTLSRV) [pbox,below=6pt of LSPJLSRV] {\textbf{LSP Portal
+ \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPNBL.west); 
+\node (LSPPRTLSRV) [pbox,below=6pt of LSPNBL] {\textbf{LSP Portal
 } };\node [below right] at (LSPPRTLSRV.north west) {\footnotesize \color{blue}1.02C.05.09 1.02C.05.08 1.02C.05.07} ;
 \node (LSPPRTLSRVpkg) [tbox,below=3mm of LSPPRTLSRV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/lsp-deploy \end{verbatim} }  };
 
@@ -213,7 +213,7 @@ right=288pt of DMSRV] {\textbf{Software Products
  \draw[pline] (LSP.south) -| ++(0,0) |- (DAXIMG.west); 
 \node (LSPJL) [pbox,below=6pt of DAXIMG] {\textbf{LSP JL SW
 } };\node [below right] at (LSPJL.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
-\node (LSPJLpkg) [tbox,below=3mm of LSPJL.north] {{\footnotesize \color{black} \begin{verbatim} jupyterlab* \end{verbatim} }  };
+\node (LSPJLpkg) [tbox,below=3mm of LSPJL.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils \end{verbatim} }  };
 
  \draw[pline] (LSP.south) -| ++(0,0) |- (LSPJL.west); 
 \node (LSPWEB) [pbox,below=6pt of LSPJL] {\textbf{LSP Web SW
@@ -315,6 +315,7 @@ right=288pt of DMSRV] {\textbf{Software Products
  \draw[pline] (DMSW.south) -| ++(0,0) |- (QC.west); 
 \node (QCSW) [pbox,below right=6pt and -14pt of QC] {\textbf{Quality Ctrl SW
 } };\node [below right] at (QCSW.north west) {\footnotesize \color{blue}1.02C.10.02.01} ;
+\node (QCSWpkg) [tbox,below=3mm of QCSW.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/squash \end{verbatim} }  };
 
  \draw[pline] (QC.south) -| ++(0,0) |- (QCSW.west); 
 \node (SUPPSW) [pbox,below=49pt of QC] {\textbf{Supporting SW
@@ -438,6 +439,14 @@ right=192pt of DMSW] {\textbf{Resources
 } };\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
 
  \draw[pline] (THPL.south) -| ++(0,0) |- (FIREFLY.west); 
+\node (JH3) [pbox,below=6pt of FIREFLY] {\textbf{Jupyterhub
+} };\node [below right] at (JH3.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (THPL.south) -| ++(0,0) |- (JH3.west); 
+\node (JL3) [pbox,below=6pt of JH3] {\textbf{Jupyterlab
+} };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (THPL.south) -| ++(0,0) |- (JL3.west); 
 \node (INFRA) [pbox, 
 right=192pt of HWCOTS] {\textbf{Infrastructure
 } };\node [below right] at (INFRA.north west) {\footnotesize \color{blue}} ;
