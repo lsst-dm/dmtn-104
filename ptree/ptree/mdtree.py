@@ -28,19 +28,12 @@ import os
 import csv
 from .config import Config
 from jinja2 import Environment, PackageLoader, TemplateNotFound, ChoiceLoader, FileSystemLoader
-from .util import get_pkg_properties, rsget, fix_tex, fix_id_tex, Product, html_to_latex, get_yaml
+from .util import get_pkg_properties, rsget, fix_tex, fix_id_tex, Product, html_to_latex, get_yaml, _as_output_format
 from .tree import make_tree_portrait, make_tree_landmix1, make_subtrees, make_full_tree
 from treelib import Tree
 from .gittree import do_github_section
 
 requirements = {}
-
-
-def _as_output_format(text, output_format):
-    if Config.TEMPLATE_LANGUAGE != output_format:
-        setattr(Config.DOC, Config.TEMPLATE_LANGUAGE, text.encode("utf-8"))
-        text = getattr(Config.DOC, output_format).decode("utf-8")
-    return text
 
 
 def get_dep_key(rcs, mres, mdid):
@@ -505,54 +498,60 @@ def do_full_tree(md_trees, subsystem_id, compact):
                 # if node.parent == sub_parent:
                 #    node.parent = node0.id
                 full_tree.create_node(node.id, node.id, data=node, parent=node.parent)
-    print(full_tree)
+    # print(full_tree)
 
     # build full landscape tree
     make_full_tree(full_tree, "trees/" + subsystem_id + "_full.tex", node0.id, compact)
 
 
-def get_csvfiles():
+def get_csvfiles(filename):
     """
     Get csv files previously generated in csv/ folder
     """
-    trees = []
+    products = dict()
     csv_folder = 'csv'
+    csvfile = filename + '.csv'
+    fname_with_path = csv_folder + "/" + csvfile
 
-    for csvfile in os.listdir(csv_folder):
-        if csvfile.endswith('.csv'):
-            print(csvfile)
-            with open(csvfile, 'r') as csvf:
-                reader = csv.reader(csvf, dialect='excel')
-                products = dict()
-                count = 0
-                for line in reader:
-                    if count == 0:
-                        # first line
-                        continue
-                    else:
-                        # Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name
-                        # 0            1           2       3    4     5        6              7         8
-                        p = Product(line[0],             # 1   key (0 is self)
+    if os.path.exists(fname_with_path):
+        print(fname_with_path, ": ", end="")
+        with open(fname_with_path, 'r') as csvf:
+            reader = csv.reader(csvf, dialect='excel')
+            count = 0
+            for line in reader:
+                # print(len(line), line)
+                if count == 0:
+                    # first line
+                    count = count + 1
+                    continue
+                else:
+                    # Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name
+                    # 0            1           2       3    4     5        6              7         8
+                    if len(line) != 0:
+                        count = count + 1
+                        p = Product(line[0],             # 1   key
                                     line[8],             # 2   name
                                     line[2],             # 3   parent
                                     "",                  # 4   description
-                                    line[3],             # 5   WBS
-                                    line[5],             # 6   manager
-                                    line[6],             # 7   owner
+                                    line[3].split(" "),  # 5   WBS
+                                    line[5].split(" "),  # 6   manager
+                                    line[6].split(" "),  # 7   owner
                                     "",                  # 8   kind
-                                    line[7],             # 9   pkgs
+                                    line[7].split(' '),  # 9   pkgs
                                     [],                  # 10  depends
                                     "",                  # 11  MagicDraw Element Server Id
                                     [],                  # 12  links
-                                    line[4],             # 13  teams
+                                    line[4].split(" "),  # 13  teams
                                     line[1],             # 14  shortname
                                     [],                  # 15  usedin
                                     [],                  # 16  requirements
                                     [],                  # 17  docs
                                     "")                  # 18  the position assigned in MD (number before the name)
-                        products[p.id] = p
-            trees.append(products)
-    return trees
+                    products[p.id] = p
+        print(f"got {len(products)} products.")
+    else:
+        print(f"No {fname_with_path} file found!")
+    return products
 
 
 def generate_document(connection_str, output_format, token_path, compact, csvonly):
@@ -564,6 +563,7 @@ def generate_document(connection_str, output_format, token_path, compact, csvonl
     subsystem_id = subsystem_info['subsystem']['id']
     doc_handler = subsystem_info['subsystem']['doc']
     subsystem_name = subsystem_info['subsystem']['name']
+    subtrees = subsystem_info['subsystem']['subtrees']
     if not csvonly:
         print("-> Generating Main Product Tree  ==========================")
         level_id = subsystem_info['subsystem']['subtrees'][0]['id']
@@ -581,9 +581,13 @@ def generate_document(connection_str, output_format, token_path, compact, csvonl
         do_full_tree(md_trees, subsystem_name, True)
     else:
         print("-> Getting csv files  ==========================")
-        md_trees = get_csvfiles()
+        for subtree in subtrees:
+            prds = get_csvfiles(subtree['filename'])
+            if len(prds) > 0:
+                md_trees.append(prds)
+        print(f"Loaded {{n}} csv files".format(n=len(md_trees)))
 
     print("-> Generating GitHub Product Tree  ==========================")
-    do_github_section(md_trees, token_path)
+    do_github_section(md_trees, token_path, output_format)
 
     # print("-> [to do] Generating Auxiliary Product Tree  ==========================")

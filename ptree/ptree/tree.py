@@ -359,7 +359,7 @@ def tex_full_tree(fout, ptree, compact):
             sl_root_p = int(sl_count / 2) -1
             if sl_root_p < 0:
                 sl_root_p = 0
-            print(sl_count, sl_root_p)
+            # print(sl_count, sl_root_p)
             sl_child = sl_row[sl_root_p].data
             print(r"\node ({p.id}) "
                   r"[wbbox, above={bg}pt of {c.id}]{{\textbf{{{p.name}}}}};".format(bg=bigGap,
@@ -491,7 +491,7 @@ def make_full_tree(ptree, filename, scope, compact):
                         else:
                             # the compression factor has been calculated based on the backgap = 14 pt
                             paperwidth = paperwidth + leafWidth * (sub_depth + 1) * backrate + smallGap
-                        print(p.id, sub_depth, paperwidth, nnodes)
+                        # print(p.id, sub_depth, paperwidth, nnodes)
                     else:
                         paperwidth = paperwidth + (sub_depth + 1) * (leafWidth + bigGap)
     paperheight = n_blocks_high * (leafHeight + smallGap) + (leafHeight + bigGap) * 2 + leafHeight

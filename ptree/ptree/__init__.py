@@ -44,7 +44,8 @@ def cli(namespace):
 @click.option('--password', prompt="MagicDraw Password", hide_input=True,
               envvar="MD_PASSWORD", help="MagicDraw Password")
 @click.option('--tokenpath', default='~/.sq_github_token', help="Path to the Github generated token")
-@click.option('--csvonly', default=False, help='Skip MagicDraw and generate only Git section from csv files')
+@click.option('--csvonly', default=False,
+              help=' Set it to True to kip MagicDraw and generate only Git section from csv files')
 def generate(format, username, password, tokenpath, compact, csvonly):
     """Generate product tree document
     """

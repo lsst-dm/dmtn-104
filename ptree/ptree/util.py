@@ -33,6 +33,13 @@ from time import sleep
 from .config import Config
 
 
+def _as_output_format(text, output_format):
+    if Config.TEMPLATE_LANGUAGE != output_format:
+        setattr(Config.DOC, Config.TEMPLATE_LANGUAGE, text.encode("utf-8"))
+        text = getattr(Config.DOC, output_format).decode("utf-8")
+    return text
+
+
 def cite_docushare_handles(text):
     """This will find matching docushare handles and replace
     the text with the ``\citeds{text}``."""
@@ -60,6 +67,18 @@ class Product(object):
         self.reqs = reqs            # 16
         self.docs = docs            # 17
         self.index = index          # 18 the position assigned in MD (number before the name)
+
+
+class GitPkg(object):
+    def __init__(self, name, org, readmes, ups_table, teams, summary, component_id, component_name):
+        self.name = name
+        self.org = org
+        self.readmes = readmes
+        self.ups_table = ups_table
+        self.teams = teams
+        self.summary = summary
+        self.component_id = component_id
+        self.component_name = component_name
 
 
 def html_to_latex(string):

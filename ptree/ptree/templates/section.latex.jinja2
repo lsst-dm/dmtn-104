@@ -13,6 +13,11 @@
 {%- endmacro -%}
 {# ------------------------------------------------------------------------- #}
 
+{%- macro ref(text) -%}
+\ref{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
 {%- macro hyperlink(label, text) -%}
 \hyperlink{{ "{" }}{{ label }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
 {%- endmacro -%}
@@ -144,10 +149,10 @@
                 {% set lnk = 'https://github.com/lsst/'~pkg %}
             {% endif %}
             {% if loop.index == 1 %}
-\multicolumn{2}{l}{\href{{ curlies(lnk) }}{{ curlies(package) }} }
+\multicolumn{2}{l}{\href{{ curlies(lnk) }}{{ curlies(package) }} }{{ ref(pkg.lower()) }}
             {% else %}
 \\ \cline{3-4}
-& & \multicolumn{2}{l}{\href{{ curlies(lnk) }}{{ curlies(package) }} }
+& & \multicolumn{2}{l}{\href{{ curlies(lnk) }}{{ curlies(package) }} }{{ ref(pkg.lower()) }}
             {% endif %}
         {% endfor %}
 \\ \hline \\ \hline

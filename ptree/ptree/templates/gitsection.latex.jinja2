@@ -1,0 +1,77 @@
+{%- macro curlies(item) -%}
+{{ "{" }}{{ item }}{{ "}" }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
+{%- macro href(url, text) -%}
+{% set fixed_text = fix_tex(text) %}
+\href{{ "{" }}{{ url }}{{ "}" }}{{ curlies(fixed_text) }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
+{%- macro label(text) -%}
+\label{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
+{%- macro fix_tex(text) -%}
+{{ text|replace("#", "\\#")|replace("%", "\\%")|replace("_", "\\_") }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
+{%- macro hyperlink(label, text) -%}
+\hyperlink{{ "{" }}{{ label }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
+% do not edit, generated automatically from Github
+
+{% for pkg in git_dm %}
+  {% if pkg != "" %}
+\newpage
+\subsection{{ "{" }}{{ fix_tex(git_dm[pkg].name) }}{{ "}" }}{{ label(pkg.lower()) }}
+
+{{ git_dm[pkg].summary }}
+
+  {% set git_url = "https://github.com/" ~ git_dm[pkg].org ~ "/" ~ git_dm[pkg].name %}
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & {{ href(git_url, git_url) }} \\ \cdashline{1-2}
+Top Level Component: & {{ hyperlink(git_dm[pkg].component_id.lower(), git_dm[pkg].component_name) }} \\
+  {% if git_dm[pkg].teams|length > 0 %}
+\cdashline{1-2}
+{GitHub Teams:} &
+    {% for team in git_dm[pkg].teams %}
+      {% if loop.index == 1 %}
+ {{ team }} \\
+      {% else %}
+ & {{ team }} \\
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+\hline
+\end{longtable} }
+
+    {% if git_dm[pkg].ups_table|length > 0 %}
+\begin{longtable}{rl}
+\multicolumn{2}{c}{EUPS dependencies} \\ \hline
+\textbf{name} & \textbf{description} \\ \hline
+      {% for dependency in git_dm[pkg].ups_table %}
+{\footnotesize {{ dependency }} } & \\ \hline
+      {% endfor %}
+\end{longtable}
+    {% endif %}
+
+    {% for readme in git_dm[pkg].readmes %}
+{{ readme }} (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+{{ git_dm[pkg].readmes[readme] }}
+\end{lstlisting}
+}
+    {% endfor %}
+
+  {% endif %}
+
+{% endfor %}
