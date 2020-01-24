@@ -1,4 +1,4 @@
-% auto generated from MagicDraw (revision) 296 - DO NOT EDIT!
+% auto generated from MagicDraw (revision) 300 - DO NOT EDIT!
 % using template at <template>.
 % Collecting data for component: ""
 % using docsteady version 
@@ -45,9 +45,8 @@ Leanne Guy
 
   The products listed in the following subsections are required in order
 to satisfy the DM requirements at all levels (LSE-61, interfaces and low
-level flow down requirements).\\
-~\\
-These products are organized in the following groups:
+level flow down requirements).\\[2\baselineskip]These products are
+organized in the following groups:
 
 \begin{itemize}
 \tightlist
@@ -119,8 +118,8 @@ processes defined for the DM software products.
 ~
 
 All services shall also specify which software products, DM, third party
-or COTS, are implementing it. This information is displaced in the
-\textbf{Product Dependencies} table, {\emph{Uses}} column.
+or COTS, are implementing it. This information is shown in the
+\textbf{Product Dependencies} table, \emph{Uses} column.
 
 
 \includegraphics[max width=\linewidth]{subtrees/Main_DMSRV.pdf}
@@ -159,223 +158,6 @@ Multiple
 
 
    \newpage
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{arcsrv}{Archiving} } }
-& \multicolumn{2}{l}{(product in: Prompt Services
-)}
-\\ \hline
-\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
-\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-\parbox{3.5cm}{
-Michelle Butler
-\vspace{2mm}%
-} &
-\begin{tabular}{@{}l@{}}
-\parbox{3.5cm}{
-Steve Pietrowicz
-\vspace{2mm}%
-} \\
-\end{tabular} &
-\begin{tabular}{@{}l@{}}
-1.02C.07.06.02 \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
-LDF \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize ( Archiving
- - ARCSRV ) }
-}\\ \hline
-\end{longtable}
-
-This component describes following services:\\
-~\\
-- Image archiver for LSSTCam\\
-- Image archiver for ComCam\\
-- Image archiver for Auxiliary Telescope Spectrograph\\
-- Header Generator service\\
-- EFD Transformation service\\
-~\\
-The archiver services capture raw images taken by each camera, including
-the wavefront sensors and the guide sensors of the LSSTCam or ComCam
-when so configured, retrieving them from their respective Camera Data
-System instances.\\
-~\\
-The Header Generator service, written by Data Management but operated by
-the Observatory, captures specific sets of metadata associated with the
-images, including telemetry values and event timings, from the OCS
-publish/subscribe middleware and/or from the EFD. It formats these into
-a metadata package that is recorded in the EFD Large File Annex. The
-Archiver and CatchUp Archiver instances retrieve this metadata package
-and attach it to the captured image pixels.\\
-~\\
-The image pixels and metadata are passed to the Observatory Operations
-Data Service (OODS), which serves as a buffer from which
-observing-critical data can be retrieved. They are also passed to a
-staging area for ingestion into the permanent archive in the Data
-Backbone. The catch-up versions archive into the OODS and Data Backbone
-any raw images and metadata that were missed by the primary archiving
-services due to network or other outage, retrieving them from the flash
-storage in the Camera Data System instances and the EFD.\\
-~\\
-The ~EFD Transformation service extracts all information (including
-telemetry, events, configurations, and commands) from the EFD and its
-large file annex, transforms it into a form more suitable for querying
-by image timestamp, and loads it into the permanently archived
-``Transformed EFD'' database in the Data Backbone.
-
-
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-\multicolumn{2}{c}{
-\begin{tabular}{c}
-\hyperlink{iip}{Image Ingest and Processing} \\ \hline
-\hyperlink{efdt}{EFD Transformation} \\ \hline
-\hyperlink{header}{Header Service SW} \\ \hline
-\end{tabular}
-} &
-\multicolumn{2}{c}{
-\begin{tabular}{c}
-\hyperlink{encprb}{Prompt Base Enclave} \\ \hline
-\end{tabular}
-} \\ \bottomrule
-\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
-{\footnotesize CA-DM-CON-ICD-0014 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Provide science sensor data } \\ \cdashline{1-4}
-{\footnotesize CA-DM-CON-ICD-0015 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Provide wavefront sensor data } \\ \cdashline{1-4}
-{\footnotesize CA-DM-CON-ICD-0016 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Provide guide sensor data } \\ \cdashline{1-4}
-{\footnotesize CA-DM-CON-ICD-0017 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management load on image data interfaces } \\ \cdashline{1-4}
-{\footnotesize CA-DM-CON-ICD-0019 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Camera engineering image data archiving } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0008 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0018 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Raw Science Image Data Acquisition } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0020 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Wavefront Sensor Data Acquisition } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0024 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Raw Image Assembly } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0068 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Raw Science Image Metadata } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0099 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Level 1 Performance Report Definition } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0102 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Provide Engineering \&  Facility Database Archive } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0162 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Throughput } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0165 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Infrastructure Sizing for "catching up" } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0167 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Incorporate Autonomics } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0265 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Guider Calibration Data Acquisition } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0301 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Control of Level-1 Production } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0309 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Raw Data Archiving Reliability } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0314 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Compute Platform Heterogeneity } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0315 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize DMS Communication with OCS } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0318 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management Unscheduled Downtime } \\ \cdashline{1-4}
-{\footnotesize DMS-REQ-0346 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Data Availability } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0003 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management CSC Command Response Model } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management Exposed CSCs } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0005 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Main Camera Archiver } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0006 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Catch-up Archiver } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0008 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize EFD Transformation Service CSC } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0009 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Command Set Implementation by Data Management } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0012 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Start Command } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0013 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize configure Successful Completion Response } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0014 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize enable Command } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0015 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize disable Command } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0025 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Expected Load of Queries from DM } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0026 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Engineering and Facilities Database Archiving by Data Management } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0027 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Multiple Physically Separated Copies } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0028 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Expected Data Volume } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0029 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Archive Latency } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0030 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize EFD Transformation Service Interface } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0032 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Auxiliary Telescope Archiver CSC } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0033 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Header Service CSC } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0034 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Auxiliary Header Service CSC } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0036 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize standby Command } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0037 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize exit Command } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0038 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize enterControl Command } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0039 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize enterControl Successful Completion Response } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0040 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Command Completion Response } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0041 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Large File Annex Replication Interface } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0042 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize EFD Disaster Recovery by Data Management } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0043 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Image Retrieval for Archiving Event } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0044 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Image Retrieval For Processing Event } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0045 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Image in OODS Event } \\ \cdashline{1-4}
-{\footnotesize OCS-DM-COM-ICD-0055 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Archiver Resource Availability } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0001 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Fulfill requirements of a Commandable SAL Component (CSC) } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0002 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Critical System } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0003 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Write Headers for all images taken by all Cameras supported by LSST } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Ability to capture metadata at the beginning of exposure } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0005 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Ability to capture metadata during of exposure integration } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0006 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Ability to capture metadata at end of readout } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0007 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Write header and Publish Event after end of telemetry event } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0008 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Write header and Publish Event within specified time of the end-of-telemetry Event } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0009 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Adherence to the FITS Standard } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0010 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Configuration of Header Keywords and source } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0011 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Produce header even if some meta-data not avaiable } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0012 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Publish an Event if monitoring detects any failure of the service. } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0013 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Extract metadata from published configuration } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0014 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Metadata Capture } \\ \cdashline{1-4}
-{\footnotesize OCS-EFD-HS-0015 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Generate on-the-fly additional metadata as approved by the Project CCB. } \\ \cdashline{1-4}
-\end{longtable}
-
-     \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ \hypertarget{popsrv}{Planned Observation Publication} } }
 & \multicolumn{2}{l}{(product in: Prompt Services
@@ -1092,6 +874,371 @@ the data collected by the survey.
 \multicolumn{3}{p{11.1cm}}{\footnotesize Data Management Unscheduled Downtime } \\ \cdashline{1-4}
 \end{longtable}
 
+  \newpage
+\paragraph{Archiving Services}\label{arcsrvs}\mbox{}\\
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+\parbox{3.5cm}{
+Michelle Butler
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular}
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+LDF \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Archive Services
+ - ARCSRVS ) }
+}\\ \hline
+\end{longtable}
+
+  Services involved in the acquisition of the data.
+
+
+  \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{imas}{Image Archiver} } }
+& \multicolumn{2}{l}{(product in: Archive Services
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+Michelle Butler
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+Steve Pietrowicz
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+1.02C.07.06.02 \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+LDF \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Image Archiver
+ - IMAS ) }
+}\\ \hline
+\end{longtable}
+
+This service capture raw images taken by a camera, retrieving them from
+the corresponding Camera Data System instance.\\[2\baselineskip]The
+image pixels and metadata are passed to the Observatory Operations Data
+Service (OODS), which serves as a buffer from which observing-critical
+data can be retrieved. They are also passed to a staging area for
+ingestion into the permanent archive in the Data Backbone.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{iip}{Image Ingest and Processing} \\ \hline
+\end{tabular}
+} &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{encprb}{Prompt Base Enclave} \\ \hline
+\end{tabular}
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+    \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{heads}{Header Generator} } }
+& \multicolumn{2}{l}{(product in: Archive Services
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+Michelle Butler
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+Steve Pietrowicz
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+1.02C.07.06.02 \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+LDF \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Header Generator
+ - HEADS ) }
+}\\ \hline
+\end{longtable}
+
+The Header Generator service, written by Data Management but operated by
+the Observatory, captures specific sets of metadata associated with the
+images, including telemetry values and event timings, from the OCS
+publish/subscribe middleware and/or from the EFD. It formats these into
+a metadata package that is recorded in the EFD Large File Annex. The
+Archiver and CatchUp Archiver instances retrieve this metadata package
+and attach it to the captured image pixels.\\
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{header}{Header Service SW} \\ \hline
+\end{tabular}
+} &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{encprb}{Prompt Base Enclave} \\ \hline
+\end{tabular}
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+    \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{efdts}{EFD Transformation} } }
+& \multicolumn{2}{l}{(product in: Archive Services
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+Michelle Butler
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+Steve Pietrowicz
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+1.02C.07.06.02 \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+LDF \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( EFD Transf.
+ - EFDTS ) }
+}\\ \hline
+\end{longtable}
+
+The ~EFD Transformation service extracts all information (including
+telemetry, events, configurations, and commands) from the EFD and its
+large file annex, transforms it into a form more suitable for querying
+by image timestamp, and loads it into the permanently archived
+``Transformed EFD'' database in the Data Backbone.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{efdt}{EFD Transformation} \\ \hline
+\end{tabular}
+} &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{encprb}{Prompt Base Enclave} \\ \hline
+\end{tabular}
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+    
+     \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{arcsrvo}{Archiving [Obsolete]} } }
+& \multicolumn{2}{l}{(product in: Prompt Services
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+Michelle Butler
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+Steve Pietrowicz
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+1.02C.07.06.02 \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+LDF \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize ( Archiving
+ - ARCSRVo ) }
+}\\ \hline
+\end{longtable}
+
+OBSOLETE: component split in 3 Archiving services.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{encprb}{Prompt Base Enclave} \\ \hline
+\end{tabular}
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+{\footnotesize CA-DM-CON-ICD-0014 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Provide science sensor data } \\ \cdashline{1-4}
+{\footnotesize CA-DM-CON-ICD-0015 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Provide wavefront sensor data } \\ \cdashline{1-4}
+{\footnotesize CA-DM-CON-ICD-0016 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Provide guide sensor data } \\ \cdashline{1-4}
+{\footnotesize CA-DM-CON-ICD-0017 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management load on image data interfaces } \\ \cdashline{1-4}
+{\footnotesize CA-DM-CON-ICD-0019 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Camera engineering image data archiving } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0008 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0018 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Raw Science Image Data Acquisition } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0020 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Wavefront Sensor Data Acquisition } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0024 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Raw Image Assembly } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0068 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Raw Science Image Metadata } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0099 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Level 1 Performance Report Definition } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0102 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Provide Engineering \&  Facility Database Archive } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0162 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Throughput } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0165 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Infrastructure Sizing for "catching up" } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0167 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Incorporate Autonomics } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0265 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Guider Calibration Data Acquisition } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0301 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Control of Level-1 Production } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0309 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Raw Data Archiving Reliability } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0314 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Compute Platform Heterogeneity } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0315 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize DMS Communication with OCS } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0318 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management Unscheduled Downtime } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0346 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Data Availability } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0003 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management CSC Command Response Model } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0004 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management Exposed CSCs } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0005 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Main Camera Archiver } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0006 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Catch-up Archiver } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0008 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize EFD Transformation Service CSC } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0009 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Command Set Implementation by Data Management } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0012 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Start Command } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0013 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize configure Successful Completion Response } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0014 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize enable Command } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0015 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize disable Command } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0025 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Expected Load of Queries from DM } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0026 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Engineering and Facilities Database Archiving by Data Management } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0027 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Multiple Physically Separated Copies } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0028 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Expected Data Volume } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0029 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Archive Latency } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0030 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize EFD Transformation Service Interface } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0032 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Auxiliary Telescope Archiver CSC } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0033 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Header Service CSC } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0034 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Auxiliary Header Service CSC } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0036 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize standby Command } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0037 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize exit Command } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0038 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize enterControl Command } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0039 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize enterControl Successful Completion Response } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0040 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Command Completion Response } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0041 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Large File Annex Replication Interface } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0042 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize EFD Disaster Recovery by Data Management } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0043 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Image Retrieval for Archiving Event } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0044 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Image Retrieval For Processing Event } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0045 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Image in OODS Event } \\ \cdashline{1-4}
+{\footnotesize OCS-DM-COM-ICD-0055 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Archiver Resource Availability } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0001 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Fulfill requirements of a Commandable SAL Component (CSC) } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0002 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Critical System } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0003 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Write Headers for all images taken by all Cameras supported by LSST } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0004 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Ability to capture metadata at the beginning of exposure } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0005 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Ability to capture metadata during of exposure integration } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0006 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Ability to capture metadata at end of readout } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0007 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Write header and Publish Event after end of telemetry event } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0008 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Write header and Publish Event within specified time of the end-of-telemetry Event } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0009 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Adherence to the FITS Standard } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0010 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Configuration of Header Keywords and source } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0011 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Produce header even if some meta-data not avaiable } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0012 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Publish an Event if monitoring detects any failure of the service. } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0013 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Extract metadata from published configuration } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0014 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Metadata Capture } \\ \cdashline{1-4}
+{\footnotesize OCS-EFD-HS-0015 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Generate on-the-fly additional metadata as approved by the Project CCB. } \\ \cdashline{1-4}
+\end{longtable}
+
     
    \newpage
 \subsubsection{Offline Services}\label{offlsrv}
@@ -1376,10 +1523,8 @@ Michelle Gower
 \end{longtable}
 
   The Backbone services supply data to other services.\\
-They are implemented in the Archive enclaves.\\
-~\\
-Detailed concepts of operations for each service can be found in
-\citeds{LDM-230}
+They are implemented in the Archive enclaves.\\[2\baselineskip]Detailed
+concepts of operations for each service can be found in \citeds{LDM-230}
 
 
    \newpage
@@ -1892,7 +2037,7 @@ Specification }
 \end{longtable}
 
   This group of services provide an exploratory analysis environment for
-the end user. These services are usually referred as "Aspects",
+the end user. These services are usually referred as ``Aspects'',
 identified as follows:
 
 \begin{itemize}
@@ -1906,9 +2051,8 @@ identified as follows:
 \end{itemize}
 
 These services permit external users access to project resources, such
-as data and processing SW.\\
-~\\
-More details available in \citeds{LDM-542}and \citeds{LSE-319}
+as data and processing SW.\\[2\baselineskip]More details available in
+\citeds{LDM-542}and \citeds{LSE-319}
 
 
    \newpage
@@ -2154,9 +2298,8 @@ Simon Krughoff
 }\\ \hline
 \end{longtable}
 
-TAP Compliant Interface web-service.\\
-~\\
-See \citeds{DMTN-090}for details (dmtn-090.lsst.io).
+TAP Compliant Interface web-service.\\[2\baselineskip]See \citeds{DMTN-090}for
+details (dmtn-090.lsst.io).
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2719,9 +2862,8 @@ DAX \\
 
 Performance critical internal database used to support Alert Production;
 will not support end-user queries. Until October 2019 this product was
-known as L1 Database.\\
-~\\
-Implementation details still under evaluation.
+known as L1 Database.\\[2\baselineskip]Implementation details still
+under evaluation.
 
 ~
 
@@ -2920,8 +3062,8 @@ services. (EFD Extract-Tranform-Load) Software still to be implemented.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{arcsrv}{Archiving} \\ \hline
 \hyperlink{efdb}{EFD Cache} \\ \hline
+\hyperlink{efdts}{EFD Transformation} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -3007,7 +3149,7 @@ external users. It is developed at University of Illinois (Urbana)
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{arcsrv}{Archiving} \\ \hline
+\hyperlink{heads}{Header Generator} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -3104,10 +3246,8 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-Image ingest and processing SW product.\\
-~\\
-This includes the DMCS, used to implements the Telemetry Gateway
-service.
+Image ingest and processing SW product.\\[2\baselineskip]This includes
+the DMCS, used to implements the Telemetry Gateway service.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3120,8 +3260,8 @@ service.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperlink{prpingsrv}{Prompt Processing Ingest} \\ \hline
-\hyperlink{arcsrv}{Archiving} \\ \hline
 \hyperlink{tmgsrv}{Telemetry Gateway} \\ \hline
+\hyperlink{imas}{Image Archiver} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -5652,8 +5792,7 @@ DAX \\
 \end{longtable}
 
 {[}OBSOLETE{]}\\
-DAX Query Services in Kotlin.\\
-~\\
+DAX Query Services in Kotlin.\\[2\baselineskip]
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -7166,8 +7305,11 @@ real time manner, at Base facility.
 \hyperlink{popsrv}{Planned Observation Publication} \\ \hline
 \hyperlink{ocsbatsrv}{OCS-Driven Batch} \\ \hline
 \hyperlink{oodssrv}{Observatory Operations Data} \\ \hline
-\hyperlink{arcsrv}{Archiving} \\ \hline
+\hyperlink{arcsrvo}{Archiving [Obsolete]} \\ \hline
 \hyperlink{efdb}{EFD Cache} \\ \hline
+\hyperlink{imas}{Image Archiver} \\ \hline
+\hyperlink{heads}{Header Generator} \\ \hline
+\hyperlink{efdts}{EFD Transformation} \\ \hline
 \end{tabular}
 } &
 \multicolumn{2}{c}{

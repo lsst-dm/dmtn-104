@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=1125.9999999999998pt,paperheight=559pt,
+\usepackage[paperwidth=1221.9999999999998pt,paperheight=731pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -133,11 +133,27 @@ right=96pt of OFFLSRV] {\textbf{Prompt Services
 } };\node [below right] at (ALRTDSTSRV.north west) {\footnotesize \color{blue}1.02C.03.03} ;
 
  \draw[pline] (PRSRV.south) -| ++(0,0) |- (ALRTDSTSRV.west); 
-\node (ARCSRV) [pbox,below=6pt of ALRTDSTSRV] {\textbf{Archiving
-} };\node [below right] at (ARCSRV.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
+\node (ARCSRVS) [pbox,below=6pt of ALRTDSTSRV] {\textbf{Archive Services
+} };\node [below right] at (ARCSRVS.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (PRSRV.south) -| ++(0,0) |- (ARCSRV.west); 
-\node (OCSBATSRV) [pbox,below=6pt of ARCSRV] {\textbf{OCS Batch
+ \draw[pline] (PRSRV.south) -| ++(0,0) |- (ARCSRVS.west); 
+\node (EFDTS) [pbox,below right=6pt and -14pt of ARCSRVS] {\textbf{EFD Transf.
+} };\node [below right] at (EFDTS.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
+
+ \draw[pline] (ARCSRVS.south) -| ++(0,0) |- (EFDTS.west); 
+\node (HEADS) [pbox,below=6pt of EFDTS] {\textbf{Header Generator
+} };\node [below right] at (HEADS.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
+
+ \draw[pline] (ARCSRVS.south) -| ++(0,0) |- (HEADS.west); 
+\node (IMAS) [pbox,below=6pt of HEADS] {\textbf{Image Archiver
+} };\node [below right] at (IMAS.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
+
+ \draw[pline] (ARCSRVS.south) -| ++(0,0) |- (IMAS.west); 
+\node (ARCSRVo) [pbox,below=135pt of ARCSRVS] {\textbf{Archiving
+} };\node [below right] at (ARCSRVo.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
+
+ \draw[pline] (PRSRV.south) -| ++(0,0) |- (ARCSRVo.west); 
+\node (OCSBATSRV) [pbox,below=6pt of ARCSRVo] {\textbf{OCS Batch
 } };\node [below right] at (OCSBATSRV.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
 
  \draw[pline] (PRSRV.south) -| ++(0,0) |- (OCSBATSRV.west); 

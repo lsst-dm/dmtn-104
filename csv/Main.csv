@@ -26,7 +26,11 @@ OFFLQCSRV, Offline QC, OFFLSRV, 1.02C.04.07, DRP, Yusra AlSayyad, Jim Bosch, , O
 PRODSRV, Batch Production, OFFLSRV, 1.02C.07.06.02, LDF, Michelle Butler, Michelle Gower, , Batch Production 
 PRSRV, Prompt Services, DMSRV, , , Michelle Butler, Multiple, , Prompt Services 
 ALRTDSTSRV, Alert Distrib, PRSRV, 1.02C.03.03, AP, John Swinbank, Eric Bellm, , Alert Distrib 
-ARCSRV, Archiving, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , Archiving 
+ARCSRVS, Archive Services, PRSRV, , LDF, Michelle Butler, , , Archive Services 
+EFDTS, EFD Transf., ARCSRVS, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , EFD Transf. 
+HEADS, Header Generator, ARCSRVS, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , Header Generator 
+IMAS, Image Archiver, ARCSRVS, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , Image Archiver 
+ARCSRVo, Archiving, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , Archiving 
 OCSBATSRV, OCS Batch, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Felipe Menanteau, , OCS Batch 
 OODSSRV, Obs Ops Data, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , Obs Ops Data 
 POPSRV, Planned Obs Pub, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Tim Jenness, , Planned Obs Pub 
