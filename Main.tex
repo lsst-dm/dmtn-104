@@ -1,4 +1,4 @@
-% auto generated from MagicDraw (revision) 300 - DO NOT EDIT!
+% auto generated from MagicDraw (revision) 302 - DO NOT EDIT!
 % using template at <template>.
 % Collecting data for component: ""
 % using docsteady version 
@@ -45,8 +45,9 @@ Leanne Guy
 
   The products listed in the following subsections are required in order
 to satisfy the DM requirements at all levels (LSE-61, interfaces and low
-level flow down requirements).\\[2\baselineskip]These products are
-organized in the following groups:
+level flow down requirements).\\
+~\\
+These products are organized in the following groups:
 
 \begin{itemize}
 \tightlist
@@ -119,7 +120,7 @@ processes defined for the DM software products.
 
 All services shall also specify which software products, DM, third party
 or COTS, are implementing it. This information is shown in the
-\textbf{Product Dependencies} table, \emph{Uses} column.
+\textbf{Product Dependencies} table, {\emph{Uses}} column.
 
 
 \includegraphics[max width=\linewidth]{subtrees/Main_DMSRV.pdf}
@@ -934,11 +935,13 @@ LDF \\
 \end{longtable}
 
 This service capture raw images taken by a camera, retrieving them from
-the corresponding Camera Data System instance.\\[2\baselineskip]The
-image pixels and metadata are passed to the Observatory Operations Data
-Service (OODS), which serves as a buffer from which observing-critical
-data can be retrieved. They are also passed to a staging area for
-ingestion into the permanent archive in the Data Backbone.
+the corresponding Camera Data System instance.\\
+~\\
+The image pixels and metadata are passed to the Observatory Operations
+Data Service (OODS), which serves as a buffer from which
+observing-critical data can be retrieved. They are also passed to a
+staging area for ingestion into the permanent archive in the Data
+Backbone.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -1303,6 +1306,9 @@ LDF \\
 {\footnotesize ( Batch Production
  - PRODSRV ) }
 }\\ \hline
+\citeds{LDM-636} &
+\multicolumn{3}{l}{ Batch Production Service Requirements }
+\\ \cdashline{1-4}
 \end{longtable}
 
 Batch Production Service
@@ -1523,8 +1529,10 @@ Michelle Gower
 \end{longtable}
 
   The Backbone services supply data to other services.\\
-They are implemented in the Archive enclaves.\\[2\baselineskip]Detailed
-concepts of operations for each service can be found in \citeds{LDM-230}
+They are implemented in the Archive enclaves.\\
+~\\
+Detailed concepts of operations for each service can be found in
+\citeds{LDM-230}
 
 
    \newpage
@@ -2037,7 +2045,7 @@ Specification }
 \end{longtable}
 
   This group of services provide an exploratory analysis environment for
-the end user. These services are usually referred as ``Aspects'',
+the end user. These services are usually referred as "Aspects",
 identified as follows:
 
 \begin{itemize}
@@ -2045,14 +2053,15 @@ identified as follows:
 \item
   LSP Portal Aspect
 \item
-  LSP JupiterLab Aspect
+  LSP JupyterLab Aspect (Nublado)
 \item
-  LSP WebAPIs Aspect
+  LSP WebAPIs Aspect (TAP, SODA, SIA and WebDAV)
 \end{itemize}
 
 These services permit external users access to project resources, such
-as data and processing SW.\\[2\baselineskip]More details available in
-\citeds{LDM-542}and \citeds{LSE-319}
+as data and processing SW.\\
+~\\
+More details available in \citeds{LDM-542}and \citeds{LSE-319}
 
 
    \newpage
@@ -2075,8 +2084,8 @@ Gregory Dubois-Felsmann
 \end{tabular} &
 \begin{tabular}{@{}l@{}}
 1.02C.05.09 \\
-1.02C.05.08 \\
 1.02C.05.07 \\
+1.02C.05.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SUIT \\
 \end{tabular} \\ \hline
@@ -2087,13 +2096,15 @@ SUIT \\
 \end{longtable}
 
 This service provides Web-based query and visualization tools for all
-the LSST data products.
+the Rubin Observatory LSST data products.\\
+~\\
+The service is defined using a Dockerfile template provided by the third
+party package \emph{\textbf{firefly}}, and build using the
+configurations provided in the \href{https://github.com/lsst/suit}{suit}
+~Git package.\\
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
-\multicolumn{2}{l}{\href{https://github.com/lsst-sqre/lsp-deploy}{lsst-sqre/lsp-deploy} }\ref{lsst-sqre/lsp-deploy}
-\\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -2194,7 +2205,7 @@ generating derived data products.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst-sqre/nublado}{lsst-sqre/nublado} }\ref{lsst-sqre/nublado}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -2298,12 +2309,13 @@ Simon Krughoff
 }\\ \hline
 \end{longtable}
 
-TAP Compliant Interface web-service.\\[2\baselineskip]See \citeds{DMTN-090}for
-details (dmtn-090.lsst.io).
+TAP Compliant Interface web-service.\\
+~\\
+See \citeds{DMTN-090}for details (dmtn-090.lsst.io).
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst-sqre/lsst-tap-service}{lsst-sqre/lsst-tap-service} }\ref{lsst-sqre/lsst-tap-service}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -2459,7 +2471,7 @@ This service permits the use of filesystem over http.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/davt}{davt} }\ref{davt}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -2862,8 +2874,9 @@ DAX \\
 
 Performance critical internal database used to support Alert Production;
 will not support end-user queries. Until October 2019 this product was
-known as L1 Database.\\[2\baselineskip]Implementation details still
-under evaluation.
+known as L1 Database.\\
+~\\
+Implementation details still under evaluation.
 
 ~
 
@@ -2985,7 +2998,7 @@ SW product for alert distribution and filtering.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst-dm/alert_stream}{lsst-dm/alert\_stream} }\ref{lsst-dm/alert_stream}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -3141,7 +3154,7 @@ external users. It is developed at University of Illinois (Urbana)
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst-dm/HeaderService}{lsst-dm/HeaderService} }\ref{lsst-dm/headerservice}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -3246,12 +3259,14 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-Image ingest and processing SW product.\\[2\baselineskip]This includes
-the DMCS, used to implements the Telemetry Gateway service.
+Image ingest and processing SW product.\\
+~\\
+This includes the DMCS, used to implements the Telemetry Gateway
+service.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/ctrl_iip}{ctrl\_iip} }\ref{ctrl_iip}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -3543,7 +3558,7 @@ SW Product to use in the OODS service.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst-dm/ctrl_oods}{lsst-dm/ctrl\_oods} }\ref{lsst-dm/ctrl_oods}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -3808,7 +3823,7 @@ services.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst-sqre/squash}{lsst-sqre/squash} }\ref{lsst-sqre/squash}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -3959,7 +3974,7 @@ services from the Facilities enclaves to the backbone.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst-dm/dbb_gwclient}{lsst-dm/dbb\_gwclient} }\ref{lsst-dm/dbb_gwclient}
 \\ \cline{3-4}
 & & \multicolumn{2}{l}{\href{https://github.com/lsst-dm/dbb_gateway}{lsst-dm/dbb\_gateway} }\ref{lsst-dm/dbb_gateway}
@@ -4258,7 +4273,7 @@ Firefly server side.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/suit}{suit} }\ref{suit}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -4348,11 +4363,11 @@ SQuaRE \\
 }\\ \hline
 \end{longtable}
 
-LSP Jupiter Notebook Product
+LSP Jupyter Notebook Product
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst-sqre/jupyterhubutils}{lsst-sqre/jupyterhubutils} }\ref{lsst-sqre/jupyterhubutils}
 \\ \cline{3-4}
 & & \multicolumn{2}{l}{\href{https://github.com/lsst-sqre/jupyterlabutils}{lsst-sqre/jupyterlabutils} }\ref{lsst-sqre/jupyterlabutils}
@@ -4427,7 +4442,7 @@ LSP Web API software product
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/dax_webserv}{dax\_webserv} }\ref{dax_webserv}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -4577,7 +4592,7 @@ HTML content.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/suit-onlinehelp}{suit-onlinehelp} }\ref{suit-onlinehelp}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -4624,7 +4639,7 @@ Web Interface for LSST Image Services software product.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/dax_imgserv}{dax\_imgserv} }\ref{dax_imgserv}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -5088,7 +5103,7 @@ Software product for MOPS and Forced Photometry data processing.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/mops_daymops}{mops\_daymops} }\ref{mops_daymops}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -5344,7 +5359,7 @@ Top level distribution product for the science pipelines
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/lsst_distrib}{lsst\_distrib} }\ref{lsst_distrib}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -5464,7 +5479,7 @@ Science Pipeline Top Level Software product.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/lsst_apps}{lsst\_apps} }\ref{lsst_apps}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -5540,7 +5555,7 @@ Butler middleware software product.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/daf_butler}{daf\_butler} }\ref{daf_butler}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -5605,7 +5620,7 @@ SuperTask middleware software product.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/pipe_supertask}{pipe\_supertask} }\ref{pipe_supertask}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -5690,7 +5705,7 @@ release catalog data.\\
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/qserv}{qserv} }\ref{qserv}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -5792,11 +5807,12 @@ DAX \\
 \end{longtable}
 
 {[}OBSOLETE{]}\\
-DAX Query Services in Kotlin.\\[2\baselineskip]
+DAX Query Services in Kotlin.\\
+~\\
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/albuquery}{albuquery} }\ref{albuquery}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -8759,7 +8775,7 @@ during constructions..
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\multicolumn{2}{r}{\textbf{GutHub Packages:}} &
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
 \multicolumn{2}{l}{\href{https://github.com/lsst/astrometry_net_data}{astrometry\_net\_data} }\ref{astrometry_net_data}
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline

@@ -13,7 +13,7 @@ LSPDB, LSP Database, ITSRV, , , Michelle Butler, Michelle Butler, , LSP Database
 NETMGMT, Net Mgmt, ITSRV, 1.02C.08.03, Net/Base, Jeff Kantor, Wil O'Mullane, , Net Mgmt 
 LSPSRV, LSP Services, DMSRV, , , Frossie Economou, Gregory Dubois-Felsmann, , LSP Services 
 LSPNBL, LSP JupyterLab, LSPSRV, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/nublado, LSP JupyterLab 
-LSPPRTLSRV, LSP Portal, LSPSRV, 1.02C.05.09 1.02C.05.08 1.02C.05.07, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, lsst-sqre/lsp-deploy, LSP Portal 
+LSPPRTLSRV, LSP Portal, LSPSRV, 1.02C.05.09 1.02C.05.07 1.02C.05.08, SUIT, Xiuqin Wu, Gregory Dubois-Felsmann, , LSP Portal 
 LSPWAPI, LSP Web API, LSPSRV, , , Frossie Economou, Simon Krughoff, , LSP Web API 
 SIASRV, SIA, LSPWAPI, , , Frossie Economou, Simon Krughoff, , SIA 
 SODA, SODA, LSPWAPI, , , Frossie Economou, Simon Krughoff, , SODA 
