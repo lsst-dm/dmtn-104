@@ -1,4 +1,4 @@
-% auto generated from MagicDraw (revision) 302 - DO NOT EDIT!
+% auto generated from MagicDraw (revision) 314 - DO NOT EDIT!
 % using template at <template>.
 % Collecting data for component: ""
 % using docsteady version 
@@ -283,7 +283,7 @@ telescope spectrograph.
 {\footnotesize DM-TS-CON-ICD-0007 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Timing } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0008 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0022 } &
@@ -427,7 +427,7 @@ Telescope Spectrograph.
 {\footnotesize DMS-REQ-0002 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Transient Alert Distribution } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0008 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0099 } &
@@ -788,7 +788,7 @@ Alert Distribution and Filtering Service
 {\footnotesize DMS-REQ-0002 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Transient Alert Distribution } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0008 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0161 } &
@@ -2053,27 +2053,30 @@ identified as follows:
 \item
   LSP Portal Aspect
 \item
-  LSP JupyterLab Aspect (Nublado)
+  LSP Notebook Aspect (Nublado)
 \item
   LSP WebAPIs Aspect (TAP, SODA, SIA and WebDAV)
 \end{itemize}
 
 These services permit external users access to project resources, such
-as data and processing SW.\\
+as data and processing SW. Templates for deployment on different
+platforms are provided in
+\href{https://github.com/lsst-sqre/lsp-deploy}{lsp-deploy} Git
+repository.\\
 ~\\
 More details available in \citeds{LDM-542}and \citeds{LSE-319}
 
 
    \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{lspprtlsrv}{LSP Portal} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{prtl}{LSP Portal} } }
 & \multicolumn{2}{l}{(product in: LSP Services
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Xiuqin Wu
+Gregory Dubois-Felsmann
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
@@ -2083,7 +2086,6 @@ Gregory Dubois-Felsmann
 } \\
 \end{tabular} &
 \begin{tabular}{@{}l@{}}
-1.02C.05.09 \\
 1.02C.05.07 \\
 1.02C.05.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
@@ -2091,7 +2093,7 @@ SUIT \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
 {\footnotesize ( LSP Portal
- - LSPPRTLSRV ) }
+ - PRTL ) }
 }\\ \hline
 \end{longtable}
 
@@ -2101,14 +2103,14 @@ the Rubin Observatory LSST data products.\\
 The service is defined using a Dockerfile template provided by the third
 party package \emph{\textbf{firefly}}, and build using the
 configurations provided in the \href{https://github.com/lsst/suit}{suit}
-~Git package.\\
+~Git package.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{suit}{SUIT} \\ \hline
+\hyperlink{prtlsw}{LSP Portal Software } \\ \hline
 \hyperlink{suitoh}{SUIT Online Help} \\ \hline
 \end{tabular}
 } &
@@ -2211,7 +2213,7 @@ generating derived data products.
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{lspjl}{LSP JupyterLab SW} \\ \hline
+\hyperlink{nb}{LSP Notebook Software} \\ \hline
 \hyperlink{spdist}{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 } &
@@ -3013,7 +3015,7 @@ SW product for alert distribution and filtering.
 {\footnotesize DMS-REQ-0002 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Transient Alert Distribution } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0008 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0161 } &
@@ -3081,7 +3083,7 @@ services. (EFD Extract-Tranform-Load) Software still to be implemented.
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0008 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0102 } &
@@ -3295,7 +3297,7 @@ service.
 {\footnotesize DM-TS-CON-ICD-0007 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Timing } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0008 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0018 } &
@@ -3618,7 +3620,8 @@ Michelle Butler
 \\ \cdashline{1-4}
 \end{longtable}
 
-  Software products to orchestrate the long term data processing.
+  Software products to orchestrate the off-line data processing, NOT to be
+executed in a prompt manner.
 
 
    \newpage
@@ -3915,7 +3918,7 @@ LDF \\
 \end{longtable}
 
 This software product implements the management of the data in the
-sciences storage.
+science storage.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -4237,14 +4240,14 @@ Gregory Dubois-Felsmann
 
    \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{suit}{SUIT} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{prtlsw}{LSP Portal Software } } }
 & \multicolumn{2}{l}{(product in: LSP SW
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Xiuqin Wu
+Gregory Dubois-Felsmann
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
@@ -4254,15 +4257,14 @@ Gregory Dubois-Felsmann
 } \\
 \end{tabular} &
 \begin{tabular}{@{}l@{}}
-1.02C.05.09 \\
 1.02C.05.07 \\
 1.02C.05.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SUIT \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( SUIT
- - SUIT ) }
+{\footnotesize ( LSP Portal SW
+ - PRTLSW ) }
 }\\ \hline
 \end{longtable}
 
@@ -4284,7 +4286,7 @@ Firefly server side.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{lspprtlsrv}{LSP Portal} \\ \hline
+\hyperlink{prtl}{LSP Portal} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -4336,7 +4338,7 @@ Firefly server side.
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{lspjl}{LSP JupyterLab SW} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{nb}{LSP Notebook Software} } }
 & \multicolumn{2}{l}{(product in: LSP SW
 )}
 \\ \hline
@@ -4358,8 +4360,8 @@ Simon Krughoff
 SQuaRE \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( LSP JL SW
- - LSPJL ) }
+{\footnotesize ( LSP Notebook SW
+ - NB ) }
 }\\ \hline
 \end{longtable}
 
@@ -4566,7 +4568,7 @@ LSP Web API software product
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Xiuqin Wu
+Gregory Dubois-Felsmann
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
@@ -4600,7 +4602,7 @@ HTML content.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{lspprtlsrv}{LSP Portal} \\ \hline
+\hyperlink{prtl}{LSP Portal} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -4808,7 +4810,7 @@ Software product for Allert Production processing.
 {\footnotesize DMS-REQ-0002 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Transient Alert Distribution } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0009 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Simulated Data } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0010 } &
@@ -5121,7 +5123,7 @@ Software product for MOPS and Forced Photometry data processing.
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0089 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Solar System Objects Available Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0273 } &
@@ -5347,7 +5349,7 @@ Leanne Guy
 \begin{tabular}{@{}l@{}}
 1.02C.04.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
-DRP \\
+ \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
 {\footnotesize ( Science P. Dist.
@@ -5355,7 +5357,7 @@ DRP \\
 }\\ \hline
 \end{longtable}
 
-Top level distribution product for the science pipelines
+Top level distribution product for the Science Pipelines.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -5475,7 +5477,9 @@ AP \\
 }\\ \hline
 \end{longtable}
 
-Science Pipeline Top Level Software product.
+Science Pipeline library product. This product contains all software
+packages used, as a dependency, in all Science Pipelines application
+products (payloads).
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -5888,10 +5892,17 @@ Wil O'Mullane
 
 ~
 
-These products are mainly physical facilities or logical groups
-services.
+This part of the product tree includes:
 
-~
+\begin{itemize}
+\tightlist
+\item
+  Network Infrastructures
+\item
+  Physical Facilities
+\item
+  Enclaves
+\end{itemize}
 
 
 \includegraphics[max width=\linewidth]{subtrees/Main_INFRA.pdf}
@@ -6406,7 +6417,9 @@ Multiple
 }\\ \hline
 \end{longtable}
 
-  Logical group of DM Services.
+  The enclaves are a logical way to group services in a specific context.
+They represent the place where a service is instantiated. The same
+service, for example LSP, may be instantiate in multiple enclaves.\\
 
 
    \newpage
@@ -6463,7 +6476,7 @@ Base facility.
 {\footnotesize DM-TS-CON-ICD-0003 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Wavefront image archive access } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0010 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Difference Exposures } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0029 } &
@@ -6630,7 +6643,7 @@ NCSA facility.
 {\footnotesize DM-TS-CON-ICD-0003 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Wavefront image archive access } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0010 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Difference Exposures } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0029 } &
@@ -6780,7 +6793,7 @@ Base facility.
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{lspprtlsrv}{LSP Portal} \\ \hline
+\hyperlink{prtl}{LSP Portal} \\ \hline
 \hyperlink{lspnbl}{LSP Nublado} \\ \hline
 \hyperlink{wdav}{WebDAV API} \\ \hline
 \hyperlink{siasrv}{SIA API} \\ \hline
@@ -6849,7 +6862,7 @@ located at the Base facility.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperlink{lspnbl}{LSP Nublado} \\ \hline
-\hyperlink{lspprtlsrv}{LSP Portal} \\ \hline
+\hyperlink{prtl}{LSP Portal} \\ \hline
 \hyperlink{wdav}{WebDAV API} \\ \hline
 \hyperlink{siasrv}{SIA API} \\ \hline
 \hyperlink{soda}{SODA API} \\ \hline
@@ -6864,7 +6877,7 @@ located at the Base facility.
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0075 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Catalog Queries } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0077 } &
@@ -7009,7 +7022,7 @@ the NCSA facility.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperlink{lspnbl}{LSP Nublado} \\ \hline
-\hyperlink{lspprtlsrv}{LSP Portal} \\ \hline
+\hyperlink{prtl}{LSP Portal} \\ \hline
 \hyperlink{wdav}{WebDAV API} \\ \hline
 \hyperlink{siasrv}{SIA API} \\ \hline
 \hyperlink{soda}{SODA API} \\ \hline
@@ -7024,7 +7037,7 @@ the NCSA facility.
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0075 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Catalog Queries } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0077 } &
@@ -7186,7 +7199,7 @@ the NCSA facility.
 {\footnotesize DM-TS-CON-ICD-0003 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Wavefront image archive access } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0008 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0034 } &
@@ -7363,7 +7376,7 @@ real time manner, at Base facility.
 {\footnotesize DM-TS-CON-ICD-0011 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Data Format } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0008 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0018 } &
@@ -7512,7 +7525,7 @@ real time manner, at NCSA facility.
 {\footnotesize DMS-REQ-0002 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Transient Alert Distribution } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0004 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within 24 hrs } \\ \cdashline{1-4}
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0008 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0010 } &
@@ -7899,7 +7912,7 @@ virtualizations.
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{gpfs}{GPFS} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{gpfs}{General Parallel File System} } }
 & \multicolumn{2}{l}{(product in: COTS SW
 )}
 \\ \hline
@@ -7921,7 +7934,7 @@ Michelle Gower
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( GPFS
+{\footnotesize ( Gen. P. File System
  - GPFS ) }
 }\\ \hline
 \end{longtable}
@@ -8526,7 +8539,7 @@ and to run.
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Xiuqin Wu
+Gregory Dubois-Felsmann
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
@@ -8571,7 +8584,7 @@ from npm-style package loading
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Xiuqin Wu
+Gregory Dubois-Felsmann
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
@@ -8605,7 +8618,7 @@ IPAC's Advanced Astronomy WEB UI Framework.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{suit}{SUIT} \\ \hline
+\hyperlink{prtlsw}{LSP Portal Software } \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -8654,7 +8667,7 @@ Provides multi-user and multi-instance support to Jupyterlab.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{lspjl}{LSP JupyterLab SW} \\ \hline
+\hyperlink{nb}{LSP Notebook Software} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -8702,7 +8715,7 @@ based on the Jupyter Notebook and Architecture.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{lspjl}{LSP JupyterLab SW} \\ \hline
+\hyperlink{nb}{LSP Notebook Software} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline

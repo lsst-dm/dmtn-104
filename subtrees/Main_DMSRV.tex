@@ -78,11 +78,7 @@ right=96pt of ITSRV] {\textbf{LSP Services
 \node (LSPNBLpkg) [tbox,below=3mm of LSPNBL.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/nublado \end{verbatim} }  };
 
  \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPNBL.west); 
-\node (LSPPRTLSRV) [pbox,below=6pt of LSPNBL] {\textbf{LSP Portal
-} };\node [below right] at (LSPPRTLSRV.north west) {\footnotesize \color{blue}1.02C.05.09 1.02C.05.07 1.02C.05.08} ;
-
- \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPPRTLSRV.west); 
-\node (LSPWAPI) [pbox,below=6pt of LSPPRTLSRV] {\textbf{LSP Web API
+\node (LSPWAPI) [pbox,below=6pt of LSPNBL] {\textbf{LSP Web API
 } };\node [below right] at (LSPWAPI.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPWAPI.west); 
@@ -108,6 +104,10 @@ right=96pt of ITSRV] {\textbf{LSP Services
 } };\node [below right] at (LSPWEBSRV.north west) {\footnotesize \color{blue}1.02C.06.02} ;
 
  \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPWEBSRV.west); 
+\node (PRTL) [pbox,below=6pt of LSPWEBSRV] {\textbf{LSP Portal
+} };\node [below right] at (PRTL.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
+
+ \draw[pline] (LSPSRV.south) -| ++(0,0) |- (PRTL.west); 
 \node (OFFLSRV) [pbox, 
 right=192pt of LSPSRV] {\textbf{Offline Services
 } };\node [below right] at (OFFLSRV.north west) {\footnotesize \color{blue}} ;

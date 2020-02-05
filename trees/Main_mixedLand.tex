@@ -82,11 +82,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (LSPNBLpkg) [tbox,below=3mm of LSPNBL.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/nublado \end{verbatim} }  };
 
  \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPNBL.west); 
-\node (LSPPRTLSRV) [pbox,below=6pt of LSPNBL] {\textbf{LSP Portal
-} };\node [below right] at (LSPPRTLSRV.north west) {\footnotesize \color{blue}1.02C.05.09 1.02C.05.07 1.02C.05.08} ;
-
- \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPPRTLSRV.west); 
-\node (LSPWAPI) [pbox,below=6pt of LSPPRTLSRV] {\textbf{LSP Web API
+\node (LSPWAPI) [pbox,below=6pt of LSPNBL] {\textbf{LSP Web API
 } };\node [below right] at (LSPWAPI.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPWAPI.west); 
@@ -112,6 +108,10 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (LSPWEBSRV.north west) {\footnotesize \color{blue}1.02C.06.02} ;
 
  \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPWEBSRV.west); 
+\node (PRTL) [pbox,below=6pt of LSPWEBSRV] {\textbf{LSP Portal
+} };\node [below right] at (PRTL.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
+
+ \draw[pline] (LSPSRV.south) -| ++(0,0) |- (PRTL.west); 
 \node (OFFLSRV) [pbox,below=350pt of LSPSRV] {\textbf{Offline Services
 } };\node [below right] at (OFFLSRV.north west) {\footnotesize \color{blue}} ;
 
@@ -226,22 +226,22 @@ right=288pt of DMSRV] {\textbf{Software Products
 \node (DAXIMGpkg) [tbox,below=3mm of DAXIMG.north] {{\footnotesize \color{black} \begin{verbatim} dax_imgserv \end{verbatim} }  };
 
  \draw[pline] (LSP.south) -| ++(0,0) |- (DAXIMG.west); 
-\node (LSPJL) [pbox,below=6pt of DAXIMG] {\textbf{LSP JL SW
-} };\node [below right] at (LSPJL.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
-\node (LSPJLpkg) [tbox,below=3mm of LSPJL.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils \end{verbatim} }  };
-
- \draw[pline] (LSP.south) -| ++(0,0) |- (LSPJL.west); 
-\node (LSPWEB) [pbox,below=6pt of LSPJL] {\textbf{LSP Web SW
+\node (LSPWEB) [pbox,below=6pt of DAXIMG] {\textbf{LSP Web SW
 } };\node [below right] at (LSPWEB.north west) {\footnotesize \color{blue}1.02C.06.02} ;
 \node (LSPWEBpkg) [tbox,below=3mm of LSPWEB.north] {{\footnotesize \color{black} \begin{verbatim} dax_webserv \end{verbatim} }  };
 
  \draw[pline] (LSP.south) -| ++(0,0) |- (LSPWEB.west); 
-\node (SUIT) [pbox,below=6pt of LSPWEB] {\textbf{SUIT
-} };\node [below right] at (SUIT.north west) {\footnotesize \color{blue}1.02C.05.09 1.02C.05.07 1.02C.05.08} ;
-\node (SUITpkg) [tbox,below=3mm of SUIT.north] {{\footnotesize \color{black} \begin{verbatim} suit \end{verbatim} }  };
+\node (NB) [pbox,below=6pt of LSPWEB] {\textbf{LSP Notebook SW
+} };\node [below right] at (NB.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
+\node (NBpkg) [tbox,below=3mm of NB.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils \end{verbatim} }  };
 
- \draw[pline] (LSP.south) -| ++(0,0) |- (SUIT.west); 
-\node (SUITOH) [pbox,below=6pt of SUIT] {\textbf{SUIT OnlineHelp
+ \draw[pline] (LSP.south) -| ++(0,0) |- (NB.west); 
+\node (PRTLSW) [pbox,below=6pt of NB] {\textbf{LSP Portal SW
+} };\node [below right] at (PRTLSW.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
+\node (PRTLSWpkg) [tbox,below=3mm of PRTLSW.north] {{\footnotesize \color{black} \begin{verbatim} suit \end{verbatim} }  };
+
+ \draw[pline] (LSP.south) -| ++(0,0) |- (PRTLSW.west); 
+\node (SUITOH) [pbox,below=6pt of PRTLSW] {\textbf{SUIT OnlineHelp
 } };\node [below right] at (SUITOH.north west) {\footnotesize \color{blue}} ;
 \node (SUITOHpkg) [tbox,below=3mm of SUITOH.north] {{\footnotesize \color{black} \begin{verbatim} suit-onlinehelp \end{verbatim} }  };
 
@@ -378,7 +378,7 @@ right=192pt of DMSW] {\textbf{Resources
 } };\node [below right] at (DOCKER.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (DOCKER.west); 
-\node (GPFS) [pbox,below=6pt of DOCKER] {\textbf{GPFS
+\node (GPFS) [pbox,below=6pt of DOCKER] {\textbf{Gen. P. File System
 } };\node [below right] at (GPFS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (GPFS.west); 
