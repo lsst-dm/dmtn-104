@@ -12,14 +12,14 @@ EFDB, EFD Cache, ITSRV, , , Frossie Economou, Simon Krughoff, , EFD Cache
 LSPDB, LSP Database, ITSRV, , , Michelle Butler, Michelle Butler, , LSP Database 
 NETMGMT, Net Mgmt, ITSRV, 1.02C.08.03, Net/Base, Jeff Kantor, Wil O'Mullane, , Net Mgmt 
 LSPSRV, LSP Services, DMSRV, , , Frossie Economou, Gregory Dubois-Felsmann, , LSP Services 
-LSPNBL, LSP JupyterLab, LSPSRV, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/nublado, LSP JupyterLab 
 LSPWAPI, LSP Web API, LSPSRV, , , Frossie Economou, Simon Krughoff, , LSP Web API 
-SIASRV, SIA, LSPWAPI, , , Frossie Economou, Simon Krughoff, , SIA 
-SODA, SODA, LSPWAPI, , , Frossie Economou, Simon Krughoff, , SODA 
-TAPSEV, TAP, LSPWAPI, , , Frossie Economou, Simon Krughoff, lsst-sqre/lsst-tap-service, TAP 
-WDAV, WebDAV, LSPWAPI, , , Frossie Economou, Simon Krughoff, davt, WebDAV 
+SIASRV, SIA API, LSPWAPI, , , Frossie Economou, Simon Krughoff, , SIA API 
+SODASRV, SODA API, LSPWAPI, , , Frossie Economou, Simon Krughoff, , SODA API 
+TAPSRV, TAP API, LSPWAPI, , , Frossie Economou, Simon Krughoff, lsst-sqre/lsst-tap-service, TAP API 
+WDAVSRV, WebDAV API, LSPWAPI, , , Frossie Economou, Simon Krughoff, davt, WebDAV API 
 LSPWEBSRV, LSP Web API, LSPSRV, 1.02C.06.02, DAX, , , , LSP Web API 
-PRTL, LSP Portal, LSPSRV, 1.02C.05.07 1.02C.05.08, SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, , LSP Portal 
+NBLSRV, LSP Nublado, LSPSRV, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/nublado, LSP Nublado 
+PRTLSRV, LSP Portal, LSPSRV, 1.02C.05.07 1.02C.05.08, SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, , LSP Portal 
 OFFLSRV, Offline Services, DMSRV, , , , , , Offline Services 
 BULKDSRV, Bulk Distrib, OFFLSRV, 1.02C.07.06.02, LDF, Michelle Butler, Michelle Gower, , Bulk Distrib 
 OFFLQCSRV, Offline QC, OFFLSRV, 1.02C.04.07, DRP, Yusra AlSayyad, Jim Bosch, , Offline QC 
@@ -46,13 +46,13 @@ DBB, DBB SW, DMSW, , , Michelle Butler, , , DBB SW
 DBBLIFE, DBB Lifetime SW, DBB, 1.02C.07.08, LDF, Michelle Butler, Michelle Gower, , DBB Lifetime SW 
 DBBMD, DBB Meta SW, DBB, 1.02C.07.08, LDF, Michelle Butler, Michelle Gower, lsst-dm/dbb_gwclient lsst-dm/dbb_gateway, DBB Meta SW 
 DBBTR, DBB Transport SW, DBB, 1.02C.07.08, LDF, Michelle Butler, Michelle Gower, , DBB Transport SW 
-LSP, LSP SW, DMSW, , , Frossie Economou, Gregory Dubois-Felsmann, , LSP SW 
-DAXIMG, Image Server, LSP, 1.02C.06.02.04, DAX, Frossie Economou, Colin Slater, dax_imgserv, Image Server 
-LSPWEB, LSP Web SW, LSP, 1.02C.06.02, DAX, , , dax_webserv, LSP Web SW 
-NB, LSP Notebook SW, LSP, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils, LSP Notebook SW 
-PRTLSW, LSP Portal SW, LSP, 1.02C.05.07 1.02C.05.08, SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, suit, LSP Portal SW 
-SUITOH, SUIT OnlineHelp, LSP, , SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, suit-onlinehelp, SUIT OnlineHelp 
-TAPSW, TAP, LSP, , , Frossie Economou, Simon Krughoff, , TAP 
+LSPSW, LSP SW Products, DMSW, , , Frossie Economou, Gregory Dubois-Felsmann, , LSP SW Products 
+DAXIMG, Image Server SW, LSPSW, 1.02C.06.02.04, DAX, Frossie Economou, Colin Slater, dax_imgserv, Image Server SW 
+LSPWEB, LSP Web SW, LSPSW, 1.02C.06.02, DAX, , , dax_webserv, LSP Web SW 
+NBSW, LSP Notebook SW, LSPSW, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils, LSP Notebook SW 
+PRTLSW, LSP Portal SW, LSPSW, 1.02C.05.07 1.02C.05.08, SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, suit, LSP Portal SW 
+SUITOH, SUIT OnlineHelp, LSPSW, , SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, suit-onlinehelp, SUIT OnlineHelp 
+TAPSW, TAP Software, LSPSW, , , Frossie Economou, Simon Krughoff, , TAP Software 
 PR, Prompt SW, DMSW, , , Michelle Butler, , , Prompt SW 
 ALRTDSTR, Alert Distrib SW, PR, 1.02C.03.03, AP, John Swinbank, Eric Bellm, lsst-dm/alert_stream, Alert Distrib SW 
 EFDT, EFD Transform, PR, 1.02C.07.08, LDF, Frossie Economou, Simon Krughoff, , EFD Transform 

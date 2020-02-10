@@ -1,4 +1,4 @@
-% auto generated from MagicDraw (revision) 314 - DO NOT EDIT!
+% auto generated from MagicDraw (revision) 315 - DO NOT EDIT!
 % using template at <template>.
 % Collecting data for component: ""
 % using docsteady version 
@@ -2069,7 +2069,7 @@ More details available in \citeds{LDM-542}and \citeds{LSE-319}
 
    \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{prtl}{LSP Portal} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{prtlsrv}{LSP Portal} } }
 & \multicolumn{2}{l}{(product in: LSP Services
 )}
 \\ \hline
@@ -2093,7 +2093,7 @@ SUIT \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
 {\footnotesize ( LSP Portal
- - PRTL ) }
+ - PRTLSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -2172,7 +2172,7 @@ configurations provided in the \href{https://github.com/lsst/suit}{suit}
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{lspnbl}{LSP Nublado} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{nblsrv}{LSP Nublado} } }
 & \multicolumn{2}{l}{(product in: LSP Services
 )}
 \\ \hline
@@ -2194,8 +2194,8 @@ Simon Krughoff
 SQuaRE \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( LSP JupyterLab
- - LSPNBL ) }
+{\footnotesize ( LSP Nublado
+ - NBLSRV ) }
 }\\ \hline
 \end{longtable}
 
@@ -2213,7 +2213,7 @@ generating derived data products.
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{nb}{LSP Notebook Software} \\ \hline
+\hyperlink{nbsw}{LSP Notebook Software} \\ \hline
 \hyperlink{spdist}{Science Pipelines Distribution} \\ \hline
 \end{tabular}
 } &
@@ -2284,7 +2284,7 @@ available in the Notebook Aspect.
 
   \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{tapsev}{TAP API} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{tapsrv}{TAP API} } }
 & \multicolumn{2}{l}{(product in: LSP Web API
 )}
 \\ \hline
@@ -2306,12 +2306,13 @@ Simon Krughoff
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( TAP
- - TAPSEV ) }
+{\footnotesize ( TAP API
+ - TAPSRV ) }
 }\\ \hline
 \end{longtable}
 
-TAP Compliant Interface web-service.\\
+{Provides query services for catalogs and image metadata, following the
+IVOA TAP standard. }\\
 ~\\
 See \citeds{DMTN-090}for details (dmtn-090.lsst.io).
 
@@ -2323,7 +2324,7 @@ See \citeds{DMTN-090}for details (dmtn-090.lsst.io).
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{tapsw}{TAP SW} \\ \hline
+\hyperlink{tapsw}{TAP Software} \\ \hline
 \end{tabular}
 } &
 \multicolumn{2}{c}{
@@ -2338,7 +2339,7 @@ See \citeds{DMTN-090}for details (dmtn-090.lsst.io).
 
     \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{soda}{SODA API} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{sodasrv}{SODA API} } }
 & \multicolumn{2}{l}{(product in: LSP Web API
 )}
 \\ \hline
@@ -2360,13 +2361,13 @@ Simon Krughoff
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( SODA
- - SODA ) }
+{\footnotesize ( SODA API
+ - SODASRV ) }
 }\\ \hline
 \end{longtable}
 
-Service that allows server-side image processing, as per IVOA's SODA
-standard.
+{Provides image cutout, transformation, and re-creation services,
+following the IVOA SODA standard.}
 
 ~
 
@@ -2414,12 +2415,13 @@ Simon Krughoff
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( SIA
+{\footnotesize ( SIA API
  - SIASRV ) }
 }\\ \hline
 \end{longtable}
 
-Service implementing SIA access to LSST images.
+{Provides image metadata query services, following the IVOA SIA version
+2 standard.}
 
 ~
 
@@ -2442,7 +2444,7 @@ See \citeds{DMTN-090}for details (dmtn-090.lsst.io).
 
     \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{wdav}{WebDAV API} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{wdavsrv}{WebDAV API} } }
 & \multicolumn{2}{l}{(product in: LSP Web API
 )}
 \\ \hline
@@ -2464,12 +2466,13 @@ Simon Krughoff
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( WebDAV
- - WDAV ) }
+{\footnotesize ( WebDAV API
+ - WDAVSRV ) }
 }\\ \hline
 \end{longtable}
 
-This service permits the use of filesystem over http.
+{Provides remote access services to the User File Workspace, following
+the IETF WebDAV standard.}
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -4200,7 +4203,7 @@ preservation.
 
     
    \newpage
-\subsubsection{LSP SW Products}\label{lsp}
+\subsubsection{LSP Software Products}\label{lspsw}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 \parbox{3.5cm}{
@@ -4221,8 +4224,8 @@ Gregory Dubois-Felsmann
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( LSP SW
- - LSP ) }
+{\footnotesize ( LSP SW Products
+ - LSPSW ) }
 }\\ \hline
 \citeds{LDM-542} &
 \multicolumn{3}{l}{ Science Platform Design }
@@ -4241,7 +4244,7 @@ Gregory Dubois-Felsmann
    \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ \hypertarget{prtlsw}{LSP Portal Software } } }
-& \multicolumn{2}{l}{(product in: LSP SW
+& \multicolumn{2}{l}{(product in: LSP SW Products
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
@@ -4286,7 +4289,7 @@ Firefly server side.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{prtl}{LSP Portal} \\ \hline
+\hyperlink{prtlsrv}{LSP Portal} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -4338,8 +4341,8 @@ Firefly server side.
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{nb}{LSP Notebook Software} } }
-& \multicolumn{2}{l}{(product in: LSP SW
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{nbsw}{LSP Notebook Software} } }
+& \multicolumn{2}{l}{(product in: LSP SW Products
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
@@ -4361,11 +4364,11 @@ SQuaRE \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
 {\footnotesize ( LSP Notebook SW
- - NB ) }
+ - NBSW ) }
 }\\ \hline
 \end{longtable}
 
-LSP Jupyter Notebook Product
+Software product implementing the Rubin/LSST Nublado service.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -4383,7 +4386,7 @@ LSP Jupyter Notebook Product
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{lspnbl}{LSP Nublado} \\ \hline
+\hyperlink{nblsrv}{LSP Nublado} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -4412,7 +4415,7 @@ LSP Jupyter Notebook Product
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ \hypertarget{lspweb}{LSP Web API SW (obsolete product)} } }
-& \multicolumn{2}{l}{(product in: LSP SW
+& \multicolumn{2}{l}{(product in: LSP SW Products
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
@@ -4562,7 +4565,7 @@ LSP Web API software product
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ \hypertarget{suitoh}{SUIT Online Help} } }
-& \multicolumn{2}{l}{(product in: LSP SW
+& \multicolumn{2}{l}{(product in: LSP SW Products
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
@@ -4602,7 +4605,7 @@ HTML content.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{prtl}{LSP Portal} \\ \hline
+\hyperlink{prtlsrv}{LSP Portal} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -4611,7 +4614,7 @@ HTML content.
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ \hypertarget{daximg}{Image/ Cutout Server} } }
-& \multicolumn{2}{l}{(product in: LSP SW
+& \multicolumn{2}{l}{(product in: LSP SW Products
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
@@ -4632,12 +4635,12 @@ Colin Slater
 DAX \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( Image Server
+{\footnotesize ( Image Server SW
  - DAXIMG ) }
 }\\ \hline
 \end{longtable}
 
-Web Interface for LSST Image Services software product.
+Software product implementing the Rubin/LSST SODA image service.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -4649,7 +4652,7 @@ Web Interface for LSST Image Services software product.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{soda}{SODA API} \\ \hline
+\hyperlink{sodasrv}{SODA API} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -4685,8 +4688,8 @@ Web Interface for LSST Image Services software product.
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{tapsw}{TAP SW} } }
-& \multicolumn{2}{l}{(product in: LSP SW
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{tapsw}{TAP Software} } }
+& \multicolumn{2}{l}{(product in: LSP SW Products
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
@@ -4707,12 +4710,12 @@ Simon Krughoff
  \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( TAP
+{\footnotesize ( TAP Software
  - TAPSW ) }
 }\\ \hline
 \end{longtable}
 
-
+Software product implementing the Rubin/LSST TAP API service.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -4721,7 +4724,7 @@ Simon Krughoff
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{tapsev}{TAP API} \\ \hline
+\hyperlink{tapsrv}{TAP API} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -5382,7 +5385,7 @@ Top level distribution product for the Science Pipelines.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{lspnbl}{LSP Nublado} \\ \hline
+\hyperlink{nblsrv}{LSP Nublado} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -6793,12 +6796,12 @@ Base facility.
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{prtl}{LSP Portal} \\ \hline
-\hyperlink{lspnbl}{LSP Nublado} \\ \hline
-\hyperlink{wdav}{WebDAV API} \\ \hline
+\hyperlink{prtlsrv}{LSP Portal} \\ \hline
+\hyperlink{nblsrv}{LSP Nublado} \\ \hline
+\hyperlink{wdavsrv}{WebDAV API} \\ \hline
 \hyperlink{siasrv}{SIA API} \\ \hline
-\hyperlink{soda}{SODA API} \\ \hline
-\hyperlink{tapsev}{TAP API} \\ \hline
+\hyperlink{sodasrv}{SODA API} \\ \hline
+\hyperlink{tapsrv}{TAP API} \\ \hline
 \hyperlink{lspdb}{LSP Database} \\ \hline
 \end{tabular}
 } &
@@ -6861,12 +6864,12 @@ located at the Base facility.
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{lspnbl}{LSP Nublado} \\ \hline
-\hyperlink{prtl}{LSP Portal} \\ \hline
-\hyperlink{wdav}{WebDAV API} \\ \hline
+\hyperlink{nblsrv}{LSP Nublado} \\ \hline
+\hyperlink{prtlsrv}{LSP Portal} \\ \hline
+\hyperlink{wdavsrv}{WebDAV API} \\ \hline
 \hyperlink{siasrv}{SIA API} \\ \hline
-\hyperlink{soda}{SODA API} \\ \hline
-\hyperlink{tapsev}{TAP API} \\ \hline
+\hyperlink{sodasrv}{SODA API} \\ \hline
+\hyperlink{tapsrv}{TAP API} \\ \hline
 \hyperlink{lspdb}{LSP Database} \\ \hline
 \end{tabular}
 } &
@@ -7021,12 +7024,12 @@ the NCSA facility.
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{lspnbl}{LSP Nublado} \\ \hline
-\hyperlink{prtl}{LSP Portal} \\ \hline
-\hyperlink{wdav}{WebDAV API} \\ \hline
+\hyperlink{nblsrv}{LSP Nublado} \\ \hline
+\hyperlink{prtlsrv}{LSP Portal} \\ \hline
+\hyperlink{wdavsrv}{WebDAV API} \\ \hline
 \hyperlink{siasrv}{SIA API} \\ \hline
-\hyperlink{soda}{SODA API} \\ \hline
-\hyperlink{tapsev}{TAP API} \\ \hline
+\hyperlink{sodasrv}{SODA API} \\ \hline
+\hyperlink{tapsrv}{TAP API} \\ \hline
 \hyperlink{lspdb}{LSP Database} \\ \hline
 \end{tabular}
 } &
@@ -8667,7 +8670,7 @@ Provides multi-user and multi-instance support to Jupyterlab.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{nb}{LSP Notebook Software} \\ \hline
+\hyperlink{nbsw}{LSP Notebook Software} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -8715,7 +8718,7 @@ based on the Jupyter Notebook and Architecture.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{nb}{LSP Notebook Software} \\ \hline
+\hyperlink{nbsw}{LSP Notebook Software} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline

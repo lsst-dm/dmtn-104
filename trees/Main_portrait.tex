@@ -79,41 +79,41 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (LSPSRV.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSRV.east) -| ++(0.4,0) |- (LSPSRV.west); 
-\node (LSPNBL) [pbox,right=43pt of LSPSRV] {\textbf{LSP JupyterLab
-} };\node [below right] at (LSPNBL.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
-\node (LSPNBLpkg) [tbox,below=3mm of LSPNBL.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/nublado \end{verbatim} }  };
-
- \draw[pline] (LSPSRV.east) -| ++(0.4,0) |- (LSPNBL.west); 
-\node (LSPWAPI) [pbox,below=6pt of LSPNBL] {\textbf{LSP Web API
+\node (LSPWAPI) [pbox,right=43pt of LSPSRV] {\textbf{LSP Web API
 } };\node [below right] at (LSPWAPI.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LSPSRV.east) -| ++(0.4,0) |- (LSPWAPI.west); 
-\node (SIASRV) [pbox,right=43pt of LSPWAPI] {\textbf{SIA
+\node (SIASRV) [pbox,right=43pt of LSPWAPI] {\textbf{SIA API
 } };\node [below right] at (SIASRV.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LSPWAPI.east) -| ++(0.4,0) |- (SIASRV.west); 
-\node (SODA) [pbox,below=6pt of SIASRV] {\textbf{SODA
-} };\node [below right] at (SODA.north west) {\footnotesize \color{blue}} ;
+\node (SODASRV) [pbox,below=6pt of SIASRV] {\textbf{SODA API
+} };\node [below right] at (SODASRV.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (LSPWAPI.east) -| ++(0.4,0) |- (SODA.west); 
-\node (TAPSEV) [pbox,below=6pt of SODA] {\textbf{TAP
-} };\node [below right] at (TAPSEV.north west) {\footnotesize \color{blue}} ;
-\node (TAPSEVpkg) [tbox,below=3mm of TAPSEV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/lsst-tap-service \end{verbatim} }  };
+ \draw[pline] (LSPWAPI.east) -| ++(0.4,0) |- (SODASRV.west); 
+\node (TAPSRV) [pbox,below=6pt of SODASRV] {\textbf{TAP API
+} };\node [below right] at (TAPSRV.north west) {\footnotesize \color{blue}} ;
+\node (TAPSRVpkg) [tbox,below=3mm of TAPSRV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/lsst-tap-service \end{verbatim} }  };
 
- \draw[pline] (LSPWAPI.east) -| ++(0.4,0) |- (TAPSEV.west); 
-\node (WDAV) [pbox,below=6pt of TAPSEV] {\textbf{WebDAV
-} };\node [below right] at (WDAV.north west) {\footnotesize \color{blue}} ;
-\node (WDAVpkg) [tbox,below=3mm of WDAV.north] {{\footnotesize \color{black} \begin{verbatim} davt \end{verbatim} }  };
+ \draw[pline] (LSPWAPI.east) -| ++(0.4,0) |- (TAPSRV.west); 
+\node (WDAVSRV) [pbox,below=6pt of TAPSRV] {\textbf{WebDAV API
+} };\node [below right] at (WDAVSRV.north west) {\footnotesize \color{blue}} ;
+\node (WDAVSRVpkg) [tbox,below=3mm of WDAVSRV.north] {{\footnotesize \color{black} \begin{verbatim} davt \end{verbatim} }  };
 
- \draw[pline] (LSPWAPI.east) -| ++(0.4,0) |- (WDAV.west); 
+ \draw[pline] (LSPWAPI.east) -| ++(0.4,0) |- (WDAVSRV.west); 
 \node (LSPWEBSRV) [pbox,below=135pt of LSPWAPI] {\textbf{LSP Web API
 } };\node [below right] at (LSPWEBSRV.north west) {\footnotesize \color{blue}1.02C.06.02} ;
 
  \draw[pline] (LSPSRV.east) -| ++(0.4,0) |- (LSPWEBSRV.west); 
-\node (PRTL) [pbox,below=6pt of LSPWEBSRV] {\textbf{LSP Portal
-} };\node [below right] at (PRTL.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
+\node (NBLSRV) [pbox,below=6pt of LSPWEBSRV] {\textbf{LSP Nublado
+} };\node [below right] at (NBLSRV.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
+\node (NBLSRVpkg) [tbox,below=3mm of NBLSRV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/nublado \end{verbatim} }  };
 
- \draw[pline] (LSPSRV.east) -| ++(0.4,0) |- (PRTL.west); 
+ \draw[pline] (LSPSRV.east) -| ++(0.4,0) |- (NBLSRV.west); 
+\node (PRTLSRV) [pbox,below=6pt of NBLSRV] {\textbf{LSP Portal
+} };\node [below right] at (PRTLSRV.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
+
+ \draw[pline] (LSPSRV.east) -| ++(0.4,0) |- (PRTLSRV.west); 
 \node (OFFLSRV) [pbox,below=264pt of LSPSRV] {\textbf{Offline Services
 } };\node [below right] at (OFFLSRV.north west) {\footnotesize \color{blue}} ;
 
@@ -219,40 +219,40 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (DBBTR.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 
  \draw[pline] (DBB.east) -| ++(0.4,0) |- (DBBTR.west); 
-\node (LSP) [pbox,below=92pt of DBB] {\textbf{LSP SW
-} };\node [below right] at (LSP.north west) {\footnotesize \color{blue}} ;
+\node (LSPSW) [pbox,below=92pt of DBB] {\textbf{LSP SW Products
+} };\node [below right] at (LSPSW.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (DMSW.east) -| ++(0.4,0) |- (LSP.west); 
-\node (DAXIMG) [pbox,right=43pt of LSP] {\textbf{Image Server
+ \draw[pline] (DMSW.east) -| ++(0.4,0) |- (LSPSW.west); 
+\node (DAXIMG) [pbox,right=43pt of LSPSW] {\textbf{Image Server SW
 } };\node [below right] at (DAXIMG.north west) {\footnotesize \color{blue}1.02C.06.02.04} ;
 \node (DAXIMGpkg) [tbox,below=3mm of DAXIMG.north] {{\footnotesize \color{black} \begin{verbatim} dax_imgserv \end{verbatim} }  };
 
- \draw[pline] (LSP.east) -| ++(0.4,0) |- (DAXIMG.west); 
+ \draw[pline] (LSPSW.east) -| ++(0.4,0) |- (DAXIMG.west); 
 \node (LSPWEB) [pbox,below=6pt of DAXIMG] {\textbf{LSP Web SW
 } };\node [below right] at (LSPWEB.north west) {\footnotesize \color{blue}1.02C.06.02} ;
 \node (LSPWEBpkg) [tbox,below=3mm of LSPWEB.north] {{\footnotesize \color{black} \begin{verbatim} dax_webserv \end{verbatim} }  };
 
- \draw[pline] (LSP.east) -| ++(0.4,0) |- (LSPWEB.west); 
-\node (NB) [pbox,below=6pt of LSPWEB] {\textbf{LSP Notebook SW
-} };\node [below right] at (NB.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
-\node (NBpkg) [tbox,below=3mm of NB.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils \end{verbatim} }  };
+ \draw[pline] (LSPSW.east) -| ++(0.4,0) |- (LSPWEB.west); 
+\node (NBSW) [pbox,below=6pt of LSPWEB] {\textbf{LSP Notebook SW
+} };\node [below right] at (NBSW.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
+\node (NBSWpkg) [tbox,below=3mm of NBSW.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils \end{verbatim} }  };
 
- \draw[pline] (LSP.east) -| ++(0.4,0) |- (NB.west); 
-\node (PRTLSW) [pbox,below=6pt of NB] {\textbf{LSP Portal SW
+ \draw[pline] (LSPSW.east) -| ++(0.4,0) |- (NBSW.west); 
+\node (PRTLSW) [pbox,below=6pt of NBSW] {\textbf{LSP Portal SW
 } };\node [below right] at (PRTLSW.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
 \node (PRTLSWpkg) [tbox,below=3mm of PRTLSW.north] {{\footnotesize \color{black} \begin{verbatim} suit \end{verbatim} }  };
 
- \draw[pline] (LSP.east) -| ++(0.4,0) |- (PRTLSW.west); 
+ \draw[pline] (LSPSW.east) -| ++(0.4,0) |- (PRTLSW.west); 
 \node (SUITOH) [pbox,below=6pt of PRTLSW] {\textbf{SUIT OnlineHelp
 } };\node [below right] at (SUITOH.north west) {\footnotesize \color{blue}} ;
 \node (SUITOHpkg) [tbox,below=3mm of SUITOH.north] {{\footnotesize \color{black} \begin{verbatim} suit-onlinehelp \end{verbatim} }  };
 
- \draw[pline] (LSP.east) -| ++(0.4,0) |- (SUITOH.west); 
-\node (TAPSW) [pbox,below=6pt of SUITOH] {\textbf{TAP
+ \draw[pline] (LSPSW.east) -| ++(0.4,0) |- (SUITOH.west); 
+\node (TAPSW) [pbox,below=6pt of SUITOH] {\textbf{TAP Software
 } };\node [below right] at (TAPSW.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (LSP.east) -| ++(0.4,0) |- (TAPSW.west); 
-\node (PR) [pbox,below=221pt of LSP] {\textbf{Prompt SW
+ \draw[pline] (LSPSW.east) -| ++(0.4,0) |- (TAPSW.west); 
+\node (PR) [pbox,below=221pt of LSPSW] {\textbf{Prompt SW
 } };\node [below right] at (PR.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSW.east) -| ++(0.4,0) |- (PR.west); 

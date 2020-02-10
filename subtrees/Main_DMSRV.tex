@@ -73,41 +73,41 @@ right=96pt of DBBSRV] {\textbf{IT Service
 right=96pt of ITSRV] {\textbf{LSP Services
 } };\node [below right] at (LSPSRV.north west) {\footnotesize \color{blue}} ;
 
-\node (LSPNBL) [pbox,below right=6pt and -14pt of LSPSRV] {\textbf{LSP JupyterLab
-} };\node [below right] at (LSPNBL.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
-\node (LSPNBLpkg) [tbox,below=3mm of LSPNBL.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/nublado \end{verbatim} }  };
-
- \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPNBL.west); 
-\node (LSPWAPI) [pbox,below=6pt of LSPNBL] {\textbf{LSP Web API
+\node (LSPWAPI) [pbox,below right=6pt and -14pt of LSPSRV] {\textbf{LSP Web API
 } };\node [below right] at (LSPWAPI.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPWAPI.west); 
-\node (SIASRV) [pbox,below right=6pt and -14pt of LSPWAPI] {\textbf{SIA
+\node (SIASRV) [pbox,below right=6pt and -14pt of LSPWAPI] {\textbf{SIA API
 } };\node [below right] at (SIASRV.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LSPWAPI.south) -| ++(0,0) |- (SIASRV.west); 
-\node (SODA) [pbox,below=6pt of SIASRV] {\textbf{SODA
-} };\node [below right] at (SODA.north west) {\footnotesize \color{blue}} ;
+\node (SODASRV) [pbox,below=6pt of SIASRV] {\textbf{SODA API
+} };\node [below right] at (SODASRV.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (LSPWAPI.south) -| ++(0,0) |- (SODA.west); 
-\node (TAPSEV) [pbox,below=6pt of SODA] {\textbf{TAP
-} };\node [below right] at (TAPSEV.north west) {\footnotesize \color{blue}} ;
-\node (TAPSEVpkg) [tbox,below=3mm of TAPSEV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/lsst-tap-service \end{verbatim} }  };
+ \draw[pline] (LSPWAPI.south) -| ++(0,0) |- (SODASRV.west); 
+\node (TAPSRV) [pbox,below=6pt of SODASRV] {\textbf{TAP API
+} };\node [below right] at (TAPSRV.north west) {\footnotesize \color{blue}} ;
+\node (TAPSRVpkg) [tbox,below=3mm of TAPSRV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/lsst-tap-service \end{verbatim} }  };
 
- \draw[pline] (LSPWAPI.south) -| ++(0,0) |- (TAPSEV.west); 
-\node (WDAV) [pbox,below=6pt of TAPSEV] {\textbf{WebDAV
-} };\node [below right] at (WDAV.north west) {\footnotesize \color{blue}} ;
-\node (WDAVpkg) [tbox,below=3mm of WDAV.north] {{\footnotesize \color{black} \begin{verbatim} davt \end{verbatim} }  };
+ \draw[pline] (LSPWAPI.south) -| ++(0,0) |- (TAPSRV.west); 
+\node (WDAVSRV) [pbox,below=6pt of TAPSRV] {\textbf{WebDAV API
+} };\node [below right] at (WDAVSRV.north west) {\footnotesize \color{blue}} ;
+\node (WDAVSRVpkg) [tbox,below=3mm of WDAVSRV.north] {{\footnotesize \color{black} \begin{verbatim} davt \end{verbatim} }  };
 
- \draw[pline] (LSPWAPI.south) -| ++(0,0) |- (WDAV.west); 
+ \draw[pline] (LSPWAPI.south) -| ++(0,0) |- (WDAVSRV.west); 
 \node (LSPWEBSRV) [pbox,below=178pt of LSPWAPI] {\textbf{LSP Web API
 } };\node [below right] at (LSPWEBSRV.north west) {\footnotesize \color{blue}1.02C.06.02} ;
 
  \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPWEBSRV.west); 
-\node (PRTL) [pbox,below=6pt of LSPWEBSRV] {\textbf{LSP Portal
-} };\node [below right] at (PRTL.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
+\node (NBLSRV) [pbox,below=6pt of LSPWEBSRV] {\textbf{LSP Nublado
+} };\node [below right] at (NBLSRV.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
+\node (NBLSRVpkg) [tbox,below=3mm of NBLSRV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/nublado \end{verbatim} }  };
 
- \draw[pline] (LSPSRV.south) -| ++(0,0) |- (PRTL.west); 
+ \draw[pline] (LSPSRV.south) -| ++(0,0) |- (NBLSRV.west); 
+\node (PRTLSRV) [pbox,below=6pt of NBLSRV] {\textbf{LSP Portal
+} };\node [below right] at (PRTLSRV.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
+
+ \draw[pline] (LSPSRV.south) -| ++(0,0) |- (PRTLSRV.west); 
 \node (OFFLSRV) [pbox, 
 right=192pt of LSPSRV] {\textbf{Offline Services
 } };\node [below right] at (OFFLSRV.north west) {\footnotesize \color{blue}} ;
