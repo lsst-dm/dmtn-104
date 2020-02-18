@@ -50,8 +50,8 @@ LSPSW, LSP SW Products, DMSW, , , Frossie Economou, Gregory Dubois-Felsmann, , L
 DAXIMG, Image Server SW, LSPSW, 1.02C.06.02.04, DAX, Frossie Economou, Colin Slater, dax_imgserv, Image Server SW 
 LSPWEB, LSP Web SW, LSPSW, 1.02C.06.02, DAX, , , dax_webserv, LSP Web SW 
 NBSW, LSP Notebook SW, LSPSW, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils, LSP Notebook SW 
+PRTLOH, Portal Online Help, LSPSW, 1.02C.05.08, SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, suit-onlinehelp, Portal Online Help 
 PRTLSW, LSP Portal SW, LSPSW, 1.02C.05.07 1.02C.05.08, SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, suit, LSP Portal SW 
-SUITOH, SUIT OnlineHelp, LSPSW, , SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, suit-onlinehelp, SUIT OnlineHelp 
 TAPSW, TAP Software, LSPSW, , , Frossie Economou, Simon Krughoff, , TAP Software 
 PR, Prompt SW, DMSW, , , Michelle Butler, , , Prompt SW 
 ALRTDSTR, Alert Distrib SW, PR, 1.02C.03.03, AP, John Swinbank, Eric Bellm, lsst-dm/alert_stream, Alert Distrib SW 
@@ -99,8 +99,7 @@ LLSW, Low Level SW, HWCOTS, , , , Multiple, , Low Level SW
 CENTOS, OS (e.g.), LLSW, , , , , , OS (e.g.) 
 THPL, Third Party Libs, HWCOTS, , , , , , Third Party Libs 
 BOOST, Boost, THPL, , , , , , Boost 
-FFAA, Firefly API A., THPL, , SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, , Firefly API A. 
-FIREFLY, Firefly, THPL, 1.02C.05.06, SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, , Firefly 
+FIREFLY, Firefly, THPL, 1.02C.05.06, SUIT, , Gregory Dubois-Felsmann, , Firefly 
 JH3, Jupyterhub, THPL, , , , , , Jupyterhub 
 JL3, Jupyterlab, THPL, , , , , , Jupyterlab 
 INFRA, Infrastructure, DM, , , Wil O'Mullane, , , Infrastructure 

@@ -345,6 +345,47 @@ README.md (First 20 lines only)
 
 
 \newpage
+\subsection{suit-onlinehelp}\label{suit-onlinehelp}
+
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst/suit-onlinehelp}{https://github.com/lsst/suit-onlinehelp} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{prtloh}{LSP Portal Online Help} \\
+\hline
+\end{longtable} }
+
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+# suit-onlinehelp
+
+Prerequisites
+-------------
+    - gradle v2.2+
+    - clone onlinehelp repository and its dependent repository
+        - git clone https://github.com/lsst/suit-onlinehelp
+        - git clone https://github.com/Caltech-IPAC/firefly
+
+
+Build and Install Individually
+------------------------------
+- cd suit-onlinehelp
+- gradle :<project_name>:build      // build only
+    - creates an archive of html and supporting files to be install to a webserver
+    - the file is placed in ./build/libs/
+
+- gradle :<project_name>:install    // build and install.
+    - crates and install online help files
+    - HTML_DOC_ROOT environment variable is required to locate the path to the webserver's document root.
+\end{lstlisting}
+}
+
+
+\newpage
 \subsection{suit}\label{suit}
 
 
@@ -384,47 +425,6 @@ is used for Python-based image and table visualizations.
  
  - Install [Node.js 8.x](https://nodejs.org/en/download/)
  
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{suit-onlinehelp}\label{suit-onlinehelp}
-
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst/suit-onlinehelp}{https://github.com/lsst/suit-onlinehelp} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{suitoh}{SUIT Online Help} \\
-\hline
-\end{longtable} }
-
-
-README.md (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-# suit-onlinehelp
-
-Prerequisites
--------------
-    - gradle v2.2+
-    - clone onlinehelp repository and its dependent repository
-        - git clone https://github.com/lsst/suit-onlinehelp
-        - git clone https://github.com/Caltech-IPAC/firefly
-
-
-Build and Install Individually
-------------------------------
-- cd suit-onlinehelp
-- gradle :<project_name>:build      // build only
-    - creates an archive of html and supporting files to be install to a webserver
-    - the file is placed in ./build/libs/
-
-- gradle :<project_name>:install    // build and install.
-    - crates and install online help files
-    - HTML_DOC_ROOT environment variable is required to locate the path to the webserver's document root.
 \end{lstlisting}
 }
 

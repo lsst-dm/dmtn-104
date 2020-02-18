@@ -77,17 +77,17 @@ right=96pt of DBB] {\textbf{LSP SW Products
 \node (NBSWpkg) [tbox,below=3mm of NBSW.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils \end{verbatim} }  };
 
  \draw[pline] (LSPSW.south) -| ++(0,0) |- (NBSW.west); 
-\node (PRTLSW) [pbox,below=6pt of NBSW] {\textbf{LSP Portal SW
+\node (PRTLOH) [pbox,below=6pt of NBSW] {\textbf{Portal Online Help
+} };\node [below right] at (PRTLOH.north west) {\footnotesize \color{blue}1.02C.05.08} ;
+\node (PRTLOHpkg) [tbox,below=3mm of PRTLOH.north] {{\footnotesize \color{black} \begin{verbatim} suit-onlinehelp \end{verbatim} }  };
+
+ \draw[pline] (LSPSW.south) -| ++(0,0) |- (PRTLOH.west); 
+\node (PRTLSW) [pbox,below=6pt of PRTLOH] {\textbf{LSP Portal SW
 } };\node [below right] at (PRTLSW.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
 \node (PRTLSWpkg) [tbox,below=3mm of PRTLSW.north] {{\footnotesize \color{black} \begin{verbatim} suit \end{verbatim} }  };
 
  \draw[pline] (LSPSW.south) -| ++(0,0) |- (PRTLSW.west); 
-\node (SUITOH) [pbox,below=6pt of PRTLSW] {\textbf{SUIT OnlineHelp
-} };\node [below right] at (SUITOH.north west) {\footnotesize \color{blue}} ;
-\node (SUITOHpkg) [tbox,below=3mm of SUITOH.north] {{\footnotesize \color{black} \begin{verbatim} suit-onlinehelp \end{verbatim} }  };
-
- \draw[pline] (LSPSW.south) -| ++(0,0) |- (SUITOH.west); 
-\node (TAPSW) [pbox,below=6pt of SUITOH] {\textbf{TAP Software
+\node (TAPSW) [pbox,below=6pt of PRTLSW] {\textbf{TAP Software
 } };\node [below right] at (TAPSW.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LSPSW.south) -| ++(0,0) |- (TAPSW.west); 

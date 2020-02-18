@@ -1,4 +1,4 @@
-% auto generated from MagicDraw (revision) 322 - DO NOT EDIT!
+% auto generated from MagicDraw (revision) 323 - DO NOT EDIT!
 % using template at <template>.
 % Collecting data for component: ""
 % using docsteady version 
@@ -33,7 +33,7 @@ Leanne Guy
 \multicolumn{3}{l}{ Data Management System (DMS) Requirements }
 \\ \cdashline{1-4}
 \citeds{LDM-639} &
-\multicolumn{3}{l}{ LSST Data Management Acceptance Test Specification }
+\multicolumn{3}{l}{ Rubin Observatory Data Management Acceptance Test Specification }
 \\ \cdashline{1-4}
 \citeds{LDM-148} &
 \multicolumn{3}{l}{ Data Management System Design }
@@ -2029,6 +2029,9 @@ Gregory Dubois-Felsmann
 {\footnotesize ( LSP Services
  - LSPSRV ) }
 }\\ \hline
+\citeds{LSE-319} &
+\multicolumn{3}{l}{ LSST Science Platform Vision Document }
+\\ \cdashline{1-4}
 \citeds{LDM-540} &
 \multicolumn{3}{l}{ LSST Science Platform Test
 Specification }
@@ -2044,9 +2047,9 @@ Specification }
 \\ \cdashline{1-4}
 \end{longtable}
 
-  This group of services provide an exploratory analysis environment for
-the end user. These services are usually referred as "Aspects",
-identified as follows:
+  The Science Platform services provide an exploratory analysis
+environment for the end user. Related subsets of the services are
+designated as ``Aspects'' of the Science Platform, as follows:
 
 \begin{itemize}
 \tightlist
@@ -2055,7 +2058,7 @@ identified as follows:
 \item
   LSP Notebook Aspect (Nublado)
 \item
-  LSP WebAPIs Aspect (TAP, SODA, SIA and WebDAV)
+  LSP Web APIs Aspect (TAP, SODA, SIA and WebDAV)~
 \end{itemize}
 
 These services permit external users access to project resources, such
@@ -2064,7 +2067,7 @@ platforms are provided in
 \href{https://github.com/lsst-sqre/lsp-deploy}{lsp-deploy} Git
 repository.\\
 ~\\
-More details available in \citeds{LDM-542}and \citeds{LSE-319}
+\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]}}}
 
 
    \newpage
@@ -2095,15 +2098,21 @@ SUIT \\
 {\footnotesize ( LSP Portal
  - PRTLSRV ) }
 }\\ \hline
+\citeds{DMTN-136} &
+\multicolumn{3}{l}{ LSST Science Platform Portal Aspect Design and Maintenance Manual }
+\\ \cdashline{1-4}
 \end{longtable}
 
 This service provides Web-based query and visualization tools for all
 the Rubin Observatory LSST data products.\\
-~\\
-The service is defined using a Dockerfile template provided by the third
-party package \emph{\textbf{firefly}}, and build using the
-configurations provided in the \href{https://github.com/lsst/suit}{suit}
-~Git package.
+\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\\
+The service is defined by the
+\href{https://github.com/lsst/suit}{lsst/suit} Github package (LSP
+Software Product), based on functionality from the third-party Firefly
+toolkit (partially supported by LSST DM), with releases delivered as
+Docker images.\\
+
+~\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]}}}
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2111,7 +2120,7 @@ configurations provided in the \href{https://github.com/lsst/suit}{suit}
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperlink{prtlsw}{LSP Portal Software } \\ \hline
-\hyperlink{suitoh}{SUIT Online Help} \\ \hline
+\hyperlink{prtloh}{LSP Portal Online Help} \\ \hline
 \end{tabular}
 } &
 \multicolumn{2}{c}{
@@ -4233,12 +4242,17 @@ Gregory Dubois-Felsmann
 \citeds{LDM-554} &
 \multicolumn{3}{l}{ Data Management LSST Science Platform Requirements }
 \\ \cdashline{1-4}
+\citeds{LSE-319} &
+\multicolumn{3}{l}{ LSST Science Platform Vision Document }
+\\ \cdashline{1-4}
 \citeds{LDM-540} &
 \multicolumn{3}{l}{ LSST Science Platform Test Specification }
 \\ \cdashline{1-4}
 \end{longtable}
 
-  Software products that implement the LSP services.
+  Software products that implement the LSP services.\\
+~\\
+\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
 
 
    \newpage
@@ -4269,12 +4283,17 @@ SUIT \\
 {\footnotesize ( LSP Portal SW
  - PRTLSW ) }
 }\\ \hline
+\citeds{DMTN-136} &
+\multicolumn{3}{l}{ LSST Science Platform Portal Aspect Design and Maintenance Manual }
+\\ \cdashline{1-4}
 \end{longtable}
 
 Implements LSST Portal Aspect-specific behaviors added to the core
-Firefly library. Defines the Portal web application. Primarily
+Firefly library. ~Defines the Portal web application. ~Primarily
 JavaScript but also contains Java extensions (search processors) to the
-Firefly server side.
+Firefly server side.\\
+~\\
+\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -4564,7 +4583,7 @@ LSP Web API software product
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{suitoh}{SUIT Online Help} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{prtloh}{LSP Portal Online Help} } }
 & \multicolumn{2}{l}{(product in: LSP SW Products
 )}
 \\ \hline
@@ -4581,19 +4600,21 @@ Gregory Dubois-Felsmann
 } \\
 \end{tabular} &
 \begin{tabular}{@{}l@{}}
- \\
+1.02C.05.08 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
 SUIT \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( SUIT OnlineHelp
- - SUITOH ) }
+{\footnotesize ( Portal Online Help
+ - PRTLOH ) }
 }\\ \hline
 \end{longtable}
 
 Contains help content, as HTML, and a small amount of GWT GUI code to
 implement a help application that provides a navigation sidebar for the
-HTML content.
+HTML content.\\
+~\\
+\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -8269,51 +8290,6 @@ and to run.
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{ffaa}{Firefly API Access} } }
-& \multicolumn{2}{l}{(product in: Third Party Libs
-)}
-\\ \hline
-\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
-\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-\parbox{3.5cm}{
-Gregory Dubois-Felsmann
-\vspace{2mm}%
-} &
-\begin{tabular}{@{}l@{}}
-\parbox{3.5cm}{
-Gregory Dubois-Felsmann
-\vspace{2mm}%
-} \\
-\end{tabular} &
-\begin{tabular}{@{}l@{}}
- \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
-SUIT \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize ( Firefly API A.
- - FFAA ) }
-}\\ \hline
-\end{longtable}
-
-Provides hooks to allow Firefly's Javascript code to be loaded starting
-from npm-style package loading
-
-
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{References} &
-\multicolumn{3}{l}{\href{https://github.com/Caltech-IPAC/firefly-api-access}{https://github.com/Caltech-IPAC/firefly-api-access} }
-\\ \hline \\ \hline
-\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-\multicolumn{2}{c}{
-} &
-\multicolumn{2}{c}{
-} \\ \bottomrule
-\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
-\end{longtable}
-
-     \newpage
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ \hypertarget{firefly}{Firefly} } }
 & \multicolumn{2}{l}{(product in: Third Party Libs
 )}
@@ -8321,7 +8297,7 @@ from npm-style package loading
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Gregory Dubois-Felsmann
+
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
@@ -8341,14 +8317,14 @@ SUIT \\
 }\\ \hline
 \end{longtable}
 
-IPAC's Advanced Astronomy WEB UI Framework.
+IPAC's Advanced Astronomy WEB UI Framework.\\
+~\\
+\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{References} &
 \multicolumn{3}{l}{\href{https://github.com/Caltech-IPAC/firefly}{https://github.com/Caltech-IPAC/firefly} }
-\\ \cline{2-4}
-& \multicolumn{3}{l}{\href{http://web.ipac.caltech.edu/staff/roby/camera-team-ff-overview.pdf}{http://web.ipac.caltech.edu/staff/roby/camera-team-ff-overview.pdf} }
 \\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{

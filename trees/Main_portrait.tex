@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=765pt,paperheight=4300pt,
+\usepackage[paperwidth=765pt,paperheight=4257pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -238,17 +238,17 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (NBSWpkg) [tbox,below=3mm of NBSW.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils \end{verbatim} }  };
 
  \draw[pline] (LSPSW.east) -| ++(0.4,0) |- (NBSW.west); 
-\node (PRTLSW) [pbox,below=6pt of NBSW] {\textbf{LSP Portal SW
+\node (PRTLOH) [pbox,below=6pt of NBSW] {\textbf{Portal Online Help
+} };\node [below right] at (PRTLOH.north west) {\footnotesize \color{blue}1.02C.05.08} ;
+\node (PRTLOHpkg) [tbox,below=3mm of PRTLOH.north] {{\footnotesize \color{black} \begin{verbatim} suit-onlinehelp \end{verbatim} }  };
+
+ \draw[pline] (LSPSW.east) -| ++(0.4,0) |- (PRTLOH.west); 
+\node (PRTLSW) [pbox,below=6pt of PRTLOH] {\textbf{LSP Portal SW
 } };\node [below right] at (PRTLSW.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
 \node (PRTLSWpkg) [tbox,below=3mm of PRTLSW.north] {{\footnotesize \color{black} \begin{verbatim} suit \end{verbatim} }  };
 
  \draw[pline] (LSPSW.east) -| ++(0.4,0) |- (PRTLSW.west); 
-\node (SUITOH) [pbox,below=6pt of PRTLSW] {\textbf{SUIT OnlineHelp
-} };\node [below right] at (SUITOH.north west) {\footnotesize \color{blue}} ;
-\node (SUITOHpkg) [tbox,below=3mm of SUITOH.north] {{\footnotesize \color{black} \begin{verbatim} suit-onlinehelp \end{verbatim} }  };
-
- \draw[pline] (LSPSW.east) -| ++(0.4,0) |- (SUITOH.west); 
-\node (TAPSW) [pbox,below=6pt of SUITOH] {\textbf{TAP Software
+\node (TAPSW) [pbox,below=6pt of PRTLSW] {\textbf{TAP Software
 } };\node [below right] at (TAPSW.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LSPSW.east) -| ++(0.4,0) |- (TAPSW.west); 
@@ -448,11 +448,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (BOOST.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (THPL.east) -| ++(0.4,0) |- (BOOST.west); 
-\node (FFAA) [pbox,below=6pt of BOOST] {\textbf{Firefly API A.
-} };\node [below right] at (FFAA.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (THPL.east) -| ++(0.4,0) |- (FFAA.west); 
-\node (FIREFLY) [pbox,below=6pt of FFAA] {\textbf{Firefly
+\node (FIREFLY) [pbox,below=6pt of BOOST] {\textbf{Firefly
 } };\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
 
  \draw[pline] (THPL.east) -| ++(0.4,0) |- (FIREFLY.west); 
@@ -464,7 +460,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (THPL.east) -| ++(0.4,0) |- (JL3.west); 
-\node (INFRA) [pbox,below=866pt of HWCOTS] {\textbf{Infrastructure
+\node (INFRA) [pbox,below=823pt of HWCOTS] {\textbf{Infrastructure
 } };\node [below right] at (INFRA.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DM.east) -| ++(0.4,0) |- (INFRA.west); 
