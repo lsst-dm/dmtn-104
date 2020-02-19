@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=1221.9999999999998pt,paperheight=731pt,
+\usepackage[paperwidth=1221.9999999999998pt,paperheight=688pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -95,11 +95,7 @@ right=96pt of ITSRV] {\textbf{LSP Services
 \node (WDAVSRVpkg) [tbox,below=3mm of WDAVSRV.north] {{\footnotesize \color{black} \begin{verbatim} davt \end{verbatim} }  };
 
  \draw[pline] (LSPWAPI.south) -| ++(0,0) |- (WDAVSRV.west); 
-\node (LSPWEBSRV) [pbox,below=178pt of LSPWAPI] {\textbf{LSP Web API
-} };\node [below right] at (LSPWEBSRV.north west) {\footnotesize \color{blue}1.02C.06.02} ;
-
- \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPWEBSRV.west); 
-\node (NBLSRV) [pbox,below=6pt of LSPWEBSRV] {\textbf{LSP Nublado
+\node (NBLSRV) [pbox,below=178pt of LSPWAPI] {\textbf{LSP Nublado
 } };\node [below right] at (NBLSRV.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
 \node (NBLSRVpkg) [tbox,below=3mm of NBLSRV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/nublado \end{verbatim} }  };
 
@@ -148,11 +144,7 @@ right=96pt of OFFLSRV] {\textbf{Prompt Services
 } };\node [below right] at (IMAS.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
 
  \draw[pline] (ARCSRVS.south) -| ++(0,0) |- (IMAS.west); 
-\node (ARCSRVo) [pbox,below=135pt of ARCSRVS] {\textbf{Archiving
-} };\node [below right] at (ARCSRVo.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
-
- \draw[pline] (PRSRV.south) -| ++(0,0) |- (ARCSRVo.west); 
-\node (OCSBATSRV) [pbox,below=6pt of ARCSRVo] {\textbf{OCS Batch
+\node (OCSBATSRV) [pbox,below=135pt of ARCSRVS] {\textbf{OCS Batch
 } };\node [below right] at (OCSBATSRV.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
 
  \draw[pline] (PRSRV.south) -| ++(0,0) |- (OCSBATSRV.west); 

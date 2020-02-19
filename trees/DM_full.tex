@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=2564.0pt,paperheight=1917pt,
+\usepackage[paperwidth=2660.0pt,paperheight=1917pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -99,11 +99,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (WDAVSRVpkg) [tbox,below=3mm of WDAVSRV.north] {{\footnotesize \color{black} \begin{verbatim} davt \end{verbatim} }  };
 
  \draw[pline] (LSPWAPI.south) -| ++(0,0) |- (WDAVSRV.west); 
-\node (LSPWEBSRV) [pbox,below=178pt of LSPWAPI] {\textbf{LSP Web API
-} };\node [below right] at (LSPWEBSRV.north west) {\footnotesize \color{blue}1.02C.06.02} ;
-
- \draw[pline] (LSPSRV.south) -| ++(0,0) |- (LSPWEBSRV.west); 
-\node (NBLSRV) [pbox,below=6pt of LSPWEBSRV] {\textbf{LSP Nublado
+\node (NBLSRV) [pbox,below=178pt of LSPWAPI] {\textbf{LSP Nublado
 } };\node [below right] at (NBLSRV.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
 \node (NBLSRVpkg) [tbox,below=3mm of NBLSRV.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/nublado \end{verbatim} }  };
 
@@ -112,7 +108,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (PRTLSRV.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
 
  \draw[pline] (LSPSRV.south) -| ++(0,0) |- (PRTLSRV.west); 
-\node (OFFLSRV) [pbox,below=350pt of LSPSRV] {\textbf{Offline Services
+\node (OFFLSRV) [pbox,below=307pt of LSPSRV] {\textbf{Offline Services
 } };\node [below right] at (OFFLSRV.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSRV.south) -| ++(0,0) |- (OFFLSRV.west); 
@@ -152,11 +148,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (IMAS.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
 
  \draw[pline] (ARCSRVS.south) -| ++(0,0) |- (IMAS.west); 
-\node (ARCSRVo) [pbox,below=135pt of ARCSRVS] {\textbf{Archiving
-} };\node [below right] at (ARCSRVo.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
-
- \draw[pline] (PRSRV.south) -| ++(0,0) |- (ARCSRVo.west); 
-\node (OCSBATSRV) [pbox,below=6pt of ARCSRVo] {\textbf{OCS Batch
+\node (OCSBATSRV) [pbox,below=135pt of ARCSRVS] {\textbf{OCS Batch
 } };\node [below right] at (OCSBATSRV.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
 
  \draw[pline] (PRSRV.south) -| ++(0,0) |- (OCSBATSRV.west); 
@@ -188,180 +180,180 @@ textwidth=30cm,textheight=50mm]{geometry}
 right=288pt of DMSRV] {\textbf{Software Products
 } };\node [below right] at (DMSW.north west) {\footnotesize \color{blue}} ;
 
-\node (BPP) [pbox,below right=6pt and -14pt of DMSW] {\textbf{Batch Prod SW
-} };\node [below right] at (BPP.north west) {\footnotesize \color{blue}} ;
+\node (BBSWP) [pbox,below right=6pt and -14pt of DMSW] {\textbf{Backbone SW P.
+} };\node [below right] at (BBSWP.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (DMSW.south) -| ++(0,0) |- (BPP.west); 
-\node (CMPGN) [pbox,below right=6pt and -14pt of BPP] {\textbf{Campaign Mgmt
-} };\node [below right] at (CMPGN.north west) {\footnotesize \color{blue}1.02C.07.08} ;
-
- \draw[pline] (BPP.south) -| ++(0,0) |- (CMPGN.west); 
-\node (WLWF) [pbox,below=6pt of CMPGN] {\textbf{Workload/flow
-} };\node [below right] at (WLWF.north west) {\footnotesize \color{blue}1.02C.07.08} ;
-
- \draw[pline] (BPP.south) -| ++(0,0) |- (WLWF.west); 
-\node (DBB) [pbox,below=92pt of BPP] {\textbf{DBB SW
-} };\node [below right] at (DBB.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMSW.south) -| ++(0,0) |- (DBB.west); 
-\node (DBBLIFE) [pbox,below right=6pt and -14pt of DBB] {\textbf{DBB Lifetime SW
+ \draw[pline] (DMSW.south) -| ++(0,0) |- (BBSWP.west); 
+\node (DBBLIFE) [pbox,below right=6pt and -14pt of BBSWP] {\textbf{DBB Lifetime SW
 } };\node [below right] at (DBBLIFE.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 
- \draw[pline] (DBB.south) -| ++(0,0) |- (DBBLIFE.west); 
+ \draw[pline] (BBSWP.south) -| ++(0,0) |- (DBBLIFE.west); 
 \node (DBBMD) [pbox,below=6pt of DBBLIFE] {\textbf{DBB Meta SW
 } };\node [below right] at (DBBMD.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 \node (DBBMDpkg) [tbox,below=3mm of DBBMD.north] {{\footnotesize \color{black} \begin{verbatim} lsst-dm/dbb_gwclient lsst-dm/dbb_gateway \end{verbatim} }  };
 
- \draw[pline] (DBB.south) -| ++(0,0) |- (DBBMD.west); 
+ \draw[pline] (BBSWP.south) -| ++(0,0) |- (DBBMD.west); 
 \node (DBBTR) [pbox,below=6pt of DBBMD] {\textbf{DBB Transport SW
 } };\node [below right] at (DBBTR.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 
- \draw[pline] (DBB.south) -| ++(0,0) |- (DBBTR.west); 
-\node (LSPSW) [pbox,below=135pt of DBB] {\textbf{LSP SW Products
-} };\node [below right] at (LSPSW.north west) {\footnotesize \color{blue}} ;
+ \draw[pline] (BBSWP.south) -| ++(0,0) |- (DBBTR.west); 
+\node (BPSWP) [pbox,below=135pt of BBSWP] {\textbf{Batch Prod. SW P.
+} };\node [below right] at (BPSWP.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (DMSW.south) -| ++(0,0) |- (LSPSW.west); 
-\node (DAXIMG) [pbox,below right=6pt and -14pt of LSPSW] {\textbf{Image Server SW
+ \draw[pline] (DMSW.south) -| ++(0,0) |- (BPSWP.west); 
+\node (CMPGN) [pbox,below right=6pt and -14pt of BPSWP] {\textbf{Campaign Mgmt
+} };\node [below right] at (CMPGN.north west) {\footnotesize \color{blue}1.02C.07.08} ;
+
+ \draw[pline] (BPSWP.south) -| ++(0,0) |- (CMPGN.west); 
+\node (WLWF) [pbox,below=6pt of CMPGN] {\textbf{Workload/flow
+} };\node [below right] at (WLWF.north west) {\footnotesize \color{blue}1.02C.07.08} ;
+
+ \draw[pline] (BPSWP.south) -| ++(0,0) |- (WLWF.west); 
+\node (LSPSWP) [pbox,below=92pt of BPSWP] {\textbf{LSP SW Products
+} };\node [below right] at (LSPSWP.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (DMSW.south) -| ++(0,0) |- (LSPSWP.west); 
+\node (DAXIMG) [pbox,below right=6pt and -14pt of LSPSWP] {\textbf{Image Server SW
 } };\node [below right] at (DAXIMG.north west) {\footnotesize \color{blue}1.02C.06.02.04} ;
 \node (DAXIMGpkg) [tbox,below=3mm of DAXIMG.north] {{\footnotesize \color{black} \begin{verbatim} dax_imgserv \end{verbatim} }  };
 
- \draw[pline] (LSPSW.south) -| ++(0,0) |- (DAXIMG.west); 
+ \draw[pline] (LSPSWP.south) -| ++(0,0) |- (DAXIMG.west); 
 \node (LSPWEB) [pbox,below=6pt of DAXIMG] {\textbf{LSP Web SW
 } };\node [below right] at (LSPWEB.north west) {\footnotesize \color{blue}1.02C.06.02} ;
 \node (LSPWEBpkg) [tbox,below=3mm of LSPWEB.north] {{\footnotesize \color{black} \begin{verbatim} dax_webserv \end{verbatim} }  };
 
- \draw[pline] (LSPSW.south) -| ++(0,0) |- (LSPWEB.west); 
+ \draw[pline] (LSPSWP.south) -| ++(0,0) |- (LSPWEB.west); 
 \node (NBSW) [pbox,below=6pt of LSPWEB] {\textbf{LSP Notebook SW
 } };\node [below right] at (NBSW.north west) {\footnotesize \color{blue}1.02C.10.02.02} ;
 \node (NBSWpkg) [tbox,below=3mm of NBSW.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils \end{verbatim} }  };
 
- \draw[pline] (LSPSW.south) -| ++(0,0) |- (NBSW.west); 
+ \draw[pline] (LSPSWP.south) -| ++(0,0) |- (NBSW.west); 
 \node (PRTLOH) [pbox,below=6pt of NBSW] {\textbf{Portal Online Help
 } };\node [below right] at (PRTLOH.north west) {\footnotesize \color{blue}1.02C.05.08} ;
 \node (PRTLOHpkg) [tbox,below=3mm of PRTLOH.north] {{\footnotesize \color{black} \begin{verbatim} suit-onlinehelp \end{verbatim} }  };
 
- \draw[pline] (LSPSW.south) -| ++(0,0) |- (PRTLOH.west); 
+ \draw[pline] (LSPSWP.south) -| ++(0,0) |- (PRTLOH.west); 
 \node (PRTLSW) [pbox,below=6pt of PRTLOH] {\textbf{LSP Portal SW
 } };\node [below right] at (PRTLSW.north west) {\footnotesize \color{blue}1.02C.05.07 1.02C.05.08} ;
 \node (PRTLSWpkg) [tbox,below=3mm of PRTLSW.north] {{\footnotesize \color{black} \begin{verbatim} suit \end{verbatim} }  };
 
- \draw[pline] (LSPSW.south) -| ++(0,0) |- (PRTLSW.west); 
+ \draw[pline] (LSPSWP.south) -| ++(0,0) |- (PRTLSW.west); 
 \node (TAPSW) [pbox,below=6pt of PRTLSW] {\textbf{TAP Software
 } };\node [below right] at (TAPSW.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (LSPSW.south) -| ++(0,0) |- (TAPSW.west); 
-\node (PR) [pbox,below=264pt of LSPSW] {\textbf{Prompt SW
-} };\node [below right] at (PR.north west) {\footnotesize \color{blue}} ;
+ \draw[pline] (LSPSWP.south) -| ++(0,0) |- (TAPSW.west); 
+\node (PRSW) [pbox,below=264pt of LSPSWP] {\textbf{Prompt SW Prod.
+} };\node [below right] at (PRSW.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (DMSW.south) -| ++(0,0) |- (PR.west); 
-\node (ALRTDSTR) [pbox,below right=6pt and -14pt of PR] {\textbf{Alert Distrib SW
+ \draw[pline] (DMSW.south) -| ++(0,0) |- (PRSW.west); 
+\node (ALRTDSTR) [pbox,below right=6pt and -14pt of PRSW] {\textbf{Alert Distrib SW
 } };\node [below right] at (ALRTDSTR.north west) {\footnotesize \color{blue}1.02C.03.03} ;
 \node (ALRTDSTRpkg) [tbox,below=3mm of ALRTDSTR.north] {{\footnotesize \color{black} \begin{verbatim} lsst-dm/alert_stream \end{verbatim} }  };
 
- \draw[pline] (PR.south) -| ++(0,0) |- (ALRTDSTR.west); 
+ \draw[pline] (PRSW.south) -| ++(0,0) |- (ALRTDSTR.west); 
 \node (EFDT) [pbox,below=6pt of ALRTDSTR] {\textbf{EFD Transform
 } };\node [below right] at (EFDT.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 
- \draw[pline] (PR.south) -| ++(0,0) |- (EFDT.west); 
+ \draw[pline] (PRSW.south) -| ++(0,0) |- (EFDT.west); 
 \node (HEADER) [pbox,below=6pt of EFDT] {\textbf{Header Srv SW
 } };\node [below right] at (HEADER.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 \node (HEADERpkg) [tbox,below=3mm of HEADER.north] {{\footnotesize \color{black} \begin{verbatim} lsst-dm/HeaderService \end{verbatim} }  };
 
- \draw[pline] (PR.south) -| ++(0,0) |- (HEADER.west); 
+ \draw[pline] (PRSW.south) -| ++(0,0) |- (HEADER.west); 
 \node (IIP) [pbox,below=6pt of HEADER] {\textbf{Image Ingest SW
 } };\node [below right] at (IIP.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 \node (IIPpkg) [tbox,below=3mm of IIP.north] {{\footnotesize \color{black} \begin{verbatim} ctrl_iip \end{verbatim} }  };
 
- \draw[pline] (PR.south) -| ++(0,0) |- (IIP.west); 
+ \draw[pline] (PRSW.south) -| ++(0,0) |- (IIP.west); 
 \node (OBSPUB) [pbox,below=6pt of IIP] {\textbf{Plan Obs Pub SW
 } };\node [below right] at (OBSPUB.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 
- \draw[pline] (PR.south) -| ++(0,0) |- (OBSPUB.west); 
+ \draw[pline] (PRSW.south) -| ++(0,0) |- (OBSPUB.west); 
 \node (OCSBAT) [pbox,below=6pt of OBSPUB] {\textbf{OCS Batch SW
 } };\node [below right] at (OCSBAT.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 
- \draw[pline] (PR.south) -| ++(0,0) |- (OCSBAT.west); 
+ \draw[pline] (PRSW.south) -| ++(0,0) |- (OCSBAT.west); 
 \node (OODS) [pbox,below=6pt of OCSBAT] {\textbf{Obs Ops Data SW
 } };\node [below right] at (OODS.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 \node (OODSpkg) [tbox,below=3mm of OODS.north] {{\footnotesize \color{black} \begin{verbatim} lsst-dm/ctrl_oods \end{verbatim} }  };
 
- \draw[pline] (PR.south) -| ++(0,0) |- (OODS.west); 
-\node (PRODN) [pbox,below=307pt of PR] {\textbf{Sci Pipelines SW
-} };\node [below right] at (PRODN.north west) {\footnotesize \color{blue}} ;
+ \draw[pline] (PRSW.south) -| ++(0,0) |- (OODS.west); 
+\node (QCSWP) [pbox,below=307pt of PRSW] {\textbf{QC SW Products
+} };\node [below right] at (QCSWP.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (DMSW.south) -| ++(0,0) |- (PRODN.west); 
-\node (APPRMPT) [pbox,below right=6pt and -14pt of PRODN] {\textbf{Alert Prod SW
+ \draw[pline] (DMSW.south) -| ++(0,0) |- (QCSWP.west); 
+\node (QCSW) [pbox,below right=6pt and -14pt of QCSWP] {\textbf{Quality Ctrl SW
+} };\node [below right] at (QCSW.north west) {\footnotesize \color{blue}1.02C.10.02.01} ;
+\node (QCSWpkg) [tbox,below=3mm of QCSW.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/squash \end{verbatim} }  };
+
+ \draw[pline] (QCSWP.south) -| ++(0,0) |- (QCSW.west); 
+\node (SCIPSWP) [pbox,below=49pt of QCSWP] {\textbf{Sci Pipelines SW P.
+} };\node [below right] at (SCIPSWP.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (DMSW.south) -| ++(0,0) |- (SCIPSWP.west); 
+\node (APPRMPT) [pbox,below right=6pt and -14pt of SCIPSWP] {\textbf{Alert Prod SW
 } };\node [below right] at (APPRMPT.north west) {\footnotesize \color{blue}1.02C.03} ;
 
- \draw[pline] (PRODN.south) -| ++(0,0) |- (APPRMPT.west); 
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (APPRMPT.west); 
 \node (DMCAL) [pbox,below=6pt of APPRMPT] {\textbf{Calibration SW
 } };\node [below right] at (DMCAL.north west) {\footnotesize \color{blue}1.02C.04.02} ;
 
- \draw[pline] (PRODN.south) -| ++(0,0) |- (DMCAL.west); 
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (DMCAL.west); 
 \node (DRP) [pbox,below=6pt of DMCAL] {\textbf{DR Prod SW
 } };\node [below right] at (DRP.north west) {\footnotesize \color{blue}1.02C.04} ;
 
- \draw[pline] (PRODN.south) -| ++(0,0) |- (DRP.west); 
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (DRP.west); 
 \node (MOPS) [pbox,below=6pt of DRP] {\textbf{MOPS SW
 } };\node [below right] at (MOPS.north west) {\footnotesize \color{blue}1.02C.03.06} ;
 \node (MOPSpkg) [tbox,below=3mm of MOPS.north] {{\footnotesize \color{black} \begin{verbatim} mops_daymops \end{verbatim} }  };
 
- \draw[pline] (PRODN.south) -| ++(0,0) |- (MOPS.west); 
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (MOPS.west); 
 \node (SP) [pbox,below=6pt of MOPS] {\textbf{Spec Prog SW
 } };\node [below right] at (SP.north west) {\footnotesize \color{blue}1.02C.03 1.02C.04} ;
 
- \draw[pline] (PRODN.south) -| ++(0,0) |- (SP.west); 
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SP.west); 
 \node (SPDIST) [pbox,below=6pt of SP] {\textbf{Science P. Dist.
 } };\node [below right] at (SPDIST.north west) {\footnotesize \color{blue}1.02C.04.02} ;
 \node (SPDISTpkg) [tbox,below=3mm of SPDIST.north] {{\footnotesize \color{black} \begin{verbatim} lsst_distrib \end{verbatim} }  };
 
- \draw[pline] (PRODN.south) -| ++(0,0) |- (SPDIST.west); 
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SPDIST.west); 
 \node (SPLUG) [pbox,below=6pt of SPDIST] {\textbf{Science Plugins
 } };\node [below right] at (SPLUG.north west) {\footnotesize \color{blue}1.02C.04.02} ;
 
- \draw[pline] (PRODN.south) -| ++(0,0) |- (SPLUG.west); 
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SPLUG.west); 
 \node (TMPLGEN) [pbox,below=6pt of SPLUG] {\textbf{Tmpl Gen SW
 } };\node [below right] at (TMPLGEN.north west) {\footnotesize \color{blue}1.02C.04.04} ;
 
- \draw[pline] (PRODN.south) -| ++(0,0) |- (TMPLGEN.west); 
-\node (QC) [pbox,below=350pt of PRODN] {\textbf{QC Products
-} };\node [below right] at (QC.north west) {\footnotesize \color{blue}} ;
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (TMPLGEN.west); 
+\node (SPSWP) [pbox,below=350pt of SCIPSWP] {\textbf{Supporting SW P.
+} };\node [below right] at (SPSWP.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (DMSW.south) -| ++(0,0) |- (QC.west); 
-\node (QCSW) [pbox,below right=6pt and -14pt of QC] {\textbf{Quality Ctrl SW
-} };\node [below right] at (QCSW.north west) {\footnotesize \color{blue}1.02C.10.02.01} ;
-\node (QCSWpkg) [tbox,below=3mm of QCSW.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/squash \end{verbatim} }  };
-
- \draw[pline] (QC.south) -| ++(0,0) |- (QCSW.west); 
-\node (SUPPSW) [pbox,below=49pt of QC] {\textbf{Supporting SW
-} };\node [below right] at (SUPPSW.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMSW.south) -| ++(0,0) |- (SUPPSW.west); 
-\node (ADQL) [pbox,below right=6pt and -14pt of SUPPSW] {\textbf{ADQL Translator
+ \draw[pline] (DMSW.south) -| ++(0,0) |- (SPSWP.west); 
+\node (ADQL) [pbox,below right=6pt and -14pt of SPSWP] {\textbf{ADQL Translator
 } };\node [below right] at (ADQL.north west) {\footnotesize \color{blue}1.02C.06.02.05} ;
 \node (ADQLpkg) [tbox,below=3mm of ADQL.north] {{\footnotesize \color{black} \begin{verbatim} albuquery \end{verbatim} }  };
 
- \draw[pline] (SUPPSW.south) -| ++(0,0) |- (ADQL.west); 
+ \draw[pline] (SPSWP.south) -| ++(0,0) |- (ADQL.west); 
 \node (BUTLER) [pbox,below=6pt of ADQL] {\textbf{Data Butler
 } };\node [below right] at (BUTLER.north west) {\footnotesize \color{blue}1.02C.06.02.01} ;
 \node (BUTLERpkg) [tbox,below=3mm of BUTLER.north] {{\footnotesize \color{black} \begin{verbatim} daf_butler \end{verbatim} }  };
 
- \draw[pline] (SUPPSW.south) -| ++(0,0) |- (BUTLER.west); 
+ \draw[pline] (SPSWP.south) -| ++(0,0) |- (BUTLER.west); 
 \node (QSERV) [pbox,below=6pt of BUTLER] {\textbf{Distrib Database
 } };\node [below right] at (QSERV.north west) {\footnotesize \color{blue}1.02C.06.02.03} ;
 \node (QSERVpkg) [tbox,below=3mm of QSERV.north] {{\footnotesize \color{black} \begin{verbatim} qserv \end{verbatim} }  };
 
- \draw[pline] (SUPPSW.south) -| ++(0,0) |- (QSERV.west); 
+ \draw[pline] (SPSWP.south) -| ++(0,0) |- (QSERV.west); 
 \node (SCIPIPE) [pbox,below=6pt of QSERV] {\textbf{Sci Pipelines Libs
 } };\node [below right] at (SCIPIPE.north west) {\footnotesize \color{blue}1.02C.04 1.02C.03} ;
 \node (SCIPIPEpkg) [tbox,below=3mm of SCIPIPE.north] {{\footnotesize \color{black} \begin{verbatim} lsst_apps \end{verbatim} }  };
 
- \draw[pline] (SUPPSW.south) -| ++(0,0) |- (SCIPIPE.west); 
+ \draw[pline] (SPSWP.south) -| ++(0,0) |- (SCIPIPE.west); 
 \node (TXF) [pbox,below=6pt of SCIPIPE] {\textbf{Task Framework
 } };\node [below right] at (TXF.north west) {\footnotesize \color{blue}1.02C.06.03} ;
 \node (TXFpkg) [tbox,below=3mm of TXF.north] {{\footnotesize \color{black} \begin{verbatim} pipe_supertask \end{verbatim} }  };
 
- \draw[pline] (SUPPSW.south) -| ++(0,0) |- (TXF.west); 
+ \draw[pline] (SPSWP.south) -| ++(0,0) |- (TXF.west); 
 \node (HWCOTS) [pbox, 
 right=192pt of DMSW] {\textbf{Resources
 } };\node [below right] at (HWCOTS.north west) {\footnotesize \color{blue}} ;
@@ -418,27 +410,31 @@ right=192pt of DMSW] {\textbf{Resources
 } };\node [below right] at (VSPHERE.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (VSPHERE.west); 
-\node (HWCOMP) [pbox,below=522pt of COTS] {\textbf{Compute Nodes
+\node (DMHW) [pbox,below=522pt of COTS] {\textbf{DM Hardware
+} };\node [below right] at (DMHW.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (HWCOTS.south) -| ++(0,0) |- (DMHW.west); 
+\node (HWCOMP) [pbox,below right=6pt and -14pt of DMHW] {\textbf{Compute Nodes
 } };\node [below right] at (HWCOMP.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (HWCOTS.south) -| ++(0,0) |- (HWCOMP.west); 
+ \draw[pline] (DMHW.south) -| ++(0,0) |- (HWCOMP.west); 
 \node (HWNET) [pbox,below=6pt of HWCOMP] {\textbf{Network Nodes
 } };\node [below right] at (HWNET.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (HWCOTS.south) -| ++(0,0) |- (HWNET.west); 
+ \draw[pline] (DMHW.south) -| ++(0,0) |- (HWNET.west); 
 \node (HWSTOR) [pbox,below=6pt of HWNET] {\textbf{Storage Nodes
 } };\node [below right] at (HWSTOR.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (HWCOTS.south) -| ++(0,0) |- (HWSTOR.west); 
+ \draw[pline] (DMHW.south) -| ++(0,0) |- (HWSTOR.west); 
 \node (LLSW) [pbox,below=6pt of HWSTOR] {\textbf{Low Level SW
 } };\node [below right] at (LLSW.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (HWCOTS.south) -| ++(0,0) |- (LLSW.west); 
+ \draw[pline] (DMHW.south) -| ++(0,0) |- (LLSW.west); 
 \node (CENTOS) [pbox,below right=6pt and -14pt of LLSW] {\textbf{OS (e.g.)
 } };\node [below right] at (CENTOS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LLSW.south) -| ++(0,0) |- (CENTOS.west); 
-\node (THPL) [pbox,below=49pt of LLSW] {\textbf{Third Party Libs
+\node (THPL) [pbox,below=221pt of DMHW] {\textbf{Third Party Libs
 } };\node [below right] at (THPL.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (HWCOTS.south) -| ++(0,0) |- (THPL.west); 
@@ -459,7 +455,7 @@ right=192pt of DMSW] {\textbf{Resources
 
  \draw[pline] (THPL.south) -| ++(0,0) |- (JL3.west); 
 \node (INFRA) [pbox, 
-right=192pt of HWCOTS] {\textbf{Infrastructure
+right=288pt of HWCOTS] {\textbf{Infrastructure
 } };\node [below right] at (INFRA.north west) {\footnotesize \color{blue}} ;
 
 \node (ENC) [pbox,below right=6pt and -14pt of INFRA] {\textbf{Enclaves

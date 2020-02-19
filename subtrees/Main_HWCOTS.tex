@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=1077.0pt,paperheight=688pt,
+\usepackage[paperwidth=713.9999999999999pt,paperheight=688pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -81,28 +81,32 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (VSPHERE.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (VSPHERE.west); 
-\node (HWCOMP) [pbox, 
-right=96pt of COTS] {\textbf{Compute Nodes
+\node (DMHW) [pbox, 
+right=96pt of COTS] {\textbf{DM Hardware
+} };\node [below right] at (DMHW.north west) {\footnotesize \color{blue}} ;
+
+\node (HWCOMP) [pbox,below right=6pt and -14pt of DMHW] {\textbf{Compute Nodes
 } };\node [below right] at (HWCOMP.north west) {\footnotesize \color{blue}} ;
 
-\node (HWNET) [pbox, 
-right=43pt of HWCOMP] {\textbf{Network Nodes
+ \draw[pline] (DMHW.south) -| ++(0,0) |- (HWCOMP.west); 
+\node (HWNET) [pbox,below=6pt of HWCOMP] {\textbf{Network Nodes
 } };\node [below right] at (HWNET.north west) {\footnotesize \color{blue}} ;
 
-\node (HWSTOR) [pbox, 
-right=43pt of HWNET] {\textbf{Storage Nodes
+ \draw[pline] (DMHW.south) -| ++(0,0) |- (HWNET.west); 
+\node (HWSTOR) [pbox,below=6pt of HWNET] {\textbf{Storage Nodes
 } };\node [below right] at (HWSTOR.north west) {\footnotesize \color{blue}} ;
 
-\node (LLSW) [pbox, 
-right=43pt of HWSTOR] {\textbf{Low Level SW
+ \draw[pline] (DMHW.south) -| ++(0,0) |- (HWSTOR.west); 
+\node (LLSW) [pbox,below=6pt of HWSTOR] {\textbf{Low Level SW
 } };\node [below right] at (LLSW.north west) {\footnotesize \color{blue}} ;
 
+ \draw[pline] (DMHW.south) -| ++(0,0) |- (LLSW.west); 
 \node (CENTOS) [pbox,below right=6pt and -14pt of LLSW] {\textbf{OS (e.g.)
 } };\node [below right] at (CENTOS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LLSW.south) -| ++(0,0) |- (CENTOS.west); 
 \node (THPL) [pbox, 
-right=96pt of LLSW] {\textbf{Third Party Libs
+right=192pt of DMHW] {\textbf{Third Party Libs
 } };\node [below right] at (THPL.north west) {\footnotesize \color{blue}} ;
 
 \node (BOOST) [pbox,below right=6pt and -14pt of THPL] {\textbf{Boost
@@ -121,12 +125,9 @@ right=96pt of LLSW] {\textbf{Third Party Libs
 } };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (THPL.south) -| ++(0,0) |- (JL3.west); 
-\node (HWCOTS) [wbbox, above=43pt of HWNET]{\textbf{Hardware and COTS Products}};
+\node (HWCOTS) [wbbox, above=43pt of DMHW]{\textbf{Hardware and COTS Products}};
  \draw[pline]   (COTS.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
- \draw[pline]   (HWCOMP.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
- \draw[pline]   (HWNET.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
- \draw[pline]   (HWSTOR.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
- \draw[pline]   (LLSW.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
+ \draw[pline]   (DMHW.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
  \draw[pline]   (THPL.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
 
 \end{tikzpicture}
