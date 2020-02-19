@@ -245,40 +245,42 @@ def walk_tree(rcs, mres, mdid, pkey):
                                     if relation not in pkg_usedin:
                                         pkg_usedin.append(relation)
 
-    pkg_id = fix_id_tex(pkg_properties['product key'][0])
-    prod = Product(pkg_id,                            # 1  (0 is self)
-                   pkg_name,                          # 2
-                   pkey,                              # 3
-                   html_to_latex(pkg_comments),       # 4
-                   pkg_properties["WBS"],             # 5
-                   pkg_properties["manager"][0],      # 6
-                   pkg_properties["product owner"],   # 7
-                   "",                                # 8
-                   pkg_properties["packages"],        # 9
-                   pkg_depends,                       # 10
-                   mdid,                              # 11
-                   pkg_properties["hyperlinkText"],   # 12
-                   pkg_properties["team"],            # 13
-                   html_to_latex(pkg_properties["short name"][0]),   # 14 - shortname
-                   pkg_usedin,                        # 15
-                   reqs,                              # 16
-                   pkg_properties["docs"],            # 17
-                   pkg_index)                         # 18
-    if pkey == "":  # first node in the tree
-        prod.name = prod.shortname  # this is required, since the first node in MD usually is not meaningful.
-        productTree.create_node(prod.id, prod.id, data=prod)
-    else:
-        if pkey != '':
-            productTree.create_node(prod.id, prod.id, data=prod, parent=prod.parent)
+    if "Obsolete" not in pkg_name:
+        # When an OBSOLETE product is found, it is not added to the Tree
+        pkg_id = fix_id_tex(pkg_properties['product key'][0])
+        prod = Product(pkg_id,                            # 1  (0 is self)
+                       pkg_name.strip(),                  # 2
+                       pkey,                              # 3
+                       html_to_latex(pkg_comments),       # 4
+                       pkg_properties["WBS"],             # 5
+                       pkg_properties["manager"][0],      # 6
+                       pkg_properties["product owner"],   # 7
+                       "",                                # 8
+                       pkg_properties["packages"],        # 9
+                       pkg_depends,                       # 10
+                       mdid,                              # 11
+                       pkg_properties["hyperlinkText"],   # 12
+                       pkg_properties["team"],            # 13
+                       html_to_latex(pkg_properties["short name"][0].strip()),   # 14 - shortname
+                       pkg_usedin,                        # 15
+                       reqs,                              # 16
+                       pkg_properties["docs"],            # 17
+                       pkg_index)                         # 18
+        if pkey == "":  # first node in the tree
+            prod.name = prod.shortname  # this is required, since the first node in MD usually is not meaningful.
+            productTree.create_node(prod.id, prod.id, data=prod)
         else:
-            print('No parent for product:', pkg_name)
-            exit()
+            if pkey != '':
+                productTree.create_node(prod.id, prod.id, data=prod, parent=prod.parent)
+            else:
+                print('No parent for product:', pkg_name)
+                exit()
 
-    for pkg in pkg_sub_pkgs:
-        walk_tree(rcs, mres, pkg, pkg_id)
+        for pkg in pkg_sub_pkgs:
+            walk_tree(rcs, mres, pkg, pkg_id)
 
-    for cls in pkg_classes:
-        walk_tree(rcs, mres, cls, pkg_id)
+        for cls in pkg_classes:
+            walk_tree(rcs, mres, cls, pkg_id)
 
 
 def get_md_revision(rs, mres, mdid):

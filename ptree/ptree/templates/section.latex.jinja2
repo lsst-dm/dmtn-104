@@ -78,7 +78,7 @@
 {% endfor %}
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( {{ mdt_dict[prd].shortname }} - {{ mdt_dict[prd].id }} ) }
+{\footnotesize Short name: \textbf{ {{ mdt_dict[prd].shortname }} } - Product key: \textbf{ {{ mdt_dict[prd].id }} } }
 }\\ \hline
     {% for doc in mdt_dict[prd].docs %}
         {% if doc[1]|length %}
@@ -124,7 +124,7 @@
     {% endfor %}
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize ( {{ mdt_dict[prd].shortname }} - {{ mdt_dict[prd].id }} ) }
+{\footnotesize Short name: \textbf{ {{ mdt_dict[prd].shortname }} } - Product key: \textbf{ {{ mdt_dict[prd].id }} } }
 }\\ \hline
     {% for doc in mdt_dict[prd].docs %}
         {% if doc[1]|length %}
@@ -199,13 +199,29 @@
 
 {%- endmacro -%}
 {# ------------------------------------------------------------------------- #}
+{%- macro do_sum_table(childs) -%}
+{\footnotesize
+\textbf{Products included in this section}:
+\begin{itemize}
+  {% for ch in childs %}
+    {% if childs[ch].name is defined %}
+ {# {{ childs[ch].id }} & {{ childs[ch].name }} \\ \hline #}
+    {% else %}
+      {% set prd = childs[ch] %}
+\item {{ mdt_dict[prd].name }} - {{ hyperlink(mdt_dict[prd].id.lower(), mdt_dict[prd].id) }}
+{# {{ mdt_dict[prd].id }} #}
+    {% endif %}
+  {% endfor %}
+\end{itemize}
+}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
 % auto generated from MagicDraw (revision) {{ mdrev }} - DO NOT EDIT!
 % using template at {{ metadata.template }}.
 % Collecting data for component: "{{ metadata.component }}"
 % using docsteady version {{ metadata.ptree_version }}
 %
-% This file is meant to be included in LaTeX document in order to provide:
-%   -  MagicDraw Top Level Product Tree (section 2)
+% This file is meant to be included in a LaTeX document.
 
 {% for k0 in mdp %}
 {{ do_folder(k0) }}
@@ -231,6 +247,8 @@ The product tree graph for {{ k0 }} is available
 \subsubsection{{ curlies(mdt_dict[k2].name) }}{{ label(mdt_dict[k2].id.lower()) }}
 {{ do_folder(k2) }}
 
+{{ do_sum_table(k2childs) }}
+
      {% for ch2 in k2childs %}
        {% if k2childs[ch2].name is defined %}
          {% set k3 = k2childs[ch2].name %}
@@ -239,6 +257,8 @@ The product tree graph for {{ k0 }} is available
 \paragraph{{ curlies(mdt_dict[k3].name) }}{{ label(mdt_dict[k3].id.lower()) }}\mbox{}\\
 {{ do_folder(k3) }}
 
+{{ do_sum_table(k3childs) }}
+
          {% for ch3 in k3childs %}
            {% if k3childs[ch3].name is defined %}
              {% set k4 = k3childs[ch3].name %}
@@ -246,6 +266,8 @@ The product tree graph for {{ k0 }} is available
 \newpage
 \subparagraph{{ curlies(mdt_dict[k4].name) }}{{ label(mdt_dict[k4].id.lower()) }}\mbox{}\\
 {{ do_folder(k4) }}
+
+{{ do_sum_table(k4childs) }}
 
              {% for ch4 in k4childs %}
                {% if k4childs[ch4].name is defined %}
