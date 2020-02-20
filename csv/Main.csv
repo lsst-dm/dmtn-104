@@ -19,11 +19,11 @@ TAPSRV, TAP API, LSPWAPI, , , Frossie Economou, Simon Krughoff, lsst-sqre/lsst-t
 WDAVSRV, WebDAV API, LSPWAPI, , , Frossie Economou, Simon Krughoff, davt, WebDAV API 
 NBLSRV, LSP Nublado, LSPSRV, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/nublado, LSP Nublado 
 PRTLSRV, LSP Portal, LSPSRV, 1.02C.05.07 1.02C.05.08, SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, , LSP Portal 
-OFFLSRV, Offline Services, DMSRV, , , , , , Offline Services 
+OFFLSRV, Offline Services, DMSRV, , , Michelle Butler, , , Offline Services 
 BULKDSRV, Bulk Distrib, OFFLSRV, 1.02C.07.06.02, LDF, Michelle Butler, Michelle Gower, , Bulk Distrib 
 OFFLQCSRV, Offline QC, OFFLSRV, 1.02C.04.07, DRP, Yusra AlSayyad, Jim Bosch, , Offline QC 
 PRODSRV, Batch Production, OFFLSRV, 1.02C.07.06.02, LDF, Michelle Butler, Michelle Gower, , Batch Production 
-PRSRV, Prompt Services, DMSRV, , , Michelle Butler, Multiple, , Prompt Services 
+PRSRV, Prompt Services, DMSRV, , , Michelle Butler, , , Prompt Services 
 ALRTDSTSRV, Alert Distrib, PRSRV, 1.02C.03.03, AP, John Swinbank, Eric Bellm, , Alert Distrib 
 ARCSRVS, Archive Services, PRSRV, , LDF, Michelle Butler, , , Archive Services 
 EFDTS, EFD Transf., ARCSRVS, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , EFD Transf. 
@@ -94,7 +94,7 @@ DMHW, DM Hardware, HWCOTS, , , , Wil O'Mullane, , DM Hardware
 HWCOMP, Compute Nodes, DMHW, , , Michelle Butler, , , Compute Nodes 
 HWNET, Network Nodes, DMHW, , , Jeff Kantor, , , Network Nodes 
 HWSTOR, Storage Nodes, DMHW, , , Michelle Butler, , , Storage Nodes 
-LLSW, Low Level SW, DMHW, , , , Multiple, , Low Level SW 
+LLSW, Low Level SW, DMHW, , , , , , Low Level SW 
 CENTOS, OS (e.g.), LLSW, , , , , , OS (e.g.) 
 THPL, Third Party Libs, HWCOTS, , , , , , Third Party Libs 
 BOOST, Boost, THPL, , , , , , Boost 
@@ -102,7 +102,7 @@ FIREFLY, Firefly, THPL, 1.02C.05.06, SUIT, , Gregory Dubois-Felsmann, , Firefly
 JH3, Jupyterhub, THPL, , , , , , Jupyterhub 
 JL3, Jupyterlab, THPL, , , , , , Jupyterlab 
 INFRA, Infrastructure, DM, , , Wil O'Mullane, , , Infrastructure 
-ENC, Enclaves, INFRA, , , , Multiple, , Enclaves 
+ENC, Enclaves, INFRA, , , , , , Enclaves 
 ENCARCB, Arch Base Encl, ENC, 1.02C.08.01, LDF, Michelle Butler, Michelle Butler, , Arch Base Encl 
 ENCARCN, Arch NCSA Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Michelle Butler, , Arch NCSA Encl 
 ENCCOMM, Comm Clust Encl, ENC, 1.02C.08.01, LDF, Michelle Butler, Simon Krughoff, , Comm Clust Encl 
