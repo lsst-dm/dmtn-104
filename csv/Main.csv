@@ -102,14 +102,14 @@ FIREFLY, Firefly, THPL, 1.02C.05.06, SUIT, , Gregory Dubois-Felsmann, , Firefly
 JH3, Jupyterhub, THPL, , , , , , Jupyterhub 
 JL3, Jupyterlab, THPL, , , , , , Jupyterlab 
 INFRA, Infrastructure, DM, , , Wil O'Mullane, , , Infrastructure 
-ENC, Enclaves, INFRA, , , , , , Enclaves 
-ENCARCB, Arch Base Encl, ENC, 1.02C.08.01, LDF, Michelle Butler, Michelle Butler, , Arch Base Encl 
+ENC, Enclaves, INFRA, , , Michelle Butler, , , Enclaves 
+ENCARCB, Arch Base Encl, ENC, 1.02C.08.01, LDF, Wil O'Mullane, Michelle Butler, , Arch Base Encl 
 ENCARCN, Arch NCSA Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Michelle Butler, , Arch NCSA Encl 
 ENCCOMM, Comm Clust Encl, ENC, 1.02C.08.01, LDF, Michelle Butler, Simon Krughoff, , Comm Clust Encl 
-ENCDACC, DAC Chile Encl, ENC, 1.02C.08.02, LDF, Michelle Butler, Michelle Butler, , DAC Chile Encl 
+ENCDACC, DAC Chile Encl, ENC, 1.02C.08.02, LDF, Wil O'Mullane, Michelle Butler, , DAC Chile Encl 
 ENCDACU, DAC US Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Michelle Butler, , DAC US Encl 
 ENCOFFL, Offline Prod Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Michelle Butler, , Offline Prod Encl 
-ENCPRB, Prmpt Base Encl, ENC, 1.02C.08.01, LDF, Michelle Butler, Michelle Butler, , Prmpt Base Encl 
+ENCPRB, Prmpt Base Encl, ENC, 1.02C.08.01, LDF, Wil O'Mullane, Michelle Butler, , Prmpt Base Encl 
 ENCPRN, Prmpt NCSA Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Michelle Butler, , Prmpt NCSA Encl 
 FAC, Facilities, INFRA, , , Wil O'Mullane, , , Facilities 
 FACBASE, Base Facility, FAC, 1.02C.08.01 1.02C.08.02, Net/Base, Wil O'Mullane, Jeff Kantor, , Base Facility 
