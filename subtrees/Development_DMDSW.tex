@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=411.99999999999994pt,paperheight=344pt,
+\usepackage[paperwidth=565.0pt,paperheight=344pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -29,8 +29,12 @@ textwidth=30cm,textheight=50mm]{geometry}
 \begin{tikzpicture}[node distance=0mm]
 
 
+\node (DENV) [pbox, 
+] {\textbf{DM DevM Envs
+} };\node [below right] at (DENV.north west) {\footnotesize \color{blue}} ;
+
 \node (DMDSS) [pbox, 
-] {\textbf{DMDev Supp SW
+right=43pt of DENV] {\textbf{DMDev Supp SW
 } };\node [below right] at (DMDSS.north west) {\footnotesize \color{blue}} ;
 
 \node (CDKT) [pbox,below right=6pt and -14pt of DMDSS] {\textbf{Codekit
@@ -62,6 +66,7 @@ right=96pt of DMDSS] {\textbf{Dev Science Pipelines
 
  \draw[pline] (DSPLSW.south) -| ++(0,0) |- (SPLWF.west); 
 \node (DMDSW) [wbbox, above=43pt of DMDSS]{\textbf{Development Software Products}};
+ \draw[pline]   (DENV.north) -- ++(0.0,0.5) -| (DMDSW.south) ; 
  \draw[pline]   (DMDSS.north) -- ++(0.0,0.5) -| (DMDSW.south) ; 
  \draw[pline]   (DSPLSW.north) -- ++(0.0,0.5) -| (DMDSW.south) ; 
 

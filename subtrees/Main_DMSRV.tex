@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=1221.9999999999998pt,paperheight=688pt,
+\usepackage[paperwidth=1317.9999999999998pt,paperheight=688pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -53,24 +53,56 @@ textwidth=30cm,textheight=50mm]{geometry}
 right=96pt of DBBSRV] {\textbf{IT Service
 } };\node [below right] at (ITSRV.north west) {\footnotesize \color{blue}} ;
 
-\node (APDB) [pbox,below right=6pt and -14pt of ITSRV] {\textbf{APDB
+\node (COMPMNT) [pbox,below right=6pt and -14pt of ITSRV] {\textbf{Computational Mgmt
+} };\node [below right] at (COMPMNT.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (COMPMNT.west); 
+\node (DBMNG) [pbox,below=6pt of COMPMNT] {\textbf{DataBase Management
+} };\node [below right] at (DBMNG.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (DBMNG.west); 
+\node (IDNMNG) [pbox,below=6pt of DBMNG] {\textbf{Identity Mngt
+} };\node [below right] at (IDNMNG.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (IDNMNG.west); 
+\node (ITRCK) [pbox,below=6pt of IDNMNG] {\textbf{Issue Tracking
+} };\node [below right] at (ITRCK.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (ITRCK.west); 
+\node (ITSEC) [pbox,below=6pt of ITRCK] {\textbf{IT Security
+} };\node [below right] at (ITSEC.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (ITSEC.west); 
+\node (MNGDB) [pbox,below=6pt of ITSEC] {\textbf{Databases
+} };\node [below right] at (MNGDB.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (MNGDB.west); 
+\node (APDB) [pbox,below right=6pt and -14pt of MNGDB] {\textbf{APDB
 } };\node [below right] at (APDB.north west) {\footnotesize \color{blue}1.02C.06.01.01} ;
 
- \draw[pline] (ITSRV.south) -| ++(0,0) |- (APDB.west); 
+ \draw[pline] (MNGDB.south) -| ++(0,0) |- (APDB.west); 
 \node (EFDB) [pbox,below=6pt of APDB] {\textbf{EFD Cache
 } };\node [below right] at (EFDB.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (ITSRV.south) -| ++(0,0) |- (EFDB.west); 
+ \draw[pline] (MNGDB.south) -| ++(0,0) |- (EFDB.west); 
 \node (LSPDB) [pbox,below=6pt of EFDB] {\textbf{LSP Database
 } };\node [below right] at (LSPDB.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (ITSRV.south) -| ++(0,0) |- (LSPDB.west); 
-\node (NETMGMT) [pbox,below=6pt of LSPDB] {\textbf{Net Mgmt
+ \draw[pline] (MNGDB.south) -| ++(0,0) |- (LSPDB.west); 
+\node (MCDB) [pbox,below=6pt of LSPDB] {\textbf{M. Consolidated DB
+} };\node [below right] at (MCDB.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (MNGDB.south) -| ++(0,0) |- (MCDB.west); 
+\node (NETMGMT) [pbox,below=178pt of MNGDB] {\textbf{Net Mgmt
 } };\node [below right] at (NETMGMT.north west) {\footnotesize \color{blue}1.02C.08.03} ;
 
  \draw[pline] (ITSRV.south) -| ++(0,0) |- (NETMGMT.west); 
+\node (STMNG) [pbox,below=6pt of NETMGMT] {\textbf{Storage Mgmt
+} };\node [below right] at (STMNG.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (STMNG.west); 
 \node (LSPSRV) [pbox, 
-right=96pt of ITSRV] {\textbf{LSP Services
+right=192pt of ITSRV] {\textbf{LSP Services
 } };\node [below right] at (LSPSRV.north west) {\footnotesize \color{blue}} ;
 
 \node (LSPWAPI) [pbox,below right=6pt and -14pt of LSPSRV] {\textbf{LSP Web API
@@ -133,10 +165,10 @@ right=96pt of OFFLSRV] {\textbf{Prompt Services
 
  \draw[pline] (PRSRV.south) -| ++(0,0) |- (ARCSRVS.west); 
 \node (EFDTS) [pbox,below right=6pt and -14pt of ARCSRVS] {\textbf{EFD Transf.
-} };\node [below right] at (EFDTS.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
+} };\node [below right] at (EFDTS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (ARCSRVS.south) -| ++(0,0) |- (EFDTS.west); 
-\node (HEADS) [pbox,below=6pt of EFDTS] {\textbf{Header Generator
+\node (HEADS) [pbox,below=6pt of EFDTS] {\textbf{Header Service
 } };\node [below right] at (HEADS.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
 
  \draw[pline] (ARCSRVS.south) -| ++(0,0) |- (HEADS.west); 
@@ -145,7 +177,7 @@ right=96pt of OFFLSRV] {\textbf{Prompt Services
 
  \draw[pline] (ARCSRVS.south) -| ++(0,0) |- (IMAS.west); 
 \node (OCSBATSRV) [pbox,below=135pt of ARCSRVS] {\textbf{OCS Batch
-} };\node [below right] at (OCSBATSRV.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
+} };\node [below right] at (OCSBATSRV.north west) {\footnotesize \color{blue}1.02C.02.02} ;
 
  \draw[pline] (PRSRV.south) -| ++(0,0) |- (OCSBATSRV.west); 
 \node (OODSSRV) [pbox,below=6pt of OCSBATSRV] {\textbf{Obs Ops Data

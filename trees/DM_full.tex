@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=2660.0pt,paperheight=1917pt,
+\usepackage[paperwidth=2660.0pt,paperheight=2089pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -57,23 +57,55 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (ITSRV.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSRV.south) -| ++(0,0) |- (ITSRV.west); 
-\node (APDB) [pbox,below right=6pt and -14pt of ITSRV] {\textbf{APDB
+\node (COMPMNT) [pbox,below right=6pt and -14pt of ITSRV] {\textbf{Computational Mgmt
+} };\node [below right] at (COMPMNT.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (COMPMNT.west); 
+\node (DBMNG) [pbox,below=6pt of COMPMNT] {\textbf{DataBase Management
+} };\node [below right] at (DBMNG.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (DBMNG.west); 
+\node (IDNMNG) [pbox,below=6pt of DBMNG] {\textbf{Identity Mngt
+} };\node [below right] at (IDNMNG.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (IDNMNG.west); 
+\node (ITRCK) [pbox,below=6pt of IDNMNG] {\textbf{Issue Tracking
+} };\node [below right] at (ITRCK.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (ITRCK.west); 
+\node (ITSEC) [pbox,below=6pt of ITRCK] {\textbf{IT Security
+} };\node [below right] at (ITSEC.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (ITSEC.west); 
+\node (MNGDB) [pbox,below=6pt of ITSEC] {\textbf{Databases
+} };\node [below right] at (MNGDB.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (MNGDB.west); 
+\node (APDB) [pbox,below right=6pt and -14pt of MNGDB] {\textbf{APDB
 } };\node [below right] at (APDB.north west) {\footnotesize \color{blue}1.02C.06.01.01} ;
 
- \draw[pline] (ITSRV.south) -| ++(0,0) |- (APDB.west); 
+ \draw[pline] (MNGDB.south) -| ++(0,0) |- (APDB.west); 
 \node (EFDB) [pbox,below=6pt of APDB] {\textbf{EFD Cache
 } };\node [below right] at (EFDB.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (ITSRV.south) -| ++(0,0) |- (EFDB.west); 
+ \draw[pline] (MNGDB.south) -| ++(0,0) |- (EFDB.west); 
 \node (LSPDB) [pbox,below=6pt of EFDB] {\textbf{LSP Database
 } };\node [below right] at (LSPDB.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (ITSRV.south) -| ++(0,0) |- (LSPDB.west); 
-\node (NETMGMT) [pbox,below=6pt of LSPDB] {\textbf{Net Mgmt
+ \draw[pline] (MNGDB.south) -| ++(0,0) |- (LSPDB.west); 
+\node (MCDB) [pbox,below=6pt of LSPDB] {\textbf{M. Consolidated DB
+} };\node [below right] at (MCDB.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (MNGDB.south) -| ++(0,0) |- (MCDB.west); 
+\node (NETMGMT) [pbox,below=178pt of MNGDB] {\textbf{Net Mgmt
 } };\node [below right] at (NETMGMT.north west) {\footnotesize \color{blue}1.02C.08.03} ;
 
  \draw[pline] (ITSRV.south) -| ++(0,0) |- (NETMGMT.west); 
-\node (LSPSRV) [pbox,below=178pt of ITSRV] {\textbf{LSP Services
+\node (STMNG) [pbox,below=6pt of NETMGMT] {\textbf{Storage Mgmt
+} };\node [below right] at (STMNG.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ITSRV.south) -| ++(0,0) |- (STMNG.west); 
+\node (LSPSRV) [pbox,below=522pt of ITSRV] {\textbf{LSP Services
 } };\node [below right] at (LSPSRV.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSRV.south) -| ++(0,0) |- (LSPSRV.west); 
@@ -137,10 +169,10 @@ textwidth=30cm,textheight=50mm]{geometry}
 
  \draw[pline] (PRSRV.south) -| ++(0,0) |- (ARCSRVS.west); 
 \node (EFDTS) [pbox,below right=6pt and -14pt of ARCSRVS] {\textbf{EFD Transf.
-} };\node [below right] at (EFDTS.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
+} };\node [below right] at (EFDTS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (ARCSRVS.south) -| ++(0,0) |- (EFDTS.west); 
-\node (HEADS) [pbox,below=6pt of EFDTS] {\textbf{Header Generator
+\node (HEADS) [pbox,below=6pt of EFDTS] {\textbf{Header Service
 } };\node [below right] at (HEADS.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
 
  \draw[pline] (ARCSRVS.south) -| ++(0,0) |- (HEADS.west); 
@@ -149,7 +181,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 
  \draw[pline] (ARCSRVS.south) -| ++(0,0) |- (IMAS.west); 
 \node (OCSBATSRV) [pbox,below=135pt of ARCSRVS] {\textbf{OCS Batch
-} };\node [below right] at (OCSBATSRV.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
+} };\node [below right] at (OCSBATSRV.north west) {\footnotesize \color{blue}1.02C.02.02} ;
 
  \draw[pline] (PRSRV.south) -| ++(0,0) |- (OCSBATSRV.west); 
 \node (OODSSRV) [pbox,below=6pt of OCSBATSRV] {\textbf{Obs Ops Data
@@ -209,7 +241,16 @@ right=288pt of DMSRV] {\textbf{Software Products
 } };\node [below right] at (WLWF.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 
  \draw[pline] (BPSWP.south) -| ++(0,0) |- (WLWF.west); 
-\node (LSPSWP) [pbox,below=92pt of BPSWP] {\textbf{LSP SW Products
+\node (ENVS) [pbox,below=92pt of BPSWP] {\textbf{Environments
+} };\node [below right] at (ENVS.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (DMSW.south) -| ++(0,0) |- (ENVS.west); 
+\node (SPLCE) [pbox,below right=6pt and -14pt of ENVS] {\textbf{SPL Conda Env
+} };\node [below right] at (SPLCE.north west) {\footnotesize \color{blue}} ;
+\node (SPLCEpkg) [tbox,below=3mm of SPLCE.north] {{\footnotesize \color{black} \begin{verbatim} scipipe_conda_env \end{verbatim} }  };
+
+ \draw[pline] (ENVS.south) -| ++(0,0) |- (SPLCE.west); 
+\node (LSPSWP) [pbox,below=49pt of ENVS] {\textbf{LSP SW Products
 } };\node [below right] at (LSPSWP.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSW.south) -| ++(0,0) |- (LSPSWP.west); 
@@ -252,7 +293,7 @@ right=288pt of DMSRV] {\textbf{Software Products
 
  \draw[pline] (PRSW.south) -| ++(0,0) |- (ALRTDSTR.west); 
 \node (EFDT) [pbox,below=6pt of ALRTDSTR] {\textbf{EFD Transform
-} };\node [below right] at (EFDT.north west) {\footnotesize \color{blue}1.02C.07.08} ;
+} };\node [below right] at (EFDT.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (PRSW.south) -| ++(0,0) |- (EFDT.west); 
 \node (HEADER) [pbox,below=6pt of EFDT] {\textbf{Header Srv SW
@@ -270,7 +311,7 @@ right=288pt of DMSRV] {\textbf{Software Products
 
  \draw[pline] (PRSW.south) -| ++(0,0) |- (OBSPUB.west); 
 \node (OCSBAT) [pbox,below=6pt of OBSPUB] {\textbf{OCS Batch SW
-} };\node [below right] at (OCSBAT.north west) {\footnotesize \color{blue}1.02C.07.08} ;
+} };\node [below right] at (OCSBAT.north west) {\footnotesize \color{blue}1.02C.02.02} ;
 
  \draw[pline] (PRSW.south) -| ++(0,0) |- (OCSBAT.west); 
 \node (OODS) [pbox,below=6pt of OCSBAT] {\textbf{Obs Ops Data SW
@@ -293,10 +334,12 @@ right=288pt of DMSRV] {\textbf{Software Products
  \draw[pline] (DMSW.south) -| ++(0,0) |- (SCIPSWP.west); 
 \node (APPRMPT) [pbox,below right=6pt and -14pt of SCIPSWP] {\textbf{Alert Prod SW
 } };\node [below right] at (APPRMPT.north west) {\footnotesize \color{blue}1.02C.03} ;
+\node (APPRMPTpkg) [tbox,below=3mm of APPRMPT.north] {{\footnotesize \color{black} \begin{verbatim} ap_pipe \end{verbatim} }  };
 
  \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (APPRMPT.west); 
 \node (DMCAL) [pbox,below=6pt of APPRMPT] {\textbf{Calibration SW
 } };\node [below right] at (DMCAL.north west) {\footnotesize \color{blue}1.02C.04.02} ;
+\node (DMCALpkg) [tbox,below=3mm of DMCAL.north] {{\footnotesize \color{black} \begin{verbatim} cp_pipe \end{verbatim} }  };
 
  \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (DMCAL.west); 
 \node (DRP) [pbox,below=6pt of DMCAL] {\textbf{DR Prod SW
@@ -370,7 +413,11 @@ right=192pt of DMSW] {\textbf{Resources
 } };\node [below right] at (DOCKER.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (DOCKER.west); 
-\node (GPFS) [pbox,below=6pt of DOCKER] {\textbf{Gen. P. File System
+\node (FIREFLY) [pbox,below=6pt of DOCKER] {\textbf{Firefly
+} };\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (FIREFLY.west); 
+\node (GPFS) [pbox,below=6pt of FIREFLY] {\textbf{Gen. P. File System
 } };\node [below right] at (GPFS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (GPFS.west); 
@@ -382,7 +429,19 @@ right=192pt of DMSW] {\textbf{Resources
 } };\node [below right] at (HTCONDOR.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (HTCONDOR.west); 
-\node (K8S) [pbox,below=6pt of HTCONDOR] {\textbf{Kubernetes
+\node (JH3) [pbox,below=6pt of HTCONDOR] {\textbf{Jupyterhub
+} };\node [below right] at (JH3.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (JH3.west); 
+\node (JL3) [pbox,below=6pt of JH3] {\textbf{Jupyterlab
+} };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (JL3.west); 
+\node (JRA) [pbox,below=6pt of JL3] {\textbf{Jira
+} };\node [below right] at (JRA.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (JRA.west); 
+\node (K8S) [pbox,below=6pt of JRA] {\textbf{Kubernetes
 } };\node [below right] at (K8S.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (K8S.west); 
@@ -410,7 +469,7 @@ right=192pt of DMSW] {\textbf{Resources
 } };\node [below right] at (VSPHERE.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (VSPHERE.west); 
-\node (DMHW) [pbox,below=522pt of COTS] {\textbf{DM Hardware
+\node (DMHW) [pbox,below=694pt of COTS] {\textbf{DM Hardware
 } };\node [below right] at (DMHW.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (HWCOTS.south) -| ++(0,0) |- (DMHW.west); 
@@ -426,15 +485,7 @@ right=192pt of DMSW] {\textbf{Resources
 } };\node [below right] at (HWSTOR.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMHW.south) -| ++(0,0) |- (HWSTOR.west); 
-\node (LLSW) [pbox,below=6pt of HWSTOR] {\textbf{Low Level SW
-} };\node [below right] at (LLSW.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMHW.south) -| ++(0,0) |- (LLSW.west); 
-\node (CENTOS) [pbox,below right=6pt and -14pt of LLSW] {\textbf{OS (e.g.)
-} };\node [below right] at (CENTOS.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (LLSW.south) -| ++(0,0) |- (CENTOS.west); 
-\node (THPL) [pbox,below=221pt of DMHW] {\textbf{Third Party Libs
+\node (THPL) [pbox,below=135pt of DMHW] {\textbf{Third Party Libs
 } };\node [below right] at (THPL.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (HWCOTS.south) -| ++(0,0) |- (THPL.west); 
@@ -442,20 +493,8 @@ right=192pt of DMSW] {\textbf{Resources
 } };\node [below right] at (BOOST.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (THPL.south) -| ++(0,0) |- (BOOST.west); 
-\node (FIREFLY) [pbox,below=6pt of BOOST] {\textbf{Firefly
-} };\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
-
- \draw[pline] (THPL.south) -| ++(0,0) |- (FIREFLY.west); 
-\node (JH3) [pbox,below=6pt of FIREFLY] {\textbf{Jupyterhub
-} };\node [below right] at (JH3.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (THPL.south) -| ++(0,0) |- (JH3.west); 
-\node (JL3) [pbox,below=6pt of JH3] {\textbf{Jupyterlab
-} };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (THPL.south) -| ++(0,0) |- (JL3.west); 
 \node (INFRA) [pbox, 
-right=288pt of HWCOTS] {\textbf{Infrastructure
+right=192pt of HWCOTS] {\textbf{Infrastructure
 } };\node [below right] at (INFRA.north west) {\footnotesize \color{blue}} ;
 
 \node (ENC) [pbox,below right=6pt and -14pt of INFRA] {\textbf{Enclaves
@@ -498,15 +537,19 @@ right=288pt of HWCOTS] {\textbf{Infrastructure
 } };\node [below right] at (FAC.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (INFRA.south) -| ++(0,0) |- (FAC.west); 
-\node (FACBASE) [pbox,below right=6pt and -14pt of FAC] {\textbf{Base Facility
+\node (DF) [pbox,below right=6pt and -14pt of FAC] {\textbf{Data Facilities
+} };\node [below right] at (DF.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (FAC.south) -| ++(0,0) |- (DF.west); 
+\node (FACNCSA) [pbox,below right=6pt and -14pt of DF] {\textbf{NCSA Facility
+} };\node [below right] at (FACNCSA.north west) {\footnotesize \color{blue}1.02C.07.09} ;
+
+ \draw[pline] (DF.south) -| ++(0,0) |- (FACNCSA.west); 
+\node (FACBASE) [pbox,below=49pt of DF] {\textbf{Base Facility
 } };\node [below right] at (FACBASE.north west) {\footnotesize \color{blue}1.02C.08.01 1.02C.08.02} ;
 
  \draw[pline] (FAC.south) -| ++(0,0) |- (FACBASE.west); 
-\node (FACNCSA) [pbox,below=6pt of FACBASE] {\textbf{NCSA Facility
-} };\node [below right] at (FACNCSA.north west) {\footnotesize \color{blue}1.02C.07.09} ;
-
- \draw[pline] (FAC.south) -| ++(0,0) |- (FACNCSA.west); 
-\node (NET) [pbox,below=92pt of FAC] {\textbf{Networks
+\node (NET) [pbox,below=135pt of FAC] {\textbf{Networks
 } };\node [below right] at (NET.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (INFRA.south) -| ++(0,0) |- (NET.west); 
@@ -527,7 +570,7 @@ right=288pt of HWCOTS] {\textbf{Infrastructure
 
  \draw[pline] (NET.south) -| ++(0,0) |- (NETSB.west); 
 \node (REFD) [pbox, 
-right=192pt of INFRA] {\textbf{Ref Data
+right=288pt of INFRA] {\textbf{Ref Data
 } };\node [below right] at (REFD.north west) {\footnotesize \color{blue}} ;
 
 \node (AND) [pbox,below right=6pt and -14pt of REFD] {\textbf{Astronomy.net Data
@@ -570,23 +613,10 @@ right=96pt of REFD] {\textbf{COTS 3rdPLs ENVs
 } };\node [below right] at (JNKNS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTSDM.south) -| ++(0,0) |- (JNKNS.west); 
-\node (JRA) [pbox,below=6pt of JNKNS] {\textbf{Jira
-} };\node [below right] at (JRA.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTSDM.south) -| ++(0,0) |- (JRA.west); 
-\node (TRVS) [pbox,below=6pt of JRA] {\textbf{Travis
+\node (TRVS) [pbox,below=6pt of JNKNS] {\textbf{Travis
 } };\node [below right] at (TRVS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTSDM.south) -| ++(0,0) |- (TRVS.west); 
-\node (DENV) [pbox,below=264pt of COTSDM] {\textbf{DM DevM Envs
-} };\node [below right] at (DENV.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMDC3E.south) -| ++(0,0) |- (DENV.west); 
-\node (SPLCE) [pbox,below right=6pt and -14pt of DENV] {\textbf{SPL Conda Env
-} };\node [below right] at (SPLCE.north west) {\footnotesize \color{blue}} ;
-\node (SPLCEpkg) [tbox,below=3mm of SPLCE.north] {{\footnotesize \color{black} \begin{verbatim} scipipe_conda_env \end{verbatim} }  };
-
- \draw[pline] (DENV.south) -| ++(0,0) |- (SPLCE.west); 
 \node (DMDSRV) [pbox, 
 right=192pt of DMDC3E] {\textbf{Support Services
 } };\node [below right] at (DMDSRV.north west) {\footnotesize \color{blue}} ;
@@ -627,7 +657,11 @@ right=192pt of DMDC3E] {\textbf{Support Services
 right=96pt of DMDSRV] {\textbf{Dm Dev Software
 } };\node [below right] at (DMDSW.north west) {\footnotesize \color{blue}} ;
 
-\node (DMDSS) [pbox,below right=6pt and -14pt of DMDSW] {\textbf{DMDev Supp SW
+\node (DENV) [pbox,below right=6pt and -14pt of DMDSW] {\textbf{DM DevM Envs
+} };\node [below right] at (DENV.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (DMDSW.south) -| ++(0,0) |- (DENV.west); 
+\node (DMDSS) [pbox,below=6pt of DENV] {\textbf{DMDev Supp SW
 } };\node [below right] at (DMDSS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMDSW.south) -| ++(0,0) |- (DMDSS.west); 

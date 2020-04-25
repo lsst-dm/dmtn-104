@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=617.9999999999999pt,paperheight=516pt,
+\usepackage[paperwidth=713.9999999999999pt,paperheight=516pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -69,16 +69,20 @@ textwidth=30cm,textheight=50mm]{geometry}
 right=96pt of ENC] {\textbf{Facilities
 } };\node [below right] at (FAC.north west) {\footnotesize \color{blue}} ;
 
-\node (FACBASE) [pbox,below right=6pt and -14pt of FAC] {\textbf{Base Facility
+\node (DF) [pbox,below right=6pt and -14pt of FAC] {\textbf{Data Facilities
+} };\node [below right] at (DF.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (FAC.south) -| ++(0,0) |- (DF.west); 
+\node (FACNCSA) [pbox,below right=6pt and -14pt of DF] {\textbf{NCSA Facility
+} };\node [below right] at (FACNCSA.north west) {\footnotesize \color{blue}1.02C.07.09} ;
+
+ \draw[pline] (DF.south) -| ++(0,0) |- (FACNCSA.west); 
+\node (FACBASE) [pbox,below=49pt of DF] {\textbf{Base Facility
 } };\node [below right] at (FACBASE.north west) {\footnotesize \color{blue}1.02C.08.01 1.02C.08.02} ;
 
  \draw[pline] (FAC.south) -| ++(0,0) |- (FACBASE.west); 
-\node (FACNCSA) [pbox,below=6pt of FACBASE] {\textbf{NCSA Facility
-} };\node [below right] at (FACNCSA.north west) {\footnotesize \color{blue}1.02C.07.09} ;
-
- \draw[pline] (FAC.south) -| ++(0,0) |- (FACNCSA.west); 
 \node (NET) [pbox, 
-right=96pt of FAC] {\textbf{Networks
+right=192pt of FAC] {\textbf{Networks
 } };\node [below right] at (NET.north west) {\footnotesize \color{blue}} ;
 
 \node (NETBA) [pbox,below right=6pt and -14pt of NET] {\textbf{Base/Arch Net

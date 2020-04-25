@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=713.9999999999999pt,paperheight=688pt,
+\usepackage[paperwidth=617.9999999999999pt,paperheight=860pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -41,7 +41,11 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (DOCKER.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (DOCKER.west); 
-\node (GPFS) [pbox,below=6pt of DOCKER] {\textbf{Gen. P. File System
+\node (FIREFLY) [pbox,below=6pt of DOCKER] {\textbf{Firefly
+} };\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (FIREFLY.west); 
+\node (GPFS) [pbox,below=6pt of FIREFLY] {\textbf{Gen. P. File System
 } };\node [below right] at (GPFS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (GPFS.west); 
@@ -53,7 +57,19 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (HTCONDOR.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (HTCONDOR.west); 
-\node (K8S) [pbox,below=6pt of HTCONDOR] {\textbf{Kubernetes
+\node (JH3) [pbox,below=6pt of HTCONDOR] {\textbf{Jupyterhub
+} };\node [below right] at (JH3.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (JH3.west); 
+\node (JL3) [pbox,below=6pt of JH3] {\textbf{Jupyterlab
+} };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (JL3.west); 
+\node (JRA) [pbox,below=6pt of JL3] {\textbf{Jira
+} };\node [below right] at (JRA.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (JRA.west); 
+\node (K8S) [pbox,below=6pt of JRA] {\textbf{Kubernetes
 } };\node [below right] at (K8S.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (K8S.west); 
@@ -97,34 +113,14 @@ right=96pt of COTS] {\textbf{DM Hardware
 } };\node [below right] at (HWSTOR.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMHW.south) -| ++(0,0) |- (HWSTOR.west); 
-\node (LLSW) [pbox,below=6pt of HWSTOR] {\textbf{Low Level SW
-} };\node [below right] at (LLSW.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMHW.south) -| ++(0,0) |- (LLSW.west); 
-\node (CENTOS) [pbox,below right=6pt and -14pt of LLSW] {\textbf{OS (e.g.)
-} };\node [below right] at (CENTOS.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (LLSW.south) -| ++(0,0) |- (CENTOS.west); 
 \node (THPL) [pbox, 
-right=192pt of DMHW] {\textbf{Third Party Libs
+right=96pt of DMHW] {\textbf{Third Party Libs
 } };\node [below right] at (THPL.north west) {\footnotesize \color{blue}} ;
 
 \node (BOOST) [pbox,below right=6pt and -14pt of THPL] {\textbf{Boost
 } };\node [below right] at (BOOST.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (THPL.south) -| ++(0,0) |- (BOOST.west); 
-\node (FIREFLY) [pbox,below=6pt of BOOST] {\textbf{Firefly
-} };\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
-
- \draw[pline] (THPL.south) -| ++(0,0) |- (FIREFLY.west); 
-\node (JH3) [pbox,below=6pt of FIREFLY] {\textbf{Jupyterhub
-} };\node [below right] at (JH3.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (THPL.south) -| ++(0,0) |- (JH3.west); 
-\node (JL3) [pbox,below=6pt of JH3] {\textbf{Jupyterlab
-} };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (THPL.south) -| ++(0,0) |- (JL3.west); 
 \node (HWCOTS) [wbbox, above=43pt of DMHW]{\textbf{Hardware and COTS Products}};
  \draw[pline]   (COTS.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
  \draw[pline]   (DMHW.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 

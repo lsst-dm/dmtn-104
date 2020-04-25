@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=1441.9999999999998pt,paperheight=516pt,
+\usepackage[paperwidth=1647.9999999999998pt,paperheight=516pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -58,8 +58,17 @@ right=96pt of BBSWP] {\textbf{Batch Prod. SW P.
 } };\node [below right] at (WLWF.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 
  \draw[pline] (BPSWP.south) -| ++(0,0) |- (WLWF.west); 
+\node (ENVS) [pbox, 
+right=96pt of BPSWP] {\textbf{Environments
+} };\node [below right] at (ENVS.north west) {\footnotesize \color{blue}} ;
+
+\node (SPLCE) [pbox,below right=6pt and -14pt of ENVS] {\textbf{SPL Conda Env
+} };\node [below right] at (SPLCE.north west) {\footnotesize \color{blue}} ;
+\node (SPLCEpkg) [tbox,below=3mm of SPLCE.north] {{\footnotesize \color{black} \begin{verbatim} scipipe_conda_env \end{verbatim} }  };
+
+ \draw[pline] (ENVS.south) -| ++(0,0) |- (SPLCE.west); 
 \node (LSPSWP) [pbox, 
-right=96pt of BPSWP] {\textbf{LSP SW Products
+right=96pt of ENVS] {\textbf{LSP SW Products
 } };\node [below right] at (LSPSWP.north west) {\footnotesize \color{blue}} ;
 
 \node (DAXIMG) [pbox,below right=6pt and -14pt of LSPSWP] {\textbf{Image Server SW
@@ -101,7 +110,7 @@ right=96pt of LSPSWP] {\textbf{Prompt SW Prod.
 
  \draw[pline] (PRSW.south) -| ++(0,0) |- (ALRTDSTR.west); 
 \node (EFDT) [pbox,below=6pt of ALRTDSTR] {\textbf{EFD Transform
-} };\node [below right] at (EFDT.north west) {\footnotesize \color{blue}1.02C.07.08} ;
+} };\node [below right] at (EFDT.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (PRSW.south) -| ++(0,0) |- (EFDT.west); 
 \node (HEADER) [pbox,below=6pt of EFDT] {\textbf{Header Srv SW
@@ -119,7 +128,7 @@ right=96pt of LSPSWP] {\textbf{Prompt SW Prod.
 
  \draw[pline] (PRSW.south) -| ++(0,0) |- (OBSPUB.west); 
 \node (OCSBAT) [pbox,below=6pt of OBSPUB] {\textbf{OCS Batch SW
-} };\node [below right] at (OCSBAT.north west) {\footnotesize \color{blue}1.02C.07.08} ;
+} };\node [below right] at (OCSBAT.north west) {\footnotesize \color{blue}1.02C.02.02} ;
 
  \draw[pline] (PRSW.south) -| ++(0,0) |- (OCSBAT.west); 
 \node (OODS) [pbox,below=6pt of OCSBAT] {\textbf{Obs Ops Data SW
@@ -142,10 +151,12 @@ right=96pt of QCSWP] {\textbf{Sci Pipelines SW P.
 
 \node (APPRMPT) [pbox,below right=6pt and -14pt of SCIPSWP] {\textbf{Alert Prod SW
 } };\node [below right] at (APPRMPT.north west) {\footnotesize \color{blue}1.02C.03} ;
+\node (APPRMPTpkg) [tbox,below=3mm of APPRMPT.north] {{\footnotesize \color{black} \begin{verbatim} ap_pipe \end{verbatim} }  };
 
  \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (APPRMPT.west); 
 \node (DMCAL) [pbox,below=6pt of APPRMPT] {\textbf{Calibration SW
 } };\node [below right] at (DMCAL.north west) {\footnotesize \color{blue}1.02C.04.02} ;
+\node (DMCALpkg) [tbox,below=3mm of DMCAL.north] {{\footnotesize \color{black} \begin{verbatim} cp_pipe \end{verbatim} }  };
 
  \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (DMCAL.west); 
 \node (DRP) [pbox,below=6pt of DMCAL] {\textbf{DR Prod SW
@@ -203,9 +214,10 @@ right=96pt of SCIPSWP] {\textbf{Supporting SW P.
 \node (TXFpkg) [tbox,below=3mm of TXF.north] {{\footnotesize \color{black} \begin{verbatim} pipe_supertask \end{verbatim} }  };
 
  \draw[pline] (SPSWP.south) -| ++(0,0) |- (TXF.west); 
-\node (DMSW) [wbbox, above=43pt of PRSW]{\textbf{Software Products}};
+\node (DMSW) [wbbox, above=43pt of LSPSWP]{\textbf{Software Products}};
  \draw[pline]   (BBSWP.north) -- ++(0.0,0.5) -| (DMSW.south) ; 
  \draw[pline]   (BPSWP.north) -- ++(0.0,0.5) -| (DMSW.south) ; 
+ \draw[pline]   (ENVS.north) -- ++(0.0,0.5) -| (DMSW.south) ; 
  \draw[pline]   (LSPSWP.north) -- ++(0.0,0.5) -| (DMSW.south) ; 
  \draw[pline]   (PRSW.north) -- ++(0.0,0.5) -| (DMSW.south) ; 
  \draw[pline]   (QCSWP.north) -- ++(0.0,0.5) -| (DMSW.south) ; 

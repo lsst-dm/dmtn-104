@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=612pt,paperheight=989pt,
+\usepackage[paperwidth=612pt,paperheight=946pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -55,24 +55,11 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (JNKNS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTSDM.east) -| ++(0.4,0) |- (JNKNS.west); 
-\node (JRA) [pbox,below=6pt of JNKNS] {\textbf{Jira
-} };\node [below right] at (JRA.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTSDM.east) -| ++(0.4,0) |- (JRA.west); 
-\node (TRVS) [pbox,below=6pt of JRA] {\textbf{Travis
+\node (TRVS) [pbox,below=6pt of JNKNS] {\textbf{Travis
 } };\node [below right] at (TRVS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTSDM.east) -| ++(0.4,0) |- (TRVS.west); 
-\node (DENV) [pbox,below=221pt of COTSDM] {\textbf{DM DevM Envs
-} };\node [below right] at (DENV.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMDC3E.east) -| ++(0.4,0) |- (DENV.west); 
-\node (SPLCE) [pbox,right=43pt of DENV] {\textbf{SPL Conda Env
-} };\node [below right] at (SPLCE.north west) {\footnotesize \color{blue}} ;
-\node (SPLCEpkg) [tbox,below=3mm of SPLCE.north] {{\footnotesize \color{black} \begin{verbatim} scipipe_conda_env \end{verbatim} }  };
-
- \draw[pline] (DENV.east) -| ++(0.4,0) |- (SPLCE.west); 
-\node (DMDSRV) [pbox,below=264pt of DMDC3E] {\textbf{Support Services
+\node (DMDSRV) [pbox,below=178pt of DMDC3E] {\textbf{Support Services
 } };\node [below right] at (DMDSRV.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMDEV.east) -| ++(0.4,0) |- (DMDSRV.west); 
@@ -112,7 +99,11 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (DMDSW.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMDEV.east) -| ++(0.4,0) |- (DMDSW.west); 
-\node (DMDSS) [pbox,right=43pt of DMDSW] {\textbf{DMDev Supp SW
+\node (DENV) [pbox,right=43pt of DMDSW] {\textbf{DM DevM Envs
+} };\node [below right] at (DENV.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (DMDSW.east) -| ++(0.4,0) |- (DENV.west); 
+\node (DMDSS) [pbox,below=6pt of DENV] {\textbf{DMDev Supp SW
 } };\node [below right] at (DMDSS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMDSW.east) -| ++(0.4,0) |- (DMDSS.west); 
@@ -144,7 +135,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DSPLSW.east) -| ++(0.4,0) |- (SPLWF.west); 
-\node (DMDTDP) [pbox,below=178pt of DMDSW] {\textbf{Test Data
+\node (DMDTDP) [pbox,below=221pt of DMDSW] {\textbf{Test Data
 } };\node [below right] at (DMDTDP.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMDEV.east) -| ++(0.4,0) |- (DMDTDP.west); 

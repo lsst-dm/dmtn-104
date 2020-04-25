@@ -7,10 +7,18 @@ DBBMDSRV, DBB Metadata, DBBSRV, 1.02C.07.07, LDF, Michelle Butler, Michelle Gowe
 DBBSTRSRV, DBB Storage, DBBSRV, 1.02C.07.07, LDF, Michelle Butler, Michelle Gower, , DBB Storage 
 DBBTRSRV, DBB Transport, DBBSRV, 1.02C.07.07, LDF, Michelle Butler, Michelle Gower, , DBB Transport 
 ITSRV, IT Service, DMSRV, , , Wil O'Mullane, Wil O'Mullane, , IT Service 
-APDB, APDB, ITSRV, 1.02C.06.01.01, DAX, Fritz Mueller, Colin Slater, , APDB 
-EFDB, EFD Cache, ITSRV, , , Frossie Economou, Simon Krughoff, , EFD Cache 
-LSPDB, LSP Database, ITSRV, , , Michelle Butler, Michelle Butler, , LSP Database 
+COMPMNT, Computational Mgmt, ITSRV, , , , , , Computational Mgmt 
+DBMNG, DataBase Management, ITSRV, , , , , , DataBase Management 
+IDNMNG, Identity Mngt, ITSRV, , , , , , Identity Mngt 
+ITRCK, Issue Tracking, ITSRV, , , , , , Issue Tracking 
+ITSEC, IT Security, ITSRV, , , , , , IT Security 
+MNGDB, Databases, ITSRV, , , , , , Databases 
+APDB, APDB, MNGDB, 1.02C.06.01.01, DAX, Fritz Mueller, Colin Slater, , APDB 
+EFDB, EFD Cache, MNGDB, , , Frossie Economou, Simon Krughoff, , EFD Cache 
+LSPDB, LSP Database, MNGDB, , , , , , LSP Database 
+MCDB, M. Consolidated DB, MNGDB, , , , , , M. Consolidated DB 
 NETMGMT, Net Mgmt, ITSRV, 1.02C.08.03, Net/Base, Jeff Kantor, Wil O'Mullane, , Net Mgmt 
+STMNG, Storage Mgmt, ITSRV, , , , , , Storage Mgmt 
 LSPSRV, LSP Services, DMSRV, , , Frossie Economou, Gregory Dubois-Felsmann, , LSP Services 
 LSPWAPI, LSP Web API, LSPSRV, , , Frossie Economou, Simon Krughoff, , LSP Web API 
 SIASRV, SIA API, LSPWAPI, , , Frossie Economou, Simon Krughoff, , SIA API 
@@ -20,22 +28,22 @@ WDAVSRV, WebDAV API, LSPWAPI, , , Frossie Economou, Simon Krughoff, davt, WebDAV
 NBLSRV, LSP Nublado, LSPSRV, 1.02C.10.02.02, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/nublado, LSP Nublado 
 PRTLSRV, LSP Portal, LSPSRV, 1.02C.05.07 1.02C.05.08, SUIT, Gregory Dubois-Felsmann, Gregory Dubois-Felsmann, , LSP Portal 
 OFFLSRV, Offline Services, DMSRV, , , Michelle Butler, , , Offline Services 
-BULKDSRV, Bulk Distrib, OFFLSRV, 1.02C.07.06.02, LDF, Michelle Butler, Michelle Gower, , Bulk Distrib 
+BULKDSRV, Bulk Distrib, OFFLSRV, 1.02C.07.06.02, LDF, Michelle Butler, Robert Gruendl, , Bulk Distrib 
 OFFLQCSRV, Offline QC, OFFLSRV, 1.02C.04.07, DRP, Yusra AlSayyad, Jim Bosch, , Offline QC 
 PRODSRV, Batch Production, OFFLSRV, 1.02C.07.06.02, LDF, Michelle Butler, Michelle Gower, , Batch Production 
-PRSRV, Prompt Services, DMSRV, , , Michelle Butler, , , Prompt Services 
+PRSRV, Prompt Services, DMSRV, , , Kian-Tat Lim, , , Prompt Services 
 ALRTDSTSRV, Alert Distrib, PRSRV, 1.02C.03.03, AP, John Swinbank, Eric Bellm, , Alert Distrib 
 ARCSRVS, Archive Services, PRSRV, , LDF, Michelle Butler, , , Archive Services 
-EFDTS, EFD Transf., ARCSRVS, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , EFD Transf. 
-HEADS, Header Generator, ARCSRVS, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , Header Generator 
-IMAS, Image Archiver, ARCSRVS, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , Image Archiver 
-OCSBATSRV, OCS Batch, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Felipe Menanteau, , OCS Batch 
-OODSSRV, Obs Ops Data, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , Obs Ops Data 
+EFDTS, EFD Transf., ARCSRVS, , SQuaRE, Frossie Economou, Simon Krughoff, , EFD Transf. 
+HEADS, Header Service, ARCSRVS, 1.02C.07.06.02, LDF, Michelle Butler, Robert Gruendl, , Header Service 
+IMAS, Image Archiver, ARCSRVS, 1.02C.07.06.02, LDF, Michelle Butler, Robert Gruendl, , Image Archiver 
+OCSBATSRV, OCS Batch, PRSRV, 1.02C.02.02, ARCH, Kian-Tat Lim, Tim Jenness, , OCS Batch 
+OODSSRV, Obs Ops Data, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Robert Gruendl, , Obs Ops Data 
 POPSRV, Planned Obs Pub, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Tim Jenness, , Planned Obs Pub 
-PRPINGSRV, Prompt Proc Ing, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Steve Pietrowicz, , Prompt Proc Ing 
+PRPINGSRV, Prompt Proc Ing, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Robert Gruendl, , Prompt Proc Ing 
 PRPRSRV, Prmpt Processing, PRSRV, , , Michelle Butler, Eric Bellm, , Prmpt Processing 
 PRQCSRV, Prompt QC, PRSRV, 1.02C.03.08, AP, John Swinbank, Eric Bellm, , Prompt QC 
-TMGSRV, Telem Gateway, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Kian-Tat Lim, , Telem Gateway 
+TMGSRV, Telem Gateway, PRSRV, 1.02C.07.06.02, LDF, Michelle Butler, Robert Gruendl, , Telem Gateway 
 DMSW, Software Products, DM, , , Wil O'Mullane, , , Software Products 
 BBSWP, Backbone SW P., DMSW, , , Michelle Butler, , , Backbone SW P. 
 DBBLIFE, DBB Lifetime SW, BBSWP, 1.02C.07.08, LDF, Michelle Butler, Michelle Gower, , DBB Lifetime SW 
@@ -44,6 +52,8 @@ DBBTR, DBB Transport SW, BBSWP, 1.02C.07.08, LDF, Michelle Butler, Michelle Gowe
 BPSWP, Batch Prod. SW P., DMSW, , , Michelle Butler, , , Batch Prod. SW P. 
 CMPGN, Campaign Mgmt, BPSWP, 1.02C.07.08, LDF, Michelle Butler, Michelle Gower, , Campaign Mgmt 
 WLWF, Workload/flow, BPSWP, 1.02C.07.08, LDF, Michelle Butler, Michelle Gower, , Workload/flow 
+ENVS, Environments, DMSW, , , , , , Environments 
+SPLCE, SPL Conda Env, ENVS, , , , , scipipe_conda_env, SPL Conda Env 
 LSPSWP, LSP SW Products, DMSW, , , Frossie Economou, Gregory Dubois-Felsmann, , LSP SW Products 
 DAXIMG, Image Server SW, LSPSWP, 1.02C.06.02.04, DAX, Frossie Economou, Colin Slater, dax_imgserv, Image Server SW 
 LSPWEB, LSP Web SW, LSPSWP, 1.02C.06.02, DAX, , , dax_webserv, LSP Web SW 
@@ -53,17 +63,17 @@ PRTLSW, LSP Portal SW, LSPSWP, 1.02C.05.07 1.02C.05.08, SUIT, Gregory Dubois-Fel
 TAPSW, TAP Software, LSPSWP, , , Frossie Economou, Simon Krughoff, , TAP Software 
 PRSW, Prompt SW Prod., DMSW, , , Michelle Butler, , , Prompt SW Prod. 
 ALRTDSTR, Alert Distrib SW, PRSW, 1.02C.03.03, AP, John Swinbank, Eric Bellm, lsst-dm/alert_stream, Alert Distrib SW 
-EFDT, EFD Transform, PRSW, 1.02C.07.08, LDF, Frossie Economou, Simon Krughoff, , EFD Transform 
-HEADER, Header Srv SW, PRSW, 1.02C.07.08, LDF, Michelle Butler, Kian-Tat Lim, lsst-dm/HeaderService, Header Srv SW 
-IIP, Image Ingest SW, PRSW, 1.02C.07.08, LDF, Michelle Butler, Kian-Tat Lim, ctrl_iip, Image Ingest SW 
+EFDT, EFD Transform, PRSW, , SQuaRE, Frossie Economou, Simon Krughoff, , EFD Transform 
+HEADER, Header Srv SW, PRSW, 1.02C.07.08, LDF, Michelle Butler, Robert Gruendl, lsst-dm/HeaderService, Header Srv SW 
+IIP, Image Ingest SW, PRSW, 1.02C.07.08, LDF, Michelle Butler, Robert Gruendl, ctrl_iip, Image Ingest SW 
 OBSPUB, Plan Obs Pub SW, PRSW, 1.02C.07.08, LDF, Michelle Butler, Tim Jenness, , Plan Obs Pub SW 
-OCSBAT, OCS Batch SW, PRSW, 1.02C.07.08, LDF, Michelle Butler, Felipe Menanteau, , OCS Batch SW 
-OODS, Obs Ops Data SW, PRSW, 1.02C.07.08, LDF, Michelle Butler, Steve Pietrowicz, lsst-dm/ctrl_oods, Obs Ops Data SW 
+OCSBAT, OCS Batch SW, PRSW, 1.02C.02.02, ARCH, Kian-Tat Lim, Tim Jenness, , OCS Batch SW 
+OODS, Obs Ops Data SW, PRSW, 1.02C.07.08, LDF, Michelle Butler, Robert Gruendl, lsst-dm/ctrl_oods, Obs Ops Data SW 
 QCSWP, QC SW Products, DMSW, , , Frossie Economou, , , QC SW Products 
 QCSW, Quality Ctrl SW, QCSWP, 1.02C.10.02.01, SQuaRE, Frossie Economou, Simon Krughoff, lsst-sqre/squash, Quality Ctrl SW 
 SCIPSWP, Sci Pipelines SW P., DMSW, , , John Swinbank, Leanne Guy, , Sci Pipelines SW P. 
-APPRMPT, Alert Prod SW, SCIPSWP, 1.02C.03, AP, John Swinbank, Eric Bellm, , Alert Prod SW 
-DMCAL, Calibration SW, SCIPSWP, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, , Calibration SW 
+APPRMPT, Alert Prod SW, SCIPSWP, 1.02C.03, AP, John Swinbank, Eric Bellm, ap_pipe, Alert Prod SW 
+DMCAL, Calibration SW, SCIPSWP, 1.02C.04.02, DRP, John Swinbank, Robert Lupton, cp_pipe, Calibration SW 
 DRP, DR Prod SW, SCIPSWP, 1.02C.04, DRP, Yusra AlSayyad, Jim Bosch, , DR Prod SW 
 MOPS, MOPS SW, SCIPSWP, 1.02C.03.06, AP, John Swinbank, Eric Bellm, mops_daymops, MOPS SW 
 SP, Spec Prog SW, SCIPSWP, 1.02C.03 1.02C.04, AP, John Swinbank, Leanne Guy, , Spec Prog SW 
@@ -72,17 +82,21 @@ SPLUG, Science Plugins, SCIPSWP, 1.02C.04.02, DRP, John Swinbank, Leanne Guy, , 
 TMPLGEN, Tmpl Gen SW, SCIPSWP, 1.02C.04.04, DRP, Yusra AlSayyad, Jim Bosch, , Tmpl Gen SW 
 SPSWP, Supporting SW P., DMSW, , , John Swinbank, , , Supporting SW P. 
 ADQL, ADQL Translator, SPSWP, 1.02C.06.02.05, DAX, Frossie Economou, Simon Krughoff, albuquery, ADQL Translator 
-BUTLER, Data Butler, SPSWP, 1.02C.06.02.01, DAX, Michelle Butler, Tim Jenness, daf_butler, Data Butler 
+BUTLER, Data Butler, SPSWP, 1.02C.06.02.01, DAX, Tim Jenness, Jim Bosch, daf_butler, Data Butler 
 QSERV, Distrib Database, SPSWP, 1.02C.06.02.03, DAX, Fritz Mueller, Colin Slater, qserv, Distrib Database 
 SCIPIPE, Sci Pipelines Libs, SPSWP, 1.02C.04 1.02C.03, DRP, John Swinbank, Jim Bosch, lsst_apps, Sci Pipelines Libs 
-TXF, Task Framework, SPSWP, 1.02C.06.03, DAX, Michelle Butler, Tim Jenness, pipe_supertask, Task Framework 
+TXF, Task Framework, SPSWP, 1.02C.06.03, DAX, Tim Jenness, Tim Jenness, pipe_supertask, Task Framework 
 HWCOTS, Resources, DM, , , Wil O'Mullane, , , Resources 
 COTS, COTS SW, HWCOTS, , , Wil O'Mullane, , , COTS SW 
 CILOGON, CILogon, COTS, , , , Michelle Gower, , CILogon 
 DOCKER, Docker, COTS, , , , Frossie Economou, , Docker 
+FIREFLY, Firefly, COTS, 1.02C.05.06, SUIT, , Gregory Dubois-Felsmann, , Firefly 
 GPFS, Gen. P. File System, COTS, , , , Michelle Gower, , Gen. P. File System 
 GRAFANA, Grafana, COTS, , , , Michelle Gower, , Grafana 
 HTCONDOR, HTCondor, COTS, , , , Michelle Gower, , HTCondor 
+JH3, Jupyterhub, COTS, , , , , , Jupyterhub 
+JL3, Jupyterlab, COTS, , , , , , Jupyterlab 
+JRA, Jira, COTS, , , , , , Jira 
 K8S, Kubernetes, COTS, , , , , , Kubernetes 
 ORACLE, Oracle, COTS, , , , , , Oracle 
 PTH, Python, COTS, , , , , , Python 
@@ -94,26 +108,22 @@ DMHW, DM Hardware, HWCOTS, , , , Wil O'Mullane, , DM Hardware
 HWCOMP, Compute Nodes, DMHW, , , Michelle Butler, , , Compute Nodes 
 HWNET, Network Nodes, DMHW, , , Jeff Kantor, , , Network Nodes 
 HWSTOR, Storage Nodes, DMHW, , , Michelle Butler, , , Storage Nodes 
-LLSW, Low Level SW, DMHW, , , , , , Low Level SW 
-CENTOS, OS (e.g.), LLSW, , , , , , OS (e.g.) 
 THPL, Third Party Libs, HWCOTS, , , , , , Third Party Libs 
 BOOST, Boost, THPL, , , , , , Boost 
-FIREFLY, Firefly, THPL, 1.02C.05.06, SUIT, , Gregory Dubois-Felsmann, , Firefly 
-JH3, Jupyterhub, THPL, , , , , , Jupyterhub 
-JL3, Jupyterlab, THPL, , , , , , Jupyterlab 
 INFRA, Infrastructure, DM, , , Wil O'Mullane, , , Infrastructure 
 ENC, Enclaves, INFRA, , , Michelle Butler, , , Enclaves 
-ENCARCB, Arch Base Encl, ENC, 1.02C.08.01, LDF, Wil O'Mullane, Michelle Butler, , Arch Base Encl 
-ENCARCN, Arch NCSA Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Michelle Butler, , Arch NCSA Encl 
-ENCCOMM, Comm Clust Encl, ENC, 1.02C.08.01, LDF, Michelle Butler, Simon Krughoff, , Comm Clust Encl 
-ENCDACC, DAC Chile Encl, ENC, 1.02C.08.02, LDF, Wil O'Mullane, Michelle Butler, , DAC Chile Encl 
-ENCDACU, DAC US Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Michelle Butler, , DAC US Encl 
-ENCOFFL, Offline Prod Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Michelle Butler, , Offline Prod Encl 
-ENCPRB, Prmpt Base Encl, ENC, 1.02C.08.01, LDF, Wil O'Mullane, Michelle Butler, , Prmpt Base Encl 
-ENCPRN, Prmpt NCSA Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Michelle Butler, , Prmpt NCSA Encl 
+ENCARCB, Arch Base Encl, ENC, 1.02C.08.01, LDF, Cristian Silva, Wil O'Mullane, , Arch Base Encl 
+ENCARCN, Arch NCSA Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Wil O'Mullane, , Arch NCSA Encl 
+ENCCOMM, Comm Clust Encl, ENC, 1.02C.08.01, LDF, Frossie Economou, Simon Krughoff, , Comm Clust Encl 
+ENCDACC, DAC Chile Encl, ENC, 1.02C.08.02, LDF, Cristian Silva, Wil O'Mullane, , DAC Chile Encl 
+ENCDACU, DAC US Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Wil O'Mullane, , DAC US Encl 
+ENCOFFL, Offline Prod Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Wil O'Mullane, , Offline Prod Encl 
+ENCPRB, Prmpt Base Encl, ENC, 1.02C.08.01, LDF, Cristian Silva, Wil O'Mullane, , Prmpt Base Encl 
+ENCPRN, Prmpt NCSA Encl, ENC, 1.02C.07.09, LDF, Michelle Butler, Wil O'Mullane, , Prmpt NCSA Encl 
 FAC, Facilities, INFRA, , , Wil O'Mullane, , , Facilities 
-FACBASE, Base Facility, FAC, 1.02C.08.01 1.02C.08.02, Net/Base, Wil O'Mullane, Jeff Kantor, , Base Facility 
-FACNCSA, NCSA Facility, FAC, 1.02C.07.09, LDF, Wil O'Mullane, Michelle Butler, , NCSA Facility 
+DF, Data Facilities, FAC, , , , , , Data Facilities 
+FACNCSA, NCSA Facility, DF, 1.02C.07.09, LDF, Michelle Butler, Wil O'Mullane, , NCSA Facility 
+FACBASE, Base Facility, FAC, 1.02C.08.01 1.02C.08.02, Net/Base, Cristian Silva, Wil O'Mullane, , Base Facility 
 NET, Networks, INFRA, , , Jeff Kantor, , , Networks 
 NETBA, Base/Arch Net, NET, 1.02C.08.03, Net/Base, Jeff Kantor, Jeff Kantor, , Base/Arch Net 
 NETBASE, Base LAN, NET, 1.02C.07.08, LDF, Michelle Butler, Michelle Butler, , Base LAN 

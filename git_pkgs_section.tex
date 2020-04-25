@@ -190,6 +190,52 @@ Prototype code that ingests into the Data Backbone raw files delivered by the db
 
 
 \newpage
+\subsection{scipipe\_conda\_env}\label{scipipe_conda_env}
+
+Conda environment for LSST Science Pipelines
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst/scipipe_conda_env}{https://github.com/lsst/scipipe\_conda\_env} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{splce}{SciencePipelines Conda Env.} \\
+\cdashline{1-2}
+{GitHub Teams:} &
+ Data Management \\
+ & DM Auxilliaries \\
+\hline
+\end{longtable} }
+
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+# Conda Environment for Science Pipelines
+
+This repository contains the definition of the Conda environment used by the LSST Science Pipelines.
+
+## Contents
+
+Files in the `etc` directory are named following the pattern:
+
+```
+conda3_<filetype>-<platform>-64.yml
+```
+
+Where `<filetype>` is one of:
+
+- `bleed`, indicating the names of packages on which the Science Pipelines directly depend, or
+- `packages`, indicating a specific versioned set of those packages, and packages upon which they depend, which can be directly instantiated as a Conda environment.
+
+And `<platform>` is one of:
+
+- `linux`, indicating that this file has been tested on CentOS (our reference platform), and, by extension, is appropriate for use on a Linux systems;
+\end{lstlisting}
+}
+
+
+\newpage
 \subsection{dax\_imgserv}\label{dax_imgserv}
 
 Web Interface for LSST Image Services
@@ -645,6 +691,97 @@ TAG=latest make service deployment
 
 
 \newpage
+\subsection{ap\_pipe}\label{ap_pipe}
+
+LSST Data Management Alert Production Pipeline
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst/ap_pipe}{https://github.com/lsst/ap\_pipe} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{apprmpt}{Alert Production} \\
+\cdashline{1-2}
+{GitHub Teams:} &
+ Overlords \\
+ & Data Management \\
+\hline
+\end{longtable} }
+
+\begin{longtable}{rl}
+\multicolumn{2}{c}{EUPS dependencies} \\ \hline
+\textbf{name} & \textbf{description} \\ \hline
+{\footnotesize utils } & \\ \hline
+{\footnotesize pex\_config } & \\ \hline
+{\footnotesize pipe\_base } & \\ \hline
+{\footnotesize pipe\_tasks } & \\ \hline
+{\footnotesize ap\_association } & \\ \hline
+\end{longtable}
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+# ap_pipe
+
+This package contains the LSST Data Management Alert Production Pipeline.
+
+For up-to-date documentation, including a tutorial, see the `doc` directory.
+
+ap_pipe processes raw images that have been ingested into a Butler repository
+with corresponding calibration products and templates. It produces calexps,
+difference images and source catalogs, and an association database.
+
+The user must specify the main repository with ingested images (and the
+location of the calibration products and templates if they reside elsewhere),
+the name of the association database (may be either created from scratch or
+connected to for continued associating), and a Butler data ID.
+\end{lstlisting}
+}
+
+
+\newpage
+\subsection{cp\_pipe}\label{cp_pipe}
+
+Calibration-products production pipeline
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst/cp_pipe}{https://github.com/lsst/cp\_pipe} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{dmcal}{Calibration Software} \\
+\cdashline{1-2}
+{GitHub Teams:} &
+ Overlords \\
+ & Data Management \\
+ & DMLT \\
+\hline
+\end{longtable} }
+
+\begin{longtable}{rl}
+\multicolumn{2}{c}{EUPS dependencies} \\ \hline
+\textbf{name} & \textbf{description} \\ \hline
+{\footnotesize pex\_config } & \\ \hline
+{\footnotesize pipe\_base } & \\ \hline
+{\footnotesize log } & \\ \hline
+{\footnotesize ip\_isr } & \\ \hline
+{\footnotesize afw } & \\ \hline
+{\footnotesize meas\_algorithms } & \\ \hline
+\end{longtable}
+
+README.rst (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+#######################################
+Calibration Products Production Package
+#######################################
+
+Code to produce calibration products, required to perform ISR and other calibration tasks.
+\end{lstlisting}
+}
+
+
+\newpage
 \subsection{mops\_daymops}\label{mops_daymops}
 
 
@@ -811,6 +948,7 @@ Top Level Component: & \hyperlink{butler}{Data Butler} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
+{\footnotesize astropy } & \\ \hline
 {\footnotesize sphgeom } & \\ \hline
 {\footnotesize sqlalchemy } & \\ \hline
 {\footnotesize numpy } & \\ \hline
@@ -873,6 +1011,7 @@ Top Level Component: & \hyperlink{qserv}{Distributed Database} \\
 {\footnotesize protobuf } & \\ \hline
 {\footnotesize pybind11 } & \\ \hline
 {\footnotesize python } & \\ \hline
+{\footnotesize redis\_plus\_plus } & \\ \hline
 {\footnotesize requests } & \\ \hline
 {\footnotesize scisql } & \\ \hline
 {\footnotesize scons } & \\ \hline
@@ -996,52 +1135,6 @@ Top Level Component: & \hyperlink{and}{Astrometry.net Data} \\
 {\footnotesize sconsUtils } & \\ \hline
 \end{longtable}
 
-
-
-\newpage
-\subsection{scipipe\_conda\_env}\label{scipipe_conda_env}
-
-Conda environment for LSST Science Pipelines
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst/scipipe_conda_env}{https://github.com/lsst/scipipe\_conda\_env} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{splce}{SciencePipelines Conda Env.} \\
-\cdashline{1-2}
-{GitHub Teams:} &
- Data Management \\
- & DM Auxilliaries \\
-\hline
-\end{longtable} }
-
-
-README.md (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-# Conda Environment for Science Pipelines
-
-This repository contains the definition of the Conda environment used by the LSST Science Pipelines.
-
-## Contents
-
-Files in the `etc` directory are named following the pattern:
-
-```
-conda3_<filetype>-<platform>-64.yml
-```
-
-Where `<filetype>` is one of:
-
-- `bleed`, indicating the names of packages on which the Science Pipelines directly depend, or
-- `packages`, indicating a specific versioned set of those packages, and packages upon which they depend, which can be directly instantiated as a Conda environment.
-
-And `<platform>` is one of:
-
-- `linux`, indicating that this file has been tested on CentOS (our reference platform), and, by extension, is appropriate for use on a Linux systems;
-\end{lstlisting}
-}
 
 
 \newpage

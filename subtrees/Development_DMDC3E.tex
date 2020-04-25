@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=411.99999999999994pt,paperheight=430pt,
+\usepackage[paperwidth=205.99999999999997pt,paperheight=387pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -49,26 +49,12 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (JNKNS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTSDM.south) -| ++(0,0) |- (JNKNS.west); 
-\node (JRA) [pbox,below=6pt of JNKNS] {\textbf{Jira
-} };\node [below right] at (JRA.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTSDM.south) -| ++(0,0) |- (JRA.west); 
-\node (TRVS) [pbox,below=6pt of JRA] {\textbf{Travis
+\node (TRVS) [pbox,below=6pt of JNKNS] {\textbf{Travis
 } };\node [below right] at (TRVS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTSDM.south) -| ++(0,0) |- (TRVS.west); 
-\node (DENV) [pbox, 
-right=96pt of COTSDM] {\textbf{DM DevM Envs
-} };\node [below right] at (DENV.north west) {\footnotesize \color{blue}} ;
-
-\node (SPLCE) [pbox,below right=6pt and -14pt of DENV] {\textbf{SPL Conda Env
-} };\node [below right] at (SPLCE.north west) {\footnotesize \color{blue}} ;
-\node (SPLCEpkg) [tbox,below=3mm of SPLCE.north] {{\footnotesize \color{black} \begin{verbatim} scipipe_conda_env \end{verbatim} }  };
-
- \draw[pline] (DENV.south) -| ++(0,0) |- (SPLCE.west); 
-\node (DMDC3E) [wbbox, above=43pt of COTSDM]{\textbf{Development COTS and Environments}};
+\node (DMDC3E) [wbbox, above=43pt of COTSDM]{\textbf{Development Externals}};
  \draw[pline]   (COTSDM.north) -- ++(0.0,0.5) -| (DMDC3E.south) ; 
- \draw[pline]   (DENV.north) -- ++(0.0,0.5) -| (DMDC3E.south) ; 
 
 \end{tikzpicture}
 \end{document}

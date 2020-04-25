@@ -1,4 +1,4 @@
-% auto generated from MagicDraw (revision) 328 - DO NOT EDIT!
+% auto generated from MagicDraw (revision) 330 - DO NOT EDIT!
 % using template at <template>.
 % Collecting data for component: ""
 % using docsteady version 
@@ -129,7 +129,7 @@ or COTS, are implementing it. This information is shown in the
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 \parbox{3.5cm}{
-Michelle Butler
+Kian-Tat Lim
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
@@ -208,7 +208,10 @@ This service receives telemetry from the OCS describing the next visit
 location and the telescope scheduler's predictions of its future
 observations. It publishes these as an unauthenticated,
 globally-accessible web service comprising both a web page for human
-inspection and a web API for usage by automated tools.
+inspection and a web API for usage by automated tools.\\
+\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\\
+\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\\
+\emph{{{[}last reviewed: ~K.T. Lim - Apr. 2020{]} }}\\
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -242,7 +245,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Steve Pietrowicz
+Robert Gruendl
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -384,11 +387,11 @@ Eric Bellm
 
 (from LDM-148)
 
-This service receives crosstalk-corrected images and metadata from the
-Prompt Processing Ingest service at the Base and executes the Alert
-Production science payload on them, generating ``online'' data products
-that are stored in the Data Backbone. The Alert Production payload then
-sends alerts to the Alert Distribution service.
+This service receives images and metadata from the Prompt Processing
+Ingest service at the Base and executes the Alert Production science
+payload on them, generating ``online'' data products that are stored in
+the Data Backbone. The Alert Production payload then sends alerts to the
+Alert Distribution service.
 
 ~
 
@@ -417,6 +420,7 @@ Telescope Spectrograph.
 \hyperlink{apprmpt}{Alert Production} \\ \hline
 \hyperlink{dmcal}{Calibration Software} \\ \hline
 \hyperlink{mops}{MOPS and Forced Photometry} \\ \hline
+\hyperlink{iip}{Image Ingest and Processing} \\ \hline
 \end{tabular}
 } &
 \multicolumn{2}{c}{
@@ -499,7 +503,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Steve Pietrowicz
+Robert Gruendl
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -514,7 +518,11 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-Observatory Operations Data Service
+This service provides a cache of images, calibration data, and metadata
+to clients within Observatory Operations including Summit systems and
+the Commissioning Cluster. It provides a Data Butler interface to the
+data. It provides images with low latency and high reliability.\\
+~\\
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -555,19 +563,19 @@ Observatory Operations Data Service
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Michelle Butler
+Kian-Tat Lim
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Felipe Menanteau
+Tim Jenness
 \vspace{2mm}%
 } \\
 \end{tabular} &
 \begin{tabular}{@{}l@{}}
-1.02C.07.06.02 \\
+1.02C.02.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
-LDF \\
+ARCH \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
 {\footnotesize Short name: \textbf{ OCS Batch
@@ -578,7 +586,9 @@ LDF \\
 \\ \cdashline{1-4}
 \end{longtable}
 
-OCS Driven Batch Processing Service
+This service permits to drive pipeline processing by data acquisition
+from the summit. The processing will be triggered using commands, which
+indicate the name of the pipelines to execute and the data to process.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -656,7 +666,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Kian-Tat Lim
+Robert Gruendl
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -922,7 +932,7 @@ LDF \\
 \textbf{Products included in this section}:
 \begin{itemize}
 \item Image Archiver - \hyperlink{imas}{IMAS}
-\item Header Generator - \hyperlink{heads}{HEADS}
+\item Header Service - \hyperlink{heads}{HEADS}
 \item EFD Transformation - \hyperlink{efdts}{EFDTS}
 \end{itemize}
 }
@@ -941,7 +951,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Steve Pietrowicz
+Robert Gruendl
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -983,7 +993,7 @@ Backbone.
 
     \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{heads}{Header Generator} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{heads}{Header Service} } }
 & \multicolumn{2}{l}{(product in: Archive Services
 )}
 \\ \hline
@@ -995,7 +1005,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Steve Pietrowicz
+Robert Gruendl
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -1005,13 +1015,13 @@ Steve Pietrowicz
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ Header Generator
+{\footnotesize Short name: \textbf{ Header Service
  } - Product key: \textbf{ HEADS } }
 }\\ \hline
 \end{longtable}
 
-The Header Generator service, written by Data Management but operated by
-the Observatory, captures specific sets of metadata associated with the
+The Header Service, written by Data Management but operated by the
+Observatory, captures specific sets of metadata associated with the
 images, including telemetry values and event timings, from the OCS
 publish/subscribe middleware and/or from the EFD. It formats these into
 a metadata package that is recorded in the EFD Large File Annex. The
@@ -1043,19 +1053,19 @@ and attach it to the captured image pixels.\\
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Michelle Butler
+Frossie Economou
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Steve Pietrowicz
+Simon Krughoff
 \vspace{2mm}%
 } \\
 \end{tabular} &
 \begin{tabular}{@{}l@{}}
-1.02C.07.06.02 \\
+ \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
-LDF \\
+SQuaRE \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
 {\footnotesize Short name: \textbf{ EFD Transf.
@@ -1282,7 +1292,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Michelle Gower
+Robert Gruendl
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -1930,7 +1940,7 @@ platforms are provided in
 \href{https://github.com/lsst-sqre/lsp-deploy}{lsp-deploy} Git
 repository.\\
 ~\\
-\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]}}}
+\emph{{{[}last reviewed: ~G. Dubois-Felsmann - Feb 2020{]}}}
 
 
 {\scriptsize
@@ -1983,7 +1993,7 @@ Software Product), based on functionality from the third-party Firefly
 toolkit (partially supported by LSST DM), with releases delivered as
 Docker images.\\
 
-~\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]}}}
+~\emph{{{[}last reviewed: ~G. Dubois-Felsmann - Feb 2020{]}}}
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2429,9 +2439,12 @@ Examples are:
 \textbf{Products included in this section}:
 \begin{itemize}
 \item Network Management - \hyperlink{netmgmt}{NETMGMT}
-\item LSP Database - \hyperlink{lspdb}{LSPDB}
-\item EFD Cache - \hyperlink{efdb}{EFDB}
-\item APDB - \hyperlink{apdb}{APDB}
+\item Computational Nodes Management - \hyperlink{compmnt}{COMPMNT}
+\item Storage Management - \hyperlink{stmng}{STMNG}
+\item Database Management - \hyperlink{dbmng}{DBMNG}
+\item Identity Management - \hyperlink{idnmng}{IDNMNG}
+\item Issue Tracking - \hyperlink{itrck}{ITRCK}
+\item IT Security - \hyperlink{itsec}{ITSEC}
 \end{itemize}
 }
 
@@ -2467,6 +2480,12 @@ Net/Base \\
 This service provides monitor capability on networks, including for
 example failover control, bandwidth allocation management.\\
 
+Network engineering and implementation are also included in this
+product, but they are not services intended for the users.
+
+The resulting network however, is a global services required by the
+project.
+
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
@@ -2487,19 +2506,369 @@ example failover control, bandwidth allocation management.\\
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{lspdb}{LSP Database} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{compmnt}{Computational Nodes Management} } }
 & \multicolumn{2}{l}{(product in: IT Service
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Michelle Butler
+
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Michelle Butler
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Computational Mgmt
+ } - Product key: \textbf{ COMPMNT } }
+}\\ \hline
+\end{longtable}
+
+This service is provided at each facility in order to be able to
+instantiate the nodes required for processing.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+     \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{stmng}{Storage Management} } }
+& \multicolumn{2}{l}{(product in: IT Service
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Storage Mgmt
+ } - Product key: \textbf{ STMNG } }
+}\\ \hline
+\end{longtable}
+
+This services provide filesystem and objects storage.
+
+~
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+     \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{dbmng}{Database Management} } }
+& \multicolumn{2}{l}{(product in: IT Service
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ DataBase Management
+ } - Product key: \textbf{ DBMNG } }
+}\\ \hline
+\end{longtable}
+
+This service should be implemented at each facility in order to ensure
+that the provided databases are working as expected.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+     \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{idnmng}{Identity Management} } }
+& \multicolumn{2}{l}{(product in: IT Service
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Identity Mngt
+ } - Product key: \textbf{ IDNMNG } }
+}\\ \hline
+\end{longtable}
+
+This service provide a single sign on facility to be used cross platform
+during all phases of the project.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{cilogon}{CILogon} \\ \hline
+\end{tabular}
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+     \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{itrck}{Issue Tracking} } }
+& \multicolumn{2}{l}{(product in: IT Service
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Issue Tracking
+ } - Product key: \textbf{ ITRCK } }
+}\\ \hline
+\end{longtable}
+
+Issue (ticket) tracking service.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{jra}{JIRA} \\ \hline
+\end{tabular}
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+     \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{itsec}{IT Security} } }
+& \multicolumn{2}{l}{(product in: IT Service
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ IT Security
+ } - Product key: \textbf{ ITSEC } }
+}\\ \hline
+\end{longtable}
+
+This service will implement login in for the DMS users, in order that
+access to portals can be secure and controlled.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{security}{IT Security SW} \\ \hline
+\end{tabular}
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+  \newpage
+\paragraph{Databases}\label{mngdb}\mbox{}\\
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular}
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Databases
+ } - Product key: \textbf{ MNGDB } }
+}\\ \hline
+\end{longtable}
+
+  This section hosts database instances that are relevant for multiple
+products and services. All those databases that are embedded in a
+software product and do not have any interaction outside that, will not
+be included in the product tree.
+
+
+{\scriptsize
+\textbf{Products included in this section}:
+\begin{itemize}
+\item Managed Consolidated Database - \hyperlink{mcdb}{MCDB}
+\item LSP Database - \hyperlink{lspdb}{LSPDB}
+\item EFD Cache - \hyperlink{efdb}{EFDB}
+\item APDB - \hyperlink{apdb}{APDB}
+\end{itemize}
+}
+
+  \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{mcdb}{Managed Consolidated Database} } }
+& \multicolumn{2}{l}{(product in: Databases
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ M. Consolidated DB
+ } - Product key: \textbf{ MCDB } }
+}\\ \hline
+\end{longtable}
+
+{This service provides general-purpose relational database management
+that supports other services. It includes metadata and provenance, but
+it does not include the large catalog science data products that are
+generated as files and loaded into the Qserv parallel distributed
+database. For efficiency of resource usage and management, most
+databases are consolidated into a single RDBMS instance.}
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+    \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{lspdb}{LSP Database} } }
+& \multicolumn{2}{l}{(product in: Databases
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -2514,8 +2883,8 @@ Michelle Butler
 }\\ \hline
 \end{longtable}
 
-Database instance, required by the LSP components instantiated in a DAC,
-used for:
+This service is a combination of database instances required by the LSP
+services. It will be instantiated in each DAC and used for:
 
 \begin{itemize}
 \tightlist
@@ -2543,10 +2912,10 @@ used for:
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 \end{longtable}
 
-     \newpage
+    \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ \hypertarget{efdb}{EFD Cache} } }
-& \multicolumn{2}{l}{(product in: IT Service
+& \multicolumn{2}{l}{(product in: Databases
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
@@ -2590,10 +2959,10 @@ Simon Krughoff
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 \end{longtable}
 
-     \newpage
+    \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ \hypertarget{apdb}{APDB} } }
-& \multicolumn{2}{l}{(product in: IT Service
+& \multicolumn{2}{l}{(product in: Databases
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
@@ -2645,6 +3014,7 @@ Implementation details still under evaluation.
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 \end{longtable}
 
+    
     
      \newpage
 \subsection{Software Products}\label{dmsw}
@@ -2713,6 +3083,14 @@ Michelle Butler
 \end{longtable}
 
   DM software products required to implement the DM Prompt Services.
+
+~
+
+\emph{{{[}last reviewed: ~K.T. Lim - Apr. 2020{]} }}\\
+
+~
+
+~
 
 
 {\scriptsize
@@ -2818,9 +3196,9 @@ Simon Krughoff
 } \\
 \end{tabular} &
 \begin{tabular}{@{}l@{}}
-1.02C.07.08 \\
+ \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
-LDF \\
+SQuaRE \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
 {\footnotesize Short name: \textbf{ EFD Transform
@@ -2897,7 +3275,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Kian-Tat Lim
+Robert Gruendl
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -2925,7 +3303,7 @@ external users. It is developed at University of Illinois (Urbana)
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{heads}{Header Generator} \\ \hline
+\hyperlink{heads}{Header Service} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -3003,11 +3381,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Kian-Tat Lim
-\vspace{2mm}%
-} \\
-\parbox{3.5cm}{
-Steve Pietrowicz
+Robert Gruendl
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -3024,8 +3398,15 @@ LDF \\
 
 Image ingest and processing SW product.\\
 ~\\
-This includes the DMCS, used to implements the Telemetry Gateway
-service.
+This includes the
+
+\begin{itemize}
+\tightlist
+\item
+  DMCS, used to implements the Telemetry Gateway service;
+\item
+  prompt processing framework to orchestrate prompt processing payloads.
+\end{itemize}
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3040,6 +3421,7 @@ service.
 \hyperlink{prpingsrv}{Prompt Processing Ingest} \\ \hline
 \hyperlink{tmgsrv}{Telemetry Gateway} \\ \hline
 \hyperlink{imas}{Image Archiver} \\ \hline
+\hyperlink{prprsrv}{Prompt Processing} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -3178,7 +3560,12 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-Pointing Prediction Publishing software products.
+This software implements an unauthenticated, globally-accessible Web
+service that publishes telemetry from the OCS describing the next visit
+location and the tele- scope scheduler's predictions of its future
+observations.\\
+\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\\
+\emph{{{[}last reviewed: ~K.T. Lim - Apr. 2020{]}}}
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3204,19 +3591,19 @@ Pointing Prediction Publishing software products.
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Michelle Butler
+Kian-Tat Lim
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Felipe Menanteau
+Tim Jenness
 \vspace{2mm}%
 } \\
 \end{tabular} &
 \begin{tabular}{@{}l@{}}
-1.02C.07.08 \\
+1.02C.02.02 \\
 \end{tabular} & \begin{tabular}{@{}l@{}}
-LDF \\
+ARCH \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
 {\footnotesize Short name: \textbf{ OCS Batch SW
@@ -3227,7 +3614,7 @@ LDF \\
 \\ \cdashline{1-4}
 \end{longtable}
 
-Batch commandable SAL component.
+Batch commandable SAL component. To run some pipelines in operations.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3302,7 +3689,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Steve Pietrowicz
+Robert Gruendl
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -3317,7 +3704,9 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-SW Product to use in the OODS service.
+This software implements the Butler ingest of image and calibration data
+as well as the cache management for the Observatory Operations Data
+Service.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -4025,7 +4414,7 @@ Gregory Dubois-Felsmann
 
   Software products that implement the LSP services.\\
 ~\\
-\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
+\emph{{{[}last reviewed: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
 
 
 {\scriptsize
@@ -4078,7 +4467,7 @@ Firefly library. ~Defines the Portal web application. ~Primarily
 JavaScript but also contains Java extensions (search processors) to the
 Firefly server side.\\
 ~\\
-\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
+\emph{{{[}last reviewed: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -4399,7 +4788,7 @@ Contains help content, as HTML, and a small amount of GWT GUI code to
 implement a help application that provides a navigation sidebar for the
 HTML content.\\
 ~\\
-\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
+\emph{{{[}last reviewed: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -4617,6 +5006,9 @@ Software product for Allert Production processing.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
+\multicolumn{2}{l}{\href{https://github.com/lsst/ap_pipe}{ap\_pipe} }\ref{ap_pipe}
+\\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -4747,6 +5139,9 @@ Software product for generating calibration data products.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
+\multicolumn{2}{l}{\href{https://github.com/lsst/cp_pipe}{cp\_pipe} }\ref{cp_pipe}
+\\ \hline \\ \hline
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
@@ -5363,12 +5758,12 @@ products (payloads).
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Michelle Butler
+Tim Jenness
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Tim Jenness
+Jim Bosch
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -5434,7 +5829,7 @@ Butler middleware software product.
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Michelle Butler
+Tim Jenness
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
@@ -5538,7 +5933,7 @@ Distributed database software product.\\
 It will be used to implement the database used by the LSP to serve the
 release catalog data.\\
 \hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\\
-\emph{{{[}last review: F.Mueller - Jan 2020{]} }}\\
+\emph{{{[}last reviewed: F.Mueller - Jan 2020{]} }}\\
 \hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\hspace*{0.333em}\\
 
 
@@ -5689,6 +6084,88 @@ DAX Query Services in Kotlin.\\
 \multicolumn{3}{p{11.1cm}}{\footnotesize Evolution } \\ \cdashline{1-4}
 {\footnotesize EP-DM-CON-ICD-0034 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Citizen Science Data } \\ \cdashline{1-4}
+\end{longtable}
+
+    
+   \newpage
+\subsubsection{Environments}\label{envs}
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular}
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Environments
+ } - Product key: \textbf{ ENVS } }
+}\\ \hline
+\end{longtable}
+
+  
+
+
+{\scriptsize
+\textbf{Products included in this section}:
+\begin{itemize}
+\item SciencePipelines Conda Env. - \hyperlink{splce}{SPLCE}
+\end{itemize}
+}
+
+   \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{splce}{SciencePipelines Conda Env.} } }
+& \multicolumn{2}{l}{(product in: Environments
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ SPL Conda Env
+ } - Product key: \textbf{ SPLCE } }
+}\\ \hline
+\end{longtable}
+
+
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
+\multicolumn{2}{l}{\href{https://github.com/lsst/scipipe_conda_env}{scipipe\_conda\_env} }\ref{scipipe_conda_env}
+\\ \hline \\ \hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 \end{longtable}
 
     
@@ -6059,7 +6536,6 @@ Wil O'Mullane
 \textbf{Products included in this section}:
 \begin{itemize}
 \item Base Facility - \hyperlink{facbase}{FACBASE}
-\item NCSA Facility - \hyperlink{facncsa}{FACNCSA}
 \end{itemize}
 }
 
@@ -6072,12 +6548,12 @@ Wil O'Mullane
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Wil O'Mullane
+Cristian Silva
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Jeff Kantor
+Wil O'Mullane
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -6153,21 +6629,58 @@ Base facility located at La Serena, Chile.
 \multicolumn{3}{p{11.1cm}}{\footnotesize Multiple Physically Separated Copies } \\ \cdashline{1-4}
 \end{longtable}
 
-     \newpage
+  \newpage
+\paragraph{Data Facilities}\label{df}\mbox{}\\
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular}
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Data Facilities
+ } - Product key: \textbf{ DF } }
+}\\ \hline
+\end{longtable}
+
+  Data Facilities is where data processing is performed.
+
+
+{\scriptsize
+\textbf{Products included in this section}:
+\begin{itemize}
+\item NCSA Facility - \hyperlink{facncsa}{FACNCSA}
+\end{itemize}
+}
+
+  \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ \hypertarget{facncsa}{NCSA Facility} } }
-& \multicolumn{2}{l}{(product in: Facilities
+& \multicolumn{2}{l}{(product in: Data Facilities
 )}
 \\ \hline
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Wil O'Mullane
+Michelle Butler
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Michelle Butler
+Wil O'Mullane
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -6242,6 +6755,7 @@ NCSA processing facility located at Urbana, Illinois(USA).
 \end{longtable}
 
     
+    
    \newpage
 \subsubsection{Enclaves}\label{enc}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -6297,12 +6811,12 @@ service, for example LSP, may be instantiate in multiple enclaves.\\
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Wil O'Mullane
+Cristian Silva
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Michelle Butler
+Wil O'Mullane
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -6335,7 +6849,7 @@ and alert generation.
 \hyperlink{arcsrvo}{Archiving [Obsolete]} \\ \hline
 \hyperlink{efdb}{EFD Cache} \\ \hline
 \hyperlink{imas}{Image Archiver} \\ \hline
-\hyperlink{heads}{Header Generator} \\ \hline
+\hyperlink{heads}{Header Service} \\ \hline
 \hyperlink{efdts}{EFD Transformation} \\ \hline
 \end{tabular}
 } &
@@ -6418,12 +6932,12 @@ and alert generation.
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Wil O'Mullane
+Cristian Silva
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Michelle Butler
+Wil O'Mullane
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -6571,12 +7085,12 @@ Base facility.
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Wil O'Mullane
+Cristian Silva
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Michelle Butler
+Wil O'Mullane
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -6699,7 +7213,7 @@ located at the Base facility.
 \textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
 \textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
 \parbox{3.5cm}{
-Michelle Butler
+Frossie Economou
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
@@ -6772,7 +7286,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Michelle Butler
+Wil O'Mullane
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -6861,7 +7375,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Michelle Butler
+Wil O'Mullane
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -7012,7 +7526,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Michelle Butler
+Wil O'Mullane
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -7096,7 +7610,7 @@ Michelle Butler
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Michelle Butler
+Wil O'Mullane
 \vspace{2mm}%
 } \\
 \end{tabular} &
@@ -7425,89 +7939,6 @@ distance networks. Details will be added here on a per need base.
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 \end{longtable}
 
-  \newpage
-\paragraph{Low Level SW}\label{llsw}\mbox{}\\
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} &
-\begin{tabular}{@{}l@{}}
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} \\
-\end{tabular}
- &
-\begin{tabular}{@{}l@{}}
- \\
-\end{tabular} &
-\begin{tabular}{@{}l@{}}
- \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ Low Level SW
- } - Product key: \textbf{ LLSW } }
-}\\ \hline
-\end{longtable}
-
-  Low level software required by the hardware components to work. In
-general these components are provided by the vendor, but in some cases
-it may be required to customize specifically for the project purposes.
-Some examples are: - Firmwares - Operating Systems Details will be added
-here on a per need base.
-
-
-{\scriptsize
-\textbf{Products included in this section}:
-\begin{itemize}
-\item RedHat CentOS - \hyperlink{centos}{CENTOS}
-\end{itemize}
-}
-
-  \newpage
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{centos}{RedHat CentOS} } }
-& \multicolumn{2}{l}{(product in: Low Level SW
-)}
-\\ \hline
-\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
-\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} &
-\begin{tabular}{@{}l@{}}
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} \\
-\end{tabular} &
-\begin{tabular}{@{}l@{}}
- \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
- \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ OS (e.g.)
- } - Product key: \textbf{ CENTOS } }
-}\\ \hline
-\end{longtable}
-
-
-
-
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-\multicolumn{2}{c}{
-} &
-\multicolumn{2}{c}{
-} \\ \bottomrule
-\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
-\end{longtable}
-
-    
     
    \newpage
 \subsubsection{COTS}\label{cots}
@@ -7544,9 +7975,13 @@ Wil O'Mullane
 \begin{itemize}
 \item CILogon - \hyperlink{cilogon}{CILOGON}
 \item Docker - \hyperlink{docker}{DOCKER}
+\item Firefly - \hyperlink{firefly}{FIREFLY}
 \item General Parallel File System - \hyperlink{gpfs}{GPFS}
 \item Grafana - \hyperlink{grafana}{GRAFANA}
 \item HTCondor - \hyperlink{htcondor}{HTCONDOR}
+\item Jupyterhub - \hyperlink{jh3}{JH3}
+\item Jupyterlab - \hyperlink{jl3}{JL3}
+\item JIRA - \hyperlink{jra}{JRA}
 \item Kubernetes - \hyperlink{k8s}{K8S}
 \item Oracle - \hyperlink{oracle}{ORACLE}
 \item Python - \hyperlink{pth}{PTH}
@@ -7599,7 +8034,7 @@ management platform for research collaborations.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{}{Identity Management} \\ \hline
+\hyperlink{idnmng}{Identity Management} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -7651,6 +8086,57 @@ virtualizations.
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+     \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{firefly}{Firefly} } }
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+Gregory Dubois-Felsmann
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+1.02C.05.06 \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+SUIT \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Firefly
+ } - Product key: \textbf{ FIREFLY } }
+}\\ \hline
+\end{longtable}
+
+IPAC's Advanced Astronomy WEB UI Framework.\\
+~\\
+\emph{{{[}last reviewed: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{References} &
+\multicolumn{3}{l}{\href{https://github.com/Caltech-IPAC/firefly}{https://github.com/Caltech-IPAC/firefly} }
+\\ \hline \\ \hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{prtlsw}{LSP Portal Software } \\ \hline
+\end{tabular}
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+{\footnotesize DMS-REQ-0160 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Provide User Interface Services } \\ \cdashline{1-4}
 \end{longtable}
 
      \newpage
@@ -7801,6 +8287,145 @@ intensive tasks.
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{jh3}{Jupyterhub} } }
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Jupyterhub
+ } - Product key: \textbf{ JH3 } }
+}\\ \hline
+\end{longtable}
+
+Provides multi-user and multi-instance support to Jupyterlab.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{References} &
+\multicolumn{3}{l}{\href{https://github.com/jupyterhub/jupyterhub/}{https://github.com/jupyterhub/jupyterhub/} }
+\\ \hline \\ \hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{nbsw}{LSP Notebook Software} \\ \hline
+\end{tabular}
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+     \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{jl3}{Jupyterlab} } }
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Jupyterlab
+ } - Product key: \textbf{ JL3 } }
+}\\ \hline
+\end{longtable}
+
+An extensible environment for interactive and reproducible computing,
+based on the Jupyter Notebook and Architecture.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{References} &
+\multicolumn{3}{l}{\href{https://github.com/jupyterlab/jupyterlab/}{https://github.com/jupyterlab/jupyterlab/} }
+\\ \hline \\ \hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{nbsw}{LSP Notebook Software} \\ \hline
+\end{tabular}
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+     \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{jra}{JIRA} } }
+& \multicolumn{2}{l}{(product in: COTS SW
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Jira
+ } - Product key: \textbf{ JRA } }
+}\\ \hline
+\end{longtable}
+
+
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{itrck}{Issue Tracking} \\ \hline
+\end{tabular}
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+     \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
 \multicolumn{2}{l}{\large \textbf{ \hypertarget{k8s}{Kubernetes} } }
 & \multicolumn{2}{l}{(product in: COTS SW
 )}
@@ -7887,9 +8512,6 @@ Oracle Relational Database 3rd party software product.
 \multicolumn{2}{c}{
 } &
 \multicolumn{2}{c}{
-\begin{tabular}{c}
-\hyperlink{}{Database Management} \\ \hline
-\end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 \end{longtable}
@@ -8071,7 +8693,7 @@ Michelle Butler
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{}{IT Security} \\ \hline
+\hyperlink{itsec}{IT Security} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -8160,9 +8782,6 @@ and to run.
 \textbf{Products included in this section}:
 \begin{itemize}
 \item Boost - \hyperlink{boost}{BOOST}
-\item Firefly - \hyperlink{firefly}{FIREFLY}
-\item Jupyterhub - \hyperlink{jh3}{JH3}
-\item Jupyterlab - \hyperlink{jl3}{JL3}
 \end{itemize}
 }
 
@@ -8203,152 +8822,6 @@ and to run.
 \multicolumn{2}{c}{
 } &
 \multicolumn{2}{c}{
-} \\ \bottomrule
-\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
-\end{longtable}
-
-     \newpage
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{firefly}{Firefly} } }
-& \multicolumn{2}{l}{(product in: Third Party Libs
-)}
-\\ \hline
-\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
-\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} &
-\begin{tabular}{@{}l@{}}
-\parbox{3.5cm}{
-Gregory Dubois-Felsmann
-\vspace{2mm}%
-} \\
-\end{tabular} &
-\begin{tabular}{@{}l@{}}
-1.02C.05.06 \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
-SUIT \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ Firefly
- } - Product key: \textbf{ FIREFLY } }
-}\\ \hline
-\end{longtable}
-
-IPAC's Advanced Astronomy WEB UI Framework.\\
-~\\
-\emph{{{[}last review: ~G. Dubois-Felsmann - Feb 2020{]} }}\\
-
-
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{References} &
-\multicolumn{3}{l}{\href{https://github.com/Caltech-IPAC/firefly}{https://github.com/Caltech-IPAC/firefly} }
-\\ \hline \\ \hline
-\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-\multicolumn{2}{c}{
-} &
-\multicolumn{2}{c}{
-\begin{tabular}{c}
-\hyperlink{prtlsw}{LSP Portal Software } \\ \hline
-\end{tabular}
-} \\ \bottomrule
-\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
-{\footnotesize DMS-REQ-0160 } &
-\multicolumn{3}{p{11.1cm}}{\footnotesize Provide User Interface Services } \\ \cdashline{1-4}
-\end{longtable}
-
-     \newpage
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{jh3}{Jupyterhub} } }
-& \multicolumn{2}{l}{(product in: Third Party Libs
-)}
-\\ \hline
-\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
-\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} &
-\begin{tabular}{@{}l@{}}
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} \\
-\end{tabular} &
-\begin{tabular}{@{}l@{}}
- \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
- \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ Jupyterhub
- } - Product key: \textbf{ JH3 } }
-}\\ \hline
-\end{longtable}
-
-Provides multi-user and multi-instance support to Jupyterlab.
-
-
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{References} &
-\multicolumn{3}{l}{\href{https://github.com/jupyterhub/jupyterhub/}{https://github.com/jupyterhub/jupyterhub/} }
-\\ \hline \\ \hline
-\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-\multicolumn{2}{c}{
-} &
-\multicolumn{2}{c}{
-\begin{tabular}{c}
-\hyperlink{nbsw}{LSP Notebook Software} \\ \hline
-\end{tabular}
-} \\ \bottomrule
-\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
-\end{longtable}
-
-     \newpage
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{jl3}{Jupyterlab} } }
-& \multicolumn{2}{l}{(product in: Third Party Libs
-)}
-\\ \hline
-\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
-\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} &
-\begin{tabular}{@{}l@{}}
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} \\
-\end{tabular} &
-\begin{tabular}{@{}l@{}}
- \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
- \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ Jupyterlab
- } - Product key: \textbf{ JL3 } }
-}\\ \hline
-\end{longtable}
-
-An extensible environment for interactive and reproducible computing,
-based on the Jupyter Notebook and Architecture.
-
-
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{References} &
-\multicolumn{3}{l}{\href{https://github.com/jupyterlab/jupyterlab/}{https://github.com/jupyterlab/jupyterlab/} }
-\\ \hline \\ \hline
-\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-\multicolumn{2}{c}{
-} &
-\multicolumn{2}{c}{
-\begin{tabular}{c}
-\hyperlink{nbsw}{LSP Notebook Software} \\ \hline
-\end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 \end{longtable}

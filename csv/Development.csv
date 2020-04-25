@@ -6,10 +6,7 @@ EUPS, EUPS, COTSDM, , , , , , EUPS
 GCC, GCC, COTSDM, , , , , , GCC 
 GITHUB, Github, COTSDM, , , , , , Github 
 JNKNS, Jenkins, COTSDM, , , , , , Jenkins 
-JRA, Jira, COTSDM, , , , , , Jira 
 TRVS, Travis, COTSDM, , , , , , Travis 
-DENV, DM DevM Envs, DMDC3E, , , , , , DM DevM Envs 
-SPLCE, SPL Conda Env, DENV, , , , , scipipe_conda_env, SPL Conda Env 
 DMDSRV, Support Services, DMDEV, , , , , , Support Services 
 BCI, Build and CI, DMDSRV, , , , , , Build and CI 
 CAM, Cont. Application Mng, DMDSRV, , , , , , Cont. Application Mng 
@@ -20,6 +17,7 @@ DMDCOM, Devlop. Comm, DMDSRV, , , , , , Devlop. Comm
 PKGDST, Packagin Distrib, DMDSRV, , , , , , Packagin Distrib 
 SWVER, SW Version Control, DMDSRV, , , , , , SW Version Control 
 DMDSW, Dm Dev Software, DMDEV, , , , , , Dm Dev Software 
+DENV, DM DevM Envs, DMDSW, , , , , , DM DevM Envs 
 DMDSS, DMDev Supp SW, DMDSW, , , , , , DMDev Supp SW 
 CDKT, Codekit, DMDSS, , , , , lsst-sqre/sqre-codekit, Codekit 
 JSCR, JenkinsScripting, DMDSS, , , , , lsst-dm/jenkins-dm-jobs, JenkinsScripting 
