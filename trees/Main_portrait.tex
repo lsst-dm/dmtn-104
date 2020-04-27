@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=765pt,paperheight=4515pt,
+\usepackage[paperwidth=765pt,paperheight=4687pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -575,15 +575,39 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (REFD.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DM.east) -| ++(0.4,0) |- (REFD.west); 
-\node (AND) [pbox,right=43pt of REFD] {\textbf{Astronomy.net Data
+\node (GAIAD) [pbox,right=43pt of REFD] {\textbf{Gaia Catalogs
+} };\node [below right] at (GAIAD.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (REFD.east) -| ++(0.4,0) |- (GAIAD.west); 
+\node (GDR1v1) [pbox,right=43pt of GAIAD] {\textbf{Gaia\_DR1\_v1
+} };\node [below right] at (GDR1v1.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (GAIAD.east) -| ++(0.4,0) |- (GDR1v1.west); 
+\node (GDR2198) [pbox,below=6pt of GDR1v1] {\textbf{Gaia\_DR2\_20190808
+} };\node [below right] at (GDR2198.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (GAIAD.east) -| ++(0.4,0) |- (GDR2198.west); 
+\node (GDR2204) [pbox,below=6pt of GDR2198] {\textbf{Gaia\_DR2\_20200414
+} };\node [below right] at (GDR2204.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (GAIAD.east) -| ++(0.4,0) |- (GDR2204.west); 
+\node (ODATA) [pbox,below=92pt of GAIAD] {\textbf{Other Catalogs
+} };\node [below right] at (ODATA.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (REFD.east) -| ++(0.4,0) |- (ODATA.west); 
+\node (AND) [pbox,right=43pt of ODATA] {\textbf{Astronomy.net Data
 } };\node [below right] at (AND.north west) {\footnotesize \color{blue}} ;
 \node (ANDpkg) [tbox,below=3mm of AND.north] {{\footnotesize \color{black} \begin{verbatim} astrometry_net_data \end{verbatim} }  };
 
- \draw[pline] (REFD.east) -| ++(0.4,0) |- (AND.west); 
-\node (GDATA) [pbox,below=6pt of AND] {\textbf{Gaia Data
-} };\node [below right] at (GDATA.north west) {\footnotesize \color{blue}} ;
+ \draw[pline] (ODATA.east) -| ++(0.4,0) |- (AND.west); 
+\node (PS1PV3) [pbox,below=6pt of AND] {\textbf{ps1\_pv3\_3pi\_20170110
+} };\node [below right] at (PS1PV3.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (REFD.east) -| ++(0.4,0) |- (GDATA.west); 
+ \draw[pline] (ODATA.east) -| ++(0.4,0) |- (PS1PV3.west); 
+\node (SDSSDR9v5b) [pbox,below=6pt of PS1PV3] {\textbf{sdss-dr9-fink-v5b
+} };\node [below right] at (SDSSDR9v5b.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ODATA.east) -| ++(0.4,0) |- (SDSSDR9v5b.west); 
 
 \end{tikzpicture}
 \end{document}
