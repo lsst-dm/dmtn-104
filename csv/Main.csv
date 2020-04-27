@@ -1,11 +1,11 @@
 Product key,Short name,Parent,WBS,Team,Manager,Product owner,Packages,Name,MD Order
 DM,Data Management,,1.02C,,Wil O'Mullane,Leanne Guy,,Data Management,2
 DMSRV,Services,DM,,,Wil O'Mullane,Leanne Guy,,Services,1
-DBBSRV,DBB Services,DMSRV,,,Michelle Butler,Michelle Gower,,DBB Services,3
-DBBLIFESRV,DBB Lifetime,DBBSRV,1.02C.07.07,LDF,Michelle Butler,Michelle Gower,,DBB Lifetime,2
-DBBMDSRV,DBB Metadata,DBBSRV,1.02C.07.07,LDF,Michelle Butler,Michelle Gower,,DBB Metadata,1
-DBBSTRSRV,DBB Storage,DBBSRV,1.02C.07.07,LDF,Michelle Butler,Michelle Gower,,DBB Storage,4
-DBBTRSRV,DBB Transport,DBBSRV,1.02C.07.07,LDF,Michelle Butler,Michelle Gower,,DBB Transport,3
+DBBSRV,DBB Services,DMSRV,,,Michelle Butler,,,DBB Services,3
+DBBLIFESRV,DBB Lifetime,DBBSRV,1.02C.07.07,LDF,,Michelle Gower,,DBB Lifetime,2
+DBBMDSRV,DBB Metadata,DBBSRV,1.02C.07.07,LDF,,Michelle Gower,,DBB Metadata,1
+DBBSTRSRV,DBB Storage,DBBSRV,1.02C.07.07,LDF,,Michelle Gower,,DBB Storage,4
+DBBTRSRV,DBB Transport,DBBSRV,1.02C.07.07,LDF,,Michelle Gower,,DBB Transport,3
 ITSRV,IT Service,DMSRV,,,Wil O'Mullane,Wil O'Mullane,,IT Service,5
 COMPMNT,Computational Mgmt,ITSRV,,,,,,Computational Mgmt,2
 DBMNG,DataBase Management,ITSRV,,,,,,DataBase Management,4
@@ -27,13 +27,13 @@ TAPSRV,TAP API,LSPWAPI,,,Frossie Economou,Simon Krughoff,lsst-sqre/lsst-tap-serv
 WDAVSRV,WebDAV API,LSPWAPI,,,Frossie Economou,Simon Krughoff,davt,WebDAV API,4
 NBLSRV,LSP Nublado,LSPSRV,1.02C.10.02.02,SQuaRE,Frossie Economou,Simon Krughoff,lsst-sqre/nublado,LSP Nublado,2
 PRTLSRV,LSP Portal,LSPSRV,1.02C.05.07 1.02C.05.08,SUIT,Gregory Dubois-Felsmann,Gregory Dubois-Felsmann,,LSP Portal,1
-OFFLSRV,Offline Services,DMSRV,,,Michelle Butler,,,Offline Services,2
+OFFLSRV,Offline Services,DMSRV,,,,,,Offline Services,2
 BULKDSRV,Bulk Distrib,OFFLSRV,1.02C.07.06.02,LDF,Michelle Butler,Robert Gruendl,,Bulk Distrib,3
 OFFLQCSRV,Offline QC,OFFLSRV,1.02C.04.07,DRP,Yusra AlSayyad,Jim Bosch,,Offline QC,2
 PRODSRV,Batch Production,OFFLSRV,1.02C.07.06.02,LDF,Michelle Butler,Michelle Gower,,Batch Production,1
 PRSRV,Prompt Services,DMSRV,,,Kian-Tat Lim,,,Prompt Services,1
 ALRTDSTSRV,Alert Distrib,PRSRV,1.02C.03.03,AP,John Swinbank,Eric Bellm,,Alert Distrib,7
-ARCSRVS,Archive Services,PRSRV,,LDF,Michelle Butler,,,Archive Services,9
+ARCSRVS,Archive Services,PRSRV,,LDF,,,,Archive Services,9
 EFDTS,EFD Transf.,ARCSRVS,,SQuaRE,Frossie Economou,Simon Krughoff,,EFD Transf.,3
 HEADS,Header Service,ARCSRVS,1.02C.07.06.02,LDF,Michelle Butler,Robert Gruendl,,Header Service,2
 IMAS,Image Archiver,ARCSRVS,1.02C.07.06.02,LDF,Michelle Butler,Robert Gruendl,,Image Archiver,1
@@ -46,12 +46,12 @@ PRQCSRV,Prompt QC,PRSRV,1.02C.03.08,AP,John Swinbank,Eric Bellm,,Prompt QC,8
 TMGSRV,Telem Gateway,PRSRV,1.02C.07.06.02,LDF,Michelle Butler,Robert Gruendl,,Telem Gateway,6
 DMSW,Software Products,DM,,,Wil O'Mullane,,,Software Products,2
 BBSWP,Backbone SW P.,DMSW,,,Michelle Butler,,,Backbone SW P.,4
-DBBLIFE,DBB Lifetime SW,BBSWP,1.02C.07.08,LDF,Michelle Butler,Michelle Gower,,DBB Lifetime SW,
-DBBMD,DBB Meta SW,BBSWP,1.02C.07.08,LDF,Michelle Butler,Michelle Gower,lsst-dm/dbb_gwclient lsst-dm/dbb_gateway,DBB Meta SW,
-DBBTR,DBB Transport SW,BBSWP,1.02C.07.08,LDF,Michelle Butler,Michelle Gower,,DBB Transport SW,
+DBBLIFE,DBB Lifetime SW,BBSWP,1.02C.07.08,LDF,,Michelle Gower,,DBB Lifetime SW,
+DBBMD,DBB Meta SW,BBSWP,1.02C.07.08,LDF,,Michelle Gower,lsst-dm/dbb_gwclient lsst-dm/dbb_gateway,DBB Meta SW,
+DBBTR,DBB Transport SW,BBSWP,1.02C.07.08,LDF,,Michelle Gower,,DBB Transport SW,
 BPSWP,Batch Prod. SW P.,DMSW,,,Michelle Butler,,,Batch Prod. SW P.,2
-CMPGN,Campaign Mgmt,BPSWP,1.02C.07.08,LDF,Michelle Butler,Michelle Gower,,Campaign Mgmt,
-WLWF,Workload/flow,BPSWP,1.02C.07.08,LDF,Michelle Butler,Michelle Gower,,Workload/flow,
+CMPGN,Campaign Mgmt,BPSWP,1.02C.07.08,LDF,,Michelle Gower,,Campaign Mgmt,
+WLWF,Workload/flow,BPSWP,1.02C.07.08,LDF,,Michelle Gower,,Workload/flow,
 ENVS,Environments,DMSW,,,,,,Environments,8
 SPLCE,SPL Conda Env,ENVS,,,,,scipipe_conda_env,SPL Conda Env,
 LSPSWP,LSP SW Products,DMSW,,,Frossie Economou,Gregory Dubois-Felsmann,,LSP SW Products,5
@@ -61,7 +61,7 @@ NBSW,LSP Notebook SW,LSPSWP,1.02C.10.02.02,SQuaRE,Frossie Economou,Simon Krughof
 PRTLOH,Portal Online Help,LSPSWP,1.02C.05.08,SUIT,Gregory Dubois-Felsmann,Gregory Dubois-Felsmann,suit-onlinehelp,Portal Online Help,4
 PRTLSW,LSP Portal SW,LSPSWP,1.02C.05.07 1.02C.05.08,SUIT,Gregory Dubois-Felsmann,Gregory Dubois-Felsmann,suit,LSP Portal SW,1
 TAPSW,TAP Software,LSPSWP,,,Frossie Economou,Simon Krughoff,,TAP Software,6
-PRSW,Prompt SW Prod.,DMSW,,,Michelle Butler,,,Prompt SW Prod.,1
+PRSW,Prompt SW Prod.,DMSW,,,,,,Prompt SW Prod.,1
 ALRTDSTR,Alert Distrib SW,PRSW,1.02C.03.03,AP,John Swinbank,Eric Bellm,lsst-dm/alert_stream,Alert Distrib SW,
 EFDT,EFD Transform,PRSW,,SQuaRE,Frossie Economou,Simon Krughoff,,EFD Transform,
 HEADER,Header Srv SW,PRSW,1.02C.07.08,LDF,Michelle Butler,Robert Gruendl,lsst-dm/HeaderService,Header Srv SW,
@@ -86,7 +86,7 @@ BUTLER,Data Butler,SPSWP,1.02C.06.02.01,DAX,Tim Jenness,Jim Bosch,daf_butler,Dat
 QSERV,Distrib Database,SPSWP,1.02C.06.02.03,DAX,Fritz Mueller,Colin Slater,qserv,Distrib Database,4
 SCIPIPE,Sci Pipelines Libs,SPSWP,1.02C.04 1.02C.03,DRP,John Swinbank,Jim Bosch,lsst_apps,Sci Pipelines Libs,1
 TXF,Task Framework,SPSWP,1.02C.06.03,DAX,Tim Jenness,Tim Jenness,pipe_supertask,Task Framework,3
-HWCOTS,Resources,DM,,,Wil O'Mullane,,,Resources,4
+HWCOTS,Resources,DM,,,,,,Resources,4
 COTS,COTS SW,HWCOTS,,,Wil O'Mullane,,,COTS SW,4
 CILOGON,CILogon,COTS,,,,Michelle Gower,,CILogon,
 DOCKER,Docker,COTS,,,,Frossie Economou,,Docker,
@@ -104,14 +104,14 @@ PUPPET,Puppet,COTS,,,,,,Puppet,
 RUCIO,Rucio,COTS,,,,Michelle Butler,,Rucio,
 SECURITY,IT Security,COTS,,,,,,IT Security,
 VSPHERE,vSphere,COTS,,,,,,vSphere,
-DMHW,DM Hardware,HWCOTS,,,,Wil O'Mullane,,DM Hardware,1
-HWCOMP,Compute Nodes,DMHW,,,Michelle Butler,,,Compute Nodes,1
+DMHW,DM Hardware,HWCOTS,,,,,,DM Hardware,1
+HWCOMP,Compute Nodes,DMHW,,,,,,Compute Nodes,1
 HWNET,Network Nodes,DMHW,,,Jeff Kantor,,,Network Nodes,3
-HWSTOR,Storage Nodes,DMHW,,,Michelle Butler,,,Storage Nodes,2
+HWSTOR,Storage Nodes,DMHW,,,,,,Storage Nodes,2
 THPL,Third Party Libs,HWCOTS,,,,,,Third Party Libs,6
 BOOST,Boost,THPL,,,,,,Boost,
 INFRA,Infrastructure,DM,,,Wil O'Mullane,,,Infrastructure,3
-ENC,Enclaves,INFRA,,,Michelle Butler,,,Enclaves,3
+ENC,Enclaves,INFRA,,,,,,Enclaves,3
 ENCARCB,Arch Base Encl,ENC,1.02C.08.01,LDF,Cristian Silva,Wil O'Mullane,,Arch Base Encl,2
 ENCARCN,Arch NCSA Encl,ENC,1.02C.07.09,LDF,Michelle Butler,Wil O'Mullane,,Arch NCSA Encl,6
 ENCCOMM,Comm Clust Encl,ENC,1.02C.08.01,LDF,Frossie Economou,Simon Krughoff,,Comm Clust Encl,4
@@ -126,7 +126,7 @@ FACNCSA,NCSA Facility,DF,1.02C.07.09,LDF,Michelle Butler,Wil O'Mullane,,NCSA Fac
 FACBASE,Base Facility,FAC,1.02C.08.01 1.02C.08.02,Net/Base,Cristian Silva,Wil O'Mullane,,Base Facility,1
 NET,Networks,INFRA,,,Jeff Kantor,,,Networks,1
 NETBA,Base/Arch Net,NET,1.02C.08.03,Net/Base,Jeff Kantor,Jeff Kantor,,Base/Arch Net,2
-NETBASE,Base LAN,NET,1.02C.07.08,LDF,Michelle Butler,Michelle Butler,,Base LAN,3
+NETBASE,Base LAN,NET,1.02C.07.08,LDF,Cristian Silva,Wil O'Mullane,,Base LAN,3
 NETNCSA,NCSA LAN,NET,1.02C.07.09,LDF,Michelle Butler,Michelle Butler,,NCSA LAN,4
 NETSB,Sum/Base Net,NET,1.02C.08.03,Net/Base,Jeff Kantor,Jeff Kantor,,Sum/Base Net,1
 REFD,Ref Data,DM,,,,,,Ref Data,5
