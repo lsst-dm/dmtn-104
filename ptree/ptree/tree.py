@@ -402,8 +402,8 @@ def make_tree_portrait(ptree, filename, scope):
 def make_tree_landmix1(ptree, filename, scope, compact):
     """
     First level landscape, and then portrait
-    :param ptree:
-    :param filename:
+    :param ptree:      tree to render in a graphic form
+    :param filename:   filename to save the text source for the tree graph
     :param scope:
     :return: none
     """

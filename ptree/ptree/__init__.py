@@ -45,15 +45,17 @@ def cli(namespace):
               envvar="MD_PASSWORD", help="MagicDraw Password")
 @click.option('--tokenpath', default='~/.sq_github_token', help="Path to the Github generated token")
 @click.option('--csvonly', default=False,
-              help=' Set it to True to kip MagicDraw and generate only Git section from csv files')
-def generate(format, username, password, tokenpath, compact, csvonly):
+              help='If True skip MagicDraw extraction and generate only Git section from csv files')
+@click.option('--partial', default="",
+              help='Given a product KEY, extracts the corresponding subtree and csv file.')
+def generate(format, username, password, tokenpath, compact, csvonly, partial):
     """Generate product tree document
     """
 
     usr_pwd = username + ":" + password
     connection_str = b64encode(usr_pwd.encode("ascii")).decode("ascii")
 
-    generate_document(connection_str, format, tokenpath, compact, csvonly)
+    generate_document(connection_str, format, tokenpath, compact, csvonly, partial)
 
 
 if __name__ == '__main__':

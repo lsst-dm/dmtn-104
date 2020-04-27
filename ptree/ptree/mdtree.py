@@ -327,7 +327,7 @@ def do_csv(products, output_file):
     :param output_file:
     :return:
     """
-    csv = "Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name\n"
+    csv = "Product key,Short name,Parent,WBS,Team,Manager,Product owner,Packages,Name,MD Order\n"
     for p in products:
         pkey = p.id
         snm = p.shortname.rstrip()
@@ -338,7 +338,8 @@ def do_csv(products, output_file):
         owner = p.owner[0]
         pkgs = ' '.join(p.pkgs)
         name = p.shortname.rstrip()
-        csv = csv + f"{pkey}, {snm}, {pid}, {wbs}, {team}, {mng}, {owner}, {pkgs}, {name} \n"
+        pkg_index = p.index
+        csv = csv + f"{pkey},{snm},{pid},{wbs},{team},{mng},{owner},{pkgs},{name},{pkg_index}\n"
     csv_filename = "csv/" + output_file + ".csv"
     file = open(csv_filename, "w")
     print(csv, file=file)
@@ -492,7 +493,8 @@ def do_full_tree(md_trees, subsystem_id, compact):
     full_tree.create_node(node0.id, node0.id, data=node0)
     for subtree in md_trees:
         for node in subtree.values():
-            if not node.parent:
+            node.parent = node.parent.strip()
+            if not node.parent or node.parent == "":
                 # this is the subtree parent node
                 node.parent = node0.id
                 full_tree.create_node(node.id, node.id, data=node, parent=node0.id)
@@ -504,6 +506,8 @@ def do_full_tree(md_trees, subsystem_id, compact):
 
     # build full landscape tree
     make_full_tree(full_tree, "trees/" + subsystem_id + "_full.tex", node0.id, compact)
+
+    return full_tree
 
 
 def get_csvfiles(filename):
@@ -556,7 +560,26 @@ def get_csvfiles(filename):
     return products
 
 
-def generate_document(connection_str, output_format, token_path, compact, csvonly):
+def do_partial(full_tree, partial):
+    """ extract partial information in tree form"""
+
+    partial_tree = full_tree.subtree(partial)
+    partial_data = partial_tree[partial].data
+    pname = partial_data.shortname.strip().replace(" ", "_")
+    filedir = "partials"
+    if not os.path.exists(filedir):
+        os.makedirs(filedir)
+    filename = f"{filedir}/{pname}.tex"
+    print(f"Generating files {partial}: {filename}[.tex/.csv]")
+    make_tree_landmix1(partial_tree, filename, pname, False)
+    products = []
+    nodes = partial_tree.expand_tree()
+    for n in nodes:
+        products.append(partial_tree[n].data)
+    do_csv(products, pname)
+
+
+def generate_document(connection_str, output_format, token_path, compact, csvonly, partial):
     """Given system and level, generates the document content"""
     md_trees = []
 
@@ -578,9 +601,6 @@ def generate_document(connection_str, output_format, token_path, compact, csvonl
         filename = subsystem_info['subsystem']['subtrees'][1]['filename']
         md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename, compact,
                                       doc_handler))
-
-        print("-> Generating FULL Product Tree  ==========================")
-        do_full_tree(md_trees, subsystem_name, True)
     else:
         print("-> Getting csv files  ==========================")
         for subtree in subtrees:
@@ -588,6 +608,13 @@ def generate_document(connection_str, output_format, token_path, compact, csvonl
             if len(prds) > 0:
                 md_trees.append(prds)
         print(f"Loaded {{n}} csv files".format(n=len(md_trees)))
+
+    print("-> Generating FULL Product Tree  ==========================")
+    full_tree = do_full_tree(md_trees, subsystem_name, True)
+
+    if partial != "":
+        print(f"Extracting information for {partial}.")
+        do_partial(full_tree, partial)
 
     print("-> Generating GitHub Product Tree  ==========================")
     do_github_section(md_trees, token_path, output_format)
