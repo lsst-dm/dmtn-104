@@ -1,4 +1,4 @@
-% auto generated from MagicDraw (revision) 332 - DO NOT EDIT!
+% auto generated from MagicDraw (revision) 333 - DO NOT EDIT!
 % using template at <template>.
 % Collecting data for component: ""
 % using docsteady version 
@@ -72,12 +72,12 @@ The product tree graph for DM is available
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 \parbox{3.5cm}{
-Wil O'Mullane
+
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Leanne Guy
+
 \vspace{2mm}%
 } \\
 \end{tabular}
@@ -129,7 +129,7 @@ or COTS, are implementing it. This information is shown in the
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 \parbox{3.5cm}{
-Kian-Tat Lim
+
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
@@ -154,7 +154,10 @@ Kian-Tat Lim
 \\ \cdashline{1-4}
 \end{longtable}
 
-  DM Services that need to run in a prompt manner.
+  DM Services that need to run in a prompt manner.\\
+~\\
+\emph{{{[}last reviewed: K.T. Lim - Apr. 2020{]} }\\
+}
 
 
 {\footnotesize
@@ -925,7 +928,9 @@ LDF \\
 }\\ \hline
 \end{longtable}
 
-  Services involved in the acquisition of the data.
+  Services involved in the acquisition of the data.\\
+~\\
+\emph{{{[}last reviewed: ~K.T. Lim - Apr. 2020{]}}}
 
 
 {\footnotesize
@@ -1130,7 +1135,9 @@ by image timestamp, and loads it into the permanently archived
 \\ \cdashline{1-4}
 \end{longtable}
 
-  DM services that do not need to run in a prompt manner.
+  DM services that do not need to run in a prompt manner.\\
+~\\
+\emph{{{[}last reviewed: ~K.T. Lim - Apr. 2020{]}}}
 
 
 {\footnotesize
@@ -2399,12 +2406,12 @@ the IETF WebDAV standard.}
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
 \textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
 \parbox{3.5cm}{
-Wil O'Mullane
+
 \vspace{2mm}%
 } &
 \begin{tabular}{@{}l@{}}
 \parbox{3.5cm}{
-Wil O'Mullane
+
 \vspace{2mm}%
 } \\
 \end{tabular}
@@ -2439,9 +2446,6 @@ Examples are:
 \textbf{Products included in this section}:
 \begin{itemize}
 \item Network Management - \hyperlink{netmgmt}{NETMGMT}
-\item Computational Nodes Management - \hyperlink{compmnt}{COMPMNT}
-\item Storage Management - \hyperlink{stmng}{STMNG}
-\item Database Management - \hyperlink{dbmng}{DBMNG}
 \item Identity Management - \hyperlink{idnmng}{IDNMNG}
 \item Issue Tracking - \hyperlink{itrck}{ITRCK}
 \item IT Security - \hyperlink{itsec}{ITSEC}
@@ -2478,13 +2482,16 @@ Net/Base \\
 \end{longtable}
 
 This service provides monitor capability on networks, including for
-example failover control, bandwidth allocation management.\\
+example failover control, bandwidth allocation management.
 
 Network engineering and implementation are also included in this
 product, but they are not services intended for the users.
 
-The resulting network however, is a global services required by the
-project.
+This service covers the Summit and the Base facilities and the
+Long-Hault networks.
+
+Other facilities, like for example NCSA will have their own network
+management service.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2502,133 +2509,6 @@ project.
 \multicolumn{3}{p{11.1cm}}{\footnotesize Incorporate Autonomics } \\ \cdashline{1-4}
 {\footnotesize DMS-REQ-0175 } &
 \multicolumn{3}{p{11.1cm}}{\footnotesize Summit to Base Network Ownership and Operation } \\ \cdashline{1-4}
-\end{longtable}
-
-     \newpage
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{compmnt}{Computational Nodes Management} } }
-& \multicolumn{2}{l}{(product in: IT Service
-)}
-\\ \hline
-\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
-\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} &
-\begin{tabular}{@{}l@{}}
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} \\
-\end{tabular} &
-\begin{tabular}{@{}l@{}}
- \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
- \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ Computational Mgmt
- } - Product key: \textbf{ COMPMNT } }
-}\\ \hline
-\end{longtable}
-
-This service is provided at each facility in order to be able to
-instantiate the nodes required for processing.
-
-
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-\multicolumn{2}{c}{
-} &
-\multicolumn{2}{c}{
-} \\ \bottomrule
-\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
-\end{longtable}
-
-     \newpage
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{stmng}{Storage Management} } }
-& \multicolumn{2}{l}{(product in: IT Service
-)}
-\\ \hline
-\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
-\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} &
-\begin{tabular}{@{}l@{}}
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} \\
-\end{tabular} &
-\begin{tabular}{@{}l@{}}
- \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
- \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ Storage Mgmt
- } - Product key: \textbf{ STMNG } }
-}\\ \hline
-\end{longtable}
-
-This services provide filesystem and objects storage.
-
-~
-
-
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-\multicolumn{2}{c}{
-} &
-\multicolumn{2}{c}{
-} \\ \bottomrule
-\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
-\end{longtable}
-
-     \newpage
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{dbmng}{Database Management} } }
-& \multicolumn{2}{l}{(product in: IT Service
-)}
-\\ \hline
-\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
-\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} &
-\begin{tabular}{@{}l@{}}
-\parbox{3.5cm}{
-
-\vspace{2mm}%
-} \\
-\end{tabular} &
-\begin{tabular}{@{}l@{}}
- \\
-\end{tabular} & \begin{tabular}{@{}l@{}}
- \\
-\end{tabular} \\ \hline
-\multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ DataBase Management
- } - Product key: \textbf{ DBMNG } }
-}\\ \hline
-\end{longtable}
-
-This service should be implemented at each facility in order to ensure
-that the provided databases are working as expected.
-
-
-\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
-\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
-\multicolumn{2}{c}{
-} &
-\multicolumn{2}{c}{
-} \\ \bottomrule
-\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 \end{longtable}
 
      \newpage
@@ -2660,8 +2540,10 @@ that the provided databases are working as expected.
 }\\ \hline
 \end{longtable}
 
-This service provide a single sign on facility to be used cross platform
-during all phases of the project.
+This service provides a single sign on facility to be used cross
+platform during all phases of the project. Each facility will have its
+own identity management service. There is no unified approach across the
+project.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -2793,9 +2675,10 @@ access to portals can be secure and controlled.
 \end{longtable}
 
   This section hosts database instances that are relevant for multiple
-products and services. All those databases that are embedded in a
-software product and do not have any interaction outside that, will not
-be included in the product tree.
+products and services.\\
+All those databases that are embedded in a software product and do not
+have any interaction outside that, ~will not be included in the product
+tree.
 
 
 {\footnotesize
@@ -3010,6 +2893,351 @@ Implementation details still under evaluation.
 \begin{tabular}{c}
 \hyperlink{encprn}{Prompt NCSA Enclave} \\ \hline
 \end{tabular}
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+    
+  \newpage
+\paragraph{IT Chile}\label{itch}\mbox{}\\
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular}
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ IT Chile
+ } - Product key: \textbf{ ITCH } }
+}\\ \hline
+\end{longtable}
+
+  The services in this section are implemented in the Chilean facilities.
+
+
+{\footnotesize
+\textbf{Products included in this section}:
+\begin{itemize}
+\item Chilean Computational Nodes Management - \hyperlink{chcnm}{CHCNM}
+\item Chilean Storage Management - \hyperlink{chstmng}{CHSTMNG}
+\end{itemize}
+}
+
+  \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{chcnm}{Chilean Computational Nodes Management} } }
+& \multicolumn{2}{l}{(product in: IT Chile
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+Cristian Silva
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+Wil O'Mullane
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ C. Computational Mgmt.
+ } - Product key: \textbf{ CHCNM } }
+}\\ \hline
+\end{longtable}
+
+This service provides the capability to instantiate computational nodes
+as required for data processing and other operational services in Chile
+facilities, La Serena and Base.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+    \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{chstmng}{Chilean Storage Management} } }
+& \multicolumn{2}{l}{(product in: IT Chile
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+Cristian Silva
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+Wil O'Mullane
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ C. Storage Mgmt.
+ } - Product key: \textbf{ CHSTMNG } }
+}\\ \hline
+\end{longtable}
+
+This services provide filesystem and objects storage required for data
+processing and others operational services in Chile, Base and La Serena
+facilities.
+
+~
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+    
+  \newpage
+\paragraph{IT NCSA}\label{itncsa}\mbox{}\\
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular}
+ &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ IT NCSA
+ } - Product key: \textbf{ ITNCSA } }
+}\\ \hline
+\end{longtable}
+
+  The services listed in this section are implemented at NCSA facility.
+
+
+{\footnotesize
+\textbf{Products included in this section}:
+\begin{itemize}
+\item NCSA Computational Nodes Management - \hyperlink{ncsacnm}{NCSACNM}
+\item Network Management - \hyperlink{ncsanetmng}{NCSANETMNG}
+\item NCSA Storage Management - \hyperlink{ncsastmng}{NCSASTMNG}
+\item NCSA Identity Management - \hyperlink{ncsaidnmng}{NCSAIDNMNG}
+\end{itemize}
+}
+
+  \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{ncsacnm}{NCSA Computational Nodes Management} } }
+& \multicolumn{2}{l}{(product in: IT NCSA
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+Michelle Butler
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+Wil O'Mullane
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Computational Mgmt
+ } - Product key: \textbf{ NCSACNM } }
+}\\ \hline
+\end{longtable}
+
+This service provides the capability to instantiate computational nodes
+as required for data processing and other operational services at NCSA.
+
+~
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+    \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{ncsanetmng}{Network Management} } }
+& \multicolumn{2}{l}{(product in: IT NCSA
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+Michelle Butler
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+Wil O'Mullane
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+1.02C.08.03 \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+Net/Base \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Net Mgmt
+ } - Product key: \textbf{ NCSANETMNG } }
+}\\ \hline
+\end{longtable}
+
+This service provides monitor capability on NCSA networks, including for
+example failover control, bandwidth allocation management.
+
+Network engineering and implementation are also included in this
+product, but they are not services intended for the users.
+
+~
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+    \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{ncsastmng}{NCSA Storage Management} } }
+& \multicolumn{2}{l}{(product in: IT NCSA
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+Michelle Butler
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+Wil O'Mullane
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ Storage Mgmt
+ } - Product key: \textbf{ NCSASTMNG } }
+}\\ \hline
+\end{longtable}
+
+This services provide filesystem and objects storage required for data
+processing and others operational services at NCSA.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+} &
+\multicolumn{2}{c}{
+} \\ \bottomrule
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+\end{longtable}
+
+    \newpage
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{ncsaidnmng}{NCSA Identity Management} } }
+& \multicolumn{2}{l}{(product in: IT NCSA
+)}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+\parbox{3.5cm}{
+
+\vspace{2mm}%
+} \\
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} & \begin{tabular}{@{}l@{}}
+ \\
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ NCSA Identity Mngt
+ } - Product key: \textbf{ NCSAIDNMNG } }
+}\\ \hline
+\end{longtable}
+
+This service provides sign on facility to NCSA services.
+
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+\begin{tabular}{c}
+\hyperlink{cilogon}{CILogon} \\ \hline
+\end{tabular}
+} &
+\multicolumn{2}{c}{
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
 \end{longtable}
@@ -8043,6 +8271,7 @@ management platform for research collaborations.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperlink{idnmng}{Identity Management} \\ \hline
+\hyperlink{ncsaidnmng}{NCSA Identity Management} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
