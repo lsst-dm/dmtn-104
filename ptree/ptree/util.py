@@ -192,7 +192,7 @@ def tree_slice(ptree, outdepth):
         return ptree
     # copy the tree but stopping at given depth
     ntree = Tree()
-    nodes = ptree.expand_tree()
+    nodes = ptree.expand_tree(key=lambda x: x.data.index, sorting=True)
     count = 0  # subtree in input
     for n in nodes:
         # print("Accesing {}".format(n))

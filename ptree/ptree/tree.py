@@ -49,7 +49,7 @@ def tree_slice(ptree, outdepth):
         return ptree
     # copy the tree but stopping at given depth
     ntree = Tree()
-    nodes = ptree.expand_tree()
+    nodes = ptree.expand_tree(key=lambda x: x.data.index, sorting=True)
     count = 0
     for n in nodes:
         depth = ptree.depth(n)
@@ -145,7 +145,7 @@ def tex_tree_portrait(fout, ptree, width, sib, full):
     :return:
     """
     fnodes = []
-    nodes = ptree.expand_tree()  # default mode=DEPTH
+    nodes = ptree.expand_tree(key=lambda x: x.data.index, sorting=True)  # default mode=DEPTH
     count = 0
     prev = Product("n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n")
     # Text height + the gap added to each one
@@ -205,7 +205,7 @@ def tex_tree_portrait0(fout, ptree, width, sib, full):
     :return:
     """
     fnodes = []
-    nodes = ptree.expand_tree()  # default mode=DEPTH
+    nodes = ptree.expand_tree(key=lambda x: x.data.index, sorting=True)  # default mode=DEPTH
     count = 0
     prev = Product("n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n", "n")
     # Text height + the gap added to each one
@@ -262,7 +262,7 @@ def tex_tree_landmix1(fout, ptree, compact):
     :return: none
     """
     stub = tree_slice(ptree, 1)
-    nodes = stub.expand_tree(mode=Tree.WIDTH)  # default mode=DEPTH
+    nodes = stub.expand_tree(mode=Tree.WIDTH, key=lambda x: x.data.index, sorting=True)  # default mode=DEPTH
     row = []
     count = 0
     root = None
@@ -314,7 +314,7 @@ def tex_full_tree(fout, ptree, compact):
     :return: none
     """
     fl_stub = tree_slice(ptree, 1)
-    fl_nodes = fl_stub.expand_tree(mode=Tree.WIDTH)  # default mode=DEPTH
+    fl_nodes = fl_stub.expand_tree(mode=Tree.WIDTH, key=lambda x: x.data.index, sorting=True)  # default mode=DEPTH
     fl_row = []
     fl_count = 0
     root = None
@@ -330,7 +330,7 @@ def tex_full_tree(fout, ptree, compact):
             s = ptree[fl].data
             sl_subtree = ptree.subtree(s.id)
             sl_stub = tree_slice(sl_subtree, 1)
-            sl_nodes = sl_stub.expand_tree()
+            sl_nodes = sl_stub.expand_tree(key=lambda x: x.data.index, sorting=True)
             sl_row = []
             sl_count = 0
             sl_root = None
@@ -411,7 +411,7 @@ def make_tree_landmix1(ptree, filename, scope, compact):
 
     # calculating diagram size
     first_level = tree_slice(ptree, 1)
-    nodes = first_level.expand_tree()
+    nodes = first_level.expand_tree(key=lambda x: x.data.index, sorting=True)
     n_blocks_high = 0
     n_blocks_width = 0
     paperwidth = 0
@@ -462,7 +462,7 @@ def make_full_tree(ptree, filename, scope, compact):
 
     # calculating diagram size
     first_level = tree_slice(ptree, 1)
-    fl_nodes = first_level.expand_tree()
+    fl_nodes = first_level.expand_tree(key=lambda x: x.data.index, sorting=True)
     n_blocks_high = 0
     n_blocks_width = 0
     paperwidth = 0
@@ -473,7 +473,7 @@ def make_full_tree(ptree, filename, scope, compact):
         if fl_c != 1:
             sub_level = ptree.subtree(s.id)
             second_level = tree_slice(sub_level,1)
-            sl_nodes = second_level.expand_tree()
+            sl_nodes = second_level.expand_tree(key=lambda x: x.data.index, sorting=True)
             c = 0
             for n in sl_nodes:
                 c = c + 1
@@ -516,7 +516,7 @@ def make_subtrees(ptree, filename, scope, compact):
     if not os.path.exists(subfolder):
         os.makedirs(subfolder)
     first_level = tree_slice(ptree, 1)
-    nodes = first_level.expand_tree()
+    nodes = first_level.expand_tree(key=lambda x: x.data.index, sorting=True)
     c = 0
     for n in nodes:
         c = c + 1

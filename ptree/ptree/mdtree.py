@@ -388,7 +388,7 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file, co
     mdr = build_md_tree(sysid, levelid, connection_str)
     print("\n  Product tree depth:", productTree.depth())
 
-    nodes = productTree.expand_tree()
+    nodes = productTree.expand_tree(key=lambda x: x.data.index, sorting=True)
     for n in nodes:
         products.append(productTree[n].data)
         tree_dict[productTree[n].data.id] = productTree[n].data
@@ -573,7 +573,7 @@ def do_partial(full_tree, partial):
     print(f"Generating files {partial}: {filename}[.tex/.csv]")
     make_tree_landmix1(partial_tree, filename, pname, False)
     products = []
-    nodes = partial_tree.expand_tree()
+    nodes = partial_tree.expand_tree(key=lambda x: x.data.index, sorting=True)
     for n in nodes:
         products.append(partial_tree[n].data)
     do_csv(products, pname)
