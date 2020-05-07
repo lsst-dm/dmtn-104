@@ -29,63 +29,15 @@ textwidth=30cm,textheight=50mm]{geometry}
 \begin{tikzpicture}[node distance=0mm]
 
 
-\node (ENC) [pbox, 
-] {\textbf{Enclaves
-} };\node [below right] at (ENC.north west) {\footnotesize \color{blue}} ;
-
-\node (ENCARCB) [pbox,below right=6pt and -14pt of ENC] {\textbf{Arch Base Encl
-} };\node [below right] at (ENCARCB.north west) {\footnotesize \color{blue}1.02C.08.01} ;
-
- \draw[pline] (ENC.south) -| ++(0,0) |- (ENCARCB.west); 
-\node (ENCARCN) [pbox,below=6pt of ENCARCB] {\textbf{Arch NCSA Encl
-} };\node [below right] at (ENCARCN.north west) {\footnotesize \color{blue}1.02C.07.09} ;
-
- \draw[pline] (ENC.south) -| ++(0,0) |- (ENCARCN.west); 
-\node (ENCCOMM) [pbox,below=6pt of ENCARCN] {\textbf{Comm Clust Encl
-} };\node [below right] at (ENCCOMM.north west) {\footnotesize \color{blue}1.02C.08.01} ;
-
- \draw[pline] (ENC.south) -| ++(0,0) |- (ENCCOMM.west); 
-\node (ENCDACC) [pbox,below=6pt of ENCCOMM] {\textbf{DAC Chile Encl
-} };\node [below right] at (ENCDACC.north west) {\footnotesize \color{blue}1.02C.08.02} ;
-
- \draw[pline] (ENC.south) -| ++(0,0) |- (ENCDACC.west); 
-\node (ENCDACU) [pbox,below=6pt of ENCDACC] {\textbf{DAC US Encl
-} };\node [below right] at (ENCDACU.north west) {\footnotesize \color{blue}1.02C.07.09} ;
-
- \draw[pline] (ENC.south) -| ++(0,0) |- (ENCDACU.west); 
-\node (ENCOFFL) [pbox,below=6pt of ENCDACU] {\textbf{Offline Prod Encl
-} };\node [below right] at (ENCOFFL.north west) {\footnotesize \color{blue}1.02C.07.09} ;
-
- \draw[pline] (ENC.south) -| ++(0,0) |- (ENCOFFL.west); 
-\node (ENCPRB) [pbox,below=6pt of ENCOFFL] {\textbf{Prmpt Base Encl
-} };\node [below right] at (ENCPRB.north west) {\footnotesize \color{blue}1.02C.08.01} ;
-
- \draw[pline] (ENC.south) -| ++(0,0) |- (ENCPRB.west); 
-\node (ENCPRN) [pbox,below=6pt of ENCPRB] {\textbf{Prmpt NCSA Encl
-} };\node [below right] at (ENCPRN.north west) {\footnotesize \color{blue}1.02C.07.09} ;
-
- \draw[pline] (ENC.south) -| ++(0,0) |- (ENCPRN.west); 
-\node (FAC) [pbox, 
-right=96pt of ENC] {\textbf{Facilities
-} };\node [below right] at (FAC.north west) {\footnotesize \color{blue}} ;
-
-\node (DF) [pbox,below right=6pt and -14pt of FAC] {\textbf{Data Facilities
-} };\node [below right] at (DF.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (FAC.south) -| ++(0,0) |- (DF.west); 
-\node (FACNCSA) [pbox,below right=6pt and -14pt of DF] {\textbf{NCSA Facility
-} };\node [below right] at (FACNCSA.north west) {\footnotesize \color{blue}1.02C.07.09} ;
-
- \draw[pline] (DF.south) -| ++(0,0) |- (FACNCSA.west); 
-\node (FACBASE) [pbox,below=49pt of DF] {\textbf{Base Facility
-} };\node [below right] at (FACBASE.north west) {\footnotesize \color{blue}1.02C.08.01 1.02C.08.02} ;
-
- \draw[pline] (FAC.south) -| ++(0,0) |- (FACBASE.west); 
 \node (NET) [pbox, 
-right=192pt of FAC] {\textbf{Networks
+] {\textbf{Networks
 } };\node [below right] at (NET.north west) {\footnotesize \color{blue}} ;
 
-\node (NETBA) [pbox,below right=6pt and -14pt of NET] {\textbf{Base/Arch Net
+\node (NETSB) [pbox,below right=6pt and -14pt of NET] {\textbf{Sum/Base Net
+} };\node [below right] at (NETSB.north west) {\footnotesize \color{blue}1.02C.08.03} ;
+
+ \draw[pline] (NET.south) -| ++(0,0) |- (NETSB.west); 
+\node (NETBA) [pbox,below=6pt of NETSB] {\textbf{Base/Arch Net
 } };\node [below right] at (NETBA.north west) {\footnotesize \color{blue}1.02C.08.03} ;
 
  \draw[pline] (NET.south) -| ++(0,0) |- (NETBA.west); 
@@ -97,14 +49,62 @@ right=192pt of FAC] {\textbf{Networks
 } };\node [below right] at (NETNCSA.north west) {\footnotesize \color{blue}1.02C.07.09} ;
 
  \draw[pline] (NET.south) -| ++(0,0) |- (NETNCSA.west); 
-\node (NETSB) [pbox,below=6pt of NETNCSA] {\textbf{Sum/Base Net
-} };\node [below right] at (NETSB.north west) {\footnotesize \color{blue}1.02C.08.03} ;
+\node (FAC) [pbox, 
+right=96pt of NET] {\textbf{Facilities
+} };\node [below right] at (FAC.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (NET.south) -| ++(0,0) |- (NETSB.west); 
+\node (FACBASE) [pbox,below right=6pt and -14pt of FAC] {\textbf{Base Facility
+} };\node [below right] at (FACBASE.north west) {\footnotesize \color{blue}1.02C.08.01 1.02C.08.02} ;
+
+ \draw[pline] (FAC.south) -| ++(0,0) |- (FACBASE.west); 
+\node (DF) [pbox,below=6pt of FACBASE] {\textbf{Data Facilities
+} };\node [below right] at (DF.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (FAC.south) -| ++(0,0) |- (DF.west); 
+\node (FACNCSA) [pbox,below right=6pt and -14pt of DF] {\textbf{NCSA Facility
+} };\node [below right] at (FACNCSA.north west) {\footnotesize \color{blue}1.02C.07.09} ;
+
+ \draw[pline] (DF.south) -| ++(0,0) |- (FACNCSA.west); 
+\node (ENC) [pbox, 
+right=192pt of FAC] {\textbf{Enclaves
+} };\node [below right] at (ENC.north west) {\footnotesize \color{blue}} ;
+
+\node (ENCPRB) [pbox,below right=6pt and -14pt of ENC] {\textbf{Prmpt Base Encl
+} };\node [below right] at (ENCPRB.north west) {\footnotesize \color{blue}1.02C.08.01} ;
+
+ \draw[pline] (ENC.south) -| ++(0,0) |- (ENCPRB.west); 
+\node (ENCARCB) [pbox,below=6pt of ENCPRB] {\textbf{Arch Base Encl
+} };\node [below right] at (ENCARCB.north west) {\footnotesize \color{blue}1.02C.08.01} ;
+
+ \draw[pline] (ENC.south) -| ++(0,0) |- (ENCARCB.west); 
+\node (ENCDACC) [pbox,below=6pt of ENCARCB] {\textbf{DAC Chile Encl
+} };\node [below right] at (ENCDACC.north west) {\footnotesize \color{blue}1.02C.08.02} ;
+
+ \draw[pline] (ENC.south) -| ++(0,0) |- (ENCDACC.west); 
+\node (ENCCOMM) [pbox,below=6pt of ENCDACC] {\textbf{Comm Clust Encl
+} };\node [below right] at (ENCCOMM.north west) {\footnotesize \color{blue}1.02C.08.01} ;
+
+ \draw[pline] (ENC.south) -| ++(0,0) |- (ENCCOMM.west); 
+\node (ENCPRN) [pbox,below=6pt of ENCCOMM] {\textbf{Prmpt NCSA Encl
+} };\node [below right] at (ENCPRN.north west) {\footnotesize \color{blue}1.02C.07.09} ;
+
+ \draw[pline] (ENC.south) -| ++(0,0) |- (ENCPRN.west); 
+\node (ENCARCN) [pbox,below=6pt of ENCPRN] {\textbf{Arch NCSA Encl
+} };\node [below right] at (ENCARCN.north west) {\footnotesize \color{blue}1.02C.07.09} ;
+
+ \draw[pline] (ENC.south) -| ++(0,0) |- (ENCARCN.west); 
+\node (ENCOFFL) [pbox,below=6pt of ENCARCN] {\textbf{Offline Prod Encl
+} };\node [below right] at (ENCOFFL.north west) {\footnotesize \color{blue}1.02C.07.09} ;
+
+ \draw[pline] (ENC.south) -| ++(0,0) |- (ENCOFFL.west); 
+\node (ENCDACU) [pbox,below=6pt of ENCOFFL] {\textbf{DAC US Encl
+} };\node [below right] at (ENCDACU.north west) {\footnotesize \color{blue}1.02C.07.09} ;
+
+ \draw[pline] (ENC.south) -| ++(0,0) |- (ENCDACU.west); 
 \node (INFRA) [wbbox, above=43pt of FAC]{\textbf{Infrastructure Products}};
- \draw[pline]   (ENC.north) -- ++(0.0,0.5) -| (INFRA.south) ; 
- \draw[pline]   (FAC.north) -- ++(0.0,0.5) -| (INFRA.south) ; 
  \draw[pline]   (NET.north) -- ++(0.0,0.5) -| (INFRA.south) ; 
+ \draw[pline]   (FAC.north) -- ++(0.0,0.5) -| (INFRA.south) ; 
+ \draw[pline]   (ENC.north) -- ++(0.0,0.5) -| (INFRA.south) ; 
 
 \end{tikzpicture}
 \end{document}

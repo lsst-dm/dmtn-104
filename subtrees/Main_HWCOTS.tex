@@ -29,59 +29,39 @@ textwidth=30cm,textheight=50mm]{geometry}
 \begin{tikzpicture}[node distance=0mm]
 
 
+\node (DMHW) [pbox, 
+] {\textbf{DM Hardware
+} };\node [below right] at (DMHW.north west) {\footnotesize \color{blue}} ;
+
+\node (HWCOMP) [pbox,below right=6pt and -14pt of DMHW] {\textbf{Compute Nodes
+} };\node [below right] at (HWCOMP.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (DMHW.south) -| ++(0,0) |- (HWCOMP.west); 
+\node (HWSTOR) [pbox,below=6pt of HWCOMP] {\textbf{Storage Nodes
+} };\node [below right] at (HWSTOR.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (DMHW.south) -| ++(0,0) |- (HWSTOR.west); 
+\node (HWNET) [pbox,below=6pt of HWSTOR] {\textbf{Network Nodes
+} };\node [below right] at (HWNET.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (DMHW.south) -| ++(0,0) |- (HWNET.west); 
 \node (COTS) [pbox, 
-] {\textbf{COTS SW
+right=96pt of DMHW] {\textbf{COTS SW
 } };\node [below right] at (COTS.north west) {\footnotesize \color{blue}} ;
 
-\node (CILOGON) [pbox,below right=6pt and -14pt of COTS] {\textbf{CILogon
-} };\node [below right] at (CILOGON.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (CILOGON.west); 
-\node (DOCKER) [pbox,below=6pt of CILOGON] {\textbf{Docker
-} };\node [below right] at (DOCKER.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (DOCKER.west); 
-\node (FIREFLY) [pbox,below=6pt of DOCKER] {\textbf{Firefly
+\node (FIREFLY) [pbox,below right=6pt and -14pt of COTS] {\textbf{Firefly
 } };\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (FIREFLY.west); 
-\node (GPFS) [pbox,below=6pt of FIREFLY] {\textbf{Gen. P. File System
-} };\node [below right] at (GPFS.north west) {\footnotesize \color{blue}} ;
+\node (SECURITY) [pbox,below=6pt of FIREFLY] {\textbf{IT Security
+} };\node [below right] at (SECURITY.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (COTS.south) -| ++(0,0) |- (GPFS.west); 
-\node (GRAFANA) [pbox,below=6pt of GPFS] {\textbf{Grafana
-} };\node [below right] at (GRAFANA.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (GRAFANA.west); 
-\node (HTCONDOR) [pbox,below=6pt of GRAFANA] {\textbf{HTCondor
-} };\node [below right] at (HTCONDOR.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (HTCONDOR.west); 
-\node (JH3) [pbox,below=6pt of HTCONDOR] {\textbf{Jupyterhub
-} };\node [below right] at (JH3.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (JH3.west); 
-\node (JL3) [pbox,below=6pt of JH3] {\textbf{Jupyterlab
-} };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (JL3.west); 
-\node (JRA) [pbox,below=6pt of JL3] {\textbf{Jira
+ \draw[pline] (COTS.south) -| ++(0,0) |- (SECURITY.west); 
+\node (JRA) [pbox,below=6pt of SECURITY] {\textbf{Jira
 } };\node [below right] at (JRA.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (JRA.west); 
-\node (K8S) [pbox,below=6pt of JRA] {\textbf{Kubernetes
-} };\node [below right] at (K8S.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (K8S.west); 
-\node (ORACLE) [pbox,below=6pt of K8S] {\textbf{Oracle
-} };\node [below right] at (ORACLE.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (ORACLE.west); 
-\node (PTH) [pbox,below=6pt of ORACLE] {\textbf{Python
-} };\node [below right] at (PTH.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (PTH.west); 
-\node (PUPPET) [pbox,below=6pt of PTH] {\textbf{Puppet
+\node (PUPPET) [pbox,below=6pt of JRA] {\textbf{Puppet
 } };\node [below right] at (PUPPET.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (PUPPET.west); 
@@ -89,41 +69,61 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (RUCIO.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (RUCIO.west); 
-\node (SECURITY) [pbox,below=6pt of RUCIO] {\textbf{IT Security
-} };\node [below right] at (SECURITY.north west) {\footnotesize \color{blue}} ;
+\node (JH3) [pbox,below=6pt of RUCIO] {\textbf{Jupyterhub
+} };\node [below right] at (JH3.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (COTS.south) -| ++(0,0) |- (SECURITY.west); 
-\node (VSPHERE) [pbox,below=6pt of SECURITY] {\textbf{vSphere
+ \draw[pline] (COTS.south) -| ++(0,0) |- (JH3.west); 
+\node (DOCKER) [pbox,below=6pt of JH3] {\textbf{Docker
+} };\node [below right] at (DOCKER.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (DOCKER.west); 
+\node (CILOGON) [pbox,below=6pt of DOCKER] {\textbf{CILogon
+} };\node [below right] at (CILOGON.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (CILOGON.west); 
+\node (HTCONDOR) [pbox,below=6pt of CILOGON] {\textbf{HTCondor
+} };\node [below right] at (HTCONDOR.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (HTCONDOR.west); 
+\node (GPFS) [pbox,below=6pt of HTCONDOR] {\textbf{Gen. P. File System
+} };\node [below right] at (GPFS.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (GPFS.west); 
+\node (VSPHERE) [pbox,below=6pt of GPFS] {\textbf{vSphere
 } };\node [below right] at (VSPHERE.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (VSPHERE.west); 
-\node (DMHW) [pbox, 
-right=96pt of COTS] {\textbf{DM Hardware
-} };\node [below right] at (DMHW.north west) {\footnotesize \color{blue}} ;
+\node (JL3) [pbox,below=6pt of VSPHERE] {\textbf{Jupyterlab
+} };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
 
-\node (HWCOMP) [pbox,below right=6pt and -14pt of DMHW] {\textbf{Compute Nodes
-} };\node [below right] at (HWCOMP.north west) {\footnotesize \color{blue}} ;
+ \draw[pline] (COTS.south) -| ++(0,0) |- (JL3.west); 
+\node (ORACLE) [pbox,below=6pt of JL3] {\textbf{Oracle
+} };\node [below right] at (ORACLE.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (DMHW.south) -| ++(0,0) |- (HWCOMP.west); 
-\node (HWNET) [pbox,below=6pt of HWCOMP] {\textbf{Network Nodes
-} };\node [below right] at (HWNET.north west) {\footnotesize \color{blue}} ;
+ \draw[pline] (COTS.south) -| ++(0,0) |- (ORACLE.west); 
+\node (K8S) [pbox,below=6pt of ORACLE] {\textbf{Kubernetes
+} };\node [below right] at (K8S.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (DMHW.south) -| ++(0,0) |- (HWNET.west); 
-\node (HWSTOR) [pbox,below=6pt of HWNET] {\textbf{Storage Nodes
-} };\node [below right] at (HWSTOR.north west) {\footnotesize \color{blue}} ;
+ \draw[pline] (COTS.south) -| ++(0,0) |- (K8S.west); 
+\node (GRAFANA) [pbox,below=6pt of K8S] {\textbf{Grafana
+} };\node [below right] at (GRAFANA.north west) {\footnotesize \color{blue}} ;
 
- \draw[pline] (DMHW.south) -| ++(0,0) |- (HWSTOR.west); 
+ \draw[pline] (COTS.south) -| ++(0,0) |- (GRAFANA.west); 
+\node (PTH) [pbox,below=6pt of GRAFANA] {\textbf{Python
+} };\node [below right] at (PTH.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (PTH.west); 
 \node (THPL) [pbox, 
-right=96pt of DMHW] {\textbf{Third Party Libs
+right=96pt of COTS] {\textbf{Third Party Libs
 } };\node [below right] at (THPL.north west) {\footnotesize \color{blue}} ;
 
 \node (BOOST) [pbox,below right=6pt and -14pt of THPL] {\textbf{Boost
 } };\node [below right] at (BOOST.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (THPL.south) -| ++(0,0) |- (BOOST.west); 
-\node (HWCOTS) [wbbox, above=43pt of DMHW]{\textbf{Hardware and COTS Products}};
- \draw[pline]   (COTS.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
+\node (HWCOTS) [wbbox, above=43pt of COTS]{\textbf{Hardware and COTS Products}};
  \draw[pline]   (DMHW.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
+ \draw[pline]   (COTS.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
  \draw[pline]   (THPL.north) -- ++(0.0,0.5) -| (HWCOTS.south) ; 
 
 \end{tikzpicture}

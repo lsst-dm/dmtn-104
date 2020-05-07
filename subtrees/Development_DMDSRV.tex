@@ -37,38 +37,38 @@ textwidth=30cm,textheight=50mm]{geometry}
 right=43pt of BCI] {\textbf{Cont. Application Mng
 } };\node [below right] at (CAM.north west) {\footnotesize \color{blue}} ;
 
-\node (DDCPUB) [pbox, 
-right=43pt of CAM] {\textbf{DM Doc Publication
-} };\node [below right] at (DDCPUB.north west) {\footnotesize \color{blue}} ;
-
-\node (DDVSRV) [pbox, 
-right=43pt of DDCPUB] {\textbf{DM Dev Services
-} };\node [below right] at (DDVSRV.north west) {\footnotesize \color{blue}} ;
-
-\node (DEPLOY) [pbox, 
-right=43pt of DDVSRV] {\textbf{SW Deployment
-} };\node [below right] at (DEPLOY.north west) {\footnotesize \color{blue}} ;
-
 \node (DMDCOM) [pbox, 
-right=43pt of DEPLOY] {\textbf{Devlop. Comm
+right=43pt of CAM] {\textbf{Devlop. Comm
 } };\node [below right] at (DMDCOM.north west) {\footnotesize \color{blue}} ;
 
+\node (DDVSRV) [pbox, 
+right=43pt of DMDCOM] {\textbf{DM Dev Services
+} };\node [below right] at (DDVSRV.north west) {\footnotesize \color{blue}} ;
+
+\node (DDCPUB) [pbox, 
+right=43pt of DDVSRV] {\textbf{DM Doc Publication
+} };\node [below right] at (DDCPUB.north west) {\footnotesize \color{blue}} ;
+
 \node (PKGDST) [pbox, 
-right=43pt of DMDCOM] {\textbf{Packagin Distrib
+right=43pt of DDCPUB] {\textbf{Packagin Distrib
 } };\node [below right] at (PKGDST.north west) {\footnotesize \color{blue}} ;
 
+\node (DEPLOY) [pbox, 
+right=43pt of PKGDST] {\textbf{SW Deployment
+} };\node [below right] at (DEPLOY.north west) {\footnotesize \color{blue}} ;
+
 \node (SWVER) [pbox, 
-right=43pt of PKGDST] {\textbf{SW Version Control
+right=43pt of DEPLOY] {\textbf{SW Version Control
 } };\node [below right] at (SWVER.north west) {\footnotesize \color{blue}} ;
 
 \node (DMDSRV) [wbbox, above=43pt of DDVSRV]{\textbf{Development Service Products}};
  \draw[pline]   (BCI.north) -- ++(0.0,0.5) -| (DMDSRV.south) ; 
  \draw[pline]   (CAM.north) -- ++(0.0,0.5) -| (DMDSRV.south) ; 
- \draw[pline]   (DDCPUB.north) -- ++(0.0,0.5) -| (DMDSRV.south) ; 
- \draw[pline]   (DDVSRV.north) -- ++(0.0,0.5) -| (DMDSRV.south) ; 
- \draw[pline]   (DEPLOY.north) -- ++(0.0,0.5) -| (DMDSRV.south) ; 
  \draw[pline]   (DMDCOM.north) -- ++(0.0,0.5) -| (DMDSRV.south) ; 
+ \draw[pline]   (DDVSRV.north) -- ++(0.0,0.5) -| (DMDSRV.south) ; 
+ \draw[pline]   (DDCPUB.north) -- ++(0.0,0.5) -| (DMDSRV.south) ; 
  \draw[pline]   (PKGDST.north) -- ++(0.0,0.5) -| (DMDSRV.south) ; 
+ \draw[pline]   (DEPLOY.north) -- ++(0.0,0.5) -| (DMDSRV.south) ; 
  \draw[pline]   (SWVER.north) -- ++(0.0,0.5) -| (DMDSRV.south) ; 
 
 \end{tikzpicture}

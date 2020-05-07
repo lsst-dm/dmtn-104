@@ -54,14 +54,14 @@ right=96pt of GAIAD] {\textbf{Other Catalogs
 \node (ANDpkg) [tbox,below=3mm of AND.north] {{\footnotesize \color{black} \begin{verbatim} astrometry_net_data \end{verbatim} }  };
 
  \draw[pline] (ODATA.south) -| ++(0,0) |- (AND.west); 
-\node (PS1PV3) [pbox,below=6pt of AND] {\textbf{ps1\_pv3\_3pi\_20170110
-} };\node [below right] at (PS1PV3.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (ODATA.south) -| ++(0,0) |- (PS1PV3.west); 
-\node (SDSSDR9v5b) [pbox,below=6pt of PS1PV3] {\textbf{sdss-dr9-fink-v5b
+\node (SDSSDR9v5b) [pbox,below=6pt of AND] {\textbf{sdss-dr9-fink-v5b
 } };\node [below right] at (SDSSDR9v5b.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (ODATA.south) -| ++(0,0) |- (SDSSDR9v5b.west); 
+\node (PS1PV3) [pbox,below=6pt of SDSSDR9v5b] {\textbf{ps1\_pv3\_3pi\_20170110
+} };\node [below right] at (PS1PV3.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (ODATA.south) -| ++(0,0) |- (PS1PV3.west); 
 \node (REFD) [wbbox, above=43pt of GAIAD]{\textbf{Reference Data Products}};
  \draw[pline]   (GAIAD.north) -- ++(0.0,0.5) -| (REFD.south) ; 
  \draw[pline]   (ODATA.north) -- ++(0.0,0.5) -| (REFD.south) ; 

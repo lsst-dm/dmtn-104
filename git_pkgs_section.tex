@@ -2,6 +2,49 @@
 % do not edit, generated automatically from Github
 
 \newpage
+\subsection{nublado}\label{lsst-sqre/nublado}
+
+JupyterLab + JupyterHub + k8s deployment used by LSST for its Science
+Platform
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst-sqre/nublado}{https://github.com/lsst-sqre/nublado} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{nblsrv}{LSP Nublado} \\
+\hline
+\end{longtable} }
+
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+# LSST Science Platform Notebook Aspect
+
+## Do Not Use This
+
+If what you want to do is simply deploy a Jupyter setup under Kubernetes
+you're much better off
+using
+[Zero to JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/),
+which is an excellent general tutorial for setting up
+JupyterHub in a Kubernetes environment.
+
+This cluster is much more specifically tailored to the needs
+of [LSST](https://lsst.org).  If you want an example of how to set up
+persistent storage for your users, how to ship logs to a remote ELK
+stack, a worked example of how to subclass a spawner, or how to use an
+image-spawner options menu, you may find it useful.
+
+## Overview
+
+The LSST Science Platform Notebook Aspect is a JupyterHub + JupyterLab
+\end{lstlisting}
+}
+
+
+\newpage
 \subsection{lsst-tap-service}\label{lsst-sqre/lsst-tap-service}
 
 IVOA TAP service for LSST
@@ -91,17 +134,106 @@ davt requires ljsyscall. It also used the ffi library from LuaJIT.
 
 
 \newpage
-\subsection{nublado}\label{lsst-sqre/nublado}
+\subsection{HeaderService}\label{lsst-dm/headerservice}
 
-JupyterLab + JupyterHub + k8s deployment used by LSST for its Science
-Platform
+LSST Meta-data aggregator for FITS header service
 
 
 {\footnotesize
 \begin{longtable}{rl}
 \hline
-Open it in GitHUb: & \href{https://github.com/lsst-sqre/nublado}{https://github.com/lsst-sqre/nublado} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{nblsrv}{LSP Nublado} \\
+Open it in GitHUb: & \href{https://github.com/lsst-dm/HeaderService}{https://github.com/lsst-dm/HeaderService} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{header}{Header Service SW} \\
+\hline
+\end{longtable} }
+
+\begin{longtable}{rl}
+\multicolumn{2}{c}{EUPS dependencies} \\ \hline
+\textbf{name} & \textbf{description} \\ \hline
+{\footnotesize fitsio } & \\ \hline
+\end{longtable}
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+# HeaderService
+
+Development for LSST Meta-data FITS header service
+
+Description
+-----------
+
+This is the development for the LSST Meta-data FITS header client. It
+uses a set of FITS header library templates and DDS/SAL Python-based
+communication layer to populate meta-data and command the header
+client to write header files.
+
+Requirements
+------------
++ numpy
++ astropy
++ fitsio (https://github.com/esheldon/fitsio)
++ salobj
++ OpenSplice compiled binaries for centOS7
++ A CentOS7 VM or docker container
+\end{lstlisting}
+}
+
+
+\newpage
+\subsection{ctrl\_oods}\label{lsst-dm/ctrl_oods}
+
+Observatory Operations Data Service
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst-dm/ctrl_oods}{https://github.com/lsst-dm/ctrl\_oods} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{oods}{Observatory Operations Data Service SW} \\
+\hline
+\end{longtable} }
+
+\begin{longtable}{rl}
+\multicolumn{2}{c}{EUPS dependencies} \\ \hline
+\textbf{name} & \textbf{description} \\ \hline
+{\footnotesize base } & \\ \hline
+{\footnotesize utils } & \\ \hline
+{\footnotesize sconsUtils } & \\ \hline
+{\footnotesize obs\_lsst } & \\ \hline
+\end{longtable}
+
+README.rst (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+#########
+ctrl_oods
+#########
+
+``ctrl_oods`` is an `LDF Prompt Enclave Software`_ package.
+
+.. Add a brief (few sentence) description of what this package provides.
+
+The Observatory Operations Data Service watches for files in one or more directories, and then ingests them into an LSST Butler repository.   
+Files are expired from the repository at specified intervals.
+\end{lstlisting}
+}
+
+
+\newpage
+\subsection{ctrl\_iip}\label{ctrl_iip}
+
+Image ingest and processing
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst/ctrl_iip}{https://github.com/lsst/ctrl\_iip} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{iip}{Image Ingest and Processing} \\
+\cdashline{1-2}
+{GitHub Teams:} &
+ Data Management \\
 \hline
 \end{longtable} }
 
@@ -109,26 +241,109 @@ Top Level Component: & \hyperlink{nblsrv}{LSP Nublado} \\
 README.md (First 20 lines only)
 {\scriptsize
 \begin{lstlisting}[breaklines]
-# LSST Science Platform Notebook Aspect
+# ctrl_iip
+Image ingest and processing
 
-## Do Not Use This
+environment variables:
 
-If what you want to do is simply deploy a Jupyter setup under Kubernetes
-you're much better off
-using
-[Zero to JupyterHub](https://zero-to-jupyterhub.readthedocs.io/en/latest/),
-which is an excellent general tutorial for setting up
-JupyterHub in a Kubernetes environment.
+Set CTRL_IIP_DIR to the root of this repository. (this will be set automatically
+when this is integrated with the DM system)
 
-This cluster is much more specifically tailored to the needs
-of [LSST](https://lsst.org).  If you want an example of how to set up
-persistent storage for your users, how to ship logs to a remote ELK
-stack, a worked example of how to subclass a spawner, or how to use an
-image-spawner options menu, you may find it useful.
+Set PYTHONPATH to include $CTRL_IPP_DIR/python
 
-## Overview
 
-The LSST Science Platform Notebook Aspect is a JupyterHub + JupyterLab
+
+Note about configuration files:
+
+Configuration files are loaded from $CTRL_IIP_DIR/etc/config by default
+
+If the environment variable IIP_CONFIG_DIR is set, it will look in 
+this directory for configuration files.
+\end{lstlisting}
+}
+
+
+\newpage
+\subsection{alert\_stream}\label{lsst-dm/alert_stream}
+
+Mock alert stream distribution system using Kafka producers and
+consumers.
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst-dm/alert_stream}{https://github.com/lsst-dm/alert\_stream} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{alrtdstr}{Alert Distribution SW} \\
+\hline
+\end{longtable} }
+
+
+README.rst (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+############
+alert_stream
+############
+
+This package provides a demonstration of the LSST Alert Distribution Service.
+The Alert Distribution Service provides a mechanism for rapidly disseminating and filtering notifications of transient and variable sources observed by LSST.
+The service is described in detail in `DMTN-093`_.
+This repository provides instructions, code and sample data for creating, filtering, and consuming alert streams following the conventions we expect to adopt for LSST.
+It should be used in conjunction with the `lsst-dm/sample-avro-alert`_ repository, which provides details of, and code for working with, LSST alert packets.
+
+.. _DMTN-093: https://dmtn-093.lsst.io/
+.. _lsst-dm/sample-avro-alert: https://github.com/lsst-dm/sample-avro-alert
+
+Prerequisites
+=============
+
+- Cloning this repository requires `Git LFS`_ (Large File Storage) support.
+  Refer to the `DM Developer Guide`_ for more information.
+- `Docker`_ and `Docker Compose`_ are required to create and manage the services within this repository, including running all of the examples below.
+
+\end{lstlisting}
+}
+
+
+\newpage
+\subsection{squash}\label{lsst-sqre/squash}
+
+SQuaSH web interface
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst-sqre/squash}{https://github.com/lsst-sqre/squash} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{qcsw}{Quality Control SW} \\
+\hline
+\end{longtable} }
+
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+# squash
+
+`squash` is the web frontend to embed the bokeh apps and navigate through them. You can learn more about SQuaSH at [SQR-009](https://sqr-009.lsst.io).
+
+[![Build Status](https://travis-ci.org/lsst-sqre/squash.svg?branch=master)](https://travis-ci.org/lsst-sqre/squash)
+
+## Requirements
+
+The `squash` web frontend requires the [squash-restful-api](https://github.com/lsst-sqre/squash-restful-api) and [squash-bokeh](https://github.com/lsst-sqre/squash-bokeh) microservices, and the TLS certificats that are installed by the
+[`squash-deployment`](https://github.com/lsst-sqre/squash-deployment).
+
+## Kubernetes deployment
+
+You can provision a Kubernetes cluster in GKE, clone this repo and deploy the `squash` microservice using:
+
+```
+cd squash
+TAG=latest make service deployment
+```
+
 \end{lstlisting}
 }
 
@@ -190,20 +405,18 @@ Prototype code that ingests into the Data Backbone raw files delivered by the db
 
 
 \newpage
-\subsection{scipipe\_conda\_env}\label{scipipe_conda_env}
+\subsection{suit}\label{suit}
 
-Conda environment for LSST Science Pipelines
 
 
 {\footnotesize
 \begin{longtable}{rl}
 \hline
-Open it in GitHUb: & \href{https://github.com/lsst/scipipe_conda_env}{https://github.com/lsst/scipipe\_conda\_env} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{splce}{SciencePipelines Conda Env.} \\
+Open it in GitHUb: & \href{https://github.com/lsst/suit}{https://github.com/lsst/suit} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{prtlsw}{LSP Portal Software} \\
 \cdashline{1-2}
 {GitHub Teams:} &
  Data Management \\
- & DM Auxilliaries \\
 \hline
 \end{longtable} }
 
@@ -211,26 +424,160 @@ Top Level Component: & \hyperlink{splce}{SciencePipelines Conda Env.} \\
 README.md (First 20 lines only)
 {\scriptsize
 \begin{lstlisting}[breaklines]
-# Conda Environment for Science Pipelines
+# SUIT 
 
-This repository contains the definition of the Conda environment used by the LSST Science Pipelines.
 
-## Contents
+## Description
+The SUIT (Science User Interface and Tools) repository contains applications built on the Firefly Toolkit.
+It is meant to be used with [Firefly](https://github.com/Caltech-IPAC/firefly).
 
-Files in the `etc` directory are named following the pattern:
+The principal current application is "suit", otherwise known as the Portal Aspect application, which
+contains both the Portal search screens and visualization capabilities, and the "slate" endpoint that
+is used for Python-based image and table visualizations.
 
-```
-conda3_<filetype>-<platform>-64.yml
-```
 
-Where `<filetype>` is one of:
+## Build Instuctions
+ 
+ - Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)   
+   
+ - Install [Gradle 4.x](https://gradle.org/install/)
+ 
+ - Install [Node.js 8.x](https://nodejs.org/en/download/)
+ 
+\end{lstlisting}
+}
 
-- `bleed`, indicating the names of packages on which the Science Pipelines directly depend, or
-- `packages`, indicating a specific versioned set of those packages, and packages upon which they depend, which can be directly instantiated as a Conda environment.
 
-And `<platform>` is one of:
+\newpage
+\subsection{jupyterhubutils}\label{lsst-sqre/jupyterhubutils}
 
-- `linux`, indicating that this file has been tested on CentOS (our reference platform), and, by extension, is appropriate for use on a Linux systems;
+Utilities for LSST LSP notebook environment (Hub/spawner side)
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst-sqre/jupyterhubutils}{https://github.com/lsst-sqre/jupyterhubutils} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{nbsw}{LSP Notebook Software} \\
+\hline
+\end{longtable} }
+
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+# Utilities for LSST LSP notebook environment (Hub/spawner side)
+\end{lstlisting}
+}
+
+
+\newpage
+\subsection{jupyterlabutils}\label{lsst-sqre/jupyterlabutils}
+
+Utilities for JupyterLab containers in LSST Science Platform environment
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst-sqre/jupyterlabutils}{https://github.com/lsst-sqre/jupyterlabutils} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{nbsw}{LSP Notebook Software} \\
+\hline
+\end{longtable} }
+
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+# Utilities for LSST LSP Science Platform notebook aspect (user pod side)
+\end{lstlisting}
+}
+
+
+\newpage
+\subsection{dax\_webserv}\label{dax_webserv}
+
+Web Interface for LSST Data Access Services
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst/dax_webserv}{https://github.com/lsst/dax\_webserv} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{lspweb}{LSP Web API SW (obsolete product)} \\
+\cdashline{1-2}
+{GitHub Teams:} &
+ Overlords \\
+ & Data Management \\
+ & Database \\
+\hline
+\end{longtable} }
+
+\begin{longtable}{rl}
+\multicolumn{2}{c}{EUPS dependencies} \\ \hline
+\textbf{name} & \textbf{description} \\ \hline
+{\footnotesize db } & \\ \hline
+{\footnotesize flask } & \\ \hline
+{\footnotesize dax\_dbserv } & \\ \hline
+{\footnotesize dax\_imgserv } & \\ \hline
+{\footnotesize dax\_metaserv } & \\ \hline
+{\footnotesize python\_mysqlclient } & \\ \hline
+\end{longtable}
+
+README.txt (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+# Useful link:
+http://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
+http://pycoder.net/bospy/presentation.html
+
+# To install flask:
+sudo aptitude install python-flask
+
+
+# An example Tap query to dbserv (if running locally)
+  curl -d 'query=SELECT+ra,decl,filterName+FROM+DC_W13_Stripe82.Science_Ccd_Exposure+WHERE+scienceCcdExposureId=125230127' http://localhost:5000/db/v0/sync
+\end{lstlisting}
+}
+
+
+\newpage
+\subsection{suit-onlinehelp}\label{suit-onlinehelp}
+
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst/suit-onlinehelp}{https://github.com/lsst/suit-onlinehelp} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{prtloh}{LSP Portal Online Help} \\
+\hline
+\end{longtable} }
+
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+# suit-onlinehelp
+
+Prerequisites
+-------------
+    - gradle v2.2+
+    - clone onlinehelp repository and its dependent repository
+        - git clone https://github.com/lsst/suit-onlinehelp
+        - git clone https://github.com/Caltech-IPAC/firefly
+
+
+Build and Install Individually
+------------------------------
+- cd suit-onlinehelp
+- gradle :<project_name>:build      // build only
+    - creates an archive of html and supporting files to be install to a webserver
+    - the file is placed in ./build/libs/
+
+- gradle :<project_name>:install    // build and install.
+    - crates and install online help files
+    - HTML_DOC_ROOT environment variable is required to locate the path to the webserver's document root.
 \end{lstlisting}
 }
 
@@ -293,399 +640,6 @@ sudo aptitude install python-flask
   http://localhost:5000/api/image/soda/sync?ID=DC_W13_Stripe82.calexp.r&POS=RANGE+37.616820222+37.67235778+0.07684722222+0.132402777
   http://localhost:5000/api/image/soda/sync?ID=DC_W13_Stripe82.calexp.r&POS=POLYGON+37.6580803+0.0897081+37.6580803+0.1217858+37.6186104+0.1006648
   http://localhost:5000/api/image/soda/sync?ID=DC_W13_Stripe82.calexp.r&POS=BRECT+37.644598+0.104625+100+100+pixel
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{dax\_webserv}\label{dax_webserv}
-
-Web Interface for LSST Data Access Services
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst/dax_webserv}{https://github.com/lsst/dax\_webserv} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{lspweb}{LSP Web API SW (obsolete product)} \\
-\cdashline{1-2}
-{GitHub Teams:} &
- Overlords \\
- & Data Management \\
- & Database \\
-\hline
-\end{longtable} }
-
-\begin{longtable}{rl}
-\multicolumn{2}{c}{EUPS dependencies} \\ \hline
-\textbf{name} & \textbf{description} \\ \hline
-{\footnotesize db } & \\ \hline
-{\footnotesize flask } & \\ \hline
-{\footnotesize dax\_dbserv } & \\ \hline
-{\footnotesize dax\_imgserv } & \\ \hline
-{\footnotesize dax\_metaserv } & \\ \hline
-{\footnotesize python\_mysqlclient } & \\ \hline
-\end{longtable}
-
-README.txt (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-# Useful link:
-http://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
-http://pycoder.net/bospy/presentation.html
-
-# To install flask:
-sudo aptitude install python-flask
-
-
-# An example Tap query to dbserv (if running locally)
-  curl -d 'query=SELECT+ra,decl,filterName+FROM+DC_W13_Stripe82.Science_Ccd_Exposure+WHERE+scienceCcdExposureId=125230127' http://localhost:5000/db/v0/sync
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{jupyterhubutils}\label{lsst-sqre/jupyterhubutils}
-
-Utilities for LSST LSP notebook environment (Hub/spawner side)
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst-sqre/jupyterhubutils}{https://github.com/lsst-sqre/jupyterhubutils} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{nbsw}{LSP Notebook Software} \\
-\hline
-\end{longtable} }
-
-
-README.md (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-# Utilities for LSST LSP notebook environment (Hub/spawner side)
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{jupyterlabutils}\label{lsst-sqre/jupyterlabutils}
-
-Utilities for JupyterLab containers in LSST Science Platform environment
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst-sqre/jupyterlabutils}{https://github.com/lsst-sqre/jupyterlabutils} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{nbsw}{LSP Notebook Software} \\
-\hline
-\end{longtable} }
-
-
-README.md (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-# Utilities for LSST LSP Science Platform notebook aspect (user pod side)
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{suit-onlinehelp}\label{suit-onlinehelp}
-
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst/suit-onlinehelp}{https://github.com/lsst/suit-onlinehelp} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{prtloh}{LSP Portal Online Help} \\
-\hline
-\end{longtable} }
-
-
-README.md (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-# suit-onlinehelp
-
-Prerequisites
--------------
-    - gradle v2.2+
-    - clone onlinehelp repository and its dependent repository
-        - git clone https://github.com/lsst/suit-onlinehelp
-        - git clone https://github.com/Caltech-IPAC/firefly
-
-
-Build and Install Individually
-------------------------------
-- cd suit-onlinehelp
-- gradle :<project_name>:build      // build only
-    - creates an archive of html and supporting files to be install to a webserver
-    - the file is placed in ./build/libs/
-
-- gradle :<project_name>:install    // build and install.
-    - crates and install online help files
-    - HTML_DOC_ROOT environment variable is required to locate the path to the webserver's document root.
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{suit}\label{suit}
-
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst/suit}{https://github.com/lsst/suit} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{prtlsw}{LSP Portal Software} \\
-\cdashline{1-2}
-{GitHub Teams:} &
- Data Management \\
-\hline
-\end{longtable} }
-
-
-README.md (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-# SUIT 
-
-
-## Description
-The SUIT (Science User Interface and Tools) repository contains applications built on the Firefly Toolkit.
-It is meant to be used with [Firefly](https://github.com/Caltech-IPAC/firefly).
-
-The principal current application is "suit", otherwise known as the Portal Aspect application, which
-contains both the Portal search screens and visualization capabilities, and the "slate" endpoint that
-is used for Python-based image and table visualizations.
-
-
-## Build Instuctions
- 
- - Install [JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)   
-   
- - Install [Gradle 4.x](https://gradle.org/install/)
- 
- - Install [Node.js 8.x](https://nodejs.org/en/download/)
- 
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{alert\_stream}\label{lsst-dm/alert_stream}
-
-Mock alert stream distribution system using Kafka producers and
-consumers.
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst-dm/alert_stream}{https://github.com/lsst-dm/alert\_stream} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{alrtdstr}{Alert Distribution SW} \\
-\hline
-\end{longtable} }
-
-
-README.rst (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-############
-alert_stream
-############
-
-This package provides a demonstration of the LSST Alert Distribution Service.
-The Alert Distribution Service provides a mechanism for rapidly disseminating and filtering notifications of transient and variable sources observed by LSST.
-The service is described in detail in `DMTN-093`_.
-This repository provides instructions, code and sample data for creating, filtering, and consuming alert streams following the conventions we expect to adopt for LSST.
-It should be used in conjunction with the `lsst-dm/sample-avro-alert`_ repository, which provides details of, and code for working with, LSST alert packets.
-
-.. _DMTN-093: https://dmtn-093.lsst.io/
-.. _lsst-dm/sample-avro-alert: https://github.com/lsst-dm/sample-avro-alert
-
-Prerequisites
-=============
-
-- Cloning this repository requires `Git LFS`_ (Large File Storage) support.
-  Refer to the `DM Developer Guide`_ for more information.
-- `Docker`_ and `Docker Compose`_ are required to create and manage the services within this repository, including running all of the examples below.
-
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{HeaderService}\label{lsst-dm/headerservice}
-
-LSST Meta-data aggregator for FITS header service
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst-dm/HeaderService}{https://github.com/lsst-dm/HeaderService} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{header}{Header Service SW} \\
-\hline
-\end{longtable} }
-
-\begin{longtable}{rl}
-\multicolumn{2}{c}{EUPS dependencies} \\ \hline
-\textbf{name} & \textbf{description} \\ \hline
-{\footnotesize fitsio } & \\ \hline
-\end{longtable}
-
-README.md (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-# HeaderService
-
-Development for LSST Meta-data FITS header service
-
-Description
------------
-
-This is the development for the LSST Meta-data FITS header client. It
-uses a set of FITS header library templates and DDS/SAL Python-based
-communication layer to populate meta-data and command the header
-client to write header files.
-
-Requirements
-------------
-+ numpy
-+ astropy
-+ fitsio (https://github.com/esheldon/fitsio)
-+ salobj
-+ OpenSplice compiled binaries for centOS7
-+ A CentOS7 VM or docker container
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{ctrl\_iip}\label{ctrl_iip}
-
-Image ingest and processing
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst/ctrl_iip}{https://github.com/lsst/ctrl\_iip} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{iip}{Image Ingest and Processing} \\
-\cdashline{1-2}
-{GitHub Teams:} &
- Data Management \\
-\hline
-\end{longtable} }
-
-
-README.md (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-# ctrl_iip
-Image ingest and processing
-
-environment variables:
-
-Set CTRL_IIP_DIR to the root of this repository. (this will be set automatically
-when this is integrated with the DM system)
-
-Set PYTHONPATH to include $CTRL_IPP_DIR/python
-
-
-
-Note about configuration files:
-
-Configuration files are loaded from $CTRL_IIP_DIR/etc/config by default
-
-If the environment variable IIP_CONFIG_DIR is set, it will look in 
-this directory for configuration files.
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{ctrl\_oods}\label{lsst-dm/ctrl_oods}
-
-Observatory Operations Data Service
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst-dm/ctrl_oods}{https://github.com/lsst-dm/ctrl\_oods} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{oods}{Observatory Operations Data Service SW} \\
-\hline
-\end{longtable} }
-
-\begin{longtable}{rl}
-\multicolumn{2}{c}{EUPS dependencies} \\ \hline
-\textbf{name} & \textbf{description} \\ \hline
-{\footnotesize base } & \\ \hline
-{\footnotesize utils } & \\ \hline
-{\footnotesize sconsUtils } & \\ \hline
-{\footnotesize obs\_lsst } & \\ \hline
-\end{longtable}
-
-README.rst (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-#########
-ctrl_oods
-#########
-
-``ctrl_oods`` is an `LDF Prompt Enclave Software`_ package.
-
-.. Add a brief (few sentence) description of what this package provides.
-
-The Observatory Operations Data Service watches for files in one or more directories, and then ingests them into an LSST Butler repository.   
-Files are expired from the repository at specified intervals.
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{squash}\label{lsst-sqre/squash}
-
-SQuaSH web interface
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst-sqre/squash}{https://github.com/lsst-sqre/squash} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{qcsw}{Quality Control SW} \\
-\hline
-\end{longtable} }
-
-
-README.md (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-# squash
-
-`squash` is the web frontend to embed the bokeh apps and navigate through them. You can learn more about SQuaSH at [SQR-009](https://sqr-009.lsst.io).
-
-[![Build Status](https://travis-ci.org/lsst-sqre/squash.svg?branch=master)](https://travis-ci.org/lsst-sqre/squash)
-
-## Requirements
-
-The `squash` web frontend requires the [squash-restful-api](https://github.com/lsst-sqre/squash-restful-api) and [squash-bokeh](https://github.com/lsst-sqre/squash-bokeh) microservices, and the TLS certificats that are installed by the
-[`squash-deployment`](https://github.com/lsst-sqre/squash-deployment).
-
-## Kubernetes deployment
-
-You can provision a Kubernetes cluster in GKE, clone this repo and deploy the `squash` microservice using:
-
-```
-cd squash
-TAG=latest make service deployment
-```
-
 \end{lstlisting}
 }
 
@@ -901,28 +855,40 @@ Top Level Component: & \hyperlink{spdist}{Science Pipelines Distribution} \\
 
 
 \newpage
-\subsection{albuquery}\label{albuquery}
+\subsection{lsst\_apps}\label{lsst_apps}
 
-DAX Query Services in Kotlin
 
 
 {\footnotesize
 \begin{longtable}{rl}
 \hline
-Open it in GitHUb: & \href{https://github.com/lsst/albuquery}{https://github.com/lsst/albuquery} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{adql}{ADQL Translator} \\
+Open it in GitHUb: & \href{https://github.com/lsst/lsst_apps}{https://github.com/lsst/lsst\_apps} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{scipipe}{Science Pipelines Libraries} \\
+\cdashline{1-2}
+{GitHub Teams:} &
+ Overlords \\
+ & Data Management \\
 \hline
 \end{longtable} }
 
+\begin{longtable}{rl}
+\multicolumn{2}{c}{EUPS dependencies} \\ \hline
+\textbf{name} & \textbf{description} \\ \hline
+{\footnotesize meas\_deblender } & \\ \hline
+{\footnotesize meas\_modelfit } & \\ \hline
+{\footnotesize pipe\_tasks } & \\ \hline
+{\footnotesize ap\_pipe } & \\ \hline
+{\footnotesize obs\_sdss } & \\ \hline
+{\footnotesize obs\_test } & \\ \hline
+{\footnotesize meas\_extensions\_simpleShape } & \\ \hline
+\end{longtable}
 
-README.rst (First 20 lines only)
+README.md (First 20 lines only)
 {\scriptsize
 \begin{lstlisting}[breaklines]
-#########
-albuquery
-#########
+# lsst_apps
 
-``albuquery`` will implement a TAP database query service for the Web APIs Aspect of the LSST Science Platform (a.k.a. Data Access Services/DAX).
+This is a metapackage providing a minimalist set of [LSST Science Pipelines](https://pipelines.lsst.io) packages. This is a subset of the full [lsst_distrib](https://github.com/lsst/lsst_distrib) package. This dependency list is tracked via [eups](https://github.com/RobertLuptonTheGood/eups) in the `ups/lsst_apps.table` file.
 \end{lstlisting}
 }
 
@@ -964,6 +930,38 @@ README.md (First 20 lines only)
 LSST Data Access framework described in [DMTN-056](https://dmtn-056.lsst.io).
 
 This is a **Python 3 only** package (we assume Python 3.6 or higher).
+\end{lstlisting}
+}
+
+
+\newpage
+\subsection{pipe\_supertask}\label{pipe_supertask}
+
+Super Task implementation
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst/pipe_supertask}{https://github.com/lsst/pipe\_supertask} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{txf}{Task Framework} \\
+\hline
+\end{longtable} }
+
+\begin{longtable}{rl}
+\multicolumn{2}{c}{EUPS dependencies} \\ \hline
+\textbf{name} & \textbf{description} \\ \hline
+{\footnotesize daf\_butler } & \\ \hline
+{\footnotesize log } & \\ \hline
+{\footnotesize pex\_config } & \\ \hline
+{\footnotesize pipe\_base } & \\ \hline
+\end{longtable}
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+# pipe_supertask
+Super Task implementation
 \end{lstlisting}
 }
 
@@ -1044,72 +1042,74 @@ See http://slac.stanford.edu/exp/lsst/qserv/
 
 
 \newpage
-\subsection{lsst\_apps}\label{lsst_apps}
+\subsection{albuquery}\label{albuquery}
 
+DAX Query Services in Kotlin
 
 
 {\footnotesize
 \begin{longtable}{rl}
 \hline
-Open it in GitHUb: & \href{https://github.com/lsst/lsst_apps}{https://github.com/lsst/lsst\_apps} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{scipipe}{Science Pipelines Libraries} \\
-\cdashline{1-2}
-{GitHub Teams:} &
- Overlords \\
- & Data Management \\
+Open it in GitHUb: & \href{https://github.com/lsst/albuquery}{https://github.com/lsst/albuquery} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{adql}{ADQL Translator} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
-\multicolumn{2}{c}{EUPS dependencies} \\ \hline
-\textbf{name} & \textbf{description} \\ \hline
-{\footnotesize meas\_deblender } & \\ \hline
-{\footnotesize meas\_modelfit } & \\ \hline
-{\footnotesize pipe\_tasks } & \\ \hline
-{\footnotesize ap\_pipe } & \\ \hline
-{\footnotesize obs\_sdss } & \\ \hline
-{\footnotesize obs\_test } & \\ \hline
-{\footnotesize meas\_extensions\_simpleShape } & \\ \hline
-\end{longtable}
 
-README.md (First 20 lines only)
+README.rst (First 20 lines only)
 {\scriptsize
 \begin{lstlisting}[breaklines]
-# lsst_apps
+#########
+albuquery
+#########
 
-This is a metapackage providing a minimalist set of [LSST Science Pipelines](https://pipelines.lsst.io) packages. This is a subset of the full [lsst_distrib](https://github.com/lsst/lsst_distrib) package. This dependency list is tracked via [eups](https://github.com/RobertLuptonTheGood/eups) in the `ups/lsst_apps.table` file.
+``albuquery`` will implement a TAP database query service for the Web APIs Aspect of the LSST Science Platform (a.k.a. Data Access Services/DAX).
 \end{lstlisting}
 }
 
 
 \newpage
-\subsection{pipe\_supertask}\label{pipe_supertask}
+\subsection{scipipe\_conda\_env}\label{scipipe_conda_env}
 
-Super Task implementation
+Conda environment for LSST Science Pipelines
 
 
 {\footnotesize
 \begin{longtable}{rl}
 \hline
-Open it in GitHUb: & \href{https://github.com/lsst/pipe_supertask}{https://github.com/lsst/pipe\_supertask} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{txf}{Task Framework} \\
+Open it in GitHUb: & \href{https://github.com/lsst/scipipe_conda_env}{https://github.com/lsst/scipipe\_conda\_env} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{splce}{SciencePipelines Conda Env.} \\
+\cdashline{1-2}
+{GitHub Teams:} &
+ Data Management \\
+ & DM Auxilliaries \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
-\multicolumn{2}{c}{EUPS dependencies} \\ \hline
-\textbf{name} & \textbf{description} \\ \hline
-{\footnotesize daf\_butler } & \\ \hline
-{\footnotesize log } & \\ \hline
-{\footnotesize pex\_config } & \\ \hline
-{\footnotesize pipe\_base } & \\ \hline
-\end{longtable}
 
 README.md (First 20 lines only)
 {\scriptsize
 \begin{lstlisting}[breaklines]
-# pipe_supertask
-Super Task implementation
+# Conda Environment for Science Pipelines
+
+This repository contains the definition of the Conda environment used by the LSST Science Pipelines.
+
+## Contents
+
+Files in the `etc` directory are named following the pattern:
+
+```
+conda3_<filetype>-<platform>-64.yml
+```
+
+Where `<filetype>` is one of:
+
+- `bleed`, indicating the names of packages on which the Science Pipelines directly depend, or
+- `packages`, indicating a specific versioned set of those packages, and packages upon which they depend, which can be directly instantiated as a Conda environment.
+
+And `<platform>` is one of:
+
+- `linux`, indicating that this file has been tested on CentOS (our reference platform), and, by extension, is appropriate for use on a Linux systems;
 \end{lstlisting}
 }
 
@@ -1138,74 +1138,6 @@ Top Level Component: & \hyperlink{and}{Astrometry.net Data} \\
 {\footnotesize sconsUtils } & \\ \hline
 \end{longtable}
 
-
-
-\newpage
-\subsection{sqre-codekit}\label{lsst-sqre/sqre-codekit}
-
-LSST DM SQuaRE misc. code management tools
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst-sqre/sqre-codekit}{https://github.com/lsst-sqre/sqre-codekit} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{cdkt}{codekit} \\
-\hline
-\end{longtable} }
-
-
-README.md (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-[![Build Status](https://travis-ci.org/lsst-sqre/sqre-codekit.svg?branch=master)](https://travis-ci.org/lsst-sqre/sqre-codekit)
-
-# sqre-codekit
-
-LSST DM SQuaRE misc. code management tools
-
-## Installation
-
-sqre-codekit runs on Python 3.6 or newer. You can install it with
-
-```bash
-pip install sqre-codekit
-```
-
-## Available commands
-
-- `github-auth`: Generate a GitHub authentication token.
-- `github-decimate-org`: Delete repos and/or teams from a GitHub organization.
-- `github-fork-org`: Fork repositories from one GitHub organization to another.
-- `github-get-ratelimit`: Display the current github ReST API request ratelimit.
-\end{lstlisting}
-}
-
-
-\newpage
-\subsection{jenkins-dm-jobs}\label{lsst-dm/jenkins-dm-jobs}
-
-Jenkins jobs and pipeline scripts for LSST DM
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst-dm/jenkins-dm-jobs}{https://github.com/lsst-dm/jenkins-dm-jobs} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{jscr}{jenkins scripting} \\
-\hline
-\end{longtable} }
-
-
-README.md (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-jenkins-dm-jobs
-===
-
-[![Build Status](https://travis-ci.org/lsst-dm/jenkins-dm-jobs.png)](https://travis-ci.org/lsst-dm/jenkins-dm-jobs)
-\end{lstlisting}
-}
 
 
 \newpage
@@ -1250,6 +1182,74 @@ Provides the following capabilities:
   ```
 
   Run `lsst-build prepare -h` to see the full list of options.
+\end{lstlisting}
+}
+
+
+\newpage
+\subsection{jenkins-dm-jobs}\label{lsst-dm/jenkins-dm-jobs}
+
+Jenkins jobs and pipeline scripts for LSST DM
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst-dm/jenkins-dm-jobs}{https://github.com/lsst-dm/jenkins-dm-jobs} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{jscr}{jenkins scripting} \\
+\hline
+\end{longtable} }
+
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+jenkins-dm-jobs
+===
+
+[![Build Status](https://travis-ci.org/lsst-dm/jenkins-dm-jobs.png)](https://travis-ci.org/lsst-dm/jenkins-dm-jobs)
+\end{lstlisting}
+}
+
+
+\newpage
+\subsection{sqre-codekit}\label{lsst-sqre/sqre-codekit}
+
+LSST DM SQuaRE misc. code management tools
+
+
+{\footnotesize
+\begin{longtable}{rl}
+\hline
+Open it in GitHUb: & \href{https://github.com/lsst-sqre/sqre-codekit}{https://github.com/lsst-sqre/sqre-codekit} \\ \cdashline{1-2}
+Top Level Component: & \hyperlink{cdkt}{codekit} \\
+\hline
+\end{longtable} }
+
+
+README.md (First 20 lines only)
+{\scriptsize
+\begin{lstlisting}[breaklines]
+[![Build Status](https://travis-ci.org/lsst-sqre/sqre-codekit.svg?branch=master)](https://travis-ci.org/lsst-sqre/sqre-codekit)
+
+# sqre-codekit
+
+LSST DM SQuaRE misc. code management tools
+
+## Installation
+
+sqre-codekit runs on Python 3.6 or newer. You can install it with
+
+```bash
+pip install sqre-codekit
+```
+
+## Available commands
+
+- `github-auth`: Generate a GitHub authentication token.
+- `github-decimate-org`: Delete repos and/or teams from a GitHub organization.
+- `github-fork-org`: Fork repositories from one GitHub organization to another.
+- `github-get-ratelimit`: Display the current github ReST API request ratelimit.
 \end{lstlisting}
 }
 
