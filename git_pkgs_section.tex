@@ -917,9 +917,6 @@ Top Level Component: & \hyperlink{butler}{Data Butler} \\
 {\footnotesize sphgeom } & \\ \hline
 {\footnotesize sconsUtils } & \\ \hline
 {\footnotesize utils } & \\ \hline
-{\footnotesize astro\_metadata\_translator } & \\ \hline
-{\footnotesize geom } & \\ \hline
-{\footnotesize afw } & \\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -988,29 +985,15 @@ Top Level Component: & \hyperlink{qserv}{Distributed Database} \\
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize antlr4 } & \\ \hline
-{\footnotesize boost } & \\ \hline
 {\footnotesize db } & \\ \hline
-{\footnotesize doxygen } & \\ \hline
-{\footnotesize flask } & \\ \hline
-{\footnotesize jemalloc } & \\ \hline
-{\footnotesize libcurl } & \\ \hline
 {\footnotesize log } & \\ \hline
-{\footnotesize log4cxx } & \\ \hline
 {\footnotesize lua } & \\ \hline
 {\footnotesize mariadb } & \\ \hline
 {\footnotesize mysqlproxy } & \\ \hline
-{\footnotesize json\_nlohmann } & \\ \hline
-{\footnotesize python\_mysqlclient } & \\ \hline
 {\footnotesize partition } & \\ \hline
-{\footnotesize protobuf } & \\ \hline
-{\footnotesize pybind11 } & \\ \hline
-{\footnotesize python } & \\ \hline
 {\footnotesize redis\_plus\_plus } & \\ \hline
-{\footnotesize requests } & \\ \hline
 {\footnotesize scisql } & \\ \hline
-{\footnotesize scons } & \\ \hline
 {\footnotesize sphgeom } & \\ \hline
-{\footnotesize sqlalchemy } & \\ \hline
 {\footnotesize xrootd } & \\ \hline
 \end{longtable}
 
@@ -1031,12 +1014,10 @@ Continuous integration server launches Qserv build and also multi-node integrati
 
 ## Documentation
 
-### Current release
+[Documentation for master branch](https://qserv.lsst.io/)
 
 
-See http://slac.stanford.edu/exp/lsst/qserv/
 
-### Development version
 \end{lstlisting}
 }
 
@@ -1094,22 +1075,22 @@ README.md (First 20 lines only)
 
 This repository contains the definition of the Conda environment used by the LSST Science Pipelines.
 
+
 ## Contents
 
-Files in the `etc` directory are named following the pattern:
+There are two core types of files in the `etc` directory.
 
-```
-conda3_<filetype>-<platform>-64.yml
-```
+- `bleed` files, in the pattern of `conda3_bleed-<platform>-64.yml`, indicating the names of packages on which the 
+  Science Pipelines directly depend, or
+- `lock` files, in the pattern of `conda-<platform>-64.lock`, indicating a specific versioned set of those packages, 
+  and packages upon which they depend, which can be directly instantiated as a conda environment;
 
-Where `<filetype>` is one of:
-
-- `bleed`, indicating the names of packages on which the Science Pipelines directly depend, or
-- `packages`, indicating a specific versioned set of those packages, and packages upon which they depend, which can be directly instantiated as a Conda environment.
-
-And `<platform>` is one of:
+Where `<platform>` is one of:
 
 - `linux`, indicating that this file has been tested on CentOS (our reference platform), and, by extension, is appropriate for use on a Linux systems;
+- `osx`, indicating that this file has been tested on macOS.
+
+### Lock files
 \end{lstlisting}
 }
 

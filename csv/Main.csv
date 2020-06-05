@@ -61,7 +61,7 @@ OBSPUB,Plan Obs Pub SW,PRSW,1.02C.07.08,LDF,Michelle Butler,Tim Jenness,,Plan Ob
 BPSWP,Batch Prod. SW P.,DMSW,,,Michelle Butler,,,Batch Prod. SW P.,2
 WLWF,Workload/flow,BPSWP,1.02C.07.08,LDF,,Michelle Gower,,Workload/flow,
 CMPGN,Campaign Mgmt,BPSWP,1.02C.07.08,LDF,,Michelle Gower,,Campaign Mgmt,
-QCSWP,QC SW Products,DMSW,,,Frossie Economou,,,QC SW Products,3
+QCSWP,QC SW Products,DMSW,,,Frossie Economou,Simon Krughoff,,QC SW Products,3
 QCSW,Quality Ctrl SW,QCSWP,1.02C.10.02.01,SQuaRE,Frossie Economou,Simon Krughoff,lsst-sqre/squash,Quality Ctrl SW,3
 BBSWP,Backbone SW P.,DMSW,,,Michelle Butler,,,Backbone SW P.,4
 DBBTR,DBB Transport SW,BBSWP,1.02C.07.08,LDF,,Michelle Gower,,DBB Transport SW,
@@ -89,15 +89,15 @@ BUTLER,Data Butler,SPSWP,1.02C.06.02.01,DAX,Tim Jenness,Jim Bosch,daf_butler,Dat
 TXF,Task Framework,SPSWP,1.02C.06.03,DAX,Tim Jenness,Tim Jenness,pipe_supertask,Task Framework,3
 QSERV,Distrib Database,SPSWP,1.02C.06.02.03,DAX,Fritz Mueller,Colin Slater,qserv,Distrib Database,4
 ADQL,ADQL Translator,SPSWP,1.02C.06.02.05,DAX,Frossie Economou,Simon Krughoff,albuquery,ADQL Translator,5
-ENVS,Environments,DMSW,,,,,,Environments,8
-SPLCE,SPL Conda Env,ENVS,,,,,scipipe_conda_env,SPL Conda Env,
+ENVS,Environments,DMSW,,,Kian-Tat Lim,,,Environments,8
+SPLCE,SPL Conda Env,ENVS,,,,Tim Jenness,scipipe_conda_env,SPL Conda Env,
 INFRA,Infrastructure,DM,,,Wil O'Mullane,,,Infrastructure,3
-NET,Networks,INFRA,,,Jeff Kantor,,,Networks,1
+NET,Networks,INFRA,,,,,,Networks,1
 NETSB,Sum/Base Net,NET,1.02C.08.03,Net/Base,Jeff Kantor,Jeff Kantor,,Sum/Base Net,1
 NETBA,Base/Arch Net,NET,1.02C.08.03,Net/Base,Jeff Kantor,Jeff Kantor,,Base/Arch Net,2
 NETBASE,Base LAN,NET,1.02C.07.08,LDF,Cristian Silva,Wil O'Mullane,,Base LAN,3
-NETNCSA,NCSA LAN,NET,1.02C.07.09,LDF,Michelle Butler,Michelle Butler,,NCSA LAN,4
-FAC,Facilities,INFRA,,,Wil O'Mullane,,,Facilities,2
+NETNCSA,NCSA LAN,NET,1.02C.07.09,LDF,Michelle Butler,Wil O'Mullane,,NCSA LAN,4
+FAC,Facilities,INFRA,,,,,,Facilities,2
 FACBASE,Base Facility,FAC,1.02C.08.01 1.02C.08.02,Net/Base,Cristian Silva,Wil O'Mullane,,Base Facility,1
 DF,Data Facilities,FAC,,,,,,Data Facilities,2
 FACNCSA,NCSA Facility,DF,1.02C.07.09,LDF,Michelle Butler,Wil O'Mullane,,NCSA Facility,
@@ -115,22 +115,22 @@ DMHW,DM Hardware,HWCOTS,,,,,,DM Hardware,1
 HWCOMP,Compute Nodes,DMHW,,,,,,Compute Nodes,1
 HWSTOR,Storage Nodes,DMHW,,,,,,Storage Nodes,2
 HWNET,Network Nodes,DMHW,,,Jeff Kantor,,,Network Nodes,3
-COTS,COTS SW,HWCOTS,,,Wil O'Mullane,,,COTS SW,4
+COTS,COTS SW,HWCOTS,,,,,,COTS SW,4
 FIREFLY,Firefly,COTS,1.02C.05.06,SUIT,,Gregory Dubois-Felsmann,,Firefly,
 SECURITY,IT Security,COTS,,,,,,IT Security,
 JRA,Jira,COTS,,,,,,Jira,
 PUPPET,Puppet,COTS,,,,,,Puppet,
-RUCIO,Rucio,COTS,,,,Michelle Butler,,Rucio,
+RUCIO,Rucio,COTS,,,,,,Rucio,
 JH3,Jupyterhub,COTS,,,,,,Jupyterhub,
-DOCKER,Docker,COTS,,,,Frossie Economou,,Docker,
-CILOGON,CILogon,COTS,,,,Michelle Gower,,CILogon,
-HTCONDOR,HTCondor,COTS,,,,Michelle Gower,,HTCondor,
-GPFS,Gen. P. File System,COTS,,,,Michelle Gower,,Gen. P. File System,
+DOCKER,Docker,COTS,,,,,,Docker,
+CILOGON,CILogon,COTS,,,,,,CILogon,
+HTCONDOR,HTCondor,COTS,,,,,,HTCondor,
+GPFS,Gen. P. File System,COTS,,,,,,Gen. P. File System,
 VSPHERE,vSphere,COTS,,,,,,vSphere,
 JL3,Jupyterlab,COTS,,,,,,Jupyterlab,
 ORACLE,Oracle,COTS,,,,,,Oracle,
 K8S,Kubernetes,COTS,,,,,,Kubernetes,
-GRAFANA,Grafana,COTS,,,,Michelle Gower,,Grafana,
+GRAFANA,Grafana,COTS,,,,,,Grafana,
 PTH,Python,COTS,,,,,,Python,
 THPL,Third Party Libs,HWCOTS,,,,,,Third Party Libs,6
 BOOST,Boost,THPL,,,,,,Boost,

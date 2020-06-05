@@ -226,8 +226,8 @@
 {% for k0 in mdp %}
 {{ do_folder(k0) }}
 {% set url = "https://" ~ doc_handler ~ ".lsst.io/" ~ filename ~ "_mixedLand.pdf" %}
-The product tree graph for {{ k0 }} is available
-\href{{ "{" }}{{ url }}{{ "}" }}{ here }.
+The product tree graph for {{ k0 }} is available at this
+\href{{ "{" }}{{ url }}{{ "}" }}{ link }.
 
  {% for id in mdp[k0] %}
   {% set k1 = mdp[k0][id].name %}
