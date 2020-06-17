@@ -525,7 +525,11 @@ right=288pt of INFRA] {\textbf{Resources
 } };\node [below right] at (SECURITY.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (SECURITY.west); 
-\node (JRA) [pbox,below=6pt of SECURITY] {\textbf{Jira
+\node (PSQL) [pbox,below=6pt of SECURITY] {\textbf{PostgreSQL
+} };\node [below right] at (PSQL.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (COTS.south) -| ++(0,0) |- (PSQL.west); 
+\node (JRA) [pbox,below=6pt of PSQL] {\textbf{Jira
 } };\node [below right] at (JRA.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (JRA.west); 
@@ -565,11 +569,7 @@ right=288pt of INFRA] {\textbf{Resources
 } };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (JL3.west); 
-\node (ORACLE) [pbox,below=6pt of JL3] {\textbf{Oracle
-} };\node [below right] at (ORACLE.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (ORACLE.west); 
-\node (K8S) [pbox,below=6pt of ORACLE] {\textbf{Kubernetes
+\node (K8S) [pbox,below=6pt of JL3] {\textbf{Kubernetes
 } };\node [below right] at (K8S.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (COTS.south) -| ++(0,0) |- (K8S.west); 
