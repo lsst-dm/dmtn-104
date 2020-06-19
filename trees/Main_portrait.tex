@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=765pt,paperheight=4816pt,
+\usepackage[paperwidth=765pt,paperheight=4773pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -322,12 +322,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (NBSWpkg) [tbox,below=3mm of NBSW.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils \end{verbatim} }  };
 
  \draw[pline] (LSPSWP.east) -| ++(0.4,0) |- (NBSW.west); 
-\node (LSPWEB) [pbox,below=6pt of NBSW] {\textbf{LSP Web SW
-} };\node [below right] at (LSPWEB.north west) {\footnotesize \color{blue}1.02C.06.02} ;
-\node (LSPWEBpkg) [tbox,below=3mm of LSPWEB.north] {{\footnotesize \color{black} \begin{verbatim} dax_webserv \end{verbatim} }  };
-
- \draw[pline] (LSPSWP.east) -| ++(0.4,0) |- (LSPWEB.west); 
-\node (PRTLOH) [pbox,below=6pt of LSPWEB] {\textbf{Portal Online Help
+\node (PRTLOH) [pbox,below=6pt of NBSW] {\textbf{Portal Online Help
 } };\node [below right] at (PRTLOH.north west) {\footnotesize \color{blue}1.02C.05.08} ;
 \node (PRTLOHpkg) [tbox,below=3mm of PRTLOH.north] {{\footnotesize \color{black} \begin{verbatim} suit-onlinehelp \end{verbatim} }  };
 
@@ -341,7 +336,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (TAPSW.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LSPSWP.east) -| ++(0.4,0) |- (TAPSW.west); 
-\node (SCIPSWP) [pbox,below=221pt of LSPSWP] {\textbf{Sci Pipelines SW P.
+\node (SCIPSWP) [pbox,below=178pt of LSPSWP] {\textbf{Sci Pipelines SW P.
 } };\node [below right] at (SCIPSWP.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSW.east) -| ++(0.4,0) |- (SCIPSWP.west); 
@@ -419,7 +414,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (SPLCEpkg) [tbox,below=3mm of SPLCE.north] {{\footnotesize \color{black} \begin{verbatim} scipipe_conda_env \end{verbatim} }  };
 
  \draw[pline] (ENVS.east) -| ++(0.4,0) |- (SPLCE.west); 
-\node (INFRA) [pbox,below=1382pt of DMSW] {\textbf{Infrastructure
+\node (INFRA) [pbox,below=1339pt of DMSW] {\textbf{Infrastructure
 } };\node [below right] at (INFRA.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DM.east) -| ++(0.4,0) |- (INFRA.west); 

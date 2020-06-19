@@ -320,12 +320,7 @@ right=288pt of DMSRV] {\textbf{Software Products
 \node (NBSWpkg) [tbox,below=3mm of NBSW.north] {{\footnotesize \color{black} \begin{verbatim} lsst-sqre/jupyterhubutils lsst-sqre/jupyterlabutils \end{verbatim} }  };
 
  \draw[pline] (LSPSWP.south) -| ++(0,0) |- (NBSW.west); 
-\node (LSPWEB) [pbox,below=6pt of NBSW] {\textbf{LSP Web SW
-} };\node [below right] at (LSPWEB.north west) {\footnotesize \color{blue}1.02C.06.02} ;
-\node (LSPWEBpkg) [tbox,below=3mm of LSPWEB.north] {{\footnotesize \color{black} \begin{verbatim} dax_webserv \end{verbatim} }  };
-
- \draw[pline] (LSPSWP.south) -| ++(0,0) |- (LSPWEB.west); 
-\node (PRTLOH) [pbox,below=6pt of LSPWEB] {\textbf{Portal Online Help
+\node (PRTLOH) [pbox,below=6pt of NBSW] {\textbf{Portal Online Help
 } };\node [below right] at (PRTLOH.north west) {\footnotesize \color{blue}1.02C.05.08} ;
 \node (PRTLOHpkg) [tbox,below=3mm of PRTLOH.north] {{\footnotesize \color{black} \begin{verbatim} suit-onlinehelp \end{verbatim} }  };
 
@@ -339,7 +334,7 @@ right=288pt of DMSRV] {\textbf{Software Products
 } };\node [below right] at (TAPSW.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (LSPSWP.south) -| ++(0,0) |- (TAPSW.west); 
-\node (SCIPSWP) [pbox,below=264pt of LSPSWP] {\textbf{Sci Pipelines SW P.
+\node (SCIPSWP) [pbox,below=221pt of LSPSWP] {\textbf{Sci Pipelines SW P.
 } };\node [below right] at (SCIPSWP.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSW.south) -| ++(0,0) |- (SCIPSWP.west); 

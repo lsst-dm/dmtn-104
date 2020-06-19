@@ -495,53 +495,6 @@ README.md (First 20 lines only)
 
 
 \newpage
-\subsection{dax\_webserv}\label{dax_webserv}
-
-Web Interface for LSST Data Access Services
-
-
-{\footnotesize
-\begin{longtable}{rl}
-\hline
-Open it in GitHUb: & \href{https://github.com/lsst/dax_webserv}{https://github.com/lsst/dax\_webserv} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{lspweb}{LSP Web API SW (obsolete product)} \\
-\cdashline{1-2}
-{GitHub Teams:} &
- Overlords \\
- & Data Management \\
- & Database \\
-\hline
-\end{longtable} }
-
-\begin{longtable}{rl}
-\multicolumn{2}{c}{EUPS dependencies} \\ \hline
-\textbf{name} & \textbf{description} \\ \hline
-{\footnotesize db } & \\ \hline
-{\footnotesize flask } & \\ \hline
-{\footnotesize dax\_dbserv } & \\ \hline
-{\footnotesize dax\_imgserv } & \\ \hline
-{\footnotesize dax\_metaserv } & \\ \hline
-{\footnotesize python\_mysqlclient } & \\ \hline
-\end{longtable}
-
-README.txt (First 20 lines only)
-{\scriptsize
-\begin{lstlisting}[breaklines]
-# Useful link:
-http://blog.miguelgrinberg.com/post/designing-a-restful-api-with-python-and-flask
-http://pycoder.net/bospy/presentation.html
-
-# To install flask:
-sudo aptitude install python-flask
-
-
-# An example Tap query to dbserv (if running locally)
-  curl -d 'query=SELECT+ra,decl,filterName+FROM+DC_W13_Stripe82.Science_Ccd_Exposure+WHERE+scienceCcdExposureId=125230127' http://localhost:5000/db/v0/sync
-\end{lstlisting}
-}
-
-
-\newpage
 \subsection{suit-onlinehelp}\label{suit-onlinehelp}
 
 

@@ -1,28 +1,28 @@
 Product key,Short name,Parent,WBS,Team,Manager,Product owner,Packages,Name,MD Order
 DMDEV,DM Support Products,,,,,,,DM Support Products,3
-DMDSRV,Support Services,DMDEV,,,,,,Support Services,1
-BCI,Build and CI,DMDSRV,,,,,,Build and CI,1
-CAM,Cont. Application Mng,DMDSRV,,,,,,Cont. Application Mng,2
-DMDCOM,Devlop. Comm,DMDSRV,,,,,,Devlop. Comm,3
-DDVSRV,DM Dev Services,DMDSRV,,,,,,DM Dev Services,4
-DDCPUB,DM Doc Publication,DMDSRV,,,,,,DM Doc Publication,5
-PKGDST,Packagin Distrib,DMDSRV,,,,,,Packagin Distrib,6
+DMDSRV,Support Services,DMDEV,,,,,,Development Service Products,1
+BCI,Build and CI,DMDSRV,,,,,,Build/ CI,1
+CAM,Cont. Application Mng,DMDSRV,,,,,,Containerized Application Management,2
+DMDCOM,Devlop. Comm,DMDSRV,,,,,,Developer Communication Tools,3
+DDVSRV,DM Dev Services,DMDSRV,,,,,,Developer Services,4
+DDCPUB,DM Doc Publication,DMDSRV,,,,,,Documentation Publication,5
+PKGDST,Packagin Distrib,DMDSRV,,,,,,Packaging/ Distribution,6
 DEPLOY,SW Deployment,DMDSRV,,,,,,SW Deployment,7
 SWVER,SW Version Control,DMDSRV,,,,,,SW Version Control,8
-DMDSW,Dm Dev Software,DMDEV,,,,,,Dm Dev Software,2
-DMDSS,DMDev Supp SW,DMDSW,,,,,,DMDev Supp SW,1
+DMDSW,Dm Dev Software,DMDEV,,,,,,Development Software Products,2
+DMDSS,DMDev Supp SW,DMDSW,,,,,,DevM Supporting SW,1
 LBLD,lsst\_build,DMDSS,,,,,lsst_build,lsst\_build,
-JSCR,JenkinsScripting,DMDSS,,,,,lsst-dm/jenkins-dm-jobs,JenkinsScripting,
-CDKT,Codekit,DMDSS,,,,,lsst-sqre/sqre-codekit,Codekit,
+JSCR,JenkinsScripting,DMDSS,,,,,lsst-dm/jenkins-dm-jobs,jenkins scripting,
+CDKT,Codekit,DMDSS,,,,,lsst-sqre/sqre-codekit,codekit,
 LSSTSW,lsstsw,DMDSS,,,,,lsstsw,lsstsw,
-DSPLSW,Dev Science Pipelines,DMDSW,,,,,,Dev Science Pipelines,2
+DSPLSW,Dev Science Pipelines,DMDSW,,,,,,SciencePipelines SW,2
 SPLWF,SPL Workflow,DSPLSW,,,,,,SPL Workflow,
-DENV,DM DevM Envs,DMDSW,,,,,,DM DevM Envs,3
-DMDTDP,Test Data,DMDEV,,,,,,Test Data,3
+DENV,DM DevM Envs,DMDSW,,,,,,DevM Environments,3
+DMDTDP,Test Data,DMDEV,,,,,,Test Data Products<DM Product>>,3
 HSCRC1,HSC-RC1,DMDTDP,,,,,,HSC-RC1,1
-SPLTD,SPL Test Data,DMDTDP,,,,,,SPL Test Data,2
-DMDC3E,COTS 3rdPLs ENVs,DMDEV,,,,,,COTS 3rdPLs ENVs,4
-COTSDM,DM DevM COTS,DMDC3E,,,,,,DM DevM COTS,1
+SPLTD,SPL Test Data,DMDTDP,,,,,,Science Pipelines Test Data,2
+DMDC3E,COTS 3rdPLs ENVs,DMDEV,,,,,,Development Externals,4
+COTSDM,DM DevM COTS,DMDC3E,,,,,,DevM COTS,1
 EUPS,EUPS,COTSDM,,,,,,EUPS,
 GITHUB,Github,COTSDM,,,,,,Github,
 JNKNS,Jenkins,COTSDM,,,,,,Jenkins,
