@@ -70,7 +70,9 @@ class Product(object):
 
 
 class GitPkg(object):
-    def __init__(self, name, org, readmes, ups_table, teams, summary, component_id, component_name):
+    def __init__(self, key, pkey, name, org, readmes, ups_table, teams, summary, component_id, component_name):
+        self.key = key
+        self.pkey = pkey
         self.name = name
         self.org = org
         self.readmes = readmes

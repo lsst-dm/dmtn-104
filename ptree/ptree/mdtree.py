@@ -32,6 +32,7 @@ from .util import get_pkg_properties, rsget, fix_tex, fix_id_tex, Product, html_
 from .tree import make_tree_portrait, make_tree_landmix1, make_subtrees, make_full_tree
 from treelib import Tree
 from .gittree import do_github_section
+from .gittree import do_github_section
 
 requirements = {}
 
@@ -245,7 +246,7 @@ def walk_tree(rcs, mres, mdid, pkey):
                                     if relation not in pkg_usedin:
                                         pkg_usedin.append(relation)
 
-    if "Obsolete" not in pkg_name:
+    if not any(x in pkg_name for x in ["Obsolete", "obsolete"]):
         # When an OBSOLETE product is found, it is not added to the Tree
         pkg_id = fix_id_tex(pkg_properties['product key'][0])
         prod = Product(pkg_id,                            # 1  (0 is self)
@@ -329,17 +330,18 @@ def do_csv(products, output_file):
     """
     csv = "Product key,Short name,Parent,WBS,Team,Manager,Product owner,Packages,Name,MD Order\n"
     for p in products:
-        pkey = p.id
-        snm = p.shortname.rstrip()
-        pid = p.parent
-        wbs = ' '.join(p.wbs)
-        team = p.teams[0]
-        mng = p.manager
-        owner = p.owner[0]
-        pkgs = ' '.join(p.pkgs)
-        name = p.shortname.rstrip()
-        pkg_index = p.index
-        csv = csv + f"{pkey},{snm},{pid},{wbs},{team},{mng},{owner},{pkgs},{name},{pkg_index}\n"
+        if not any(x in p.name for x in ["Obsolete", "obsolete"]):
+            pkey = p.id
+            snm = p.shortname.rstrip()
+            pid = p.parent
+            wbs = ' '.join(p.wbs)
+            team = p.teams[0]
+            mng = p.manager
+            owner = p.owner[0]
+            pkgs = ' '.join(p.pkgs)
+            name = p.name.rstrip()
+            pkg_index = p.index
+            csv = csv + f"{pkey},{snm},{pid},{wbs},{team},{mng},{owner},{pkgs},{name},{pkg_index}\n"
     csv_filename = "csv/" + output_file + ".csv"
     file = open(csv_filename, "w")
     print(csv, file=file)

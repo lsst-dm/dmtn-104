@@ -58,7 +58,7 @@ Top Level Component: & {{ hyperlink(git_dm[pkg].component_id.lower(), git_dm[pkg
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
       {% for dependency in git_dm[pkg].ups_table %}
-{\footnotesize {{ dependency }} } & \\ \hline
+{\footnotesize {{ fix_tex(dependency) }} } & \\ \hline
       {% endfor %}
 \end{longtable}
     {% endif %}
