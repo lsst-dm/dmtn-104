@@ -44,11 +44,11 @@ APDB,APDB,MNGDB,1.02C.06.01.01,DAX,Fritz Mueller,Colin Slater,,APDB,4
 ITCH,IT Chile,ITSRV,,,,,,IT Chile,6
 CHCNM,C. Computational Mgmt.,ITCH,,,Cristian Silva,Wil O'Mullane,,Chilean Computational Nodes Management,1
 CHSTMNG,C. Storage Mgmt.,ITCH,,,Cristian Silva,Wil O'Mullane,,Chilean Storage Management,2
-ITNCSA,IT NCSA,ITSRV,,,,,,IT NCSA,7
-NCSACNM,Computational Mgmt,ITNCSA,,,Michelle Butler,Wil O'Mullane,,NCSA Computational Nodes Management,1
-NCSANETMNG,Net Mgmt,ITNCSA,1.02C.08.03,Net/Base,Michelle Butler,Wil O'Mullane,,Network Management,2
-NCSASTMNG,Storage Mgmt,ITNCSA,,,Michelle Butler,Wil O'Mullane,,NCSA Storage Management,3
-NCSAIDNMNG,NCSA Identity Mngt,ITNCSA,,,,,,NCSA Identity Management,4
+ITNCSA,IT NCSA,ITSRV,,,Michelle Butler,,,IT NCSA,7
+NCSACNM,Computational Mgmt,ITNCSA,,LDF,,Wil O'Mullane,,NCSA Computational Nodes Management,1
+NCSANETMNG,NCSA Net Mgmt,ITNCSA,1.02C.08.03,LDF,,Wil O'Mullane,,NCSA Network Management,2
+NCSASTMNG,NCSA Storage Mgmt,ITNCSA,,LDF,,Wil O'Mullane,,NCSA Storage Management,3
+NCSAIDNMNG,NCSA Identity Mngt,ITNCSA,,LDF,,,,NCSA Identity Management,4
 DMSW,Software Products,DM,,,Wil O'Mullane,,,Software Products,2
 PRSW,Prompt SW Prod.,DMSW,,,,,,Prompt Software Products,1
 EFDT,EFD Transform,PRSW,,SQuaRE,Frossie Economou,Simon Krughoff,,EFD Transformation SW,
