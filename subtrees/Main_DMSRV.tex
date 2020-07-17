@@ -49,11 +49,11 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (OODSSRV.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
 
  \draw[pline] (PRSRV.south) -| ++(0,0) |- (OODSSRV.west); 
-\node (OCSBATSRV) [pbox,below=6pt of OODSSRV] {\textbf{OCS Batch
-} };\node [below right] at (OCSBATSRV.north west) {\footnotesize \color{blue}1.02C.02.02} ;
+\node (OCPSRV) [pbox,below=6pt of OODSSRV] {\textbf{OCS Pipeline
+} };\node [below right] at (OCPSRV.north west) {\footnotesize \color{blue}1.02C.02.02} ;
 
- \draw[pline] (PRSRV.south) -| ++(0,0) |- (OCSBATSRV.west); 
-\node (TMGSRV) [pbox,below=6pt of OCSBATSRV] {\textbf{Telem Gateway
+ \draw[pline] (PRSRV.south) -| ++(0,0) |- (OCPSRV.west); 
+\node (TMGSRV) [pbox,below=6pt of OCPSRV] {\textbf{Telem Gateway
 } };\node [below right] at (TMGSRV.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
 
  \draw[pline] (PRSRV.south) -| ++(0,0) |- (TMGSRV.west); 

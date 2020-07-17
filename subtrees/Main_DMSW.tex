@@ -42,11 +42,11 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (HEADERpkg) [tbox,below=3mm of HEADER.north] {{\footnotesize \color{black} \begin{verbatim} lsst-dm/HeaderService \end{verbatim} }  };
 
  \draw[pline] (PRSW.south) -| ++(0,0) |- (HEADER.west); 
-\node (OCSBAT) [pbox,below=6pt of HEADER] {\textbf{OCS Batch SW
-} };\node [below right] at (OCSBAT.north west) {\footnotesize \color{blue}1.02C.02.02} ;
+\node (OCPS) [pbox,below=6pt of HEADER] {\textbf{OCS Pipeline SW
+} };\node [below right] at (OCPS.north west) {\footnotesize \color{blue}1.02C.02.02} ;
 
- \draw[pline] (PRSW.south) -| ++(0,0) |- (OCSBAT.west); 
-\node (OODS) [pbox,below=6pt of OCSBAT] {\textbf{Obs Ops Data SW
+ \draw[pline] (PRSW.south) -| ++(0,0) |- (OCPS.west); 
+\node (OODS) [pbox,below=6pt of OCPS] {\textbf{Obs Ops Data SW
 } };\node [below right] at (OODS.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 \node (OODSpkg) [tbox,below=3mm of OODS.north] {{\footnotesize \color{black} \begin{verbatim} lsst-dm/ctrl_oods \end{verbatim} }  };
 
@@ -149,12 +149,12 @@ right=96pt of LSPSWP] {\textbf{Sci Pipelines SW P.
 } };\node [below right] at (DRP.north west) {\footnotesize \color{blue}1.02C.04} ;
 
  \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (DRP.west); 
-\node (MOPS) [pbox,below=6pt of DRP] {\textbf{MOPS SW
-} };\node [below right] at (MOPS.north west) {\footnotesize \color{blue}1.02C.03.06} ;
-\node (MOPSpkg) [tbox,below=3mm of MOPS.north] {{\footnotesize \color{black} \begin{verbatim} mops_daymops \end{verbatim} }  };
+\node (SSP) [pbox,below=6pt of DRP] {\textbf{SSP SW
+} };\node [below right] at (SSP.north west) {\footnotesize \color{blue}1.02C.03.06} ;
+\node (SSPpkg) [tbox,below=3mm of SSP.north] {{\footnotesize \color{black} \begin{verbatim} mops_daymops \end{verbatim} }  };
 
- \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (MOPS.west); 
-\node (SP) [pbox,below=6pt of MOPS] {\textbf{Spec Prog SW
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SSP.west); 
+\node (SP) [pbox,below=6pt of SSP] {\textbf{Spec Prog SW
 } };\node [below right] at (SP.north west) {\footnotesize \color{blue}1.02C.03 1.02C.04} ;
 
  \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SP.west); 

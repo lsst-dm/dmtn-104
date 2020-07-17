@@ -1,4 +1,4 @@
-% auto generated from MagicDraw (revision) 337 - DO NOT EDIT!
+% auto generated from MagicDraw (revision) 338 - DO NOT EDIT!
 % using template at <template>.
 % Collecting data for component: ""
 % using docsteady version 
@@ -167,7 +167,7 @@ or COTS, are implementing it. This information is shown in the
 \item Prompt Processing Ingest - \hyperlink{prpingsrv}{PRPINGSRV}
 \item Prompt Processing - \hyperlink{prprsrv}{PRPRSRV}
 \item Observatory Operations Data - \hyperlink{oodssrv}{OODSSRV}
-\item OCS-Driven Batch - \hyperlink{ocsbatsrv}{OCSBATSRV}
+\item OCS Controlled Pipeline Service - \hyperlink{ocpsrv}{OCPSRV}
 \item Telemetry Gateway - \hyperlink{tmgsrv}{TMGSRV}
 \item Alert Distribution - \hyperlink{alrtdstsrv}{ALRTDSTSRV}
 \item Prompt Quality Control - \hyperlink{prqcsrv}{PRQCSRV}
@@ -281,7 +281,7 @@ telescope spectrograph.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperlink{encprb}{Prompt Base Enclave} \\ \hline
-\hyperlink{encprn}{Prompt NCSA Enclave} \\ \hline
+\hyperlink{encprus}{Prompt US Enclave} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -422,13 +422,13 @@ Telescope Spectrograph.
 \begin{tabular}{c}
 \hyperlink{apprmpt}{Alert Production} \\ \hline
 \hyperlink{dmcal}{Calibration Software} \\ \hline
-\hyperlink{mops}{MOPS and Forced Photometry} \\ \hline
+\hyperlink{ssp}{Solar System processing and Forced Photometry} \\ \hline
 \hyperlink{iip}{Image Ingest and Processing} \\ \hline
 \end{tabular}
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{encprn}{Prompt NCSA Enclave} \\ \hline
+\hyperlink{encprus}{Prompt US Enclave} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -559,7 +559,7 @@ data. It provides images with low latency and high reliability.\\
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{ocsbatsrv}{OCS-Driven Batch} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{ocpsrv}{OCS Controlled Pipeline Service} } }
 & \multicolumn{2}{l}{(product in: Prompt Services
 )}
 \\ \hline
@@ -581,15 +581,15 @@ Tim Jenness
 ARCH \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ OCS Batch
- } - Product key: \textbf{ OCSBATSRV } }
+{\footnotesize Short name: \textbf{ OCS Pipeline
+ } - Product key: \textbf{ OCPSRV } }
 }\\ \hline
 \citeds{DMTN-133} &
 \multicolumn{3}{l}{ OCS driven data processing }
 \\ \cdashline{1-4}
 \end{longtable}
 
-This service permits to drive pipeline processing by data acquisition
+This service permits driving pipeline processing by data acquisition
 from the summit. The processing will be triggered using commands, which
 indicate the name of the pipelines to execute and the data to process.
 
@@ -598,7 +598,7 @@ indicate the name of the pipelines to execute and the data to process.
 \textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{ocsbat}{OCS Batch SW} \\ \hline
+\hyperlink{ocps}{OCPS SW} \\ \hline
 \end{tabular}
 } &
 \multicolumn{2}{c}{
@@ -807,7 +807,7 @@ Alert Distribution and Filtering Service
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{encprn}{Prompt NCSA Enclave} \\ \hline
+\hyperlink{encprus}{Prompt US Enclave} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -879,7 +879,7 @@ the data collected by the survey.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{encprn}{Prompt NCSA Enclave} \\ \hline
+\hyperlink{encprus}{Prompt US Enclave} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -1192,7 +1192,7 @@ Batch Production Service
 \hyperlink{htcondor}{HTCondor} \\ \hline
 \hyperlink{dmcal}{Calibration Software} \\ \hline
 \hyperlink{drp}{Data Release Production} \\ \hline
-\hyperlink{mops}{MOPS and Forced Photometry} \\ \hline
+\hyperlink{ssp}{Solar System processing and Forced Photometry} \\ \hline
 \hyperlink{sp}{Special Programs Productions} \\ \hline
 \end{tabular}
 } &
@@ -1278,7 +1278,7 @@ the data collected by the survey.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{encprn}{Prompt NCSA Enclave} \\ \hline
+\hyperlink{encprus}{Prompt US Enclave} \\ \hline
 \hyperlink{encoffl}{Offline Production Enclave} \\ \hline
 \end{tabular}
 } \\ \bottomrule
@@ -1469,7 +1469,7 @@ Butler to directly access data within the DBB.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperlink{encarcb}{Archive Base Enclave} \\ \hline
-\hyperlink{encarcn}{Archive NCSA Enclave} \\ \hline
+\hyperlink{encarcus}{Archive US Enclave} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -1636,7 +1636,7 @@ products may be kept until all downstream products have been generated.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperlink{encarcb}{Archive Base Enclave} \\ \hline
-\hyperlink{encarcn}{Archive NCSA Enclave} \\ \hline
+\hyperlink{encarcus}{Archive US Enclave} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -1696,7 +1696,7 @@ recovery if a data product is found to be missing or corrupt.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperlink{encarcb}{Archive Base Enclave} \\ \hline
-\hyperlink{encarcn}{Archive NCSA Enclave} \\ \hline
+\hyperlink{encarcus}{Archive US Enclave} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -1798,7 +1798,7 @@ datastore.
 \multicolumn{2}{c}{
 \begin{tabular}{c}
 \hyperlink{encarcb}{Archive Base Enclave} \\ \hline
-\hyperlink{encarcn}{Archive NCSA Enclave} \\ \hline
+\hyperlink{encarcus}{Archive US Enclave} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -2894,7 +2894,7 @@ Implementation details still under evaluation.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{encprn}{Prompt NCSA Enclave} \\ \hline
+\hyperlink{encprus}{Prompt US Enclave} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -3332,7 +3332,7 @@ definition.
 \item Header Service SW - \hyperlink{header}{HEADER}
 \item Image Ingest and Processing - \hyperlink{iip}{IIP}
 \item Planned Observation Publication SW - \hyperlink{obspub}{OBSPUB}
-\item OCS Batch SW - \hyperlink{ocsbat}{OCSBAT}
+\item OCPS SW - \hyperlink{ocps}{OCPS}
 \item Observatory Operations Data Service SW - \hyperlink{oods}{OODS}
 \end{itemize}
 }
@@ -3815,7 +3815,7 @@ observations.\\
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{ocsbat}{OCS Batch SW} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{ocps}{OCPS SW} } }
 & \multicolumn{2}{l}{(product in: Prompt SW Prod.
 )}
 \\ \hline
@@ -3837,15 +3837,16 @@ Tim Jenness
 ARCH \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ OCS Batch SW
- } - Product key: \textbf{ OCSBAT } }
+{\footnotesize Short name: \textbf{ OCS Pipeline SW
+ } - Product key: \textbf{ OCPS } }
 }\\ \hline
 \citeds{DMTN-133} &
 \multicolumn{3}{l}{ OCS driven data processing }
 \\ \cdashline{1-4}
 \end{longtable}
 
-Batch commandable SAL component. To run some pipelines in operations.
+Pipeline execution commandable SAL component. To run some pipelines in
+operations.
 
 
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
@@ -3854,7 +3855,7 @@ Batch commandable SAL component. To run some pipelines in operations.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{ocsbatsrv}{OCS-Driven Batch} \\ \hline
+\hyperlink{ocpsrv}{OCS Controlled Pipeline Service} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -5045,7 +5046,7 @@ Leanne Guy
 \item Alert Production - \hyperlink{apprmpt}{APPRMPT}
 \item Calibration Software - \hyperlink{dmcal}{DMCAL}
 \item Data Release Production - \hyperlink{drp}{DRP}
-\item MOPS and Forced Photometry - \hyperlink{mops}{MOPS}
+\item Solar System processing and Forced Photometry - \hyperlink{ssp}{SSP}
 \item Special Programs Productions - \hyperlink{sp}{SP}
 \item Template Generation - \hyperlink{tmplgen}{TMPLGEN}
 \item Science Plugins - \hyperlink{splug}{SPLUG}
@@ -5372,7 +5373,7 @@ Software product for data release production.
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{mops}{MOPS and Forced Photometry} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{ssp}{Solar System processing and Forced Photometry} } }
 & \multicolumn{2}{l}{(product in: Sci Pipelines SW P.
 )}
 \\ \hline
@@ -5394,8 +5395,8 @@ Eric Bellm
 AP \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ MOPS SW
- } - Product key: \textbf{ MOPS } }
+{\footnotesize Short name: \textbf{ SSP SW
+ } - Product key: \textbf{ SSP } }
 }\\ \hline
 \end{longtable}
 
@@ -5668,7 +5669,7 @@ Top level distribution product for the Science Pipelines.
 \hyperlink{apprmpt}{Alert Production} \\ \hline
 \hyperlink{dmcal}{Calibration Software} \\ \hline
 \hyperlink{drp}{Data Release Production} \\ \hline
-\hyperlink{mops}{MOPS and Forced Photometry} \\ \hline
+\hyperlink{ssp}{Solar System processing and Forced Photometry} \\ \hline
 \hyperlink{sp}{Special Programs Productions} \\ \hline
 \hyperlink{splug}{Science Plugins} \\ \hline
 \hyperlink{tmplgen}{Template Generation} \\ \hline
@@ -5804,7 +5805,7 @@ products (payloads).
 \hyperlink{apprmpt}{Alert Production} \\ \hline
 \hyperlink{dmcal}{Calibration Software} \\ \hline
 \hyperlink{drp}{Data Release Production} \\ \hline
-\hyperlink{mops}{MOPS and Forced Photometry} \\ \hline
+\hyperlink{ssp}{Solar System processing and Forced Photometry} \\ \hline
 \hyperlink{sp}{Special Programs Productions} \\ \hline
 \hyperlink{spdist}{Science Pipelines Distribution} \\ \hline
 \end{tabular}
@@ -6347,7 +6348,7 @@ This part of the product tree includes:
 \item Summit to Base Network - \hyperlink{netsb}{NETSB}
 \item Base to Archive Network - \hyperlink{netba}{NETBA}
 \item Base LAN Network - \hyperlink{netbase}{NETBASE}
-\item NCSA LAN Network - \hyperlink{netncsa}{NETNCSA}
+\item USDF LAN Network - \hyperlink{netusdf}{NETUSDF}
 \end{itemize}
 }
 
@@ -6532,7 +6533,7 @@ Base Local Area Network.
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{netncsa}{NCSA LAN Network} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{netusdf}{USDF LAN Network} } }
 & \multicolumn{2}{l}{(product in: Networks
 )}
 \\ \hline
@@ -6554,8 +6555,8 @@ Wil O'Mullane
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ NCSA LAN
- } - Product key: \textbf{ NETNCSA } }
+{\footnotesize Short name: \textbf{ USDF LAN
+ } - Product key: \textbf{ NETUSDF } }
 }\\ \hline
 \end{longtable}
 
@@ -6752,13 +6753,13 @@ Base facility located at La Serena, Chile.
 {\footnotesize
 \textbf{Products included in this section}:
 \begin{itemize}
-\item NCSA Facility - \hyperlink{facncsa}{FACNCSA}
+\item US Data Facility - \hyperlink{facus}{FACUS}
 \end{itemize}
 }
 
   \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{facncsa}{NCSA Facility} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{facus}{US Data Facility} } }
 & \multicolumn{2}{l}{(product in: Data Facilities
 )}
 \\ \hline
@@ -6780,8 +6781,8 @@ Wil O'Mullane
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ NCSA Facility
- } - Product key: \textbf{ FACNCSA } }
+{\footnotesize Short name: \textbf{ US Data Facility
+ } - Product key: \textbf{ FACUS } }
 }\\ \hline
 \end{longtable}
 
@@ -6795,8 +6796,8 @@ NCSA processing facility located at Urbana, Illinois(USA).
 \hyperlink{encdacu}{DAC US Enclave} \\ \hline
 \hyperlink{encoffl}{Offline Production Enclave} \\ \hline
 \hyperlink{}{Development and Integration E.} \\ \hline
-\hyperlink{encprn}{Prompt NCSA Enclave} \\ \hline
-\hyperlink{encarcn}{Archive NCSA Enclave} \\ \hline
+\hyperlink{encprus}{Prompt US Enclave} \\ \hline
+\hyperlink{encarcus}{Archive US Enclave} \\ \hline
 \end{tabular}
 } &
 \multicolumn{2}{c}{
@@ -6885,8 +6886,8 @@ service, for example LSP, may be instantiate in multiple enclaves.\\
 \item Archive Base Enclave - \hyperlink{encarcb}{ENCARCB}
 \item DAC Chile Enclave - \hyperlink{encdacc}{ENCDACC}
 \item Commissioning Cluster Enclave - \hyperlink{enccomm}{ENCCOMM}
-\item Prompt NCSA Enclave - \hyperlink{encprn}{ENCPRN}
-\item Archive NCSA Enclave - \hyperlink{encarcn}{ENCARCN}
+\item Prompt US Enclave - \hyperlink{encprus}{ENCPRUS}
+\item Archive US Enclave - \hyperlink{encarcus}{ENCARCUS}
 \item Offline Production Enclave - \hyperlink{encoffl}{ENCOFFL}
 \item DAC US Enclave - \hyperlink{encdacu}{ENCDACU}
 \end{itemize}
@@ -6934,7 +6935,7 @@ and alert generation.
 \hyperlink{prpingsrv}{Prompt Processing Ingest} \\ \hline
 \hyperlink{tmgsrv}{Telemetry Gateway} \\ \hline
 \hyperlink{popsrv}{Planned Observation Publication} \\ \hline
-\hyperlink{ocsbatsrv}{OCS-Driven Batch} \\ \hline
+\hyperlink{ocpsrv}{OCS Controlled Pipeline Service} \\ \hline
 \hyperlink{oodssrv}{Observatory Operations Data} \\ \hline
 \hyperlink{arcsrvo}{Archiving [Obsolete]} \\ \hline
 \hyperlink{efdb}{EFD Cache} \\ \hline
@@ -7364,7 +7365,7 @@ Base facility.
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{encprn}{Prompt NCSA Enclave} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{encprus}{Prompt US Enclave} } }
 & \multicolumn{2}{l}{(product in: Enclaves
 )}
 \\ \hline
@@ -7386,8 +7387,8 @@ Wil O'Mullane
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ Prmpt NCSA Encl
- } - Product key: \textbf{ ENCPRN } }
+{\footnotesize Short name: \textbf{ Prompt US Encl
+ } - Product key: \textbf{ ENCPRUS } }
 }\\ \hline
 \end{longtable}
 
@@ -7409,7 +7410,7 @@ real time manner, at NCSA facility.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{facncsa}{NCSA Facility} \\ \hline
+\hyperlink{facus}{US Data Facility} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -7453,7 +7454,7 @@ real time manner, at NCSA facility.
 
      \newpage
 \begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
-\multicolumn{2}{l}{\large \textbf{ \hypertarget{encarcn}{Archive NCSA Enclave} } }
+\multicolumn{2}{l}{\large \textbf{ \hypertarget{encarcus}{Archive US Enclave} } }
 & \multicolumn{2}{l}{(product in: Enclaves
 )}
 \\ \hline
@@ -7475,8 +7476,8 @@ Wil O'Mullane
 LDF \\
 \end{tabular} \\ \hline
 \multicolumn{4}{c}{
-{\footnotesize Short name: \textbf{ Arch NCSA Encl
- } - Product key: \textbf{ ENCARCN } }
+{\footnotesize Short name: \textbf{ Arch US Encl
+ } - Product key: \textbf{ ENCARCUS } }
 }\\ \hline
 \end{longtable}
 
@@ -7496,7 +7497,7 @@ NCSA facility.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{facncsa}{NCSA Facility} \\ \hline
+\hyperlink{facus}{US Data Facility} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -7646,7 +7647,7 @@ the NCSA facility.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{facncsa}{NCSA Facility} \\ \hline
+\hyperlink{facus}{US Data Facility} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
@@ -7738,7 +7739,7 @@ the NCSA facility.
 } &
 \multicolumn{2}{c}{
 \begin{tabular}{c}
-\hyperlink{facncsa}{NCSA Facility} \\ \hline
+\hyperlink{facus}{US Data Facility} \\ \hline
 \end{tabular}
 } \\ \bottomrule
 \multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline

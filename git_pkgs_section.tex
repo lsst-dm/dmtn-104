@@ -150,7 +150,8 @@ Top Level Component: & \hyperlink{header}{Header Service SW} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize fitsio } & \\ \hline
+{\footnotesize fitsio } &
+ \\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -197,10 +198,24 @@ Top Level Component: & \hyperlink{oods}{Observatory Operations Data Service SW} 
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize base } & \\ \hline
-{\footnotesize utils } & \\ \hline
-{\footnotesize sconsUtils } & \\ \hline
-{\footnotesize obs\_lsst } & \\ \hline
+{\footnotesize base } &
+{\footnotesize C++/Python import utilities and doxygen configuration for LSST Data
+Management.
+ }
+ \\ \hline
+{\footnotesize utils } &
+{\footnotesize Common code, floating-point utilities, and angle stringification for
+LSST Data Management.
+ }
+ \\ \hline
+{\footnotesize sconsUtils } &
+{\footnotesize Build system for LSST Data Management packages with standard layout.
+ }
+ \\ \hline
+{\footnotesize obs\_lsst } &
+{\footnotesize The obs model for the LSST cameras
+ }
+ \\ \hline
 \end{longtable}
 
 README.rst (First 20 lines only)
@@ -286,22 +301,20 @@ README.rst (First 20 lines only)
 alert_stream
 ############
 
-This package provides a demonstration of the LSST Alert Distribution Service.
+This package implements the LSST Alert Distribution Service.
 The Alert Distribution Service provides a mechanism for rapidly disseminating and filtering notifications of transient and variable sources observed by LSST.
 The service is described in detail in `DMTN-093`_.
-This repository provides instructions, code and sample data for creating, filtering, and consuming alert streams following the conventions we expect to adopt for LSST.
-It should be used in conjunction with the `lsst-dm/sample-avro-alert`_ repository, which provides details of, and code for working with, LSST alert packets.
 
 .. _DMTN-093: https://dmtn-093.lsst.io/
-.. _lsst-dm/sample-avro-alert: https://github.com/lsst-dm/sample-avro-alert
 
 Prerequisites
 =============
 
 - Cloning this repository requires `Git LFS`_ (Large File Storage) support.
   Refer to the `DM Developer Guide`_ for more information.
-- `Docker`_ and `Docker Compose`_ are required to create and manage the services within this repository, including running all of the examples below.
 
+.. _Git LFS: https://git-lfs.github.com
+.. _DM Developer Guide: https://developer.lsst.io/git/git-lfs.html
 \end{lstlisting}
 }
 
@@ -392,7 +405,9 @@ Top Level Component: & \hyperlink{dbbmd}{DBB Ingest/ Metadata Management SW} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize pyfits } & \\ \hline
+{\footnotesize pyfits } &
+{\footnotesize  }
+ \\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -602,11 +617,28 @@ Top Level Component: & \hyperlink{apprmpt}{Alert Production} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize utils } & \\ \hline
-{\footnotesize pex\_config } & \\ \hline
-{\footnotesize pipe\_base } & \\ \hline
-{\footnotesize pipe\_tasks } & \\ \hline
-{\footnotesize ap\_association } & \\ \hline
+{\footnotesize utils } &
+{\footnotesize Common code, floating-point utilities, and angle stringification for
+LSST Data Management.
+ }
+ \\ \hline
+{\footnotesize pex\_config } &
+{\footnotesize Configuration interface and history-tracking for LSST Data Management.
+ }
+ \\ \hline
+{\footnotesize pipe\_base } &
+{\footnotesize LSST Data Management: base classes for data processing tasks
+ }
+ \\ \hline
+{\footnotesize pipe\_tasks } &
+{\footnotesize LSST Data Management: astronomical data processing tasks
+ }
+ \\ \hline
+{\footnotesize ap\_association } &
+{\footnotesize Repository for holding code related to Alert Production difference
+source association
+ }
+ \\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -652,14 +684,40 @@ Top Level Component: & \hyperlink{dmcal}{Calibration Software} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize pex\_config } & \\ \hline
-{\footnotesize pipe\_base } & \\ \hline
-{\footnotesize log } & \\ \hline
-{\footnotesize ip\_isr } & \\ \hline
-{\footnotesize afw } & \\ \hline
-{\footnotesize meas\_algorithms } & \\ \hline
-{\footnotesize pipe\_drivers } & \\ \hline
-{\footnotesize pipe\_tasks } & \\ \hline
+{\footnotesize pex\_config } &
+{\footnotesize Configuration interface and history-tracking for LSST Data Management.
+ }
+ \\ \hline
+{\footnotesize pipe\_base } &
+{\footnotesize LSST Data Management: base classes for data processing tasks
+ }
+ \\ \hline
+{\footnotesize log } &
+{\footnotesize LSST DM Logging for C++ and Python
+ }
+ \\ \hline
+{\footnotesize ip\_isr } &
+{\footnotesize LSST data management: instrument signature removal (detrending) for
+astronomical images
+ }
+ \\ \hline
+{\footnotesize afw } &
+{\footnotesize LSST data management: pipeline library code and primitives including
+images and tables
+ }
+ \\ \hline
+{\footnotesize meas\_algorithms } &
+{\footnotesize LSST Data Management: astronomical measurement algorithms
+ }
+ \\ \hline
+{\footnotesize pipe\_drivers } &
+{\footnotesize LSST Data Management: high level task coordination scripts
+ }
+ \\ \hline
+{\footnotesize pipe\_tasks } &
+{\footnotesize LSST Data Management: astronomical data processing tasks
+ }
+ \\ \hline
 \end{longtable}
 
 README.rst (First 20 lines only)
@@ -683,7 +741,7 @@ Code to produce calibration products, required to perform ISR and other calibrat
 \begin{longtable}{rl}
 \hline
 Open it in GitHUb: & \href{https://github.com/lsst/mops_daymops}{https://github.com/lsst/mops\_daymops} \\ \cdashline{1-2}
-Top Level Component: & \hyperlink{mops}{MOPS and Forced Photometry} \\
+Top Level Component: & \hyperlink{ssp}{Solar System processing and Forced Photometry} \\
 \cdashline{1-2}
 {GitHub Teams:} &
  Overlords \\
@@ -694,15 +752,27 @@ Top Level Component: & \hyperlink{mops}{MOPS and Forced Photometry} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize "scons" } & \\ \hline
-{\footnotesize "swig" } & \\ \hline
-{\footnotesize "gsl" } & \\ \hline
-{\footnotesize "daf\_base" } & \\ \hline
-{\footnotesize pex\_exceptions } & \\ \hline
-{\footnotesize "slalib" } & \\ \hline
-{\footnotesize "eigen" >=3.0.0 } & \\ \hline
-{\footnotesize "mysqlpython" } & \\ \hline
-{\footnotesize "numpy" } & \\ \hline
+{\footnotesize "scons" } &
+ \\ \hline
+{\footnotesize "swig" } &
+ \\ \hline
+{\footnotesize "gsl" } &
+ \\ \hline
+{\footnotesize "daf\_base" } &
+ \\ \hline
+{\footnotesize pex\_exceptions } &
+{\footnotesize Exception base classes and common exceptions, including C++-Python
+exception translation for LSST Data Management.
+ }
+ \\ \hline
+{\footnotesize "slalib" } &
+ \\ \hline
+{\footnotesize "eigen" >=3.0.0 } &
+ \\ \hline
+{\footnotesize "mysqlpython" } &
+ \\ \hline
+{\footnotesize "numpy" } &
+ \\ \hline
 \end{longtable}
 
 README.quickstart.txt (First 20 lines only)
@@ -777,18 +847,57 @@ Top Level Component: & \hyperlink{spdist}{Science Pipelines Distribution} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize lsst\_apps } & \\ \hline
-{\footnotesize ctrl\_execute } & \\ \hline
-{\footnotesize ctrl\_mpexec } & \\ \hline
-{\footnotesize ctrl\_platform\_lsstvc } & \\ \hline
-{\footnotesize jointcal } & \\ \hline
-{\footnotesize verify } & \\ \hline
-{\footnotesize ap\_verify } & \\ \hline
-{\footnotesize display\_firefly } & \\ \hline
-{\footnotesize display\_matplotlib } & \\ \hline
-{\footnotesize cp\_pipe } & \\ \hline
-{\footnotesize validate\_drp } & \\ \hline
-{\footnotesize fgcmcal } & \\ \hline
+{\footnotesize lsst\_apps } &
+{\footnotesize  }
+ \\ \hline
+{\footnotesize ctrl\_execute } &
+{\footnotesize LSST Data Management orchestration execution wrapper
+ }
+ \\ \hline
+{\footnotesize ctrl\_mpexec } &
+{\footnotesize Execution framework for PipelineTask
+ }
+ \\ \hline
+{\footnotesize ctrl\_platform\_lsstvc } &
+{\footnotesize Verification cluster configuration and execution files
+ }
+ \\ \hline
+{\footnotesize jointcal } &
+{\footnotesize Simultaneous astrometry and photometry
+ }
+ \\ \hline
+{\footnotesize verify } &
+{\footnotesize lsst.verify - LSST Science Pipelines Verification Framework
+ }
+ \\ \hline
+{\footnotesize ap\_verify } &
+{\footnotesize Verification test framework for DM Alert Production
+ }
+ \\ \hline
+{\footnotesize display\_firefly } &
+{\footnotesize Interface between afw and firefly
+ }
+ \\ \hline
+{\footnotesize display\_matplotlib } &
+{\footnotesize afwDisplay using matplotlib as a backend
+ }
+ \\ \hline
+{\footnotesize cp\_pipe } &
+{\footnotesize Calibration-products production pipeline
+ }
+ \\ \hline
+{\footnotesize sdm\_schemas } &
+{\footnotesize  }
+ \\ \hline
+{\footnotesize validate\_drp } &
+{\footnotesize Validate an output data repository against LSST Science Requirements
+Document Key Performance Metrics.
+ }
+ \\ \hline
+{\footnotesize fgcmcal } &
+{\footnotesize Global Photometric Calibration in LSST with FGCM
+ }
+ \\ \hline
 \end{longtable}
 
 
@@ -813,13 +922,36 @@ Top Level Component: & \hyperlink{scipipe}{Science Pipelines Libraries} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize meas\_deblender } & \\ \hline
-{\footnotesize meas\_modelfit } & \\ \hline
-{\footnotesize pipe\_tasks } & \\ \hline
-{\footnotesize ap\_pipe } & \\ \hline
-{\footnotesize obs\_sdss } & \\ \hline
-{\footnotesize obs\_test } & \\ \hline
-{\footnotesize meas\_extensions\_simpleShape } & \\ \hline
+{\footnotesize meas\_deblender } &
+{\footnotesize LSST Data Management: astronomical source deblender
+ }
+ \\ \hline
+{\footnotesize meas\_modelfit } &
+{\footnotesize LSST Data Management: model fitting algorithms
+ }
+ \\ \hline
+{\footnotesize pipe\_tasks } &
+{\footnotesize LSST Data Management: astronomical data processing tasks
+ }
+ \\ \hline
+{\footnotesize ap\_pipe } &
+{\footnotesize LSST Data Management Alert Production Pipeline
+ }
+ \\ \hline
+{\footnotesize obs\_sdss } &
+{\footnotesize SDSS-specific configuration and tasks for the LSST Data Management Stack
+ }
+ \\ \hline
+{\footnotesize obs\_test } &
+{\footnotesize Configuration and tasks for a test camera on the LSST Data Management
+Stack
+ }
+ \\ \hline
+{\footnotesize meas\_extensions\_simpleShape } &
+{\footnotesize LSST Data Management: Measure second moments with a pre-defined circular
+Gaussian weighting
+ }
+ \\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -853,9 +985,19 @@ Top Level Component: & \hyperlink{butler}{Data Butler} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize sphgeom } & \\ \hline
-{\footnotesize sconsUtils } & \\ \hline
-{\footnotesize utils } & \\ \hline
+{\footnotesize sphgeom } &
+{\footnotesize C++ spherical geometry primitives for LSST Data Management
+ }
+ \\ \hline
+{\footnotesize sconsUtils } &
+{\footnotesize Build system for LSST Data Management packages with standard layout.
+ }
+ \\ \hline
+{\footnotesize utils } &
+{\footnotesize Common code, floating-point utilities, and angle stringification for
+LSST Data Management.
+ }
+ \\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -887,10 +1029,21 @@ Top Level Component: & \hyperlink{txf}{Task Framework} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize daf\_butler } & \\ \hline
-{\footnotesize log } & \\ \hline
-{\footnotesize pex\_config } & \\ \hline
-{\footnotesize pipe\_base } & \\ \hline
+{\footnotesize daf\_butler } &
+{\footnotesize Prototype for data access framework described in \citeds{DMTN-056} }
+ \\ \hline
+{\footnotesize log } &
+{\footnotesize LSST DM Logging for C++ and Python
+ }
+ \\ \hline
+{\footnotesize pex\_config } &
+{\footnotesize Configuration interface and history-tracking for LSST Data Management.
+ }
+ \\ \hline
+{\footnotesize pipe\_base } &
+{\footnotesize LSST Data Management: base classes for data processing tasks
+ }
+ \\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -923,17 +1076,47 @@ Top Level Component: & \hyperlink{qserv}{Distributed Database} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize antlr4 } & \\ \hline
-{\footnotesize db } & \\ \hline
-{\footnotesize log } & \\ \hline
-{\footnotesize lua } & \\ \hline
-{\footnotesize mariadb } & \\ \hline
-{\footnotesize mysqlproxy } & \\ \hline
-{\footnotesize partition } & \\ \hline
-{\footnotesize redis\_plus\_plus } & \\ \hline
-{\footnotesize scisql } & \\ \hline
-{\footnotesize sphgeom } & \\ \hline
-{\footnotesize xrootd } & \\ \hline
+{\footnotesize antlr4 } &
+{\footnotesize antlr4 third party package for lsst
+ }
+ \\ \hline
+{\footnotesize db } &
+{\footnotesize Lightweight database interface wrappers and abstraction layer for LSST
+Data Management code, currently limited to MySQL.
+ }
+ \\ \hline
+{\footnotesize log } &
+{\footnotesize LSST DM Logging for C++ and Python
+ }
+ \\ \hline
+{\footnotesize lua } &
+{\footnotesize  }
+ \\ \hline
+{\footnotesize mariadb } &
+{\footnotesize  }
+ \\ \hline
+{\footnotesize mysqlproxy } &
+{\footnotesize  }
+ \\ \hline
+{\footnotesize partition } &
+{\footnotesize Spatial Data Partitioning for LSST Qserv
+ }
+ \\ \hline
+{\footnotesize redis\_plus\_plus } &
+{\footnotesize redis-plus-plus third party package for Vera Rubin Observatory
+ }
+ \\ \hline
+{\footnotesize scisql } &
+{\footnotesize  }
+ \\ \hline
+{\footnotesize sphgeom } &
+{\footnotesize C++ spherical geometry primitives for LSST Data Management
+ }
+ \\ \hline
+{\footnotesize xrootd } &
+{\footnotesize The XRootD central repository
+ }
+ \\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -1055,7 +1238,10 @@ Top Level Component: & \hyperlink{and}{Astrometry.net Data} \\
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize sconsUtils } & \\ \hline
+{\footnotesize sconsUtils } &
+{\footnotesize Build system for LSST Data Management packages with standard layout.
+ }
+ \\ \hline
 \end{longtable}
 
 

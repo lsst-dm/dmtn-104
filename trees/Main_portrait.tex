@@ -55,11 +55,11 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (OODSSRV.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
 
  \draw[pline] (PRSRV.east) -| ++(0.4,0) |- (OODSSRV.west); 
-\node (OCSBATSRV) [pbox,below=6pt of OODSSRV] {\textbf{OCS Batch
-} };\node [below right] at (OCSBATSRV.north west) {\footnotesize \color{blue}1.02C.02.02} ;
+\node (OCPSRV) [pbox,below=6pt of OODSSRV] {\textbf{OCS Pipeline
+} };\node [below right] at (OCPSRV.north west) {\footnotesize \color{blue}1.02C.02.02} ;
 
- \draw[pline] (PRSRV.east) -| ++(0.4,0) |- (OCSBATSRV.west); 
-\node (TMGSRV) [pbox,below=6pt of OCSBATSRV] {\textbf{Telem Gateway
+ \draw[pline] (PRSRV.east) -| ++(0.4,0) |- (OCPSRV.west); 
+\node (TMGSRV) [pbox,below=6pt of OCPSRV] {\textbf{Telem Gateway
 } };\node [below right] at (TMGSRV.north west) {\footnotesize \color{blue}1.02C.07.06.02} ;
 
  \draw[pline] (PRSRV.east) -| ++(0.4,0) |- (TMGSRV.west); 
@@ -247,11 +247,11 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (HEADERpkg) [tbox,below=3mm of HEADER.north] {{\footnotesize \color{black} \begin{verbatim} lsst-dm/HeaderService \end{verbatim} }  };
 
  \draw[pline] (PRSW.east) -| ++(0.4,0) |- (HEADER.west); 
-\node (OCSBAT) [pbox,below=6pt of HEADER] {\textbf{OCS Batch SW
-} };\node [below right] at (OCSBAT.north west) {\footnotesize \color{blue}1.02C.02.02} ;
+\node (OCPS) [pbox,below=6pt of HEADER] {\textbf{OCS Pipeline SW
+} };\node [below right] at (OCPS.north west) {\footnotesize \color{blue}1.02C.02.02} ;
 
- \draw[pline] (PRSW.east) -| ++(0.4,0) |- (OCSBAT.west); 
-\node (OODS) [pbox,below=6pt of OCSBAT] {\textbf{Obs Ops Data SW
+ \draw[pline] (PRSW.east) -| ++(0.4,0) |- (OCPS.west); 
+\node (OODS) [pbox,below=6pt of OCPS] {\textbf{Obs Ops Data SW
 } };\node [below right] at (OODS.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 \node (OODSpkg) [tbox,below=3mm of OODS.north] {{\footnotesize \color{black} \begin{verbatim} lsst-dm/ctrl_oods \end{verbatim} }  };
 
@@ -354,12 +354,12 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (DRP.north west) {\footnotesize \color{blue}1.02C.04} ;
 
  \draw[pline] (SCIPSWP.east) -| ++(0.4,0) |- (DRP.west); 
-\node (MOPS) [pbox,below=6pt of DRP] {\textbf{MOPS SW
-} };\node [below right] at (MOPS.north west) {\footnotesize \color{blue}1.02C.03.06} ;
-\node (MOPSpkg) [tbox,below=3mm of MOPS.north] {{\footnotesize \color{black} \begin{verbatim} mops_daymops \end{verbatim} }  };
+\node (SSP) [pbox,below=6pt of DRP] {\textbf{SSP SW
+} };\node [below right] at (SSP.north west) {\footnotesize \color{blue}1.02C.03.06} ;
+\node (SSPpkg) [tbox,below=3mm of SSP.north] {{\footnotesize \color{black} \begin{verbatim} mops_daymops \end{verbatim} }  };
 
- \draw[pline] (SCIPSWP.east) -| ++(0.4,0) |- (MOPS.west); 
-\node (SP) [pbox,below=6pt of MOPS] {\textbf{Spec Prog SW
+ \draw[pline] (SCIPSWP.east) -| ++(0.4,0) |- (SSP.west); 
+\node (SP) [pbox,below=6pt of SSP] {\textbf{Spec Prog SW
 } };\node [below right] at (SP.north west) {\footnotesize \color{blue}1.02C.03 1.02C.04} ;
 
  \draw[pline] (SCIPSWP.east) -| ++(0.4,0) |- (SP.west); 
@@ -434,10 +434,10 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (NETBASE.north west) {\footnotesize \color{blue}1.02C.07.08} ;
 
  \draw[pline] (NET.east) -| ++(0.4,0) |- (NETBASE.west); 
-\node (NETNCSA) [pbox,below=6pt of NETBASE] {\textbf{NCSA LAN
-} };\node [below right] at (NETNCSA.north west) {\footnotesize \color{blue}1.02C.07.09} ;
+\node (NETUSDF) [pbox,below=6pt of NETBASE] {\textbf{USDF LAN
+} };\node [below right] at (NETUSDF.north west) {\footnotesize \color{blue}1.02C.07.09} ;
 
- \draw[pline] (NET.east) -| ++(0.4,0) |- (NETNCSA.west); 
+ \draw[pline] (NET.east) -| ++(0.4,0) |- (NETUSDF.west); 
 \node (FAC) [pbox,below=135pt of NET] {\textbf{Facilities
 } };\node [below right] at (FAC.north west) {\footnotesize \color{blue}} ;
 
@@ -450,10 +450,10 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (DF.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (FAC.east) -| ++(0.4,0) |- (DF.west); 
-\node (FACNCSA) [pbox,right=43pt of DF] {\textbf{NCSA Facility
-} };\node [below right] at (FACNCSA.north west) {\footnotesize \color{blue}1.02C.07.09} ;
+\node (FACUS) [pbox,right=43pt of DF] {\textbf{US Data Facility
+} };\node [below right] at (FACUS.north west) {\footnotesize \color{blue}1.02C.07.09} ;
 
- \draw[pline] (DF.east) -| ++(0.4,0) |- (FACNCSA.west); 
+ \draw[pline] (DF.east) -| ++(0.4,0) |- (FACUS.west); 
 \node (ENC) [pbox,below=49pt of FAC] {\textbf{Enclaves
 } };\node [below right] at (ENC.north west) {\footnotesize \color{blue}} ;
 
@@ -474,15 +474,15 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (ENCCOMM.north west) {\footnotesize \color{blue}1.02C.08.01} ;
 
  \draw[pline] (ENC.east) -| ++(0.4,0) |- (ENCCOMM.west); 
-\node (ENCPRN) [pbox,below=6pt of ENCCOMM] {\textbf{Prmpt NCSA Encl
-} };\node [below right] at (ENCPRN.north west) {\footnotesize \color{blue}1.02C.07.09} ;
+\node (ENCPRUS) [pbox,below=6pt of ENCCOMM] {\textbf{Prompt US Encl
+} };\node [below right] at (ENCPRUS.north west) {\footnotesize \color{blue}1.02C.07.09} ;
 
- \draw[pline] (ENC.east) -| ++(0.4,0) |- (ENCPRN.west); 
-\node (ENCARCN) [pbox,below=6pt of ENCPRN] {\textbf{Arch NCSA Encl
-} };\node [below right] at (ENCARCN.north west) {\footnotesize \color{blue}1.02C.07.09} ;
+ \draw[pline] (ENC.east) -| ++(0.4,0) |- (ENCPRUS.west); 
+\node (ENCARCUS) [pbox,below=6pt of ENCPRUS] {\textbf{Arch US Encl
+} };\node [below right] at (ENCARCUS.north west) {\footnotesize \color{blue}1.02C.07.09} ;
 
- \draw[pline] (ENC.east) -| ++(0.4,0) |- (ENCARCN.west); 
-\node (ENCOFFL) [pbox,below=6pt of ENCARCN] {\textbf{Offline Prod Encl
+ \draw[pline] (ENC.east) -| ++(0.4,0) |- (ENCARCUS.west); 
+\node (ENCOFFL) [pbox,below=6pt of ENCARCUS] {\textbf{Offline Prod Encl
 } };\node [below right] at (ENCOFFL.north west) {\footnotesize \color{blue}1.02C.07.09} ;
 
  \draw[pline] (ENC.east) -| ++(0.4,0) |- (ENCOFFL.west); 
