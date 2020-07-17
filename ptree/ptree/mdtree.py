@@ -32,7 +32,6 @@ from .util import get_pkg_properties, rsget, fix_tex, fix_id_tex, Product, html_
 from .tree import make_tree_portrait, make_tree_landmix1, make_subtrees, make_full_tree
 from treelib import Tree
 from .gittree import do_github_section
-from .gittree import do_github_section
 
 requirements = {}
 
@@ -328,9 +327,12 @@ def do_csv(products, output_file):
     :param output_file:
     :return:
     """
-    csv = "Product key,Short name,Parent,WBS,Team,Manager,Product owner,Packages,Name,MD Order\n"
+    csv = '"#","Product key","Short name","Parent","WBS","Team","Manager",' \
+          '"Product Owner","Packages","Name","MD Order"\n'
+    i = 0
     for p in products:
         if not any(x in p.name for x in ["Obsolete", "obsolete"]):
+            i = i + 1
             pkey = p.id
             snm = p.shortname.rstrip()
             pid = p.parent
@@ -341,7 +343,8 @@ def do_csv(products, output_file):
             pkgs = ' '.join(p.pkgs)
             name = p.name.rstrip()
             pkg_index = p.index
-            csv = csv + f"{pkey},{snm},{pid},{wbs},{team},{mng},{owner},{pkgs},{name},{pkg_index}\n"
+            csv = csv + f'"{i}","{pkey}","{snm}","{pid}","{wbs}","{team}","{mng}",' \
+                        f'"{owner}","{pkgs}","{name}","{pkg_index}"\n'
     csv_filename = "csv/" + output_file + ".csv"
     file = open(csv_filename, "w")
     print(csv, file=file)
@@ -533,24 +536,24 @@ def get_csvfiles(filename):
                     count = count + 1
                     continue
                 else:
-                    # Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name
-                    # 0            1           2       3    4     5        6              7         8
+                    # ID, Product key, Short name, Parent, WBS, Team, Manager, Product owner, Packages, Name
+                    # 0   1            2           3       4    5     6        7              8         9
                     if len(line) != 0:
                         count = count + 1
-                        p = Product(line[0],             # 1   key
-                                    line[8],             # 2   name
-                                    line[2],             # 3   parent
+                        p = Product(line[1],             # 1   key
+                                    line[9],             # 2   name
+                                    line[3],             # 3   parent
                                     "",                  # 4   description
-                                    line[3].split(" "),  # 5   WBS
-                                    line[5].split(" "),  # 6   manager
-                                    line[6].split(" "),  # 7   owner
+                                    line[4].split(" "),  # 5   WBS
+                                    line[6].split(" "),  # 6   manager
+                                    line[7].split(" "),  # 7   owner
                                     "",                  # 8   kind
-                                    line[7].split(' '),  # 9   pkgs
+                                    line[8].split(' '),  # 9   pkgs
                                     [],                  # 10  depends
                                     "",                  # 11  MagicDraw Element Server Id
                                     [],                  # 12  links
-                                    line[4].split(" "),  # 13  teams
-                                    line[1],             # 14  shortname
+                                    line[5].split(" "),  # 13  teams
+                                    line[2],             # 14  shortname
                                     [],                  # 15  usedin
                                     [],                  # 16  requirements
                                     [],                  # 17  docs

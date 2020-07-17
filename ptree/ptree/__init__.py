@@ -58,5 +58,18 @@ def generate(format, username, password, tokenpath, compact, csvonly, partial):
     generate_document(connection_str, format, tokenpath, compact, csvonly, partial)
 
 
+@cli.command("diagram")
+@click.option('--file', help='Input csv file from which generate the product tree graph')
+@click.option('--depth', help='The prouct tree deph desiderd in the graph')
+def diagram(file, depth):
+    """
+    Generate a product tree graph reading a csv file as input
+
+    :param file:
+    :param depth:
+    :return:
+    """
+
+
 if __name__ == '__main__':
     cli()

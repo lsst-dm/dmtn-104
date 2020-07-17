@@ -43,8 +43,8 @@ def do_github_section(md_trees, token_path, output_format):
     global template_path
     global git_calls
     git_calls = 0
-    git_trees = []
     git_trees_dict = dict()
+
 
     full_token_path = os.path.expanduser(token_path)
     with open(full_token_path, 'r') as fdo:
@@ -52,24 +52,22 @@ def do_github_section(md_trees, token_path, output_format):
     g = github.Github(token)
     for tree in md_trees:
         for product in tree:
-            # print(tree[product].name, tree[product].pkgs, len(tree[product].pkgs))
             if tree[product].pkgs:
                 for pkg in tree[product].pkgs:
-                    # pkg_tmp = get_gitpkg_content(pkg, g)
-                    # if pkg_tmp:
-                    #     pkg_tmp.component_id = tree[product].id
-                    #    pkg_tmp.component_name = tree[product].name
-                    #    git_dm[pkg] = pkg_tmp
                     tmp_tree = get_git_tree(pkg, g, tree[product])
                     if tmp_tree:
-                        git_trees.append(tmp_tree)
-                        root = tmp_tree.root
-                        git_trees_dict[pkg] = tmp_tree[root].data
-                        print(git_calls)
+                        root = tmp_tree['tree'].root
+                        git_trees_dict[pkg] = {'root': tmp_tree['tree'][root].data, 'deps': tmp_tree['deps']}
+                        print(f"({git_calls})")
 
     envs = Environment(loader=ChoiceLoader([FileSystemLoader(Config.TEMPLATE_DIRECTORY),
                                            PackageLoader('ptree', 'templates')]),
                        lstrip_blocks=True, trim_blocks=True, autoescape=None)
+
+    # convert objects dictionary to full dictionary
+    all_pkgs = dict()
+    for pkg in Config.CACHED_GIT_REPOS.keys():
+        all_pkgs[pkg] = Config.CACHED_GIT_REPOS[pkg].__dict__
 
     try:
         template_path = f"gitsection.{Config.TEMPLATE_LANGUAGE}.jinja2"
@@ -80,7 +78,8 @@ def do_github_section(md_trees, token_path, output_format):
     metadata = dict()
     metadata["template"] = template.filename
     text = template.render(metadata=metadata,
-                           git_dm=git_trees_dict)
+                           all_pkgs=all_pkgs,
+                           git_trees=git_trees_dict)
     tex_file_name = "git_pkgs_section.tex"
     file = open(tex_file_name, "w")
     print(_as_output_format(text, output_format), file=file)
@@ -112,7 +111,7 @@ def get_gitpkg_content(pkg, g):
     else:
         org = 'lsst'
         repo = pkg
-    print(f"  > {pkg.strip()}", end="", flush=True)
+    # print(f"  > {pkg.strip()}", end="", flush=True)
     try:
         git_calls = git_calls + 1
         gg = g.get_organization(org)
@@ -128,7 +127,8 @@ def get_gitpkg_content(pkg, g):
         time.sleep(sleep_time)
         print(".", end="", flush=True)
     except Exception as ex:
-        print(f"[[Error accessing repository {repo} in organization {org} --> {ex}]]", end="", flush=True)
+        print(f"eRE({repo})]]", end="", flush=True)
+        # print(f"[[Error accessing repository {repo} in organization {org} --> {ex}]]", end="", flush=True)
         return None
     git_calls = git_calls + 1
     rc = repository.get_contents("")
@@ -141,7 +141,8 @@ def get_gitpkg_content(pkg, g):
             try:
                 readme_full = repository.get_file_contents(readme_file).decoded_content
             except:
-                print(f"[[Error in reading {repo} {readme_file} (readme) file]]", end="", flush=True)
+                print(f"eRM({repo})", end="", flush=True)
+                # print(f"[[Error in reading {repo} {readme_file} (readme) file]]", end="", flush=True)
                 return None
             readme_split = readme_full.decode('UTF-8').splitlines()
             readme_20 = '\n'.join(readme_split[:20])
@@ -154,7 +155,8 @@ def get_gitpkg_content(pkg, g):
                 time.sleep(sleep_time)
                 print(".", end="", flush=True)
             except:
-                print(f"[[Error in reading {repo} {ups_path} (ups table) file]]", end="", flush=True)
+                print(f"eUT({repo})", end="", flush=True)
+                # print(f"[[Error in reading {repo} {ups_path} (ups table) file]]", end="", flush=True)
                 return None
             for line in ups_content:
                 if "setupRequired" in line and line[:1] != "#":
@@ -176,10 +178,10 @@ def get_gitpkg_content(pkg, g):
         for t in teams:
             pkg_teams.append(t.name)
     except:
-        print(f"[[Error getting teams for {repo}]]", end="", flush=True)
+        print(f"eT({repo})", end="", flush=True)
+        # print(f"[[Error getting teams for {repo}]]", end="", flush=True)
 
     gp = GitPkg("",
-                "",
                 repo,
                 org,
                 readme,
@@ -201,7 +203,7 @@ def get_git_tree(pkg, g, top_prd):
     global pkg_list
     pkg_tree = Tree()
     pkg_id = 0
-    pkg_list = []
+    pkg_list = {}
 
     if pkg == '':
         return None
@@ -217,19 +219,18 @@ def get_git_tree(pkg, g, top_prd):
         pkg_content.key = str(pkg_id) + "." +pkg_content.name
         pkg_content.component_id = top_prd.id
         pkg_content.component_name = top_prd.name
-        print(pkg_content.key, pkg_content.pkey, pkg_content.name, pkg_content.ups_table, ">>>>>>", end="", flush=True)
+        # print(pkg_content.key, pkg_content.pkey, pkg_content.name, pkg_content.ups_table, ">>>>>>", end="", flush=True)
         pkg_tree.create_node(pkg_content.key, pkg_content.key, data=pkg_content)
         if pkg not in Config.CACHED_GIT_REPOS.keys():
             Config.CACHED_GIT_REPOS[pkg] = pkg_content
-            print("+")
+            print("+", end="", flush=True)
         for child in pkg_content.ups_table:
             walk_git_tree(child, g, pkg_content.key)
     else:
-        return None
-
+        return {'tree': None, 'deps': None}
     print(pkg_tree)
 
-    return pkg_tree
+    return {'tree': pkg_tree, 'deps': pkg_list}
 
 
 def walk_git_tree(pkg, g, pkey):
@@ -245,19 +246,21 @@ def walk_git_tree(pkg, g, pkey):
 
     if pkg in Config.CACHED_GIT_REPOS:
         pkg_content = Config.CACHED_GIT_REPOS[pkg]
-        print("^")
+        print("^", end="", flush=True)
     else:
         pkg_content = get_gitpkg_content(pkg, g)
         if pkg_content:
             Config.CACHED_GIT_REPOS[pkg] = pkg_content
             print("+", end="", flush=True)
 
-    if pkg_content and pkg_content.name not in pkg_list:
-        pkg_id = pkg_id + 1
-        pkg_content.key = str(pkg_id) + "." + pkg_content.name
-        print( pkg_content.key, pkg_content.pkey, pkg_content.name, pkg_content.ups_table, ">>")
-        pkg_tree.create_node(pkg_content.key, pkg_content.key, data=pkg_content, parent=pkey)
-        pkg_list.append(pkg_content.name)
-        for child in pkg_content.ups_table:
-            walk_git_tree(child, g, pkg_content.key)
-
+    if pkg_content:
+        if pkg_content.name not in pkg_list.keys():
+            pkg_id = pkg_id + 1
+            pkg_content.key = str(pkg_id) + "." + pkg_content.name
+            # print( pkg_content.key, pkg_content.pkey, pkg_content.name, pkg_content.ups_table, ">>")
+            pkg_tree.create_node(pkg_content.key, pkg_content.key, data=pkg_content, parent=pkey)
+            pkg_list[pkg_content.name] = {"parents": [pkg], "childs": pkg_content.ups_table}
+            for child in pkg_content.ups_table:
+                walk_git_tree(child, g, pkg_content.key)
+        else:
+            pkg_list[pkg_content.name]["parents"].append(pkg)

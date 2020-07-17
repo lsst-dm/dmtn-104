@@ -26,23 +26,24 @@
 
 % do not edit, generated automatically from Github
 
-{% for pkg in git_dm %}
+{% for pkg in git_trees %}
   {% if pkg != "" %}
+    {% set pkg_tree = git_trees[pkg]['root'] %}
 \newpage
-\subsection{{ "{" }}{{ fix_tex(git_dm[pkg].name) }}{{ "}" }}{{ label(pkg.lower()) }}
+\subsection{{ "{" }}{{ fix_tex(pkg_tree.name) }}{{ "}" }}{{ label(pkg.lower()) }}
 
-{{ git_dm[pkg].summary }}
+{{ pkg_tree.summary }}
 
-  {% set git_url = "https://github.com/" ~ git_dm[pkg].org ~ "/" ~ git_dm[pkg].name %}
+  {% set git_url = "https://github.com/" ~ pkg_tree.org ~ "/" ~ pkg_tree.name %}
 {\footnotesize
 \begin{longtable}{rl}
 \hline
 Open it in GitHUb: & {{ href(git_url, git_url) }} \\ \cdashline{1-2}
-Top Level Component: & {{ hyperlink(git_dm[pkg].component_id.lower(), git_dm[pkg].component_name) }} \\
-  {% if git_dm[pkg].teams|length > 0 %}
+Top Level Component: & {{ hyperlink(pkg_tree.component_id.lower(), pkg_tree.component_name) }} \\
+  {% if pkg_tree.teams|length > 0 %}
 \cdashline{1-2}
 {GitHub Teams:} &
-    {% for team in git_dm[pkg].teams %}
+    {% for team in pkg_tree.teams %}
       {% if loop.index == 1 %}
  {{ team }} \\
       {% else %}
@@ -53,21 +54,24 @@ Top Level Component: & {{ hyperlink(git_dm[pkg].component_id.lower(), git_dm[pkg
 \hline
 \end{longtable} }
 
-    {% if git_dm[pkg].ups_table|length > 0 %}
+    {% if pkg_tree.ups_table|length > 0 %}
 \begin{longtable}{rl}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-      {% for dependency in git_dm[pkg].ups_table %}
-{\footnotesize {{ fix_tex(dependency) }} } & \\ \hline
+      {% for ups_entry in pkg_tree.ups_table %}
+{\footnotesize {{ fix_tex(ups_entry) }} } &
+        {% if ups_entry in all_pkgs %}
+{\footnotesize {{ fix_tex(all_pkgs[ups_entry]['summary']) }} }
+        {% endif %} \\ \hline
       {% endfor %}
 \end{longtable}
     {% endif %}
 
-    {% for readme in git_dm[pkg].readmes %}
+    {% for readme in pkg_tree.readmes %}
 {{ readme }} (First 20 lines only)
 {\scriptsize
 \begin{lstlisting}[breaklines]
-{{ git_dm[pkg].readmes[readme] }}
+{{ pkg_tree.readmes[readme] }}
 \end{lstlisting}
 }
     {% endfor %}
