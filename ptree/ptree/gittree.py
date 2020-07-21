@@ -32,6 +32,7 @@ from .util import GitPkg, _as_output_format, fix_tex, html_to_latex
 from .config import Config
 from jinja2 import Environment, PackageLoader, TemplateNotFound, ChoiceLoader, FileSystemLoader
 from treelib import Tree
+from .make_graphs import make_graph
 
 
 def do_github_section(md_trees, token_path, output_format):
@@ -59,6 +60,7 @@ def do_github_section(md_trees, token_path, output_format):
                         root = tmp_tree['tree'].root
                         git_trees_dict[pkg] = {'root': tmp_tree['tree'][root].data, 'deps': tmp_tree['deps']}
                         print(f"({git_calls})")
+                        make_graph(git_trees_dict[pkg])
 
     envs = Environment(loader=ChoiceLoader([FileSystemLoader(Config.TEMPLATE_DIRECTORY),
                                            PackageLoader('ptree', 'templates')]),
@@ -162,7 +164,11 @@ def get_gitpkg_content(pkg, g):
                 if "setupRequired" in line and line[:1] != "#":
                     # dependency = fix_tex(re.search(r'\((.*?)\)', line).group(1))
                     dependency = re.search(r'\((.*?)\)', line).group(1)
-                    ups_table.append(dependency)
+                    # use only what in "
+                    if dependency[:1] == "\"":
+                        dependency = re.search(r'\"(.*?)\"', dependency).group(1)
+                    if dependency not in ups_table:
+                        ups_table.append(dependency)
 
     # get description
     raw_description = repository.description
@@ -190,6 +196,7 @@ def get_gitpkg_content(pkg, g):
                 pkg_desc,
                 "",
                 "")
+    # print("GET:", gp.name, gp.ups_table)
     return gp
 
 
@@ -244,7 +251,7 @@ def walk_git_tree(pkg, g, pkey):
     global pkg_id
     global pkg_list
 
-    if pkg in Config.CACHED_GIT_REPOS:
+    if pkg in Config.CACHED_GIT_REPOS.keys():
         pkg_content = Config.CACHED_GIT_REPOS[pkg]
         print("^", end="", flush=True)
     else:
@@ -259,8 +266,10 @@ def walk_git_tree(pkg, g, pkey):
             pkg_content.key = str(pkg_id) + "." + pkg_content.name
             # print( pkg_content.key, pkg_content.pkey, pkg_content.name, pkg_content.ups_table, ">>")
             pkg_tree.create_node(pkg_content.key, pkg_content.key, data=pkg_content, parent=pkey)
-            pkg_list[pkg_content.name] = {"parents": [pkg], "childs": pkg_content.ups_table}
+            pkg_list[pkg_content.name] = {"parents": [pkey], "childs": pkg_content.ups_table}
             for child in pkg_content.ups_table:
                 walk_git_tree(child, g, pkg_content.key)
         else:
-            pkg_list[pkg_content.name]["parents"].append(pkg)
+            if pkey not in pkg_list[pkg_content.name]["parents"]:
+                pkg_list[pkg_content.name]["parents"].append(pkey)
+        # print(f"LIST {pkg}:", pkg_list[pkg])

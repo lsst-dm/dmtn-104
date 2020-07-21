@@ -9,6 +9,7 @@ requires = [
     'BeautifulSoup4',
     'marshmallow<3',
     'pygithub',
+    'graphviz',
     'setuptools_scm'
 ]
 
