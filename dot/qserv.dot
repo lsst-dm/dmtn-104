@@ -1,0 +1,58 @@
+// Graph for qserv
+digraph {
+	qserv
+	qserv -> antlr4
+	antlr4
+	qserv -> db
+	db
+	db -> log
+	log
+	log -> base
+	base
+	base -> sconsUtils
+	sconsUtils
+	log -> sconsUtils
+	sconsUtils
+	log -> utils
+	utils
+	utils -> base
+	base
+	utils -> pex_exceptions
+	pex_exceptions
+	pex_exceptions -> base
+	base
+	db -> sconsUtils
+	sconsUtils
+	qserv -> log
+	log
+	qserv -> lua
+	lua
+	qserv -> mariadb
+	mariadb
+	qserv -> mysqlproxy
+	mysqlproxy
+	mysqlproxy -> lua
+	lua
+	mysqlproxy -> mariadb
+	mariadb
+	qserv -> partition
+	partition
+	partition -> sconsUtils
+	sconsUtils
+	partition -> sphgeom
+	sphgeom
+	sphgeom -> sconsUtils
+	sconsUtils
+	qserv -> redis_plus_plus
+	redis_plus_plus
+	redis_plus_plus -> hiredis
+	hiredis
+	qserv -> scisql
+	scisql
+	scisql -> mariadb
+	mariadb
+	qserv -> sphgeom
+	sphgeom
+	qserv -> xrootd
+	xrootd
+}

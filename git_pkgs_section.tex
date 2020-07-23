@@ -44,6 +44,7 @@ The LSST Science Platform Notebook Aspect is a JupyterHub + JupyterLab
 }
 
 
+
 \newpage
 \subsection{lsst-tap-service}\label{lsst-sqre/lsst-tap-service}
 
@@ -84,6 +85,7 @@ check that the availability endpoint returns a 200 and a simple sync query works
 This validates that your local TAP implementation is working.  You can now either
 \end{lstlisting}
 }
+
 
 
 \newpage
@@ -133,6 +135,7 @@ davt requires ljsyscall. It also used the ffi library from LuaJIT.
 }
 
 
+
 \newpage
 \subsection{HeaderService}\label{lsst-dm/headerservice}
 
@@ -147,7 +150,7 @@ Top Level Component: & \hyperlink{header}{Header Service SW} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize fitsio } &
@@ -180,6 +183,13 @@ Requirements
 \end{lstlisting}
 }
 
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/headerservice.dot.ps}
+\caption{Git packages dependency tree for \textbf{ lsst-dm/HeaderService }.}
+\end{center}
+\end{figure}
+
 
 \newpage
 \subsection{ctrl\_oods}\label{lsst-dm/ctrl_oods}
@@ -195,7 +205,7 @@ Top Level Component: & \hyperlink{oods}{Observatory Operations Data Service SW} 
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize base } &
@@ -233,6 +243,13 @@ The Observatory Operations Data Service watches for files in one or more directo
 Files are expired from the repository at specified intervals.
 \end{lstlisting}
 }
+
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/ctrl_oods.dot.ps}
+\caption{Git packages dependency tree for \textbf{ lsst-dm/ctrl\_oods }.}
+\end{center}
+\end{figure}
 
 
 \newpage
@@ -278,6 +295,7 @@ this directory for configuration files.
 }
 
 
+
 \newpage
 \subsection{alert\_stream}\label{lsst-dm/alert_stream}
 
@@ -317,6 +335,7 @@ Prerequisites
 .. _DM Developer Guide: https://developer.lsst.io/git/git-lfs.html
 \end{lstlisting}
 }
+
 
 
 \newpage
@@ -361,6 +380,7 @@ TAG=latest make service deployment
 }
 
 
+
 \newpage
 \subsection{dbb\_gwclient}\label{lsst-dm/dbb_gwclient}
 
@@ -387,6 +407,7 @@ This is a Python 3 only package (we assume Python 3.6 or higher).
 }
 
 
+
 \newpage
 \subsection{dbb\_gateway}\label{lsst-dm/dbb_gateway}
 
@@ -402,7 +423,7 @@ Top Level Component: & \hyperlink{dbbmd}{DBB Ingest/ Metadata Management SW} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize pyfits } &
@@ -417,6 +438,13 @@ README.md (First 20 lines only)
 Prototype code that ingests into the Data Backbone raw files delivered by the dbb_gwclient to the DBB gateway
 \end{lstlisting}
 }
+
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/dbb_gateway.dot.ps}
+\caption{Git packages dependency tree for \textbf{ lsst-dm/dbb\_gateway }.}
+\end{center}
+\end{figure}
 
 
 \newpage
@@ -463,6 +491,7 @@ is used for Python-based image and table visualizations.
 }
 
 
+
 \newpage
 \subsection{jupyterhubutils}\label{lsst-sqre/jupyterhubutils}
 
@@ -486,6 +515,7 @@ README.md (First 20 lines only)
 }
 
 
+
 \newpage
 \subsection{jupyterlabutils}\label{lsst-sqre/jupyterlabutils}
 
@@ -507,6 +537,7 @@ README.md (First 20 lines only)
 # Utilities for LSST LSP Science Platform notebook aspect (user pod side)
 \end{lstlisting}
 }
+
 
 
 \newpage
@@ -548,6 +579,7 @@ Build and Install Individually
     - HTML_DOC_ROOT environment variable is required to locate the path to the webserver's document root.
 \end{lstlisting}
 }
+
 
 
 \newpage
@@ -596,6 +628,7 @@ sudo aptitude install python-flask
 }
 
 
+
 \newpage
 \subsection{ap\_pipe}\label{ap_pipe}
 
@@ -614,7 +647,7 @@ Top Level Component: & \hyperlink{apprmpt}{Alert Production} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize utils } &
@@ -661,6 +694,13 @@ connected to for continued associating), and a Butler data ID.
 \end{lstlisting}
 }
 
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/ap_pipe.dot.ps}
+\caption{Git packages dependency tree for \textbf{ ap\_pipe }.}
+\end{center}
+\end{figure}
+
 
 \newpage
 \subsection{cp\_pipe}\label{cp_pipe}
@@ -681,7 +721,7 @@ Top Level Component: & \hyperlink{dmcal}{Calibration Software} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize pex\_config } &
@@ -731,6 +771,13 @@ Code to produce calibration products, required to perform ISR and other calibrat
 \end{lstlisting}
 }
 
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/cp_pipe.dot.ps}
+\caption{Git packages dependency tree for \textbf{ cp\_pipe }.}
+\end{center}
+\end{figure}
+
 
 \newpage
 \subsection{mops\_daymops}\label{mops_daymops}
@@ -749,7 +796,7 @@ Top Level Component: & \hyperlink{ssp}{Solar System processing and Forced Photom
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize scons } &
@@ -835,6 +882,13 @@ Build the C++ tools using instructions online at http://dev.lsstcorp.org/trac/wi
 \end{lstlisting}
 }
 
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/mops_daymops.dot.ps}
+\caption{Git packages dependency tree for \textbf{ mops\_daymops }.}
+\end{center}
+\end{figure}
+
 
 \newpage
 \subsection{lsst\_distrib}\label{lsst_distrib}
@@ -853,7 +907,7 @@ Top Level Component: & \hyperlink{spdist}{Science Pipelines Distribution} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize lsst\_apps } &
@@ -910,6 +964,13 @@ Document Key Performance Metrics.
 \end{longtable}
 
 
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/lsst_distrib.dot.ps}
+\caption{Git packages dependency tree for \textbf{ lsst\_distrib }.}
+\end{center}
+\end{figure}
+
 
 \newpage
 \subsection{lsst\_apps}\label{lsst_apps}
@@ -928,7 +989,7 @@ Top Level Component: & \hyperlink{scipipe}{Science Pipelines Libraries} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize meas\_deblender } &
@@ -972,6 +1033,13 @@ This is a metapackage providing a minimalist set of [LSST Science Pipelines](htt
 \end{lstlisting}
 }
 
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/lsst_apps.dot.ps}
+\caption{Git packages dependency tree for \textbf{ lsst\_apps }.}
+\end{center}
+\end{figure}
+
 
 \newpage
 \subsection{daf\_butler}\label{daf_butler}
@@ -991,7 +1059,7 @@ Top Level Component: & \hyperlink{butler}{Data Butler} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize sphgeom } &
@@ -1020,6 +1088,13 @@ This is a **Python 3 only** package (we assume Python 3.6 or higher).
 \end{lstlisting}
 }
 
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/daf_butler.dot.ps}
+\caption{Git packages dependency tree for \textbf{ daf\_butler }.}
+\end{center}
+\end{figure}
+
 
 \newpage
 \subsection{pipe\_supertask}\label{pipe_supertask}
@@ -1035,7 +1110,7 @@ Top Level Component: & \hyperlink{txf}{Task Framework} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize daf\_butler } &
@@ -1063,6 +1138,13 @@ Super Task implementation
 \end{lstlisting}
 }
 
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/pipe_supertask.dot.ps}
+\caption{Git packages dependency tree for \textbf{ pipe\_supertask }.}
+\end{center}
+\end{figure}
+
 
 \newpage
 \subsection{qserv}\label{qserv}
@@ -1082,7 +1164,7 @@ Top Level Component: & \hyperlink{qserv}{Distributed Database} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize antlr4 } &
@@ -1152,6 +1234,13 @@ Continuous integration server launches Qserv build and also multi-node integrati
 \end{lstlisting}
 }
 
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/qserv.dot.ps}
+\caption{Git packages dependency tree for \textbf{ qserv }.}
+\end{center}
+\end{figure}
+
 
 \newpage
 \subsection{albuquery}\label{albuquery}
@@ -1178,6 +1267,7 @@ albuquery
 ``albuquery`` will implement a TAP database query service for the Web APIs Aspect of the LSST Science Platform (a.k.a. Data Access Services/DAX).
 \end{lstlisting}
 }
+
 
 
 \newpage
@@ -1226,6 +1316,7 @@ Where `<platform>` is one of:
 }
 
 
+
 \newpage
 \subsection{astrometry\_net\_data}\label{astrometry_net_data}
 
@@ -1244,7 +1335,7 @@ Top Level Component: & \hyperlink{and}{Astrometry.net Data} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize sconsUtils } &
@@ -1253,6 +1344,13 @@ Top Level Component: & \hyperlink{and}{Astrometry.net Data} \\
  \\ \hline
 \end{longtable}
 
+
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{dot/astrometry_net_data.dot.ps}
+\caption{Git packages dependency tree for \textbf{ astrometry\_net\_data }.}
+\end{center}
+\end{figure}
 
 
 \newpage
@@ -1301,6 +1399,7 @@ Provides the following capabilities:
 }
 
 
+
 \newpage
 \subsection{jenkins-dm-jobs}\label{lsst-dm/jenkins-dm-jobs}
 
@@ -1325,6 +1424,7 @@ jenkins-dm-jobs
 [![Build Status](https://travis-ci.org/lsst-dm/jenkins-dm-jobs.png)](https://travis-ci.org/lsst-dm/jenkins-dm-jobs)
 \end{lstlisting}
 }
+
 
 
 \newpage
@@ -1367,6 +1467,7 @@ pip install sqre-codekit
 - `github-get-ratelimit`: Display the current github ReST API request ratelimit.
 \end{lstlisting}
 }
+
 
 
 \newpage
@@ -1413,6 +1514,7 @@ Structure
 | bin        | software distribution binaries (rebuild, publish)              |
 \end{lstlisting}
 }
+
 
 
 

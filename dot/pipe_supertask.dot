@@ -1,0 +1,84 @@
+// Graph for pipe_supertask
+digraph {
+	pipe_supertask
+	pipe_supertask -> daf_butler
+	daf_butler
+	daf_butler -> sphgeom
+	sphgeom
+	sphgeom -> sconsUtils
+	sconsUtils
+	daf_butler -> sconsUtils
+	sconsUtils
+	daf_butler -> utils
+	utils
+	utils -> base
+	base
+	base -> sconsUtils
+	sconsUtils
+	utils -> pex_exceptions
+	pex_exceptions
+	pex_exceptions -> base
+	base
+	pipe_supertask -> log
+	log
+	log -> base
+	base
+	log -> sconsUtils
+	sconsUtils
+	log -> utils
+	utils
+	pipe_supertask -> pex_config
+	pex_config
+	pipe_supertask -> pipe_base
+	pipe_base
+	pipe_base -> daf_butler
+	daf_butler
+	pipe_base -> daf_persistence
+	daf_persistence
+	daf_persistence -> log
+	log
+	daf_persistence -> pex_policy
+	pex_policy
+	pex_policy -> daf_base
+	daf_base
+	daf_base -> utils
+	utils
+	daf_base -> pex_exceptions
+	pex_exceptions
+	pex_policy -> utils
+	utils
+	pipe_base -> log
+	log
+	pipe_base -> pex_config
+	pex_config
+	pipe_base -> utils
+	utils
+	pipe_base -> afw
+	afw
+	afw -> daf_base
+	daf_base
+	afw -> daf_persistence
+	daf_persistence
+	afw -> pex_config
+	pex_config
+	afw -> geom
+	geom
+	geom -> sconsUtils
+	sconsUtils
+	geom -> sphgeom
+	sphgeom
+	geom -> pex_exceptions
+	pex_exceptions
+	geom -> utils
+	utils
+	afw -> log
+	log
+	afw -> sphgeom
+	sphgeom
+	afw -> utils
+	utils
+	afw -> astshim
+	astshim
+	astshim -> sconsUtils
+	sconsUtils
+}

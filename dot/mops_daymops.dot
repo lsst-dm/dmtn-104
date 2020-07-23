@@ -1,0 +1,41 @@
+// Graph for mops_daymops
+digraph {
+	mops_daymops
+	mops_daymops -> scons
+	scons
+	scons -> python
+	python
+	mops_daymops -> swig
+	swig
+	mops_daymops -> gsl
+	gsl
+	mops_daymops -> daf_base
+	daf_base
+	daf_base -> utils
+	utils
+	utils -> base
+	base
+	base -> sconsUtils
+	sconsUtils
+	utils -> pex_exceptions
+	pex_exceptions
+	pex_exceptions -> base
+	base
+	daf_base -> pex_exceptions
+	pex_exceptions
+	mops_daymops -> pex_exceptions
+	pex_exceptions
+	mops_daymops -> slalib
+	mops_daymops -> eigen
+	eigen
+	mops_daymops -> mysqlpython
+	mysqlpython
+	mysqlpython -> python
+	python
+	mysqlpython -> mariadbclient
+	mariadbclient
+	mops_daymops -> numpy
+	numpy
+	numpy -> python
+	python
+}

@@ -1,0 +1,18 @@
+// Graph for dbb_gateway
+digraph {
+	dbb_gateway
+	dbb_gateway -> pyfits
+	pyfits
+	pyfits -> numpy
+	numpy
+	numpy -> python
+	python
+	pyfits -> python_d2to1
+	python_d2to1
+	python_d2to1 -> python
+	python
+	pyfits -> stsci_distutils
+	stsci_distutils
+	stsci_distutils -> python_d2to1
+	python_d2to1
+}

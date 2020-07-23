@@ -1,0 +1,6 @@
+// Graph for astrometry_net_data
+digraph {
+	astrometry_net_data
+	astrometry_net_data -> sconsUtils
+	sconsUtils
+}

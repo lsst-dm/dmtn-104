@@ -12,7 +12,7 @@ install:
   - "pip install -r requirements.txt"
 script:
   # Generate imges to include in the document build:
-  - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make generate_imgs'"
+  - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make generate_imgs makedots'"
   # Crop generated images
   - "make crop_pdf_imgs"
   # Compile PDF using containerized lsst-texmf

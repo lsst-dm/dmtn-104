@@ -5,6 +5,8 @@ DOC= DMTN-104
 SRC= $(DOC).tex
 TREES_DIR=trees
 SUBTREES_DIR=subtrees
+DOT_DIR=dot
+DOT_FILES = $(shell cd $(DOT_DIR); ls *.dot)
 TREE_FILES = $(shell cd $(TREES_DIR); ls *.tex)
 SUBTREE_FILES = $(shell cd $(SUBTREES_DIR); ls *.tex)
 
@@ -28,7 +30,7 @@ SUBTREES=$(SUBTREE_FILES:.tex=)
 all: generate_imgs crop_pdf_imgs $(OBJ)
 
 # in travis I need to generate the images before generating the doc
-generate_imgs: do_trees do_subtrees
+generate_imgs: do_trees do_subtrees makedots
 
 JOBNAME=$(DOC)
 
@@ -83,3 +85,14 @@ crop_pdf_imgs:
 	  echo "Cropping" "$$f".pdf ; \
 	  python ./bin/cropPdf.py -f $(SUBTREES_DIR)/"$$f".pdf > /dev/null ; \
 	done
+
+makedots:
+	> cropPdf.log
+	for f in $(DOT_FILES); do \
+	  cd $(DOT_DIR) ; \
+	  dot -Tpdf -o"$$f".pdf "$$f" ; \
+	  python ../bin/cropPdf.py -f "$$f".pdf >> cropPdf.log ; \
+	  pdf2ps "$$f".pdf "$$f".ps ; \
+	  cd .. ; \
+	done
+	rm $(DOT_DIR)/*.pdf

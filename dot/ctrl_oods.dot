@@ -1,0 +1,242 @@
+// Graph for ctrl_oods
+digraph {
+	ctrl_oods
+	ctrl_oods -> base
+	base
+	base -> sconsUtils
+	sconsUtils
+	ctrl_oods -> utils
+	utils
+	utils -> base
+	base
+	utils -> pex_exceptions
+	pex_exceptions
+	pex_exceptions -> base
+	base
+	ctrl_oods -> sconsUtils
+	sconsUtils
+	ctrl_oods -> obs_lsst
+	obs_lsst
+	obs_lsst -> afw
+	afw
+	afw -> daf_base
+	daf_base
+	daf_base -> utils
+	utils
+	daf_base -> pex_exceptions
+	pex_exceptions
+	afw -> daf_persistence
+	daf_persistence
+	daf_persistence -> log
+	log
+	log -> base
+	base
+	log -> sconsUtils
+	sconsUtils
+	log -> utils
+	utils
+	daf_persistence -> pex_policy
+	pex_policy
+	pex_policy -> daf_base
+	daf_base
+	pex_policy -> utils
+	utils
+	afw -> pex_config
+	pex_config
+	afw -> geom
+	geom
+	geom -> sconsUtils
+	sconsUtils
+	geom -> sphgeom
+	sphgeom
+	sphgeom -> sconsUtils
+	sconsUtils
+	geom -> pex_exceptions
+	pex_exceptions
+	geom -> utils
+	utils
+	afw -> log
+	log
+	afw -> sphgeom
+	sphgeom
+	afw -> utils
+	utils
+	afw -> astshim
+	astshim
+	astshim -> sconsUtils
+	sconsUtils
+	obs_lsst -> daf_base
+	daf_base
+	obs_lsst -> obs_base
+	obs_base
+	obs_base -> daf_base
+	daf_base
+	obs_base -> log
+	log
+	obs_base -> daf_persistence
+	daf_persistence
+	obs_base -> afw
+	afw
+	obs_base -> utils
+	utils
+	obs_base -> astro_metadata_translator
+	astro_metadata_translator
+	astro_metadata_translator -> sconsUtils
+	sconsUtils
+	obs_base -> geom
+	geom
+	obs_base -> daf_butler
+	daf_butler
+	daf_butler -> sphgeom
+	sphgeom
+	daf_butler -> sconsUtils
+	sconsUtils
+	daf_butler -> utils
+	utils
+	obs_base -> pipe_base
+	pipe_base
+	pipe_base -> daf_butler
+	daf_butler
+	pipe_base -> daf_persistence
+	daf_persistence
+	pipe_base -> log
+	log
+	pipe_base -> pex_config
+	pex_config
+	pipe_base -> utils
+	utils
+	pipe_base -> afw
+	afw
+	obs_lsst -> pex_config
+	pex_config
+	obs_lsst -> utils
+	utils
+	obs_lsst -> ip_isr
+	ip_isr
+	ip_isr -> meas_algorithms
+	meas_algorithms
+	meas_algorithms -> astshim
+	astshim
+	meas_algorithms -> daf_base
+	daf_base
+	meas_algorithms -> daf_persistence
+	daf_persistence
+	meas_algorithms -> geom
+	geom
+	meas_algorithms -> afw
+	afw
+	meas_algorithms -> log
+	log
+	meas_algorithms -> meas_base
+	meas_base
+	meas_base -> utils
+	utils
+	meas_base -> geom
+	geom
+	meas_base -> afw
+	afw
+	meas_base -> coadd_utils
+	coadd_utils
+	coadd_utils -> afw
+	afw
+	coadd_utils -> log
+	log
+	coadd_utils -> pex_config
+	pex_config
+	coadd_utils -> pipe_base
+	pipe_base
+	coadd_utils -> sconsUtils
+	sconsUtils
+	coadd_utils -> utils
+	utils
+	meas_base -> daf_base
+	daf_base
+	meas_base -> sphgeom
+	sphgeom
+	meas_base -> pex_config
+	pex_config
+	meas_base -> pipe_base
+	pipe_base
+	meas_base -> sconsUtils
+	sconsUtils
+	meas_algorithms -> obs_test
+	obs_test
+	obs_test -> afw
+	afw
+	obs_test -> daf_base
+	daf_base
+	obs_test -> obs_base
+	obs_base
+	obs_test -> pex_config
+	pex_config
+	obs_test -> utils
+	utils
+	obs_test -> obs_test_data
+	obs_test_data
+	obs_test -> pipe_base
+	pipe_base
+	meas_algorithms -> pex_config
+	pex_config
+	meas_algorithms -> pex_exceptions
+	pex_exceptions
+	meas_algorithms -> pipe_base
+	pipe_base
+	meas_algorithms -> sconsUtils
+	sconsUtils
+	meas_algorithms -> utils
+	utils
+	ip_isr -> pipe_base
+	pipe_base
+	ip_isr -> sconsUtils
+	sconsUtils
+	ip_isr -> afw
+	afw
+	ip_isr -> geom
+	geom
+	ip_isr -> utils
+	utils
+	ip_isr -> pex_exceptions
+	pex_exceptions
+	obs_lsst -> pipe_tasks
+	pipe_tasks
+	pipe_tasks -> afw
+	afw
+	pipe_tasks -> daf_persistence
+	daf_persistence
+	pipe_tasks -> log
+	log
+	pipe_tasks -> meas_base
+	meas_base
+	pipe_tasks -> pipe_base
+	pipe_base
+	pipe_tasks -> pex_config
+	pex_config
+	pipe_tasks -> utils
+	utils
+	pipe_tasks -> obs_base
+	obs_base
+	pipe_tasks -> meas_algorithms
+	meas_algorithms
+	pipe_tasks -> meas_extensions_scarlet
+	meas_extensions_scarlet
+	meas_extensions_scarlet -> base
+	base
+	meas_extensions_scarlet -> afw
+	afw
+	meas_extensions_scarlet -> log
+	log
+	meas_extensions_scarlet -> scarlet
+	scarlet
+	meas_extensions_scarlet -> pex_config
+	pex_config
+	meas_extensions_scarlet -> pipe_base
+	pipe_base
+	meas_extensions_scarlet -> meas_algorithms
+	meas_algorithms
+	obs_lsst -> astro_metadata_translator
+	astro_metadata_translator
+	obs_lsst -> obs_lsst_data
+	obs_lsst_data
+	obs_lsst -> daf_butler
+	daf_butler
+}

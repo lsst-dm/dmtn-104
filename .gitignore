@@ -4,6 +4,11 @@ acronyms.tex
 meta.tex
 trees/*.pdf
 subtrees/*.pdf
+dot/*.pdf
+dot/*.png
+dot/*.jpg
+dot/*.log
+dot/*.ps
 
 one.*
 ## Core latex/pdflatex auxiliary files:
