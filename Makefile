@@ -91,7 +91,6 @@ makedots:
 	for f in $(DOT_FILES); do \
 	  cd $(DOT_DIR) ; \
 	  dot -Tpdf -o"$$f".pdf "$$f" ; \
-	  python ../bin/cropPdf.py -f "$$f".pdf >> cropPdf.log ; \
 	  pdf2ps "$$f".pdf "$$f".ps ; \
 	  cd .. ; \
 	done
