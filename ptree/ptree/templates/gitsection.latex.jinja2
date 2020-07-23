@@ -55,7 +55,7 @@ Top Level Component: & {{ hyperlink(pkg_tree.component_id.lower(), pkg_tree.comp
 \end{longtable} }
 
     {% if pkg_tree.ups_table|length > 0 %}
-\begin{longtable}{rl}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{3cm}p{12cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
       {% for ups_entry in pkg_tree.ups_table %}
@@ -75,6 +75,15 @@ Top Level Component: & {{ hyperlink(pkg_tree.component_id.lower(), pkg_tree.comp
 \end{lstlisting}
 }
     {% endfor %}
+
+    {% if graphs[pkg] %}
+\begin{figure}
+\begin{center}
+\includegraphics[max width=\linewidth]{{ "{" }}{{ graphs[pkg] }}{{ "}" }}
+\caption{Git packages dependency tree for \textbf{ {{ fix_tex(pkg_tree.name) }} }.}
+\end{center}
+\end{figure}
+    {% endif %}
 
   {% endif %}
 

@@ -45,6 +45,7 @@ def do_github_section(md_trees, token_path, output_format):
     global git_calls
     git_calls = 0
     git_trees_dict = dict()
+    graphs = dict()
 
 
     full_token_path = os.path.expanduser(token_path)
@@ -60,7 +61,9 @@ def do_github_section(md_trees, token_path, output_format):
                         root = tmp_tree['tree'].root
                         git_trees_dict[pkg] = {'root': tmp_tree['tree'][root].data, 'deps': tmp_tree['deps']}
                         print(f"({git_calls})")
-                        make_graph(git_trees_dict[pkg])
+                        graphs[pkg] = make_graph(git_trees_dict[pkg])
+                    else:
+                        print("")
 
     envs = Environment(loader=ChoiceLoader([FileSystemLoader(Config.TEMPLATE_DIRECTORY),
                                            PackageLoader('ptree', 'templates')]),
@@ -81,6 +84,7 @@ def do_github_section(md_trees, token_path, output_format):
     metadata["template"] = template.filename
     text = template.render(metadata=metadata,
                            all_pkgs=all_pkgs,
+                           graphs=graphs,
                            git_trees=git_trees_dict)
     tex_file_name = "git_pkgs_section.tex"
     file = open(tex_file_name, "w")
@@ -235,7 +239,7 @@ def get_git_tree(pkg, g, top_prd):
             walk_git_tree(child, g, pkg_content.key)
     else:
         return {'tree': None, 'deps': None}
-    print(pkg_tree)
+    # print(pkg_tree)
 
     return {'tree': pkg_tree, 'deps': pkg_list}
 

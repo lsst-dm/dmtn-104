@@ -49,7 +49,9 @@ def make_graph(tree_data):
     trace = dict()
     root = tree_data['root']
 
-    dot = Digraph(comment='Graph for ' + root.name, format='png')
+    graph_format = 'pdf'
+
+    dot = Digraph(comment='Graph for ' + root.name, format=graph_format)
 
     # print(root.name)
     # print("  -- ", tree_data['deps'])
@@ -65,4 +67,9 @@ def make_graph(tree_data):
                 walk_deps(dep)
                 # print(" ** -- ", Config.CACHED_GIT_REPOS[dep].ups_table)
 
-        dot.render("dot/"+root.name.lower()+".dot")
+        graph_file = "dot/" + root.name.lower() + ".dot"
+        dot.render(graph_file)
+
+        return graph_file + ".ps"
+    else:
+        return None
