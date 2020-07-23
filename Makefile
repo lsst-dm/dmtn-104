@@ -87,7 +87,7 @@ crop_pdf_imgs:
 	done
 
 makedots:
-	> cropPdf.log
+	> $(DOT_DIR)/cropPdf.log
 	for f in $(DOT_FILES); do \
 	  cd $(DOT_DIR) ; \
 	  dot -Tpdf -o"$$f".pdf "$$f" ; \
@@ -95,4 +95,3 @@ makedots:
 	  pdf2ps "$$f".pdf "$$f".ps ; \
 	  cd .. ; \
 	done
-	rm $(DOT_DIR)/*.pdf
