@@ -6,15 +6,15 @@ language: python
 python:
   - '3.5'
 before_install:
-  - "sudo apt-get update && sudo apt-get install -y --no-install-recommends ghostscript"
-  - "pip install 'lander>=0.1.0,<0.2' graphviz"
+  - "sudo apt-get update && sudo apt-get install -y --no-install-recommends ghostscripti graphviz"
+  - "pip install 'lander>=0.1.0,<0.2'"
 install:
   - "pip install -r requirements.txt"
 script:
   # Generate imges to include in the document build:
-  - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make generate_imgs makedots'"
+  - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make generate_imgs'"
   # Crop generated images
-  - "make crop_pdf_imgs"
+  - "make crop_pdf_imgs makedots"
   # Compile PDF using containerized lsst-texmf
   - "docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make DMTN-104.pdf'"
   # Deploy website. See https://github.com/lsst-sqre/lander for CLI options
