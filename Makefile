@@ -27,10 +27,10 @@ SUBTREES_PDF=$(SUBTREE_FILES:.tex=.pdf)
 SUBTREES=$(SUBTREE_FILES:.tex=)
 
 #Default when you type make
-all: generate_imgs crop_pdf_imgs $(OBJ)
+all: generate_imgs crop_pdf_imgs mekedots $(OBJ)
 
 # in travis I need to generate the images before generating the doc
-generate_imgs: do_trees do_subtrees makedots
+generate_imgs: do_trees do_subtrees
 
 JOBNAME=$(DOC)
 
@@ -90,7 +90,6 @@ makedots:
 	for f in $(DOT_FILES); do \
 	  cd $(DOT_DIR) ; \
 	  dot -Tpdf -o"$$f".pdf "$$f" ; \
-	  python ../bin/cropPdf.py -f "$$f".pdf > /dev/null ; \
 	  pdf2ps "$$f".pdf "$$f".ps ; \
 	  cd .. ; \
 	done
