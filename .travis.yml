@@ -6,7 +6,7 @@ language: python
 python:
   - '3.5'
 before_install:
-  - "sudo apt-get update && sudo apt-get install -y --no-install-recommends ghostscript"
+  - "sudo apt-get update && sudo apt-get install -y --no-install-recommends ghostscript graphviz"
   - "pip install 'lander>=0.1.0,<0.2'"
 install:
   - "pip install -r requirements.txt"
