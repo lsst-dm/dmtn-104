@@ -29,6 +29,7 @@
 {% for pkg in git_trees %}
   {% if pkg != "" %}
     {% set pkg_tree = git_trees[pkg]['root'] %}
+    {% set dep_list = git_trees[pkg]['deps'] %}
 \newpage
 \subsection{{ "{" }}{{ fix_tex(pkg_tree.name) }}{{ "}" }}{{ label(pkg.lower()) }}
 
@@ -55,15 +56,32 @@ Top Level Component: & {{ hyperlink(pkg_tree.component_id.lower(), pkg_tree.comp
 \end{longtable} }
 
     {% if pkg_tree.ups_table|length > 0 %}
-\begin{longtable}{>{\raggedleft\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-      {% for ups_entry in pkg_tree.ups_table %}
+      {% for pkg in dep_list %}
+{\footnotesize {{ fix_tex(pkg) }} } &
+\begin{minipage}[t]{14cm}{\footnotesize
+        {% if all_pkgs[pkg] != "" %}
+{{ all_pkgs[pkg]['summary'] }} ~\\
+        {% endif %}
+        {% if pkg_matrix[pkg]|length > 1 %}
+{\color{red} Also included in: \textbf{
+          {% for top in pkg_matrix[pkg] %}
+{% if pkg_tree.component_name != top.name %} {{ fix_tex(top.name) }}, {% endif %}
+          {% endfor %}
+} }
+        {% endif %}
+}
+\end{minipage}
+\\ \hline
+      {% endfor %}
+{################      {% for ups_entry in pkg_tree.ups_table %}
 {\footnotesize {{ fix_tex(ups_entry) }} } &
         {% if ups_entry in all_pkgs %}
 {\footnotesize {{ fix_tex(all_pkgs[ups_entry]['summary']) }} }
         {% endif %} \\ \hline
-      {% endfor %}
+      {% endfor %}  ###########################################}
 \end{longtable}
     {% endif %}
 
@@ -77,12 +95,7 @@ Top Level Component: & {{ hyperlink(pkg_tree.component_id.lower(), pkg_tree.comp
     {% endfor %}
 
     {% if graphs[pkg] %}
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{{ "{" }}{{ graphs[pkg] }}{{ "}" }}
-\caption{Git packages dependency tree for \textbf{ {{ fix_tex(pkg_tree.name) }} }.}
-\end{center}
-\end{figure}
     {% endif %}
 
   {% endif %}

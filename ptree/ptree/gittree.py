@@ -43,9 +43,11 @@ def do_github_section(md_trees, token_path, output_format):
     """
     global template_path
     global git_calls
+    global pkg_matrix
     git_calls = 0
     git_trees_dict = dict()
     graphs = dict()
+    pkg_matrix = dict()
 
 
     full_token_path = os.path.expanduser(token_path)
@@ -60,10 +62,9 @@ def do_github_section(md_trees, token_path, output_format):
                     if tmp_tree:
                         root = tmp_tree['tree'].root
                         git_trees_dict[pkg] = {'root': tmp_tree['tree'][root].data, 'deps': tmp_tree['deps']}
+                        # git_trees_dict[pkg] = tmp_tree['tree'][root].data
                         print(f"({git_calls})")
                         graphs[pkg] = make_graph(git_trees_dict[pkg])
-                    else:
-                        print("")
 
     envs = Environment(loader=ChoiceLoader([FileSystemLoader(Config.TEMPLATE_DIRECTORY),
                                            PackageLoader('ptree', 'templates')]),
@@ -85,6 +86,7 @@ def do_github_section(md_trees, token_path, output_format):
     text = template.render(metadata=metadata,
                            all_pkgs=all_pkgs,
                            graphs=graphs,
+                           pkg_matrix=pkg_matrix,
                            git_trees=git_trees_dict)
     tex_file_name = "git_pkgs_section.tex"
     file = open(tex_file_name, "w")
@@ -212,9 +214,11 @@ def get_git_tree(pkg, g, top_prd):
     global pkg_tree
     global pkg_id
     global pkg_list
+    global pkg_matrix
     pkg_tree = Tree()
     pkg_id = 0
-    pkg_list = {}
+    pkg_list = dict()
+    # pkg_list['root'] = []
 
     if pkg == '':
         return None
@@ -227,6 +231,11 @@ def get_git_tree(pkg, g, top_prd):
 
     if pkg_content:
         # first node in the tree
+        if pkg in pkg_matrix.keys():
+            if top_prd not in pkg_matrix[pkg]:
+                pkg_matrix[pkg].append(top_prd)
+        else:
+            pkg_matrix[pkg] = [top_prd]
         pkg_content.key = str(pkg_id) + "." +pkg_content.name
         pkg_content.component_id = top_prd.id
         pkg_content.component_name = top_prd.name
@@ -236,7 +245,7 @@ def get_git_tree(pkg, g, top_prd):
             Config.CACHED_GIT_REPOS[pkg] = pkg_content
             print("+", end="", flush=True)
         for child in pkg_content.ups_table:
-            walk_git_tree(child, g, pkg_content.key)
+            walk_git_tree(child, g, pkg_content.key, top_prd)
     else:
         return {'tree': None, 'deps': None}
     # print(pkg_tree)
@@ -244,7 +253,7 @@ def get_git_tree(pkg, g, top_prd):
     return {'tree': pkg_tree, 'deps': pkg_list}
 
 
-def walk_git_tree(pkg, g, pkey):
+def walk_git_tree(pkg, g, pkey, top_prd):
     """
 
     :param pkg:
@@ -254,6 +263,10 @@ def walk_git_tree(pkg, g, pkey):
     global pkg_tree
     global pkg_id
     global pkg_list
+    global pkg_matrix
+
+    # if pkg not in pkg_list['root']:
+    #    pkg_list['root'].append(pkg)
 
     if pkg in Config.CACHED_GIT_REPOS.keys():
         pkg_content = Config.CACHED_GIT_REPOS[pkg]
@@ -265,6 +278,11 @@ def walk_git_tree(pkg, g, pkey):
             print("+", end="", flush=True)
 
     if pkg_content:
+        if pkg in pkg_matrix.keys():
+            if top_prd not in pkg_matrix[pkg]:
+                pkg_matrix[pkg].append(top_prd)
+        else:
+            pkg_matrix[pkg] = [top_prd]
         if pkg_content.name not in pkg_list.keys():
             pkg_id = pkg_id + 1
             pkg_content.key = str(pkg_id) + "." + pkg_content.name
@@ -272,7 +290,7 @@ def walk_git_tree(pkg, g, pkey):
             pkg_tree.create_node(pkg_content.key, pkg_content.key, data=pkg_content, parent=pkey)
             pkg_list[pkg_content.name] = {"parents": [pkey], "childs": pkg_content.ups_table}
             for child in pkg_content.ups_table:
-                walk_git_tree(child, g, pkg_content.key)
+                walk_git_tree(child, g, pkg_content.key, top_prd)
         else:
             if pkey not in pkg_list[pkg_content.name]["parents"]:
                 pkg_list[pkg_content.name]["parents"].append(pkey)
