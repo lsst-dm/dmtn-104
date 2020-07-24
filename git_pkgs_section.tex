@@ -150,11 +150,9 @@ Top Level Component: & \hyperlink{header}{Header Service SW} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
-{\footnotesize fitsio } &
- \\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -183,12 +181,7 @@ Requirements
 \end{lstlisting}
 }
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/headerservice.dot.ps}
-\caption{Git packages dependency tree for \textbf{ lsst-dm/HeaderService }.}
-\end{center}
-\end{figure}
 
 
 \newpage
@@ -205,27 +198,268 @@ Top Level Component: & \hyperlink{oods}{Observatory Operations Data Service SW} 
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedleft\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize base } &
-{\footnotesize C++/Python import utilities and doxygen configuration for LSST Data
+\begin{minipage}[t]{14cm}{\footnotesize
+C++/Python import utilities and doxygen configuration for LSST Data
 Management.
- }
- \\ \hline
-{\footnotesize utils } &
-{\footnotesize Common code, floating-point utilities, and angle stringification for
-LSST Data Management.
- }
- \\ \hline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize sconsUtils } &
-{\footnotesize Build system for LSST Data Management packages with standard layout.
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Build system for LSST Data Management packages with standard layout.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database,  Astrometry.net Data, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Common code, floating-point utilities, and angle stringification for
+LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_exceptions } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Exception base classes and common exceptions, including C++-Python
+exception translation for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize obs\_lsst } &
-{\footnotesize The obs model for the LSST cameras
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+The obs model for the LSST cameras
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize afw } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: pipeline library code and primitives including
+images and tables
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level data structures, including memory-management helpers
+(Citizen), mappings (PropertySet, PropertyList), and DateTime.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_persistence } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Data access interface (the Butler) and deprecated persistence framework
+for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize log } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST DM Logging for C++ and Python
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_policy } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Deprecated configuration interface for LSST Data Management (replaced by
+pex\_config).
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_config } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Configuration interface and history-tracking for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize geom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sphgeom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ spherical geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize astshim } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ shim for a subset of the AST astronomical library
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Data access utilities and camera-specialization interfaces for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize astro\_metadata\_translator } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Observation metadata handling infrastructure
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_butler } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Prototype for data access framework described in \citeds{DMTN-056} ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pipe\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: base classes for data processing tasks
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ip\_isr } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: instrument signature removal (detrending) for
+astronomical images
+ ~\\
+{\color{red} Also included in: \textbf{
+ Calibration Software,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_algorithms } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: core astronomical measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize coadd\_utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: base classes for coadding (stacking) astronomical
+images
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_test } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Configuration and tasks for a test camera on the LSST Data Management
+Stack
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_test\_data } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Repository to hold user curated data for obs\_test
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pipe\_tasks } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical data processing tasks
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_extensions\_scarlet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize scarlet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Source separation in multi-band images by Constrained Matrix
+Factorization
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_lsst\_data } &
+\begin{minipage}[t]{14cm}{\footnotesize
+A repository for storing versioned calibration data and camera geometry
+for LSST instruments.
+ ~\\
+}
+\end{minipage}
+\\ \hline
 \end{longtable}
 
 README.rst (First 20 lines only)
@@ -244,12 +478,7 @@ Files are expired from the repository at specified intervals.
 \end{lstlisting}
 }
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/ctrl_oods.dot.ps}
-\caption{Git packages dependency tree for \textbf{ lsst-dm/ctrl\_oods }.}
-\end{center}
-\end{figure}
 
 
 \newpage
@@ -423,12 +652,45 @@ Top Level Component: & \hyperlink{dbbmd}{DBB Ingest/ Metadata Management SW} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize pyfits } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize numpy } &
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ Solar System processing and Forced Photometry, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize python } &
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ Solar System processing and Forced Photometry, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize python\_d2to1 } &
+\begin{minipage}[t]{14cm}{\footnotesize
+EUPS package of the PyPI d2to1 Python package
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize stsci\_distutils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+EUPS package of the PyPI stsci.distutils Python package
+ ~\\
+}
+\end{minipage}
+\\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -439,12 +701,7 @@ Prototype code that ingests into the Data Backbone raw files delivered by the db
 \end{lstlisting}
 }
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/dbb_gateway.dot.ps}
-\caption{Git packages dependency tree for \textbf{ lsst-dm/dbb\_gateway }.}
-\end{center}
-\end{figure}
 
 
 \newpage
@@ -647,31 +904,290 @@ Top Level Component: & \hyperlink{apprmpt}{Alert Production} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize utils } &
-{\footnotesize Common code, floating-point utilities, and angle stringification for
+\begin{minipage}[t]{14cm}{\footnotesize
+Common code, floating-point utilities, and angle stringification for
 LSST Data Management.
- }
- \\ \hline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++/Python import utilities and doxygen configuration for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sconsUtils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Build system for LSST Data Management packages with standard layout.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database,  Astrometry.net Data, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_exceptions } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Exception base classes and common exceptions, including C++-Python
+exception translation for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize pex\_config } &
-{\footnotesize Configuration interface and history-tracking for LSST Data Management.
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Configuration interface and history-tracking for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize pipe\_base } &
-{\footnotesize LSST Data Management: base classes for data processing tasks
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: base classes for data processing tasks
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_butler } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Prototype for data access framework described in \citeds{DMTN-056} ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sphgeom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ spherical geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_persistence } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Data access interface (the Butler) and deprecated persistence framework
+for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize log } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST DM Logging for C++ and Python
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_policy } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Deprecated configuration interface for LSST Data Management (replaced by
+pex\_config).
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level data structures, including memory-management helpers
+(Citizen), mappings (PropertySet, PropertyList), and DateTime.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize afw } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: pipeline library code and primitives including
+images and tables
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize geom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize astshim } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ shim for a subset of the AST astronomical library
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize pipe\_tasks } &
-{\footnotesize LSST Data Management: astronomical data processing tasks
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical data processing tasks
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: core astronomical measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize coadd\_utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: base classes for coadding (stacking) astronomical
+images
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Data access utilities and camera-specialization interfaces for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize astro\_metadata\_translator } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Observation metadata handling infrastructure
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_algorithms } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_test } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Configuration and tasks for a test camera on the LSST Data Management
+Stack
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_test\_data } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Repository to hold user curated data for obs\_test
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_extensions\_scarlet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize scarlet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Source separation in multi-band images by Constrained Matrix
+Factorization
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize ap\_association } &
-{\footnotesize Repository for holding code related to Alert Production difference
+\begin{minipage}[t]{14cm}{\footnotesize
+Repository for holding code related to Alert Production difference
 source association
- }
- \\ \hline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize alert\_packet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Alert schemas in Avro format.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize dax\_apdb } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Interface and implementation for LSST Prompt Products Database
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize verify } &
+\begin{minipage}[t]{14cm}{\footnotesize
+lsst.verify - LSST Science Pipelines Verification Framework
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize verify\_metrics } &
+\begin{minipage}[t]{14cm}{\footnotesize
+lsst.verify.metrics --- Metric and specification definitions for the
+LSST Science Pipelines Verification Framework.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -694,12 +1210,7 @@ connected to for continued associating), and a Butler data ID.
 \end{lstlisting}
 }
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/ap_pipe.dot.ps}
-\caption{Git packages dependency tree for \textbf{ ap\_pipe }.}
-\end{center}
-\end{figure}
 
 
 \newpage
@@ -721,43 +1232,272 @@ Top Level Component: & \hyperlink{dmcal}{Calibration Software} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize pex\_config } &
-{\footnotesize Configuration interface and history-tracking for LSST Data Management.
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Configuration interface and history-tracking for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize pipe\_base } &
-{\footnotesize LSST Data Management: base classes for data processing tasks
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: base classes for data processing tasks
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_butler } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Prototype for data access framework described in \citeds{DMTN-056} ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sphgeom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ spherical geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sconsUtils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Build system for LSST Data Management packages with standard layout.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database,  Astrometry.net Data, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Common code, floating-point utilities, and angle stringification for
+LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++/Python import utilities and doxygen configuration for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_exceptions } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Exception base classes and common exceptions, including C++-Python
+exception translation for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_persistence } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Data access interface (the Butler) and deprecated persistence framework
+for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize log } &
-{\footnotesize LSST DM Logging for C++ and Python
- }
- \\ \hline
-{\footnotesize ip\_isr } &
-{\footnotesize LSST data management: instrument signature removal (detrending) for
-astronomical images
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST DM Logging for C++ and Python
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_policy } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Deprecated configuration interface for LSST Data Management (replaced by
+pex\_config).
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level data structures, including memory-management helpers
+(Citizen), mappings (PropertySet, PropertyList), and DateTime.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize afw } &
-{\footnotesize LSST data management: pipeline library code and primitives including
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: pipeline library code and primitives including
 images and tables
- }
- \\ \hline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize geom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize astshim } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ shim for a subset of the AST astronomical library
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ip\_isr } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: instrument signature removal (detrending) for
+astronomical images
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize meas\_algorithms } &
-{\footnotesize LSST Data Management: astronomical measurement algorithms
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: core astronomical measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize coadd\_utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: base classes for coadding (stacking) astronomical
+images
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_test } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Configuration and tasks for a test camera on the LSST Data Management
+Stack
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Data access utilities and camera-specialization interfaces for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize astro\_metadata\_translator } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Observation metadata handling infrastructure
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_test\_data } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Repository to hold user curated data for obs\_test
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize pipe\_drivers } &
-{\footnotesize LSST Data Management: high level task coordination scripts
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: high level task coordination scripts
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ctrl\_pool } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Framework for parallelized "supertasks" using MPI, ported from the HSC
+pipeline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize pipe\_tasks } &
-{\footnotesize LSST Data Management: astronomical data processing tasks
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical data processing tasks
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_extensions\_scarlet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize scarlet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Source separation in multi-band images by Constrained Matrix
+Factorization
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
 \end{longtable}
 
 README.rst (First 20 lines only)
@@ -771,12 +1511,7 @@ Code to produce calibration products, required to perform ISR and other calibrat
 \end{lstlisting}
 }
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/cp_pipe.dot.ps}
-\caption{Git packages dependency tree for \textbf{ cp\_pipe }.}
-\end{center}
-\end{figure}
 
 
 \newpage
@@ -796,39 +1531,113 @@ Top Level Component: & \hyperlink{ssp}{Solar System processing and Forced Photom
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize scons } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize python } &
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ DBB Ingest/ Metadata Management SW, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize swig } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize gsl } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize daf\_base } &
-{\footnotesize Low-level data structures, including memory-management helpers
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level data structures, including memory-management helpers
 (Citizen), mappings (PropertySet, PropertyList), and DateTime.
- }
- \\ \hline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Common code, floating-point utilities, and angle stringification for
+LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++/Python import utilities and doxygen configuration for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sconsUtils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Build system for LSST Data Management packages with standard layout.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database,  Astrometry.net Data, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize pex\_exceptions } &
-{\footnotesize Exception base classes and common exceptions, including C++-Python
+\begin{minipage}[t]{14cm}{\footnotesize
+Exception base classes and common exceptions, including C++-Python
 exception translation for LSST Data Management.
- }
- \\ \hline
-{\footnotesize slalib } &
- \\ \hline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize eigen } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize mysqlpython } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize mariadbclient } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Client for connecting to MariaDB database server
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize numpy } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ DBB Ingest/ Metadata Management SW, } }
+}
+\end{minipage}
+\\ \hline
 \end{longtable}
 
 README.quickstart.txt (First 20 lines only)
@@ -882,12 +1691,7 @@ Build the C++ tools using instructions online at http://dev.lsstcorp.org/trac/wi
 \end{lstlisting}
 }
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/mops_daymops.dot.ps}
-\caption{Git packages dependency tree for \textbf{ mops\_daymops }.}
-\end{center}
-\end{figure}
 
 
 \newpage
@@ -907,69 +1711,518 @@ Top Level Component: & \hyperlink{spdist}{Science Pipelines Distribution} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize lsst\_apps } &
-{\footnotesize  }
- \\ \hline
-{\footnotesize ctrl\_execute } &
-{\footnotesize LSST Data Management orchestration execution wrapper
- }
- \\ \hline
-{\footnotesize ctrl\_mpexec } &
-{\footnotesize Execution framework for PipelineTask
- }
- \\ \hline
-{\footnotesize ctrl\_platform\_lsstvc } &
-{\footnotesize Verification cluster configuration and execution files
- }
- \\ \hline
-{\footnotesize jointcal } &
-{\footnotesize Simultaneous astrometry and photometry
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_deblender } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical source deblender
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize afw } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: pipeline library code and primitives including
+images and tables
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level data structures, including memory-management helpers
+(Citizen), mappings (PropertySet, PropertyList), and DateTime.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Common code, floating-point utilities, and angle stringification for
+LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++/Python import utilities and doxygen configuration for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sconsUtils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Build system for LSST Data Management packages with standard layout.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database,  Astrometry.net Data, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_exceptions } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Exception base classes and common exceptions, including C++-Python
+exception translation for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_persistence } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Data access interface (the Butler) and deprecated persistence framework
+for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize log } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST DM Logging for C++ and Python
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_policy } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Deprecated configuration interface for LSST Data Management (replaced by
+pex\_config).
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_config } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Configuration interface and history-tracking for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize geom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sphgeom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ spherical geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize astshim } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ shim for a subset of the AST astronomical library
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_algorithms } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: core astronomical measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize coadd\_utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: base classes for coadding (stacking) astronomical
+images
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pipe\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: base classes for data processing tasks
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_butler } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Prototype for data access framework described in \citeds{DMTN-056} ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries,  Data Butler,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_test } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Configuration and tasks for a test camera on the LSST Data Management
+Stack
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Data access utilities and camera-specialization interfaces for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize astro\_metadata\_translator } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Observation metadata handling infrastructure
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_test\_data } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Repository to hold user curated data for obs\_test
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_modelfit } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: model fitting algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize shapelet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Gauss-Hermite and Gauss-Laguerre functions for use with the LSST Data
+Management pipeline.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pipe\_tasks } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical data processing tasks
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_extensions\_scarlet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize scarlet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Source separation in multi-band images by Constrained Matrix
+Factorization
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ap\_pipe } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management Alert Production Pipeline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ap\_association } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Repository for holding code related to Alert Production difference
+source association
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize alert\_packet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Alert schemas in Avro format.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize dax\_apdb } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Interface and implementation for LSST Prompt Products Database
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize verify } &
-{\footnotesize lsst.verify - LSST Science Pipelines Verification Framework
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+lsst.verify - LSST Science Pipelines Verification Framework
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize verify\_metrics } &
+\begin{minipage}[t]{14cm}{\footnotesize
+lsst.verify.metrics --- Metric and specification definitions for the
+LSST Science Pipelines Verification Framework.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_sdss } &
+\begin{minipage}[t]{14cm}{\footnotesize
+SDSS-specific configuration and tasks for the LSST Data Management Stack
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_astrom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astrometric measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_extensions\_simpleShape } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: Measure second moments with a pre-defined circular
+Gaussian weighting
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ctrl\_execute } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management orchestration execution wrapper
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ctrl\_orca } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management orchestration
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ctrl\_mpexec } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Execution framework for PipelineTask
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ctrl\_platform\_lsstvc } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Verification cluster configuration and execution files
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize jointcal } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Simultaneous astrometry and photometry
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize eigen } &
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ Solar System processing and Forced Photometry, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize jointcal\_cholmod } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Minimal dependency-free subset of SuiteSparse for Cholesky factorization
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize ap\_verify } &
-{\footnotesize Verification test framework for DM Alert Production
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Verification test framework for DM Alert Production
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ip\_diffim } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: astronomical image differencing
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize display\_firefly } &
-{\footnotesize Interface between afw and firefly
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Interface between afw and firefly
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize firefly\_client } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Python API for Firefly
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize display\_matplotlib } &
-{\footnotesize afwDisplay using matplotlib as a backend
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+afwDisplay using matplotlib as a backend
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize cp\_pipe } &
-{\footnotesize Calibration-products production pipeline
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Calibration-products production pipeline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Calibration Software, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ip\_isr } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: instrument signature removal (detrending) for
+astronomical images
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Calibration Software, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pipe\_drivers } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: high level task coordination scripts
+ ~\\
+{\color{red} Also included in: \textbf{
+ Calibration Software, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ctrl\_pool } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Framework for parallelized "supertasks" using MPI, ported from the HSC
+pipeline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Calibration Software, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize sdm\_schemas } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize validate\_drp } &
-{\footnotesize Validate an output data repository against LSST Science Requirements
+\begin{minipage}[t]{14cm}{\footnotesize
+Validate an output data repository against LSST Science Requirements
 Document Key Performance Metrics.
- }
- \\ \hline
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize fgcmcal } &
-{\footnotesize Global Photometric Calibration in LSST with FGCM
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Global Photometric Calibration in LSST with FGCM
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize fgcm } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Python implementation of the Forward Global Calibration Method
+ ~\\
+}
+\end{minipage}
+\\ \hline
 \end{longtable}
 
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/lsst_distrib.dot.ps}
-\caption{Git packages dependency tree for \textbf{ lsst\_distrib }.}
-\end{center}
-\end{figure}
 
 
 \newpage
@@ -989,39 +2242,355 @@ Top Level Component: & \hyperlink{scipipe}{Science Pipelines Libraries} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize meas\_deblender } &
-{\footnotesize LSST Data Management: astronomical source deblender
- }
- \\ \hline
-{\footnotesize meas\_modelfit } &
-{\footnotesize LSST Data Management: model fitting algorithms
- }
- \\ \hline
-{\footnotesize pipe\_tasks } &
-{\footnotesize LSST Data Management: astronomical data processing tasks
- }
- \\ \hline
-{\footnotesize ap\_pipe } &
-{\footnotesize LSST Data Management Alert Production Pipeline
- }
- \\ \hline
-{\footnotesize obs\_sdss } &
-{\footnotesize SDSS-specific configuration and tasks for the LSST Data Management Stack
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical source deblender
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize afw } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: pipeline library code and primitives including
+images and tables
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level data structures, including memory-management helpers
+(Citizen), mappings (PropertySet, PropertyList), and DateTime.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Common code, floating-point utilities, and angle stringification for
+LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++/Python import utilities and doxygen configuration for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sconsUtils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Build system for LSST Data Management packages with standard layout.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Data Butler,  Task Framework,  Distributed Database,  Astrometry.net Data, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_exceptions } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Exception base classes and common exceptions, including C++-Python
+exception translation for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_persistence } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Data access interface (the Butler) and deprecated persistence framework
+for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize log } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST DM Logging for C++ and Python
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_policy } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Deprecated configuration interface for LSST Data Management (replaced by
+pex\_config).
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_config } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Configuration interface and history-tracking for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize geom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sphgeom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ spherical geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize astshim } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ shim for a subset of the AST astronomical library
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_algorithms } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: core astronomical measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize coadd\_utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: base classes for coadding (stacking) astronomical
+images
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pipe\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: base classes for data processing tasks
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_butler } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Prototype for data access framework described in \citeds{DMTN-056} ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Data Butler,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize obs\_test } &
-{\footnotesize Configuration and tasks for a test camera on the LSST Data Management
+\begin{minipage}[t]{14cm}{\footnotesize
+Configuration and tasks for a test camera on the LSST Data Management
 Stack
- }
- \\ \hline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Data access utilities and camera-specialization interfaces for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize astro\_metadata\_translator } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Observation metadata handling infrastructure
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_test\_data } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Repository to hold user curated data for obs\_test
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_modelfit } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: model fitting algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize shapelet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Gauss-Hermite and Gauss-Laguerre functions for use with the LSST Data
+Management pipeline.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pipe\_tasks } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astronomical data processing tasks
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_extensions\_scarlet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize scarlet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Source separation in multi-band images by Constrained Matrix
+Factorization
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ap\_pipe } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management Alert Production Pipeline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize ap\_association } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Repository for holding code related to Alert Production difference
+source association
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize alert\_packet } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Alert schemas in Avro format.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize dax\_apdb } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Interface and implementation for LSST Prompt Products Database
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize verify } &
+\begin{minipage}[t]{14cm}{\footnotesize
+lsst.verify - LSST Science Pipelines Verification Framework
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize verify\_metrics } &
+\begin{minipage}[t]{14cm}{\footnotesize
+lsst.verify.metrics --- Metric and specification definitions for the
+LSST Science Pipelines Verification Framework.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Alert Production,  Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize obs\_sdss } &
+\begin{minipage}[t]{14cm}{\footnotesize
+SDSS-specific configuration and tasks for the LSST Data Management Stack
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize meas\_astrom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: astrometric measurement algorithms
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize meas\_extensions\_simpleShape } &
-{\footnotesize LSST Data Management: Measure second moments with a pre-defined circular
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: Measure second moments with a pre-defined circular
 Gaussian weighting
- }
- \\ \hline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Science Pipelines Distribution, } }
+}
+\end{minipage}
+\\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -1033,12 +2602,7 @@ This is a metapackage providing a minimalist set of [LSST Science Pipelines](htt
 \end{lstlisting}
 }
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/lsst_apps.dot.ps}
-\caption{Git packages dependency tree for \textbf{ lsst\_apps }.}
-\end{center}
-\end{figure}
 
 
 \newpage
@@ -1059,22 +2623,57 @@ Top Level Component: & \hyperlink{butler}{Data Butler} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize sphgeom } &
-{\footnotesize C++ spherical geometry primitives for LSST Data Management
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ spherical geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize sconsUtils } &
-{\footnotesize Build system for LSST Data Management packages with standard layout.
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Build system for LSST Data Management packages with standard layout.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework,  Distributed Database,  Astrometry.net Data, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize utils } &
-{\footnotesize Common code, floating-point utilities, and angle stringification for
+\begin{minipage}[t]{14cm}{\footnotesize
+Common code, floating-point utilities, and angle stringification for
 LSST Data Management.
- }
- \\ \hline
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++/Python import utilities and doxygen configuration for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_exceptions } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Exception base classes and common exceptions, including C++-Python
+exception translation for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -1088,12 +2687,7 @@ This is a **Python 3 only** package (we assume Python 3.6 or higher).
 \end{lstlisting}
 }
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/daf_butler.dot.ps}
-\caption{Git packages dependency tree for \textbf{ daf\_butler }.}
-\end{center}
-\end{figure}
 
 
 \newpage
@@ -1110,24 +2704,150 @@ Top Level Component: & \hyperlink{txf}{Task Framework} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize daf\_butler } &
-{\footnotesize Prototype for data access framework described in \citeds{DMTN-056} }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Prototype for data access framework described in \citeds{DMTN-056} ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sphgeom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ spherical geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sconsUtils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Build system for LSST Data Management packages with standard layout.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Distributed Database,  Astrometry.net Data, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Common code, floating-point utilities, and angle stringification for
+LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++/Python import utilities and doxygen configuration for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_exceptions } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Exception base classes and common exceptions, including C++-Python
+exception translation for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize log } &
-{\footnotesize LSST DM Logging for C++ and Python
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST DM Logging for C++ and Python
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize pex\_config } &
-{\footnotesize Configuration interface and history-tracking for LSST Data Management.
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Configuration interface and history-tracking for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize pipe\_base } &
-{\footnotesize LSST Data Management: base classes for data processing tasks
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST Data Management: base classes for data processing tasks
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_persistence } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Data access interface (the Butler) and deprecated persistence framework
+for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_policy } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Deprecated configuration interface for LSST Data Management (replaced by
+pex\_config).
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize daf\_base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level data structures, including memory-management helpers
+(Citizen), mappings (PropertySet, PropertyList), and DateTime.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize afw } &
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST data management: pipeline library code and primitives including
+images and tables
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize geom } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Low-level geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize astshim } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ shim for a subset of the AST astronomical library
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries, } }
+}
+\end{minipage}
+\\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -1138,12 +2858,7 @@ Super Task implementation
 \end{lstlisting}
 }
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/pipe_supertask.dot.ps}
-\caption{Git packages dependency tree for \textbf{ pipe\_supertask }.}
-\end{center}
-\end{figure}
 
 
 \newpage
@@ -1164,50 +2879,133 @@ Top Level Component: & \hyperlink{qserv}{Distributed Database} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize antlr4 } &
-{\footnotesize antlr4 third party package for lsst
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+antlr4 third party package for lsst
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize db } &
-{\footnotesize Lightweight database interface wrappers and abstraction layer for LSST
+\begin{minipage}[t]{14cm}{\footnotesize
+Lightweight database interface wrappers and abstraction layer for LSST
 Data Management code, currently limited to MySQL.
- }
- \\ \hline
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize log } &
-{\footnotesize LSST DM Logging for C++ and Python
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+LSST DM Logging for C++ and Python
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize base } &
+\begin{minipage}[t]{14cm}{\footnotesize
+C++/Python import utilities and doxygen configuration for LSST Data
+Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize sconsUtils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Build system for LSST Data Management packages with standard layout.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Astrometry.net Data, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize utils } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Common code, floating-point utilities, and angle stringification for
+LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize pex\_exceptions } &
+\begin{minipage}[t]{14cm}{\footnotesize
+Exception base classes and common exceptions, including C++-Python
+exception translation for LSST Data Management.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
 {\footnotesize lua } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize mariadb } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize mysqlproxy } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize partition } &
-{\footnotesize Spatial Data Partitioning for LSST Qserv
- }
- \\ \hline
-{\footnotesize redis\_plus\_plus } &
-{\footnotesize redis-plus-plus third party package for Vera Rubin Observatory
- }
- \\ \hline
-{\footnotesize scisql } &
-{\footnotesize  }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Spatial Data Partitioning for LSST Qserv
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize sphgeom } &
-{\footnotesize C++ spherical geometry primitives for LSST Data Management
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+C++ spherical geometry primitives for LSST Data Management
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework, } }
+}
+\end{minipage}
+\\ \hline
+{\footnotesize redis\_plus\_plus } &
+\begin{minipage}[t]{14cm}{\footnotesize
+redis-plus-plus third party package for Vera Rubin Observatory
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize hiredis } &
+\begin{minipage}[t]{14cm}{\footnotesize
+hiredis third-party package for Vera Rubin Observatory
+ ~\\
+}
+\end{minipage}
+\\ \hline
+{\footnotesize scisql } &
+\begin{minipage}[t]{14cm}{\footnotesize
+ ~\\
+}
+\end{minipage}
+\\ \hline
 {\footnotesize xrootd } &
-{\footnotesize The XRootD central repository
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+The XRootD central repository
+ ~\\
+}
+\end{minipage}
+\\ \hline
 \end{longtable}
 
 README.md (First 20 lines only)
@@ -1234,12 +3032,7 @@ Continuous integration server launches Qserv build and also multi-node integrati
 \end{lstlisting}
 }
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/qserv.dot.ps}
-\caption{Git packages dependency tree for \textbf{ qserv }.}
-\end{center}
-\end{figure}
 
 
 \newpage
@@ -1335,22 +3128,22 @@ Top Level Component: & \hyperlink{and}{Astrometry.net Data} \\
 \hline
 \end{longtable} }
 
-\begin{longtable}{>{\raggedright\arraybackslash}p{3cm}p{12cm}}
+\begin{longtable}{>{\raggedleft\arraybackslash}p{2cm}p{14cm}}
 \multicolumn{2}{c}{EUPS dependencies} \\ \hline
 \textbf{name} & \textbf{description} \\ \hline
 {\footnotesize sconsUtils } &
-{\footnotesize Build system for LSST Data Management packages with standard layout.
- }
- \\ \hline
+\begin{minipage}[t]{14cm}{\footnotesize
+Build system for LSST Data Management packages with standard layout.
+ ~\\
+{\color{red} Also included in: \textbf{
+ Observatory Operations Data Service SW,  Alert Production,  Calibration Software,  Solar System processing and Forced Photometry,  Science Pipelines Distribution,  Science Pipelines Libraries,  Data Butler,  Task Framework,  Distributed Database, } }
+}
+\end{minipage}
+\\ \hline
 \end{longtable}
 
 
-\begin{figure}
-\begin{center}
 \includegraphics[max width=\linewidth]{dot/astrometry_net_data.dot.ps}
-\caption{Git packages dependency tree for \textbf{ astrometry\_net\_data }.}
-\end{center}
-\end{figure}
 
 
 \newpage
