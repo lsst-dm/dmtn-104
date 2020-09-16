@@ -233,6 +233,10 @@ digraph {
 	pipe_base
 	meas_extensions_scarlet -> meas_algorithms
 	meas_algorithms
+	pipe_tasks -> kht
+	kht
+	kht -> eigen
+	eigen
 	obs_lsst -> astro_metadata_translator
 	astro_metadata_translator
 	obs_lsst -> obs_lsst_data

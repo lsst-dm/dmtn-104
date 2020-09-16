@@ -235,6 +235,10 @@ digraph {
 	pipe_base
 	meas_extensions_scarlet -> meas_algorithms
 	meas_algorithms
+	pipe_tasks -> kht
+	kht
+	kht -> eigen
+	eigen
 	lsst_apps -> ap_pipe
 	ap_pipe
 	ap_pipe -> utils
@@ -421,6 +425,8 @@ digraph {
 	verify
 	ap_verify -> ap_pipe
 	ap_pipe
+	ap_verify -> ctrl_mpexec
+	ctrl_mpexec
 	ap_verify -> ip_diffim
 	ip_diffim
 	ip_diffim -> afw

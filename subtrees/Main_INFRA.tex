@@ -61,7 +61,11 @@ right=96pt of NET] {\textbf{Facilities
 } };\node [below right] at (DF.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (FAC.south) -| ++(0,0) |- (DF.west); 
-\node (FACUS) [pbox,below right=6pt and -14pt of DF] {\textbf{US Data Facility
+\node (FACFR) [pbox,below right=6pt and -14pt of DF] {\textbf{France Data Facility
+} };\node [below right] at (FACFR.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (DF.south) -| ++(0,0) |- (FACFR.west); 
+\node (FACUS) [pbox,below=6pt of FACFR] {\textbf{US Data Facility
 } };\node [below right] at (FACUS.north west) {\footnotesize \color{blue}1.02C.07.09} ;
 
  \draw[pline] (DF.south) -| ++(0,0) |- (FACUS.west); 

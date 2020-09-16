@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=765pt,paperheight=4773pt,
+\usepackage[paperwidth=765pt,paperheight=4816pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -450,11 +450,15 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (DF.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (FAC.east) -| ++(0.4,0) |- (DF.west); 
-\node (FACUS) [pbox,right=43pt of DF] {\textbf{US Data Facility
+\node (FACFR) [pbox,right=43pt of DF] {\textbf{France Data Facility
+} };\node [below right] at (FACFR.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (DF.east) -| ++(0.4,0) |- (FACFR.west); 
+\node (FACUS) [pbox,below=6pt of FACFR] {\textbf{US Data Facility
 } };\node [below right] at (FACUS.north west) {\footnotesize \color{blue}1.02C.07.09} ;
 
  \draw[pline] (DF.east) -| ++(0.4,0) |- (FACUS.west); 
-\node (ENC) [pbox,below=49pt of FAC] {\textbf{Enclaves
+\node (ENC) [pbox,below=92pt of FAC] {\textbf{Enclaves
 } };\node [below right] at (ENC.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (INFRA.east) -| ++(0.4,0) |- (ENC.west); 
@@ -490,7 +494,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (ENCDACU.north west) {\footnotesize \color{blue}1.02C.07.09} ;
 
  \draw[pline] (ENC.east) -| ++(0.4,0) |- (ENCDACU.west); 
-\node (HWCOTS) [pbox,below=565pt of INFRA] {\textbf{Resources
+\node (HWCOTS) [pbox,below=608pt of INFRA] {\textbf{Resources
 } };\node [below right] at (HWCOTS.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DM.east) -| ++(0.4,0) |- (HWCOTS.west); 
