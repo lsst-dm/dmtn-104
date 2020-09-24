@@ -1,0 +1,277 @@
+{%- macro curlies(item) -%}
+{{ "{" }}{{ item }}{{ "}" }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
+{%- macro href(url, text) -%}
+\href{{ "{" }}{{ url|replace("#", "\\#")|replace("%", "\\%")|replace("_", "\\_") }}{{ "}" }}{{ curlies(text) }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
+{%- macro label(text) -%}
+\label{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
+{%- macro ref(text) -%}
+\ref{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
+{%- macro hyperlink(label, text) -%}
+\hyperlink{{ "{" }}{{ label }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+
+{%- macro hypertarget(label, text) -%}
+\hypertarget{{ "{" }}{{ label }}{{ "}" }}{{ "{" }}{{ text }}{{ "}" }}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+{%- macro do_folder(prd) -%}
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\textbf{Manager} & \textbf{Owner} & \textbf{WBS} & \textbf{Team} \\ \hline
+\parbox{3.5cm}{
+{{ mdt_dict[prd].manager }}
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+{% for owner in mdt_dict[prd].owner %}
+\parbox{3.5cm}{
+{{ owner }}
+\vspace{2mm}%
+} \\
+\end{tabular}
+{% endfor %} &
+\begin{tabular}{@{}l@{}}
+{% for wbs in mdt_dict[prd].wbs %}
+{{ wbs }} \\
+{% endfor %}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+{% for team in mdt_dict[prd].teams %}
+{{ team }} \\
+{% endfor %}
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ {{ mdt_dict[prd].shortname }} } - Product key: \textbf{ {{ mdt_dict[prd].id }} } }
+}\\ \hline
+    {% for doc in mdt_dict[prd].docs %}
+        {% if doc[1]|length %}
+\citeds{{ "{" }}{{ doc[1] }}{{ "}" }} &
+\multicolumn{3}{l}{ {{ doc[2] }} }
+\\ \cdashline{1-4}
+        {% endif %}
+    {% endfor %}
+\end{longtable}
+
+  {{ mdt_dict[prd].desc }}
+
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+{%- macro do_product_table(prd, parent) -%}
+\newpage
+{# each product is rendered in two tables and the description between them #}
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\toprule
+\multicolumn{2}{l}{\large \textbf{ {{ hypertarget(mdt_dict[prd].id.lower(), mdt_dict[prd].name) }} } }
+& \multicolumn{2}{l}{(product in: {{ parent }})}
+\\ \hline
+\textbf{\footnotesize Manager} & \textbf{\footnotesize Owner} &
+\textbf{\footnotesize WBS} & \textbf{\footnotesize Team} \\ \hline
+\parbox{3.5cm}{
+{{ mdt_dict[prd].manager }}
+\vspace{2mm}%
+} &
+\begin{tabular}{@{}l@{}}
+    {% for owner in mdt_dict[prd].owner %}
+\parbox{3.5cm}{
+{{ owner }}
+\vspace{2mm}%
+} \\
+    {% endfor %}
+\end{tabular} &
+\begin{tabular}{@{}l@{}}
+    {% for wbs in mdt_dict[prd].wbs %}
+{{ wbs }} \\
+    {% endfor %}
+\end{tabular} & \begin{tabular}{@{}l@{}}
+    {% for team in mdt_dict[prd].teams %}
+{{ team }} \\
+    {% endfor %}
+\end{tabular} \\ \hline
+\multicolumn{4}{c}{
+{\footnotesize Short name: \textbf{ {{ mdt_dict[prd].shortname }} } - Product key: \textbf{ {{ mdt_dict[prd].id }} } }
+}\\ \hline
+    {% for doc in mdt_dict[prd].docs %}
+        {% if doc[1]|length %}
+\citeds{{ "{" }}{{ doc[1] }}{{ "}" }} &
+\multicolumn{3}{l}{ {{ doc[2] }} }
+\\ \cdashline{1-4}
+        {% endif %}
+    {% endfor %}
+\end{longtable}
+
+{{ mdt_dict[prd].desc }}
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+    {% if mdt_dict[prd].pkgs %}
+\multicolumn{2}{r}{\textbf{GitHub Packages:}} &
+        {% for pkg in mdt_dict[prd].pkgs %}
+            {% set package = pkg|replace("_", "\\_") %}
+            {% set tmplist = pkg.split('/') %}
+            {% if tmplist|length > 1 %}
+                {% set lnk = 'https://github.com/'~pkg %}
+            {% else %}
+                {% set lnk = 'https://github.com/lsst/'~pkg %}
+            {% endif %}
+            {% if loop.index == 1 %}
+\multicolumn{2}{l}{\href{{ curlies(lnk) }}{{ curlies(package) }} }{{ ref(pkg.lower()) }}
+            {% else %}
+\\ \cline{3-4}
+& & \multicolumn{2}{l}{\href{{ curlies(lnk) }}{{ curlies(package) }} }{{ ref(pkg.lower()) }}
+            {% endif %}
+        {% endfor %}
+\\ \hline \\ \hline
+    {% endif %}
+    {% if mdt_dict[prd].links[0] != "" %}
+\textbf{References} &
+        {% for lnk in mdt_dict[prd].links %}
+            {% set text = lnk|replace("_", "\\_") %}
+            {% if loop.index == 1 %}
+\multicolumn{3}{l}{\href{{ curlies(lnk) }}{{ curlies(text) }} }
+            {% else %}
+\\ \cline{2-4}
+& \multicolumn{3}{l}{\href{{ curlies(lnk) }}{{ curlies(text) }} }
+            {% endif %}
+        {% endfor %}
+\\ \hline \\ \hline
+    {% endif %}
+{# \multicolumn{4}{c}{\textbf{Products Dependencies} } \\ \hline #}
+\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+\multicolumn{2}{c}{
+    {% if (mdt_dict[prd].depends is defined) and mdt_dict[prd].depends %}
+\begin{tabular}{c}
+        {% for pkey in mdt_dict[prd].depends %}
+{{ hyperlink(pkey.key.lower(), pkey.name) }} \\ \hline
+        {% endfor %}
+\end{tabular}
+    {% endif %}
+} &
+\multicolumn{2}{c}{
+    {% if (mdt_dict[prd].usedin is defined) and mdt_dict[prd].usedin %}
+\begin{tabular}{c}
+        {% for pkey in mdt_dict[prd].usedin %}
+{{ hyperlink(pkey.key.lower(), pkey.name) }} \\ \hline
+        {% endfor %}
+\end{tabular}
+    {% endif %}
+} \\ \bottomrule
+\end{longtable}
+
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+{%- macro do_sum_table(childs) -%}
+{\footnotesize
+\textbf{Products included in this section}:
+\begin{itemize}
+  {% for ch in childs %}
+    {% if childs[ch].name is defined %}
+ {# {{ childs[ch].id }} & {{ childs[ch].name }} \\ \hline #}
+    {% else %}
+      {% set prd = childs[ch] %}
+\item {{ mdt_dict[prd].name }} - {{ hyperlink(mdt_dict[prd].id.lower(), mdt_dict[prd].id) }}
+{# {{ mdt_dict[prd].id }} #}
+    {% endif %}
+  {% endfor %}
+\end{itemize}
+}
+{%- endmacro -%}
+{# ------------------------------------------------------------------------- #}
+% auto-generated from MagicDraw (revision) {{ mdrev }} - DO NOT EDIT!
+% using template at {{ metadata.template }}.
+% Collecting data for component: "{{ metadata.component }}"
+% using docsteady version {{ metadata.ptree_version }}
+%
+% This file is meant to be included in a LaTeX document.
+
+{% for k0 in mdp %}
+{{ do_folder(k0) }}
+
+ {% for id in mdp[k0] %}
+  {% set k1 = mdp[k0][id].name %}
+  {% set k1childs = mdp[k0][id].children %}
+\newpage
+\subsection{{ curlies(mdt_dict[k1].name) }}{{ label(mdt_dict[k1].id.lower()) }}
+{{ do_folder(k1) }}
+
+  {% for ch1 in k1childs %}
+   {% if k1childs[ch1].name is defined %}
+     {% set k2 = k1childs[ch1].name %}
+     {% set k2childs = k1childs[ch1].children %}
+\newpage
+\subsubsection{{ curlies(mdt_dict[k2].name) }}{{ label(mdt_dict[k2].id.lower()) }}
+{{ do_folder(k2) }}
+
+{{ do_sum_table(k2childs) }}
+
+     {% for ch2 in k2childs %}
+       {% if k2childs[ch2].name is defined %}
+         {% set k3 = k2childs[ch2].name %}
+         {% set k3childs = k2childs[ch2].children %}
+\newpage
+\paragraph{{ curlies(mdt_dict[k3].name) }}{{ label(mdt_dict[k3].id.lower()) }}\mbox{}\\
+{{ do_folder(k3) }}
+
+{{ do_sum_table(k3childs) }}
+
+         {% for ch3 in k3childs %}
+           {% if k3childs[ch3].name is defined %}
+             {% set k4 = k3childs[ch3].name %}
+             {% set k4childs = k3childs[ch3].children %}
+\newpage
+\subparagraph{{ curlies(mdt_dict[k4].name) }}{{ label(mdt_dict[k4].id.lower()) }}\mbox{}\\
+{{ do_folder(k4) }}
+
+{{ do_sum_table(k4childs) }}
+
+             {% for ch4 in k4childs %}
+               {% if k4childs[ch4].name is defined %}
+                 {% set k5 = k4childs[ch4].name %}
+                 {% set k5childs = k4childs[ch4].children %}
+{\scriptsize
+Input data mistmatch {{ k5 }}: too deep.
+{{ k5childs }}
+}
+
+               {% else %}   {# k4childs #}
+                 {% set pname = k4childs[ch4] %}
+                 {% set parent = mdt_dict[pname].parent %}
+{{ do_product_table(pname, mdt_dict[parent].shortname) }}
+
+               {% endif %}  {# k4childs #}
+             {% endfor %}  {# ch4 #}
+
+           {% else %}  {# k3childs #}
+             {% set pname = k3childs[ch3] %}
+             {% set parent = mdt_dict[pname].parent %}
+{{ do_product_table(pname, mdt_dict[parent].shortname) }}
+
+           {% endif %}  {# k3childs #}
+         {% endfor %}  {# ch3 #}
+
+       {% else %}   {# k2childs #}
+         {% set pname = k2childs[ch2] %}
+         {% set parent = mdt_dict[pname].parent %}
+{{ do_product_table(pname, mdt_dict[parent].shortname) }}
+
+       {% endif %}  {# k2childs #}
+     {% endfor %}  {# ch2 #}
+
+   {% else %}    {# k1childs #}
+     {% set pname = k1childs[ch1] %}
+     {% set parent = mdt_dict[pname].parent %}
+{{ do_product_table(pname, mdt_dict[parent].shortname) }}
+
+   {% endif %}   {# k1childs #}
+  {% endfor %}  {# ch1 #}
+ {% endfor %}  {# id #}
+{% endfor %}  {# k0 #}

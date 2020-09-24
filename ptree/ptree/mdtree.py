@@ -369,7 +369,7 @@ def do_trees_diagrams(tree, filename, scope, compact):
     make_subtrees(tree, filename, scope, compact)
 
 
-def do_md_section(sysid, levelid, connection_str, output_format, output_file, compact, doc_handler):
+def do_md_section(sysid, levelid, connection_str, output_format, output_file, compact, doc_handler, dotree):
     """
     Given the MD ids, dump the content in the output file and produce the product tree diagrams
     :param sysid: MagicDraw subsystem id
@@ -404,26 +404,28 @@ def do_md_section(sysid, levelid, connection_str, output_format, output_file, co
                        lstrip_blocks=True, trim_blocks=True, autoescape=None)
 
     # dump a csv file
-    do_csv(products, output_file)
+    if dotree:
+        do_csv(products, output_file)
+        # create the diagrams tex files
+        do_trees_diagrams(productTree, output_file, products[0].shortname, compact)
+        # define the template
+        template_path = f"section.{Config.TEMPLATE_LANGUAGE}.jinja2"
+    else:
+        # no diagrams are created
+        # use a simplified template
+        template_path = f"notree_section.{Config.TEMPLATE_LANGUAGE}.jinja2"
 
-    # create the diagrams tex files
-    do_trees_diagrams(productTree, output_file, products[0].shortname, compact)
 
     # sort tree dictionary based
     mdp = productTree.to_dict(with_data=False)
 
     # get ordered dictionary
+    template = envs.get_template(template_path)
     new_mdpt = dict()
     for k0 in mdp:
         new_mdpt[k0] = order_tree_level(mdp[k0])
 
     # dump the tex section
-    try:
-        template_path = f"section.{Config.TEMPLATE_LANGUAGE}.jinja2"
-        template = envs.get_template(template_path)
-    except TemplateNotFound:
-        click.echo(f"No Template Found: {template_path}", err=True)
-        sys.exit(1)
     metadata = dict()
     metadata["template"] = template.filename
     text = template.render(metadata=metadata,
@@ -595,17 +597,21 @@ def generate_document(connection_str, output_format, token_path, compact, csvonl
     subsystem_name = subsystem_info['subsystem']['name']
     subtrees = subsystem_info['subsystem']['subtrees']
     if not csvonly:
-        print("-> Generating Main Product Tree  ==========================")
-        level_id = subsystem_info['subsystem']['subtrees'][0]['id']
-        filename = subsystem_info['subsystem']['subtrees'][0]['filename']
-        md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename, compact,
-                                      doc_handler))
+        for subtree in subtrees.keys():
+            print(f"-> Generating {subtree} Product Tree  ==========================")
+            filename = subtree
+            level_id = subtrees[subtree]['id']
+            dotree = subtrees[subtree]['DoTree']
+            if dotree:
+                print(f"Do Tree ({dotree})")
+                md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename,
+                                              compact, doc_handler, dotree))
+            else:
+                print(f"Don't Do Tree ({dotree})")
+                do_md_section(subsystem_id, level_id, connection_str, output_format, filename,
+                              compact, doc_handler, dotree)
 
-        print("-> Generating Development Product Tree  ==========================")
-        level_id = subsystem_info['subsystem']['subtrees'][1]['id']
-        filename = subsystem_info['subsystem']['subtrees'][1]['filename']
-        md_trees.append(do_md_section(subsystem_id, level_id, connection_str, output_format, filename, compact,
-                                      doc_handler))
+
     else:
         print("-> Getting csv files  ==========================")
         for subtree in subtrees:
