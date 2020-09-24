@@ -27,7 +27,7 @@ SUBTREES_PDF=$(SUBTREE_FILES:.tex=.pdf)
 SUBTREES=$(SUBTREE_FILES:.tex=)
 
 #Default when you type make
-all: generate_imgs crop_pdf_imgs mekedots $(OBJ)
+all: generate_imgs crop_pdf_imgs makedots $(OBJ)
 
 # in travis I need to generate the images before generating the doc
 generate_imgs: do_trees do_subtrees

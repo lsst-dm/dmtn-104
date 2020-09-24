@@ -3,9 +3,14 @@ subsystem:
   doc: 'DMTN-104'
   id: 698d501b-660d-4d7e-8875-c6170ca0f513
   subtrees:
-    - filename: 'Main'
+    Main:
       id: 60706435-6f8e-4b15-823b-06597f1cdada
-    - filename: 'Development'
+      DoTree: True
+    Development:
       id: fc38aa3d-683c-44a5-bdc9-c6f6e5978d18
+      DoTree: True
+    Externals:
+      id: 778116a1-3c93-42e7-84cf-5ce5c7af0bbe
+      DoTree: False
     #- filename: 'General'
     #  id: 35610b17-2bf5-4130-896c-8153d9e53a64

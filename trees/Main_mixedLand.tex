@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=1702.0pt,paperheight=2236pt,
+\usepackage[paperwidth=1098.0pt,paperheight=2236pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -492,146 +492,11 @@ right=192pt of DMSW] {\textbf{Infrastructure
 } };\node [below right] at (ENCDACU.north west) {\footnotesize \color{blue}1.02C.07.09} ;
 
  \draw[pline] (ENC.south) -| ++(0,0) |- (ENCDACU.west); 
-\node (HWCOTS) [pbox, 
-right=288pt of INFRA] {\textbf{Resources
-} };\node [below right] at (HWCOTS.north west) {\footnotesize \color{blue}} ;
-
-\node (DMHW) [pbox,below right=6pt and -14pt of HWCOTS] {\textbf{DM Hardware
-} };\node [below right] at (DMHW.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (HWCOTS.south) -| ++(0,0) |- (DMHW.west); 
-\node (HWCOMP) [pbox,below right=6pt and -14pt of DMHW] {\textbf{Compute Nodes
-} };\node [below right] at (HWCOMP.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMHW.south) -| ++(0,0) |- (HWCOMP.west); 
-\node (HWSTOR) [pbox,below=6pt of HWCOMP] {\textbf{Storage Nodes
-} };\node [below right] at (HWSTOR.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMHW.south) -| ++(0,0) |- (HWSTOR.west); 
-\node (HWNET) [pbox,below=6pt of HWSTOR] {\textbf{Network Nodes
-} };\node [below right] at (HWNET.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMHW.south) -| ++(0,0) |- (HWNET.west); 
-\node (COTS) [pbox,below=135pt of DMHW] {\textbf{COTS SW
-} };\node [below right] at (COTS.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (HWCOTS.south) -| ++(0,0) |- (COTS.west); 
-\node (FIREFLY) [pbox,below right=6pt and -14pt of COTS] {\textbf{Firefly
-} };\node [below right] at (FIREFLY.north west) {\footnotesize \color{blue}1.02C.05.06} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (FIREFLY.west); 
-\node (SECURITY) [pbox,below=6pt of FIREFLY] {\textbf{IT Security
-} };\node [below right] at (SECURITY.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (SECURITY.west); 
-\node (PSQL) [pbox,below=6pt of SECURITY] {\textbf{PostgreSQL
-} };\node [below right] at (PSQL.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (PSQL.west); 
-\node (JRA) [pbox,below=6pt of PSQL] {\textbf{Jira
-} };\node [below right] at (JRA.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (JRA.west); 
-\node (PUPPET) [pbox,below=6pt of JRA] {\textbf{Puppet
-} };\node [below right] at (PUPPET.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (PUPPET.west); 
-\node (RUCIO) [pbox,below=6pt of PUPPET] {\textbf{Rucio
-} };\node [below right] at (RUCIO.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (RUCIO.west); 
-\node (JH3) [pbox,below=6pt of RUCIO] {\textbf{Jupyterhub
-} };\node [below right] at (JH3.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (JH3.west); 
-\node (DOCKER) [pbox,below=6pt of JH3] {\textbf{Docker
-} };\node [below right] at (DOCKER.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (DOCKER.west); 
-\node (CILOGON) [pbox,below=6pt of DOCKER] {\textbf{CILogon
-} };\node [below right] at (CILOGON.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (CILOGON.west); 
-\node (HTCONDOR) [pbox,below=6pt of CILOGON] {\textbf{HTCondor
-} };\node [below right] at (HTCONDOR.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (HTCONDOR.west); 
-\node (GPFS) [pbox,below=6pt of HTCONDOR] {\textbf{Gen. P. File System
-} };\node [below right] at (GPFS.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (GPFS.west); 
-\node (VSPHERE) [pbox,below=6pt of GPFS] {\textbf{vSphere
-} };\node [below right] at (VSPHERE.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (VSPHERE.west); 
-\node (JL3) [pbox,below=6pt of VSPHERE] {\textbf{Jupyterlab
-} };\node [below right] at (JL3.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (JL3.west); 
-\node (K8S) [pbox,below=6pt of JL3] {\textbf{Kubernetes
-} };\node [below right] at (K8S.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (K8S.west); 
-\node (GRAFANA) [pbox,below=6pt of K8S] {\textbf{Grafana
-} };\node [below right] at (GRAFANA.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (GRAFANA.west); 
-\node (PTH) [pbox,below=6pt of GRAFANA] {\textbf{Python
-} };\node [below right] at (PTH.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (COTS.south) -| ++(0,0) |- (PTH.west); 
-\node (THPL) [pbox,below=694pt of COTS] {\textbf{Third Party Libs
-} };\node [below right] at (THPL.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (HWCOTS.south) -| ++(0,0) |- (THPL.west); 
-\node (BOOST) [pbox,below right=6pt and -14pt of THPL] {\textbf{Boost
-} };\node [below right] at (BOOST.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (THPL.south) -| ++(0,0) |- (BOOST.west); 
-\node (REFD) [pbox, 
-right=192pt of HWCOTS] {\textbf{Ref Data
-} };\node [below right] at (REFD.north west) {\footnotesize \color{blue}} ;
-
-\node (GAIAD) [pbox,below right=6pt and -14pt of REFD] {\textbf{Gaia Catalogs
-} };\node [below right] at (GAIAD.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (REFD.south) -| ++(0,0) |- (GAIAD.west); 
-\node (GDR1v1) [pbox,below right=6pt and -14pt of GAIAD] {\textbf{Gaia\_DR1\_v1
-} };\node [below right] at (GDR1v1.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (GAIAD.south) -| ++(0,0) |- (GDR1v1.west); 
-\node (GDR2198) [pbox,below=6pt of GDR1v1] {\textbf{Gaia\_DR2\_20190808
-} };\node [below right] at (GDR2198.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (GAIAD.south) -| ++(0,0) |- (GDR2198.west); 
-\node (GDR2204) [pbox,below=6pt of GDR2198] {\textbf{Gaia\_DR2\_20200414
-} };\node [below right] at (GDR2204.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (GAIAD.south) -| ++(0,0) |- (GDR2204.west); 
-\node (ODATA) [pbox,below=135pt of GAIAD] {\textbf{Other Catalogs
-} };\node [below right] at (ODATA.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (REFD.south) -| ++(0,0) |- (ODATA.west); 
-\node (AND) [pbox,below right=6pt and -14pt of ODATA] {\textbf{Astronomy.net Data
-} };\node [below right] at (AND.north west) {\footnotesize \color{blue}} ;
-\node (ANDpkg) [tbox,below=3mm of AND.north] {{\footnotesize \color{black} \begin{verbatim} astrometry_net_data \end{verbatim} }  };
-
- \draw[pline] (ODATA.south) -| ++(0,0) |- (AND.west); 
-\node (SDSSDR9v5b) [pbox,below=6pt of AND] {\textbf{sdss-dr9-fink-v5b
-} };\node [below right] at (SDSSDR9v5b.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (ODATA.south) -| ++(0,0) |- (SDSSDR9v5b.west); 
-\node (PS1PV3) [pbox,below=6pt of SDSSDR9v5b] {\textbf{ps1\_pv3\_3pi\_20170110
-} };\node [below right] at (PS1PV3.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (ODATA.south) -| ++(0,0) |- (PS1PV3.west); 
-\node (DM) [wbbox, above=43pt of INFRA]{\textbf{Data Management
+\node (DM) [wbbox, above=43pt of DMSW]{\textbf{Data Management
 }};
  \draw[pline]   (DMSRV.north) -- ++(0.0,0.5) -| (DM.south) ; 
  \draw[pline]   (DMSW.north) -- ++(0.0,0.5) -| (DM.south) ; 
  \draw[pline]   (INFRA.north) -- ++(0.0,0.5) -| (DM.south) ; 
- \draw[pline]   (HWCOTS.north) -- ++(0.0,0.5) -| (DM.south) ; 
- \draw[pline]   (REFD.north) -- ++(0.0,0.5) -| (DM.south) ; 
 
 \end{tikzpicture}
 \end{document}
