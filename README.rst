@@ -1,7 +1,7 @@
 .. image:: https://img.shields.io/badge/dmtn--104-lsst.io-brightgreen.svg
    :target: https://dmtn-104.lsst.io
-.. image:: https://travis-ci.com/lsst-dm/dmtn-104.svg
-   :target: https://travis-ci.com/lsst-dm/dmtn-104
+.. image:: https://github.com/lsst-dm/DMTN-104/workflows/CI/badge.svg
+   :target: https://github.com/lsst-dm/DMTN-104/actions/
 
 #####################################
 Data Management Detailed Product Tree
