@@ -21,9 +21,12 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install "lander<2.0.0"
+          python -m pip install -r requirements.txt
       - name: TeX build
         run: |
-          docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make'
+          docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make generate_imgs'
+          make crop_pdf_imgs makedots
+          docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make DMTN-104.pdf'
       - name: Landing page upload
         if: ${{ github.event_name == 'push' }}
         env:
