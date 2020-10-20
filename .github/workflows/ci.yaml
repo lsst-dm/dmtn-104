@@ -19,6 +19,7 @@ jobs:
 
       - name: Python install
         run: |
+          sudo apt-get update && sudo apt-get install -y --no-install-recommends ghostscript graphviz
           python -m pip install --upgrade pip
           python -m pip install "lander<2.0.0"
           python -m pip install -r requirements.txt
@@ -33,4 +34,4 @@ jobs:
           LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
           LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
         run: |
-          lander --upload --pdf DMTN-104.pdf --lsstdoc DMTN-104.tex --ltd-product dmtn-104 --extra-downloads trees/Main_mixedLand.pdf trees/Main_portrait.pdf trees/Development_portrait.pdf trees/Development_mixedLand.pdf trees/DM_full.pdf
+          lander --upload --pdf DMTN-104.pdf --ltd-product dmtn-104 --lsstdoc DMTN-104.tex trees/Main_mixedLand.pdf trees/Main_portrait.pdf trees/Development_portrait.pdf trees/Development_mixedLand.pdf trees/DM_full.pdf
