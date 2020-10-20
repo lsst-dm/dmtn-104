@@ -34,4 +34,4 @@ jobs:
           LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
           LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
         run: |
-          lander --upload --pdf DMTN-104.pdf --ltd-product dmtn-104 --lsstdoc DMTN-104.tex --pdf trees/Main_mixedLand.pdf --pdf trees/Main_portrait.pdf --pdf trees/Development_portrait.pdf --pdf trees/Development_mixedLand.pdf --pdf trees/DM_full.pdf
+          lander --upload --pdf DMTN-104.pdf --ltd-product dmtn-104 --lsstdoc DMTN-104.tex --extra-downloads trees/Main_mixedLand.pdf trees/Main_portrait.pdf trees/Development_portrait.pdf trees/Development_mixedLand.pdf trees/DM_full.pdf
