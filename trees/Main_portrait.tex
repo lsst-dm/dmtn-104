@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=765pt,paperheight=3698pt,
+\usepackage[paperwidth=765pt,paperheight=3741pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -371,12 +371,16 @@ textwidth=30cm,textheight=50mm]{geometry}
 } };\node [below right] at (SPLUG.north west) {\footnotesize \color{blue}1.02C.04.02} ;
 
  \draw[pline] (SCIPSWP.east) -| ++(0.4,0) |- (SPLUG.west); 
-\node (SPDIST) [pbox,below=6pt of SPLUG] {\textbf{Science P. Dist.
+\node (SPLWF) [pbox,below=6pt of SPLUG] {\textbf{SPL Workflow
+} };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (SCIPSWP.east) -| ++(0.4,0) |- (SPLWF.west); 
+\node (SPDIST) [pbox,below=6pt of SPLWF] {\textbf{Science P. Dist.
 } };\node [below right] at (SPDIST.north west) {\footnotesize \color{blue}1.02C.04.02} ;
 \node (SPDISTpkg) [tbox,below=3mm of SPDIST.north] {{\footnotesize \color{black} \begin{verbatim} lsst_distrib \end{verbatim} }  };
 
  \draw[pline] (SCIPSWP.east) -| ++(0.4,0) |- (SPDIST.west); 
-\node (SPSWP) [pbox,below=307pt of SCIPSWP] {\textbf{Supporting SW P.
+\node (SPSWP) [pbox,below=350pt of SCIPSWP] {\textbf{Supporting SW P.
 } };\node [below right] at (SPSWP.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSW.east) -| ++(0.4,0) |- (SPSWP.west); 
@@ -414,7 +418,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (SPLCEpkg) [tbox,below=3mm of SPLCE.north] {{\footnotesize \color{black} \begin{verbatim} scipipe_conda_env \end{verbatim} }  };
 
  \draw[pline] (ENVS.east) -| ++(0.4,0) |- (SPLCE.west); 
-\node (INFRA) [pbox,below=1339pt of DMSW] {\textbf{Infrastructure
+\node (INFRA) [pbox,below=1382pt of DMSW] {\textbf{Infrastructure
 } };\node [below right] at (INFRA.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DM.east) -| ++(0.4,0) |- (INFRA.west); 

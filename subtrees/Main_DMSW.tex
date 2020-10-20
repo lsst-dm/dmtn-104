@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=1647.9999999999998pt,paperheight=516pt,
+\usepackage[paperwidth=1647.9999999999998pt,paperheight=559pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -166,7 +166,11 @@ right=96pt of LSPSWP] {\textbf{Sci Pipelines SW P.
 } };\node [below right] at (SPLUG.north west) {\footnotesize \color{blue}1.02C.04.02} ;
 
  \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SPLUG.west); 
-\node (SPDIST) [pbox,below=6pt of SPLUG] {\textbf{Science P. Dist.
+\node (SPLWF) [pbox,below=6pt of SPLUG] {\textbf{SPL Workflow
+} };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SPLWF.west); 
+\node (SPDIST) [pbox,below=6pt of SPLWF] {\textbf{Science P. Dist.
 } };\node [below right] at (SPDIST.north west) {\footnotesize \color{blue}1.02C.04.02} ;
 \node (SPDISTpkg) [tbox,below=3mm of SPDIST.north] {{\footnotesize \color{black} \begin{verbatim} lsst_distrib \end{verbatim} }  };
 

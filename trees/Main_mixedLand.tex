@@ -369,12 +369,16 @@ right=288pt of DMSRV] {\textbf{Software Products
 } };\node [below right] at (SPLUG.north west) {\footnotesize \color{blue}1.02C.04.02} ;
 
  \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SPLUG.west); 
-\node (SPDIST) [pbox,below=6pt of SPLUG] {\textbf{Science P. Dist.
+\node (SPLWF) [pbox,below=6pt of SPLUG] {\textbf{SPL Workflow
+} };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SPLWF.west); 
+\node (SPDIST) [pbox,below=6pt of SPLWF] {\textbf{Science P. Dist.
 } };\node [below right] at (SPDIST.north west) {\footnotesize \color{blue}1.02C.04.02} ;
 \node (SPDISTpkg) [tbox,below=3mm of SPDIST.north] {{\footnotesize \color{black} \begin{verbatim} lsst_distrib \end{verbatim} }  };
 
  \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SPDIST.west); 
-\node (SPSWP) [pbox,below=350pt of SCIPSWP] {\textbf{Supporting SW P.
+\node (SPSWP) [pbox,below=393pt of SCIPSWP] {\textbf{Supporting SW P.
 } };\node [below right] at (SPSWP.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSW.south) -| ++(0,0) |- (SPSWP.west); 

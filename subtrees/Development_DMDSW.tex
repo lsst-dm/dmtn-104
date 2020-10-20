@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=565.0pt,paperheight=344pt,
+\usepackage[paperwidth=205.99999999999997pt,paperheight=344pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -53,22 +53,8 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (LSSTSWpkg) [tbox,below=3mm of LSSTSW.north] {{\footnotesize \color{black} \begin{verbatim} lsstsw \end{verbatim} }  };
 
  \draw[pline] (DMDSS.south) -| ++(0,0) |- (LSSTSW.west); 
-\node (DSPLSW) [pbox, 
-right=96pt of DMDSS] {\textbf{Dev Science Pipelines
-} };\node [below right] at (DSPLSW.north west) {\footnotesize \color{blue}} ;
-
-\node (SPLWF) [pbox,below right=6pt and -14pt of DSPLSW] {\textbf{SPL Workflow
-} };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DSPLSW.south) -| ++(0,0) |- (SPLWF.west); 
-\node (DENV) [pbox, 
-right=96pt of DSPLSW] {\textbf{DM DevM Envs
-} };\node [below right] at (DENV.north west) {\footnotesize \color{blue}} ;
-
-\node (DMDSW) [wbbox, above=43pt of DSPLSW]{\textbf{Development Software Products}};
+\node (DMDSW) [wbbox, above=43pt of DMDSS]{\textbf{Development Software Products}};
  \draw[pline]   (DMDSS.north) -- ++(0.0,0.5) -| (DMDSW.south) ; 
- \draw[pline]   (DSPLSW.north) -- ++(0.0,0.5) -| (DMDSW.south) ; 
- \draw[pline]   (DENV.north) -- ++(0.0,0.5) -| (DMDSW.south) ; 
 
 \end{tikzpicture}
 \end{document}

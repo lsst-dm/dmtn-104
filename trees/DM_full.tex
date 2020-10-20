@@ -369,12 +369,16 @@ right=288pt of DMSRV] {\textbf{Software Products
 } };\node [below right] at (SPLUG.north west) {\footnotesize \color{blue}1.02C.04.02} ;
 
  \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SPLUG.west); 
-\node (SPDIST) [pbox,below=6pt of SPLUG] {\textbf{Science P. Dist.
+\node (SPLWF) [pbox,below=6pt of SPLUG] {\textbf{SPL Workflow
+} };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
+
+ \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SPLWF.west); 
+\node (SPDIST) [pbox,below=6pt of SPLWF] {\textbf{Science P. Dist.
 } };\node [below right] at (SPDIST.north west) {\footnotesize \color{blue}1.02C.04.02} ;
 \node (SPDISTpkg) [tbox,below=3mm of SPDIST.north] {{\footnotesize \color{black} \begin{verbatim} lsst_distrib \end{verbatim} }  };
 
  \draw[pline] (SCIPSWP.south) -| ++(0,0) |- (SPDIST.west); 
-\node (SPSWP) [pbox,below=350pt of SCIPSWP] {\textbf{Supporting SW P.
+\node (SPSWP) [pbox,below=393pt of SCIPSWP] {\textbf{Supporting SW P.
 } };\node [below right] at (SPSWP.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMSW.south) -| ++(0,0) |- (SPSWP.west); 
@@ -561,18 +565,6 @@ right=96pt of DMDSRV] {\textbf{Dm Dev Software
 \node (LSSTSWpkg) [tbox,below=3mm of LSSTSW.north] {{\footnotesize \color{black} \begin{verbatim} lsstsw \end{verbatim} }  };
 
  \draw[pline] (DMDSS.south) -| ++(0,0) |- (LSSTSW.west); 
-\node (DSPLSW) [pbox,below=178pt of DMDSS] {\textbf{Dev Science Pipelines
-} };\node [below right] at (DSPLSW.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMDSW.south) -| ++(0,0) |- (DSPLSW.west); 
-\node (SPLWF) [pbox,below right=6pt and -14pt of DSPLSW] {\textbf{SPL Workflow
-} };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DSPLSW.south) -| ++(0,0) |- (SPLWF.west); 
-\node (DENV) [pbox,below=49pt of DSPLSW] {\textbf{DM DevM Envs
-} };\node [below right] at (DENV.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMDSW.south) -| ++(0,0) |- (DENV.west); 
 \node (DMDTDP) [pbox, 
 right=192pt of DMDSW] {\textbf{Test Data
 } };\node [below right] at (DMDTDP.north west) {\footnotesize \color{blue}} ;

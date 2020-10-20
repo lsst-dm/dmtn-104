@@ -229,8 +229,14 @@ digraph {
 	log
 	meas_extensions_scarlet -> scarlet
 	scarlet
+	scarlet -> proxmin
+	proxmin
+	meas_extensions_scarlet -> scarlet_extensions
+	scarlet_extensions
 	meas_extensions_scarlet -> pex_config
 	pex_config
+	meas_extensions_scarlet -> pex_exceptions
+	pex_exceptions
 	meas_extensions_scarlet -> pipe_base
 	pipe_base
 	meas_extensions_scarlet -> meas_algorithms

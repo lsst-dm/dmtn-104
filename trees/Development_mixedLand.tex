@@ -93,18 +93,6 @@ right=96pt of DMDSRV] {\textbf{Dm Dev Software
 \node (LSSTSWpkg) [tbox,below=3mm of LSSTSW.north] {{\footnotesize \color{black} \begin{verbatim} lsstsw \end{verbatim} }  };
 
  \draw[pline] (DMDSS.south) -| ++(0,0) |- (LSSTSW.west); 
-\node (DSPLSW) [pbox,below=178pt of DMDSS] {\textbf{Dev Science Pipelines
-} };\node [below right] at (DSPLSW.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMDSW.south) -| ++(0,0) |- (DSPLSW.west); 
-\node (SPLWF) [pbox,below right=6pt and -14pt of DSPLSW] {\textbf{SPL Workflow
-} };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DSPLSW.south) -| ++(0,0) |- (SPLWF.west); 
-\node (DENV) [pbox,below=49pt of DSPLSW] {\textbf{DM DevM Envs
-} };\node [below right] at (DENV.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMDSW.south) -| ++(0,0) |- (DENV.west); 
 \node (DMDTDP) [pbox, 
 right=192pt of DMDSW] {\textbf{Test Data
 } };\node [below right] at (DMDTDP.north west) {\footnotesize \color{blue}} ;

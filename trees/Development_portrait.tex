@@ -8,7 +8,7 @@
 \usepackage{tikz,hyperref,amsmath}
 \usetikzlibrary{positioning,arrows,shapes,decorations.shapes,shapes.arrows}
 \usetikzlibrary{backgrounds,calc}
-\usepackage[paperwidth=612pt,paperheight=946pt,
+\usepackage[paperwidth=612pt,paperheight=860pt,
 left=-2mm,top=3mm,bottom=0mm,right=0mm,
 noheadfoot,marginparwidth=0pt,includemp=false,
 textwidth=30cm,textheight=50mm]{geometry}
@@ -95,19 +95,7 @@ textwidth=30cm,textheight=50mm]{geometry}
 \node (LSSTSWpkg) [tbox,below=3mm of LSSTSW.north] {{\footnotesize \color{black} \begin{verbatim} lsstsw \end{verbatim} }  };
 
  \draw[pline] (DMDSS.east) -| ++(0.4,0) |- (LSSTSW.west); 
-\node (DSPLSW) [pbox,below=135pt of DMDSS] {\textbf{Dev Science Pipelines
-} };\node [below right] at (DSPLSW.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMDSW.east) -| ++(0.4,0) |- (DSPLSW.west); 
-\node (SPLWF) [pbox,right=43pt of DSPLSW] {\textbf{SPL Workflow
-} };\node [below right] at (SPLWF.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DSPLSW.east) -| ++(0.4,0) |- (SPLWF.west); 
-\node (DENV) [pbox,below=6pt of DSPLSW] {\textbf{DM DevM Envs
-} };\node [below right] at (DENV.north west) {\footnotesize \color{blue}} ;
-
- \draw[pline] (DMDSW.east) -| ++(0.4,0) |- (DENV.west); 
-\node (DMDTDP) [pbox,below=221pt of DMDSW] {\textbf{Test Data
+\node (DMDTDP) [pbox,below=135pt of DMDSW] {\textbf{Test Data
 } };\node [below right] at (DMDTDP.north west) {\footnotesize \color{blue}} ;
 
  \draw[pline] (DMDEV.east) -| ++(0.4,0) |- (DMDTDP.west); 
